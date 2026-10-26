@@ -72,8 +72,10 @@ class Run:
             cfg.backend,
             cfg.model,
             ollama_host=self.settings.ollama_host,
-            openai_api_key=self.settings.openai_api_key,
             num_ctx=cfg.num_ctx,
+            allow_cloud=cfg.allow_cloud,
+            api_key=self.settings.api_key,
+            api_base_url=self.settings.api_base_url,
         )
         self.manifest = self._load_manifest()
         (self.run_dir / "config.yaml").write_text(yaml.safe_dump(json.loads(cfg.model_dump_json()), sort_keys=False))
@@ -88,6 +90,7 @@ class Run:
             mmf_version=__version__,
             config_sha256=self.cfg.sha256(),
             backend=self.cfg.backend,
+            allow_cloud=self.cfg.allow_cloud,
             model=self.cfg.model,
             seed=self.cfg.seed,
             temperature=self.cfg.temperature,

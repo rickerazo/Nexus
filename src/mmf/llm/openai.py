@@ -1,5 +1,6 @@
-"""OpenAI backend. Kept for head-to-head evaluation against the local backend.
+"""OpenAI-compatible cloud backend (OpenAI, Azure OpenAI, institutional gateways).
 
+Requires an institutional credential in MMF_API_KEY and `allow_cloud: true` in the run config.
 Never send restricted documents through this backend.
 """
 
@@ -12,12 +13,14 @@ from openai import OpenAI
 from mmf.llm.base import LLMResponse
 
 
-class OpenAIClient:
-    backend = "openai"
+class OpenAICompatibleClient:
+    backend = "openai_compatible"
 
-    def __init__(self, model: str, api_key: str | None = None) -> None:
+    def __init__(self, model: str, api_key: str | None, base_url: str | None = None) -> None:
+        if not api_key:
+            raise RuntimeError("cloud backend needs MMF_API_KEY (an institutional credential), none is set")
         self.model = model
-        self._client = OpenAI(api_key=api_key)
+        self._client = OpenAI(api_key=api_key, base_url=base_url)
 
     def model_digest(self) -> str | None:
         return None  # OpenAI exposes no weight-level identifier; `system_fingerprint` is logged per call.

@@ -10,19 +10,21 @@ import yaml
 from pydantic import BaseModel, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-Backend = Literal["ollama", "openai"]
+Backend = Literal["ollama", "openai_compatible"]
 
 
 class Settings(BaseSettings):
-    """Secrets and host settings. Loaded from the environment or ~/.config/nexus/.env."""
+    """Host settings and (optional) cloud API credentials.
 
-    model_config = SettingsConfigDict(
-        env_file=(Path.home() / ".config" / "nexus" / ".env", ".env"),
-        env_file_encoding="utf-8",
-        extra="ignore",
-    )
-    openai_api_key: str | None = None
+    Read ONLY from explicit environment variables prefixed MMF_; no key file is loaded
+    automatically. Cloud credentials must belong to the project (institutional), never a
+    personal account, and are used only when a RunConfig sets `allow_cloud: true`.
+    """
+
+    model_config = SettingsConfigDict(env_prefix="MMF_", extra="ignore")
     ollama_host: str = "http://localhost:11434"
+    api_key: str | None = None
+    api_base_url: str | None = None  # OpenAI-compatible endpoint (institutional gateway, Azure, etc.)
 
 
 class SourceSpec(BaseModel):
@@ -38,6 +40,11 @@ class RunConfig(BaseModel):
     codebooks: list[SourceSpec]
     backend: Backend = "ollama"
     model: str = "qwen2.5:14b"
+    allow_cloud: bool = Field(
+        default=False,
+        description="Must be true to use a non-local backend. Documents then leave the machine; "
+        "only institutional credentials may be used and restricted documents must not be sent.",
+    )
     seed: int = 0
     temperature: float = 0.0
     num_ctx: int = Field(default=32768, description="Context window to request from Ollama.")

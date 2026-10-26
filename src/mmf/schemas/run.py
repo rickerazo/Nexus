@@ -32,6 +32,7 @@ class RunManifest(BaseModel):
     mmf_version: str
     config_sha256: str
     backend: str
+    allow_cloud: bool = False
     model: str
     seed: int
     temperature: float

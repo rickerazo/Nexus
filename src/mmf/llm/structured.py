@@ -126,13 +126,27 @@ def _record(
     )
 
 
-def make_client(backend: str, model: str, *, ollama_host: str, openai_api_key: str | None, num_ctx: int) -> LLMClient:
+def make_client(
+    backend: str,
+    model: str,
+    *,
+    ollama_host: str,
+    num_ctx: int,
+    allow_cloud: bool = False,
+    api_key: str | None = None,
+    api_base_url: str | None = None,
+) -> LLMClient:
     if backend == "ollama":
         from mmf.llm.ollama import OllamaClient
 
         return OllamaClient(model, host=ollama_host, num_ctx=num_ctx)
-    if backend == "openai":
-        from mmf.llm.openai import OpenAIClient
+    if backend == "openai_compatible":
+        if not allow_cloud:
+            raise PermissionError(
+                "backend 'openai_compatible' sends documents to an external service; set allow_cloud: true "
+                "in the run config (institutional credentials only) to proceed"
+            )
+        from mmf.llm.openai import OpenAICompatibleClient
 
-        return OpenAIClient(model, api_key=openai_api_key)
+        return OpenAICompatibleClient(model, api_key=api_key, base_url=api_base_url)
     raise ValueError(f"unknown backend {backend!r}")

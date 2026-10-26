@@ -17,9 +17,9 @@ aligned, and non-trivial, and whether the validators (not the prompts) are what 
 |---|---|---|---|
 | L   | ollama | qwen2.5:14b (digest recorded) | on |
 | L-  | ollama | qwen2.5:14b | **off** (ablation: outputs accepted on first parse) |
-| O   | openai | gpt-4o-mini (fingerprint recorded) | on |
+| O   | openai_compatible (institutional endpoint, TBD) | model TBD when institutional access exists (fingerprint recorded) | on |
 
-Seed 0, temperature 0, `n_gaps` 3, `max_retries` 3, identical prompts (hashes recorded). k = 5 repeats per condition for reproducibility. Review checkpoints are auto-approved in evaluation runs (no human edits) so that runs are comparable; the human-in-the-loop effect is assessed separately in Phase 5.
+Condition O runs only with institutional credentials and `allow_cloud: true`; if no institutional access exists when the protocol is frozen, O is dropped and noted here. Seed 0, temperature 0, `n_gaps` 3, `max_retries` 3, identical prompts (hashes recorded). k = 5 repeats per condition for reproducibility. Review checkpoints are auto-approved in evaluation runs (no human edits) so that runs are comparable; the human-in-the-loop effect is assessed separately in Phase 5.
 
 ## Metrics (pre-specified)
 1. **Grounding rate.** Per stage: fraction of generate() calls accepted on attempt 1; fraction accepted within retries; count of hallucinated variable names, unknown claim ids, and non-verbatim quotes on attempt 1. Source: `manifest.calls` and `llm_log/`.

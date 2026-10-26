@@ -34,11 +34,7 @@ def ingest(
     from mmf.llm.structured import make_client
 
     s = Settings()
-    client = (
-        None
-        if no_llm
-        else make_client(backend, model, ollama_host=s.ollama_host, openai_api_key=s.openai_api_key, num_ctx=32768)
-    )
+    client = None if no_llm else make_client(backend, model, ollama_host=s.ollama_host, num_ctx=32768)
     doc = load_document(path)
     ds, rejected, _ = build_datasource(doc, source_id, client, log_dir=out / "llm_log")
     out.mkdir(parents=True, exist_ok=True)

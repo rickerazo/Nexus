@@ -7,9 +7,10 @@ This document is the contract between components. Code that disagrees with it is
 1. **Typed handoffs only.** Components exchange pydantic models (`src/mmf/schemas/`). No component reads another's prose.
 2. **Constrained by validators, not by prompts.** A prompt asks the model to use only documented variables; a validator *rejects* output that does not. Every stage runs through `llm/structured.generate`, which parses, validates, feeds errors back, and retries up to `max_retries`. Failures surface to the human; they are never silently accepted.
 3. **Documentation in, never data.** MMF reads codebooks, user guides and manuscripts. It never reads row-level CDC or NCFRP data.
-4. **Provenance for every byte of output.** `RunManifest` records input hashes, config hash, backend, model and model digest, prompt hashes, seed, temperature, and every LLM call (attempts, success, raw log file).
-5. **Humans gate the science.** Stages B (schema map) and C (gaps) stop for review. The investigator edits the JSON and approves before D runs.
-6. **Reproducibility is measured.** Seed and temperature are fixed and logged, but identical outputs are not assumed; Phase 4 measures run-to-run agreement.
+4. **Local by default, cloud by explicit consent.** Credentials come only from `MMF_*` environment variables (no key files), a cloud backend needs `allow_cloud: true` per run, and only institutional credentials are acceptable for this institute-funded project.
+5. **Provenance for every byte of output.** `RunManifest` records input hashes, config hash, backend, model and model digest, prompt hashes, seed, temperature, and every LLM call (attempts, success, raw log file).
+6. **Humans gate the science.** Stages B (schema map) and C (gaps) stop for review. The investigator edits the JSON and approves before D runs.
+7. **Reproducibility is measured.** Seed and temperature are fixed and logged, but identical outputs are not assumed; Phase 4 measures run-to-run agreement.
 
 ## Data flow
 
@@ -44,7 +45,7 @@ all ────────► report.markdown   ──► report.md
 
 - `base.LLMClient` protocol: `complete_json(system, user, json_schema, seed, temperature)`.
 - `ollama.OllamaClient` (default): schema-constrained decoding (`format=<json schema>`), `seed`, `temperature`, `num_ctx`; captures the model digest.
-- `openai.OpenAIClient`: `response_format=json_schema`, `seed`; logs `system_fingerprint`. For evaluation only; never for restricted documents.
+- `openai.OpenAICompatibleClient`: any OpenAI-compatible endpoint (`MMF_API_BASE_URL`), `response_format=json_schema`, `seed`; logs `system_fingerprint`. Constructed only when the run config sets `allow_cloud: true` and `MMF_API_KEY` holds an institutional credential; the manifest records `allow_cloud`. Never for restricted documents.
 - `prompts.load_prompt(name)`: reads `prompts/<name>.md` (`## system` / `## user` sections, `$placeholders`), returns its sha256.
 - `structured.generate(...)`: the only call site. Returns `(object, LLMCallRecord)`; raises `GenerationFailedError` after retries. Writes a full transcript JSON per call to `llm_log/`.
 
