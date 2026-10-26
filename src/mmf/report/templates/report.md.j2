@@ -18,14 +18,17 @@ Designs: {{ d.designs | join(', ') or '—' }}. Models: {{ d.model_classes | joi
 
 Research questions:
 {% for q in d.research_questions %}- {{ q }}
+
 {% endfor %}
 Claims ({{ d.claims | length }}):
 {% for c in d.claims %}- **{{ c.id }}** [{{ c.kind }}] {{ c.statement }} — p.{{ c.page }}: "{{ c.quote }}"
+
 {% endfor %}
 {% endfor %}
 
 ## B. Data sources and concept map
 {% for sid, s in sources.items() %}- `{{ sid }}`: {{ s.title }} — {{ s.variables | length }} documented variables.
+
 {% endfor %}
 
 | Concept | Source | Variable | Compatibility | Rationale |
@@ -40,6 +43,7 @@ Claims ({{ d.claims | length }}):
 - Prior art: {{ g.prior_art }}
 - Supporting claims: {{ g.supporting_claim_ids | join(', ') }}
 - Required variables: {% for r in g.required_variables %}`{{ r.source_id }}:{{ r.name }}`{{ ', ' if not loop.last }}{% endfor %}
+
 {% endfor %}
 
 ## D. Strategies and E. feasibility
@@ -56,6 +60,7 @@ Claims ({{ d.claims | length }}):
 | Interactions | {% for t in s.interactions %}{% for r in t %}`{{ r.name }}`{{ ' × ' if not loop.last }}{% endfor %}{{ '; ' if not loop.last }}{% endfor %} |
 | Stratification | {% for r in s.stratification %}`{{ r.source_id }}:{{ r.name }}`{{ ', ' if not loop.last }}{% endfor %} |
 | Offset | {% if s.offset %}`{{ s.offset.source_id }}:{{ s.offset.name }}`{% else %}—{% endif %} |
+| Time scale | {% if s.time_scale %}`{{ s.time_scale.source_id }}:{{ s.time_scale.name }}`{% else %}—{% endif %} |
 | Design | {{ s.design }} |
 | Model class | {{ s.model_class }} |
 
@@ -66,15 +71,19 @@ Expected direction: {{ s.expected_direction }}
 {% if f %}
 Variable resolution:
 {% for r in f.resolutions %}- `{{ r.ref.source_id }}:{{ r.ref.name }}` — {{ 'OK' if r.resolved else 'UNRESOLVED' }}{% if r.variable %}: {{ r.variable.label }} (p.{{ r.variable.page }}){% endif %}{% if r.note %} — {{ r.note }}{% endif %}
+
 {% endfor %}
 {% if f.blockers %}Blockers:
 {% for b in f.blockers %}- {{ b }}
+
 {% endfor %}{% endif %}
 {% if f.caveats %}Caveats:
 {% for c in f.caveats %}- {{ c }}
+
 {% endfor %}{% endif %}
 {% if f.cross_source_notes %}Cross-source notes:
 {% for c in f.cross_source_notes %}- {{ c }}
+
 {% endfor %}{% endif %}
 Not assessed by MMF: {{ f.not_assessed | join('; ') }}.
 {% endif %}

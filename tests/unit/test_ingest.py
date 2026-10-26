@@ -6,7 +6,7 @@ from mmf.schemas import Variable
 
 def test_pass1_table_layout(mini_codebook_doc):
     vars_ = {v.name: v for v in pass1_regex(mini_codebook_doc)}
-    assert set(vars_) == {"SEX", "MAGER9", "CIG_REC", "COMBGEST"}
+    assert set(vars_) == {"SEX", "MAGER9", "CIG_REC", "COMBGEST", "AGED", "UCOD"}
     assert vars_["SEX"].label == "Sex of infant"
     assert vars_["SEX"].levels == ["1=MALE", "2=FEMALE"]
     assert vars_["MAGER9"].notes == "format=AGE9F"

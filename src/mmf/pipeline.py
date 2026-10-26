@@ -195,11 +195,15 @@ class Run:
         self._review_gate("C", cached, "Knowledge gaps")
         return GapSet.model_validate_json((self.run_dir / "C_gaps.json").read_text())
 
-    def stage_d(self, gaps: GapSet, decs: list[ManuscriptDecomposition], sources: dict[str, DataSource]) -> StrategySet:
+    def stage_d(
+        self, gaps: GapSet, decs: list[ManuscriptDecomposition], sources: dict[str, DataSource], smap: SchemaMap
+    ) -> StrategySet:
         key = _h(gaps.model_dump_json(), self.cfg.model)
         cached = self._cached("D", key, StrategySet, "D_strategies.json")
         if cached is None:
-            cached, recs = d_strategy.generate_strategies(gaps.gaps, decs, sources, self.client, **self._llm_kwargs())
+            cached, recs = d_strategy.generate_strategies(
+                gaps.gaps, decs, sources, self.client, smap, **self._llm_kwargs()
+            )
             self._record(recs)
             self._store("D", key, cached, "D_strategies.json")
         return cached
@@ -218,7 +222,7 @@ class Run:
         decs = self.stage_a()
         smap = self.stage_b(decs, sources)
         gaps = self.stage_c(decs, smap, sources)
-        strategies = self.stage_d(gaps, decs, sources)
+        strategies = self.stage_d(gaps, decs, sources, smap)
         feas = self.stage_e(strategies, sources)
         report = render_report(self.manifest, decs, sources, smap, gaps, strategies, feas)
         (self.run_dir / "report.md").write_text(report)

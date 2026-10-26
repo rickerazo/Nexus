@@ -25,6 +25,9 @@ class Strategy(BaseModel):
     )
     stratification: list[VariableRef] = Field(default_factory=list)
     offset: VariableRef | None = Field(default=None, description="Denominator variable for rate models.")
+    time_scale: VariableRef | None = Field(
+        default=None, description="Time axis for time-to-event or time-stratified models (e.g. age at death)."
+    )
     design: StudyDesign
     model_class: ModelClass
     rationale: str
@@ -36,7 +39,15 @@ class Strategy(BaseModel):
             refs.extend(term)
         if self.offset:
             refs.append(self.offset)
-        return refs
+        if self.time_scale:
+            refs.append(self.time_scale)
+        seen: set[str] = set()
+        unique = []
+        for r in refs:
+            if r.key() not in seen:
+                seen.add(r.key())
+                unique.append(r)
+        return unique
 
 
 class StrategySet(BaseModel):

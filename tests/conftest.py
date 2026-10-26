@@ -31,6 +31,8 @@ def sources() -> dict[str, DataSource]:
             Variable(name="CIG_REC", label="Cigarette smoking", page=1, years=[2015, 2016]),
             Variable(name="COMBGEST", label="Combined gestation", page=1, years=[2017]),
             Variable(name="BIRTHS", label="Live births (denominator)", page=1),
+            Variable(name="UCOD", label="Underlying cause of death", page=1),
+            Variable(name="AGED", label="Age at death in days", page=1),
         ],
     )
     return {"cdc": ds}

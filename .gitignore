@@ -28,3 +28,4 @@ legacy/**/paid_leave/
 .DS_Store
 .cache/
 evaluation/blinding_key.csv
+.vscode/

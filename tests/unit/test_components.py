@@ -60,7 +60,7 @@ def _strategy(**kw):
         id="S1",
         gap_id="G1",
         research_question="q",
-        outcome=OutcomeSpec(variable=REF("SEX"), definition="d"),
+        outcome=OutcomeSpec(variable=REF("UCOD"), definition="d"),
         exposures=[REF("CIG_REC")],
         interactions=[[REF("SEX"), REF("CIG_REC")]],
         design=StudyDesign.POPULATION_INCIDENCE,
@@ -94,3 +94,28 @@ def test_feasibility_year_overlap_blocker(sources):
     assert any("common year" in b for b in rep.blockers)
     rep2 = deterministic_report(_strategy(), sources)
     assert rep2.feasible and "statistical power" in rep2.not_assessed
+
+
+def test_strategy_validator_outcome_rules(sources):
+    # outcome doubling as exposure is rejected
+    p = strategy_validator(_gap(), sources)(_strategy(outcome=OutcomeSpec(variable=REF("CIG_REC"), definition="d")))
+    assert any("also appears as exposure" in x for x in p)
+    # outcome must be among mapped outcome variables when B mapped any
+    p = strategy_validator(_gap(), sources, outcome_refs={"cdc:AGED"})(_strategy())
+    assert any("mapped from an outcome concept" in x for x in p)
+    assert strategy_validator(_gap(), sources, outcome_refs={"cdc:UCOD"})(_strategy()) == []
+    # time-to-event models need a time axis
+    p = strategy_validator(_gap(), sources)(_strategy(model_class=ModelClass.COX_PROPORTIONAL_HAZARDS, offset=None))
+    assert any("time_scale" in x for x in p)
+    assert (
+        strategy_validator(_gap(), sources)(
+            _strategy(model_class=ModelClass.COX_PROPORTIONAL_HAZARDS, offset=None, time_scale=REF("AGED"))
+        )
+        == []
+    )
+
+
+def test_all_refs_deduplicated():
+    s = _strategy(covariates=[REF("CIG_REC")])
+    keys = [r.key() for r in s.all_refs()]
+    assert len(keys) == len(set(keys))

@@ -30,3 +30,15 @@ Combined gestation in weeks
 GESTF
 17-47=WEEKS
 99=UNKNOWN
+5
+AGED
+Age at death in days
+NUMF
+0-364=DAYS
+6
+UCOD
+Underlying cause of death ICD-10
+ICDF
+R95=SIDS
+R99=UNSPECIFIED
+W75=ACCIDENTAL SUFFOCATION
