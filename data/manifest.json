@@ -2,5 +2,14 @@
   "data/codebooks/LinkCO15Guide.pdf": "1b6cd81b08596230344d665f77c88663ea8700731a054bd2f17989215289f7a8",
   "data/codebooks/PRAMS_Phase_7_ARF_Codebook.pdf": "57957107866cc22bd4dec4d6a2ee6a5c2ecee5d8e702030f1a45de5c8afd1b97",
   "data/codebooks/PRAMS_Phase_8_ARF_Codebook.pdf": "9d5b3d4dd9092af205977978f66c2b071210b3eedac55950a494e72f031e0152",
-  "data/codebooks/PRAMS_Phase_8_Standard_Section_II_Codebook.pdf": "792402034db4bcfefa3f908a18b42c9438171f9b0e323624163c22066604eeee"
+  "data/codebooks/PRAMS_Phase_8_Standard_Section_II_Codebook.pdf": "792402034db4bcfefa3f908a18b42c9438171f9b0e323624163c22066604eeee",
+  "data/documentation/CDC_database_codeNames.xlsx": "0ef67f25e365f4b25954e1d81c2e8c99c5d582dae7157adcafec971debe2f6d2",
+  "data/documentation/Codebook_Version5-1_031122.xlsx": "fb90580f2efa52988ad3c5a2530b908a0f89ad58337c781876baead2d62d0887",
+  "data/documentation/INFRrace_AI.txt": "3fc1445bde36d0309dfcb8d19db1aa3b8dcb12b0b44652bf31128bf6f85b2b94",
+  "data/documentation/LinkCO15Guide.pdf": "1b6cd81b08596230344d665f77c88663ea8700731a054bd2f17989215289f7a8",
+  "data/documentation/natl2015.pdf": "cefeaebb9d9fb574f1968037668273e4b6dd2b4f9d50a57e4a39e92830adb1dc",
+  "data/manuscripts/SUID_manuscript_v9_clean.docx": "92fd11fa182c9a7b5806abcd83a284408d96271920022a19179cbafdb62cd2bd",
+  "data/manuscripts/bedsharing_ms_v7.docx": "1496e66e4e7b266719b29021ddc9041acf47f56cf92fdcd91113d826ffd4b79b",
+  "data/manuscripts/literature/ramirez_lavista_bibliography.md": "a13f969a56ce6c7130fc553a8c7548c45e30c574ea658acbd8e4601693f509a4",
+  "data/manuscripts/literature/suid_literature_abstracts.md": "687e8a02fa0c7d697b51a7d44224066beb34f0ea0281e14d163ef9f9f337ad41"
 }

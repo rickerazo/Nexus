@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from pathlib import Path
 
-from mmf.components.common import allowed_refs_text
+from mmf.components.common import allowed_refs_text, mapped_keys
 from mmf.llm.base import LLMClient
 from mmf.llm.prompts import load_prompt
 from mmf.llm.structured import generate
@@ -59,7 +59,10 @@ def find_gaps(
         f"- {m.concept} -> ({m.source_id}, {m.variable}) [{m.compatibility}]" for m in schema_map.mappings
     )
     user = prompt.render(
-        n_gaps=str(n_gaps), decompositions=dec_text, mapping=map_text, allowed_refs=allowed_refs_text(sources)
+        n_gaps=str(n_gaps),
+        decompositions=dec_text,
+        mapping=map_text,
+        allowed_refs=allowed_refs_text(sources, only=mapped_keys(schema_map) or None),
     )
     obj, rec = generate(
         client,

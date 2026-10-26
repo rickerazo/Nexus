@@ -1,31 +1,49 @@
-# SUID proof-of-concept run configuration (Aim 3).
-# Documentation only: codebooks and user guides. No row-level data.
+# SUID proof-of-concept run (Aim 3). Documentation only: codebooks, user guides, data dictionaries.
+# No row-level data. Local model only (allow_cloud stays false).
 manuscripts:
-  - data/manuscripts/Erazo_SUID_manuscript_v1.docx     # developmental timing (PCA framework)
-  - data/manuscripts/bedsharing_ms_v3.docx             # sleep environment + exposures
+  - data/manuscripts/SUID_manuscript_v9_clean.docx            # developmental timing (PCA framework)
+  - data/manuscripts/bedsharing_ms_v7.docx                    # sleep environment + exposures under PCA
+  - data/manuscripts/literature/suid_literature_abstracts.md  # Ramirez lab / Lavista Ferres SUID + respiratory abstracts (PubMed)
 codebooks:
+  # Deterministic parsing only (llm_extract: false): the layouts below are parsed completely by the
+  # table/NVSS/PRAMS parsers, and LLM enrichment at ~9 tok/s would take hours per codebook.
+  - id: cdc_linkco15
+    path: data/codebooks/LinkCO15Guide.pdf
+    title: CDC linked birth/infant death public-use file guide, 2015
+    llm_extract: false
+  - id: cdc_natl15
+    path: data/documentation/natl2015.pdf
+    title: CDC natality public-use file guide, 2015
+    llm_extract: false
+  - id: cdc_codenames
+    path: data/documentation/CDC_database_codeNames.xlsx
+    title: CDC birth/death file variable names and labels (analysis extract)
+    llm_extract: false
+  - id: ncfrp_v51
+    path: data/documentation/Codebook_Version5-1_031122.xlsx
+    title: National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1
+    llm_extract: false
   - id: prams_p8_arf
     path: data/codebooks/PRAMS_Phase_8_ARF_Codebook.pdf
     title: PRAMS Phase 8 Analytic Research File codebook
+    llm_extract: false
   - id: prams_p8_std2
     path: data/codebooks/PRAMS_Phase_8_Standard_Section_II_Codebook.pdf
     title: PRAMS Phase 8 Standard Section II codebook
+    llm_extract: false
   - id: prams_p7_arf
     path: data/codebooks/PRAMS_Phase_7_ARF_Codebook.pdf
     title: PRAMS Phase 7 Analytic Research File codebook
-  - id: cdc_linkco15
-    path: data/codebooks/LinkCO15Guide.pdf  # https://data.nber.org/nvss/linkco/orig/LinkCO15Guide.pdf
-    title: CDC linked birth/infant death public-use file guide, 2015
-  # - id: ncfrp
-  #   path: data/codebooks/NCFRP_data_dictionary.pdf
-  #   title: National Child Fatality Review case reporting system data dictionary
+    llm_extract: false
 backend: ollama
 model: qwen2.5:14b
+allow_cloud: false
 seed: 0
 temperature: 0.0
 num_ctx: 32768
 chunk_tokens: 12000
 max_retries: 3
 n_gaps: 3
+b_max_vars_per_call: 600
 out_dir: runs
 cache_dir: .cache/documents

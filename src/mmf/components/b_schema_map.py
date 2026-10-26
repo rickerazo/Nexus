@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from pathlib import Path
 
-from mmf.components.common import sources_text
+from mmf.components.common import source_groups, sources_text
 from mmf.llm.base import LLMClient
 from mmf.llm.prompts import load_prompt
 from mmf.llm.structured import generate
@@ -45,24 +45,42 @@ def map_schema(
     temperature: float,
     max_retries: int,
     log_dir: Path | None,
+    max_vars_per_call: int = 350,
 ) -> tuple[SchemaMap, list[LLMCallRecord]]:
+    """One call per source group (large codebooks are split); mappings are merged. For a concept
+    with several candidate variables in one source, every candidate is kept for human review."""
     prompt = load_prompt("b_schema_map")
     concepts: dict[str, str] = {}
     for d in decompositions:
         for v in d.variables:
             concepts.setdefault(v.concept, f"{v.role}; {v.operationalization}")
     concept_text = "\n".join(f"- {k}: {v}" for k, v in concepts.items())
-    user = prompt.render(concepts=concept_text, sources=sources_text(sources))
-    obj, rec = generate(
-        client,
-        prompt,
-        user,
-        SchemaMap,
-        stage="B_schema_map",
-        seed=seed,
-        temperature=temperature,
-        validators=[map_validator(sources)],
-        max_retries=max_retries,
-        log_dir=log_dir,
-    )
-    return obj, [rec]
+    merged = SchemaMap()
+    records = []
+    for gi, group in enumerate(source_groups(sources, max_vars_per_call)):
+        user = prompt.render(concepts=concept_text, sources=sources_text(group))
+        obj, rec = generate(
+            client,
+            prompt,
+            user,
+            SchemaMap,
+            stage=f"B_schema_map_{gi}",
+            seed=seed,
+            temperature=temperature,
+            validators=[map_validator(group)],
+            max_retries=max_retries,
+            log_dir=log_dir,
+        )
+        records.append(rec)
+        for m in obj.mappings:
+            if m.variable is None and any(
+                x.concept == m.concept and x.source_id == m.source_id and x.variable for x in merged.mappings
+            ):
+                continue  # another part of this source already mapped it
+            merged.mappings.append(m)
+        for sid, text in obj.source_summaries.items():
+            merged.source_summaries[sid] = (merged.source_summaries.get(sid, "") + " " + text).strip()
+    # drop 'none' rows for concept/source pairs that got a real mapping from another group
+    mapped = {(m.concept, m.source_id) for m in merged.mappings if m.variable}
+    merged.mappings = [m for m in merged.mappings if m.variable or (m.concept, m.source_id) not in mapped]
+    return merged, records

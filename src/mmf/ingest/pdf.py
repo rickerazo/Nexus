@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 
 log = logging.getLogger(__name__)
 
-SUPPORTED = {".pdf", ".docx", ".md", ".txt"}
+SUPPORTED = {".pdf", ".docx", ".md", ".txt", ".xlsx"}
 
 
 class Page(BaseModel):
@@ -75,6 +75,22 @@ def _load_docx(path: Path) -> tuple[str, list[Page]]:
     return title, [Page(number=1, text="\n".join(paras))]
 
 
+def _load_xlsx(path: Path) -> tuple[str, list[Page]]:
+    """Each worksheet becomes one page; rows are rendered as ' | '-joined cells, blanks dropped."""
+    import openpyxl
+
+    wb = openpyxl.load_workbook(str(path), read_only=True, data_only=True)
+    pages: list[Page] = []
+    for i, ws in enumerate(wb.worksheets, start=1):
+        lines = [f"[sheet {ws.title}]"]
+        for row in ws.iter_rows(values_only=True):
+            cells = [str(c).strip() for c in row if c is not None and str(c).strip()]
+            if cells:
+                lines.append(" | ".join(cells))
+        pages.append(Page(number=i, text="\n".join(lines)))
+    return path.stem, pages
+
+
 def _load_text(path: Path) -> tuple[str, list[Page]]:
     text = path.read_text(encoding="utf-8")
     first = next((ln.lstrip("# ").strip() for ln in text.splitlines() if ln.strip()), path.stem)
@@ -92,7 +108,7 @@ def load_document(path: Path | str, cache_dir: Path | None = None) -> Document:
         if cached.exists():
             return Document.model_validate_json(cached.read_text())
 
-    loader = {".pdf": _load_pdf, ".docx": _load_docx}.get(path.suffix.lower(), _load_text)
+    loader = {".pdf": _load_pdf, ".docx": _load_docx, ".xlsx": _load_xlsx}.get(path.suffix.lower(), _load_text)
     title, pages = loader(path)
     doc = Document(path=str(path), sha256=digest, title=title, pages=pages)
     log.info("loaded %s (%d pages, %d chars)", path.name, len(pages), doc.n_chars)

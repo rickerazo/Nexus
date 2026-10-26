@@ -54,3 +54,14 @@ def test_pass1_nvss_layout():
     assert vars_["FAGE11"].label == "Father's Age Recode 11"
     assert vars_["FAGE11"].levels == ["01=Under 15 years", "02=15-19 years"]
     assert vars_["FAGE11"].notes == "position=149-150; file=P,G"
+
+
+def test_chunking_splits_oversized_single_page():
+    text = "\n\n".join(f"paragraph {i} " + "word " * 120 for i in range(30))
+    doc = Document(path="p", sha256="x", title="t", pages=[Page(number=1, text=text)])
+    chunks = chunk_document(doc, max_tokens=1000)
+    assert len(chunks) > 3
+    assert all(c.first_page == 1 and c.last_page == 1 for c in chunks)
+    assert all(len(c.text) // 3 <= 1000 + 50 for c in chunks)
+    joined = "".join(c.text.replace("\n[page 1]\n", "") for c in chunks)
+    assert all(f"paragraph {i} " in joined for i in range(30))

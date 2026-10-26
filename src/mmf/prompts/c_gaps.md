@@ -15,5 +15,5 @@ $decompositions
 Concept-to-variable mapping (source_id, variable, compatibility):
 $mapping
 
-Allowed (source_id, name) pairs:
+Allowed (source_id, name) pairs (variables the schema map connected to manuscript concepts; others are not available to you):
 $allowed_refs

@@ -55,9 +55,73 @@ _STOPWORDS = {
 }
 
 
-def pass1_regex(doc: Document) -> list[Variable]:
-    """Deterministic extraction for the two codebook layouts seen so far. Never invents names."""
+_TABLE_NAME_HEADERS = ("variable name", "variable", "code", "name", "field")
+_TABLE_LABEL_HEADERS = ("description", "question", "label", "sas label")
+_TABLE_VALUES_HEADERS = ("values", "codes")
+_TABLE_TYPE_HEADERS = ("type",)
+
+
+def pass1_table(doc: Document) -> list[Variable]:
+    """Deterministic extraction for spreadsheet codebooks rendered as ' | '-joined rows.
+
+    A sheet is parsed when a header row names a variable column and a label/description column
+    (e.g. NFR-CRS 'Variable name | Type | Description | Values', or CDC 'Code | Label').
+    """
     found: dict[str, Variable] = {}
+    for page in doc.pages:
+        cols: dict[str, int] | None = None
+        for raw in page.text.splitlines():
+            cells = [c.strip() for c in raw.split(" | ")]
+            low = [c.lower() for c in cells]
+            if any(h in low for h in _TABLE_NAME_HEADERS) and any(h in low for h in _TABLE_LABEL_HEADERS):
+                cols = {}
+                for key, names in (
+                    ("name", _TABLE_NAME_HEADERS),
+                    ("label", _TABLE_LABEL_HEADERS),
+                    ("values", _TABLE_VALUES_HEADERS),
+                    ("type", _TABLE_TYPE_HEADERS),
+                ):
+                    for h in names:
+                        if h in low:
+                            cols[key] = low.index(h)
+                            break
+                continue
+            if cols is None or len(cells) <= max(cols["name"], cols["label"]):
+                continue
+            name = cells[cols["name"]]
+            label = cells[cols["label"]]
+            if (
+                not re.fullmatch(r"[A-Za-z][A-Za-z0-9_.]{0,63}", name)
+                or not label
+                or name.lower() in ("variable", "code", "name")
+            ):
+                continue
+            values = cells[cols["values"]] if "values" in cols and len(cells) > cols["values"] else ""
+            vtype = cells[cols["type"]] if "type" in cols and len(cells) > cols["type"] else ""
+            levels = [v.strip() for v in re.split(r"[;\n]|, (?=\d+\s*=)", values) if "=" in v] if values else []
+            found.setdefault(
+                name,
+                Variable(
+                    name=name,
+                    label=label,
+                    levels=levels,
+                    page=page.number,
+                    notes="; ".join(
+                        x
+                        for x in (
+                            f"type={vtype}" if vtype else "",
+                            f"values={values[:200]}" if values and not levels else "",
+                        )
+                        if x
+                    ),
+                ),
+            )
+    return list(found.values())
+
+
+def pass1_regex(doc: Document) -> list[Variable]:
+    """Deterministic extraction for the codebook layouts seen so far. Never invents names."""
+    found: dict[str, Variable] = {v.name: v for v in pass1_table(doc)}
     for page in doc.pages:
         lines = [ln.strip() for ln in page.text.splitlines()]
         for i, line in enumerate(lines):

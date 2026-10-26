@@ -31,6 +31,11 @@ class SourceSpec(BaseModel):
     id: str = Field(description="Slug used in VariableRef.source_id.")
     path: Path
     title: str | None = None
+    llm_extract: bool = Field(
+        default=True,
+        description="Run the LLM enrichment pass (pass 2). False = deterministic pass only; use for "
+        "tabular codebooks where the deterministic parser is complete, or to save time.",
+    )
 
 
 class RunConfig(BaseModel):
@@ -51,6 +56,9 @@ class RunConfig(BaseModel):
     chunk_tokens: int = Field(default=12000, description="Max approx tokens per document chunk.")
     max_retries: int = Field(default=3, description="Re-prompts after a validation failure.")
     n_gaps: int = 3
+    b_max_vars_per_call: int = Field(
+        default=600, description="Component B maps concepts against at most this many variables per LLM call."
+    )
     out_dir: Path = Path("runs")
     cache_dir: Path = Path(".cache/documents")
 

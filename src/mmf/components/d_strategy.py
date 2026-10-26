@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from pathlib import Path
 
-from mmf.components.common import allowed_refs_text
+from mmf.components.common import allowed_refs_text, mapped_keys
 from mmf.llm.base import LLMClient
 from mmf.llm.prompts import load_prompt
 from mmf.llm.structured import generate
@@ -89,7 +89,9 @@ def generate_strategies(
         user = prompt.render(
             gap=gap.model_dump_json(indent=1),
             claims=cited,
-            allowed_refs=allowed_refs_text(sources, with_labels=True),
+            allowed_refs=allowed_refs_text(
+                sources, with_labels=True, only=(mapped_keys(schema_map) if schema_map else None) or None
+            ),
             vocab=vocab_text(),
         )
         obj, rec = generate(

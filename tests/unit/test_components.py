@@ -119,3 +119,19 @@ def test_all_refs_deduplicated():
     s = _strategy(covariates=[REF("CIG_REC")])
     keys = [r.key() for r in s.all_refs()]
     assert len(keys) == len(set(keys))
+
+
+def test_source_groups_and_restriction(sources):
+    from mmf.components.common import allowed_refs_text, mapped_keys, source_groups
+    from mmf.schemas import ConceptMapping, SchemaMap
+
+    groups = source_groups(sources, max_vars=3)
+    assert len(groups) == 3 and sum(len(g["cdc"].variables) for g in groups) == 7
+    smap = SchemaMap(
+        mappings=[
+            ConceptMapping(concept="sex", source_id="cdc", variable="sex", compatibility="direct"),
+            ConceptMapping(concept="x", source_id="cdc", variable=None, compatibility="none"),
+        ]
+    )
+    assert mapped_keys(smap) == {"cdc:SEX"}
+    assert allowed_refs_text(sources, only=mapped_keys(smap)) == "(cdc, SEX)"

@@ -145,7 +145,12 @@ class Run:
                 out[spec.id] = cached
                 continue
             ds, rejected, recs = build_datasource(
-                doc, spec.id, self.client, title=spec.title, chunk_tokens=self.cfg.chunk_tokens, **self._llm_kwargs()
+                doc,
+                spec.id,
+                self.client if spec.llm_extract else None,
+                title=spec.title,
+                chunk_tokens=self.cfg.chunk_tokens,
+                **self._llm_kwargs(),
             )
             (self.run_dir / "sources" / f"{spec.id}.rejected.json").write_text(
                 json.dumps([r.model_dump() for r in rejected], indent=2)
@@ -178,7 +183,9 @@ class Run:
         key = _h(*(d.model_dump_json() for d in decs), *(s.model_dump_json() for s in sources.values()), self.cfg.model)
         cached = self._cached("B", key, SchemaMap, "B_schema.json")
         if cached is None:
-            cached, recs = b_schema_map.map_schema(decs, sources, self.client, **self._llm_kwargs())
+            cached, recs = b_schema_map.map_schema(
+                decs, sources, self.client, max_vars_per_call=self.cfg.b_max_vars_per_call, **self._llm_kwargs()
+            )
             self._record(recs)
             self._store("B", key, cached, "B_schema.json")
         self._review_gate("B", cached, "Schema map")
