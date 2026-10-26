@@ -1,0 +1,81 @@
+# MMF strategy report — run `{{ m.run_id }}`
+
+Backend `{{ m.backend }}`, model `{{ m.model }}`{% if m.calls and m.calls[0].model_digest %} (digest `{{ m.calls[0].model_digest[:12] }}`){% endif %}, seed {{ m.seed }}, temperature {{ m.temperature }}, MMF {{ m.mmf_version }}.
+LLM calls: {{ m.calls | length }}; total attempts: {{ m.calls | sum(attribute='attempts') }}.
+
+> MMF proposes; the investigator decides. This report does not assess statistical power or causal validity and no row-level data were read.
+
+## Inputs
+| Role | File | sha256 |
+|---|---|---|
+{% for i in m.inputs %}| {{ i.role }} | {{ i.path }} | `{{ i.sha256[:16] }}` |
+{% endfor %}
+
+## A. Manuscripts
+{% for d in decs %}
+### {{ d.title }} (`{{ d.manuscript_id }}`)
+Designs: {{ d.designs | join(', ') or '—' }}. Models: {{ d.model_classes | join(', ') or '—' }}. Data: {{ d.data_sources_used | join('; ') or '—' }}.
+
+Research questions:
+{% for q in d.research_questions %}- {{ q }}
+{% endfor %}
+Claims ({{ d.claims | length }}):
+{% for c in d.claims %}- **{{ c.id }}** [{{ c.kind }}] {{ c.statement }} — p.{{ c.page }}: "{{ c.quote }}"
+{% endfor %}
+{% endfor %}
+
+## B. Data sources and concept map
+{% for sid, s in sources.items() %}- `{{ sid }}`: {{ s.title }} — {{ s.variables | length }} documented variables.
+{% endfor %}
+
+| Concept | Source | Variable | Compatibility | Rationale |
+|---|---|---|---|---|
+{% for x in smap.mappings %}| {{ x.concept }} | {{ x.source_id }} | {{ x.variable or '—' }} | {{ x.compatibility }} | {{ x.rationale }} |
+{% endfor %}
+
+## C. Knowledge gaps
+{% for g in gaps %}
+### {{ g.id }}. {{ g.statement }}
+- Rationale: {{ g.rationale }}
+- Prior art: {{ g.prior_art }}
+- Supporting claims: {{ g.supporting_claim_ids | join(', ') }}
+- Required variables: {% for r in g.required_variables %}`{{ r.source_id }}:{{ r.name }}`{{ ', ' if not loop.last }}{% endfor %}
+{% endfor %}
+
+## D. Strategies and E. feasibility
+{% for s in strategies %}
+{% set f = feas.get(s.id) %}
+### {{ s.id }} (for {{ s.gap_id }}) — {{ 'feasible' if f and f.feasible else 'BLOCKED' }}
+**Question.** {{ s.research_question }}
+
+| Element | Specification |
+|---|---|
+| Outcome | `{{ s.outcome.variable.source_id }}:{{ s.outcome.variable.name }}` — {{ s.outcome.definition }} |
+| Exposures | {% for r in s.exposures %}`{{ r.source_id }}:{{ r.name }}`{{ ', ' if not loop.last }}{% endfor %} |
+| Covariates | {% for r in s.covariates %}`{{ r.source_id }}:{{ r.name }}`{{ ', ' if not loop.last }}{% endfor %} |
+| Interactions | {% for t in s.interactions %}{% for r in t %}`{{ r.name }}`{{ ' × ' if not loop.last }}{% endfor %}{{ '; ' if not loop.last }}{% endfor %} |
+| Stratification | {% for r in s.stratification %}`{{ r.source_id }}:{{ r.name }}`{{ ', ' if not loop.last }}{% endfor %} |
+| Offset | {% if s.offset %}`{{ s.offset.source_id }}:{{ s.offset.name }}`{% else %}—{% endif %} |
+| Design | {{ s.design }} |
+| Model class | {{ s.model_class }} |
+
+Rationale: {{ s.rationale }}
+
+Expected direction: {{ s.expected_direction }}
+
+{% if f %}
+Variable resolution:
+{% for r in f.resolutions %}- `{{ r.ref.source_id }}:{{ r.ref.name }}` — {{ 'OK' if r.resolved else 'UNRESOLVED' }}{% if r.variable %}: {{ r.variable.label }} (p.{{ r.variable.page }}){% endif %}{% if r.note %} — {{ r.note }}{% endif %}
+{% endfor %}
+{% if f.blockers %}Blockers:
+{% for b in f.blockers %}- {{ b }}
+{% endfor %}{% endif %}
+{% if f.caveats %}Caveats:
+{% for c in f.caveats %}- {{ c }}
+{% endfor %}{% endif %}
+{% if f.cross_source_notes %}Cross-source notes:
+{% for c in f.cross_source_notes %}- {{ c }}
+{% endfor %}{% endif %}
+Not assessed by MMF: {{ f.not_assessed | join('; ') }}.
+{% endif %}
+{% endfor %}

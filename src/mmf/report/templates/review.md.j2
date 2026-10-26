@@ -1,0 +1,13 @@
+---
+stage: {{ stage }}
+approved: false
+---
+# Review checkpoint: {{ title }} (stage {{ stage }})
+
+MMF proposed the structured output below. Review it, edit `{{ stage }}_*.json` in this run directory
+if anything is wrong, then set `approved: true` above (or run `mmf approve <run_dir> {{ stage }}`) and
+re-run `mmf run`. Downstream stages use the JSON file, not this rendering.
+
+```json
+{{ json }}
+```

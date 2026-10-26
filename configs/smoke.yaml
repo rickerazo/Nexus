@@ -1,0 +1,17 @@
+# Tiny end-to-end run on the test fixtures; exercises every stage on the local model in minutes.
+manuscripts:
+  - tests/fixtures/mini_manuscript.md
+codebooks:
+  - id: cdc
+    path: tests/fixtures/mini_codebook.txt
+    title: Mini codebook (fixture)
+backend: ollama
+model: qwen2.5:14b
+seed: 0
+temperature: 0.0
+num_ctx: 8192
+chunk_tokens: 4000
+max_retries: 3
+n_gaps: 2
+out_dir: runs
+cache_dir: .cache/documents

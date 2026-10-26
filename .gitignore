@@ -1,0 +1,30 @@
+# secrets
+.env
+.env.*
+!.env.example
+# python
+__pycache__/
+*.pyc
+.venv/
+dist/
+build/
+*.egg-info/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+# project data and run outputs (inputs tracked only via data/manifest.json)
+data/**
+!data/manifest.json
+!data/README.md
+runs/**
+!runs/.gitkeep
+# legacy prototype artefacts: PDFs, decks, LLM outputs
+legacy/**/*.pdf
+legacy/**/*.pptx
+legacy/**/*.svg
+legacy/**/output/
+legacy/**/paid_leave/
+# os
+.DS_Store
+.cache/
+evaluation/blinding_key.csv

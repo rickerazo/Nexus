@@ -1,0 +1,96 @@
+"""Validators are the constraint mechanism; test them without any LLM."""
+
+from mmf.components.c_gaps import gap_validator
+from mmf.components.d_strategy import strategy_validator
+from mmf.components.e_feasibility import deterministic_report
+from mmf.schemas import (
+    Claim,
+    ClaimKind,
+    GapSet,
+    KnowledgeGap,
+    ManuscriptDecomposition,
+    OutcomeSpec,
+    Strategy,
+    VariableRef,
+)
+from mmf.validate.vocab import ModelClass, StudyDesign
+
+REF = lambda n: VariableRef(source_id="cdc", name=n)  # noqa: E731
+
+
+def _dec():
+    return ManuscriptDecomposition(
+        manuscript_id="m1",
+        title="t",
+        document_sha256="0" * 64,
+        claims=[Claim(id="m1.C1", kind=ClaimKind.LIMITATION, statement="s", quote="q" * 20, page=1)],
+    )
+
+
+def _gap(**kw):
+    base = dict(
+        id="G1",
+        statement="s",
+        rationale="r",
+        prior_art="word " * 20,
+        supporting_claim_ids=["m1.C1"],
+        required_concepts=["sex"],
+        required_variables=[REF("SEX")],
+    )
+    base.update(kw)
+    return KnowledgeGap(**base)
+
+
+def test_gap_validator_accepts_grounded_gap(sources):
+    assert gap_validator([_dec()], sources, 1)(GapSet(gaps=[_gap()])) == []
+
+
+def test_gap_validator_rejects_bad_claim_and_variable_and_count(sources):
+    problems = gap_validator([_dec()], sources, 2)(
+        GapSet(gaps=[_gap(supporting_claim_ids=["m1.C9"], required_variables=[REF("GHOST")], prior_art="short")])
+    )
+    joined = " ".join(problems)
+    assert (
+        "expected exactly 2" in joined and "unknown claim ids" in joined and "GHOST" in joined and "prior_art" in joined
+    )
+
+
+def _strategy(**kw):
+    base = dict(
+        id="S1",
+        gap_id="G1",
+        research_question="q",
+        outcome=OutcomeSpec(variable=REF("SEX"), definition="d"),
+        exposures=[REF("CIG_REC")],
+        interactions=[[REF("SEX"), REF("CIG_REC")]],
+        design=StudyDesign.POPULATION_INCIDENCE,
+        model_class=ModelClass.NEGATIVE_BINOMIAL,
+        offset=REF("BIRTHS"),
+        rationale="word " * 25,
+    )
+    base.update(kw)
+    return Strategy(**base)
+
+
+def test_strategy_validator_requires_offset_for_rate_models(sources):
+    assert strategy_validator(_gap(), sources)(_strategy()) == []
+    problems = strategy_validator(_gap(), sources)(
+        _strategy(offset=None, interactions=[[REF("SEX")]], covariates=[REF("NOPE")])
+    )
+    joined = " ".join(problems)
+    assert "offset" in joined and "2+ variables" in joined and "NOPE" in joined
+
+
+def test_strategy_enums_are_enforced_by_schema():
+    import pytest
+    from pydantic import ValidationError
+
+    with pytest.raises(ValidationError):
+        _strategy(model_class="random_forest")
+
+
+def test_feasibility_year_overlap_blocker(sources):
+    rep = deterministic_report(_strategy(exposures=[REF("CIG_REC"), REF("COMBGEST")]), sources)
+    assert any("common year" in b for b in rep.blockers)
+    rep2 = deterministic_report(_strategy(), sources)
+    assert rep2.feasible and "statistical power" in rep2.not_assessed

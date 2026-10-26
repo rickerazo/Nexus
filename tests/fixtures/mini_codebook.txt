@@ -1,0 +1,32 @@
+Mini Codebook
+Q#
+Variable
+SAS Label
+Format
+Codes
+1
+SEX
+Sex of infant
+SEXF
+1=MALE
+2=FEMALE
+2
+MAGER9
+Mother's age recode 9
+AGE9F
+1=UNDER 15
+2=15-19
+3=20-24
+3
+CIG_REC
+Cigarette smoking during pregnancy
+NYF
+.B=DK/BLANK
+1=NO
+2=YES
+4
+COMBGEST
+Combined gestation in weeks
+GESTF
+17-47=WEEKS
+99=UNKNOWN

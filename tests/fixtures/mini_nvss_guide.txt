@@ -1,0 +1,24 @@
+Position
+Len
+File*
+Field
+Description
+149-150
+2
+P,G
+FAGE11
+Father's Age Recode 11
+
+01
+Under 15 years
+
+02
+15-19 years
+151-152
+2
+P,G
+FRACE31
+Father's Race Recode 31
+
+01
+White (only)
