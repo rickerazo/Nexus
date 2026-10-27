@@ -26,7 +26,7 @@ from mmf.config import RunConfig, Settings
 from mmf.ingest.codebook import build_datasource
 from mmf.ingest.pdf import load_document, sha256_file
 from mmf.llm.base import LLMClient
-from mmf.llm.structured import make_client
+from mmf.llm.structured import GenerationFailedError, make_client
 from mmf.report.markdown import render_report, render_review
 from mmf.schemas import (
     DataSource,
@@ -228,6 +228,14 @@ class Run:
         return cached
 
     def run(self) -> Path:
+        try:
+            return self._run()
+        except GenerationFailedError as e:
+            if e.record is not None:
+                self._record([e.record])  # failed calls count toward grounding-rate metrics
+            raise
+
+    def _run(self) -> Path:
         sources = self.ingest_sources()
         decs = self.stage_a()
         smap = self.stage_b(decs, sources)

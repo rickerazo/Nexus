@@ -27,9 +27,9 @@ Validator = Callable[[T], list[str]]
 
 
 class GenerationFailedError(RuntimeError):
-    def __init__(self, stage: str, problems: list[str], attempts: int) -> None:
+    def __init__(self, stage: str, problems: list[str], attempts: int, record: LLMCallRecord | None = None) -> None:
         super().__init__(f"{stage}: no valid output after {attempts} attempts; last problems: {problems}")
-        self.stage, self.problems, self.attempts = stage, problems, attempts
+        self.stage, self.problems, self.attempts, self.record = stage, problems, attempts, record
 
 
 def generate(
@@ -90,8 +90,8 @@ def generate(
             + "\n- ".join(problems)
         )
 
-    _record(stage, prompt, client, seed, temperature, max_retries + 1, False, log_path)
-    raise GenerationFailedError(stage, problems, max_retries + 1)
+    record = _record(stage, prompt, client, seed, temperature, max_retries + 1, False, log_path)
+    raise GenerationFailedError(stage, problems, max_retries + 1, record)
 
 
 def _log_path(log_dir: Path | None, stage: str) -> Path | None:

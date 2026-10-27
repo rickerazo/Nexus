@@ -7,14 +7,15 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 CFG=$1; RD=${2:-runs/$(basename "$CFG" .yaml)_$(date -u +%Y%m%dT%H%M%S)}; AUTO=${3:-}
 for stage in B C final; do
-  set +e; uv run mmf run "$CFG" --run-dir "$RD" 2>&1 | grep -v "^INFO httpx"; rc=${PIPESTATUS[0]}; set -e
+  set +e; uv run mmf run "$CFG" --run-dir "$RD" > "$RD.log" 2>&1; rc=$?; set -e
+  grep -v "^INFO httpx" "$RD.log" | tail -40
   if [ "$stage" != final ]; then
     if [ "$rc" -eq 2 ] && [ "$AUTO" = "--auto-approve" ]; then
       uv run mmf approve "$RD" "$stage"; echo "[auto-approved $stage at $(date -u +%H:%M:%S)]"
     elif [ "$rc" -eq 2 ]; then
       echo "Stopped at review $stage: $RD"; exit 2
     else
-      echo "run failed before review $stage (rc=$rc)"; exit 1
+      echo "run failed before review $stage (rc=$rc); see $RD.log"; exit 1
     fi
   else
     [ "$rc" -eq 0 ] || { echo "final stage failed rc=$rc"; exit 1; }

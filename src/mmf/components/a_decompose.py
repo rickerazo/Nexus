@@ -12,7 +12,7 @@ from mmf.llm.prompts import load_prompt
 from mmf.llm.structured import generate
 from mmf.schemas.manuscript import ManuscriptDecomposition
 from mmf.schemas.run import LLMCallRecord
-from mmf.validate.grounding import quote_found
+from mmf.validate.grounding import quote_problems
 from mmf.validate.vocab import vocab_text
 
 
@@ -20,13 +20,9 @@ def quote_validator(doc: Document) -> Callable[[ManuscriptDecomposition], list[s
     def check(d: ManuscriptDecomposition) -> list[str]:
         problems = []
         for c in d.claims:
-            ok, _ = quote_found(c.quote, doc)
-            if not ok:
-                problems.append(f"claim {c.id}: quote not found verbatim in manuscript: {c.quote[:80]!r}")
+            problems += [f"claim {c.id}: {p}" for p in quote_problems(c.quote, doc)]
         for v in d.variables:
-            ok, _ = quote_found(v.quote, doc)
-            if not ok:
-                problems.append(f"variable {v.concept!r}: quote not found verbatim: {v.quote[:80]!r}")
+            problems += [f"variable {v.concept!r}: {p}" for p in quote_problems(v.quote, doc)]
         ids = [c.id for c in d.claims]
         if len(ids) != len(set(ids)):
             problems.append("claim ids must be unique")

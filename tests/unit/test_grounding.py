@@ -33,3 +33,16 @@ def test_resolve_refs(sources):
     assert [r.resolved for r in res] == [True, False, False]
     assert res[0].variable.name == "SEX"
     assert len(unresolved_problems([r.ref for r in res], sources)) == 2
+
+
+def test_stitched_sentences_pass_but_paraphrase_fails(mini_manuscript_doc):
+    from mmf.validate.grounding import quote_problems
+
+    stitched = "Male excess risk emerged only after 44 weeks postconceptional age. A limitation is that the sleep environment was not available in the linked birth-death files."
+    assert quote_problems(stitched, mini_manuscript_doc) == []
+    mixed = "Male excess risk emerged only after 44 weeks postconceptional age. Boys were at higher risk after forty-four weeks."
+    probs = quote_problems(mixed, mini_manuscript_doc)
+    assert len(probs) == 1 and "Boys were" in probs[0]
+    near_miss = "Male excess risk emerged only after 44 weeks of postconceptional age, and prenatal smoking was associated with earlier onset."
+    probs = quote_problems(near_miss, mini_manuscript_doc)
+    assert len(probs) == 1 and "Closest text" in probs[0] and "44 weeks postconceptional age" in probs[0]
