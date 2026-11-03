@@ -54,6 +54,10 @@ class RunConfig(BaseModel):
     temperature: float = 0.0
     num_ctx: int = Field(default=32768, description="Context window to request from Ollama.")
     chunk_tokens: int = Field(default=12000, description="Max approx tokens per document chunk.")
+    max_output_tokens: int = Field(
+        default=8192,
+        description="Hard cap on tokens generated per LLM call; a cut-off answer is rejected and re-prompted.",
+    )
     max_retries: int = Field(default=3, description="Re-prompts after a validation failure.")
     n_gaps: int = 3
     b_max_vars_per_call: int = Field(

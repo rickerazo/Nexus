@@ -73,6 +73,7 @@ class Run:
             cfg.model,
             ollama_host=self.settings.ollama_host,
             num_ctx=cfg.num_ctx,
+            max_output_tokens=cfg.max_output_tokens,
             allow_cloud=cfg.allow_cloud,
             api_key=self.settings.api_key,
             api_base_url=self.settings.api_base_url,

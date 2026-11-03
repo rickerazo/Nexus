@@ -12,9 +12,16 @@ from mmf.llm.base import LLMResponse
 class OllamaClient:
     backend = "ollama"
 
-    def __init__(self, model: str, host: str = "http://localhost:11434", num_ctx: int = 32768) -> None:
+    def __init__(
+        self,
+        model: str,
+        host: str = "http://localhost:11434",
+        num_ctx: int = 32768,
+        max_output_tokens: int = 8192,
+    ) -> None:
         self.model = model
         self.num_ctx = num_ctx
+        self.max_output_tokens = max_output_tokens
         self._client = ollama.Client(host=host)
         self._digest: str | None = None
 
@@ -33,7 +40,13 @@ class OllamaClient:
             model=self.model,
             messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
             format=json_schema,
-            options={"seed": seed, "temperature": temperature, "num_ctx": self.num_ctx},
+            options={
+                "seed": seed,
+                "temperature": temperature,
+                "num_ctx": self.num_ctx,
+                "num_predict": self.max_output_tokens,
+            },
+            keep_alive="30m",
         )
         usage = {
             "prompt_tokens": resp.prompt_eval_count,
@@ -45,4 +58,5 @@ class OllamaClient:
             model=self.model,
             model_digest=self.model_digest(),
             usage=usage,
+            truncated=(resp.done_reason == "length"),
         )

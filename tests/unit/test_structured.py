@@ -72,3 +72,26 @@ def test_settings_ignore_key_files(monkeypatch, tmp_path):
     (tmp_path / ".env").write_text("MMF_API_KEY=should-not-load\nOPENAI_API_KEY=nope\n")
     monkeypatch.delenv("MMF_API_KEY", raising=False)
     assert Settings().api_key is None
+
+
+def test_truncated_output_is_rejected_and_reprompted(tmp_path: Path):
+    """A response cut at the output-token cap is never parsed; the retry asks for a shorter answer."""
+
+    class TruncatingClient(FakeClient):
+        def complete_json(self, system, user, json_schema, *, seed, temperature):
+            self.calls.append(user)
+            text = self.answers.pop(0)
+            return LLMResponse(text=text, model=self.model, truncated=(text == "CUT"))
+
+    client = TruncatingClient(["CUT", '{"n": 1}'])
+    obj, rec = generate(client, PROMPT, "go", Out, stage="t", seed=0, temperature=0, log_dir=tmp_path)
+    assert obj.n == 1 and rec.attempts == 2
+    assert "cut off" in client.calls[1]
+
+
+def test_component_a_chunk_schema_caps_list_sizes():
+    from mmf.components.a_decompose import MAX_CLAIMS_PER_CHUNK, ChunkDecomposition
+
+    props = ChunkDecomposition.model_json_schema()["properties"]
+    assert props["claims"]["maxItems"] == MAX_CLAIMS_PER_CHUNK
+    assert props["variables"]["maxItems"] == MAX_CLAIMS_PER_CHUNK

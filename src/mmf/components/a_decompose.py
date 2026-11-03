@@ -5,15 +5,28 @@ from __future__ import annotations
 from collections.abc import Callable
 from pathlib import Path
 
+from pydantic import Field
+
 from mmf.ingest.chunk import chunk_document
 from mmf.ingest.pdf import Document
 from mmf.llm.base import LLMClient
 from mmf.llm.prompts import load_prompt
 from mmf.llm.structured import generate
-from mmf.schemas.manuscript import ManuscriptDecomposition
+from mmf.schemas.manuscript import Claim, ManuscriptDecomposition, VariableMention
 from mmf.schemas.run import LLMCallRecord
 from mmf.validate.grounding import quote_problems
 from mmf.validate.vocab import vocab_text
+
+MAX_CLAIMS_PER_CHUNK = 60
+MAX_VARIABLES_PER_CHUNK = 60
+
+
+class ChunkDecomposition(ManuscriptDecomposition):
+    """LLM-facing output for one chunk: list sizes are capped in the JSON schema (grammar-enforced by Ollama),
+    so a model that starts enumerating cannot run away; the merged decomposition is uncapped."""
+
+    claims: list[Claim] = Field(default_factory=list, max_length=MAX_CLAIMS_PER_CHUNK)
+    variables: list[VariableMention] = Field(default_factory=list, max_length=MAX_VARIABLES_PER_CHUNK)
 
 
 def quote_validator(doc: Document) -> Callable[[ManuscriptDecomposition], list[str]]:
@@ -57,7 +70,7 @@ def decompose(
             client,
             prompt,
             user,
-            ManuscriptDecomposition,
+            ChunkDecomposition,
             stage=f"A_{manuscript_id}_{chunk.index}",
             seed=seed,
             temperature=temperature,
@@ -65,7 +78,7 @@ def decompose(
             max_retries=max_retries,
             log_dir=log_dir,
         )
-        parts.append(obj)
+        parts.append(ManuscriptDecomposition.model_validate(obj.model_dump()))
         records.append(rec)
     return _merge(parts, manuscript_id, doc), records
 

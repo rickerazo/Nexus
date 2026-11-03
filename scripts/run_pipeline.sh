@@ -7,7 +7,8 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 CFG=$1; RD=${2:-runs/$(basename "$CFG" .yaml)_$(date -u +%Y%m%dT%H%M%S)}; AUTO=${3:-}
 for stage in B C final; do
-  set +e; uv run mmf run "$CFG" --run-dir "$RD" > "$RD.log" 2>&1; rc=$?; set -e
+  # caffeinate keeps the Mac from idle-sleeping mid-call (a closed lid still sleeps unless on power with a display).
+  set +e; caffeinate -is uv run mmf run "$CFG" --run-dir "$RD" > "$RD.log" 2>&1; rc=$?; set -e
   grep -v "^INFO httpx" "$RD.log" | tail -40
   if [ "$stage" != final ]; then
     if [ "$rc" -eq 2 ] && [ "$AUTO" = "--auto-approve" ]; then

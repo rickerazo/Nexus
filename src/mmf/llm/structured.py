@@ -60,12 +60,20 @@ def generate(
             "response": resp.text,
             "usage": resp.usage,
         }
-        try:
-            obj = output_model.model_validate_json(resp.text)
-            problems = [p for v in validators for p in v(obj)]
-        except (ValidationError, json.JSONDecodeError) as e:
+        if resp.truncated:
+            # A runaway generation (e.g. thousands of claims) is cut at the output cap instead of running for days.
             obj = None
-            problems = [f"output did not parse as {output_model.__name__}: {e}"]
+            problems = [
+                "output was cut off at the output-length limit; return a much shorter answer: keep only the "
+                "most important items and do not repeat or enumerate exhaustively"
+            ]
+        else:
+            try:
+                obj = output_model.model_validate_json(resp.text)
+                problems = [p for v in validators for p in v(obj)]
+            except (ValidationError, json.JSONDecodeError) as e:
+                obj = None
+                problems = [f"output did not parse as {output_model.__name__}: {e}"]
         entry["problems"] = problems
         transcript.append(entry)
         if log_path:
@@ -132,6 +140,7 @@ def make_client(
     *,
     ollama_host: str,
     num_ctx: int,
+    max_output_tokens: int = 8192,
     allow_cloud: bool = False,
     api_key: str | None = None,
     api_base_url: str | None = None,
@@ -139,7 +148,7 @@ def make_client(
     if backend == "ollama":
         from mmf.llm.ollama import OllamaClient
 
-        return OllamaClient(model, host=ollama_host, num_ctx=num_ctx)
+        return OllamaClient(model, host=ollama_host, num_ctx=num_ctx, max_output_tokens=max_output_tokens)
     if backend == "openai_compatible":
         if not allow_cloud:
             raise PermissionError(
@@ -148,5 +157,7 @@ def make_client(
             )
         from mmf.llm.openai import OpenAICompatibleClient
 
-        return OpenAICompatibleClient(model, api_key=api_key, base_url=api_base_url)
+        return OpenAICompatibleClient(
+            model, api_key=api_key, base_url=api_base_url, max_output_tokens=max_output_tokens
+        )
     raise ValueError(f"unknown backend {backend!r}")

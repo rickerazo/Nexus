@@ -12,6 +12,7 @@ class LLMResponse(BaseModel):
     model: str
     model_digest: str | None = None
     usage: dict[str, Any] = Field(default_factory=dict)
+    truncated: bool = Field(default=False, description="True if the backend stopped at the output-token limit.")
 
 
 class LLMClient(Protocol):
