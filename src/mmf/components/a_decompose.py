@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from collections.abc import Callable
 from pathlib import Path
 
@@ -44,6 +45,30 @@ def quote_validator(doc: Document) -> Callable[[ManuscriptDecomposition], list[s
     return check
 
 
+_CLAIM_PROBLEM = re.compile(r"^claim (\S+): ")
+_VAR_PROBLEM = re.compile(r"^variable (['\"])(.*)\1: ")
+
+
+def drop_ungrounded(d: ChunkDecomposition, problems: list[str]) -> tuple[ChunkDecomposition, list[str]]:
+    """Salvage for Component A: remove the claims/variables named in quote-grounding problems.
+
+    The local model fixes one quote and breaks another across retries; rather than fail the run
+    on the last attempt, the still-ungrounded items are dropped and listed in the call record.
+    Problems that name no item (e.g. duplicate ids) are not salvageable and leave the output failing.
+    """
+    bad_claims = {m.group(1) for p in problems if (m := _CLAIM_PROBLEM.match(p))}
+    bad_vars = {m.group(2) for p in problems if (m := _VAR_PROBLEM.match(p))}
+    dropped = [f"claim {c.id}: {c.statement}" for c in d.claims if c.id in bad_claims]
+    dropped += [f"variable {v.concept!r}: {v.operationalization}" for v in d.variables if v.concept in bad_vars]
+    pruned = d.model_copy(
+        update={
+            "claims": [c for c in d.claims if c.id not in bad_claims],
+            "variables": [v for v in d.variables if v.concept not in bad_vars],
+        }
+    )
+    return pruned, dropped
+
+
 def decompose(
     doc: Document,
     manuscript_id: str,
@@ -77,6 +102,7 @@ def decompose(
             validators=[quote_validator(doc)],
             max_retries=max_retries,
             log_dir=log_dir,
+            salvage=drop_ungrounded,
         )
         parts.append(ManuscriptDecomposition.model_validate(obj.model_dump()))
         records.append(rec)

@@ -23,6 +23,8 @@ log = logging.getLogger(__name__)
 T = TypeVar("T", bound=BaseModel)
 
 Validator = Callable[[T], list[str]]
+# Salvage: given the last parsed output and its validator problems, return (pruned output, dropped item labels).
+Salvage = Callable[[T, list[str]], tuple[T, list[str]]]
 """Returns a list of human-readable problems; empty list means the object is accepted."""
 
 
@@ -44,7 +46,15 @@ def generate(
     validators: list[Validator[T]] | None = None,
     max_retries: int = 3,
     log_dir: Path | None = None,
+    salvage: Salvage[T] | None = None,
 ) -> tuple[T, LLMCallRecord]:
+    """Generate, validate, and re-prompt with the problems up to `max_retries` times.
+
+    If `salvage` is given and the final attempt still fails validation, the offending items are
+    pruned by `salvage`; the pruned output is accepted only if it then passes every validator, and
+    the dropped items are recorded in the transcript and the call record (`dropped`). Retained
+    items are therefore always validator-clean; nothing is silently repaired.
+    """
     validators = validators or []
     schema = output_model.model_json_schema()
     log_path = _log_path(log_dir, stage)
@@ -75,6 +85,16 @@ def generate(
                 obj = None
                 problems = [f"output did not parse as {output_model.__name__}: {e}"]
         entry["problems"] = problems
+        dropped: list[str] = []
+        if obj is not None and problems and salvage is not None and attempt == max_retries + 1:
+            pruned, dropped = salvage(obj, problems)
+            remaining = [p for v in validators for p in v(pruned)]
+            if dropped and not remaining:
+                obj, problems = pruned, []
+                entry["salvaged"] = dropped
+                log.warning(
+                    "%s attempt %d accepted after dropping %d item(s): %s", stage, attempt, len(dropped), dropped
+                )
         transcript.append(entry)
         if log_path:
             log_path.write_text(
@@ -89,7 +109,7 @@ def generate(
                 )
             )
         if obj is not None and not problems:
-            record = _record(stage, prompt, client, seed, temperature, attempt, True, log_path)
+            record = _record(stage, prompt, client, seed, temperature, attempt, True, log_path, dropped)
             return obj, record
         log.warning("%s attempt %d rejected: %s", stage, attempt, problems[:3])
         user = (
@@ -119,6 +139,7 @@ def _record(
     attempts: int,
     ok: bool,
     log_path: Path | None,
+    dropped: list[str] | None = None,
 ) -> LLMCallRecord:
     return LLMCallRecord(
         stage=stage,
@@ -131,6 +152,7 @@ def _record(
         attempts=attempts,
         ok=ok,
         log_file=str(log_path) if log_path else "",
+        dropped=dropped or [],
     )
 
 

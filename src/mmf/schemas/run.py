@@ -24,6 +24,10 @@ class LLMCallRecord(BaseModel):
     attempts: int
     ok: bool
     log_file: str
+    dropped: list[str] = Field(
+        default_factory=list,
+        description="Items removed on the final attempt because they failed a validator (salvage); empty if none.",
+    )
 
 
 class RunManifest(BaseModel):

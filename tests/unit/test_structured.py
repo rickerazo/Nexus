@@ -95,3 +95,51 @@ def test_component_a_chunk_schema_caps_list_sizes():
     props = ChunkDecomposition.model_json_schema()["properties"]
     assert props["claims"]["maxItems"] == MAX_CLAIMS_PER_CHUNK
     assert props["variables"]["maxItems"] == MAX_CLAIMS_PER_CHUNK
+
+
+def test_salvage_prunes_failing_items_on_final_attempt_only(tmp_path: Path):
+    class Items(BaseModel):
+        xs: list[int]
+
+    def bad_evens(o):
+        return [f"item {x}: must be odd" for x in o.xs if x % 2 == 0]
+
+    def salvage(o, problems):
+        bad = {int(p.split()[1].rstrip(":")) for p in problems}
+        return Items(xs=[x for x in o.xs if x not in bad]), [f"item {x}" for x in o.xs if x in bad]
+
+    client = FakeClient(['{"xs": [1, 2]}', '{"xs": [1, 4]}'])
+    obj, rec = generate(
+        client,
+        PROMPT,
+        "go",
+        Items,
+        stage="t",
+        seed=0,
+        temperature=0,
+        validators=[bad_evens],
+        max_retries=1,
+        salvage=salvage,
+        log_dir=tmp_path,
+    )
+    assert obj.xs == [1] and rec.ok and rec.attempts == 2 and rec.dropped == ["item 4"]
+    assert len(client.calls) == 2  # the first failure was re-prompted, not salvaged
+
+
+def test_component_a_salvage_drops_named_claims_and_variables():
+    from mmf.components.a_decompose import ChunkDecomposition, drop_ungrounded
+    from mmf.schemas.manuscript import Claim, VariableMention
+
+    d = ChunkDecomposition(
+        manuscript_id="m",
+        title="t",
+        document_sha256="x",
+        claims=[
+            Claim(id="C1", kind="finding", statement="a", quote="q", page=1),
+            Claim(id="C2", kind="finding", statement="b", quote="q", page=1),
+        ],
+        variables=[VariableMention(concept="sex", role="exposure", operationalization="o", quote="q", page=1)],
+    )
+    pruned, dropped = drop_ungrounded(d, ["claim C2: not verbatim ...", "variable 'sex': not verbatim ..."])
+    assert [c.id for c in pruned.claims] == ["C1"] and pruned.variables == []
+    assert dropped == ["claim C2: b", "variable 'sex': o"]
