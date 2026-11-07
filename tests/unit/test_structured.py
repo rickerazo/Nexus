@@ -89,12 +89,21 @@ def test_truncated_output_is_rejected_and_reprompted(tmp_path: Path):
     assert "cut off" in client.calls[1]
 
 
-def test_component_a_chunk_schema_caps_list_sizes():
-    from mmf.components.a_decompose import MAX_CLAIMS_PER_CHUNK, ChunkDecomposition
+def test_component_a_chunk_schemas_cap_list_sizes():
+    from mmf.components.a_decompose import MAX_CLAIMS_PER_CHUNK, MAX_VARIABLES_PER_CHUNK, ChunkClaims, ChunkProfile
 
-    props = ChunkDecomposition.model_json_schema()["properties"]
-    assert props["claims"]["maxItems"] == MAX_CLAIMS_PER_CHUNK
-    assert props["variables"]["maxItems"] == MAX_CLAIMS_PER_CHUNK
+    assert ChunkClaims.model_json_schema()["properties"]["claims"]["maxItems"] == MAX_CLAIMS_PER_CHUNK
+    assert ChunkProfile.model_json_schema()["properties"]["variables"]["maxItems"] == MAX_VARIABLES_PER_CHUNK
+
+
+def test_component_a_chunk_schemas_require_every_field():
+    """Root cause of the claims-only Component A outputs: a grammar-constrained decoder may omit any key that
+    is not `required`. Every LLM-facing field must stay required."""
+    from mmf.components.a_decompose import ChunkClaims, ChunkProfile
+
+    for model in (ChunkProfile, ChunkClaims):
+        schema = model.model_json_schema()
+        assert set(schema["required"]) == set(schema["properties"]), model.__name__
 
 
 def test_salvage_prunes_failing_items_on_final_attempt_only(tmp_path: Path):
@@ -127,19 +136,27 @@ def test_salvage_prunes_failing_items_on_final_attempt_only(tmp_path: Path):
 
 
 def test_component_a_salvage_drops_named_claims_and_variables():
-    from mmf.components.a_decompose import ChunkDecomposition, drop_ungrounded
+    from mmf.components.a_decompose import ChunkClaims, ChunkProfile, drop_ungrounded
     from mmf.schemas.manuscript import Claim, VariableMention
 
-    d = ChunkDecomposition(
-        manuscript_id="m",
-        title="t",
-        document_sha256="x",
+    claims = ChunkClaims(
         claims=[
             Claim(id="C1", kind="finding", statement="a", quote="q", page=1),
             Claim(id="C2", kind="finding", statement="b", quote="q", page=1),
-        ],
-        variables=[VariableMention(concept="sex", role="exposure", operationalization="o", quote="q", page=1)],
+        ]
     )
-    pruned, dropped = drop_ungrounded(d, ["claim C2: not verbatim ...", "variable 'sex': not verbatim ..."])
-    assert [c.id for c in pruned.claims] == ["C1"] and pruned.variables == []
-    assert dropped == ["claim C2: b", "variable 'sex': o"]
+    pruned, dropped = drop_ungrounded(claims, ["claim C2: not verbatim ..."])
+    assert [c.id for c in pruned.claims] == ["C1"] and dropped == ["claim C2: b"]
+
+    profile = ChunkProfile(
+        research_questions=[],
+        data_sources_used=[],
+        designs=[],
+        model_classes=[],
+        variables=[
+            VariableMention(concept="sex", role="exposure", operationalization="o", quote="q", page=1),
+            VariableMention(concept="age", role="covariate", operationalization="a", quote="q", page=1),
+        ],
+    )
+    pruned_p, dropped_p = drop_ungrounded(profile, ["variable 'sex': not verbatim ..."])
+    assert [v.concept for v in pruned_p.variables] == ["age"] and dropped_p == ["variable 'sex': o"]

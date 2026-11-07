@@ -26,7 +26,7 @@ from mmf.config import RunConfig, Settings
 from mmf.ingest.codebook import build_datasource
 from mmf.ingest.pdf import load_document, sha256_file
 from mmf.llm.base import LLMClient
-from mmf.llm.structured import GenerationFailedError, make_client
+from mmf.llm.structured import GenerationFailedError, StageInputError, make_client
 from mmf.report.markdown import render_report, render_review
 from mmf.schemas import (
     DataSource,
@@ -167,25 +167,49 @@ class Run:
             doc = load_document(path, self.cfg.cache_dir)
             self._add_input(path, doc.sha256, "manuscript")
             mid = path.stem.replace(" ", "_")[:40]
-            key = _h(doc.sha256, "a_decompose", self.cfg.model, str(self.cfg.chunk_tokens))
-            cached = self._cached(f"A_{mid}", key, ManuscriptDecomposition, f"A_{mid}.json")
-            if cached is not None:
-                out.append(cached)
-                continue
-            dec, recs = a_decompose.decompose(
-                doc, mid, self.client, chunk_tokens=self.cfg.chunk_tokens, **self._llm_kwargs()
+            key = _h(
+                doc.sha256,
+                *a_decompose.prompt_hashes(),
+                self.cfg.model,
+                str(self.cfg.chunk_tokens),
+                str(self.cfg.max_output_tokens),
             )
-            self._record(recs)
-            self._store(f"A_{mid}", key, dec, f"A_{mid}.json")
+            dec = self._cached(f"A_{mid}", key, ManuscriptDecomposition, f"A_{mid}.json")
+            if dec is None:
+                dec, recs = a_decompose.decompose(
+                    doc, mid, self.client, chunk_tokens=self.cfg.chunk_tokens, **self._llm_kwargs()
+                )
+                self._record(recs)
+                self._store(f"A_{mid}", key, dec, f"A_{mid}.json")
+            # checked on cache hits too, so an unusable decomposition can never reach B
+            errors, warnings = a_decompose.decomposition_problems(dec)
+            for w in warnings:
+                log.warning("A_%s: %s", mid, w)
+                if w not in self.manifest.warnings:
+                    self.manifest.warnings.append(w)
+            self._save_manifest()
+            if errors:
+                raise StageInputError(f"A_{mid}", [*errors, f"inspect {self.run_dir / f'A_{mid}.json'}"])
             out.append(dec)
         return out
 
     def stage_b(self, decs: list[ManuscriptDecomposition], sources: dict[str, DataSource]) -> SchemaMap:
-        key = _h(*(d.model_dump_json() for d in decs), *(s.model_dump_json() for s in sources.values()), self.cfg.model)
+        key = _h(
+            *(d.model_dump_json() for d in decs),
+            *(s.model_dump_json() for s in sources.values()),
+            self.cfg.model,
+            str(self.cfg.b_max_vars_per_call),
+            str(self.cfg.b_max_mappings_per_call),
+        )
         cached = self._cached("B", key, SchemaMap, "B_schema.json")
         if cached is None:
             cached, recs = b_schema_map.map_schema(
-                decs, sources, self.client, max_vars_per_call=self.cfg.b_max_vars_per_call, **self._llm_kwargs()
+                decs,
+                sources,
+                self.client,
+                max_vars_per_call=self.cfg.b_max_vars_per_call,
+                max_mappings_per_call=self.cfg.b_max_mappings_per_call,
+                **self._llm_kwargs(),
             )
             self._record(recs)
             self._store("B", key, cached, "B_schema.json")

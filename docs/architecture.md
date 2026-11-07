@@ -19,8 +19,10 @@ manuscripts (pdf/docx/md) ──► ingest.pdf ──► Document(pages[])
 codebooks  (pdf)          ──► ingest.pdf ──► Document ──► ingest.codebook ──► DataSource(variables[])
                                                             pass1 regex  + pass2 LLM  → reconcile (name must appear on cited page)
 
-Document ───► A  a_decompose   ──► ManuscriptDecomposition   (validator: every quote found verbatim in Document)
-A + DataSource ► B  b_schema_map ──► SchemaMap               (validator: variable ∈ DataSource, compatibility ∈ enum)   ⏸ review_B.md
+Document ───► A  a_decompose   ──► ManuscriptDecomposition   (per chunk: profile call + claims call; validator: every quote verbatim;
+                                                               gate: ≥1 variable and ≥1 claim per manuscript, else stop)
+A + DataSource ► B  b_schema_map ──► SchemaMap               (validator: variable ∈ DataSource, compatibility ∈ enum;
+                                                               refuses an empty concept list)   ⏸ review_B.md
 A + B ──────► C  c_gaps         ──► GapSet                   (validator: claim ids exist, refs resolve, exactly n gaps, prior_art) ⏸ review_C.md
 C ─────────► D  d_strategy      ──► StrategySet              (validator: all refs resolve, enum design/model, offset for rate models)
 D + DataSource ► E e_feasibility ──► FeasibilitySet          (deterministic resolution + year overlap + cross-source; LLM caveats)
@@ -34,7 +36,8 @@ all ────────► report.markdown   ──► report.md
 | `Variable`, `DataSource` | ingest.codebook | `Variable.name` exactly as printed; `page` cited. |
 | `VariableRef(source_id, name)` | B, C, D | Must resolve via `validate.grounding.resolve_refs`. |
 | `Claim(id, kind, statement, quote, page)` | A | `quote` verbatim (normalized whitespace/ligatures; fuzzy ≥0.92 fallback for PDF noise). |
-| `ManuscriptDecomposition` | A | claim ids unique and prefixed by manuscript id. |
+| `ChunkProfile`, `ChunkClaims` | A (LLM-facing) | every field `required` in the JSON schema: a grammar-constrained decoder may omit any non-required key, which is how Component A once returned claims only. Never add defaults to LLM-facing models. |
+| `ManuscriptDecomposition` | A | claim ids unique and prefixed by manuscript id; variables deduplicated by (concept, role); ≥1 variable and ≥1 claim (missing designs/model classes are manifest warnings). |
 | `SchemaMap.mappings[ConceptMapping]` | B | `variable` null ⇔ `compatibility == "none"`. |
 | `KnowledgeGap` | C | ≥1 supporting claim, ≥1 required variable, non-trivial `prior_art`. |
 | `Strategy` | D | `design: StudyDesign`, `model_class: ModelClass` (enums in `validate/vocab.py`); interactions have ≥2 refs; rate models need `offset`. |
@@ -62,14 +65,19 @@ runs/<UTC timestamp>_<config hash[:8]>/
   D_strategies.json
   E_feasibility.json
   report.md
-  llm_log/<ts>_<stage>.json
+  llm_log/<ts>_<stage>.json   A: A_<ms>_<chunk>_{profile,claims}; B: B_schema_map_<group>_<concept batch>
 ```
 
-Stage caching: `manifest.stage_hashes[stage]` is the sha256 of the stage's inputs (upstream JSON + model + relevant config). A stage reruns only if that hash changed or its file is missing. Editing `B_schema.json` by hand therefore invalidates C, D, E automatically.
+Stage caching: `manifest.stage_hashes[stage]` is the sha256 of the stage's inputs (upstream JSON + model + relevant config; for A also the prompt hashes, so editing a prompt reruns A). A stage reruns only if that hash changed or its file is missing. Editing `B_schema.json` by hand therefore invalidates C, D, E automatically.
 
 ## Review checkpoints
 
 `review_B.md` / `review_C.md` are rendered with front matter `approved: false`. The pipeline exits with code 2 and prints the resume command. The investigator inspects, optionally edits the stage JSON, then sets `approved: true` (or `mmf approve <run_dir> B`) and re-runs. The approved JSON, not the markdown, feeds downstream stages.
+
+## Failure modes that stop a run
+
+- `GenerationFailedError`: a stage's output still failed validation after `max_retries` re-prompts. The failed call is recorded in the manifest (it counts toward grounding-rate metrics).
+- `StageInputError`: a stage's input is unusable, e.g. Component A extracted no variables or no claims from a manuscript, or Component B received no concepts. The CLI exits with code 1. Empty input is never passed downstream, because a model would fill the gap with something ungrounded that validators cannot catch (B once mapped codebook labels onto themselves).
 
 ## Extending to a new domain
 

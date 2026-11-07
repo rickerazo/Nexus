@@ -50,6 +50,7 @@ def run(
     run_dir: Annotated[Path | None, typer.Option(help="Resume/continue an existing run directory.")] = None,
 ) -> None:
     """Execute the pipeline A→E (stops at review checkpoints)."""
+    from mmf.llm.structured import StageInputError
     from mmf.pipeline import ReviewPending, Run
 
     cfg = RunConfig.from_yaml(config)
@@ -60,6 +61,9 @@ def run(
         typer.echo(str(e))
         typer.echo(f"Resume with: mmf run {config} --run-dir {r.run_dir}")
         raise typer.Exit(code=2) from None
+    except StageInputError as e:
+        typer.echo(f"Stopped: {e}", err=True)
+        raise typer.Exit(code=1) from None
     typer.echo(f"Report: {report}")
 
 

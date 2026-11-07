@@ -1,5 +1,6 @@
 """End-to-end A→E on the fixtures, replaying a recorded cassette (no model needed)."""
 
+import json
 from pathlib import Path
 
 import pytest
@@ -37,6 +38,8 @@ def test_pipeline_end_to_end_replay(tmp_path: Path) -> None:
     report = Run(cfg, run_dir=run_dir, client=client).run()
     text = report.read_text()
     assert "## D. Strategies" in text and "Not assessed by MMF" in text
+    dec = json.loads((run_dir / "A_mini_manuscript.json").read_text())
+    assert any(v["role"] == "outcome" for v in dec["variables"]), "Component A extracted no outcome variable"
     manifest = (run_dir / "manifest.json").read_text()
     assert '"ok": false' not in manifest
     # every variable named in the report resolves to the fixture codebook

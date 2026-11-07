@@ -43,3 +43,6 @@ class RunManifest(BaseModel):
     inputs: list[InputRecord] = Field(default_factory=list)
     calls: list[LLMCallRecord] = Field(default_factory=list)
     stage_hashes: dict[str, str] = Field(default_factory=dict, description="stage -> sha256 of its inputs (cache key).")
+    warnings: list[str] = Field(
+        default_factory=list, description="Non-fatal quality warnings (e.g. no study design extracted)."
+    )

@@ -34,6 +34,15 @@ class GenerationFailedError(RuntimeError):
         self.stage, self.problems, self.attempts, self.record = stage, problems, attempts, record
 
 
+class StageInputError(RuntimeError):
+    """A stage's input is unusable (e.g. Component A extracted no variables). Raised instead of letting an
+    empty input flow downstream, where a model would fill the gap with something ungrounded."""
+
+    def __init__(self, stage: str, problems: list[str]) -> None:
+        super().__init__(f"{stage}: {'; '.join(problems)}")
+        self.stage, self.problems = stage, problems
+
+
 def generate(
     client: LLMClient,
     prompt: Prompt,

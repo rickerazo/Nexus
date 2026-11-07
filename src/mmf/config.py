@@ -63,6 +63,11 @@ class RunConfig(BaseModel):
     b_max_vars_per_call: int = Field(
         default=600, description="Component B maps concepts against at most this many variables per LLM call."
     )
+    b_max_mappings_per_call: int = Field(
+        default=50,
+        description="Component B asks for at most this many concept x source mappings per LLM call (~100 output "
+        "tokens each), so a long concept list cannot hit max_output_tokens.",
+    )
     out_dir: Path = Path("runs")
     cache_dir: Path = Path(".cache/documents")
 
