@@ -39,7 +39,7 @@ All scientific decisions, modeling, and interpretation remain under human contro
 Recent work in SUID (Sudden Unexpected Infant Death) has shown that:
 
 - aligning infants by **postconceptional age (PCA)** reveals developmental structure in risk
-- important effects (e.g., sex differences) are **time-dependent**, not constant  [oai_citation:0‡Erazo_SUID_manuscript_v1.docx](sediment://file_000000007b14722f996d5cc0b0dcfa45)
+- important effects (e.g., sex differences) are **time-dependent**, not constant
 
 However, identifying these structures required:
 - iterative hypothesis refinement
@@ -154,7 +154,7 @@ Evaluate:
 ## System Design
 
 ### Language Model Layer
-- Supports local LLMs (e.g., LLaMA, Mistral)
+- Runs a local LLM through Ollama by default (`qwen2.5:14b`); any Ollama model can be configured
 - Designed for:
   - privacy
   - reproducibility
@@ -196,8 +196,8 @@ Evaluate:
 ### Phase 3 — Proof of Concept (SUID)
 Apply MMF to:
 
-- developmental timing manuscript (PCA framework)  [oai_citation:1‡Erazo_SUID_manuscript_v1.docx](sediment://file_000000007b14722f996d5cc0b0dcfa45)
-- sleep environment manuscript (bed sharing + exposures)  [oai_citation:2‡bedsharing_ms_v3.docx](sediment://file_000000000c08722fafbd176c53084484)
+- developmental timing manuscript (PCA framework)
+- sleep environment manuscript (bed sharing + exposures)
 
 Goal:
 - generate 2–3 candidate strategies
@@ -274,13 +274,17 @@ Instead, it:
 
 ## Status
 
-🚧 Early development
+🚧 Early development (November 2026)
 
 - [x] Conceptual framework defined
 - [x] Proposal and Specific Aims drafted — see [docs/outline.md](docs/outline.md), [docs/specific_aims.md](docs/specific_aims.md)
-- [x] Pipeline skeleton implemented (Components A–E, validators, provenance, review checkpoints) — see [docs/architecture.md](docs/architecture.md)
-- [ ] Internal validation (pre-registered protocol, reproducibility, expert rubric)
-- [ ] SUID proof-of-concept
+- [x] Pipeline implemented (Components A–E, validators, provenance, review checkpoints) — see [docs/architecture.md](docs/architecture.md)
+- [x] Codebook ingestion for the SUID sources (CDC linked birth/infant death, CDC natality, NFR-CRS v5.1, PRAMS Phases 7–8): about 5,500 documented variables, parsed deterministically
+- [x] End-to-end smoke run on test fixtures with the local model; replayed in CI without a model
+- [ ] First full SUID proof-of-concept run (in progress)
+- [ ] Internal validation (protocol in [docs/evaluation_protocol.md](docs/evaluation_protocol.md) is a draft and must be frozen before any scored run; a second blinded rater is needed)
+
+Known issue: the PRAMS Phase 8 Standard Section II codebook parses to only 4 variables; its layout needs a dedicated parser.
 
 The exploratory scripts that preceded this package are kept read-only in [legacy/ai_for_science/](legacy/ai_for_science/).
 
@@ -306,6 +310,10 @@ uv run mmf ingest data/codebooks/PRAMS_Phase_8_ARF_Codebook.pdf --id prams_p8_ar
 uv run mmf run configs/suid.yaml
 uv run mmf approve runs/<run_dir> B      # after checking/editing B_schema.json
 uv run mmf run configs/suid.yaml --run-dir runs/<run_dir>
+
+# long runs: keeps the Mac awake, logs to runs/<run_dir>.log; --auto-approve skips the
+# review stops (the report is then UNREVIEWED: review B and C afterwards and re-run)
+scripts/run_pipeline.sh configs/suid.yaml runs/<run_dir> [--auto-approve]
 ```
 
 **LLM backends.** The default is local Ollama: nothing leaves the machine and no credential is needed. An OpenAI-compatible cloud backend (`backend: openai_compatible`) exists for institutional endpoints and for the evaluation's local-vs-cloud comparison. It refuses to run unless the run config sets `allow_cloud: true` and `MMF_API_KEY` (plus optional `MMF_API_BASE_URL`) is exported in the shell; no key file is ever loaded. This project is institute-funded: use only institutional credentials, never a personal account, and never send restricted documents to a cloud backend. See `.env.example`.
