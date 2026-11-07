@@ -276,12 +276,15 @@ Instead, it:
 
 🚧 Early development (November 2026)
 
+**Picking the project up? Start with [docs/HANDOFF.md](docs/HANDOFF.md)**: current state, what is running, and next steps.
+
 - [x] Conceptual framework defined
 - [x] Proposal and Specific Aims drafted — see [docs/outline.md](docs/outline.md), [docs/specific_aims.md](docs/specific_aims.md)
 - [x] Pipeline implemented (Components A–E, validators, provenance, review checkpoints) — see [docs/architecture.md](docs/architecture.md)
 - [x] Codebook ingestion for the SUID sources (CDC linked birth/infant death, CDC natality, NFR-CRS v5.1, PRAMS Phases 7–8): about 5,500 documented variables, parsed deterministically
 - [x] End-to-end smoke run on test fixtures with the local model; replayed in CI without a model
-- [ ] First full SUID proof-of-concept run (in progress)
+- [x] Component A fixed to extract variables and study design, and to stop on empty extraction (2026-11-06)
+- [ ] First full SUID proof-of-concept run (running; see [docs/HANDOFF.md](docs/HANDOFF.md))
 - [ ] Internal validation (protocol in [docs/evaluation_protocol.md](docs/evaluation_protocol.md) is a draft and must be frozen before any scored run; a second blinded rater is needed)
 
 Known issue: the PRAMS Phase 8 Standard Section II codebook parses to only 4 variables; its layout needs a dedicated parser.

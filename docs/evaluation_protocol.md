@@ -1,6 +1,6 @@
 # MMF internal validation protocol (DRAFT — to be frozen before any scored run)
 
-Status: **draft v0.1, not yet frozen.** When frozen, record the commit hash here and log every
+Status: **draft v0.1, not yet frozen.** Prerequisites still to build before freezing (validators-off switch for L-, blinded rater-sheet export, single-manuscript configs for metric 3) are tracked in [HANDOFF.md](HANDOFF.md) §4. When frozen, record the commit hash here and log every
 later deviation in the "Deviations" section at the bottom. Scored runs made before freezing do not count.
 
 ## Purpose
