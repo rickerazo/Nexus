@@ -22,3 +22,26 @@ Father's Race Recode 31
 
 01
 White (only)
+475
+1
+P,G
+SEX
+
+Sex of Infant
+
+M
+Male
+
+F
+Female
+476
+1
+P,G
+WIC
+WIC
+
+Y
+Yes
+
+N
+No

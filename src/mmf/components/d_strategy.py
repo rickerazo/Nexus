@@ -17,6 +17,14 @@ from mmf.schemas.strategy import Strategy, StrategySet
 from mmf.validate.grounding import unresolved_problems
 from mmf.validate.vocab import ModelClass, vocab_text
 
+PROMPTS = ("d_strategy",)
+
+
+def prompt_hashes() -> list[str]:
+    """sha256 of every prompt this component uses; part of the stage cache key."""
+    return [load_prompt(name).sha256 for name in PROMPTS]
+
+
 RATE_MODELS = {ModelClass.POISSON_REGRESSION, ModelClass.NEGATIVE_BINOMIAL}
 TIME_MODELS = {ModelClass.COX_PROPORTIONAL_HAZARDS, ModelClass.TIME_STRATIFIED}
 

@@ -107,7 +107,7 @@ def test_schema_map_batches_concepts_and_dedupes(sources):
         VariableMention(concept=c, role="exposure", operationalization="o", quote="q" * 20)
         for c in ["Sex", "sex", "maternal smoking", "maternal age", "gestation", "age at death"]
     ]
-    assert [c for c, _ in collect_concepts([_dec(variables=vs)])] == [
+    assert [c.name for c in collect_concepts([_dec(variables=vs)])] == [
         "Sex",
         "maternal smoking",
         "maternal age",
@@ -115,7 +115,7 @@ def test_schema_map_batches_concepts_and_dedupes(sources):
         "age at death",
     ]
     client = SchemaRoutingClient(schema_map={"mappings": [], "source_summaries": {}})
-    _, recs = map_schema(
+    _, recs, _ = map_schema(
         [_dec(variables=vs)],
         sources,
         client,
@@ -127,4 +127,32 @@ def test_schema_map_batches_concepts_and_dedupes(sources):
     )
     # 5 concepts, 1 source per group, 2 mappings per call -> 3 batches
     assert [r.stage for r in recs] == ["B_schema_map_0_0", "B_schema_map_0_1", "B_schema_map_0_2"]
-    assert "- age at death:" in client.calls[-1][1] and "- Sex:" not in client.calls[-1][1]
+    assert '- "age at death" (role: exposure)' in client.calls[-1][1] and '"Sex"' not in client.calls[-1][1]
+
+
+def test_schema_map_canonicalizes_names_and_warns_on_missing_rows(sources):
+    vs = [
+        VariableMention(concept=c, role=r, operationalization="o", quote="q" * 20)
+        for c, r in [("bed sharing", "exposure"), ("infant sex", "stratifier")]
+    ]
+    answer = {
+        "mappings": [
+            {
+                "concept": "Bed sharing as exposure",
+                "source_id": "cdc",
+                "variable": None,
+                "compatibility": "none",
+                "rationale": "",
+            }
+        ],
+        "source_summaries": {},
+    }
+    client = SchemaRoutingClient(schema_map=answer)
+    smap, _, warnings = map_schema(
+        [_dec(variables=vs)], sources, client, seed=0, temperature=0, max_retries=0, log_dir=None
+    )
+    assert [m.concept for m in smap.mappings] == ["bed sharing"]
+    assert warnings == [
+        "B_schema_map_0_0: 1 concept names canonicalized to the names sent",
+        "B_schema_map_0_0: no row for 1 (concept, source) pair(s): infant sex / cdc",
+    ]

@@ -25,6 +25,9 @@ from mmf.schemas.run import LLMCallRecord
 
 log = logging.getLogger(__name__)
 
+# Bump whenever deterministic extraction changes; it is part of the ingest cache key so fixes re-ingest.
+PARSER_VERSION = "2"
+
 # Layout 1 (NVSS-style guides): "MAGER9   Mother's age recode 9" on one line.
 _VAR_LINE = re.compile(r"^\s*(?P<name>[A-Z][A-Z0-9_]{1,23})\s*[:\-\u2013]?\s{2,}(?P<label>[A-Za-z][^\n]{3,120})$")
 # Layout 2 (PRAMS codebooks): one table cell per line: Q#, VARIABLE, label, format, codes...
@@ -164,10 +167,13 @@ def pass1_regex(doc: Document) -> list[Variable]:
                     ),
                 )
                 continue
-            if _BARE_NAME.match(line) and line not in _STOPWORDS and _is_nvss_header(lines, i) and lines[i + 1]:
-                label = lines[i + 1]
+            li = _nvss_label_index(lines, i) if _BARE_NAME.match(line) and line not in _STOPWORDS else None
+            if li is not None and _is_nvss_header(lines, i):
+                # The label may follow a blank line (LinkCO15Guide: SEX, CIG_0..3, BFED, ...). A label equal to the
+                # name (WIC) is kept as is. Known wart: MHTR's label carries a trailing page artifact.
+                label = lines[li]
                 levels = []
-                j = i + 2
+                j = li + 1
                 while j < len(lines) and not _nvss_header_starts(lines, j):
                     if _VALUE.match(lines[j]):
                         k = j + 1
@@ -200,6 +206,15 @@ def _prev_nonempty(lines: list[str], i: int, n: int) -> list[str]:
             out.insert(0, lines[j])
         j -= 1
     return out
+
+
+def _nvss_label_index(lines: list[str], i: int, window: int = 3) -> int | None:
+    """Index of the label line for the NVSS NAME at lines[i]: the next non-empty line within `window` lines,
+    unless it looks like the next header's position or length field."""
+    for j in range(i + 1, min(i + 1 + window, len(lines))):
+        if lines[j]:
+            return None if _POSITION.match(lines[j]) or _LEN.match(lines[j]) else j
+    return None
 
 
 def _is_nvss_header(lines: list[str], i: int) -> bool:

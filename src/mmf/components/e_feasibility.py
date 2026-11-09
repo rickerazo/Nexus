@@ -15,6 +15,13 @@ from mmf.schemas.run import LLMCallRecord
 from mmf.schemas.strategy import Strategy
 from mmf.validate.grounding import resolve_refs
 
+PROMPTS = ("e_caveats",)
+
+
+def prompt_hashes() -> list[str]:
+    """sha256 of every prompt this component uses; part of the stage cache key."""
+    return [load_prompt(name).sha256 for name in PROMPTS]
+
 
 class _Caveats(BaseModel):
     caveats: list[str] = Field(default_factory=list)

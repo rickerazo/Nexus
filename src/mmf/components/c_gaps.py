@@ -15,6 +15,13 @@ from mmf.schemas.manuscript import ManuscriptDecomposition
 from mmf.schemas.run import LLMCallRecord
 from mmf.validate.grounding import unresolved_problems
 
+PROMPTS = ("c_gaps",)
+
+
+def prompt_hashes() -> list[str]:
+    """sha256 of every prompt this component uses; part of the stage cache key."""
+    return [load_prompt(name).sha256 for name in PROMPTS]
+
 
 def gap_validator(
     decomps: list[ManuscriptDecomposition], sources: dict[str, DataSource], n_gaps: int

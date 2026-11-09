@@ -50,10 +50,17 @@ def test_pass1_nvss_layout():
     from mmf.ingest.pdf import load_document
 
     vars_ = {v.name: v for v in pass1_regex(load_document(FIXTURES / "mini_nvss_guide.txt"))}
-    assert set(vars_) == {"FAGE11", "FRACE31"}
+    assert set(vars_) == {"FAGE11", "FRACE31", "SEX", "WIC"}
     assert vars_["FAGE11"].label == "Father's Age Recode 11"
     assert vars_["FAGE11"].levels == ["01=Under 15 years", "02=15-19 years"]
     assert vars_["FAGE11"].notes == "position=149-150; file=P,G"
+    # a blank line between the name and its label (LinkCO15Guide) must not drop the variable
+    assert vars_["SEX"].label == "Sex of Infant"
+    assert vars_["SEX"].levels == ["M=Male", "F=Female"]
+    assert vars_["SEX"].notes == "position=475; file=P,G"
+    # a label identical to the name is still a label
+    assert vars_["WIC"].label == "WIC"
+    assert vars_["WIC"].levels == ["Y=Yes", "N=No"]
 
 
 def test_chunking_splits_oversized_single_page():

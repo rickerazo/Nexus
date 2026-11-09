@@ -23,7 +23,7 @@ from pydantic import BaseModel
 from mmf import __version__
 from mmf.components import a_decompose, b_schema_map, c_gaps, d_strategy, e_feasibility
 from mmf.config import RunConfig, Settings
-from mmf.ingest.codebook import build_datasource
+from mmf.ingest.codebook import PARSER_VERSION, build_datasource
 from mmf.ingest.pdf import load_document, sha256_file
 from mmf.llm.base import LLMClient
 from mmf.llm.structured import GenerationFailedError, StageInputError, make_client
@@ -140,7 +140,7 @@ class Run:
         for spec in self.cfg.codebooks:
             doc = load_document(spec.path, self.cfg.cache_dir)
             self._add_input(spec.path, doc.sha256, "codebook")
-            key = _h(doc.sha256, "codebook_extract", self.cfg.model, str(self.cfg.chunk_tokens))
+            key = _h(doc.sha256, "codebook_extract", PARSER_VERSION, self.cfg.model, str(self.cfg.chunk_tokens))
             cached = self._cached(f"ingest_{spec.id}", key, DataSource, f"sources/{spec.id}.json")
             if cached is not None:
                 out[spec.id] = cached
@@ -197,13 +197,14 @@ class Run:
         key = _h(
             *(d.model_dump_json() for d in decs),
             *(s.model_dump_json() for s in sources.values()),
+            *b_schema_map.prompt_hashes(),
             self.cfg.model,
             str(self.cfg.b_max_vars_per_call),
             str(self.cfg.b_max_mappings_per_call),
         )
         cached = self._cached("B", key, SchemaMap, "B_schema.json")
         if cached is None:
-            cached, recs = b_schema_map.map_schema(
+            cached, recs, warnings = b_schema_map.map_schema(
                 decs,
                 sources,
                 self.client,
@@ -211,6 +212,10 @@ class Run:
                 max_mappings_per_call=self.cfg.b_max_mappings_per_call,
                 **self._llm_kwargs(),
             )
+            for w in warnings:
+                log.warning("B: %s", w)
+                if w not in self.manifest.warnings:
+                    self.manifest.warnings.append(w)
             self._record(recs)
             self._store("B", key, cached, "B_schema.json")
         self._review_gate("B", cached, "Schema map")
@@ -219,7 +224,13 @@ class Run:
         )  # re-read: user may have edited
 
     def stage_c(self, decs: list[ManuscriptDecomposition], smap: SchemaMap, sources: dict[str, DataSource]) -> GapSet:
-        key = _h(*(d.model_dump_json() for d in decs), smap.model_dump_json(), self.cfg.model, str(self.cfg.n_gaps))
+        key = _h(
+            *(d.model_dump_json() for d in decs),
+            smap.model_dump_json(),
+            *c_gaps.prompt_hashes(),
+            self.cfg.model,
+            str(self.cfg.n_gaps),
+        )
         cached = self._cached("C", key, GapSet, "C_gaps.json")
         if cached is None:
             cached, recs = c_gaps.find_gaps(
@@ -233,7 +244,7 @@ class Run:
     def stage_d(
         self, gaps: GapSet, decs: list[ManuscriptDecomposition], sources: dict[str, DataSource], smap: SchemaMap
     ) -> StrategySet:
-        key = _h(gaps.model_dump_json(), self.cfg.model)
+        key = _h(gaps.model_dump_json(), *d_strategy.prompt_hashes(), self.cfg.model)
         cached = self._cached("D", key, StrategySet, "D_strategies.json")
         if cached is None:
             cached, recs = d_strategy.generate_strategies(
@@ -244,7 +255,12 @@ class Run:
         return cached
 
     def stage_e(self, strategies: StrategySet, sources: dict[str, DataSource]) -> FeasibilitySet:
-        key = _h(strategies.model_dump_json(), *(s.model_dump_json() for s in sources.values()), self.cfg.model)
+        key = _h(
+            strategies.model_dump_json(),
+            *(s.model_dump_json() for s in sources.values()),
+            *e_feasibility.prompt_hashes(),
+            self.cfg.model,
+        )
         cached = self._cached("E", key, FeasibilitySet, "E_feasibility.json")
         if cached is None:
             cached, recs = e_feasibility.assess(strategies.strategies, sources, self.client, **self._llm_kwargs())

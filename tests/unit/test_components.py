@@ -1,5 +1,6 @@
 """Validators are the constraint mechanism; test them without any LLM."""
 
+from mmf.components.b_schema_map import Concept, canonical_concept, map_validator
 from mmf.components.c_gaps import gap_validator
 from mmf.components.d_strategy import strategy_validator
 from mmf.components.e_feasibility import deterministic_report
@@ -13,6 +14,7 @@ from mmf.schemas import (
     Strategy,
     VariableRef,
 )
+from mmf.schemas.dataset import ConceptMapping, SchemaMap
 from mmf.validate.vocab import ModelClass, StudyDesign
 
 REF = lambda n: VariableRef(source_id="cdc", name=n)  # noqa: E731
@@ -135,3 +137,30 @@ def test_source_groups_and_restriction(sources):
     )
     assert mapped_keys(smap) == {"cdc:SEX"}
     assert allowed_refs_text(sources, only=mapped_keys(smap)) == "(cdc, SEX)"
+
+
+BATCH = [Concept("bed sharing", "exposure", "o"), Concept("infant sex", "effect_modifier", "o")]
+
+
+def test_canonical_concept():
+    assert canonical_concept("bed sharing", BATCH) == "bed sharing"
+    assert canonical_concept("Bed Sharing", BATCH) == "bed sharing"
+    assert canonical_concept("Bed sharing as exposure", BATCH) == "bed sharing"
+    assert canonical_concept("infant sex as an effect modifier", BATCH) == "infant sex"
+    assert canonical_concept("infant sex as effect_modifier", BATCH) == "infant sex"
+    assert canonical_concept("bed sharing as outcome", BATCH) is None  # not the role it was sent with
+    assert canonical_concept("Sex as stratifier", BATCH) is None
+    assert canonical_concept("adult neurogenesis", BATCH) is None
+
+
+def test_map_validator_rejects_unknown_concept(sources):
+    def m(concept):
+        return SchemaMap(
+            mappings=[ConceptMapping(concept=concept, source_id="cdc", variable="SEX", compatibility="direct")]
+        )
+
+    check = map_validator(sources, BATCH)
+    assert check(m("Infant sex")) == []
+    assert check(m("sex of the infant")) == [
+        "concept 'sex of the infant' was not in the list; copy the concept name exactly as given"
+    ]
