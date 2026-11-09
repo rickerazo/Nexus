@@ -26,7 +26,7 @@ from mmf.schemas.run import LLMCallRecord
 log = logging.getLogger(__name__)
 
 # Bump whenever deterministic extraction changes; it is part of the ingest cache key so fixes re-ingest.
-PARSER_VERSION = "2"
+PARSER_VERSION = "3"
 
 # Layout 1 (NVSS-style guides): "MAGER9   Mother's age recode 9" on one line.
 _VAR_LINE = re.compile(r"^\s*(?P<name>[A-Z][A-Z0-9_]{1,23})\s*[:\-\u2013]?\s{2,}(?P<label>[A-Za-z][^\n]{3,120})$")
@@ -167,33 +167,38 @@ def pass1_regex(doc: Document) -> list[Variable]:
                     ),
                 )
                 continue
-            li = _nvss_label_index(lines, i) if _BARE_NAME.match(line) and line not in _STOPWORDS else None
-            if li is not None and _is_nvss_header(lines, i):
-                # The label may follow a blank line (LinkCO15Guide: SEX, CIG_0..3, BFED, ...). A label equal to the
-                # name (WIC) is kept as is. Known wart: MHTR's label carries a trailing page artifact.
-                label = lines[li]
-                levels = []
-                j = li + 1
-                while j < len(lines) and not _nvss_header_starts(lines, j):
-                    if _VALUE.match(lines[j]):
-                        k = j + 1
-                        while k < len(lines) and not lines[k]:
-                            k += 1
-                        if k < len(lines) and not _VALUE.match(lines[k]) and not _nvss_header_starts(lines, k):
-                            levels.append(f"{lines[j]}={lines[k]}")
-                            j = k
-                    j += 1
-                prev = _prev_nonempty(lines, i, 3)
-                found.setdefault(
-                    line,
-                    Variable(
-                        name=line,
-                        label=label,
-                        levels=levels,
-                        page=page.number,
-                        notes=f"position={prev[0]}; file={prev[2]}",
-                    ),
-                )
+            nv = _nvss_name(line)
+            if nv is None or nv[0] in _STOPWORDS or not _is_nvss_header(lines, i):
+                continue
+            name, inline_label = nv
+            # The label may share the name's line (MBSTATE_REC), follow a blank line (SEX, CIG_0..3, BFED), or
+            # equal the name (WIC). Known wart: some labels carry a trailing page number ("MHTR ... Inches 282").
+            li = i if inline_label is not None else _nvss_label_index(lines, i)
+            if li is None:
+                continue
+            label = inline_label if inline_label is not None else lines[li]
+            levels = []
+            j = li + 1
+            while j < len(lines) and not _nvss_header_starts(lines, j):
+                if _VALUE.match(lines[j]):
+                    k = j + 1
+                    while k < len(lines) and not lines[k]:
+                        k += 1
+                    if k < len(lines) and not _VALUE.match(lines[k]) and not _nvss_header_starts(lines, k):
+                        levels.append(f"{lines[j]}={lines[k]}")
+                        j = k
+                j += 1
+            prev = _prev_nonempty(lines, i, 3)
+            found.setdefault(
+                name,
+                Variable(
+                    name=name,
+                    label=label,
+                    levels=levels,
+                    page=page.number,
+                    notes=f"position={prev[0]}; file={prev[2]}",
+                ),
+            )
     return list(found.values())
 
 
@@ -206,6 +211,26 @@ def _prev_nonempty(lines: list[str], i: int, n: int) -> list[str]:
             out.insert(0, lines[j])
         j -= 1
     return out
+
+
+_NVSS_NAME = re.compile(r"^[A-Za-z][A-Za-z0-9_]{1,23}$")
+_NVSS_SPLIT_NAME = re.compile(r"^(?P<a>[A-Za-z][A-Za-z0-9_]*_)\s+(?P<b>[A-Z0-9_]{1,12})$")
+_NVSS_INLINE = re.compile(r"^(?P<name>[A-Za-z][A-Za-z0-9]*_[A-Za-z0-9_]*|[A-Z][A-Z0-9]{2,23})\s+(?P<label>\S.{2,})$")
+
+
+def _nvss_name(line: str) -> tuple[str, str | None] | None:
+    """(name, inline label or None) for the NAME line of an NVSS header, or None.
+
+    Only consulted at the name position of a Position/Len/File header, so mixed-case names (OEGest_Comb,
+    uRF_Diab) are safe to accept there. Also handles a name split by the PDF ("F_MM_ PLAC") and a name sharing
+    its line with the label ("MBSTATE_REC Mother's Nativity")."""
+    if _NVSS_NAME.match(line):
+        return line, None
+    if m := _NVSS_SPLIT_NAME.match(line):
+        return m["a"] + m["b"], None
+    if m := _NVSS_INLINE.match(line):
+        return m["name"], m["label"].strip()
+    return None
 
 
 def _nvss_label_index(lines: list[str], i: int, window: int = 3) -> int | None:
@@ -238,7 +263,7 @@ def _nvss_header_starts(lines: list[str], j: int) -> bool:
         len(nxt) == 3
         and _LEN.match(nxt[0]) is not None
         and _FILEFLAG.match(nxt[1]) is not None
-        and _BARE_NAME.match(nxt[2]) is not None
+        and _nvss_name(nxt[2]) is not None
     )
 
 

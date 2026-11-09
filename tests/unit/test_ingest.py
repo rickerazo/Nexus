@@ -50,7 +50,7 @@ def test_pass1_nvss_layout():
     from mmf.ingest.pdf import load_document
 
     vars_ = {v.name: v for v in pass1_regex(load_document(FIXTURES / "mini_nvss_guide.txt"))}
-    assert set(vars_) == {"FAGE11", "FRACE31", "SEX", "WIC"}
+    assert set(vars_) == {"FAGE11", "FRACE31", "SEX", "WIC", "OEGest_R3", "MBSTATE_REC", "F_MM_PLAC"}
     assert vars_["FAGE11"].label == "Father's Age Recode 11"
     assert vars_["FAGE11"].levels == ["01=Under 15 years", "02=15-19 years"]
     assert vars_["FAGE11"].notes == "position=149-150; file=P,G"
@@ -60,7 +60,12 @@ def test_pass1_nvss_layout():
     assert vars_["SEX"].notes == "position=475; file=P,G"
     # a label identical to the name is still a label
     assert vars_["WIC"].label == "WIC"
-    assert vars_["WIC"].levels == ["Y=Yes", "N=No"]
+    assert vars_["WIC"].levels == ["Y=Yes", "N=No"]  # stops before the mixed-case header that follows
+    assert vars_["OEGest_R3"].label == "Obstetric Estimate Recode 3"  # mixed-case name
+    assert vars_["OEGest_R3"].levels == ["1=Under 37 weeks"]
+    assert vars_["MBSTATE_REC"].label == "Mother's Nativity"  # name and label on one line
+    assert vars_["MBSTATE_REC"].levels == ["1=Born in the U.S."]
+    assert vars_["F_MM_PLAC"].label == "Reporting Flag for Perineal Laceration"  # name split by the PDF
 
 
 def test_chunking_splits_oversized_single_page():
