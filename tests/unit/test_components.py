@@ -164,3 +164,10 @@ def test_map_validator_rejects_unknown_concept(sources):
     assert check(m("sex of the infant")) == [
         "concept 'sex of the infant' was not in the list; copy the concept name exactly as given"
     ]
+
+
+def test_map_validator_rejects_empty_mappings(sources):
+    # a summaries-only answer passed validation on 2026-11-09 because `mappings` had a default
+    assert map_validator(sources, BATCH)(SchemaMap(source_summaries={"cdc": "s"})) == [
+        "no mappings were returned; return one mapping per concept per data source listed"
+    ]

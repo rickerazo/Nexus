@@ -100,8 +100,9 @@ def test_component_a_chunk_schemas_require_every_field():
     """Root cause of the claims-only Component A outputs: a grammar-constrained decoder may omit any key that
     is not `required`. Every LLM-facing field must stay required."""
     from mmf.components.a_decompose import ChunkClaims, ChunkProfile
+    from mmf.components.b_schema_map import MappingOut, SchemaMapOut
 
-    for model in (ChunkProfile, ChunkClaims):
+    for model in (ChunkProfile, ChunkClaims, SchemaMapOut, MappingOut):
         schema = model.model_json_schema()
         assert set(schema["required"]) == set(schema["properties"]), model.__name__
 

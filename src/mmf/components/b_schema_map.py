@@ -7,11 +7,13 @@ from collections.abc import Callable, Sequence
 from pathlib import Path
 from typing import NamedTuple
 
+from pydantic import BaseModel, Field
+
 from mmf.components.common import source_groups, sources_text
 from mmf.llm.base import LLMClient
 from mmf.llm.prompts import load_prompt
 from mmf.llm.structured import StageInputError, generate
-from mmf.schemas.dataset import DataSource, SchemaMap
+from mmf.schemas.dataset import ConceptMapping, DataSource, SchemaMap
 from mmf.schemas.manuscript import ManuscriptDecomposition
 from mmf.schemas.run import LLMCallRecord
 
@@ -24,6 +26,26 @@ def prompt_hashes() -> list[str]:
 
 
 COMPAT = {"direct", "proxy", "derived", "none"}
+
+
+class MappingOut(BaseModel):
+    """LLM-facing ConceptMapping: every field required, so a grammar-constrained decoder cannot skip one."""
+
+    concept: str
+    source_id: str
+    variable: str | None = Field(description="Codebook variable name, or null if no equivalent.")
+    compatibility: str = Field(description="One of: direct, proxy, derived, none.")
+    rationale: str
+
+
+class SchemaMapOut(BaseModel):
+    """LLM-facing SchemaMap. With defaults, the model returned source summaries and no mappings, and passed."""
+
+    mappings: list[MappingOut]
+    source_summaries: dict[str, str] = Field(description="Per-source capability summary.")
+
+
+MapLike = SchemaMap | SchemaMapOut
 
 
 class Concept(NamedTuple):
@@ -56,9 +78,11 @@ def canonical_concept(returned: str, batch: Sequence[Concept]) -> str | None:
 
 def map_validator(
     sources: dict[str, DataSource], batch: Sequence[Concept] | None = None
-) -> Callable[[SchemaMap], list[str]]:
-    def check(m: SchemaMap) -> list[str]:
+) -> Callable[[MapLike], list[str]]:
+    def check(m: MapLike) -> list[str]:
         problems = []
+        if batch and not m.mappings:
+            problems.append("no mappings were returned; return one mapping per concept per data source listed")
         for x in m.mappings:
             if batch is not None and canonical_concept(x.concept, batch) is None:
                 problems.append(f"concept {x.concept!r} was not in the list; copy the concept name exactly as given")
@@ -78,7 +102,7 @@ def map_validator(
     return check
 
 
-def canonicalize(m: SchemaMap, batch: Sequence[Concept]) -> int:
+def canonicalize(m: MapLike, batch: Sequence[Concept]) -> int:
     """Rewrite accepted concept names to their sent form in place; return how many were rewritten.
     Call only on output that passed `map_validator(..., batch)`."""
     n = 0
@@ -129,7 +153,7 @@ def map_schema(
                 client,
                 prompt,
                 user,
-                SchemaMap,
+                SchemaMapOut,
                 stage=stage,
                 seed=seed,
                 temperature=temperature,
@@ -145,7 +169,7 @@ def map_schema(
             missing = [f"{c.name} / {sid}" for c in sent for sid in group if (c.name, sid) not in covered]
             if missing:
                 warnings.append(f"{stage}: no row for {len(missing)} (concept, source) pair(s): {'; '.join(missing)}")
-            for m in obj.mappings:
+            for m in (ConceptMapping(**x.model_dump()) for x in obj.mappings):
                 if m.variable is None and any(
                     x.concept == m.concept and x.source_id == m.source_id and x.variable for x in merged.mappings
                 ):

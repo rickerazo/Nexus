@@ -1,6 +1,7 @@
 """Component A's two-call flow and the empty-input gates, with a fake client (no LLM)."""
 
 import json
+import re
 
 import pytest
 
@@ -35,7 +36,8 @@ class SchemaRoutingClient:
         props = json_schema["properties"]
         kind = "claims" if "claims" in props else "profile" if "variables" in props else "map"
         self.calls.append((kind, user))
-        return LLMResponse(text=json.dumps(self.answers[kind]), model=self.model)
+        answer = self.answers[kind]
+        return LLMResponse(text=json.dumps(answer(user) if callable(answer) else answer), model=self.model)
 
 
 def test_decompose_makes_profile_and_claims_calls_and_salvages(mini_manuscript_doc, tmp_path):
@@ -114,8 +116,16 @@ def test_schema_map_batches_concepts_and_dedupes(sources):
         "gestation",
         "age at death",
     ]
-    client = SchemaRoutingClient(schema_map={"mappings": [], "source_summaries": {}})
-    _, recs, _ = map_schema(
+
+    def one_row_per_concept(user):
+        sent = re.findall(r'^- "(.+?)" \(role', user, flags=re.M)
+        rows = [
+            {"concept": c, "source_id": "cdc", "variable": None, "compatibility": "none", "rationale": ""} for c in sent
+        ]
+        return {"mappings": rows, "source_summaries": {}}
+
+    client = SchemaRoutingClient(schema_map=one_row_per_concept)
+    _, recs, warnings = map_schema(
         [_dec(variables=vs)],
         sources,
         client,
@@ -127,6 +137,7 @@ def test_schema_map_batches_concepts_and_dedupes(sources):
     )
     # 5 concepts, 1 source per group, 2 mappings per call -> 3 batches
     assert [r.stage for r in recs] == ["B_schema_map_0_0", "B_schema_map_0_1", "B_schema_map_0_2"]
+    assert warnings == []
     assert '- "age at death" (role: exposure)' in client.calls[-1][1] and '"Sex"' not in client.calls[-1][1]
 
 
