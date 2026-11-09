@@ -26,12 +26,14 @@ from mmf.schemas.run import LLMCallRecord
 log = logging.getLogger(__name__)
 
 # Bump whenever deterministic extraction changes; it is part of the ingest cache key so fixes re-ingest.
-PARSER_VERSION = "3"
+PARSER_VERSION = "4"
 
 # Layout 1 (NVSS-style guides): "MAGER9   Mother's age recode 9" on one line.
 _VAR_LINE = re.compile(r"^\s*(?P<name>[A-Z][A-Z0-9_]{1,23})\s*[:\-\u2013]?\s{2,}(?P<label>[A-Za-z][^\n]{3,120})$")
 # Layout 2 (PRAMS codebooks): one table cell per line: Q#, VARIABLE, label, format, codes...
-_QNUM = re.compile(r"^[IVX]{0,4}\d{1,3}[a-z]?\d?(_SSO)?$")
+# Q# cells: 12, 4d, II3, 56i, plus state/version suffixes seen in PRAMS P7/P8 (4d_L11a, 14k_WA, 18d_SAOa,
+# 23j_CNMI, 4k_NYYC, 19mMN, 1_SSO).
+_QNUM = re.compile(r"^[IVX]{0,4}\d{1,3}[a-z]?\d?(?:_?[A-Z]{2,4}[a-z0-9]{0,2}|_L\d{1,3}[a-z]?)?$")
 _FORMAT = re.compile(r"^[A-Z][A-Z0-9_.]{1,15}$")
 # Layout 3 (NVSS public-use file guides): Position, Len, File flags, NAME, Description, then
 # value/label pairs on alternating lines.
@@ -138,7 +140,7 @@ def pass1_regex(doc: Document) -> list[Variable]:
                 _BARE_NAME.match(line)
                 and line not in _STOPWORDS
                 and i > 0
-                and _QNUM.match(lines[i - 1])
+                and _after_qnum(lines, i)
                 and i + 1 < len(lines)
             ):
                 label_parts = []
@@ -199,6 +201,77 @@ def pass1_regex(doc: Document) -> list[Variable]:
                     notes=f"position={prev[0]}; file={prev[2]}",
                 ),
             )
+    for v in pass1_prams_unnumbered(doc):
+        found.setdefault(v.name, v)
+    return list(found.values())
+
+
+def _after_qnum(lines: list[str], i: int) -> bool:
+    """Is lines[i] preceded by a Q# cell, possibly wrapped onto two lines by the PDF ('18k_ARS' + 'C')?"""
+    if _QNUM.match(lines[i - 1]):
+        return True
+    prev = _prev_nonempty(lines, i, 2)
+    # The first part must carry a suffix ('_'), so an NVSS 'Len' + one-letter file flag ('2', 'G') never qualifies.
+    return (
+        len(prev) == 2
+        and "_" in prev[0]
+        and re.fullmatch(r"[A-Za-z]{1,2}", prev[1]) is not None
+        and _QNUM.match(prev[0] + prev[1]) is not None
+    )
+
+
+def _label_like(line: str) -> bool:
+    """Label text: has lowercase or a space, or closes a wrapped parenthetical ('SKIP)'); never a code line."""
+    return (re.search(r"[a-z]", line) is not None or " " in line or line.endswith(")")) and not _CODE.match(line)
+
+
+def _unnumbered_name_at(ne: list[str], i: int) -> bool:
+    """A Variable cell of a PRAMS section without a Q# column: a bare name followed by a label line."""
+    return (
+        _BARE_NAME.match(ne[i]) is not None and ne[i] not in _STOPWORDS and i + 1 < len(ne) and _label_like(ne[i + 1])
+    )
+
+
+def pass1_prams_unnumbered(doc: Document) -> list[Variable]:
+    """PRAMS ARF sections whose table has no Q# column (birth certificate, operations/weighting, analytic
+    variables): Variable, SAS Label (may wrap), Format, Codes. Only pages with a 'SAS Label' header and no
+    'Q#' header are read."""
+    found: dict[str, Variable] = {}
+    for page in doc.pages:
+        ne = [ln.strip() for ln in page.text.splitlines() if ln.strip()]
+        if "Q#" in ne or "SAS Label" not in ne:
+            continue
+        i = ne.index("SAS Label") + 1
+        while i < len(ne):
+            if not _unnumbered_name_at(ne, i):
+                i += 1
+                continue
+            name, j = ne[i], i + 1
+            label_parts = []
+            while j < len(ne) and _label_like(ne[j]):
+                label_parts.append(ne[j])
+                j += 1
+            fmt = ""
+            if j < len(ne) and _FORMAT.match(ne[j]) and not _unnumbered_name_at(ne, j):
+                fmt, j = ne[j], j + 1
+            levels: list[str] = []
+            while j < len(ne) and not _unnumbered_name_at(ne, j):
+                if _CODE.match(ne[j]):
+                    levels.append(ne[j])
+                elif levels:
+                    levels[-1] += " " + ne[j]  # wrapped code label
+                j += 1
+            found.setdefault(
+                name,
+                Variable(
+                    name=name,
+                    label=" ".join(label_parts),
+                    levels=levels,
+                    page=page.number,
+                    notes=f"format={fmt}" if fmt else "",
+                ),
+            )
+            i = j
     return list(found.values())
 
 

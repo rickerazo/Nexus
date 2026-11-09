@@ -77,3 +77,87 @@ def test_chunking_splits_oversized_single_page():
     assert all(len(c.text) // 3 <= 1000 + 50 for c in chunks)
     joined = "".join(c.text.replace("\n[page 1]\n", "") for c in chunks)
     assert all(f"paragraph {i} " in joined for i in range(30))
+
+
+def _doc(*pages: str) -> Document:
+    return Document(path="p", sha256="x", title="t", pages=[Page(number=i, text=t) for i, t in enumerate(pages, 1)])
+
+
+def test_pass1_prams_suffixed_and_wrapped_qnum():
+    page = "\n".join(
+        [
+            "Q#",
+            "Variable",
+            "SAS Label",
+            "Format",
+            "Codes",
+            "4c",
+            "BPG_DEPRS8",
+            "Health prob -- Depression",
+            "NY1F",
+            "1=NO",
+            "2=YES",
+            "4d_L11a",
+            "HTH_ASMA",
+            "Health prob -- Asthma",
+            "NY1F",
+            "1=NO",
+            "2=YES",
+            "18k_ARS",
+            "C",
+            "PG8_GUM",
+            "Health prob during preg -- Gum disease",
+            "NY1F",
+            "1=NO",
+            "2=YES",
+        ]
+    )
+    vars_ = {v.name: v for v in pass1_regex(_doc(page))}
+    assert set(vars_) == {"BPG_DEPRS8", "HTH_ASMA", "PG8_GUM"}
+    assert vars_["BPG_DEPRS8"].levels == ["1=NO", "2=YES"]  # does not absorb the next row
+    assert vars_["HTH_ASMA"].label == "Health prob -- Asthma"
+    assert vars_["PG8_GUM"].notes == "format=NY1F"
+
+
+def test_pass1_prams_section_without_qnum():
+    page = "\n".join(
+        [
+            "PRAMS Phase 8 Analytic Variables",
+            "Variable",
+            "SAS Label",
+            "Format",
+            "Codes",
+            "CIG_PRIOR",
+            "No. of cigarettes smoked daily",
+            "- prior to preg",
+            "BCF",
+            ".U=UNKNOWN",
+            "PREV_LBW",
+            "Previous live birth -- low birth weight (FORCED",
+            "SKIP)",
+            ".B=DK/BLANK",
+            "1=NO",
+            "SLEEPOWN",
+            "Sleep -- baby alone (FORCED SKIP)",
+            "FREQ5F",
+            "1=ALWAYS",
+            "2=OFTEN/ALMOST",
+            "ALWAYS",
+            "SLEEPPOS",
+            "Sleeping position -- baby (FORCED SKIP)",
+            "SLEEPPOS",
+            ".S=SKIP",
+            "1=SIDE",
+            "2=BACK",
+        ]
+    )
+    vars_ = {v.name: v for v in pass1_regex(_doc(page))}
+    assert set(vars_) == {"CIG_PRIOR", "PREV_LBW", "SLEEPOWN", "SLEEPPOS"}
+    assert vars_["CIG_PRIOR"].label == "No. of cigarettes smoked daily - prior to preg"
+    assert vars_["CIG_PRIOR"].notes == "format=BCF"
+    assert vars_["PREV_LBW"].label == "Previous live birth -- low birth weight (FORCED SKIP)"
+    assert vars_["SLEEPOWN"].levels == ["1=ALWAYS", "2=OFTEN/ALMOST ALWAYS"]  # wrapped code label
+    assert vars_["SLEEPPOS"].notes == "format=SLEEPPOS"  # format named like the variable
+    assert vars_["SLEEPPOS"].levels == [".S=SKIP", "1=SIDE", "2=BACK"]
+    # the unnumbered pass only reads pages without a Q# column
+    assert "CIG_PRIOR" not in {v.name for v in pass1_regex(_doc("Q#\n" + page))}
