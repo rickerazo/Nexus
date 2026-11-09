@@ -68,6 +68,18 @@ class RunConfig(BaseModel):
         description="Component B asks for at most this many concept x source mappings per LLM call (~100 output "
         "tokens each), so a long concept list cannot hit max_output_tokens.",
     )
+    b_crosscheck: bool = Field(
+        default=True,
+        description="Run the embedding cross-check on Component B's mappings (flags only; never changes B). "
+        "Set false for the validators-off (L-) ablation.",
+    )
+    embed_model: str = Field(default="mxbai-embed-large", description="Local Ollama embedding model for B's check.")
+    b_check_top_k: int = Field(default=10, description="An LLM mapping agrees if its variable is in the top k.")
+    b_check_miss_threshold: float = Field(
+        default=0.65,
+        description="Cosine similarity at or above which a 'none' mapping with a strong embedding candidate is "
+        "flagged as a possible miss. Provisional; see docs/architecture.md for its calibration.",
+    )
     out_dir: Path = Path("runs")
     cache_dir: Path = Path(".cache/documents")
 

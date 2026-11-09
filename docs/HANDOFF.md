@@ -10,11 +10,11 @@ This is the entry point for anyone picking up Nexus/MMF: where the project stand
 
 | Area | State |
 |---|---|
-| Pipeline (Components A–E, CLI, report) | Implemented and tested: 36 tests, lint, strict mypy, CI on every push. |
-| Codebook ingestion | 7 SUID sources parsed deterministically, about 5,500 variables. |
+| Pipeline (Components A–E, CLI, report) | Implemented and tested: 49 tests, lint, strict mypy, CI on every push. |
+| Codebook ingestion | 7 SUID sources parsed deterministically, **6,035 variables** (parser v4, 2026-11-09; was about 5,500). An independent audit runs on every ingest (§2). |
 | Component A (manuscript decomposition) | **Fixed 2026-11-06** (commit `1407505`). Before this, every run extracted claims only; see §5. |
 | Smoke run (test fixtures, local model) | Passes end to end; recorded and replayed in CI. |
-| SUID proof-of-concept run | **Weekend run failed** Fri 2026-11-06 17:15 at the first Stage B call (§2). Fix and restart plan: [plans/2026-11-09-ingest-audit-and-b-crosscheck.md](plans/2026-11-09-ingest-audit-and-b-crosscheck.md). |
+| SUID proof-of-concept run | Weekend run failed Fri 2026-11-06 at the first Stage B call. **Restarted Mon 2026-11-09 ~14:47 PT** at commit `f351764` without `--auto-approve`. It will stop at review B (§2, §3). Plan: [plans/2026-11-09-ingest-audit-and-b-crosscheck.md](plans/2026-11-09-ingest-audit-and-b-crosscheck.md). |
 | Evaluation protocol | Draft, **not frozen**. No scored runs exist yet. |
 | Repository | `github.com/rickerazo/Nexus` (private), history pushed 2026-11-06. |
 
@@ -52,6 +52,13 @@ Stage A quality on this run:
 - Questionable roles in the bed-sharing paper: PCA labelled outcome, chronological age labelled offset.
 - Near-duplicate concepts survive (sex / infant sex / sex (male, female); PCA ×3).
 
+**Monday 2026-11-09 fixes and restart.**
+- **Parser fixes (cdc_linkco15).** The blank-line bug recovered the 12 variables above. The new ingestion audit's anchor reconciliation then found 25 more (mixed-case `OEGest_*`, `PWgt_R`, `u*` items; inline labels such as `MBSTATE_REC`; split `F_MM_ PLAC`). Total 233 → 270.
+- **Parser fixes (PRAMS ARFs).** The audit's identifier census showed both ARFs missing about half their variables: suffixed or wrapped Q# cells (`4d_L11a`, `18k_ARS`+`C`) and whole sections without a Q# column (birth certificate, analytic, forced-skip `SLEEPPOS`). P7 170 → 386, P8 177 → 485. The other codebooks are unchanged. `PARSER_VERSION` = 4 and is part of the ingest key.
+- **B.** Concept names must match the names sent; case differences and "as <role>" are canonicalized and counted in warnings. The prompt now renders `"name" (role: …)`. B–E keys include prompt hashes. B also accepted an answer with **no mappings** (`SchemaMap.mappings` had a default, the same failure as A before `1407505`). B now decodes into an all-required schema and rejects empty answers.
+- **Restarts.** B was restarted three times on Monday, each time within its first call, as each fix landed. Friday's logs are kept as `runs/suid_poc_20261103.fri-failed.log` and `.driver.fri-failed.log`.
+- **Cross-check.** The B embedding cross-check (`B_check.json`) is built. B's cache key is untouched, so after B stops, `uv run mmf run configs/suid.yaml --run-dir runs/suid_poc_20261103` adds the check in minutes and rewrites `review_B.md` with a cross-check section. See [architecture.md](architecture.md#independent-pathways-checks-that-share-no-logic-with-what-they-check).
+
 `manifest.json` still holds 9 calls from the pre-fix Nov 3 run (no `_profile`/`_claims` suffix); ignore those. Decisions and the full fix plan: [plans/2026-11-09-ingest-audit-and-b-crosscheck.md](plans/2026-11-09-ingest-audit-and-b-crosscheck.md).
 
 **Already confirmed (Friday evening).** Stage A extracted:
@@ -70,7 +77,10 @@ cat runs/suid_poc_20261103.driver.log           # ends with "DONE …" or the fa
 
 ## 3. Monday checklist
 
-**First complete Phase 1 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-crosscheck.md)** (parser fix, concept-name check, restart without `--auto-approve`), then Phase 2 while B runs. The checklist below then applies, with `B_check.json` flags reviewed first in step 3.
+Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-crosscheck.md) are done. When the driver log says `Stopped at review B`:
+- Rerun once without approving: `uv run mmf run configs/suid.yaml --run-dir runs/suid_poc_20261103`. It adds `B_check.json` and the cross-check section to `review_B.md`.
+- Then follow the checklist below, starting at step 2 and reviewing the cross-check flags first in step 3.
+- Do not edit `B_schema.json` or `C_gaps.json` until the investigator has approved a proposed edit list.
 
 1. Confirm the run finished: `driver.log` ends with `DONE`, and `report.md` exists.
 2. In `manifest.json`, scan for calls with `"ok": false`, the `dropped` lists (claims or variables removed because their quotes weren't verbatim), and `warnings`.
@@ -84,10 +94,15 @@ cat runs/suid_poc_20261103.driver.log           # ends with "DONE …" or the fa
 **A. Make the first SUID result trustworthy** (this week)
 1. Complete the §3 review cycle.
 2. **Record the code version in each run.** `RunManifest` stores prompt, model and input hashes but not the git commit. Add the commit hash and a dirty-tree flag. Small change, and it closes a real provenance gap.
-3. **Fix the PRAMS Phase 8 Standard Section II parser.** It yields only 4 variables; its layout needs a dedicated deterministic pass in `src/mmf/ingest/codebook.py`.
-
-4. **Independent cross-checks (plan Phase 2).** A codebook ingestion audit (NVSS anchor reconciliation plus an identifier census) and a Stage B embedding cross-check (`mxbai-embed-large`, local) that flags disagreements with the LLM's mappings for review. Neither pathway overrides the other. Using retrieval to narrow B's candidate variables is a separate, later decision, because it would make the two pathways dependent. The validators-off (L−) switch must also be able to disable these checks.
+3. **Fix the PRAMS Phase 8 Standard Section II parser.** It yields only 4 variables; its layout needs a dedicated deterministic pass in `src/mmf/ingest/codebook.py`. The identifier census does not detect this layout, so check it by hand.
+4. **Make D's LLM-facing schema all-required before D runs.** `Strategy` lets the model omit `covariates`, `offset`, `interactions`, `stratification`, `time_scale` and `expected_direction` (the defaults bug class). Make them required and nullable, as A and B now are, and add the model to `test_component_a_chunk_schemas_require_every_field`. C is protected by its exact-count validator.
 5. **Near-duplicate concepts** from A (case-insensitive exact dedup only). Consider normalized dedup or merge them during B review.
+5a. **Read the identifier census files with the investigator** (`runs/suid_poc_20261103/sources/*.audit.json`) before tightening the parser further. Known leftovers:
+    - Mostly SAS format names.
+    - One split name (`VT_NONHISPANIC_WHIT` + `E`).
+    - Label and level warts: `MHTR` "…Inches 282", `RF_PHYPE` "…321", `BMI` level `282=…`, `DWgt_R` level `303=…`, `SLEEPPOS_RAW` "…SLEEPPO S".
+    - B shows labels only; levels feed the embedding check.
+5b. **Recalibrate `b_check_miss_threshold`** (provisional 0.65) on the reviewed B output.
 
 **B. Make runs cheaper** (before any repeated runs)
 
@@ -96,7 +111,7 @@ cat runs/suid_poc_20261103.driver.log           # ends with "DONE …" or the fa
 
 **C. Build what the evaluation protocol assumes but doesn't yet exist** ([evaluation_protocol.md](evaluation_protocol.md))
 
-8. A **validators-off switch** for the ablation condition (L−). There is currently no way to run it.
+8. A **validators-off switch** for the ablation condition (L−). There is currently no way to run it. It must also set `b_crosscheck: false` and decide whether the ingestion audit's hard check stays on.
 9. A **blinded rater-sheet export**: strategies to `blind_code` rows matching `evaluation/rater_sheet_template.csv`, with the key in the gitignored `evaluation/blinding_key.csv`.
 10. **Single-manuscript configs** for metric 3 (retrospective recovery: run with the PCA manuscript only, then with bed-sharing only).
 11. Decide on **condition O** (cloud). It needs institutional credentials; if there are none, drop it and say so in the protocol.
@@ -112,7 +127,8 @@ cat runs/suid_poc_20261103.driver.log           # ends with "DONE …" or the fa
   - **Fix:** two calls per chunk (study profile, then claims) with every field required. A manuscript with no variables or claims now stops the run (`StageInputError`), and B refuses an empty concept list.
   - **Rule:** never add defaults to LLM-facing models. A test enforces it.
 - **Stage B batching.** Concepts are sent in batches capped by `b_max_mappings_per_call` (default 50), so a long concept list can't hit the output-token cap.
-- **Stage A cache key** now includes the prompt hashes, so editing a prompt reruns A.
+- **Stage A cache key** now includes the prompt hashes, so editing a prompt reruns A. Since 2026-11-09, B–E keys do too, and the ingest key includes `PARSER_VERSION`.
+- **Independent pathways (2026-11-09).** An ingestion audit and a B embedding cross-check; see [architecture.md](architecture.md). Embeddings use local `mxbai-embed-large` (`ollama pull mxbai-embed-large`).
 
 ## 6. Operating rules and decisions
 

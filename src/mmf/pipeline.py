@@ -21,12 +21,12 @@ import yaml
 from pydantic import BaseModel
 
 from mmf import __version__
-from mmf.components import a_decompose, b_schema_map, c_gaps, d_strategy, e_feasibility
+from mmf.components import a_decompose, b_crosscheck, b_schema_map, c_gaps, d_strategy, e_feasibility
 from mmf.config import RunConfig, Settings, SourceSpec
 from mmf.ingest.audit import audit_codebook
 from mmf.ingest.codebook import PARSER_VERSION, build_datasource
 from mmf.ingest.pdf import Document, load_document, sha256_file
-from mmf.llm.base import LLMClient
+from mmf.llm.base import Embedder, LLMClient
 from mmf.llm.structured import GenerationFailedError, StageInputError, make_client
 from mmf.report.markdown import render_report, render_review
 from mmf.schemas import (
@@ -37,6 +37,7 @@ from mmf.schemas import (
     LLMCallRecord,
     ManuscriptDecomposition,
     RunManifest,
+    SchemaCheck,
     SchemaMap,
     StrategySet,
 )
@@ -63,8 +64,15 @@ def _h(*parts: str) -> str:
 
 
 class Run:
-    def __init__(self, cfg: RunConfig, run_dir: Path | None = None, client: LLMClient | None = None) -> None:
+    def __init__(
+        self,
+        cfg: RunConfig,
+        run_dir: Path | None = None,
+        client: LLMClient | None = None,
+        embedder: Embedder | None = None,
+    ) -> None:
         self.cfg = cfg
+        self._embedder = embedder
         self.settings = Settings()
         self.run_dir = run_dir or cfg.out_dir / f"{datetime.now(UTC):%Y%m%dT%H%M%S}_{cfg.sha256()[:8]}"
         self.run_dir.mkdir(parents=True, exist_ok=True)
@@ -117,13 +125,13 @@ class Run:
         self.manifest.stage_hashes[stage] = key
         self._save_manifest()
 
-    def _review_gate(self, stage: str, obj: BaseModel, title: str) -> None:
+    def _review_gate(self, stage: str, obj: BaseModel, title: str, check: SchemaCheck | None = None) -> None:
         p = self.run_dir / f"review_{stage}.md"
         if p.exists():
             head = p.read_text().split("---", 2)
             if len(head) >= 3 and yaml.safe_load(head[1]).get("approved") is True:
                 return
-        p.write_text(render_review(stage, title, obj))
+        p.write_text(render_review(stage, title, obj, check))
         raise ReviewPending(stage, p)
 
     def _llm_kwargs(self) -> LLMKwargs:
@@ -248,10 +256,50 @@ class Run:
                     self.manifest.warnings.append(w)
             self._record(recs)
             self._store("B", key, cached, "B_schema.json")
-        self._review_gate("B", cached, "Schema map")
-        return SchemaMap.model_validate_json(
-            (self.run_dir / "B_schema.json").read_text()
-        )  # re-read: user may have edited
+        smap = SchemaMap.model_validate_json((self.run_dir / "B_schema.json").read_text())  # user may have edited
+        check = self.stage_b_check(smap, decs, sources) if self.cfg.b_crosscheck else None
+        self._review_gate("B", smap, "Schema map", check)
+        return smap
+
+    def embedder(self) -> Embedder:
+        if self._embedder is None:
+            from mmf.llm.ollama import OllamaEmbedder  # local only; there is no cloud embedder
+
+            self._embedder = OllamaEmbedder(self.cfg.embed_model, host=self.settings.ollama_host)
+        return self._embedder
+
+    def stage_b_check(
+        self, smap: SchemaMap, decs: list[ManuscriptDecomposition], sources: dict[str, DataSource]
+    ) -> SchemaCheck:
+        """Embedding cross-check of B (flags only). Its own cache entry, so it never touches B's."""
+        emb = self.embedder()
+        key = _h(
+            smap.model_dump_json(),
+            *(d.model_dump_json() for d in decs),
+            *(s.model_dump_json() for s in sources.values()),
+            emb.model,
+            emb.model_digest() or "",
+            b_crosscheck.FINGERPRINT_VERSION,
+            str(self.cfg.b_check_top_k),
+            str(self.cfg.b_check_miss_threshold),
+        )
+        check = self._cached("B_check", key, SchemaCheck, "B_check.json")
+        if check is None:
+            check = b_crosscheck.check_schema(
+                smap,
+                decs,
+                sources,
+                emb,
+                top_k=self.cfg.b_check_top_k,
+                miss_threshold=self.cfg.b_check_miss_threshold,
+                cache_dir=self.cfg.cache_dir.parent / "embeddings",
+            )
+            self._store("B_check", key, check, "B_check.json")
+        counts = check.counts()
+        flagged = counts.get("llm_outside_topk", 0) + counts.get("possible_miss", 0)
+        if flagged:
+            self._warn(f"B_check: {flagged} (concept, source) pair(s) where embeddings and the LLM disagree; {counts}")
+        return check
 
     def stage_c(self, decs: list[ManuscriptDecomposition], smap: SchemaMap, sources: dict[str, DataSource]) -> GapSet:
         key = _h(

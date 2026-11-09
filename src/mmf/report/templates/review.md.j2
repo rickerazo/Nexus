@@ -8,6 +8,28 @@ MMF proposed the structured output below. Review it, edit `{{ stage }}_*.json` i
 if anything is wrong, then set `approved: true` above (or run `mmf approve <run_dir> {{ stage }}`) and
 re-run `mmf run`. Downstream stages use the JSON file, not this rendering.
 
+{% if check %}
+## Cross-check (embedding vs LLM)
+
+An independent embedding pathway (`{{ check.embed_model }}`) ranked each source's variables for every concept.
+It does not change the mappings; it flags where the two pathways disagree. Counts: {% for v, n in check.counts()|dictsort %}{{ v }} {{ n }}{{ ", " if not loop.last }}{% endfor %}.
+
+- **llm_outside_topk**: the LLM's variable is not in the embedding top {{ check.top_k }}. Possible stretch or wrong mapping.
+- **possible_miss**: the LLM mapped nothing, but an embedding candidate scores at least {{ check.miss_threshold }}.
+
+{% if flagged %}
+| Verdict | Source | Concept (role) | LLM variable(s) | Top-3 embedding candidates |
+|---|---|---|---|---|
+{% for r in flagged %}
+| {{ r.verdict }} | {{ r.source_id }} | {{ r.concept }} ({{ r.role }}) | {{ r.llm_variables|join(", ") or "none" }} | {% for t in r.top[:3] %}`{{ t.name }}` {{ t.label|replace("|", "/") }} ({{ "%.2f"|format(t.score) }}){{ "; " if not loop.last }}{% endfor %} |
+{% endfor %}
+{% else %}
+No disagreements.
+{% endif %}
+
+Full records, including agreements: `B_check.json`.
+
+{% endif %}
 ```json
 {{ json }}
 ```

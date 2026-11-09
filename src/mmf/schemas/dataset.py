@@ -104,3 +104,38 @@ class CodebookAudit(BaseModel):
     anchors_checked: int
     unmatched_anchors: list[AnchorMiss]
     census: list[IdentifierSighting]
+
+
+class CheckCandidate(BaseModel):
+    name: str
+    label: str
+    score: float = Field(description="Cosine similarity between concept and variable fingerprints.")
+
+
+class CheckRecord(BaseModel):
+    """Embedding cross-check of B's mapping for one (concept, source)."""
+
+    concept: str
+    role: str
+    source_id: str
+    llm_variables: list[str] = Field(description="Variables B's LLM mapped this concept to in this source.")
+    verdict: str = Field(description="agree | llm_outside_topk | possible_miss | both_none")
+    outside: list[str] = Field(default_factory=list, description="LLM variables not in the embedding top-k.")
+    top: list[CheckCandidate]
+
+
+class SchemaCheck(BaseModel):
+    """Independent embedding pathway over B's output (`mmf.components.b_crosscheck`). Flags for human review;
+    never changes the SchemaMap."""
+
+    embed_model: str
+    embed_digest: str | None
+    top_k: int
+    miss_threshold: float
+    records: list[CheckRecord]
+
+    def counts(self) -> dict[str, int]:
+        out: dict[str, int] = {}
+        for r in self.records:
+            out[r.verdict] = out.get(r.verdict, 0) + 1
+        return out

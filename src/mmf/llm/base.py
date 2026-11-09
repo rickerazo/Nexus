@@ -34,3 +34,17 @@ class LLMClient(Protocol):
     def model_digest(self) -> str | None:
         """A stable identifier of the exact model weights, if the backend exposes one."""
         ...
+
+
+class Embedder(Protocol):
+    """Text embeddings for independent cross-checks (never for generation). Local backends only."""
+
+    model: str
+
+    def embed(self, texts: list[str]) -> list[list[float]]:
+        """One vector per text, in order."""
+        ...
+
+    def model_digest(self) -> str | None:
+        """A stable identifier of the exact model weights, if the backend exposes one."""
+        ...

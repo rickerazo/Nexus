@@ -1,6 +1,7 @@
 from mmf.schemas.dataset import (
     ConceptMapping,
     DataSource,
+    SchemaCheck,
     SchemaMap,
     Variable,
     VariableRef,
@@ -32,6 +33,7 @@ __all__ = [
     "ManuscriptDecomposition",
     "OutcomeSpec",
     "RunManifest",
+    "SchemaCheck",
     "SchemaMap",
     "Strategy",
     "StrategySet",

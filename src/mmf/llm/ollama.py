@@ -60,3 +60,28 @@ class OllamaClient:
             usage=usage,
             truncated=(resp.done_reason == "length"),
         )
+
+
+class OllamaEmbedder:
+    """Local embeddings via Ollama (e.g. mxbai-embed-large). Requires `ollama pull <model>`."""
+
+    def __init__(self, model: str, host: str = "http://localhost:11434", batch_size: int = 64) -> None:
+        self.model = model
+        self.batch_size = batch_size
+        self._client = ollama.Client(host=host)
+        self._digest: str | None = None
+
+    def model_digest(self) -> str | None:
+        if self._digest is None:
+            for m in self._client.list().models:
+                if m.model == self.model or (m.model or "").split(":")[0] == self.model.split(":")[0]:
+                    self._digest = m.digest
+                    break
+        return self._digest
+
+    def embed(self, texts: list[str]) -> list[list[float]]:
+        out: list[list[float]] = []
+        for i in range(0, len(texts), self.batch_size):
+            resp = self._client.embed(model=self.model, input=texts[i : i + self.batch_size], keep_alive="5m")
+            out.extend(list(map(float, v)) for v in resp.embeddings)
+        return out

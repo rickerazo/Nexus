@@ -5,6 +5,7 @@ from pathlib import Path
 
 import pytest
 from tests.integration.replay import ReplayClient
+from tests.unit.test_crosscheck import KeywordEmbedder
 
 from mmf.config import RunConfig, SourceSpec
 from mmf.pipeline import ReviewPending, Run, approve
@@ -32,10 +33,13 @@ def test_pipeline_end_to_end_replay(tmp_path: Path) -> None:
     client = ReplayClient(CASSETTE)
     for stage in ("B", "C"):
         with pytest.raises(ReviewPending):
-            Run(cfg, run_dir=run_dir, client=client).run()
+            Run(cfg, run_dir=run_dir, client=client, embedder=KeywordEmbedder()).run()
         assert (run_dir / f"review_{stage}.md").exists()
+        if stage == "B":
+            assert (run_dir / "B_check.json").exists()
+            assert "## Cross-check (embedding vs LLM)" in (run_dir / "review_B.md").read_text()
         approve(run_dir, stage)
-    report = Run(cfg, run_dir=run_dir, client=client).run()
+    report = Run(cfg, run_dir=run_dir, client=client, embedder=KeywordEmbedder()).run()
     text = report.read_text()
     assert "## D. Strategies" in text and "Not assessed by MMF" in text
     dec = json.loads((run_dir / "A_mini_manuscript.json").read_text())
