@@ -1,6 +1,6 @@
 # Handoff: project state and next steps
 
-*Last updated 2026-11-06 (Friday). Update this file whenever the state below changes.*
+*Last updated 2026-11-09 (Monday). Update this file whenever the state below changes.*
 
 This is the entry point for anyone picking up Nexus/MMF: where the project stands, what is running, what to do next, and the decisions that are easy to get wrong. For *why* the code is built the way it is, read [architecture.md](architecture.md); for the scientific framing, [specific_aims.md](specific_aims.md).
 
@@ -14,7 +14,7 @@ This is the entry point for anyone picking up Nexus/MMF: where the project stand
 | Codebook ingestion | 7 SUID sources parsed deterministically, about 5,500 variables. |
 | Component A (manuscript decomposition) | **Fixed 2026-11-06** (commit `1407505`). Before this, every run extracted claims only; see §5. |
 | Smoke run (test fixtures, local model) | Passes end to end; recorded and replayed in CI. |
-| SUID proof-of-concept run | **Running over the weekend of 2026-11-06** (§2). First run with the Component A fix. |
+| SUID proof-of-concept run | **Weekend run failed** Fri 2026-11-06 17:15 at the first Stage B call (§2). Fix and restart plan: [plans/2026-11-09-ingest-audit-and-b-crosscheck.md](plans/2026-11-09-ingest-audit-and-b-crosscheck.md). |
 | Evaluation protocol | Draft, **not frozen**. No scored runs exist yet. |
 | Repository | `github.com/rickerazo/Nexus` (private), history pushed 2026-11-06. |
 
@@ -40,6 +40,20 @@ Any output from a run before 2026-11-06 (`runs/suid_poc_20261026`, `runs/smoke_2
 5. **E** checks feasibility.
 6. The run writes `report.md`.
 
+**Outcome (checked Monday 2026-11-09): the run failed.** Stage A completed and is cached for all 3 documents. The run stopped Fri 17:15 on `B_schema_map_0_0` after 4 rejected attempts (about 9 min each). There is no `B_schema.json` and no `report.md`. Causes:
+- **Codebook parser bug.** The NVSS branch of `pass1_regex` (`src/mmf/ingest/codebook.py`, about line 167) skips a variable when a blank line separates its name from its label. 12 variables are missing from `cdc_linkco15`: SEX, CIG_0–CIG_3, BFED, BMI, PAY, WIC, ILIVE, ILP_R, MHTR. The model correctly mapped infant sex to `SEX`, and the validator rejected it.
+- **Model inconsistency.** Alternate attempts returned `variable: null` with `compatibility: proxy`. The validator is correct and stays as is.
+- **Unchecked renaming.** B renamed most concepts ("bed sharing" became "Bed sharing as exposure"), and nothing checks names against the concepts sent.
+- **Ingest cache key** has no parser version, so a parser fix would not re-ingest on its own. The B–E keys lack prompt hashes.
+
+Stage A quality on this run:
+- 54 distinct concepts reach B (28 B calls); about 32 are mouse or neuron measures from the abstracts.
+- 4 literature claims were dropped as ungrounded, including two SUID-relevant ones (maternal obesity PAF; maternal chlamydia/gonorrhea).
+- Questionable roles in the bed-sharing paper: PCA labelled outcome, chronological age labelled offset.
+- Near-duplicate concepts survive (sex / infant sex / sex (male, female); PCA ×3).
+
+`manifest.json` still holds 9 calls from the pre-fix Nov 3 run (no `_profile`/`_claims` suffix); ignore those. Decisions and the full fix plan: [plans/2026-11-09-ingest-audit-and-b-crosscheck.md](plans/2026-11-09-ingest-audit-and-b-crosscheck.md).
+
 **Already confirmed (Friday evening).** Stage A extracted:
 - PCA manuscript: 12 variables, 14 claims; design `population_incidence`; model classes `negative_binomial`, `time_stratified`, `poisson_regression`, `generalized_additive`.
 - Bed-sharing manuscript: 17 variables, 30 claims.
@@ -56,6 +70,8 @@ cat runs/suid_poc_20261103.driver.log           # ends with "DONE …" or the fa
 
 ## 3. Monday checklist
 
+**First complete Phase 1 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-crosscheck.md)** (parser fix, concept-name check, restart without `--auto-approve`), then Phase 2 while B runs. The checklist below then applies, with `B_check.json` flags reviewed first in step 3.
+
 1. Confirm the run finished: `driver.log` ends with `DONE`, and `report.md` exists.
 2. In `manifest.json`, scan for calls with `"ok": false`, the `dropped` lists (claims or variables removed because their quotes weren't verbatim), and `warnings`.
 3. **Review B.** Open `B_schema.json` and fix wrong or stretched mappings by hand. Watch for vague concept names (the smoke run produced a concept called just "outcome"). Literature-only concepts that will never map, such as mouse or neuron measures, can simply be deleted.
@@ -70,19 +86,22 @@ cat runs/suid_poc_20261103.driver.log           # ends with "DONE …" or the fa
 2. **Record the code version in each run.** `RunManifest` stores prompt, model and input hashes but not the git commit. Add the commit hash and a dirty-tree flag. Small change, and it closes a real provenance gap.
 3. **Fix the PRAMS Phase 8 Standard Section II parser.** It yields only 4 variables; its layout needs a dedicated deterministic pass in `src/mmf/ingest/codebook.py`.
 
+4. **Independent cross-checks (plan Phase 2).** A codebook ingestion audit (NVSS anchor reconciliation plus an identifier census) and a Stage B embedding cross-check (`mxbai-embed-large`, local) that flags disagreements with the LLM's mappings for review. Neither pathway overrides the other. Using retrieval to narrow B's candidate variables is a separate, later decision, because it would make the two pathways dependent. The validators-off (L−) switch must also be able to disable these checks.
+5. **Near-duplicate concepts** from A (case-insensitive exact dedup only). Consider normalized dedup or merge them during B review.
+
 **B. Make runs cheaper** (before any repeated runs)
 
-4. **Stage B output is mostly "no match" rows.** Let the model return only real mappings and generate the "none" rows in code. This should cut B from hours to a fraction, and it matters because the evaluation needs k=5 repeats per condition.
-5. Stage A quotes are still fragile. The model truncates them or appends page markers, and items that never ground are dropped. Track the dropped count per run; if it grows, consider asking for sentence-level quotes only.
+6. **Stage B output is mostly "no match" rows.** Let the model return only real mappings and generate the "none" rows in code. This should cut B from hours to a fraction, and it matters because the evaluation needs k=5 repeats per condition.
+7. Stage A quotes are still fragile. The model truncates them or appends page markers, and items that never ground are dropped. Track the dropped count per run; if it grows, consider asking for sentence-level quotes only.
 
 **C. Build what the evaluation protocol assumes but doesn't yet exist** ([evaluation_protocol.md](evaluation_protocol.md))
 
-6. A **validators-off switch** for the ablation condition (L−). There is currently no way to run it.
-7. A **blinded rater-sheet export**: strategies to `blind_code` rows matching `evaluation/rater_sheet_template.csv`, with the key in the gitignored `evaluation/blinding_key.csv`.
-8. **Single-manuscript configs** for metric 3 (retrospective recovery: run with the PCA manuscript only, then with bed-sharing only).
-9. Decide on **condition O** (cloud). It needs institutional credentials; if there are none, drop it and say so in the protocol.
-10. Recruit the **second blinded rater**.
-11. **Freeze the protocol.** Record the commit hash in it and log any later deviations. Only runs after this point count.
+8. A **validators-off switch** for the ablation condition (L−). There is currently no way to run it.
+9. A **blinded rater-sheet export**: strategies to `blind_code` rows matching `evaluation/rater_sheet_template.csv`, with the key in the gitignored `evaluation/blinding_key.csv`.
+10. **Single-manuscript configs** for metric 3 (retrospective recovery: run with the PCA manuscript only, then with bed-sharing only).
+11. Decide on **condition O** (cloud). It needs institutional credentials; if there are none, drop it and say so in the protocol.
+12. Recruit the **second blinded rater**.
+13. **Freeze the protocol.** Record the commit hash in it and log any later deviations. Only runs after this point count.
 
 **D. Then:** scored runs (Aim 3 validation), select one strategy, and implement it with standard epidemiologic methods. That last step is outside MMF.
 
