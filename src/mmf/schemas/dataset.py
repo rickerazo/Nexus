@@ -75,3 +75,32 @@ class SchemaMap(BaseModel):
 
     mappings: list[ConceptMapping] = Field(default_factory=list)
     source_summaries: dict[str, str] = Field(default_factory=dict, description="Per-source capability summary.")
+
+
+class AnchorMiss(BaseModel):
+    """An NVSS field header in the document without exactly one extracted variable at its position."""
+
+    page: int
+    position: str
+    file: str
+    text: str = Field(description="The line at the header's name position.")
+    extracted: list[str] = Field(description="Variables extracted at this position and file flag (0 or >1).")
+
+
+class IdentifierSighting(BaseModel):
+    """A codebook-style identifier in the document that is not an extracted variable name."""
+
+    token: str
+    page: int = Field(description="First page where it appears.")
+    context: str
+    count: int
+
+
+class CodebookAudit(BaseModel):
+    """Independent check of a DataSource against its document (`mmf.ingest.audit`). Not used by any stage."""
+
+    source_id: str
+    n_variables: int
+    anchors_checked: int
+    unmatched_anchors: list[AnchorMiss]
+    census: list[IdentifierSighting]

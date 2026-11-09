@@ -22,9 +22,10 @@ from pydantic import BaseModel
 
 from mmf import __version__
 from mmf.components import a_decompose, b_schema_map, c_gaps, d_strategy, e_feasibility
-from mmf.config import RunConfig, Settings
+from mmf.config import RunConfig, Settings, SourceSpec
+from mmf.ingest.audit import audit_codebook
 from mmf.ingest.codebook import PARSER_VERSION, build_datasource
-from mmf.ingest.pdf import load_document, sha256_file
+from mmf.ingest.pdf import Document, load_document, sha256_file
 from mmf.llm.base import LLMClient
 from mmf.llm.structured import GenerationFailedError, StageInputError, make_client
 from mmf.report.markdown import render_report, render_review
@@ -141,25 +142,54 @@ class Run:
             doc = load_document(spec.path, self.cfg.cache_dir)
             self._add_input(spec.path, doc.sha256, "codebook")
             key = _h(doc.sha256, "codebook_extract", PARSER_VERSION, self.cfg.model, str(self.cfg.chunk_tokens))
-            cached = self._cached(f"ingest_{spec.id}", key, DataSource, f"sources/{spec.id}.json")
-            if cached is not None:
-                out[spec.id] = cached
-                continue
-            ds, rejected, recs = build_datasource(
-                doc,
-                spec.id,
-                self.client if spec.llm_extract else None,
-                title=spec.title,
-                chunk_tokens=self.cfg.chunk_tokens,
-                **self._llm_kwargs(),
-            )
-            (self.run_dir / "sources" / f"{spec.id}.rejected.json").write_text(
-                json.dumps([r.model_dump() for r in rejected], indent=2)
-            )
-            self._record(recs)
-            self._store(f"ingest_{spec.id}", key, ds, f"sources/{spec.id}.json")
+            ds = self._cached(f"ingest_{spec.id}", key, DataSource, f"sources/{spec.id}.json")
+            if ds is None:
+                ds = self._ingest(spec, doc, key)
+            self._audit(spec.id, doc, ds)  # on cache hits too, so an incomplete parse can never reach B
             out[spec.id] = ds
         return out
+
+    def _ingest(self, spec: SourceSpec, doc: Document, key: str) -> DataSource:
+        ds, rejected, recs = build_datasource(
+            doc,
+            spec.id,
+            self.client if spec.llm_extract else None,
+            title=spec.title,
+            chunk_tokens=self.cfg.chunk_tokens,
+            **self._llm_kwargs(),
+        )
+        (self.run_dir / "sources" / f"{spec.id}.rejected.json").write_text(
+            json.dumps([r.model_dump() for r in rejected], indent=2)
+        )
+        self._record(recs)
+        self._store(f"ingest_{spec.id}", key, ds, f"sources/{spec.id}.json")
+        return ds
+
+    def _audit(self, sid: str, doc: Document, ds: DataSource) -> None:
+        """Independent ingestion audit (`mmf.ingest.audit`). Writes sources/<id>.audit.json; stops the run if a
+        documented field header has no extracted variable; records unexplained identifiers as a warning."""
+        audit = audit_codebook(doc, ds)
+        path = self.run_dir / "sources" / f"{sid}.audit.json"
+        path.write_text(audit.model_dump_json(indent=2))
+        if audit.census:
+            self._warn(
+                f"ingest_{sid}: {len(audit.census)} identifier(s) in the codebook are not extracted variables; see {path}"
+            )
+        if audit.unmatched_anchors:
+            shown = "; ".join(f"p{a.page} {a.position} {a.text!r}" for a in audit.unmatched_anchors[:10])
+            raise StageInputError(
+                f"ingest_{sid}",
+                [
+                    f"{len(audit.unmatched_anchors)} field header(s) without exactly one extracted variable: {shown}",
+                    f"see {path}",
+                ],
+            )
+
+    def _warn(self, w: str) -> None:
+        log.warning("%s", w)
+        if w not in self.manifest.warnings:
+            self.manifest.warnings.append(w)
+        self._save_manifest()
 
     def stage_a(self) -> list[ManuscriptDecomposition]:
         out = []
