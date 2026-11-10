@@ -167,3 +167,58 @@ def test_schema_map_canonicalizes_names_and_warns_on_missing_rows(sources):
         "B_schema_map_0_0: 1 concept names canonicalized to the names sent",
         "B_schema_map_0_0: no row for 1 (concept, source) pair(s): infant sex / cdc",
     ]
+
+
+def _row(concept, variable, compat="proxy"):
+    return {"concept": concept, "source_id": "cdc", "variable": variable, "compatibility": compat, "rationale": "r"}
+
+
+def test_schema_map_splits_multi_variable_rows(sources):
+    vs = [VariableMention(concept="maternal smoking", role="exposure", operationalization="o", quote="q" * 20)]
+    answer = {"mappings": [_row("maternal smoking", "CIG_REC, MAGER9")], "source_summaries": {}}
+    smap, _, warnings = map_schema(
+        [_dec(variables=vs)],
+        sources,
+        SchemaRoutingClient(schema_map=answer),
+        seed=0,
+        temperature=0,
+        max_retries=0,
+        log_dir=None,
+    )
+    assert [(m.variable, m.compatibility, m.rationale) for m in smap.mappings] == [
+        ("CIG_REC", "proxy", "r"),
+        ("MAGER9", "proxy", "r"),
+    ]
+    assert warnings == ["B_schema_map_0_0: 1 multi-variable rows split into one row per variable"]
+
+
+def test_schema_map_checkpoints_each_call_and_resumes(sources, tmp_path):
+    vs = [
+        VariableMention(concept=c, role="exposure", operationalization="o", quote="q" * 20)
+        for c in ["infant sex", "maternal age"]
+    ]
+    good = {"infant sex": _row("infant sex", "SEX", "direct"), "maternal age": _row("maternal age", "MAGER9")}
+    fail_second = {"on": True}
+
+    def answer(user):
+        (c,) = re.findall(r'^- "(.+?)" \(role', user, flags=re.M)
+        if c == "maternal age" and fail_second["on"]:
+            return {"mappings": [_row(c, "NOPE")], "source_summaries": {}}
+        return {"mappings": [good[c]], "source_summaries": {}}
+
+    kw = dict(seed=0, temperature=0, max_retries=0, log_dir=None, max_mappings_per_call=1, salt="s")
+    ckpt = tmp_path / "ckpt"
+    client = SchemaRoutingClient(schema_map=answer)
+    with pytest.raises(Exception, match="no valid output"):
+        map_schema([_dec(variables=vs)], sources, client, checkpoint_dir=ckpt, **kw)
+    assert len(list(ckpt.glob("B_schema_map_0_0_*.json"))) == 1  # the finished call survived the failure
+    assert not list(ckpt.glob("B_schema_map_0_1_*.json"))
+
+    fail_second["on"] = False
+    client = SchemaRoutingClient(schema_map=answer)
+    resumed, recs, warnings = map_schema([_dec(variables=vs)], sources, client, checkpoint_dir=ckpt, **kw)
+    assert [r.stage for r in recs] == ["B_schema_map_0_1"] and len(client.calls) == 1
+    assert "B: resumed 1 of 2 calls from checkpoint" in warnings
+
+    fresh, _, _ = map_schema([_dec(variables=vs)], sources, SchemaRoutingClient(schema_map=answer), **kw)
+    assert resumed == fresh

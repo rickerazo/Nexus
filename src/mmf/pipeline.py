@@ -248,6 +248,8 @@ class Run:
                 self.client,
                 max_vars_per_call=self.cfg.b_max_vars_per_call,
                 max_mappings_per_call=self.cfg.b_max_mappings_per_call,
+                checkpoint_dir=self.run_dir / "checkpoints" / "B",
+                salt=_h(self.cfg.model, str(self.cfg.seed), str(self.cfg.temperature), str(self.cfg.num_ctx)),
                 **self._llm_kwargs(),
             )
             for w in warnings:

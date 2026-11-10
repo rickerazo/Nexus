@@ -171,3 +171,16 @@ def test_map_validator_rejects_empty_mappings(sources):
     assert map_validator(sources, BATCH)(SchemaMap(source_summaries={"cdc": "s"})) == [
         "no mappings were returned; return one mapping per concept per data source listed"
     ]
+
+
+def test_map_validator_multi_variable_rows(sources):
+    def one(variable):
+        row = ConceptMapping(concept="bed sharing", source_id="cdc", variable=variable, compatibility="proxy")
+        return map_validator(sources)(SchemaMap(mappings=[row]))
+
+    assert one("SEX, MAGER9") == []
+    assert one("SEX; MAGER9") == []
+    (problem,) = one("SEX, NOPE")
+    assert "'NOPE' not documented in cdc" in problem and "one variable name per mapping" in problem
+    assert "'SEX'" not in problem
+    assert one("NOPE") == ["mapping for 'bed sharing': 'NOPE' is not a documented variable in cdc"]

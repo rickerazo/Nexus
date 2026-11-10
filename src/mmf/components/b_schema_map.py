@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
+import hashlib
+import json
 import re
 from collections.abc import Callable, Sequence
 from pathlib import Path
-from typing import NamedTuple
+from typing import Any, NamedTuple
 
 from pydantic import BaseModel, Field
 
@@ -76,6 +78,17 @@ def canonical_concept(returned: str, batch: Sequence[Concept]) -> str | None:
     return None
 
 
+_SPLIT = re.compile(r"[,;]")
+
+
+def split_names(value: str, source: DataSource) -> list[str]:
+    """The variable names in one `variable` field: itself when it is a documented name, else its comma- or
+    semicolon-separated parts (the model sometimes lists several real variables in one field)."""
+    if source.lookup(value) is not None or not _SPLIT.search(value):
+        return [value.strip()]
+    return [p.strip() for p in _SPLIT.split(value) if p.strip()]
+
+
 def map_validator(
     sources: dict[str, DataSource], batch: Sequence[Concept] | None = None
 ) -> Callable[[MapLike], list[str]]:
@@ -91,10 +104,19 @@ def map_validator(
                 continue
             if x.compatibility not in COMPAT:
                 problems.append(f"mapping for {x.concept!r}: compatibility must be one of {sorted(COMPAT)}")
-            if x.variable is not None and sources[x.source_id].lookup(x.variable) is None:
-                problems.append(
-                    f"mapping for {x.concept!r}: {x.variable!r} is not a documented variable in {x.source_id}"
-                )
+            if x.variable is not None:
+                parts = split_names(x.variable, sources[x.source_id])
+                bad = [p for p in parts if sources[x.source_id].lookup(p) is None]
+                if bad and len(parts) == 1:
+                    problems.append(
+                        f"mapping for {x.concept!r}: {x.variable!r} is not a documented variable in {x.source_id}"
+                    )
+                elif bad:
+                    problems.append(
+                        f"mapping for {x.concept!r}: {', '.join(map(repr, bad))} not documented in {x.source_id}; "
+                        "put one variable name per mapping and add a separate mapping row for each additional "
+                        "variable"
+                    )
             if x.variable is None and x.compatibility != "none":
                 problems.append(f"mapping for {x.concept!r}: null variable requires compatibility 'none'")
         return problems
@@ -114,6 +136,27 @@ def canonicalize(m: MapLike, batch: Sequence[Concept]) -> int:
     return n
 
 
+def expand_multi(m: MapLike, sources: dict[str, DataSource]) -> int:
+    """Replace each row naming several documented variables with one row per variable, in place; return how
+    many rows were split. Call only on output that passed `map_validator`."""
+    out: list[Any] = []
+    n = 0
+    for x in m.mappings:
+        parts = split_names(x.variable, sources[x.source_id]) if x.variable else [x.variable]
+        if len(parts) > 1:
+            n += 1
+            out.extend(x.model_copy(update={"variable": p}) for p in parts)
+        else:
+            out.append(x)
+    m.mappings = out
+    return n
+
+
+def _call_key(salt: str, prompt_sha: str, user: str) -> str:
+    schema = json.dumps(SchemaMapOut.model_json_schema(), sort_keys=True)
+    return hashlib.sha256("\x00".join((salt, prompt_sha, user, schema)).encode()).hexdigest()
+
+
 def concepts_text(batch: Sequence[Concept]) -> str:
     return "\n".join(f'- "{c.name}" (role: {c.role}) — {c.operationalization}' for c in batch)
 
@@ -129,13 +172,18 @@ def map_schema(
     log_dir: Path | None,
     max_vars_per_call: int = 350,
     max_mappings_per_call: int = 50,
+    checkpoint_dir: Path | None = None,
+    salt: str = "",
 ) -> tuple[SchemaMap, list[LLMCallRecord], list[str]]:
     """One call per (source group, concept batch); large codebooks are split into groups and long concept
     lists into batches so each call fits the context and the output cap. Mappings are merged. For a concept
     with several candidate variables in one source, every candidate is kept for human review.
 
-    Returns (schema map, call records, warnings). Warnings record concept names rewritten to their sent form
-    and (concept, source) pairs the model left without any row."""
+    Each validated call is saved under `checkpoint_dir` (keyed by salt, prompt, rendered input and output
+    schema) as soon as it finishes, so a rerun after a failure resumes instead of repeating finished calls.
+
+    Returns (schema map, call records, warnings). Warnings record concept names rewritten to their sent form,
+    rows split into one per variable, resumed calls, and (concept, source) pairs the model left without any row."""
     concepts = collect_concepts(decompositions)
     if not concepts:
         raise StageInputError("B", ["no concepts to map: Component A extracted no variables from any manuscript"])
@@ -143,28 +191,48 @@ def map_schema(
     merged = SchemaMap()
     records = []
     warnings: list[str] = []
+    resumed = total = 0
     for gi, group in enumerate(source_groups(sources, max_vars_per_call)):
         batch = max(1, max_mappings_per_call // len(group))
         for bi in range(0, len(concepts), batch):
             sent = concepts[bi : bi + batch]
             stage = f"B_schema_map_{gi}_{bi // batch}"
             user = prompt.render(concepts=concepts_text(sent), sources=sources_text(group))
-            obj, rec = generate(
-                client,
-                prompt,
-                user,
-                SchemaMapOut,
-                stage=stage,
-                seed=seed,
-                temperature=temperature,
-                validators=[map_validator(group, sent)],
-                max_retries=max_retries,
-                log_dir=log_dir,
+            validator = map_validator(group, sent)
+            total += 1
+            ckpt = (
+                checkpoint_dir / f"{stage}_{_call_key(salt, prompt.sha256, user)[:16]}.json" if checkpoint_dir else None
             )
-            records.append(rec)
+            obj = None
+            if ckpt is not None and ckpt.exists():
+                obj = SchemaMapOut.model_validate_json(ckpt.read_text())
+                if validator(obj):
+                    obj = None  # stale or corrupted checkpoint: regenerate
+                else:
+                    resumed += 1
+            if obj is None:
+                obj, rec = generate(
+                    client,
+                    prompt,
+                    user,
+                    SchemaMapOut,
+                    stage=stage,
+                    seed=seed,
+                    temperature=temperature,
+                    validators=[validator],
+                    max_retries=max_retries,
+                    log_dir=log_dir,
+                )
+                records.append(rec)
+                if ckpt is not None:
+                    ckpt.parent.mkdir(parents=True, exist_ok=True)
+                    ckpt.write_text(obj.model_dump_json(indent=1))
             renamed = canonicalize(obj, sent)
             if renamed:
                 warnings.append(f"{stage}: {renamed} concept names canonicalized to the names sent")
+            split = expand_multi(obj, group)
+            if split:
+                warnings.append(f"{stage}: {split} multi-variable rows split into one row per variable")
             covered = {(m.concept, m.source_id) for m in obj.mappings}
             missing = [f"{c.name} / {sid}" for c in sent for sid in group if (c.name, sid) not in covered]
             if missing:
@@ -180,6 +248,8 @@ def map_schema(
     # drop 'none' rows for concept/source pairs that got a real mapping from another group
     mapped = {(m.concept, m.source_id) for m in merged.mappings if m.variable}
     merged.mappings = [m for m in merged.mappings if m.variable or (m.concept, m.source_id) not in mapped]
+    if resumed:
+        warnings.append(f"B: resumed {resumed} of {total} calls from checkpoint")
     return merged, records, warnings
 
 
