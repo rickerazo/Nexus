@@ -1,6 +1,6 @@
 # Handoff: project state and next steps
 
-*Last updated 2026-11-09 (Monday). Update this file whenever the state below changes.*
+*Last updated 2026-11-10 (Tuesday). Update this file whenever the state below changes.*
 
 This is the entry point for anyone picking up Nexus/MMF: where the project stands, what is running, what to do next, and the decisions that are easy to get wrong. For *why* the code is built the way it is, read [architecture.md](architecture.md); for the scientific framing, [specific_aims.md](specific_aims.md).
 
@@ -10,11 +10,12 @@ This is the entry point for anyone picking up Nexus/MMF: where the project stand
 
 | Area | State |
 |---|---|
-| Pipeline (Components A–E, CLI, report) | Implemented and tested: 49 tests, lint, strict mypy, CI on every push. |
+| Pipeline (Components A–E, CLI, report) | Implemented and tested: 52 tests, lint, strict mypy, CI on every push. |
 | Codebook ingestion | 7 SUID sources parsed deterministically, **6,035 variables** (parser v4, 2026-11-09; was about 5,500). An independent audit runs on every ingest (§2). |
 | Component A (manuscript decomposition) | **Fixed 2026-11-06** (commit `1407505`). Before this, every run extracted claims only; see §5. |
 | Smoke run (test fixtures, local model) | Passes end to end; recorded and replayed in CI. |
-| SUID proof-of-concept run | Weekend run failed Fri 2026-11-06 at the first Stage B call. **Restarted Mon 2026-11-09 ~14:47 PT** at commit `f351764` without `--auto-approve`. It will stop at review B (§2, §3). Plan: [plans/2026-11-09-ingest-audit-and-b-crosscheck.md](plans/2026-11-09-ingest-audit-and-b-crosscheck.md). |
+| SUID proof-of-concept run | The Monday restart failed at 16:03 on B call `3_0` (9th of about 28): the model put several real variables in one field and the validator rejected the whole string. Fixed in `9d78c98` (rows are split into one per variable; each B call is checkpointed under `runs/suid_poc_20261103/checkpoints/B`, so a rerun resumes). **Restarted Tue 2026-11-10 ~14:15 PT** without `--auto-approve`. Failed logs are kept as `*.mon-failed.log`. It will stop at review B (§2, §3). |
+| Epic Cosmos | Public-intelligence stub only: [data_sources/epic_cosmos.md](data_sources/epic_cosmos.md). Not a pipeline input until the real Data Dictionary is exported from the Cosmos portal. Adding it re-runs B in full. |
 | Evaluation protocol | Draft, **not frozen**. No scored runs exist yet. |
 | Repository | `github.com/rickerazo/Nexus` (private), history pushed 2026-11-06. |
 
