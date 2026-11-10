@@ -28,7 +28,7 @@ Any output from a run before 2026-11-06 (`runs/suid_poc_20261026`, `runs/smoke_2
 | | |
 |---|---|
 | Command | `scripts/run_pipeline.sh configs/suid.yaml runs/suid_poc_20261103 --auto-approve` |
-| Started | Fri 2026-11-06, about 14:54 PT, at commit `1407505` |
+| Started | Fri 2026-11-06, about 14:54 PST, at commit `1407505` |
 | Inputs | 3 documents: PCA manuscript, bed-sharing manuscript, PubMed abstracts. 7 codebooks: CDC linked birth/infant death 2015, CDC natality 2015, CDC code names, NFR-CRS v5.1, PRAMS Phase 7 ARF, PRAMS Phase 8 ARF, PRAMS Phase 8 Standard Section II. See [configs/suid.yaml](../configs/suid.yaml). |
 | Expected duration | 10–15 h of model time: A about 3 h, B 28–56 calls (5–9 h), C–E about 2 h. It should finish Saturday. |
 | Machine requirements | Ollama running (`ollama serve`), Mac open and on AC power. `caffeinate` prevents idle sleep. |
