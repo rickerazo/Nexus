@@ -59,6 +59,19 @@ Approved by the user on Tue 2026-11-10. Times are PST.
 - Evidence the defect was live: the recorded smoke run's D answers omitted `covariates`, `interactions`, `offset`
   and `stratification` in both strategies. The smoke cassette is re-recorded with the new schema.
 
+## C fixes, Wed 2026-11-11 (`02f48fc`), at the user's request before D
+- C rejects supporting claims not discussed in prior_art/rationale, and prior_art citing unlisted claims. The
+  model's original SUID gaps fail 7 such checks; the reviewed gaps pass.
+- Codebook entries carry a `population`; C's prompt shows them and says incidence needs a births denominator and
+  that a derived concept (PCA) lists every component. C's cache key includes the populations.
+- A regenerated B or C clears its review approval (found while making this change: the old gate would have passed
+  regenerated, unreviewed gaps to D).
+- D was stopped at 15:21 PST before writing anything. C is rerun with the fixed prompt and stops for a new review.
+  The reviewed gaps are kept as `C_gaps.reviewed-2026-11-11.json` (approval: `review_C.approved-2026-11-11.md`).
+- **Open for D:** the linked file has no births variable; the births denominator is a count of birth records.
+  D's rule "rate models need an offset variable" cannot be met (G1's first two D attempts were rejected for it, the
+  second after inventing `POPULATION_DENOMINATOR`). Needs a decision before D runs.
+
 ## Deferred (to solve later)
 - **Remove `cdc_codenames` from `configs/suid.yaml`** at the next full B rerun (parser fix or Cosmos). Changing the
   config now would change B's cache key and overwrite the reviewed `B_schema.json` with raw model output.
@@ -73,10 +86,6 @@ Approved by the user on Tue 2026-11-10. Times are PST.
 - **The stricter validator invalidates 9 of the 28 B checkpoints** (calls that left pairs without rows). They are
   regenerated only on the next B cache miss; this run's B is a cache hit and is unaffected.
 
-- **C's validator does not check that supporting claims relate to the gap**, nor that prior_art cites only
-  listed claims.
-- **C's prompt does not say NCFRP holds deaths only** (no denominators), so the model reached for NCFRP variables in
-  incidence questions.
 - **D–E cache keys do not include the output schema.** A run dir holding a D result from an older schema fails to
   load rather than recomputing.
 - **D's `outcome_refs` includes concepts A mislabelled as outcomes** (PCA in the bed-sharing paper), so `COMBGEST`
