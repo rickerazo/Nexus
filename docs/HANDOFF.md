@@ -1,6 +1,6 @@
 # Handoff: project state and next steps
 
-*Last updated 2026-11-10 (Tuesday). Update this file whenever the state below changes.*
+*Last updated 2026-11-11 (Wednesday). Update this file whenever the state below changes.*
 
 This is the entry point for anyone picking up Nexus/MMF: where the project stands, what is running, what to do next, and the decisions that are easy to get wrong. For *why* the code is built the way it is, read [architecture.md](architecture.md); for the scientific framing, [specific_aims.md](specific_aims.md).
 
@@ -14,7 +14,7 @@ This is the entry point for anyone picking up Nexus/MMF: where the project stand
 | Codebook ingestion | 7 SUID sources parsed deterministically, **6,035 variables** (parser v4, 2026-11-09; was about 5,500). An independent audit runs on every ingest (§2). |
 | Component A (manuscript decomposition) | **Fixed 2026-11-06** (commit `1407505`). Before this, every run extracted claims only; see §5. |
 | Smoke run (test fixtures, local model) | Passes end to end; recorded and replayed in CI. |
-| SUID proof-of-concept run | The Monday restart failed at 16:03 on B call `3_0` (9th of about 28): the model put several real variables in one field and the validator rejected the whole string. Fixed in `9d78c98` (rows are split into one per variable; each B call is checkpointed under `runs/suid_poc_20261103/checkpoints/B`, so a rerun resumes). **Restarted Tue 2026-11-10 14:09 PST** without `--auto-approve`. Plan: [plans/2026-11-10-b-split-checkpoint-and-cosmos.md](plans/2026-11-10-b-split-checkpoint-and-cosmos.md). Failed logs are kept as `*.mon-failed.log`. It will stop at review B (§2, §3). |
+| SUID proof-of-concept run | Restarted Tue 2026-11-10 14:09 PST; **stopped at review B 17:51 PST** with all 28 B calls passing (checkpointed under `runs/suid_poc_20261103/checkpoints/B`). The B edit list was approved and applied Wed 2026-11-11: 696 → 159 rows, 22 concepts, `cdc_codenames` dropped as a mapping source; original kept as `B_schema.pre-review.json`. B validation now rejects missing (concept, source) pairs and duplicate rows. **Next:** approve B and run to review C. Plan and deferred items: [plans/2026-11-10-b-split-checkpoint-and-cosmos.md](plans/2026-11-10-b-split-checkpoint-and-cosmos.md). |
 | Epic Cosmos | Public-intelligence stub only: [data_sources/epic_cosmos.md](data_sources/epic_cosmos.md). Not a pipeline input until the real Data Dictionary is exported from the Cosmos portal. Adding it re-runs B in full. |
 | Evaluation protocol | Draft, **not frozen**. No scored runs exist yet. |
 | Repository | `github.com/rickerazo/Nexus` (private), history pushed 2026-11-06. |
@@ -103,7 +103,8 @@ Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-cros
     - One split name (`VT_NONHISPANIC_WHIT` + `E`).
     - Label and level warts: `MHTR` "…Inches 282", `RF_PHYPE` "…321", `BMI` level `282=…`, `DWgt_R` level `303=…`, `SLEEPPOS_RAW` "…SLEEPPO S".
     - B shows labels only; levels feed the embedding check.
-5b. **Recalibrate `b_check_miss_threshold`** (provisional 0.65) on the reviewed B output.
+5b. **Recalibrate `b_check_miss_threshold`** (provisional 0.65) on the reviewed B output (`B_schema.json` vs `B_schema.pre-review.json`). About half of the 46 possible-miss flags were real.
+5c. **Deferred from the 2026-11-11 B review** (details in the 2026-11-10 plan): remove `cdc_codenames` from `configs/suid.yaml` at the next full B rerun; extract the linked file's death-date fields (`DOD_YY`, `DOD_MM`, …); validate a hand-edited `B_schema.json` against the sources on reload.
 
 **B. Make runs cheaper** (before any repeated runs)
 

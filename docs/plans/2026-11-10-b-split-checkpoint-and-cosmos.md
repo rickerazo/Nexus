@@ -24,11 +24,37 @@ Approved by the user on Tue 2026-11-10. Times are PST.
 | 6 | Offline replay of the failed call: attempt 1 now passes (4 rows split); attempt 4 is still rejected on 2 truly undocumented names. | Done |
 | 7 | Preserve the failed logs (`runs/suid_poc_20261103.mon-failed.log`, `.driver.mon-failed.log`). Restart without `--auto-approve`. | Done, Tue 2026-11-10 14:09 PST |
 | 8 | Cosmos public stub: [../data_sources/epic_cosmos.md](../data_sources/epic_cosmos.md). It is kept out of `codebooks:`. | Done, `483e06e` |
-| 9 | Wait for `Stopped at review B` in `runs/suid_poc_20261103.driver.log` (about 4–5 h). If it fails, rerun the same command and B resumes from the checkpoints. | **Pending** |
-| 10 | Rerun once without approving: `uv run mmf run configs/suid.yaml --run-dir runs/suid_poc_20261103`. B is a cache hit; this adds `B_check.json` and the cross-check section in `review_B.md`. | Pending |
-| 11 | Propose a B edit list: cross-check flags first, then wrong or stretched mappings (e.g. SUID → infection variables), near-duplicates, and deleting the mouse/neuron concepts. **No edits to `B_schema.json` until the user approves.** | Pending |
+| 9 | Wait for `Stopped at review B` in `runs/suid_poc_20261103.driver.log` (about 4–5 h). If it fails, rerun the same command and B resumes from the checkpoints. | Done: stopped at review B Tue 2026-11-10 17:51 PST; all 28 calls passed and are checkpointed |
+| 10 | Rerun once without approving: `uv run mmf run configs/suid.yaml --run-dir runs/suid_poc_20261103`. B is a cache hit; this adds `B_check.json` and the cross-check section in `review_B.md`. | Not needed: the same pass wrote both (agree 42, both_none 266, llm_outside_topk 24, possible_miss 46) |
+| 11 | Propose a B edit list: cross-check flags first, then wrong or stretched mappings (e.g. SUID → infection variables), near-duplicates, and deleting the mouse/neuron concepts. **No edits to `B_schema.json` until the user approves.** | Done. Edits E1–E15 approved Wed 2026-11-11 and applied (see below) |
+| 11a | Validator: a (concept, source) pair with no row, or a repeated (concept, source, variable) row, fails validation (was a warning). Approved 2026-11-11. | Done, 54 tests pass |
 | 12 | Approve, then run to C. Review C the same way, with no edits to `C_gaps.json` without approval. Before D runs, propose making D's `Strategy` LLM-facing fields required and nullable, and get the user's go-ahead. Then D, E, the report and HANDOFF. | Pending |
 | 13 | Cosmos, real dictionary: the user exports it (CSV or Excel) into `data/documentation/`. Check whether `pass1_table` handles `Table.Column` names; if not, add a Cosmos branch, bump `PARSER_VERSION` and add tests. Add `epic_cosmos` to `configs/suid.yaml`. This re-runs B in full. | Waiting on the user |
+
+## B review, applied Wed 2026-11-11 (PST)
+- The original model output is kept as `runs/suid_poc_20261103/B_schema.pre-review.json`. The edits were applied by a script
+  that rebuilds from that backup; the result passes `map_validator` with no duplicate rows and no missing pairs.
+- 696 → 159 rows (70 direct, 27 derived, 15 proxy, 47 none); 54 → 22 concepts.
+- E1 dropped the 32 mouse/neuron/cell concepts. E2 fixed rows the model filed under `sex (male, female)` and
+  `birthweight (low, non-low)` instead of `sex` and `birthweight`. E3–E15 corrected mappings per concept: wrong
+  NCFRP rows for SUID and sex removed; `UCOD`, `REGsuidcat`, `CAUicdcode`, `AGED`, `INFdayslive`, BMI, infection,
+  bed-sharing and PRAMS gestation/birthweight variables added; compatibility made consistent.
+- E5: natality `COMBGEST` kept for PCA as the person-time denominator (natality has no death age).
+- Decision 2: `cdc_codenames` is no longer a mapping source. Its rows and summary are deleted from this run's B.
+
+## Deferred (to solve later)
+- **Remove `cdc_codenames` from `configs/suid.yaml`** at the next full B rerun (parser fix or Cosmos). Changing the
+  config now would change B's cache key and overwrite the reviewed `B_schema.json` with raw model output.
+- **Linked file death date not extracted:** `DOD_YY`, `DOD_MM` (and `D_RESTATUS`, `DWEEKDAY`, `HOSPD`, `DOSTATE`,
+  `DOCNTY`, `DRCNTY`, …) are in the `cdc_linkco15` identifier census but are not variables. "Year of birth or death" has
+  birth year only. A parser fix bumps `PARSER_VERSION` and reruns B in full.
+- **`b_check_miss_threshold` (0.65):** about half of the 46 `possible_miss` flags were real misses, often pointing
+  at the wrong variable (`P_PRTERM`, `PREV_LBW`: *previous* births; mouse concepts matching `INF72breathe`). Use the
+  reviewed B as the reference set for recalibration (HANDOFF §4 item 5b).
+- **An edited `B_schema.json` is only schema-validated on reload** (`pipeline.py`, `stage_b`), not run through
+  `map_validator`. A hand edit with a typo'd variable would pass. Consider validating it against the sources.
+- **The stricter validator invalidates 9 of the 28 B checkpoints** (calls that left pairs without rows). They are
+  regenerated only on the next B cache miss; this run's B is a cache hit and is unaffected.
 
 ## Rules
 - Never push; the user pushes with the deploy key's passphrase.

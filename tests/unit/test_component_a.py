@@ -8,7 +8,7 @@ import pytest
 from mmf.components.a_decompose import decompose, decomposition_problems
 from mmf.components.b_schema_map import collect_concepts, map_schema
 from mmf.llm.base import LLMResponse
-from mmf.llm.structured import StageInputError
+from mmf.llm.structured import GenerationFailedError, StageInputError
 from mmf.schemas import ManuscriptDecomposition
 from mmf.schemas.manuscript import VariableMention
 
@@ -141,7 +141,7 @@ def test_schema_map_batches_concepts_and_dedupes(sources):
     assert '- "age at death" (role: exposure)' in client.calls[-1][1] and '"Sex"' not in client.calls[-1][1]
 
 
-def test_schema_map_canonicalizes_names_and_warns_on_missing_rows(sources):
+def test_schema_map_canonicalizes_names_and_rejects_missing_rows(sources):
     vs = [
         VariableMention(concept=c, role=r, operationalization="o", quote="q" * 20)
         for c, r in [("bed sharing", "exposure"), ("infant sex", "stratifier")]
@@ -159,14 +159,15 @@ def test_schema_map_canonicalizes_names_and_warns_on_missing_rows(sources):
         "source_summaries": {},
     }
     client = SchemaRoutingClient(schema_map=answer)
+    # a (concept, source) pair without a row is rejected (it used to pass with a warning)
+    with pytest.raises(GenerationFailedError, match="no row for 'infant sex' / cdc"):
+        map_schema([_dec(variables=vs)], sources, client, seed=0, temperature=0, max_retries=0, log_dir=None)
+    answer["mappings"].append(_row("Infant Sex", "SEX", "direct"))
     smap, _, warnings = map_schema(
         [_dec(variables=vs)], sources, client, seed=0, temperature=0, max_retries=0, log_dir=None
     )
-    assert [m.concept for m in smap.mappings] == ["bed sharing"]
-    assert warnings == [
-        "B_schema_map_0_0: 1 concept names canonicalized to the names sent",
-        "B_schema_map_0_0: no row for 1 (concept, source) pair(s): infant sex / cdc",
-    ]
+    assert [m.concept for m in smap.mappings] == ["bed sharing", "infant sex"]
+    assert warnings == ["B_schema_map_0_0: 2 concept names canonicalized to the names sent"]
 
 
 def _row(concept, variable, compat="proxy"):

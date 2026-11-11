@@ -156,14 +156,45 @@ def test_canonical_concept():
 def test_map_validator_rejects_unknown_concept(sources):
     def m(concept):
         return SchemaMap(
-            mappings=[ConceptMapping(concept=concept, source_id="cdc", variable="SEX", compatibility="direct")]
+            mappings=[
+                ConceptMapping(concept="bed sharing", source_id="cdc", variable=None, compatibility="none"),
+                ConceptMapping(concept=concept, source_id="cdc", variable="SEX", compatibility="direct"),
+            ]
         )
 
     check = map_validator(sources, BATCH)
     assert check(m("Infant sex")) == []
     assert check(m("sex of the infant")) == [
-        "concept 'sex of the infant' was not in the list; copy the concept name exactly as given"
+        "concept 'sex of the infant' was not in the list; copy the concept name exactly as given",
+        "no row for 'infant sex' / cdc; return at least one row for every concept in every data source "
+        "(variable null and compatibility 'none' when nothing matches)",
     ]
+
+
+def test_map_validator_rejects_misfiled_duplicate_rows(sources):
+    # 2026-11-10: the model filed the 'sex' rows under 'sex (male, female)', doubling one concept and
+    # leaving the other unmapped; both used to pass with only a warning
+    batch = [Concept("sex (male, female)", "stratifier", "o"), Concept("sex", "stratifier", "o")]
+    row = ConceptMapping(concept="sex (male, female)", source_id="cdc", variable="SEX", compatibility="direct")
+    problems = map_validator(sources, batch)(SchemaMap(mappings=[row, row.model_copy()]))
+    assert problems == [
+        "duplicate rows for 'sex (male, female)' / cdc / SEX; give each concept, source and variable only once, "
+        "under the concept name it belongs to",
+        "no row for 'sex' / cdc; return at least one row for every concept in every data source "
+        "(variable null and compatibility 'none' when nothing matches)",
+    ]
+    fixed = [row, row.model_copy(update={"concept": "sex"})]
+    assert map_validator(sources, batch)(SchemaMap(mappings=fixed)) == []
+
+
+def test_map_validator_duplicates_count_after_split_and_canonicalization(sources):
+    batch = [Concept("bed sharing", "exposure", "o")]
+    rows = [
+        ConceptMapping(concept="bed sharing", source_id="cdc", variable="SEX, MAGER9", compatibility="proxy"),
+        ConceptMapping(concept="Bed sharing as exposure", source_id="cdc", variable="mager9", compatibility="proxy"),
+    ]
+    (problem,) = map_validator(sources, batch)(SchemaMap(mappings=rows))
+    assert problem.startswith("duplicate rows for 'bed sharing' / cdc / mager9;")
 
 
 def test_map_validator_rejects_empty_mappings(sources):

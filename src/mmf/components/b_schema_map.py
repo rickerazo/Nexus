@@ -119,9 +119,42 @@ def map_validator(
                     )
             if x.variable is None and x.compatibility != "none":
                 problems.append(f"mapping for {x.concept!r}: null variable requires compatibility 'none'")
+        if batch and m.mappings:
+            problems.extend(_coverage_problems(m, sources, batch))
         return problems
 
     return check
+
+
+def _coverage_problems(m: MapLike, sources: dict[str, DataSource], batch: Sequence[Concept]) -> list[str]:
+    """Every (concept, source) pair needs a row, and no (concept, source, variable) may repeat. On 2026-11-10 the
+    model filed its 'sex' rows under 'sex (male, female)': one concept doubled, the other left unmapped."""
+    problems = []
+    seen: set[tuple[str, str, str | None]] = set()
+    dups: list[str] = []
+    for x in m.mappings:
+        name = canonical_concept(x.concept, batch)
+        if name is None or x.source_id not in sources:
+            continue  # already reported
+        parts = split_names(x.variable, sources[x.source_id]) if x.variable else [None]
+        for p in parts:
+            key = (name, x.source_id, p.upper() if p else None)
+            if key in seen and f"{name!r} / {x.source_id} / {p}" not in dups:
+                dups.append(f"{name!r} / {x.source_id} / {p}")
+            seen.add(key)
+    if dups:
+        problems.append(
+            f"duplicate rows for {', '.join(dups)}; give each concept, source and variable only once, "
+            "under the concept name it belongs to"
+        )
+    covered = {(c, s) for c, s, _ in seen}
+    missing = [f"{c.name!r} / {sid}" for c in batch for sid in sources if (c.name, sid) not in covered]
+    if missing:
+        problems.append(
+            f"no row for {', '.join(missing)}; return at least one row for every concept in every data source "
+            "(variable null and compatibility 'none' when nothing matches)"
+        )
+    return problems
 
 
 def canonicalize(m: MapLike, batch: Sequence[Concept]) -> int:
@@ -183,7 +216,8 @@ def map_schema(
     schema) as soon as it finishes, so a rerun after a failure resumes instead of repeating finished calls.
 
     Returns (schema map, call records, warnings). Warnings record concept names rewritten to their sent form,
-    rows split into one per variable, resumed calls, and (concept, source) pairs the model left without any row."""
+    rows split into one per variable, and resumed calls. A (concept, source) pair without a row, or a repeated
+    row, fails validation and is retried."""
     concepts = collect_concepts(decompositions)
     if not concepts:
         raise StageInputError("B", ["no concepts to map: Component A extracted no variables from any manuscript"])
@@ -233,10 +267,6 @@ def map_schema(
             split = expand_multi(obj, group)
             if split:
                 warnings.append(f"{stage}: {split} multi-variable rows split into one row per variable")
-            covered = {(m.concept, m.source_id) for m in obj.mappings}
-            missing = [f"{c.name} / {sid}" for c in sent for sid in group if (c.name, sid) not in covered]
-            if missing:
-                warnings.append(f"{stage}: no row for {len(missing)} (concept, source) pair(s): {'; '.join(missing)}")
             for m in (ConceptMapping(**x.model_dump()) for x in obj.mappings):
                 if m.variable is None and any(
                     x.concept == m.concept and x.source_id == m.source_id and x.variable for x in merged.mappings
