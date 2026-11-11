@@ -36,6 +36,11 @@ class SourceSpec(BaseModel):
         description="Run the LLM enrichment pass (pass 2). False = deterministic pass only; use for "
         "tabular codebooks where the deterministic parser is complete, or to save time.",
     )
+    denominator: bool = Field(
+        default=False,
+        description="True if this source's records are the population at risk (e.g. one record per live birth), so "
+        "a rate model can use the count of its records per stratum as the denominator.",
+    )
     population: str | None = Field(
         default=None,
         description="Who the records cover (e.g. 'infant deaths only; no births'). Shown to Component C so it can "

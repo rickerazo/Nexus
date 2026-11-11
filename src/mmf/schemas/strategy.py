@@ -25,6 +25,10 @@ class Strategy(BaseModel):
     interactions: list[list[VariableRef]] = Field(description="Each inner list is one interaction term (2+ variables).")
     stratification: list[VariableRef]
     offset: VariableRef | None = Field(description="Denominator variable for rate models; null if none.")
+    denominator_source: str | None = Field(
+        description="For rate models without an offset variable: the source whose records are the population at "
+        "risk; the denominator is the count of its records per stratum. Null otherwise."
+    )
     time_scale: VariableRef | None = Field(
         description="Time axis for time-to-event or time-stratified models (e.g. age at death); null if none."
     )

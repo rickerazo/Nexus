@@ -61,6 +61,7 @@ Claims ({{ d.claims | length }}):
 | Interactions | {% for t in s.interactions %}{% for r in t %}`{{ r.name }}`{{ ' × ' if not loop.last }}{% endfor %}{{ '; ' if not loop.last }}{% endfor %} |
 | Stratification | {% for r in s.stratification %}`{{ r.source_id }}:{{ r.name }}`{{ ', ' if not loop.last }}{% endfor %} |
 | Offset | {% if s.offset %}`{{ s.offset.source_id }}:{{ s.offset.name }}`{% else %}—{% endif %} |
+| Denominator | {% if s.denominator_source %}count of `{{ s.denominator_source }}` records per stratum{% else %}—{% endif %} |
 | Time scale | {% if s.time_scale %}`{{ s.time_scale.source_id }}:{{ s.time_scale.name }}`{% else %}—{% endif %} |
 | Design | {{ s.design }} |
 | Model class | {{ s.model_class }} |

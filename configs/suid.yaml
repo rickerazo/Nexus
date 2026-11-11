@@ -11,11 +11,13 @@ codebooks:
     path: data/codebooks/LinkCO15Guide.pdf
     title: CDC linked birth/infant death public-use file guide, 2015
     llm_extract: false
+    denominator: true
     population: "US live births in the 2015 cohort linked to infant deaths in the first year (births and deaths), so it supplies both SUID cases and births denominators"
   - id: cdc_natl15
     path: data/documentation/natl2015.pdf
     title: CDC natality public-use file guide, 2015
     llm_extract: false
+    denominator: true
     population: "all US live births in 2015; no deaths"
   - id: cdc_codenames
     path: data/documentation/CDC_database_codeNames.xlsx

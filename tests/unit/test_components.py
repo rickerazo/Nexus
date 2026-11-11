@@ -89,6 +89,7 @@ def _strategy(**kw):
         design=StudyDesign.POPULATION_INCIDENCE,
         model_class=ModelClass.NEGATIVE_BINOMIAL,
         offset=REF("BIRTHS"),
+        denominator_source=None,
         time_scale=None,
         rationale="word " * 25,
         expected_direction="higher incidence among exposed",
@@ -244,3 +245,18 @@ def test_map_validator_multi_variable_rows(sources):
     assert "'NOPE' not documented in cdc" in problem and "one variable name per mapping" in problem
     assert "'SEX'" not in problem
     assert one("NOPE") == ["mapping for 'bed sharing': 'NOPE' is not a documented variable in cdc"]
+
+
+def test_strategy_denominator_source_replaces_offset_only_for_marked_sources(sources):
+    gap = _gap()
+    by_count = _strategy(offset=None, denominator_source="cdc")
+    assert strategy_validator(gap, sources, denominator_sources={"cdc"})(by_count) == []
+    # not marked as a denominator source in the run config
+    problems = strategy_validator(gap, sources, denominator_sources=set())(by_count)
+    assert "denominator_source 'cdc' is not a denominator source; use one of [] or null" in problems
+    assert "negative_binomial requires an offset (denominator) variable" in problems
+    # neither offset nor denominator source
+    problems = strategy_validator(gap, sources, denominator_sources={"cdc"})(_strategy(offset=None))
+    assert problems == [
+        "negative_binomial requires an offset (denominator) variable or a denominator_source (one of ['cdc'])"
+    ]

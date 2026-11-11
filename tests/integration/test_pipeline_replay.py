@@ -21,7 +21,13 @@ def test_pipeline_end_to_end_replay(tmp_path: Path) -> None:
     cfg = RunConfig(
         manuscripts=[ROOT / "tests/fixtures/mini_manuscript.md"],
         codebooks=[
-            SourceSpec(id="cdc", path=ROOT / "tests/fixtures/mini_codebook.txt", title="Mini codebook (fixture)")
+            SourceSpec(
+                id="cdc",
+                path=ROOT / "tests/fixtures/mini_codebook.txt",
+                title="Mini codebook (fixture)",
+                denominator=True,
+                population="fixture: one record per live birth, linked to infant deaths",
+            )
         ],
         model="replay",
         n_gaps=2,

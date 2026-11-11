@@ -30,10 +30,15 @@ TIME_MODELS = {ModelClass.COX_PROPORTIONAL_HAZARDS, ModelClass.TIME_STRATIFIED}
 
 
 def strategy_validator(
-    gap: KnowledgeGap, sources: dict[str, DataSource], outcome_refs: set[str] | None = None
+    gap: KnowledgeGap,
+    sources: dict[str, DataSource],
+    outcome_refs: set[str] | None = None,
+    denominator_sources: set[str] | None = None,
 ) -> Callable[[Strategy], list[str]]:
     """`outcome_refs`: keys of variables mapped from outcome-role concepts (Component B). If given and
-    non-empty, the strategy's outcome must be one of them."""
+    non-empty, the strategy's outcome must be one of them. `denominator_sources`: sources the run config marks
+    as the population at risk; a rate model may use one of them instead of an offset variable."""
+    denoms = denominator_sources or set()
 
     def check(s: Strategy) -> list[str]:
         problems = unresolved_problems(s.all_refs(), sources)
@@ -44,8 +49,14 @@ def strategy_validator(
         for term in s.interactions:
             if len(term) < 2:
                 problems.append("each interaction term needs 2+ variables")
-        if s.model_class in RATE_MODELS and s.offset is None:
-            problems.append(f"{s.model_class} requires an offset (denominator) variable")
+        if s.denominator_source is not None and s.denominator_source not in denoms:
+            problems.append(
+                f"denominator_source {s.denominator_source!r} is not a denominator source; "
+                f"use one of {sorted(denoms)} or null"
+            )
+        if s.model_class in RATE_MODELS and s.offset is None and s.denominator_source not in denoms:
+            options = f" or a denominator_source (one of {sorted(denoms)})" if denoms else ""
+            problems.append(f"{s.model_class} requires an offset (denominator) variable{options}")
         if s.model_class in TIME_MODELS and s.time_scale is None:
             problems.append(f"{s.model_class} requires a time_scale variable (the time axis, e.g. age at death)")
         out_key = s.outcome.variable.key()
@@ -83,6 +94,7 @@ def generate_strategies(
     sources: dict[str, DataSource],
     client: LLMClient,
     schema_map: SchemaMap | None = None,
+    denominator_sources: set[str] | None = None,
     *,
     seed: int,
     temperature: float,
@@ -103,6 +115,7 @@ def generate_strategies(
                 sources, with_labels=True, only=(mapped_keys(schema_map) if schema_map else None) or None
             ),
             vocab=vocab_text(),
+            denominator_sources=", ".join(sorted(denominator_sources or ())) or "none",
         )
         obj, rec = generate(
             client,
@@ -112,7 +125,7 @@ def generate_strategies(
             stage=f"D_strategy_{gap.id}",
             seed=seed,
             temperature=temperature,
-            validators=[strategy_validator(gap, sources, outcome_refs)],
+            validators=[strategy_validator(gap, sources, outcome_refs, denominator_sources)],
             max_retries=max_retries,
             log_dir=log_dir,
         )

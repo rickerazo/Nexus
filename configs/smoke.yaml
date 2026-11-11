@@ -5,6 +5,8 @@ codebooks:
   - id: cdc
     path: tests/fixtures/mini_codebook.txt
     title: Mini codebook (fixture)
+    denominator: true
+    population: "fixture: one record per live birth, linked to infant deaths"
 backend: ollama
 model: qwen2.5:14b
 seed: 0

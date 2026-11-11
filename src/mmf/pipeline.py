@@ -39,6 +39,7 @@ from mmf.schemas import (
     RunManifest,
     SchemaCheck,
     SchemaMap,
+    Strategy,
     StrategySet,
 )
 
@@ -341,11 +342,18 @@ class Run:
     def stage_d(
         self, gaps: GapSet, decs: list[ManuscriptDecomposition], sources: dict[str, DataSource], smap: SchemaMap
     ) -> StrategySet:
-        key = _h(gaps.model_dump_json(), *d_strategy.prompt_hashes(), self.cfg.model)
+        denoms = {c.id for c in self.cfg.codebooks if c.denominator and c.id in sources}
+        key = _h(
+            gaps.model_dump_json(),
+            *d_strategy.prompt_hashes(),
+            self.cfg.model,
+            json.dumps(sorted(denoms)),
+            json.dumps(Strategy.model_json_schema(), sort_keys=True),
+        )
         cached = self._cached("D", key, StrategySet, "D_strategies.json")
         if cached is None:
             cached, recs = d_strategy.generate_strategies(
-                gaps.gaps, decs, sources, self.client, smap, **self._llm_kwargs()
+                gaps.gaps, decs, sources, self.client, smap, denoms, **self._llm_kwargs()
             )
             self._record(recs)
             self._store("D", key, cached, "D_strategies.json")
