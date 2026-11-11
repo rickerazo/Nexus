@@ -11,30 +11,37 @@ codebooks:
     path: data/codebooks/LinkCO15Guide.pdf
     title: CDC linked birth/infant death public-use file guide, 2015
     llm_extract: false
+    population: "US live births in the 2015 cohort linked to infant deaths in the first year (births and deaths), so it supplies both SUID cases and births denominators"
   - id: cdc_natl15
     path: data/documentation/natl2015.pdf
     title: CDC natality public-use file guide, 2015
     llm_extract: false
+    population: "all US live births in 2015; no deaths"
   - id: cdc_codenames
     path: data/documentation/CDC_database_codeNames.xlsx
     title: CDC birth/death file variable names and labels (analysis extract)
     llm_extract: false
+    population: "variable names and labels for the CDC birth and death files; a reference list, not a dataset"
   - id: ncfrp_v51
     path: data/documentation/Codebook_Version5-1_031122.xlsx
     title: National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1
     llm_extract: false
+    population: "child deaths reviewed by participating fatality review teams; deaths only, no births or surviving infants, so it cannot supply incidence denominators"
   - id: prams_p8_arf
     path: data/codebooks/PRAMS_Phase_8_ARF_Codebook.pdf
     title: PRAMS Phase 8 Analytic Research File codebook
     llm_extract: false
+    population: "weighted survey of mothers a few months after a live birth, sampled from birth certificates in participating states; not designed to count infant deaths"
   - id: prams_p8_std2
     path: data/codebooks/PRAMS_Phase_8_Standard_Section_II_Codebook.pdf
     title: PRAMS Phase 8 Standard Section II codebook
     llm_extract: false
+    population: "weighted survey of mothers a few months after a live birth, sampled from birth certificates in participating states; not designed to count infant deaths"
   - id: prams_p7_arf
     path: data/codebooks/PRAMS_Phase_7_ARF_Codebook.pdf
     title: PRAMS Phase 7 Analytic Research File codebook
     llm_extract: false
+    population: "weighted survey of mothers a few months after a live birth, sampled from birth certificates in participating states; not designed to count infant deaths"
 backend: ollama
 model: qwen2.5:14b
 allow_cloud: false

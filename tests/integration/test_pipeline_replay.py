@@ -51,3 +51,16 @@ def test_pipeline_end_to_end_replay(tmp_path: Path) -> None:
 
     names = set(re.findall(r"`cdc:([A-Z0-9_]+)`", text))
     assert names and names <= {"SEX", "MAGER9", "CIG_REC", "COMBGEST", "AGED", "UCOD"}
+
+    # a stage that regenerates must stop for review again; the old approval must not carry over
+    run = Run(cfg, run_dir=run_dir, client=client, embedder=KeywordEmbedder())
+    assert "approved: true" in (run_dir / "review_C.md").read_text()
+    run._reset_review("C")
+    with pytest.raises(ReviewPending):
+        run._review_gate("C", json_model(run_dir / "C_gaps.json"), "Knowledge gaps")
+
+
+def json_model(path: Path):
+    from mmf.schemas import GapSet
+
+    return GapSet.model_validate_json(path.read_text())

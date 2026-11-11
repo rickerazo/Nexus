@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from collections.abc import Callable
 from pathlib import Path
 
@@ -10,7 +11,7 @@ from mmf.llm.base import LLMClient
 from mmf.llm.prompts import load_prompt
 from mmf.llm.structured import generate
 from mmf.schemas.dataset import DataSource, SchemaMap
-from mmf.schemas.gap import GapSet
+from mmf.schemas.gap import GapSet, KnowledgeGap
 from mmf.schemas.manuscript import ManuscriptDecomposition
 from mmf.schemas.run import LLMCallRecord
 from mmf.validate.grounding import unresolved_problems
@@ -43,9 +44,43 @@ def gap_validator(
             problems += [f"{gap.id}: {p}" for p in unresolved_problems(gap.required_variables, sources)]
             if len(gap.prior_art.split()) < 15:
                 problems.append(f"{gap.id}: prior_art must explain what was already tested (too short)")
+            problems += [f"{gap.id}: {p}" for p in citation_problems(gap, claim_ids)]
         return problems
 
     return check
+
+
+_BARE = re.compile(r"(?<![\w.])C\d+\b")
+
+
+def citation_problems(gap: KnowledgeGap, claim_ids: set[str]) -> list[str]:
+    """Supporting claims must be the ones the gap's text builds on. On 2026-11-11 the model listed unrelated
+    method claims as support while prior_art cited claims it had not listed. A bare `C12` in the text refers to
+    a supporting claim ending in `.C12`."""
+
+    def mentions(cid: str, text: str) -> bool:
+        return re.search(rf"{re.escape(cid)}\b", text) is not None
+
+    problems = []
+    text = f"{gap.prior_art} {gap.rationale}"
+    for cid in sorted(claim_ids - set(gap.supporting_claim_ids)):
+        if mentions(cid, gap.prior_art):
+            problems.append(f"prior_art cites {cid}, which is not in supporting_claim_ids")
+    for bare in sorted(set(_BARE.findall(gap.prior_art))):
+        if not any(cid.endswith(f".{bare}") for cid in gap.supporting_claim_ids):
+            problems.append(f"prior_art cites {bare}, which is not in supporting_claim_ids")
+    for cid in gap.supporting_claim_ids:
+        short = cid.rsplit(".", 1)[-1]
+        if not mentions(cid, text) and not re.search(rf"(?<![\w.]){re.escape(short)}\b", text):
+            problems.append(
+                f"supporting claim {cid} is not discussed in prior_art or rationale; cite only claims the gap builds on "
+                "and say how each one bears on it"
+            )
+    return problems
+
+
+def populations_text(sources: dict[str, DataSource], populations: dict[str, str]) -> str:
+    return "\n".join(f"- {sid}: {populations.get(sid, 'not stated')}" for sid in sources)
 
 
 def find_gaps(
@@ -55,6 +90,7 @@ def find_gaps(
     client: LLMClient,
     *,
     n_gaps: int,
+    populations: dict[str, str] | None = None,
     seed: int,
     temperature: float,
     max_retries: int,
@@ -70,6 +106,7 @@ def find_gaps(
         decompositions=dec_text,
         mapping=map_text,
         allowed_refs=allowed_refs_text(sources, only=mapped_keys(schema_map) or None),
+        populations=populations_text(sources, populations or {}),
     )
     obj, rec = generate(
         client,

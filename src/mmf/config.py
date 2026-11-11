@@ -36,6 +36,11 @@ class SourceSpec(BaseModel):
         description="Run the LLM enrichment pass (pass 2). False = deterministic pass only; use for "
         "tabular codebooks where the deterministic parser is complete, or to save time.",
     )
+    population: str | None = Field(
+        default=None,
+        description="Who the records cover (e.g. 'infant deaths only; no births'). Shown to Component C so it can "
+        "tell which sources can supply incidence denominators.",
+    )
 
 
 class RunConfig(BaseModel):

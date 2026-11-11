@@ -1,7 +1,7 @@
 """Validators are the constraint mechanism; test them without any LLM."""
 
 from mmf.components.b_schema_map import Concept, canonical_concept, map_validator
-from mmf.components.c_gaps import gap_validator
+from mmf.components.c_gaps import citation_problems, gap_validator
 from mmf.components.d_strategy import strategy_validator
 from mmf.components.e_feasibility import deterministic_report
 from mmf.schemas import (
@@ -34,7 +34,7 @@ def _gap(**kw):
         id="G1",
         statement="s",
         rationale="r",
-        prior_art="word " * 20,
+        prior_art="m1.C1 tested this; " + "word " * 20,
         supporting_claim_ids=["m1.C1"],
         required_concepts=["sex"],
         required_variables=[REF("SEX")],
@@ -45,6 +45,25 @@ def _gap(**kw):
 
 def test_gap_validator_accepts_grounded_gap(sources):
     assert gap_validator([_dec()], sources, 1)(GapSet(gaps=[_gap()])) == []
+
+
+def test_citation_problems_supporting_claims_must_match_the_text():
+    ids = {"m1.C1", "m1.C12", "m2.C3"}
+    assert citation_problems(_gap(prior_art="m1.C1 found x; see also C1 " + "w " * 15), ids) == []
+    # listed but never discussed (2026-11-11: unrelated method claims listed as support)
+    unused = _gap(prior_art="m1.C1 found x " + "w " * 15, supporting_claim_ids=["m1.C1", "m2.C3"])
+    assert citation_problems(unused, ids) == [
+        "supporting claim m2.C3 is not discussed in prior_art or rationale; cite only claims the gap builds on "
+        "and say how each one bears on it"
+    ]
+    # cited in prior_art but not listed, by full id and by bare id; m1.C1 must not match inside m1.C12
+    unlisted = _gap(prior_art="m1.C1 and m1.C12 found x; C3 too " + "w " * 15)
+    assert citation_problems(unlisted, ids) == [
+        "prior_art cites m1.C12, which is not in supporting_claim_ids",
+        "prior_art cites C3, which is not in supporting_claim_ids",
+    ]
+    # a claim discussed only in the rationale counts
+    assert citation_problems(_gap(prior_art="w " * 20, rationale="builds on m1.C1"), ids) == []
 
 
 def test_gap_validator_rejects_bad_claim_and_variable_and_count(sources):

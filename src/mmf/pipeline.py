@@ -125,6 +125,13 @@ class Run:
         self.manifest.stage_hashes[stage] = key
         self._save_manifest()
 
+    def _reset_review(self, stage: str) -> None:
+        """A regenerated stage needs a new review: an approval given for earlier output must not carry over."""
+        p = self.run_dir / f"review_{stage}.md"
+        if p.exists():
+            p.unlink()
+            self._warn(f"{stage} was regenerated; its earlier review approval was cleared")
+
     def _review_gate(self, stage: str, obj: BaseModel, title: str, check: SchemaCheck | None = None) -> None:
         p = self.run_dir / f"review_{stage}.md"
         if p.exists():
@@ -258,6 +265,7 @@ class Run:
                     self.manifest.warnings.append(w)
             self._record(recs)
             self._store("B", key, cached, "B_schema.json")
+            self._reset_review("B")
         smap = SchemaMap.model_validate_json((self.run_dir / "B_schema.json").read_text())  # user may have edited
         check = self.stage_b_check(smap, decs, sources) if self.cfg.b_crosscheck else None
         self._review_gate("B", smap, "Schema map", check)
@@ -304,20 +312,29 @@ class Run:
         return check
 
     def stage_c(self, decs: list[ManuscriptDecomposition], smap: SchemaMap, sources: dict[str, DataSource]) -> GapSet:
+        populations = {c.id: c.population for c in self.cfg.codebooks if c.id in sources and c.population}
         key = _h(
             *(d.model_dump_json() for d in decs),
             smap.model_dump_json(),
             *c_gaps.prompt_hashes(),
             self.cfg.model,
             str(self.cfg.n_gaps),
+            json.dumps(populations, sort_keys=True),
         )
         cached = self._cached("C", key, GapSet, "C_gaps.json")
         if cached is None:
             cached, recs = c_gaps.find_gaps(
-                decs, smap, sources, self.client, n_gaps=self.cfg.n_gaps, **self._llm_kwargs()
+                decs,
+                smap,
+                sources,
+                self.client,
+                n_gaps=self.cfg.n_gaps,
+                populations=populations,
+                **self._llm_kwargs(),
             )
             self._record(recs)
             self._store("C", key, cached, "C_gaps.json")
+            self._reset_review("C")
         self._review_gate("C", cached, "Knowledge gaps")
         return GapSet.model_validate_json((self.run_dir / "C_gaps.json").read_text())
 
