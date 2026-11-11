@@ -59,6 +59,8 @@ def strategy_validator(
             )
         if outcome_refs and out_key not in outcome_refs:
             problems.append(f"outcome must be a variable mapped from an outcome concept: one of {sorted(outcome_refs)}")
+        if not s.expected_direction.strip():
+            problems.append("expected_direction is empty; state what result would support or refute the gap")
         if len(s.rationale.split()) < 20:
             problems.append("rationale too short; justify design and model class and state what is not established")
         return problems

@@ -19,19 +19,19 @@ class Strategy(BaseModel):
     research_question: str
     outcome: OutcomeSpec
     exposures: list[VariableRef]
-    covariates: list[VariableRef] = Field(default_factory=list)
-    interactions: list[list[VariableRef]] = Field(
-        default_factory=list, description="Each inner list is one interaction term (2+ variables)."
-    )
-    stratification: list[VariableRef] = Field(default_factory=list)
-    offset: VariableRef | None = Field(default=None, description="Denominator variable for rate models.")
+    # No defaults on these (LLM-facing): a grammar-constrained decoder may omit any field that is not required,
+    # which is how Stage A lost every variable before 2026-11-06. Empty lists and nulls must be stated explicitly.
+    covariates: list[VariableRef]
+    interactions: list[list[VariableRef]] = Field(description="Each inner list is one interaction term (2+ variables).")
+    stratification: list[VariableRef]
+    offset: VariableRef | None = Field(description="Denominator variable for rate models; null if none.")
     time_scale: VariableRef | None = Field(
-        default=None, description="Time axis for time-to-event or time-stratified models (e.g. age at death)."
+        description="Time axis for time-to-event or time-stratified models (e.g. age at death); null if none."
     )
     design: StudyDesign
     model_class: ModelClass
     rationale: str
-    expected_direction: str = Field(default="", description="What result would support/refute the gap statement.")
+    expected_direction: str = Field(description="What result would support/refute the gap statement.")
 
     def all_refs(self) -> list[VariableRef]:
         refs = [self.outcome.variable, *self.exposures, *self.covariates, *self.stratification]

@@ -64,14 +64,24 @@ def _strategy(**kw):
         research_question="q",
         outcome=OutcomeSpec(variable=REF("UCOD"), definition="d"),
         exposures=[REF("CIG_REC")],
+        covariates=[],
         interactions=[[REF("SEX"), REF("CIG_REC")]],
+        stratification=[],
         design=StudyDesign.POPULATION_INCIDENCE,
         model_class=ModelClass.NEGATIVE_BINOMIAL,
         offset=REF("BIRTHS"),
+        time_scale=None,
         rationale="word " * 25,
+        expected_direction="higher incidence among exposed",
     )
     base.update(kw)
     return Strategy(**base)
+
+
+def test_strategy_validator_rejects_empty_expected_direction(sources):
+    gap = _gap()
+    problems = strategy_validator(gap, sources)(_strategy(expected_direction="  "))
+    assert "expected_direction is empty; state what result would support or refute the gap" in problems
 
 
 def test_strategy_validator_requires_offset_for_rate_models(sources):

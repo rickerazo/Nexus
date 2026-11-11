@@ -101,8 +101,9 @@ def test_component_a_chunk_schemas_require_every_field():
     is not `required`. Every LLM-facing field must stay required."""
     from mmf.components.a_decompose import ChunkClaims, ChunkProfile
     from mmf.components.b_schema_map import MappingOut, SchemaMapOut
+    from mmf.schemas.strategy import OutcomeSpec, Strategy
 
-    for model in (ChunkProfile, ChunkClaims, SchemaMapOut, MappingOut):
+    for model in (ChunkProfile, ChunkClaims, SchemaMapOut, MappingOut, Strategy, OutcomeSpec):
         schema = model.model_json_schema()
         assert set(schema["required"]) == set(schema["properties"]), model.__name__
 
