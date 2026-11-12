@@ -19,7 +19,7 @@ from pydantic import BaseModel
 
 from mmf.llm.base import LLMClient
 from mmf.llm.prompts import Prompt, load_prompt
-from mmf.llm.structured import GenerationFailedError, generate
+from mmf.llm.structured import GenerationFailedError, Salvage, generate
 from mmf.schemas.dataset import DataSource, Variable
 from mmf.schemas.ideas import (
     MAX_DOMAINS_PER_BLOCK,
@@ -109,7 +109,11 @@ def block_validator(block: list[Variable]) -> Callable[[BlockDomains], list[str]
                 problems.append(f"domain {d.name!r}: start {d.start!r} is not a variable name in this block")
                 continue
             if index[d.start] <= last:
-                problems.append(f"domain {d.name!r}: start {d.start!r} is not after the previous domain's start")
+                problems.append(
+                    f"domain {d.name!r}: start {d.start!r} is variable {index[d.start] + 1} of the list, not after the "
+                    f"previous domain's start (variable {last + 1}); domains must follow the list order, and names "
+                    "that differ only in case or suffix are different variables"
+                )
             last = max(last, index[d.start])
             if not d.name.strip() or not d.summary.strip():
                 problems.append(f"domain starting at {d.start!r}: name and summary must not be empty")
@@ -118,6 +122,24 @@ def block_validator(block: list[Variable]) -> Callable[[BlockDomains], list[str]
         return problems
 
     return check
+
+
+def drop_misplaced_domains(block: list[Variable]) -> Salvage[BlockDomains]:
+    """Final-attempt fallback: drop domains whose start is unknown or out of order. Their variables fall into the
+    previous domain, so coverage stays complete; only a topic boundary is lost. Recorded as dropped."""
+    index = {v.name: i for i, v in enumerate(block)}
+
+    def salvage(b: BlockDomains, problems: list[str]) -> tuple[BlockDomains, list[str]]:
+        kept, dropped, last = [], [], -1
+        for d in b.domains:
+            if d.start in index and index[d.start] > last:
+                kept.append(d)
+                last = index[d.start]
+            else:
+                dropped.append(f"domain {d.name!r} (start {d.start!r})")
+        return BlockDomains(domains=kept), dropped
+
+    return salvage
 
 
 def domains_from_block(sid: str, block: list[Variable], out: BlockDomains, used: set[str]) -> list[InventoryDomain]:
@@ -171,6 +193,7 @@ def build_inventory(
                 BlockDomains,
                 stage=f"C_inventory_{sid}_{bi}",
                 validator=block_validator(block),
+                salvage=drop_misplaced_domains(block),
                 checkpoint_dir=checkpoint_dir,
                 salt=salt,
                 seed=seed,
@@ -319,6 +342,7 @@ def _checkpointed(
     *,
     stage: str,
     validator: Callable[[T], list[str]],
+    salvage: Salvage[T] | None = None,
     checkpoint_dir: Path | None,
     salt: str,
     seed: int,
@@ -350,6 +374,7 @@ def _checkpointed(
         validators=[validator],
         max_retries=max_retries,
         log_dir=log_dir,
+        salvage=salvage,
     )
     if ckpt is not None:
         ckpt.parent.mkdir(parents=True, exist_ok=True)

@@ -40,8 +40,24 @@ def test_block_validator(sources):
     problems = " | ".join(check(bad))
     assert "first domain must start at the block's first variable, 'SEX'" in problems
     assert "'NOPE' is not a variable name" in problems
-    assert "'SEX' is not after the previous domain's start" in problems
+    assert "'SEX' is variable 1 of the list, not after the previous domain's start (variable 3)" in problems
     assert check(BlockDomains(domains=[])) == ["return at least one domain"]
+
+
+def test_misplaced_domains_are_dropped_on_the_final_attempt(sources):
+    block = _block(sources)
+    out = BlockDomains(
+        domains=[
+            BlockDomain(start="SEX", name="Births", summary="s"),
+            BlockDomain(start="UCOD", name="Deaths", summary="d"),
+            BlockDomain(start="CIG_REC", name="Smoking", summary="x"),  # out of order (2026-11-12 NCFRP block 11)
+            BlockDomain(start="NOPE", name="Ghost", summary="x"),
+        ]
+    )
+    pruned, dropped = c_ideas.drop_misplaced_domains(block)(out, [])
+    assert [d.start for d in pruned.domains] == ["SEX", "UCOD"]
+    assert dropped == ["domain 'Smoking' (start 'CIG_REC')", "domain 'Ghost' (start 'NOPE')"]
+    assert c_ideas.block_validator(block)(pruned) == []
 
 
 def test_domains_cover_every_variable_once_and_mark_used(sources):

@@ -37,3 +37,9 @@ On a copy of `runs/suid_poc_20261103` (`runs/suid_poc_20261103_ideas`), so the a
 2. C1 again with `c_ideation_model: qwen2.5:32b`; C0 is a cache hit.
 
 Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea calls, about 35 minutes at 14B and roughly twice that at 32B.
+
+## Run log
+- **Thu 15:29 PST, 14B:** stopped at 15:49 on `C_inventory_ncfrp_v51_11` after 4 attempts. In every attempt the model started its last domain at `INCTimeOfIncident` (position 4 in the block) when it meant `INCtimeofincqual` (position 91). This NCFRP block is ordered alphabetically, not by topic.
+  - **Fix:** the retry message now gives the positions and warns that names differing in case or suffix are different variables.
+  - **Fallback:** on the final attempt, domains whose start is unknown or out of order are dropped. Their variables fall into the previous domain, and the drop is recorded in the call's `dropped` list.
+  - The 11 finished blocks resume from checkpoints.
