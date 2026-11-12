@@ -119,6 +119,7 @@ Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-cros
      - Redesign C so that it generates many candidates and then narrows them down.
      - Add a temperature setting per stage.
      - Amend the evaluation protocol. The amendments were approved 2026-11-12 and are listed in [evaluation_protocol.md](evaluation_protocol.md).
+   - **Status:** C0 (data inventory) and C1 (idea generation) are built and run with `mmf ideate`. Plan, decisions and remaining steps: [plans/2026-11-12-c-redesign.md](plans/2026-11-12-c-redesign.md).
 
 **B. Make runs cheaper** (before any repeated runs)
 

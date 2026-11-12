@@ -21,7 +21,8 @@ import yaml
 from pydantic import BaseModel
 
 from mmf import __version__
-from mmf.components import a_decompose, b_crosscheck, b_schema_map, c_gaps, d_strategy, e_feasibility
+from mmf.components import a_decompose, b_crosscheck, b_schema_map, c_gaps, c_ideas, d_strategy, e_feasibility
+from mmf.components.common import mapped_keys
 from mmf.config import RunConfig, Settings, SourceSpec
 from mmf.ingest.audit import audit_codebook
 from mmf.ingest.codebook import PARSER_VERSION, build_datasource
@@ -42,6 +43,7 @@ from mmf.schemas import (
     Strategy,
     StrategySet,
 )
+from mmf.schemas.ideas import DataInventory, IdeaPool
 
 log = logging.getLogger(__name__)
 M = TypeVar("M", bound=BaseModel)
@@ -338,6 +340,99 @@ class Run:
             self._reset_review("C")
         self._review_gate("C", cached, "Knowledge gaps")
         return GapSet.model_validate_json((self.run_dir / "C_gaps.json").read_text())
+
+    def populations(self, sources: dict[str, DataSource]) -> dict[str, str]:
+        return {c.id: c.population for c in self.cfg.codebooks if c.id in sources and c.population}
+
+    def stage_c_inventory(self, sources: dict[str, DataSource], smap: SchemaMap) -> DataInventory:
+        """C0: every documented variable grouped into topic domains, marking those B mapped to manuscript concepts."""
+        pops = self.populations(sources)
+        used = mapped_keys(smap)
+        key = _h(
+            *(s.model_dump_json() for s in sources.values()),
+            json.dumps(sorted(used)),
+            json.dumps(pops, sort_keys=True),
+            *c_ideas.prompt_hashes(),
+            self.cfg.model,
+            str(self.cfg.c_inventory_block_vars),
+        )
+        inv = self._cached("C_inventory", key, DataInventory, "C_inventory.json")
+        if inv is None:
+            inv, recs = c_ideas.build_inventory(
+                sources,
+                used,
+                self.client,
+                populations=pops,
+                block_vars=self.cfg.c_inventory_block_vars,
+                checkpoint_dir=self.run_dir / "checkpoints" / "C_inventory",
+                salt=_h(self.cfg.model, str(self.cfg.num_ctx)),
+                **self._llm_kwargs(),
+            )
+            self._record(recs)
+            self._store("C_inventory", key, inv, "C_inventory.json")
+        return inv
+
+    def stage_c_ideas(
+        self, decs: list[ManuscriptDecomposition], sources: dict[str, DataSource], inv: DataInventory
+    ) -> IdeaPool:
+        """C1: candidate research questions from each lens and seed, sampled at `c_ideation_temperature`."""
+        model = self.cfg.c_ideation_model or self.cfg.model
+        client = self.client if model == self.cfg.model else self._client_for(model)
+        text = c_ideas.inventory_text(inv, sources, self.populations(sources))
+        key = _h(
+            *(d.model_dump_json() for d in decs),
+            text,
+            *c_ideas.prompt_hashes(),
+            c_ideas.lenses_hash(c_ideas.LENSES),
+            model,
+            str(self.cfg.c_ideation_temperature),
+            json.dumps(self.cfg.c_ideation_seeds),
+            str(self.cfg.c_ideas_per_call),
+        )
+        pool = self._cached("C_ideas", key, IdeaPool, "C_ideas.json")
+        if pool is None:
+            kw = self._llm_kwargs()
+            pool, recs = c_ideas.generate_ideas(
+                decs,
+                text,
+                sources,
+                client,
+                lenses=c_ideas.LENSES,
+                seeds=self.cfg.c_ideation_seeds,
+                n_ideas=self.cfg.c_ideas_per_call,
+                temperature=self.cfg.c_ideation_temperature,
+                max_retries=kw["max_retries"],
+                log_dir=kw["log_dir"],
+                checkpoint_dir=self.run_dir / "checkpoints" / "C_ideas",
+                salt=_h(model, str(self.cfg.num_ctx)),
+            )
+            self._record(recs)
+            for stage in pool.failed_calls:
+                self._warn(f"{stage}: no valid ideas after retries; skipped")
+            self._store("C_ideas", key, pool, "C_ideas.json")
+            (self.run_dir / "C_ideas.md").write_text(c_ideas.pool_markdown(pool))
+        return pool
+
+    def _client_for(self, model: str) -> LLMClient:
+        if self.cfg.backend != "ollama":
+            raise ValueError("a separate C1 ideation model is supported only with the local ollama backend")
+        return make_client(
+            "ollama",
+            model,
+            ollama_host=self.settings.ollama_host,
+            num_ctx=self.cfg.num_ctx,
+            max_output_tokens=self.cfg.max_output_tokens,
+        )
+
+    def ideate(self) -> Path:
+        """C0 and C1 on an existing run whose B is approved; writes C_inventory.json, C_ideas.json, C_ideas.md.
+        Not part of `run()` yet: grounding (C3) and scoring (C4) are still to be built."""
+        sources = self.ingest_sources()
+        decs = self.stage_a()
+        smap = self.stage_b(decs, sources)
+        inv = self.stage_c_inventory(sources, smap)
+        self.stage_c_ideas(decs, sources, inv)
+        return self.run_dir / "C_ideas.md"
 
     def stage_d(
         self, gaps: GapSet, decs: list[ManuscriptDecomposition], sources: dict[str, DataSource], smap: SchemaMap

@@ -90,6 +90,18 @@ class RunConfig(BaseModel):
         description="Cosine similarity at or above which a 'none' mapping with a strong embedding candidate is "
         "flagged as a possible miss. Provisional; see docs/architecture.md for its calibration.",
     )
+    c_inventory_block_vars: int = Field(
+        default=150, description="C0 summarizes at most this many consecutive variables per call into domains."
+    )
+    c_ideation_model: str | None = Field(
+        default=None, description="Local model for C1 idea generation only; null = `model`."
+    )
+    c_ideation_temperature: float = Field(
+        default=0.9,
+        description="C1 samples at this temperature (other stages use `temperature`); diversity is the point of C1.",
+    )
+    c_ideation_seeds: list[int] = Field(default=[0, 1, 2], description="One C1 call per (lens, seed).")
+    c_ideas_per_call: int = Field(default=5, description="Ideas requested from each C1 call.")
     out_dir: Path = Path("runs")
     cache_dir: Path = Path(".cache/documents")
 

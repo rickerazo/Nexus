@@ -68,6 +68,23 @@ def run(
 
 
 @app.command()
+def ideate(
+    config: Path,
+    run_dir: Annotated[Path, typer.Option(help="Existing run directory with B approved.")],
+) -> None:
+    """Run the C redesign's data inventory (C0) and idea generation (C1) on an existing run."""
+    from mmf.pipeline import ReviewPending, Run
+
+    r = Run(RunConfig.from_yaml(config), run_dir=run_dir)
+    try:
+        out = r.ideate()
+    except ReviewPending as e:
+        typer.echo(str(e))
+        raise typer.Exit(code=2) from None
+    typer.echo(f"Ideas: {out}")
+
+
+@app.command()
 def approve(run_dir: Path, stage: str) -> None:
     """Mark a review checkpoint as approved (after you have checked/edited the stage JSON)."""
     from mmf.pipeline import approve as _approve

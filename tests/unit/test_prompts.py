@@ -1,7 +1,17 @@
 from mmf.llm.prompts import load_prompt
 from mmf.validate.vocab import vocab_text
 
-NAMES = ["codebook_extract", "a_profile", "a_claims", "b_schema_map", "c_gaps", "d_strategy", "e_caveats"]
+NAMES = [
+    "codebook_extract",
+    "a_profile",
+    "a_claims",
+    "b_schema_map",
+    "c_gaps",
+    "c_inventory",
+    "c_ideas",
+    "d_strategy",
+    "e_caveats",
+]
 
 
 def test_all_prompts_load_and_hash():
