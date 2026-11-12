@@ -3,6 +3,20 @@
 Status: **draft v0.1, not yet frozen.** Prerequisites still to build before freezing (validators-off switch for L-, blinded rater-sheet export, single-manuscript configs for metric 3) are tracked in [HANDOFF.md](HANDOFF.md) §4. When frozen, record the commit hash here and log every
 later deviation in the "Deviations" section at the bottom. Scored runs made before freezing do not count.
 
+## Approved amendments (2026-11-12, to be written into the sections below before freezing)
+Approved by the investigator on 2026-11-12. Reason: the draft rewards gaps that extend the input manuscripts. SUID run v2 produced only "known risk factor × PCA windows" gaps, and the goal is questions the field has not asked.
+- **A.** Split the rubric's *Alignment* dimension. It becomes *Coherence* ("consistent with established findings and biologically plausible"), dropping "uses the manuscripts' own constructs". *Novelty* stays a separate dimension.
+- **B.** Add an *Importance* dimension (1–5): if answered, would it change prevention or understanding?
+- **C.** Give raters a fixed novelty procedure: a time-boxed PubMed search per strategy with logged queries, done by the raters and not by MMF.
+- **D.** Demote metric 3 (retrospective recovery) to a secondary sanity check that is reported but not optimized for. Add a leakage check: ask the bare model what it knows about each manuscript.
+- **E.** Add baseline condition **B0**: same model, one plain prompt with the manuscripts and data dictionaries, no pipeline. Rate it blind alongside L.
+- **F.** Redefine reproducibility for generate-then-narrow gap finding. Report exact repeat with fixed seeds and logged samples, plus shortlist stability across k runs at the theme level, not exact-statement match.
+- **G.** Add candidate-pool metrics: number of candidates, how much they differ, novelty-score distribution, and the fraction passing the feasibility checks.
+- **H.** Pre-specify a deterministic selection rule (top 3 by a fixed score) so that evaluation runs stay auto-approved and comparable.
+- **I.** Update *Inputs* to match `configs/suid.yaml`.
+
+F, G and H depend on the C redesign (gap generation then narrowing) and are written in once its design is settled. The Conditions section's fixed `temperature 0` / `n_gaps 3` is revised at the same time, because the redesign uses per-stage temperature.
+
 ## Purpose
 Quantify whether MMF produces strategies that are grounded, reproducible, feasible, scientifically
 aligned, and non-trivial, and whether the validators (not the prompts) are what provide the guarantees.

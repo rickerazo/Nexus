@@ -108,6 +108,18 @@ Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-cros
 5d. **C fixes (2026-11-11, `02f48fc`):** C checks that supporting claims are the ones its text discusses; codebook entries carry a `population` (who the records cover) that C sees; a regenerated B or C clears its review approval. Still deferred: D–E cache keys lack the output schema; D's `outcome_refs` admits concepts A mislabelled as outcomes (PCA); `run_pipeline.sh` labels stops by loop counter.
 5e. **Before trusting the 2026-11-11 report:** (1) fix the linked file's death-record fields (`UCOD`, `AGED`: bare labels, no levels; `DOD_YY`/`DOD_MM` not extracted) and level truncation (`BMI_R` has 1 of its levels). A parser fix bumps `PARSER_VERSION`, which reruns B in full and replaces the reviewed B, so batch it with the `cdc_codenames` removal. (2) ~~`Strategy` cannot express a derived variable~~: `Strategy.derived` added 2026-11-11 so D can declare PCA (= `COMBGEST` + `AGED`/7); the first report predates it (S2 stratified by `AGED` and called it "PCA windows"). Whether D puts PCA in the right role still needs human review. (3) PCA-week incidence needs person-time by PCA week, not a birth count per stratum; `denominator_source` describes the latter. (5) E's feasibility verdicts changed between two runs on identical documentation (v1: S1, S2 blocked; v2: all feasible); its blockers come from the model, so treat them as prompts for review, not findings. (4) `scripts/run_pipeline.sh` exits 1 ("failed before review B (rc=0)") when B and C are already approved and the run succeeds.
 
+5f. **2026-11-12: the investigator judged S1 and S2 of report v2 unusable. The gaps restate the literature (known risk factor × PCA windows).**
+   - **Causes, mostly in C:**
+     - The C prompt says to prefer extending the manuscripts' frameworks.
+     - C and D see only the 66 variables B mapped to manuscript concepts, out of about 5,800 documented.
+     - Every gap must be anchored to a cited claim.
+     - C is one call at temperature 0.
+   - **D's own defects:** it chooses variables before its rationale (schema field order), sees labels without units or levels, and doesn't see the source paper's methods.
+   - **Next:**
+     - Redesign C so that it generates many candidates and then narrows them down.
+     - Add a temperature setting per stage.
+     - Amend the evaluation protocol. The amendments were approved 2026-11-12 and are listed in [evaluation_protocol.md](evaluation_protocol.md).
+
 **B. Make runs cheaper** (before any repeated runs)
 
 6. **Stage B output is mostly "no match" rows.** Let the model return only real mappings and generate the "none" rows in code. This should cut B from hours to a fraction, and it matters because the evaluation needs k=5 repeats per condition.
