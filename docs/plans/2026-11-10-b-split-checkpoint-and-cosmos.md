@@ -101,6 +101,10 @@ Approved by the user on Tue 2026-11-10. Times are PST.
   they are now cleared deterministically and recorded in the call's `normalized` list (shown in the report), the same
   pattern as B's name canonicalization. Using the outcome in stratification or interactions without declared subtypes
   is still rejected. The prompt no longer gives copyable example codes.
+- **SUID D rerun at 17:16 PST failed on G3.** Attempt 4 was the right strategy (derived PCA from linked-file fields,
+  PCA × cause-subtype interaction, `cdc_linkco15` denominator) but had no exposure; earlier attempts mixed NCFRP and
+  linked-file inputs in PCA (rejected by the one-source rule). The missing-exposure message now says to list the
+  time-axis variable as the exposure. The rule itself is unchanged.
 
 ## Deferred (to solve later)
 - **Remove `cdc_codenames` from `configs/suid.yaml`** at the next full B rerun (parser fix or Cosmos). Changing the

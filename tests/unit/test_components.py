@@ -354,3 +354,9 @@ def test_derived_variable_problems(sources):
     assert problems(derived=[leak], exposures=[VariableRef(source_id="derived", name="DEATH_PCA")]) == [
         "derived variable DEATH_PCA is computed from the outcome and cannot be an exposure or covariate"
     ]
+
+
+def test_missing_exposure_message_points_to_the_time_axis(sources):
+    # 2026-11-11 SUID G3: a valid subtype-trajectory strategy failed four times with exposures empty
+    (problem,) = (p for p in strategy_validator(_gap(), sources)(_strategy(exposures=[])) if "exposure" in p)
+    assert problem.startswith("at least one exposure is required; if the question is how incidence changes")

@@ -47,7 +47,10 @@ def strategy_validator(
         if s.gap_id != gap.id:
             problems.append(f"gap_id must be {gap.id}")
         if not s.exposures:
-            problems.append("at least one exposure is required")
+            problems.append(
+                "at least one exposure is required; if the question is how incidence changes along a time axis or "
+                "across subtypes, list that time-axis variable (e.g. a derived postconceptional age) as the exposure"
+            )
         for term in s.interactions:
             if len(term) < 2:
                 problems.append("each interaction term needs 2+ variables")
