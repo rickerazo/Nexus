@@ -28,6 +28,10 @@ class LLMCallRecord(BaseModel):
         default_factory=list,
         description="Items removed on the final attempt because they failed a validator (salvage); empty if none.",
     )
+    normalized: list[str] = Field(
+        default_factory=list,
+        description="Deterministic corrections applied to accepted output (e.g. unused outcome subtypes cleared).",
+    )
 
 
 class RunManifest(BaseModel):

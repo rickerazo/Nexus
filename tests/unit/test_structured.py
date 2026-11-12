@@ -49,6 +49,21 @@ def test_retry_feeds_back_problems(tmp_path: Path):
     assert list(tmp_path.glob("*_t.json"))
 
 
+def test_retry_also_feeds_back_earlier_problems():
+    # 2026-11-11 smoke D: shown only the latest problem, the model alternated between two mistakes
+    client = FakeClient(['{"n": 1}', '{"n": 3}', '{"n": 2}'])
+
+    def check(o):
+        return {1: ["n must not be 1"], 3: ["n must not be 3"]}.get(o.n, [])
+
+    obj, rec = generate(client, PROMPT, "go", Out, stage="t", seed=0, temperature=0, validators=[check])
+    assert obj.n == 2 and rec.attempts == 3
+    assert "Earlier answers" not in client.calls[1]
+    latest, earlier = client.calls[2].split("Earlier answers were also rejected")
+    assert "n must not be 3" in latest and "n must not be 1" not in latest
+    assert "n must not be 1" in earlier
+
+
 def test_unparseable_then_failure():
     client = FakeClient(["not json", '{"n": "x"}'])
     with pytest.raises(GenerationFailedError) as e:

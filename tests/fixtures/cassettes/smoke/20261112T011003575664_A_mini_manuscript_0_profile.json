@@ -10,7 +10,7 @@
       "usage": {
         "prompt_tokens": 752,
         "completion_tokens": 413,
-        "total_duration_ns": 40023515167
+        "total_duration_ns": 39872733625
       },
       "problems": []
     }

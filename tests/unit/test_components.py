@@ -91,6 +91,7 @@ def _strategy(**kw):
         offset=REF("BIRTHS"),
         denominator_source=None,
         time_scale=None,
+        derived=[],
         rationale="word " * 25,
         expected_direction="higher incidence among exposed",
     )
@@ -285,11 +286,71 @@ def test_outcome_subtypes_allow_the_outcome_only_in_stratification_and_interacti
     )
 
 
-def test_outcome_subtypes_must_be_used(sources):
-    # 2026-11-11 smoke run: the model listed the codes defining SUID as subtypes in strategies that do not
-    # compare them, so the report would claim subtype-specific analyses that are not there
+def test_unused_outcome_subtypes_are_cleared_not_rejected(sources):
+    # 2026-11-11 smoke runs: the model listed the codes defining SUID as subtypes in strategies that do not compare
+    # them; rejecting it made D fail on an otherwise valid strategy, and keeping it would misstate the report
+    from mmf.components.d_strategy import clear_unused_subtypes
+
     sub = OutcomeSpec(variable=REF("UCOD"), definition="R95, W75, R99", subtypes=["R95", "W75", "R99"])
-    assert strategy_validator(_gap(), sources)(_strategy(outcome=sub)) == [
-        "outcome.subtypes is set but the outcome variable is not in stratification or an interaction; codes that "
-        "define the outcome belong in outcome.definition, so set subtypes to [] unless the strategy compares them"
+    s = _strategy(outcome=sub)
+    assert strategy_validator(_gap(), sources)(s) == []
+    cleared, notes = clear_unused_subtypes(s)
+    assert cleared.outcome.subtypes == [] and notes == [
+        "G1: outcome.subtypes ['R95', 'W75', 'R99'] cleared (outcome not stratified or in an interaction)"
+    ]
+    used = _strategy(outcome=sub, stratification=[REF("UCOD")])
+    assert clear_unused_subtypes(used) == (used, [])
+
+
+def _pca(**kw):
+    from mmf.schemas.strategy import DerivedVariable
+
+    base = dict(
+        name="PCA_WEEKS",
+        formula="COMBGEST + AGED / 7",
+        inputs=[REF("COMBGEST"), REF("AGED")],
+        description="postconceptional age, weeks",
+    )
+    base.update(kw)
+    return DerivedVariable(**base)
+
+
+PCA_REF = VariableRef(source_id="derived", name="PCA_WEEKS")
+
+
+def test_derived_variable_used_as_stratifier_resolves_through_inputs(sources):
+    # 2026-11-11: without derived variables D stratified by age at death and called it "PCA windows"
+    s = _strategy(derived=[_pca()], stratification=[PCA_REF])
+    assert strategy_validator(_gap(), sources)(s) == []
+    keys = [r.key() for r in s.all_refs()]
+    assert "cdc:COMBGEST" in keys and "cdc:AGED" in keys and "derived:PCA_WEEKS" not in keys
+
+
+def test_derived_variable_problems(sources):
+    from mmf.components.d_strategy import derived_problems
+
+    def problems(**kw):
+        return derived_problems(_strategy(**kw))
+
+    assert problems(derived=[_pca()]) == [
+        'derived variable PCA_WEEKS is declared but not used; to use it, put {"source_id": "derived", "name": '
+        '"PCA_WEEKS"} in exposures, covariates, stratification, an interaction or time_scale (in place of the '
+        "variables it is computed from), or remove it from `derived`"
+    ]
+    assert problems(stratification=[PCA_REF]) == ["derived:PCA_WEEKS is used but not declared in `derived`"]
+    assert problems(derived=[_pca(formula="COMBGEST + AGED / 7 + MAGER9")], stratification=[PCA_REF]) == [
+        "derived variable PCA_WEEKS: formula uses MAGER9, which is not in its inputs"
+    ]
+    assert problems(derived=[_pca(formula="COMBGEST")], stratification=[PCA_REF]) == [
+        "derived variable PCA_WEEKS: input AGED does not appear in the formula"
+    ]
+    other = VariableRef(source_id="other", name="AGED")
+    assert problems(derived=[_pca(inputs=[REF("COMBGEST"), other])], stratification=[PCA_REF]) == [
+        "derived variable PCA_WEEKS combines sources ['cdc', 'other']; inputs must come from one source "
+        "(records are not linked across sources)"
+    ]
+    assert problems(derived=[_pca(formula="floor(COMBGEST + AGED / 7)")], stratification=[PCA_REF]) == []
+    leak = _pca(name="DEATH_PCA", formula="COMBGEST + UCOD", inputs=[REF("COMBGEST"), REF("UCOD")])
+    assert problems(derived=[leak], exposures=[VariableRef(source_id="derived", name="DEATH_PCA")]) == [
+        "derived variable DEATH_PCA is computed from the outcome and cannot be an exposure or covariate"
     ]

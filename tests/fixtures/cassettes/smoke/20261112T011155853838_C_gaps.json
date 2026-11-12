@@ -10,7 +10,7 @@
       "usage": {
         "prompt_tokens": 1230,
         "completion_tokens": 502,
-        "total_duration_ns": 77299472500
+        "total_duration_ns": 51139176542
       },
       "problems": [
         "G1: supporting claim mini_manuscript.C2 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it",
@@ -24,7 +24,7 @@
       "usage": {
         "prompt_tokens": 1317,
         "completion_tokens": 529,
-        "total_duration_ns": 69724920250
+        "total_duration_ns": 44559485375
       },
       "problems": []
     }

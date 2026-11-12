@@ -18,6 +18,18 @@ class OutcomeSpec(BaseModel):
     )
 
 
+DERIVED = "derived"
+
+
+class DerivedVariable(BaseModel):
+    """A variable computed from documented variables of one source, e.g. postconceptional age."""
+
+    name: str = Field(description="UPPER_SNAKE_CASE name; refer to it as {source_id: 'derived', name: <name>}.")
+    formula: str = Field(description="Arithmetic over the input names only, e.g. 'COMBGEST + AGED / 7'.")
+    inputs: list[VariableRef] = Field(description="The documented variables the formula uses, all from one source.")
+    description: str = Field(description="What it measures, its unit, and any windows or cut points used.")
+
+
 class Strategy(BaseModel):
     id: str = Field(description="S1, S2, ...")
     gap_id: str
@@ -37,12 +49,16 @@ class Strategy(BaseModel):
     time_scale: VariableRef | None = Field(
         description="Time axis for time-to-event or time-stratified models (e.g. age at death); null if none."
     )
+    derived: list[DerivedVariable] = Field(
+        description="Variables computed from several documented ones (e.g. postconceptional age); [] if none."
+    )
     design: StudyDesign
     model_class: ModelClass
     rationale: str
     expected_direction: str = Field(description="What result would support/refute the gap statement.")
 
-    def all_refs(self) -> list[VariableRef]:
+    def used_refs(self) -> list[VariableRef]:
+        """Every reference the strategy uses, derived ones included as written."""
         refs = [self.outcome.variable, *self.exposures, *self.covariates, *self.stratification]
         for term in self.interactions:
             refs.extend(term)
@@ -50,6 +66,18 @@ class Strategy(BaseModel):
             refs.append(self.offset)
         if self.time_scale:
             refs.append(self.time_scale)
+        return refs
+
+    def all_refs(self) -> list[VariableRef]:
+        """The documented variables the strategy needs: derived references are replaced by their inputs (an
+        undeclared derived reference is kept, so it fails resolution)."""
+        by_name = {d.name.upper(): d for d in self.derived}
+        refs: list[VariableRef] = []
+        for r in self.used_refs():
+            d = by_name.get(r.name.upper()) if r.source_id == DERIVED else None
+            refs.extend(d.inputs if d else [r])
+        for d in self.derived:
+            refs.extend(d.inputs)
         seen: set[str] = set()
         unique = []
         for r in refs:

@@ -2,7 +2,9 @@
 
 Backend `{{ m.backend }}`, model `{{ m.model }}`{% if m.calls and m.calls[0].model_digest %} (digest `{{ m.calls[0].model_digest[:12] }}`){% endif %}, seed {{ m.seed }}, temperature {{ m.temperature }}, MMF {{ m.mmf_version }}.
 LLM calls: {{ m.calls | length }}; total attempts: {{ m.calls | sum(attribute='attempts') }}.
-{% set ns = namespace(dropped=0) %}{% for c in m.calls %}{% set ns.dropped = ns.dropped + (c.dropped | length) %}{% endfor %}{% if ns.dropped %}Items dropped after retries because their quotes could not be grounded: {{ ns.dropped }} (listed under `dropped` in `manifest.json`).
+{% set ns = namespace(dropped=0) %}{% for c in m.calls %}{% set ns.dropped = ns.dropped + (c.dropped | length) %}{% endfor %}{% if ns.dropped %}Items dropped after retries because their quotes could not be grounded: {{ ns.dropped }} (listed under `dropped` in `manifest.json`).{% endif %}
+{% set nn = namespace(n=0) %}{% for c in m.calls %}{% set nn.n = nn.n + (c.normalized | length) %}{% endfor %}{% if nn.n %}
+Deterministic corrections to accepted model output: {{ nn.n }} (listed under `normalized` in `manifest.json`).
 {% endif %}
 > MMF proposes; the investigator decides. This report does not assess statistical power or causal validity and no row-level data were read.
 
@@ -64,6 +66,7 @@ Claims ({{ d.claims | length }}):
 | Offset | {% if s.offset %}`{{ s.offset.source_id }}:{{ s.offset.name }}`{% else %}—{% endif %} |
 | Denominator | {% if s.denominator_source %}count of `{{ s.denominator_source }}` records per stratum{% else %}—{% endif %} |
 | Time scale | {% if s.time_scale %}`{{ s.time_scale.source_id }}:{{ s.time_scale.name }}`{% else %}—{% endif %} |
+| Derived variables | {% for d in s.derived %}`derived:{{ d.name }}` = {{ d.formula }} ({% for r in d.inputs %}`{{ r.source_id }}:{{ r.name }}`{{ ', ' if not loop.last }}{% endfor %}): {{ d.description }}{{ '; ' if not loop.last }}{% else %}—{% endfor %} |
 | Design | {{ s.design }} |
 | Model class | {{ s.model_class }} |
 

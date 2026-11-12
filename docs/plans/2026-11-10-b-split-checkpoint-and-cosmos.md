@@ -84,6 +84,23 @@ Approved by the user on Tue 2026-11-10. Times are PST.
   variable must appear in stratification or an interaction): the first smoke recording listed the codes that define
   SUID as subtypes in strategies that do not compare them, which the report would have misstated.
 - D does not checkpoint per call, so a failed D reruns every gap (about 3 min each).
+- **Run completed 16:30 PST** (report written). E rated S1 and S2 blocked, S3 feasible; the blockers are parsing
+  artefacts (`UCOD`/`AGED` bare labels and no levels; `BMI_R` one level). No strategy computed PCA.
+- **Derived variables (approved 2026-11-11).** `Strategy.derived` (required list): name, formula, inputs, description;
+  referenced as `derived:<NAME>`. D checks: inputs documented and from one source, formula uses exactly its inputs
+  (plus a few functions), every declared derived variable used and every use declared, the outcome never derived,
+  and a derived variable built from the outcome never an exposure or covariate. `all_refs()` expands derived
+  references into their inputs, so E resolves them through the codebook. D and E rerun (D's key includes the schema).
+- **Retry feedback is cumulative.** The first smoke recording with derived variables failed D: shown only the latest
+  problem, the model alternated between unused outcome subtypes and an unused derived variable across all four
+  attempts (attempt 1 had used PCA correctly). Each retry now also lists earlier attempts' problems. Applies to every
+  stage; no check was relaxed.
+- **Unused outcome subtypes are cleared, not rejected.** Two more smoke recordings failed D: the clearer "declared but
+  not used" message fixed derived-variable use, but in 3 of 4 attempts the model listed the codes that define the
+  outcome (R95/W75/R99) as subtypes. Subtypes with no stratification or interaction by the outcome have no effect, so
+  they are now cleared deterministically and recorded in the call's `normalized` list (shown in the report), the same
+  pattern as B's name canonicalization. Using the outcome in stratification or interactions without declared subtypes
+  is still rejected. The prompt no longer gives copyable example codes.
 
 ## Deferred (to solve later)
 - **Remove `cdc_codenames` from `configs/suid.yaml`** at the next full B rerun (parser fix or Cosmos). Changing the

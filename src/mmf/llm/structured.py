@@ -126,6 +126,13 @@ def generate(
             + "\n\nYour previous answer was rejected for these reasons; fix ALL of them:\n- "
             + "\n- ".join(problems)
         )
+        # Earlier problems too: shown only the latest, the model fixes one and reintroduces another (2026-11-11,
+        # smoke D: unused outcome subtypes and an unused derived variable alternated across all four attempts).
+        earlier = [p for p in dict.fromkeys(p for e in transcript[:-1] for p in e["problems"]) if p not in problems]  # type: ignore[attr-defined]
+        if earlier:
+            user += "\n\nEarlier answers were also rejected for these reasons; do not reintroduce them:\n- " + (
+                "\n- ".join(earlier)
+            )
 
     record = _record(stage, prompt, client, seed, temperature, max_retries + 1, False, log_path)
     raise GenerationFailedError(stage, problems, max_retries + 1, record)

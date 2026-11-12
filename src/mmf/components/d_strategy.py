@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from collections.abc import Callable
 from pathlib import Path
 
@@ -13,7 +14,7 @@ from mmf.schemas.dataset import DataSource, SchemaMap
 from mmf.schemas.gap import KnowledgeGap
 from mmf.schemas.manuscript import ManuscriptDecomposition, VariableRole
 from mmf.schemas.run import LLMCallRecord
-from mmf.schemas.strategy import Strategy, StrategySet
+from mmf.schemas.strategy import DERIVED, Strategy, StrategySet
 from mmf.validate.grounding import unresolved_problems
 from mmf.validate.vocab import ModelClass, vocab_text
 
@@ -41,7 +42,8 @@ def strategy_validator(
     denoms = denominator_sources or set()
 
     def check(s: Strategy) -> list[str]:
-        problems = unresolved_problems(s.all_refs(), sources)
+        problems = unresolved_problems([r for r in s.all_refs() if r.source_id != DERIVED], sources)
+        problems += derived_problems(s)
         if s.gap_id != gap.id:
             problems.append(f"gap_id must be {gap.id}")
         if not s.exposures:
@@ -67,11 +69,6 @@ def strategy_validator(
             problems.append(
                 f"outcome {name} also appears as an exposure or covariate; the outcome must be a distinct event variable"
             )
-        if s.outcome.subtypes and out_key not in by_subtype:
-            problems.append(
-                "outcome.subtypes is set but the outcome variable is not in stratification or an interaction; codes that "
-                "define the outcome belong in outcome.definition, so set subtypes to [] unless the strategy compares them"
-            )
         if out_key in by_subtype and len(s.outcome.subtypes) < 2:
             problems.append(
                 f"outcome {name} appears in stratification or an interaction; that is allowed only to analyse outcome "
@@ -86,6 +83,68 @@ def strategy_validator(
         return problems
 
     return check
+
+
+def clear_unused_subtypes(s: Strategy) -> tuple[Strategy, list[str]]:
+    """Subtypes listed while the outcome variable is in no stratification or interaction have no effect, but the
+    report would claim subtype-specific analyses. The model lists the codes that define the outcome there (smoke runs,
+    2026-11-11, 3 of 4 attempts), so they are cleared and recorded instead of failing the strategy."""
+    used = {r.key() for r in [*s.stratification, *(t for term in s.interactions for t in term)]}
+    if not s.outcome.subtypes or s.outcome.variable.key() in used:
+        return s, []
+    note = f"{s.gap_id}: outcome.subtypes {s.outcome.subtypes} cleared (outcome not stratified or in an interaction)"
+    return s.model_copy(update={"outcome": s.outcome.model_copy(update={"subtypes": []})}), [note]
+
+
+_TOKEN = re.compile(r"[A-Za-z_][A-Za-z0-9_]*")
+_FUNCTIONS = {"floor", "ceil", "round", "min", "max", "abs", "log", "exp", "and", "or", "not", "if", "else"}
+
+
+def derived_problems(s: Strategy) -> list[str]:
+    """Derived variables must be computable from one source and must be what the strategy actually uses.
+    Added 2026-11-11: without them D could not name postconceptional age and used age at death in its place."""
+    problems = []
+    names = [d.name.upper() for d in s.derived]
+    for dup in sorted({n for n in names if names.count(n) > 1}):
+        problems.append(f"derived variable {dup} is declared more than once")
+    outcome = s.outcome.variable.key()
+    for d in s.derived:
+        label = f"derived variable {d.name}"
+        if not d.inputs:
+            problems.append(f"{label} lists no inputs")
+            continue
+        if any(i.source_id == DERIVED for i in d.inputs):
+            problems.append(f"{label}: inputs must be documented variables, not other derived variables")
+        srcs = sorted({i.source_id for i in d.inputs})
+        if len(srcs) > 1:
+            problems.append(
+                f"{label} combines sources {srcs}; inputs must come from one source (records are not linked across "
+                "sources)"
+            )
+        inputs = {i.name.upper() for i in d.inputs}
+        tokens = {t.upper() for t in _TOKEN.findall(d.formula) if t.lower() not in _FUNCTIONS}
+        for t in sorted(tokens - inputs):
+            problems.append(f"{label}: formula uses {t}, which is not in its inputs")
+        for t in sorted(inputs - tokens):
+            problems.append(f"{label}: input {t} does not appear in the formula")
+        if outcome in {i.key() for i in d.inputs}:
+            used_as_predictor = any(
+                r.source_id == DERIVED and r.name.upper() == d.name.upper() for r in [*s.exposures, *s.covariates]
+            )
+            if used_as_predictor:
+                problems.append(f"{label} is computed from the outcome and cannot be an exposure or covariate")
+    used = {r.name.upper() for r in s.used_refs() if r.source_id == DERIVED}
+    if s.outcome.variable.source_id == DERIVED:
+        problems.append("the outcome must be a documented event variable, not a derived variable")
+    for u in sorted(used - set(names)):
+        problems.append(f"derived:{u} is used but not declared in `derived`")
+    for n in sorted(set(names) - used):
+        problems.append(
+            f"derived variable {n} is declared but not used; to use it, put "
+            f'{{"source_id": "{DERIVED}", "name": "{n}"}} in exposures, covariates, stratification, an interaction or '
+            "time_scale (in place of the variables it is computed from), or remove it from `derived`"
+        )
+    return problems
 
 
 def outcome_variable_keys(decomps: list[ManuscriptDecomposition], schema_map: SchemaMap) -> set[str]:
@@ -138,6 +197,7 @@ def generate_strategies(
             max_retries=max_retries,
             log_dir=log_dir,
         )
+        obj, notes = clear_unused_subtypes(obj)
         out.strategies.append(obj.model_copy(update={"id": f"S{i}"}))
-        records.append(rec)
+        records.append(rec.model_copy(update={"normalized": notes}) if notes else rec)
     return out, records
