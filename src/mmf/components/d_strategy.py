@@ -60,13 +60,22 @@ def strategy_validator(
         if s.model_class in TIME_MODELS and s.time_scale is None:
             problems.append(f"{s.model_class} requires a time_scale variable (the time axis, e.g. age at death)")
         out_key = s.outcome.variable.key()
-        non_outcome = {
-            r.key()
-            for r in [*s.exposures, *s.covariates, *s.stratification, *(t for term in s.interactions for t in term)]
-        }
-        if out_key in non_outcome:
+        name = s.outcome.variable.name
+        predictors = {r.key() for r in [*s.exposures, *s.covariates]}
+        by_subtype = {r.key() for r in [*s.stratification, *(t for term in s.interactions for t in term)]}
+        if out_key in predictors:
             problems.append(
-                f"outcome {s.outcome.variable.name} also appears as exposure/covariate/interaction; the outcome must be a distinct event variable"
+                f"outcome {name} also appears as an exposure or covariate; the outcome must be a distinct event variable"
+            )
+        if s.outcome.subtypes and out_key not in by_subtype:
+            problems.append(
+                "outcome.subtypes is set but the outcome variable is not in stratification or an interaction; codes that "
+                "define the outcome belong in outcome.definition, so set subtypes to [] unless the strategy compares them"
+            )
+        if out_key in by_subtype and len(s.outcome.subtypes) < 2:
+            problems.append(
+                f"outcome {name} appears in stratification or an interaction; that is allowed only to analyse outcome "
+                "subtypes, listed in outcome.subtypes (2+ codes or levels)"
             )
         if outcome_refs and out_key not in outcome_refs:
             problems.append(f"outcome must be a variable mapped from an outcome concept: one of {sorted(outcome_refs)}")

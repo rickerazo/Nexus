@@ -81,7 +81,7 @@ def _strategy(**kw):
         id="S1",
         gap_id="G1",
         research_question="q",
-        outcome=OutcomeSpec(variable=REF("UCOD"), definition="d"),
+        outcome=OutcomeSpec(variable=REF("UCOD"), definition="d", subtypes=[]),
         exposures=[REF("CIG_REC")],
         covariates=[],
         interactions=[[REF("SEX"), REF("CIG_REC")]],
@@ -130,8 +130,10 @@ def test_feasibility_year_overlap_blocker(sources):
 
 def test_strategy_validator_outcome_rules(sources):
     # outcome doubling as exposure is rejected
-    p = strategy_validator(_gap(), sources)(_strategy(outcome=OutcomeSpec(variable=REF("CIG_REC"), definition="d")))
-    assert any("also appears as exposure" in x for x in p)
+    p = strategy_validator(_gap(), sources)(
+        _strategy(outcome=OutcomeSpec(variable=REF("CIG_REC"), definition="d", subtypes=[]))
+    )
+    assert any("also appears as an exposure or covariate" in x for x in p)
     # outcome must be among mapped outcome variables when B mapped any
     p = strategy_validator(_gap(), sources, outcome_refs={"cdc:AGED"})(_strategy())
     assert any("mapped from an outcome concept" in x for x in p)
@@ -259,4 +261,35 @@ def test_strategy_denominator_source_replaces_offset_only_for_marked_sources(sou
     problems = strategy_validator(gap, sources, denominator_sources={"cdc"})(_strategy(offset=None))
     assert problems == [
         "negative_binomial requires an offset (denominator) variable or a denominator_source (one of ['cdc'])"
+    ]
+
+
+def test_outcome_subtypes_allow_the_outcome_only_in_stratification_and_interactions(sources):
+    # 2026-11-11, SUID gap G3: incidence by PCA for each cause of death, stratified by the cause variable itself
+    gap = _gap()
+    check = strategy_validator(gap, sources)
+    ucod = REF("UCOD")
+    sub = OutcomeSpec(variable=ucod, definition="SUID by cause", subtypes=["R95", "W75", "R99"])
+    by_cause = _strategy(outcome=sub, stratification=[ucod], interactions=[[ucod, REF("AGED")]])
+    assert check(by_cause) == []
+    # no subtypes declared: stratifying by the outcome is rejected
+    plain = by_cause.model_copy(update={"outcome": sub.model_copy(update={"subtypes": []})})
+    assert check(plain) == [
+        "outcome UCOD appears in stratification or an interaction; that is allowed only to analyse outcome "
+        "subtypes, listed in outcome.subtypes (2+ codes or levels)"
+    ]
+    # subtypes never allow the outcome as a predictor
+    as_exposure = _strategy(outcome=sub, exposures=[ucod])
+    assert "outcome UCOD also appears as an exposure or covariate; the outcome must be a distinct event variable" in (
+        check(as_exposure)
+    )
+
+
+def test_outcome_subtypes_must_be_used(sources):
+    # 2026-11-11 smoke run: the model listed the codes defining SUID as subtypes in strategies that do not
+    # compare them, so the report would claim subtype-specific analyses that are not there
+    sub = OutcomeSpec(variable=REF("UCOD"), definition="R95, W75, R99", subtypes=["R95", "W75", "R99"])
+    assert strategy_validator(_gap(), sources)(_strategy(outcome=sub)) == [
+        "outcome.subtypes is set but the outcome variable is not in stratification or an interaction; codes that "
+        "define the outcome belong in outcome.definition, so set subtypes to [] unless the strategy compares them"
     ]

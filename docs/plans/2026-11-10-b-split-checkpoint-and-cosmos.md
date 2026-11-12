@@ -68,9 +68,22 @@ Approved by the user on Tue 2026-11-10. Times are PST.
   regenerated, unreviewed gaps to D).
 - D was stopped at 15:21 PST before writing anything. C is rerun with the fixed prompt and stops for a new review.
   The reviewed gaps are kept as `C_gaps.reviewed-2026-11-11.json` (approval: `review_C.approved-2026-11-11.md`).
-- **Open for D:** the linked file has no births variable; the births denominator is a count of birth records.
-  D's rule "rate models need an offset variable" cannot be met (G1's first two D attempts were rejected for it, the
-  second after inventing `POPULATION_DENOMINATOR`). Needs a decision before D runs.
+- The rerun's gaps restated tested findings (sex-similar associations, `bedsharing_ms_v7.C6`, `.C15`) and were
+  rejected; the reviewed gaps were restored and C approved (rerun kept as `C_gaps.rerun-rejected.json`).
+
+## D fixes, Wed 2026-11-11 (approved by the user)
+- **Births denominator (`1ca347e`).** The linked file has no births variable; its denominator is a count of birth
+  records. Codebook entries take `denominator: true` (`cdc_linkco15`, `cdc_natl15`); `Strategy.denominator_source`
+  (required, nullable) satisfies a rate model instead of an offset variable. Before this, D invented
+  `POPULATION_DENOMINATOR`. D's cache key now includes the denominator sources and the `Strategy` schema.
+- **Outcome subtypes.** D's first run (15:49–15:55 PST) passed G1 and G2 (`denominator_source: cdc_linkco15`) and
+  failed G3 four times: the model stratified by `UCOD` to separate R95/W75/R99, and the rule "the outcome never
+  appears elsewhere" rejected it. `OutcomeSpec.subtypes` (required list) declares the codes analysed separately;
+  with 2+ subtypes the outcome variable may appear in stratification and interactions, never as an exposure or
+  covariate. The validator was not relaxed for outcomes without subtypes. Declared subtypes must be used (the outcome
+  variable must appear in stratification or an interaction): the first smoke recording listed the codes that define
+  SUID as subtypes in strategies that do not compare them, which the report would have misstated.
+- D does not checkpoint per call, so a failed D reruns every gap (about 3 min each).
 
 ## Deferred (to solve later)
 - **Remove `cdc_codenames` from `configs/suid.yaml`** at the next full B rerun (parser fix or Cosmos). Changing the
@@ -86,8 +99,10 @@ Approved by the user on Tue 2026-11-10. Times are PST.
 - **The stricter validator invalidates 9 of the 28 B checkpoints** (calls that left pairs without rows). They are
   regenerated only on the next B cache miss; this run's B is a cache hit and is unaffected.
 
-- **D–E cache keys do not include the output schema.** A run dir holding a D result from an older schema fails to
-  load rather than recomputing.
+- **E's cache key does not include the output schema** (D's does since `1ca347e`).
+- **D does not checkpoint each call** the way B does.
+- **D's PCA handling:** G3's attempts used age at death as the exposure with gestational age as a covariate,
+  instead of PCA computed from both. Check the final strategies.
 - **D's `outcome_refs` includes concepts A mislabelled as outcomes** (PCA in the bed-sharing paper), so `COMBGEST`
   and `AGED` count as valid outcomes.
 - **`scripts/run_pipeline.sh` labels a stop by its loop counter** ("Stopped at review B" when it stopped at C).

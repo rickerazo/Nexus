@@ -11,6 +11,11 @@ from mmf.validate.vocab import ModelClass, StudyDesign
 class OutcomeSpec(BaseModel):
     variable: VariableRef
     definition: str = Field(description="How the outcome is defined from the variable (e.g. ICD codes, levels).")
+    subtypes: list[str] = Field(
+        description="Codes or levels of the outcome variable analysed separately (e.g. ['R95', 'W75', 'R99']); "
+        "empty if the outcome is analysed as one event. With 2+ subtypes the outcome variable may appear in "
+        "stratification and interactions, where it stands for the subtype."
+    )
 
 
 class Strategy(BaseModel):

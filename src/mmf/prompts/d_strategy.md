@@ -5,6 +5,7 @@ Rules:
 - `interactions`: each entry lists 2+ variables that form one interaction term; include at least one if the gap concerns effect modification or timing.
 - `design` and `model_class` must come from the allowed vocabulary. Choose the simplest class that answers the question; justify in `rationale`.
 - `outcome.variable` is the EVENT being studied (e.g. the death/cause-of-death variable), never an exposure or demographic. Outcome variables mapped from the manuscripts: $outcome_refs
+- `outcome.subtypes`: only if the gap compares subtypes of the outcome with each other (e.g. separate trajectories for causes of death R95, W75, R99), list their codes and put the outcome variable in `stratification` or `interactions` to stand for the subtype. Codes that merely define the outcome belong in `outcome.definition`, with `subtypes: []`. The outcome variable is never an exposure or covariate.
 - Rate models (poisson_regression, negative_binomial) need a denominator: either `offset`, a documented population/denominator variable, or `denominator_source`, a source whose records are the population at risk, so the denominator is the count of its records in each stratum. Denominator sources: $denominator_sources. Otherwise set `denominator_source` to null. Never invent a denominator variable.
 - `time_scale` is required for cox_proportional_hazards and time_stratified models: the variable giving the time axis (e.g. age at death in days).
 - `expected_direction`: what pattern of results would support vs refute the gap statement.

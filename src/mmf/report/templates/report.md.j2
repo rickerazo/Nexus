@@ -56,6 +56,7 @@ Claims ({{ d.claims | length }}):
 | Element | Specification |
 |---|---|
 | Outcome | `{{ s.outcome.variable.source_id }}:{{ s.outcome.variable.name }}` — {{ s.outcome.definition }} |
+| Outcome subtypes | {% if s.outcome.subtypes %}{{ s.outcome.subtypes | join(", ") }} (analysed separately){% else %}—{% endif %} |
 | Exposures | {% for r in s.exposures %}`{{ r.source_id }}:{{ r.name }}`{{ ', ' if not loop.last }}{% endfor %} |
 | Covariates | {% for r in s.covariates %}`{{ r.source_id }}:{{ r.name }}`{{ ', ' if not loop.last }}{% endfor %} |
 | Interactions | {% for t in s.interactions %}{% for r in t %}`{{ r.name }}`{{ ' × ' if not loop.last }}{% endfor %}{{ '; ' if not loop.last }}{% endfor %} |
