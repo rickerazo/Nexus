@@ -18,6 +18,10 @@ data/**
 !data/README.md
 runs/**
 !runs/.gitkeep
+# run reports are deliverables and are committed (smoke runs excepted)
+!runs/*/
+!runs/*/report*.md
+runs/smoke_*/
 # legacy prototype artefacts: PDFs, decks, LLM outputs
 legacy/**/*.pdf
 legacy/**/*.pptx
