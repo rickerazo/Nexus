@@ -43,3 +43,15 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
   - **Fix:** the retry message now gives the positions and warns that names differing in case or suffix are different variables.
   - **Fallback:** on the final attempt, domains whose start is unknown or out of order are dropped. Their variables fall into the previous domain, and the drop is recorded in the call's `dropped` list.
   - The 11 finished blocks resume from checkpoints.
+- **Thu 15:50 PST, 14B resumed; done 16:42.**
+  - C0: 338 domains covering 6,035 variables; 309 domains contain no variable the manuscripts use.
+  - C1: 90 ideas from 18 calls, all accepted on the first attempt.
+  - Recurring themes: obesity/BMI 23, smoking 23, PCA 20, SES 15. Eleven rely on something no source records (inner-ear dysfunction, chronic intermittent hypoxia, progesterone, decades).
+  - Most questions take the form "does X affect SUID?". The model treats PRAMS as if it records deaths.
+  - Saved as `C_ideas.14b.{md,json}`.
+- **Thu 16:43 PST, 32B C1 (C0 cache hit); done Fri 01:45.**
+  - About 9 hours, roughly 30 minutes per call, against an estimate of about 70 minutes. Memory is tight with 32 GB at a 32k context.
+  - 90 ideas, all accepted on the first attempt. Recurring themes: obesity 16, smoking 19, PCA 14, SES 10. Two rely on unmeasured things.
+  - Better grounded, and somewhat more varied in form: SUID compared with other causes of death, how consistently sleep environment is recorded across jurisdictions, documentation practices over time.
+  - Still mostly "does X affect SUID?". The PRAMS-as-outcome error appears in every cross-source idea.
+  - Saved as `C_ideas.32b.{md,json}`.
