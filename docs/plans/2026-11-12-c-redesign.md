@@ -107,4 +107,4 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
 
   These would flag the issues the investigator found in the bed-sharing analysis: the PRAMS prevalence is unweighted (27.7% vs 25.1% weighted, which moves the IRRs by a factor of about 1.15); 6,414 missing or don't-know answers are counted as bed-sharing; and PRAMS covers 2016–2021 while the cases span 2008–2019. That makes the bed-sharing analysis a concrete test case for E.
 
-**Open:** whether the role descriptions also go to the plain-prompt baseline (B0). The proposed default is yes, for a fair comparison.
+**B0 baseline (agreed 2026-11-16):** the plain-prompt baseline gets the same role descriptions, so the comparison is fair.
