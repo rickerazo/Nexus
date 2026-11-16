@@ -55,3 +55,56 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
   - Better grounded, and somewhat more varied in form: SUID compared with other causes of death, how consistently sleep environment is recorded across jurisdictions, documentation practices over time.
   - Still mostly "does X affect SUID?". The PRAMS-as-outcome error appears in every cross-source idea.
   - Saved as `C_ideas.32b.{md,json}`.
+
+## Source roles (investigator, 2026-11-16) — proposed, awaiting approval
+**Diagnosis:** C1's ideas were "does X affect SUID?" and treated PRAMS as recording deaths, because MMF keeps a flat list of sources. The investigator's design thesis is that the sources play different roles, and that the leverage comes from combining them.
+
+| Role | Sources | Gives | Cannot give |
+|---|---|---|---|
+| Case series | `ncfrp_v51`; `cdc_linkco15` (SUID by underlying cause of death) | Validated death circumstances (NCFRP); cases with birth-record fields (linked file) | Non-cases |
+| Denominator | `cdc_natl15`; `cdc_linkco15` (births) | Births at risk, by stratum | Exposures beyond the birth certificate |
+| Population reference | `prams_p7_arf`, `prams_p8_arf`, `prams_p8_std2` | Weighted exposure prevalence among mothers of live births | Outcomes (no deaths) |
+
+**Coverage, as stated by the investigator:**
+- **NCFRP export:** deaths 2004–2019, 24,314 cases (the manuscript uses 2008–2019).
+  - Participation ramps up over 2004–2007: 248, 749, 871 and 1,197 cases.
+  - About 1,250–1,670 cases a year over 2008–2013, and about 1,930–2,100 over 2014–2019.
+- **NCFRP geography is de-identified:**
+  - `RRandomState`: 42 randomized codes.
+  - `RRandomDeathState`: 47 codes, blank for 51% of cases.
+  - The 22 jurisdictions in the codebook header are the CDC SUID Case Registry, a subset of reviewing states. Do not conflate the two.
+- **Linked file and natality file:** the 2015 cohort.
+- **PRAMS:** Phase 7 and Phase 8. The bed-sharing manuscript uses PRAMS 2016–2021 (43 sites).
+- **Linkage:** none at the individual level between PRAMS and any case source. PRAMS and NCFRP share no identifier, and NCFRP's state codes are randomized, so even a state-level join is impossible. Every comparison across case and reference sources is between groups.
+
+**Designs that combining roles allows** (these replace the generic C1 lenses):
+1. Case–population: exposure among cases against the weighted population prevalence. The odds ratio approximates the relative risk because the outcome is rare.
+2. Exposure-specific rates: cases exposed ÷ (births × reference prevalence). This is the bed-sharing manuscript's offset design.
+3. Case–case: SUID against other infant deaths.
+4. Case-only: death circumstances by age or PCA within the cases.
+5. Trends: proportions within the case series by period. Raw counts are not usable as a trend, because participation changes over time.
+6. Measurement comparison: the same concept as recorded in different sources (for example bed-sharing in PRAMS vs NCFRP, or smoking on the birth certificate vs in PRAMS).
+
+**Changes by stage:**
+- **Config.** Per source:
+  - `roles` (case / denominator / reference), replacing `denominator: true`;
+  - `years`;
+  - `geography` (including "de-identified, not linkable");
+  - `unit` (death / live birth / sampled mother);
+  - `weight_variable` (PRAMS: `wtanal`);
+  - how missing and don't-know answers are coded.
+- **B, as harmonization.** A table computed in code shows which roles measure each concept. Example: bed-sharing appears in a case source and in the reference source, so design 1 or 2 is possible for it.
+- **C.** Each idea names its design (1–6) and the source in each role. Checks:
+  - outcomes come only from case sources;
+  - prevalence comes only from reference sources;
+  - denominators come only from denominator sources.
+- **D, a Strategy schema change that needs approval.** The strategy names its case, reference and denominator sources. It carries a harmonization note for each concept used across sources: wording, timing and coding.
+- **E: checks computed in code.**
+  - Year overlap between the case and reference periods.
+  - A survey weight is used for any reference prevalence.
+  - Missing and don't-know answers are not counted as exposed.
+  - No state-level join involving NCFRP.
+
+  These would flag the issues the investigator found in the bed-sharing analysis: the PRAMS prevalence is unweighted (27.7% vs 25.1% weighted, which moves the IRRs by a factor of about 1.15); 6,414 missing or don't-know answers are counted as bed-sharing; and PRAMS covers 2016–2021 while the cases span 2008–2019. That makes the bed-sharing analysis a concrete test case for E.
+
+**Open:** whether the role descriptions also go to the plain-prompt baseline (B0). The proposed default is yes, for a fair comparison.
