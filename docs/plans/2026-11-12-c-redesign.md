@@ -56,7 +56,7 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
   - Still mostly "does X affect SUID?". The PRAMS-as-outcome error appears in every cross-source idea.
   - Saved as `C_ideas.32b.{md,json}`.
 
-## Source roles (investigator, 2026-11-16) — proposed, awaiting approval
+## Source roles (investigator, 2026-11-16) — approved as proposed, 2026-11-16
 **Diagnosis:** C1's ideas were "does X affect SUID?" and treated PRAMS as recording deaths, because MMF keeps a flat list of sources. The investigator's design thesis is that the sources play different roles, and that the leverage comes from combining them.
 
 | Role | Sources | Gives | Cannot give |
@@ -109,7 +109,7 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
 
 **B0 baseline (agreed 2026-11-16):** the plain-prompt baseline gets the same role descriptions, so the comparison is fair.
 
-## Prompt structure (investigator, 2026-11-16) — proposed, awaiting approval
+## Prompt structure (investigator, 2026-11-16) — approved 2026-11-16 (two-turn calls for C3 and D: yes)
 - **Two layers per call.**
   - *System:* one shared scientific primer for every stage it applies to. It covers epistemic standards, designs before variables, matched numerators and denominators, explicit bias (selection, information, confounding), and association vs causation. It also includes the source-role table, generated from the config.
   - *User:* the task being run right now, meaning the stage's rules and inputs.
@@ -117,3 +117,23 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
 - **Scope:** C, D and E now. A and B change only at the next full B rerun (the parser fix), because changing their prompts would invalidate the reviewed B.
 - **Optional reasoning turn:** a free-text "think" turn before the JSON answer, in the same conversation. It needs a multi-message client call. Proposed for C3 and D, where choices made in one field constrain the others, and not for C0 or C1.
 - **B0 baseline:** gets the same primer.
+
+## Approved 2026-11-16
+- **Source-role redesign:** approved as proposed.
+- **D Strategy schema:** gains role assignments and harmonization notes (approved).
+- **Two-turn reason-then-answer calls** for C3 and D (approved).
+- **Primer text** (investigator's wording; "epidemiolog" corrected to "epidemiology"):
+
+  > You are a data scientist working in epidemiology study design. Reason as a scientist: separate established findings, hypotheses and speculation, and never present a hypothesis as a finding. Think in study designs before variables. A rate needs a numerator and a denominator from the same population and period. Name the biases: selection, information and confounding. Association is not causation. Use only documented data. The data sources play distinct roles: [table from the config].
+
+  The canonical text is in `src/mmf/prompts/science_primer.md`.
+- **Geography** (checked in the codebooks 2026-11-16):
+  - The public-use linked and natality files have no US geographic detail from 2005 on (LinkCO15 guide).
+  - The NCFRP export randomizes state codes and has no urban/rural field.
+  - PRAMS Phases 7 and 8 carry `NCHS_URB_RUR2`.
+  - So urban/rural exists only on the reference side; a case–population comparison by urbanicity is not possible with these files. Possible routes: ask NCFRP for a derived NCHS urban–rural code, or use the restricted-use linked file.
+- **Temperature per turn** (configurable; seeds fixed):
+  - C1: 0.9.
+  - C3 and D: 0.7 for the reasoning turn, 0.0 for the JSON turn.
+  - E: 0.
+- **PRAMS weight:** `WTANAL` (analysis weight) in both phases.
