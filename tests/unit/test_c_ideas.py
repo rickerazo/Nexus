@@ -99,7 +99,8 @@ def test_build_inventory_and_text(sources, tmp_path: Path):
     )
     assert len(inv.domains) == 2 and len(recs) == 1
     assert "UCOD: Underlying cause of death" in client.calls[0]
-    text = c_ideas.inventory_text(inv, sources, {"cdc": "live births"})
+    text = c_ideas.inventory_text(inv, sources, {"cdc": ["case", "denominator"]})
+    assert "## cdc: mini (case series and denominator)" in text
     assert "- Births (5 variables, 1 used by the manuscripts): Birth record items." in text
     assert "- Deaths (2 variables, none used by the manuscripts)" in text
     # a rerun resumes from the checkpoint instead of calling the model
@@ -118,17 +119,49 @@ def test_build_inventory_and_text(sources, tmp_path: Path):
     assert again == inv and recs2 == []
 
 
-def _idea(q, sources=("cdc",)):
-    return Idea(question=q, why_open="w", sources=list(sources), data="births")
+ROLES = {"cdc": ["case", "denominator"], "ncfrp": ["case"], "prams": ["reference"], "names": []}
 
 
-def test_ideas_validator():
-    check = c_ideas.ideas_validator(2, {"cdc"})
-    assert check(IdeaBatch(ideas=[_idea("a?"), _idea("b?")])) == []
-    problems = " | ".join(check(IdeaBatch(ideas=[_idea("a?"), _idea("A?"), _idea("c?", ["prams"])])))
-    assert "return exactly 2 ideas, got 3" in problems
+def _idea(q, case=("ncfrp",), reference=("prams",), denominator=()):
+    return Idea(
+        question=q,
+        comparison="cases vs population",
+        why_open="w",
+        case_sources=list(case),
+        reference_sources=list(reference),
+        denominator_sources=list(denominator),
+        data="d",
+    )
+
+
+def test_ideas_validator_checks_roles_and_design_needs():
+    rates = c_ideas.DESIGNS["exposure_rates"]
+    check = c_ideas.ideas_validator(2, rates, ROLES)
+    assert check(IdeaBatch(ideas=[_idea("a?", denominator=["cdc"]), _idea("b?", denominator=["cdc"])])) == []
+    problems = " | ".join(
+        check(
+            IdeaBatch(
+                ideas=[
+                    _idea("a?", denominator=["cdc"]),
+                    _idea("A?", denominator=["cdc"]),  # repeat
+                    _idea("c?", reference=["ncfrp"], denominator=["cdc"]),  # a case series used as reference
+                    _idea("d?", case=["ghost"]),  # unknown source, and no denominator
+                ]
+            )
+        )
+    )
+    assert "return exactly 2 ideas, got 4" in problems
     assert "idea 2: repeats an earlier idea" in problems
-    assert "idea 3: unknown source ids ['prams']" in problems
+    assert "idea 3: ncfrp is listed as a population reference source but its role is case series" in problems
+    assert "idea 3: this design needs at least 1 population reference source(s)" in problems
+    assert "idea 4: unknown source id 'ghost'" in problems
+    assert "idea 4: this design needs at least 1 denominator source(s)" in problems
+
+
+def test_measurement_design_needs_two_sources():
+    check = c_ideas.ideas_validator(1, c_ideas.DESIGNS["measurement"], ROLES)
+    assert "at least 2 different sources" in " ".join(check(IdeaBatch(ideas=[_idea("a?", reference=[])])))
+    assert check(IdeaBatch(ideas=[_idea("a?")])) == []
 
 
 def _dec():
@@ -151,19 +184,21 @@ def test_manuscripts_text_lists_findings_not_methods_or_quotes():
     assert "Poisson" not in text and "Variables used: X (exposure)" in text
 
 
-def test_generate_ideas_pools_every_lens_and_seed_and_skips_failed_calls(sources):
+def test_generate_ideas_pools_every_design_and_seed_and_skips_failed_calls():
     def batch(*qs):
         return IdeaBatch(ideas=[_idea(q) for q in qs]).model_dump_json()
 
-    lenses = {"a": "Lens A.", "b": "Lens B."}
-    # lens a: seeds 0 and 1 succeed; lens b seed 0 fails on both attempts, seed 1 succeeds
+    designs = {k: c_ideas.DESIGNS[k] for k in ("case_population", "case_only")}
+    # case_population: seeds 0 and 1 succeed; case_only seed 0 fails on both attempts, seed 1 succeeds
     client = FakeClient([batch("q1", "q2"), batch("q3", "q4"), "not json", "still not json", batch("q5", "q6")])
     pool, recs = c_ideas.generate_ideas(
         [_dec()],
-        "inventory",
-        sources,
+        "INVENTORY",
+        "CROSS-ROLE",
+        "ROLES-TABLE",
+        ROLES,
         client,
-        lenses=lenses,
+        designs=designs,
         seeds=[0, 1],
         n_ideas=2,
         temperature=0.9,
@@ -171,16 +206,62 @@ def test_generate_ideas_pools_every_lens_and_seed_and_skips_failed_calls(sources
         log_dir=None,
     )
     assert [c.question for c in pool.candidates] == ["q1", "q2", "q3", "q4", "q5", "q6"]
-    assert [c.id for c in pool.candidates][-1] == "I6"
-    assert [(c.lens, c.seed) for c in pool.candidates][4] == ("b", 1)
-    assert pool.failed_calls == ["C_ideas_b_s0"]
+    assert [(c.design, c.seed) for c in pool.candidates][4] == ("case_only", 1)
+    assert pool.failed_calls == ["C_ideas_case_only_s0"]
     assert len(recs) == 4 and [r.ok for r in recs].count(False) == 1
-    assert "Lens B." in client.calls[2] and "inventory" in client.calls[0]
+    first = client.calls[0]
+    assert (
+        "INVENTORY" in first
+        and "CROSS-ROLE" in first
+        and first.rstrip().endswith(designs["case_population"].instruction)
+    )
     md = c_ideas.pool_markdown(pool)
-    assert "Failed calls (no ideas): C_ideas_b_s0" in md and "**I5** (seed 1, fake-1) q5" in md
+    assert "Failed calls (no ideas): C_ideas_case_only_s0" in md and "**I5** (seed 1, fake-1) q5" in md
+    assert "- Sources: case series: ncfrp; population reference: prams" in md
 
 
-def test_lenses_carry_no_topic_specific_examples():
-    text = " ".join(c_ideas.LENSES.values()).lower()
-    for word in ("suid", "sids", "sleep", "infant", "pca", "postconceptional", "smoking", "bed"):
+def test_ideas_prompt_is_primed_with_the_source_roles():
+    from mmf.llm.prompts import load_primed_prompt
+
+    p = load_primed_prompt("c_ideas", "ROLES-TABLE")
+    assert p.system.startswith("You are a data scientist working in epidemiology study design.")
+    assert p.system.rstrip().endswith("ROLES-TABLE") and "$" not in p.system
+    assert "$design" in p.user_template
+    assert load_primed_prompt("c_ideas", "other").sha256 == p.sha256  # hash covers the files, not the roles
+
+
+def test_designs_carry_no_topic_specific_examples():
+    text = " ".join(d.instruction for d in c_ideas.DESIGNS.values()).lower()
+    for word in ("suid", "sids", "sleep", "infant", "pca", "postconceptional", "smoking", "bed", "prams", "ncfrp"):
         assert word not in text, word
+
+
+def test_source_roles_config_and_cross_role_table(sources):
+    from mmf.components import roles
+    from mmf.config import SourceSpec
+    from mmf.schemas.dataset import ConceptMapping, SchemaMap
+
+    specs = [
+        SourceSpec(id="cdc", path="x", denominator=True, roles=["case"], years="2015"),
+        SourceSpec(id="prams", path="y", roles=["reference"], weight_variable="WTANAL"),
+    ]
+    assert specs[0].roles == ["case", "denominator"] and specs[0].denominator
+    assert SourceSpec(id="n", path="z", roles=["denominator"]).denominator
+    prams = sources["cdc"].model_copy(update={"id": "prams", "title": "survey"})
+    srcs = {"cdc": sources["cdc"], "prams": prams}
+    assert roles.role_problems(specs, srcs) == ["prams: weight_variable 'WTANAL' is not a documented variable"]
+    text = roles.source_roles_text(specs, srcs)
+    assert "- cdc (mini). Role: case series and denominator." in text and "Period: 2015." in text
+    smap = SchemaMap(
+        mappings=[
+            ConceptMapping(concept="smoking", source_id="cdc", variable="CIG_REC", compatibility="direct"),
+            ConceptMapping(concept="smoking", source_id="prams", variable="SEX", compatibility="proxy"),
+            ConceptMapping(concept="age", source_id="cdc", variable="AGED", compatibility="direct"),
+            ConceptMapping(concept="sex", source_id="prams", variable=None, compatibility="none"),
+        ]
+    )
+    table = roles.cross_role_concepts(smap, specs)
+    assert set(table) == {"smoking", "age"}
+    lines = roles.cross_role_text(table).splitlines()
+    assert lines[0].startswith("- smoking [3 role(s)]")  # case + reference comes first
+    assert "population reference: prams:SEX (proxy)" in lines[0]

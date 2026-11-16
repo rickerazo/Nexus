@@ -7,10 +7,11 @@ from pathlib import Path
 from typing import Literal
 
 import yaml
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 Backend = Literal["ollama", "openai_compatible"]
+SourceRole = Literal["case", "denominator", "reference"]
 
 
 class Settings(BaseSettings):
@@ -46,6 +47,28 @@ class SourceSpec(BaseModel):
         description="Who the records cover (e.g. 'infant deaths only; no births'). Shown to Component C so it can "
         "tell which sources can supply incidence denominators.",
     )
+    roles: list[SourceRole] = Field(
+        default_factory=list,
+        description="What the source can play in a design: 'case' (a case series: outcomes come only from case "
+        "sources), 'denominator' (the population at risk), 'reference' (exposure prevalence in the general "
+        "population; never an outcome). Empty = a lookup list, not a dataset. `denominator: true` implies "
+        "'denominator'.",
+    )
+    unit: str | None = Field(default=None, description="What one record is (e.g. 'one live birth').")
+    years: str | None = Field(default=None, description="Period covered, as documented by the investigator.")
+    geography: str | None = Field(default=None, description="Geographic detail available, including none.")
+    linkage: str | None = Field(default=None, description="What the records can be linked to, if anything.")
+    weight_variable: str | None = Field(
+        default=None, description="Survey weight that every prevalence from this source must use (e.g. WTANAL)."
+    )
+    missing: str | None = Field(default=None, description="How missing and don't-know answers are coded and handled.")
+
+    @model_validator(mode="after")
+    def _denominator_role(self) -> SourceSpec:
+        if self.denominator and "denominator" not in self.roles:
+            self.roles = [*self.roles, "denominator"]
+        self.denominator = "denominator" in self.roles
+        return self
 
 
 class RunConfig(BaseModel):

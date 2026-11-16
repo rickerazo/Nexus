@@ -1,7 +1,7 @@
 """Component C redesign, steps C0 (data inventory) and C1 (idea generation).
 
 C0 summarizes every documented variable into topic domains, so the gap finder sees all of the data and not only
-the variables B mapped to manuscript concepts. C1 samples candidate research questions from several lenses at a
+the variables B mapped to manuscript concepts. C1 samples candidate research questions from six role-based designs at a
 non-zero temperature. Neither output is used by D yet: grounding (C3) and scoring (C4) come next.
 """
 
@@ -40,9 +40,15 @@ class Idea(BaseModel):
     """One candidate research question, as returned by the model. Every field is required (grammar decoding)."""
 
     question: str = Field(description="One-sentence research question.")
+    comparison: str = Field(description="Who is compared with whom, in which period.")
     why_open: str = Field(description="Why it is unanswered and what answering it would change.")
-    sources: list[str] = Field(description="source_ids of the data it would draw on.")
-    data: str = Field(description="Which domains of those sources it would use.")
+    case_sources: list[str] = Field(description="source_ids used as case series (outcomes come only from these).")
+    reference_sources: list[str] = Field(description="source_ids used as population reference (prevalence).")
+    denominator_sources: list[str] = Field(description="source_ids used for the population at risk.")
+    data: str = Field(description="Which domains and concepts of those sources it would use.")
+
+    def by_role(self) -> dict[str, list[str]]:
+        return {"case": self.case_sources, "reference": self.reference_sources, "denominator": self.denominator_sources}
 
 
 class IdeaBatch(BaseModel):
@@ -51,7 +57,7 @@ class IdeaBatch(BaseModel):
 
 class Candidate(Idea):
     id: str = Field(description="I1, I2, ... in generation order.")
-    lens: str
+    design: str
     seed: int
     model: str
 

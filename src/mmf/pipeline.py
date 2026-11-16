@@ -21,7 +21,7 @@ import yaml
 from pydantic import BaseModel
 
 from mmf import __version__
-from mmf.components import a_decompose, b_crosscheck, b_schema_map, c_gaps, c_ideas, d_strategy, e_feasibility
+from mmf.components import a_decompose, b_crosscheck, b_schema_map, c_gaps, c_ideas, d_strategy, e_feasibility, roles
 from mmf.components.common import mapped_keys
 from mmf.config import RunConfig, Settings, SourceSpec
 from mmf.ingest.audit import audit_codebook
@@ -43,7 +43,7 @@ from mmf.schemas import (
     Strategy,
     StrategySet,
 )
-from mmf.schemas.ideas import DataInventory, IdeaPool
+from mmf.schemas.ideas import DataInventory, IdeaBatch, IdeaPool
 
 log = logging.getLogger(__name__)
 M = TypeVar("M", bound=BaseModel)
@@ -352,7 +352,7 @@ class Run:
             *(s.model_dump_json() for s in sources.values()),
             json.dumps(sorted(used)),
             json.dumps(pops, sort_keys=True),
-            *c_ideas.prompt_hashes(),
+            c_ideas.inventory_prompt_hash(),
             self.cfg.model,
             str(self.cfg.c_inventory_block_vars),
         )
@@ -372,18 +372,34 @@ class Run:
             self._store("C_inventory", key, inv, "C_inventory.json")
         return inv
 
+    def source_roles(self, sources: dict[str, DataSource]) -> str:
+        problems = roles.role_problems(self.cfg.codebooks, sources)
+        if problems:
+            raise StageInputError("roles", problems)
+        return roles.source_roles_text(self.cfg.codebooks, sources)
+
     def stage_c_ideas(
-        self, decs: list[ManuscriptDecomposition], sources: dict[str, DataSource], inv: DataInventory
+        self,
+        decs: list[ManuscriptDecomposition],
+        sources: dict[str, DataSource],
+        smap: SchemaMap,
+        inv: DataInventory,
     ) -> IdeaPool:
-        """C1: candidate research questions from each lens and seed, sampled at `c_ideation_temperature`."""
+        """C1: candidate questions from each role-based design and seed, sampled at `c_ideation_temperature`."""
         model = self.cfg.c_ideation_model or self.cfg.model
         client = self.client if model == self.cfg.model else self._client_for(model)
-        text = c_ideas.inventory_text(inv, sources, self.populations(sources))
+        role_map = {s.id: [str(r) for r in s.roles] for s in self.cfg.codebooks if s.id in sources}
+        source_roles = self.source_roles(sources)
+        inventory = c_ideas.inventory_text(inv, sources, role_map)
+        cross = roles.cross_role_text(roles.cross_role_concepts(smap, self.cfg.codebooks))
         key = _h(
             *(d.model_dump_json() for d in decs),
-            text,
-            *c_ideas.prompt_hashes(),
-            c_ideas.lenses_hash(c_ideas.LENSES),
+            inventory,
+            cross,
+            source_roles,
+            c_ideas.ideas_prompt_hash(),
+            c_ideas.designs_hash(c_ideas.DESIGNS),
+            json.dumps(IdeaBatch.model_json_schema(), sort_keys=True),
             model,
             str(self.cfg.c_ideation_temperature),
             json.dumps(self.cfg.c_ideation_seeds),
@@ -394,10 +410,12 @@ class Run:
             kw = self._llm_kwargs()
             pool, recs = c_ideas.generate_ideas(
                 decs,
-                text,
-                sources,
+                inventory,
+                cross,
+                source_roles,
+                role_map,
                 client,
-                lenses=c_ideas.LENSES,
+                designs=c_ideas.DESIGNS,
                 seeds=self.cfg.c_ideation_seeds,
                 n_ideas=self.cfg.c_ideas_per_call,
                 temperature=self.cfg.c_ideation_temperature,
@@ -431,7 +449,7 @@ class Run:
         decs = self.stage_a()
         smap = self.stage_b(decs, sources)
         inv = self.stage_c_inventory(sources, smap)
-        self.stage_c_ideas(decs, sources, inv)
+        self.stage_c_ideas(decs, sources, smap, inv)
         return self.run_dir / "C_ideas.md"
 
     def stage_d(

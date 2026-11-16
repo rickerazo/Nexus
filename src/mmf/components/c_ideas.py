@@ -1,9 +1,9 @@
 """Component C redesign: C0 data inventory and C1 idea generation (see docs/plans, 2026-11-12 section).
 
 C0 gives the gap finder a map of all documented variables, grouped into topic domains, with the ones the
-manuscripts already use marked. C1 asks for candidate research questions through several lenses, sampled at a
-non-zero temperature with fixed seeds, so the output is a pool to narrow down rather than the single most likely
-answer. Every call is checkpointed as soon as it is accepted, so an interrupted run resumes.
+manuscripts already use marked. C1 asks for candidate research questions through six designs built on the source
+roles (case series, population reference, denominator), sampled at a non-zero temperature with fixed seeds, so the
+output is a pool to narrow down rather than the single most likely answer. Every call is checkpointed as soon as it is accepted, so an interrupted run resumes.
 """
 
 from __future__ import annotations
@@ -17,8 +17,9 @@ from typing import TypeVar
 
 from pydantic import BaseModel
 
+from mmf.components.roles import ROLE_NAMES
 from mmf.llm.base import LLMClient
-from mmf.llm.prompts import Prompt, load_prompt
+from mmf.llm.prompts import Prompt, load_primed_prompt, load_prompt
 from mmf.llm.structured import GenerationFailedError, Salvage, generate
 from mmf.schemas.dataset import DataSource, Variable
 from mmf.schemas.ideas import (
@@ -38,43 +39,79 @@ T = TypeVar("T", bound=BaseModel)
 
 INVENTORY_PROMPT, IDEAS_PROMPT = "c_inventory", "c_ideas"
 
-# Generic on purpose: an example idea in a lens would steer every run toward it and contaminate the novelty
-# measure and the B0 baseline comparison (evaluation protocol, amendments D and E).
-LENSES: dict[str, str] = {
-    "unused_data": (
-        "Unused data. Build each question mainly on domains with no variables used by the manuscripts: "
-        "measurements none of them touch."
+# One C1 call per (design, seed). The designs come from the source roles (investigator, 2026-11-16): the leverage
+# is in combining case series, population reference and denominator sources. Generic on purpose: an example idea
+# would steer every run toward it and contaminate the novelty measure and the B0 baseline (protocol amendments D, E).
+
+
+class Design(BaseModel):
+    instruction: str
+    needs: dict[str, int]  # role -> minimum number of sources in that role
+    min_sources: int = 1
+
+
+DESIGNS: dict[str, Design] = {
+    "case_population": Design(
+        instruction=(
+            "Case-population comparison. Compare how common an exposure is among the cases (from a case series) "
+            "with its weighted prevalence in the general population (from a population reference source). The "
+            "concept must be measured in both; say how its measurement differs between them."
+        ),
+        needs={"case": 1, "reference": 1},
     ),
-    "tensions": (
-        "Tensions. Find findings in the manuscripts that conflict with each other, are surprising, or are left "
-        "unexplained, and ask what would resolve them."
+    "exposure_rates": Design(
+        instruction=(
+            "Exposure-specific rates. Estimate outcome rates by exposure group by combining the cases from a case "
+            "series (numerator), the exposure prevalence from a population reference source, and the population "
+            "at risk from a denominator source."
+        ),
+        needs={"case": 1, "reference": 1, "denominator": 1},
     ),
-    "inversion": (
-        "Inversion. Ask about groups, settings or periods in which the outcome is rarer than the known risk "
-        "factors predict, and what protects them."
+    "case_case": Design(
+        instruction=(
+            "Case-case comparison. Compare the cases of the outcome with cases of other outcomes recorded in the "
+            "same case series, to find what is specific to the outcome rather than to every event in the series."
+        ),
+        needs={"case": 1},
     ),
-    "mechanism": (
-        "Mechanism to measurement. Take a biological or behavioural mechanism proposed in the manuscripts and ask "
-        "which documented measurement could test a prediction of it that has not been tested."
+    "case_only": Design(
+        instruction=(
+            "Case-only analysis. Study how the circumstances recorded for the cases vary across subgroups or "
+            "across age, within the case series and without a population comparison."
+        ),
+        needs={"case": 1},
     ),
-    "cross_source": (
-        "Cross-source. Combine what one source records with the population another source covers, and ask a "
-        "question that neither source can answer alone."
+    "trends": Design(
+        instruction=(
+            "Trends within cases. Compare proportions among the cases across periods. When a case series' "
+            "coverage changes over time, changes in case counts are not changes in incidence."
+        ),
+        needs={"case": 1},
     ),
-    "design": (
-        "Design. Ask questions that need a study design the manuscripts did not use, for example comparisons "
-        "across time periods, places or changes in how events are recorded, natural experiments, or case-only "
-        "designs."
+    "measurement": Design(
+        instruction=(
+            "Measurement comparison. Compare how the same concept is recorded in two or more sources (wording, "
+            "timing, who reports it, how missing answers are coded) and ask how the difference would bias a "
+            "comparison between them."
+        ),
+        needs={},
+        min_sources=2,
     ),
 }
 
 
-def prompt_hashes() -> list[str]:
-    return [load_prompt(name).sha256 for name in (INVENTORY_PROMPT, IDEAS_PROMPT)]
+def inventory_prompt_hash() -> str:
+    return load_prompt(INVENTORY_PROMPT).sha256
 
 
-def lenses_hash(lenses: dict[str, str]) -> str:
-    return hashlib.sha256(json.dumps(lenses, sort_keys=True).encode()).hexdigest()
+def ideas_prompt_hash() -> str:
+    return load_primed_prompt(IDEAS_PROMPT, "").sha256
+
+
+def designs_hash(designs: dict[str, Design]) -> str:
+    return hashlib.sha256(
+        json.dumps({k: v.model_dump() for k, v in designs.items()}, sort_keys=True).encode()
+    ).hexdigest()
 
 
 # ---- C0: data inventory ---------------------------------------------------------------
@@ -207,11 +244,13 @@ def build_inventory(
     return inv, records
 
 
-def inventory_text(inv: DataInventory, sources: dict[str, DataSource], populations: dict[str, str]) -> str:
+def inventory_text(inv: DataInventory, sources: dict[str, DataSource], roles: dict[str, list[str]]) -> str:
+    """Domains per source, headed by the source's roles (described in full in the primer)."""
     parts = []
     for sid, src in sources.items():
         doms = [d for d in inv.domains if d.source_id == sid]
-        lines = [f"## {sid}: {src.title}", f"Population: {populations.get(sid, 'not stated')}"]
+        role = " and ".join(ROLE_NAMES[r] for r in roles.get(sid, [])) or "lookup list, no role"
+        lines = [f"## {sid}: {src.title} ({role})"]
         for d in doms:
             used = f"{len(d.used)} used by the manuscripts" if d.used else "none used by the manuscripts"
             lines.append(f"- {d.name} ({len(d.variables)} variables, {used}): {d.summary}")
@@ -236,7 +275,9 @@ def manuscripts_text(decomps: list[ManuscriptDecomposition]) -> str:
     return "\n\n".join(parts)
 
 
-def ideas_validator(n_ideas: int, source_ids: set[str]) -> Callable[[IdeaBatch], list[str]]:
+def ideas_validator(n_ideas: int, design: Design, roles: dict[str, list[str]]) -> Callable[[IdeaBatch], list[str]]:
+    """Each source must be listed under a role it has, and each idea must have the roles its design needs."""
+
     def check(b: IdeaBatch) -> list[str]:
         problems = []
         if len(b.ideas) != n_ideas:
@@ -244,16 +285,26 @@ def ideas_validator(n_ideas: int, source_ids: set[str]) -> Callable[[IdeaBatch],
         seen: set[str] = set()
         for i, idea in enumerate(b.ideas, start=1):
             q = " ".join(idea.question.lower().split())
-            if not q or not idea.why_open.strip() or not idea.data.strip():
-                problems.append(f"idea {i}: question, why_open and data must not be empty")
+            if not q or not idea.why_open.strip() or not idea.data.strip() or not idea.comparison.strip():
+                problems.append(f"idea {i}: question, comparison, why_open and data must not be empty")
             if q in seen:
                 problems.append(f"idea {i}: repeats an earlier idea")
             seen.add(q)
-            unknown = sorted(set(idea.sources) - source_ids)
-            if unknown:
-                problems.append(f"idea {i}: unknown source ids {unknown}; use only {sorted(source_ids)}")
-            if not idea.sources:
-                problems.append(f"idea {i}: name at least one source id")
+            listed = idea.by_role()
+            for role, ids in listed.items():
+                for sid in ids:
+                    if sid not in roles:
+                        problems.append(f"idea {i}: unknown source id {sid!r}; use only {sorted(roles)}")
+                    elif role not in roles[sid]:
+                        has = " and ".join(ROLE_NAMES[r] for r in roles[sid]) or "no role"
+                        problems.append(
+                            f"idea {i}: {sid} is listed as a {ROLE_NAMES[role]} source but its role is {has}"
+                        )
+            for role, n in design.needs.items():
+                if len([sid for sid in listed[role] if role in roles.get(sid, [])]) < n:
+                    problems.append(f"idea {i}: this design needs at least {n} {ROLE_NAMES[role]} source(s)")
+            if len({sid for ids in listed.values() for sid in ids}) < design.min_sources:
+                problems.append(f"idea {i}: this design needs at least {design.min_sources} different sources")
         return problems
 
     return check
@@ -262,10 +313,12 @@ def ideas_validator(n_ideas: int, source_ids: set[str]) -> Callable[[IdeaBatch],
 def generate_ideas(
     decomps: list[ManuscriptDecomposition],
     inventory: str,
-    sources: dict[str, DataSource],
+    cross_role: str,
+    source_roles: str,
+    roles: dict[str, list[str]],
     client: LLMClient,
     *,
-    lenses: dict[str, str],
+    designs: dict[str, Design],
     seeds: list[int],
     n_ideas: int,
     temperature: float,
@@ -274,15 +327,20 @@ def generate_ideas(
     checkpoint_dir: Path | None = None,
     salt: str = "",
 ) -> tuple[IdeaPool, list[LLMCallRecord]]:
-    """One call per (lens, seed). A call that fails after retries is recorded and skipped: one lens failing must
-    not discard the rest of the pool."""
-    prompt = load_prompt(IDEAS_PROMPT).bind(n_ideas=str(n_ideas))
-    validator = ideas_validator(n_ideas, set(sources))
+    """One call per (design, seed), with the scientific primer and source roles as the system message. A call that
+    fails after retries is recorded and skipped: one design failing must not discard the rest of the pool."""
+    prompt = load_primed_prompt(IDEAS_PROMPT, source_roles).bind(n_ideas=str(n_ideas))
     pool, records = IdeaPool(), []
-    for lens, instruction in lenses.items():
-        user = prompt.render(lens=instruction, manuscripts=manuscripts_text(decomps), inventory=inventory)
+    for name, design in designs.items():
+        validator = ideas_validator(n_ideas, design, roles)
+        user = prompt.render(
+            design=design.instruction,
+            manuscripts=manuscripts_text(decomps),
+            cross_role=cross_role,
+            inventory=inventory,
+        )
         for seed in seeds:
-            stage = f"C_ideas_{lens}_s{seed}"
+            stage = f"C_ideas_{name}_s{seed}"
             try:
                 out, rec = _checkpointed(
                     client,
@@ -309,7 +367,11 @@ def generate_ideas(
             for idea in out.ideas:
                 pool.candidates.append(
                     Candidate(
-                        id=f"I{len(pool.candidates) + 1}", lens=lens, seed=seed, model=client.model, **idea.model_dump()
+                        id=f"I{len(pool.candidates) + 1}",
+                        design=name,
+                        seed=seed,
+                        model=client.model,
+                        **idea.model_dump(),
                     )
                 )
     return pool, records
@@ -319,13 +381,16 @@ def pool_markdown(pool: IdeaPool) -> str:
     lines = [f"# Candidate ideas (C1): {len(pool.candidates)} ideas", ""]
     if pool.failed_calls:
         lines += [f"Failed calls (no ideas): {', '.join(pool.failed_calls)}", ""]
-    for lens in dict.fromkeys(c.lens for c in pool.candidates):
-        lines += [f"## {lens}", ""]
-        for c in (c for c in pool.candidates if c.lens == lens):
+    for design in dict.fromkeys(c.design for c in pool.candidates):
+        lines += [f"## {design}", ""]
+        for c in (c for c in pool.candidates if c.design == design):
+            roles = "; ".join(f"{ROLE_NAMES[r]}: {', '.join(v)}" for r, v in c.by_role().items() if v)
             lines += [
                 f"**{c.id}** (seed {c.seed}, {c.model}) {c.question}",
+                f"- Comparison: {c.comparison}",
                 f"- Why open: {c.why_open}",
-                f"- Data: {', '.join(c.sources)}: {c.data}",
+                f"- Sources: {roles}",
+                f"- Data: {c.data}",
                 "",
             ]
     return "\n".join(lines)

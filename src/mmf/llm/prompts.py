@@ -43,6 +43,25 @@ def load_prompt(name: str) -> Prompt:
     )
 
 
+PRIMER = "science_primer"
+
+
+def load_primed_prompt(name: str, source_roles: str) -> Prompt:
+    """A two-layer prompt: the shared scientific primer as the system message (with the source-role table
+    substituted) and `<name>.md`, which has only a `## user` section, as the task. The hash covers both files."""
+    primer = (PROMPT_DIR / f"{PRIMER}.md").read_text(encoding="utf-8")
+    task = (PROMPT_DIR / f"{name}.md").read_text(encoding="utf-8")
+    if any(line.strip().lower() == "## system" for line in task.splitlines()):
+        raise ValueError(f"{name}.md is a primed task prompt: it must not have a '## system' section")
+    _, user = _split("## system\n-\n" + task)
+    return Prompt(
+        name=name,
+        system=Template(primer.strip()).safe_substitute(source_roles=source_roles),
+        user_template=user,
+        sha256=hashlib.sha256((primer + "\x00" + task).encode()).hexdigest(),
+    )
+
+
 def _split(text: str) -> tuple[str, str]:
     parts: dict[str, list[str]] = {"system": [], "user": []}
     current: str | None = None

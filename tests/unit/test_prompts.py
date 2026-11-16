@@ -8,7 +8,6 @@ NAMES = [
     "b_schema_map",
     "c_gaps",
     "c_inventory",
-    "c_ideas",
     "d_strategy",
     "e_caveats",
 ]
