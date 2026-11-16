@@ -108,3 +108,12 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
   These would flag the issues the investigator found in the bed-sharing analysis: the PRAMS prevalence is unweighted (27.7% vs 25.1% weighted, which moves the IRRs by a factor of about 1.15); 6,414 missing or don't-know answers are counted as bed-sharing; and PRAMS covers 2016–2021 while the cases span 2008–2019. That makes the bed-sharing analysis a concrete test case for E.
 
 **B0 baseline (agreed 2026-11-16):** the plain-prompt baseline gets the same role descriptions, so the comparison is fair.
+
+## Prompt structure (investigator, 2026-11-16) — proposed, awaiting approval
+- **Two layers per call.**
+  - *System:* one shared scientific primer for every stage it applies to. It covers epistemic standards, designs before variables, matched numerators and denominators, explicit bias (selection, information, confounding), and association vs causation. It also includes the source-role table, generated from the config.
+  - *User:* the task being run right now, meaning the stage's rules and inputs.
+  - The prompt hash covers both layers.
+- **Scope:** C, D and E now. A and B change only at the next full B rerun (the parser fix), because changing their prompts would invalidate the reviewed B.
+- **Optional reasoning turn:** a free-text "think" turn before the JSON answer, in the same conversation. It needs a multi-message client call. Proposed for C3 and D, where choices made in one field constrain the others, and not for C0 or C1.
+- **B0 baseline:** gets the same primer.
