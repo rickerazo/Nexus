@@ -56,6 +56,11 @@ class SourceSpec(BaseModel):
     )
     unit: str | None = Field(default=None, description="What one record is (e.g. 'one live birth').")
     years: str | None = Field(default=None, description="Period covered, as documented by the investigator.")
+    period: tuple[int, int] | None = Field(
+        default=None,
+        description="First and last calendar year of the data, for the code check that a grounded gap's period lies "
+        "within every source it uses. None = not checked.",
+    )
     geography: str | None = Field(default=None, description="Geographic detail available, including none.")
     linkage: str | None = Field(default=None, description="What the records can be linked to, if anything.")
     weight_variable: str | None = Field(
@@ -133,6 +138,32 @@ class RunConfig(BaseModel):
         description="Cosine similarity at or above which a case-series domain and a population-reference domain are "
         "shown to C1 as a possible cross-role comparison. Provisional: chosen 2026-11-16 by inspecting the SUID "
         "inventory (55 pairs at 0.70; noise below about 0.65).",
+    )
+    c_dedupe_threshold: float = Field(
+        default=0.93,
+        description="C2: ideas whose question embeddings reach this cosine join one group. Provisional; calibrated "
+        "on the SUID pool, where true repeats score 0.94-0.99 and the closest distinct pair 0.926 "
+        "(docs/plans/2026-11-12-c-redesign.md).",
+    )
+    c_ground_vars_per_source: int = Field(
+        default=15, description="C3: nearest variables offered per role-bearing source (embedding search)."
+    )
+    c_ground_vars_per_domain: int = Field(
+        default=8, description="C3: nearest variables offered from each inventory domain the idea cites."
+    )
+    c_reason_temperature: float = Field(
+        default=0.7, description="C3 reasoning turn (free text); the JSON turn uses `temperature`."
+    )
+    c_shortlist: int = Field(default=10, description="C4: gaps shortlisted for the investigator, who picks 5.")
+    c_min_importance: int = Field(default=3, description="C4: gaps rated below this importance (1-5) are filtered out.")
+    c_shortlist_max_similarity: float = Field(
+        default=0.85,
+        description="C4: a gap is skipped if its statement is at least this similar to one already shortlisted. "
+        "Provisional.",
+    )
+    c_reference_ideas: list[str] = Field(
+        default_factory=list,
+        description="Ideas the investigator judged important, shown to the C4 importance rating for calibration.",
     )
     out_dir: Path = Path("runs")
     cache_dir: Path = Path(".cache/documents")

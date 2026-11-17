@@ -15,6 +15,7 @@ codebooks:
     roles: [case, denominator]
     unit: "one live birth in the 2015 cohort, with its linked infant death record if the infant died in the first year"
     years: "births in 2015 and their deaths in the first year"
+    period: [2015, 2016]  # 2015 births; deaths up to their first birthday
     geography: "none: public-use files from 2005 on identify no US geographic detail"
     linkage: "births and infant deaths are linked within the file; no link to NCFRP or PRAMS"
     missing: "documented per item (e.g. 9 = unknown or not stated); blanks are unknowns"
@@ -26,6 +27,7 @@ codebooks:
     roles: [denominator]
     unit: "one live birth"
     years: "2015"
+    period: [2015, 2015]
     geography: "none: public-use files from 2005 on identify no US geographic detail"
     linkage: "none"
     missing: "documented per item (e.g. 9 = unknown or not stated); blanks are unknowns"
@@ -42,6 +44,7 @@ codebooks:
     roles: [case]
     unit: "one child death reviewed by a fatality review team; this project uses the SUID cases"
     years: "deaths 2004-2019 in the export (24,314 cases); participation ramps up 2004-2007 (248 to 1,197 cases a year), about 1,250-1,670 a year 2008-2013 and 1,930-2,100 a year 2014-2019; the manuscript uses 2008-2019. Changes in case counts over time reflect participation, not incidence"
+    period: [2004, 2019]
     geography: "de-identified: state fields are randomized codes (42 reviewing-state codes; death state blank for 51%); no state names, no county, no urban/rural. The 22 jurisdictions in the codebook header are the CDC SUID Case Registry subset, not all reviewing states"
     linkage: "none: no identifier shared with PRAMS or the CDC files, and randomized state codes prevent even state-level joins"
     missing: "documented per item; unknown is a separate answer, never exposed"
@@ -53,6 +56,7 @@ codebooks:
     roles: [reference]
     unit: "one sampled mother of a live birth, surveyed a few months after the birth"
     years: "Phase 8 (the bed-sharing manuscript uses 2016-2021, 43 sites)"
+    period: [2016, 2021]  # Phase 8 years as used by the bed-sharing manuscript (assumed; confirm)
     geography: "participating sites only; NCHS urban/rural (2 levels) available; no case source has urban/rural"
     linkage: "none at the individual level: group-level comparisons with case series only"
     weight_variable: WTANAL
@@ -65,6 +69,7 @@ codebooks:
     roles: [reference]
     unit: "one sampled mother of a live birth, surveyed a few months after the birth"
     years: "Phase 8"
+    period: [2016, 2021]  # as prams_p8_arf (assumed; confirm)
     geography: "participating sites only"
     linkage: "none at the individual level: group-level comparisons with case series only; its items are used with the Phase 8 ARF, whose WTANAL weight applies"
     missing: "don't know is coded separately (e.g. 7777); never count it as exposed"
@@ -76,6 +81,7 @@ codebooks:
     roles: [reference]
     unit: "one sampled mother of a live birth, surveyed a few months after the birth"
     years: "Phase 7 (2012-2015)"
+    period: [2012, 2015]
     geography: "participating sites only; NCHS urban/rural (2 levels) available; no case source has urban/rural"
     linkage: "none at the individual level: group-level comparisons with case series only"
     weight_variable: WTANAL
@@ -92,3 +98,12 @@ n_gaps: 3
 b_max_vars_per_call: 600
 out_dir: runs
 cache_dir: .cache/documents
+# Ideas the investigator judged important (C1 role-based pool, 2026-11-16), shown to the C4 importance rating for
+# calibration only. Ids refer to runs/suid_poc_20261103_ideas/C_ideas.roles-14b.md.
+c_reference_ideas:
+  - "Case-case: does SUID have a different postconceptional age distribution from deaths due to congenital anomalies or other causes? (I32, I39)"
+  - "Case-case: do sleep environments differ between SUID cases and accidental suffocation or other infant deaths? (I34, I36)"
+  - "Case-case: is maternal use of sleep aids or sedatives specific to SUID compared with other causes of infant death? (I43)"
+  - "Trends: is there a trend in bed sharing among SUID cases between 2008 and 2019? (I72)"
+  - "Measurement: how do infant sleeping arrangements and maternal smoking differ in recording between the case series (NCFRP) and the population reference (PRAMS), and how would that bias case-population comparisons? (I81, I82)"
+  - "Measurement: how is maternal prepregnancy BMI recorded differently on the birth certificate (linked file), in NCFRP and in PRAMS, and what does that imply for obesity comparisons? (I80, I83)"

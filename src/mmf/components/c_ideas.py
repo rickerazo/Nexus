@@ -573,6 +573,7 @@ def _checkpointed(
     temperature: float,
     max_retries: int,
     log_dir: Path | None,
+    history: list[dict[str, str]] | None = None,
 ) -> tuple[T, LLMCallRecord | None]:
     """generate() with a per-call checkpoint keyed by salt, prompt, rendered input, schema and seed. Returns
     (output, record); the record is None for a call resumed from its checkpoint."""
@@ -580,7 +581,11 @@ def _checkpointed(
     if checkpoint_dir is not None:
         schema = json.dumps(model.model_json_schema(), sort_keys=True)
         key = hashlib.sha256(
-            "\x00".join((salt, prompt.sha256, user, schema, str(seed), str(temperature))).encode()
+            "\x00".join(
+                # history only when given, so the keys of single-turn checkpoints (C0, C1) are unchanged
+                (salt, prompt.sha256, user, schema, str(seed), str(temperature))
+                + ((json.dumps(history),) if history else ())
+            ).encode()
         ).hexdigest()
         ckpt = checkpoint_dir / f"{stage}_{key[:16]}.json"
         if ckpt.exists():
@@ -599,6 +604,7 @@ def _checkpointed(
         max_retries=max_retries,
         log_dir=log_dir,
         salvage=salvage,
+        history=history,
     )
     if ckpt is not None:
         ckpt.parent.mkdir(parents=True, exist_ok=True)

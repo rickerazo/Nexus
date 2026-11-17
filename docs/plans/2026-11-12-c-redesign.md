@@ -235,3 +235,74 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
   - **New design drift:**
     - `trends` s1 uses 2016–2021, beyond NCFRP's 2019 end;
     - it also compares with population incidence, which is not a within-case trend.
+
+## Built 2026-11-17: C2–C5 (last tuning round; investigator: "After this round, no more fine tuning. it's time to benchmark against an agent")
+`mmf ideate` now runs C0–C5 and writes:
+- `C_dedupe.json`, `C_grounding.json`, `C_shortlist.json`;
+- `review_C_shortlist.md`.
+
+It never writes `C_gaps.json`: your pick of 5 becomes D's input in a later step.
+
+- **Two-turn calls.**
+  - `LLMClient.complete_text` handles the free-text turn, and `complete_json(..., history=)` carries the earlier turns. Both are implemented for Ollama and the OpenAI-compatible backend; replay raises for text.
+  - `structured.reason` logs and records the reasoning turn.
+  - `generate(history=)` resends the reasoning with every JSON attempt.
+- **C2 dedupe (`c_narrow.dedupe`).**
+  - mxbai cosine on the **question only**. Greedy, in pool order: an idea joins the first representative at or above `c_dedupe_threshold`.
+  - The threshold is 0.93, provisional. Calibrated on the 75-idea pool: true repeats scored 0.943–0.993 (the weight-gain trio I1/I7/I66; stressors I2/I13), and the closest distinct pair scored 0.926 (I68/I69).
+  - Rejected alternatives:
+    - question + comparison: driven by the sentence template; distinct topics reached 0.95 while true repeats scored 0.88–0.90;
+    - shared cited domains: I51, I54 and I55 cite the same broad domain but ask different questions.
+- **C3 grounding (`c_narrow.ground_ideas`).** One two-turn call per group representative.
+  - *Candidate variables:*
+    - the 15 nearest variables of every role-bearing source (mxbai over all ~6,000 variables; fingerprints as in B's check);
+    - the 8 nearest from each cited domain;
+    - every reference source's survey weight.
+  - *Reasoning turn* (`c_ground.md`, primed, 0.7) works through:
+    1. the design;
+    2. the sources by role;
+    3. a common period;
+    4. variables and measurement differences;
+    5. biases;
+    6. what the design cannot establish;
+    7. prior art, with claim ids;
+    8. a verdict.
+  - *JSON turn* (`c_ground_answer.md`, 0.0) decodes into `GroundingAnswer`. Its source fields are enums by role, and its variables are an enum of the candidates.
+  - `groundable: false` with a reason drops the idea. Drops are recorded and shown in the review.
+  - *Checks in code* (`grounding_validator`):
+    - the roles the design needs;
+    - variables only from listed sources, with at least one from each case and reference source;
+    - variables from at least 2 sources for the measurement design;
+    - each reference source's survey weight among the variables;
+    - a period within every listed source's `period`;
+    - no "incidence" or "risk" wording without a denominator design;
+    - `prior_art` of at least 15 words, with cited claims listed; supporting claims are optional.
+  - Output is a `GroundedGap`: a `KnowledgeGap` plus design, sources by role, period, `cannot_establish` and the reasoning text.
+- **Config `period` per source** (new; machine-readable coverage for the period check):
+
+  | Source | Period | Note |
+  |---|---|---|
+  | `cdc_linkco15` | 2015–2016 | 2015 births and their first-year deaths |
+  | `cdc_natl15` | 2015 | |
+  | `ncfrp_v51` | 2004–2019 | |
+  | `prams_p7_arf` | 2012–2015 | |
+  | `prams_p8_arf` | 2016–2021 | **assumed** from the bed-sharing manuscript; to confirm |
+  | `prams_p8_std2` | 2016–2021 | **assumed**, as above |
+
+  - Consequence: exposure-rate designs combining natality (2015) with PRAMS Phase 8 (2016+) have no common year. Only PRAMS Phase 7 plus 2015 births pass.
+- **C4 scoring (`c_narrow.shortlist`).**
+  - *Novelty:* 1 minus the highest cosine between the gap statement and any extracted claim (nearest claim recorded).
+  - *Feasibility:* share of required variables with documented levels or a known type.
+  - *Importance:* a primed rating from 1 to 5 at temperature 0 (`c_importance.md`). The six reference-idea groups you endorsed (`c_reference_ideas` in `configs/suid.yaml`) are shown for calibration only. Importance only filters.
+  - *Rule, fixed before the run:*
+    1. Drop gaps with importance below 3, or unrated.
+    2. Rank by novelty × feasibility.
+    3. Skip a gap whose statement has cosine ≥ 0.85 with one already shortlisted.
+    4. Stop at 10.
+
+    This is provisional until protocol amendments F/G/H are frozen.
+- **C5:** `review_C_shortlist.md` lists:
+  - the 10 shortlisted gaps, each with a checkbox, its scores, sources, period, variables, prior art and reasoning;
+  - every other gap with its reason for being skipped;
+  - the ideas dropped as not groundable;
+  - the merged duplicates.

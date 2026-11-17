@@ -27,8 +27,14 @@ class LLMClient(Protocol):
         *,
         seed: int,
         temperature: float,
+        history: list[dict[str, str]] | None = None,
     ) -> LLMResponse:
-        """Return a JSON document conforming (as far as the backend can enforce) to `json_schema`."""
+        """Return a JSON document conforming (as far as the backend can enforce) to `json_schema`. `history` holds
+        earlier turns of the same conversation (user and assistant messages) between the system message and `user`."""
+        ...
+
+    def complete_text(self, system: str, user: str, *, seed: int, temperature: float) -> LLMResponse:
+        """Free-text answer (the reasoning turn of a two-turn call)."""
         ...
 
     def model_digest(self) -> str | None:

@@ -21,7 +21,17 @@ import yaml
 from pydantic import BaseModel
 
 from mmf import __version__
-from mmf.components import a_decompose, b_crosscheck, b_schema_map, c_gaps, c_ideas, d_strategy, e_feasibility, roles
+from mmf.components import (
+    a_decompose,
+    b_crosscheck,
+    b_schema_map,
+    c_gaps,
+    c_ideas,
+    c_narrow,
+    d_strategy,
+    e_feasibility,
+    roles,
+)
 from mmf.components.common import mapped_keys
 from mmf.config import RunConfig, Settings, SourceSpec
 from mmf.ingest.audit import audit_codebook
@@ -43,7 +53,7 @@ from mmf.schemas import (
     Strategy,
     StrategySet,
 )
-from mmf.schemas.ideas import DataInventory, IdeaBatch, IdeaPool
+from mmf.schemas.ideas import DataInventory, Grounding, GroundingAnswer, IdeaBatch, IdeaPool, Shortlist
 
 log = logging.getLogger(__name__)
 M = TypeVar("M", bound=BaseModel)
@@ -451,15 +461,111 @@ class Run:
             max_output_tokens=self.cfg.max_output_tokens,
         )
 
+    def stage_c_narrow(
+        self, decs: list[ManuscriptDecomposition], sources: dict[str, DataSource], inv: DataInventory, pool: IdeaPool
+    ) -> Path:
+        """C2 dedupe, C3 grounding (two-turn), C4 scoring and selection, C5 review file. Never writes C_gaps.json:
+        the investigator's pick of 5 from the shortlist becomes D's input in a later step."""
+        cfg = self.cfg
+        cache = b_crosscheck.VectorCache(self.embedder(), cfg.cache_dir.parent / "embeddings")
+        deduped = c_narrow.dedupe(pool, cache.vectors, cfg.c_dedupe_threshold)
+        (self.run_dir / "C_dedupe.json").write_text(deduped.model_dump_json(indent=1))
+        role_map = {s.id: [str(r) for r in s.roles] for s in cfg.codebooks if s.id in sources}
+        specs = roles.specs_by_id(cfg.codebooks, sources)
+        source_roles = self.source_roles(sources)
+        kw = self._llm_kwargs()
+        key = _h(
+            pool.model_dump_json(),
+            deduped.model_dump_json(),
+            inv.model_dump_json(),
+            *(d.model_dump_json() for d in decs),
+            *(sources[s].model_dump_json() for s in sorted(sources)),
+            json.dumps({k: v.model_dump(mode="json") for k, v in sorted(specs.items())}, sort_keys=True),
+            source_roles,
+            *c_narrow.prompt_hashes(),
+            c_ideas.designs_hash(c_ideas.DESIGNS),
+            json.dumps(GroundingAnswer.model_json_schema(), sort_keys=True),
+            cfg.model,
+            str(cfg.seed),
+            str(cfg.temperature),
+            str(cfg.c_reason_temperature),
+            str(cfg.c_ground_vars_per_source),
+            str(cfg.c_ground_vars_per_domain),
+        )
+        grounding = self._cached("C_ground", key, Grounding, "C_grounding.json")
+        if grounding is None:
+            grounding, recs = c_narrow.ground_ideas(
+                pool,
+                deduped,
+                decs,
+                inv,
+                sources,
+                specs,
+                role_map,
+                source_roles,
+                self.client,
+                cache.vectors,
+                per_source=cfg.c_ground_vars_per_source,
+                per_domain=cfg.c_ground_vars_per_domain,
+                seed=cfg.seed,
+                reason_temperature=cfg.c_reason_temperature,
+                temperature=cfg.temperature,
+                max_retries=kw["max_retries"],
+                log_dir=kw["log_dir"],
+                checkpoint_dir=self.run_dir / "checkpoints" / "C_ground",
+                salt=_h(cfg.model, str(cfg.num_ctx)),
+            )
+            self._record(recs)
+            for stage in grounding.failed_calls:
+                self._warn(f"{stage}: no valid grounding after retries; skipped")
+            self._store("C_ground", key, grounding, "C_grounding.json")
+        skey = _h(
+            key,
+            grounding.model_dump_json(),
+            json.dumps(cfg.c_reference_ideas),
+            str(cfg.c_shortlist),
+            str(cfg.c_min_importance),
+            str(cfg.c_shortlist_max_similarity),
+        )
+        sl = self._cached("C_shortlist", skey, Shortlist, "C_shortlist.json")
+        if sl is None:
+            ratings, recs = c_narrow.rate_importance(
+                grounding.gaps,
+                cfg.c_reference_ideas,
+                source_roles,
+                self.client,
+                seed=cfg.seed,
+                temperature=cfg.temperature,
+                max_retries=kw["max_retries"],
+                log_dir=kw["log_dir"],
+                checkpoint_dir=self.run_dir / "checkpoints" / "C_importance",
+                salt=_h(cfg.model, str(cfg.num_ctx)),
+            )
+            self._record(recs)
+            sl = c_narrow.shortlist(
+                grounding.gaps,
+                sources,
+                decs,
+                ratings,
+                cache.vectors,
+                size=cfg.c_shortlist,
+                min_importance=cfg.c_min_importance,
+                max_similarity=cfg.c_shortlist_max_similarity,
+            )
+            self._store("C_shortlist", skey, sl, "C_shortlist.json")
+        out = self.run_dir / "review_C_shortlist.md"
+        out.write_text(c_narrow.review_markdown(pool, deduped, grounding, sl))
+        return out
+
     def ideate(self) -> Path:
-        """C0 and C1 on an existing run whose B is approved; writes C_inventory.json, C_ideas.json, C_ideas.md.
-        Not part of `run()` yet: grounding (C3) and scoring (C4) are still to be built."""
+        """C0-C5 on an existing run whose B is approved: inventory, ideas, dedupe, grounding, scoring, and the
+        shortlist for review (review_C_shortlist.md). Not part of `run()`: D still reads C_gaps.json."""
         sources = self.ingest_sources()
         decs = self.stage_a()
         smap = self.stage_b(decs, sources)
         inv = self.stage_c_inventory(sources, smap)
-        self.stage_c_ideas(decs, sources, smap, inv)
-        return self.run_dir / "C_ideas.md"
+        pool = self.stage_c_ideas(decs, sources, smap, inv)
+        return self.stage_c_narrow(decs, sources, inv, pool)
 
     def stage_d(
         self, gaps: GapSet, decs: list[ManuscriptDecomposition], sources: dict[str, DataSource], smap: SchemaMap

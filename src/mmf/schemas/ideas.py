@@ -9,6 +9,8 @@ from __future__ import annotations
 
 from pydantic import BaseModel, Field
 
+from mmf.schemas.gap import KnowledgeGap
+
 MAX_DOMAINS_PER_BLOCK = 8
 
 
@@ -77,3 +79,97 @@ class Candidate(Idea):
 class IdeaPool(BaseModel):
     candidates: list[Candidate] = Field(default_factory=list)
     failed_calls: list[str] = Field(default_factory=list, description="Calls with no valid output after retries.")
+
+
+# ---- C2-C4 -------------------------------------------------------------------------------
+
+
+class IdeaGroup(BaseModel):
+    """C2: near-duplicate ideas; the representative is the first in pool order."""
+
+    representative: str
+    members: list[str] = Field(description="Every idea id in the group, the representative first.")
+    max_similarity: float = Field(
+        description="Highest cosine between the representative and another member (0 if alone)."
+    )
+
+
+class DedupedPool(BaseModel):
+    groups: list[IdeaGroup] = Field(default_factory=list)
+    threshold: float = 0.0
+
+
+class GroundingAnswer(BaseModel):
+    """C3 JSON turn, as returned by the model. Source, variable and design-specific enums are narrowed per call;
+    every field is required (grammar decoding)."""
+
+    groundable: bool = Field(description="False if these data cannot answer any version of the idea.")
+    why_not: str = Field(description="If groundable is false: which data or design element is missing. Else ''.")
+    statement: str = Field(description="One testable sentence that fits the design and the data.")
+    rationale: str = Field(description="Why the question matters and why it is open.")
+    prior_art: str = Field(
+        description="The closest work the manuscripts tested, with claim ids, or 'none in the inputs'."
+    )
+    supporting_claim_ids: list[str] = Field(description="Claim ids the gap builds on; may be empty.")
+    case_sources: list[str]
+    reference_sources: list[str]
+    denominator_sources: list[str]
+    period_start: int = Field(description="First calendar year of the data used.")
+    period_end: int = Field(description="Last calendar year of the data used.")
+    required_concepts: list[str]
+    variables: list[str] = Field(description="'source_id:NAME' of every variable used, from the candidate list.")
+    cannot_establish: str = Field(description="What this design cannot establish (causation, individual linkage, ...).")
+
+    def by_role(self) -> dict[str, list[str]]:
+        return {"case": self.case_sources, "reference": self.reference_sources, "denominator": self.denominator_sources}
+
+
+class GroundedGap(KnowledgeGap):
+    """A C3 gap: a KnowledgeGap (what D consumes) plus the design, the sources by role, the period and the reasoning."""
+
+    idea_id: str
+    design: str
+    case_sources: list[str]
+    reference_sources: list[str]
+    denominator_sources: list[str]
+    period_start: int
+    period_end: int
+    cannot_establish: str
+    reasoning: str = Field(description="The free-text reasoning turn, kept for review.")
+
+
+class DroppedIdea(BaseModel):
+    idea_id: str
+    reason: str
+
+
+class Grounding(BaseModel):
+    gaps: list[GroundedGap] = Field(default_factory=list)
+    dropped: list[DroppedIdea] = Field(default_factory=list, description="Ideas the model judged not groundable.")
+    failed_calls: list[str] = Field(default_factory=list)
+
+
+class ImportanceRating(BaseModel):
+    """C4 importance, as returned by the model."""
+
+    reason: str = Field(description="Two sentences: what an answer would change, and for whom.")
+    importance: int = Field(ge=1, le=5, description="1 = trivial ... 5 = would change practice or understanding.")
+
+
+class GapScore(BaseModel):
+    gap_id: str
+    idea_id: str
+    design: str
+    novelty: float = Field(description="1 - max cosine to any extracted manuscript claim (computed).")
+    nearest_claim: str
+    feasibility: float = Field(description="Share of required variables with documented levels or type (computed).")
+    importance: int
+    importance_reason: str
+    score: float = Field(description="novelty x feasibility; importance only filters.")
+    shortlisted: bool = False
+    skipped_reason: str = ""
+
+
+class Shortlist(BaseModel):
+    scores: list[GapScore] = Field(default_factory=list)
+    rule: str = ""

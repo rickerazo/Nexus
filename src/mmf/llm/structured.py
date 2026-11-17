@@ -56,6 +56,7 @@ def generate(
     max_retries: int = 3,
     log_dir: Path | None = None,
     salvage: Salvage[T] | None = None,
+    history: list[dict[str, str]] | None = None,
 ) -> tuple[T, LLMCallRecord]:
     """Generate, validate, and re-prompt with the problems up to `max_retries` times.
 
@@ -63,6 +64,8 @@ def generate(
     pruned by `salvage`; the pruned output is accepted only if it then passes every validator, and
     the dropped items are recorded in the transcript and the call record (`dropped`). Retained
     items are therefore always validator-clean; nothing is silently repaired.
+
+    `history` (earlier turns of the conversation, e.g. a reasoning turn) is sent before every attempt and logged.
     """
     validators = validators or []
     schema = output_model.model_json_schema()
@@ -72,7 +75,12 @@ def generate(
     problems: list[str] = []
 
     for attempt in range(1, max_retries + 2):
-        resp = client.complete_json(prompt.system, user, schema, seed=seed, temperature=temperature)
+        if history:
+            resp = client.complete_json(
+                prompt.system, user, schema, seed=seed, temperature=temperature, history=history
+            )
+        else:  # clients written before two-turn calls take no `history`
+            resp = client.complete_json(prompt.system, user, schema, seed=seed, temperature=temperature)
         entry: dict[str, object] = {
             "attempt": attempt,
             "user": user,
@@ -112,6 +120,7 @@ def generate(
                         "stage": stage,
                         "prompt": prompt.name,
                         "system": prompt.system,
+                        **({"history": history} if history else {}),
                         "transcript": transcript,
                     },
                     indent=2,
@@ -136,6 +145,40 @@ def generate(
 
     record = _record(stage, prompt, client, seed, temperature, max_retries + 1, False, log_path)
     raise GenerationFailedError(stage, problems, max_retries + 1, record)
+
+
+def reason(
+    client: LLMClient,
+    prompt: Prompt,
+    user_text: str,
+    *,
+    stage: str,
+    seed: int,
+    temperature: float,
+    log_dir: Path | None = None,
+) -> tuple[str, LLMCallRecord]:
+    """The free-text reasoning turn of a two-turn call. A reply cut off at the output cap is kept: it is context
+    for the JSON turn, which is validated on its own."""
+    resp = client.complete_text(prompt.system, user_text, seed=seed, temperature=temperature)
+    log_path = _log_path(log_dir, stage)
+    if log_path:
+        log_path.write_text(
+            json.dumps(
+                {
+                    "stage": stage,
+                    "prompt": prompt.name,
+                    "system": prompt.system,
+                    "transcript": [
+                        {"attempt": 1, "user": user_text, "response": resp.text, "usage": resp.usage, "problems": []}
+                    ],
+                    "truncated": resp.truncated,
+                },
+                indent=2,
+            )
+        )
+    if not resp.text.strip():
+        raise GenerationFailedError(stage, ["empty reasoning"], 1)
+    return resp.text, _record(stage, prompt, client, seed, temperature, 1, True, log_path)
 
 
 def _log_path(log_dir: Path | None, stage: str) -> Path | None:

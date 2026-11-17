@@ -46,3 +46,6 @@ class ReplayClient:
                 return LLMResponse(text=text, model=self.model, model_digest="replay")
             self._cursor += 1
         raise RuntimeError("cassette exhausted: pipeline requested more LLM calls than were recorded")
+
+    def complete_text(self, system: str, user: str, *, seed: int, temperature: float) -> LLMResponse:
+        raise NotImplementedError("cassettes record JSON calls only; two-turn stages (C3) are not replayed yet")

@@ -29,15 +29,39 @@ class OpenAICompatibleClient:
         return None  # OpenAI exposes no weight-level identifier; `system_fingerprint` is logged per call.
 
     def complete_json(
-        self, system: str, user: str, json_schema: dict[str, Any], *, seed: int, temperature: float
+        self,
+        system: str,
+        user: str,
+        json_schema: dict[str, Any],
+        *,
+        seed: int,
+        temperature: float,
+        history: list[dict[str, str]] | None = None,
     ) -> LLMResponse:
+        return self._chat(system, user, json_schema, seed=seed, temperature=temperature, history=history)
+
+    def complete_text(self, system: str, user: str, *, seed: int, temperature: float) -> LLMResponse:
+        return self._chat(system, user, None, seed=seed, temperature=temperature, history=None)
+
+    def _chat(
+        self,
+        system: str,
+        user: str,
+        json_schema: dict[str, Any] | None,
+        *,
+        seed: int,
+        temperature: float,
+        history: list[dict[str, str]] | None,
+    ) -> LLMResponse:
+        fmt: Any = (
+            {"type": "json_schema", "json_schema": {"name": "output", "schema": json_schema, "strict": False}}
+            if json_schema is not None
+            else {"type": "text"}
+        )
         resp = self._client.chat.completions.create(
             model=self.model,
-            messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
-            response_format={
-                "type": "json_schema",
-                "json_schema": {"name": "output", "schema": json_schema, "strict": False},
-            },
+            messages=[{"role": "system", "content": system}, *(history or []), {"role": "user", "content": user}],  # type: ignore[list-item]
+            response_format=fmt,
             seed=seed,
             temperature=temperature,
             max_tokens=self.max_output_tokens,
