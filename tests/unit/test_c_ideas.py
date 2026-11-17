@@ -3,6 +3,7 @@
 import json
 from pathlib import Path
 
+import pytest
 from tests.unit.test_structured import FakeClient
 
 from mmf.components import c_ideas
@@ -102,8 +103,8 @@ def test_build_inventory_and_text(sources, tmp_path: Path):
     assert "UCOD: Underlying cause of death" in client.calls[0]
     text = c_ideas.inventory_text(inv, sources, {"cdc": ["case", "denominator"]})
     assert "## cdc: mini (case series and denominator)" in text
-    assert "- cdc / Births [5 variables, 1 used by the manuscripts]: Birth record items." in text
-    assert "- cdc / Deaths [NEW, 2 variables, none used by the manuscripts]" in text
+    assert "- D1 cdc / Births [5 variables, 1 used by the manuscripts]: Birth record items." in text
+    assert "- D2 cdc / Deaths [NEW, 2 variables, none used by the manuscripts]" in text
     # a rerun resumes from the checkpoint instead of calling the model
     again, recs2 = c_ideas.build_inventory(
         sources,
@@ -201,7 +202,7 @@ def _inv():
 
 def test_ideas_validator_checks_domain_labels_and_new_domains():
     inv = _inv()
-    labels = {c_ideas.domain_label(d) for d in inv.domains}
+    labels = {c_ideas.domain_label(d): d.source_id for d in inv.domains}
     new = c_ideas.new_domain_labels(inv)
     assert new == {"ncfrp / Scene", "prams / Practices"}
     check = c_ideas.ideas_validator(2, c_ideas.DESIGNS["case_population"], ROLES, labels, new, min_new=2)
@@ -237,14 +238,14 @@ def test_match_domains_pairs_case_with_reference_and_puts_new_first():
         ("ncfrp / Birth", "prams / Practices"),
     ]
     assert (matches[0].case_new, matches[0].reference_new) == (True, False)
-    text = c_ideas.domain_matches_text(matches)
-    assert "- ncfrp / Birth <-> prams / Practices (similarity 1.00; reference domain NEW)" in text
+    text = c_ideas.domain_matches_text(matches, c_ideas.domain_ids(inv))
+    assert "- D2 ncfrp / Birth <-> D3 prams / Practices (similarity 1.00; reference domain NEW)" in text
     assert c_ideas.match_domains(inv, {"ncfrp": ["case"]}, vectors, 0.9) == []
 
 
 def test_generate_ideas_pools_every_design_and_seed_and_skips_failed_calls():
     def batch(*qs):
-        return IdeaBatch(ideas=[_idea(q) for q in qs]).model_dump_json()
+        return IdeaBatch(ideas=[_idea(q, domains=["D1"]) for q in qs]).model_dump_json()
 
     designs = {k: c_ideas.DESIGNS[k] for k in ("case_population", "case_only")}
     srcs = {sid: DataSource(id=sid, title=sid, document_path="p", document_sha256="0") for sid in ("ncfrp", "prams")}
@@ -272,12 +273,29 @@ def test_generate_ideas_pools_every_design_and_seed_and_skips_failed_calls():
     assert pool.failed_calls == ["C_ideas_case_only_s0"]
     assert len(recs) == 4 and [r.ok for r in recs].count(False) == 1
     first = client.calls[0]
-    assert "- ncfrp / Scene [NEW, 1 variables, none used by the manuscripts]: sleep surface" in first
+    assert "- D1 ncfrp / Scene [NEW, 1 variables, none used by the manuscripts]: sleep surface" in first
     assert "CROSS-ROLE" in first and "MATCHES" in first
     assert first.rstrip().endswith(designs["case_population"].instruction)
     md = c_ideas.pool_markdown(pool)
     assert "Failed calls (no ideas): C_ideas_case_only_s0" in md and "**I5** (seed 1, fake-1) q5" in md
     assert "- Sources: case series: ncfrp; population reference: prams" in md and "- Domains: ncfrp / Scene" in md
+
+
+def test_constrained_batch_admits_only_role_sources_and_domain_ids():
+    import pydantic
+
+    batch = c_ideas.constrained_batch(ROLES, ["D1", "D2"])
+    schema = json.dumps(batch.model_json_schema())
+    assert '"enum": ["cdc", "ncfrp"]' in schema and '"enum": ["D1", "D2"]' in schema
+    ok = IdeaBatch(ideas=[_idea("a?", domains=["D2"])]).model_dump_json()
+    assert batch.model_validate_json(ok).ideas[0].domains == ["D2"]
+    for bad in (_idea("a?", domains=["ncfrp / Scene"]), _idea("a?", case=("prams",), domains=["D1"])):
+        with pytest.raises(pydantic.ValidationError):
+            batch.model_validate_json(IdeaBatch(ideas=[bad]).model_dump_json())
+    # a role no source has admits only an empty list
+    lone = c_ideas.constrained_batch({"ncfrp": ["case"]}, ["D1"])
+    with pytest.raises(pydantic.ValidationError):
+        lone.model_validate_json(IdeaBatch(ideas=[_idea("a?", domains=["D1"])]).model_dump_json())
 
 
 def test_ideas_prompt_is_primed_with_the_source_roles():

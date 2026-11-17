@@ -13,10 +13,10 @@ import json
 import logging
 from collections.abc import Callable
 from pathlib import Path
-from typing import TypeVar
+from typing import Annotated, Any, Literal, TypeVar
 
 import numpy as np
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, create_model
 
 from mmf.components.roles import ROLE_NAMES
 from mmf.llm.base import LLMClient
@@ -29,6 +29,7 @@ from mmf.schemas.ideas import (
     Candidate,
     DataInventory,
     DomainMatch,
+    Idea,
     IdeaBatch,
     IdeaPool,
     InventoryDomain,
@@ -256,10 +257,21 @@ def new_domain_labels(inv: DataInventory) -> set[str]:
     return {domain_label(d) for d in inv.domains} - used
 
 
+def domain_ids(inv: DataInventory) -> dict[str, str]:
+    """label -> short id (D1, D2, ... in inventory order). Ideas cite ids, which the output grammar restricts to
+    this list: asked to copy 'source_id / domain name' labels from 338 domains, qwen2.5:14b misspelled, merged or
+    suffixed them in 16 of 18 calls (2026-11-16 run)."""
+    ids: dict[str, str] = {}
+    for d in inv.domains:
+        ids.setdefault(domain_label(d), f"D{len(ids) + 1}")
+    return ids
+
+
 def inventory_text(inv: DataInventory, sources: dict[str, DataSource], roles: dict[str, list[str]]) -> str:
     """Domains per source, headed by the source's roles (described in full in the primer). Each line starts with
-    the exact label ideas must cite; NEW marks domains no manuscript uses."""
+    the id ideas cite, then the label; NEW marks domains no manuscript uses."""
     new = new_domain_labels(inv)
+    ids = domain_ids(inv)
     parts = []
     for sid, src in sources.items():
         role = " and ".join(ROLE_NAMES[r] for r in roles.get(sid, [])) or "lookup list, no role"
@@ -268,7 +280,7 @@ def inventory_text(inv: DataInventory, sources: dict[str, DataSource], roles: di
             label = domain_label(d)
             tag = "NEW, " if label in new else ""
             used = f"{len(d.used)} used by the manuscripts" if d.used else "none used by the manuscripts"
-            lines.append(f"- {label} [{tag}{len(d.variables)} variables, {used}]: {d.summary}")
+            lines.append(f"- {ids[label]} {label} [{tag}{len(d.variables)} variables, {used}]: {d.summary}")
         parts.append("\n".join(lines))
     return "\n\n".join(parts)
 
@@ -299,12 +311,17 @@ def match_domains(
     return sorted(out.values(), key=lambda m: (-(m.case_new + m.reference_new), -m.score))
 
 
-def domain_matches_text(matches: list[DomainMatch]) -> str:
+def domain_matches_text(matches: list[DomainMatch], ids: dict[str, str] | None = None) -> str:
+    ids = ids or {}
+
+    def show(label: str) -> str:
+        return f"{ids[label]} {label}" if label in ids else label
+
     lines = []
     for m in matches:
         tags = [t for t, on in (("case domain NEW", m.case_new), ("reference domain NEW", m.reference_new)) if on]
         suffix = "; " + ", ".join(tags) if tags else ""
-        lines.append(f"- {m.case} <-> {m.reference} (similarity {m.score:.2f}{suffix})")
+        lines.append(f"- {show(m.case)} <-> {show(m.reference)} (similarity {m.score:.2f}{suffix})")
     return "\n".join(lines) or "(no matching domains)"
 
 
@@ -329,13 +346,13 @@ def ideas_validator(
     n_ideas: int,
     design: Design,
     roles: dict[str, list[str]],
-    labels: set[str] | None = None,
+    domains: dict[str, str] | None = None,
     new: set[str] | None = None,
     min_new: int = 0,
 ) -> Callable[[IdeaBatch], list[str]]:
     """Each source must be listed under a role it has, each idea must have the roles its design needs, its domains
-    must be inventory labels from its sources, and at least `min_new` ideas must use a domain no manuscript uses.
-    `labels=None` skips the domain checks."""
+    must be inventory citations (`domains`: citation -> source_id) from its sources, and at least `min_new` ideas
+    must use a domain no manuscript uses (`new`: citations). `domains=None` skips the domain checks."""
     new_labels = new or set()
 
     def check(b: IdeaBatch) -> list[str]:
@@ -366,22 +383,21 @@ def ideas_validator(
                     problems.append(f"idea {i}: this design needs at least {n} {ROLE_NAMES[role]} source(s)")
             if len({sid for ids in listed.values() for sid in ids}) < design.min_sources:
                 problems.append(f"idea {i}: this design needs at least {design.min_sources} different sources")
-            if labels is None:
+            if domains is None:
                 continue
             if not idea.domains:
                 problems.append(f"idea {i}: list the inventory domains it uses in `domains`")
             named = {sid for ids in listed.values() for sid in ids}
             for label in idea.domains:
-                if label not in labels:
+                if label not in domains:
+                    problems.append(f"idea {i}: domain {label!r} is not in the inventory; cite its id (D1, D2, ...)")
+                elif domains[label] not in named:
                     problems.append(
-                        f"idea {i}: domain {label!r} is not in the inventory; copy labels exactly as 'source_id / "
-                        "domain name'"
+                        f"idea {i}: domain {label} belongs to {domains[label]}, which is not listed under any role"
                     )
-                elif label.split(" / ", 1)[0] not in named:
-                    problems.append(f"idea {i}: domain {label!r} belongs to a source not listed under any role")
             if any(label in new_labels for label in idea.domains):
                 n_new += 1
-        if labels is not None and n_new < min_new:
+        if domains is not None and n_new < min_new:
             problems.append(
                 f"only {n_new} idea(s) use a domain marked NEW; at least {min_new} must be built mainly on domains "
                 "no manuscript uses"
@@ -389,6 +405,28 @@ def ideas_validator(
         return problems
 
     return check
+
+
+def constrained_batch(roles: dict[str, list[str]], ids: list[str]) -> type[IdeaBatch]:
+    """IdeaBatch whose source fields accept only the sources with that role and whose `domains` accept only the
+    inventory ids, so the grammar rules out misspelled or invented citations."""
+
+    def choice(values: list[str]) -> Any:
+        if not values:
+            return Annotated[list[str], Field(max_length=0)]
+        return list[Literal[tuple(values)]]  # type: ignore[misc]
+
+    fields: dict[str, Any] = {}
+    for role in ROLE_NAMES:
+        name = f"{role}_sources"
+        allowed = sorted(sid for sid, rs in roles.items() if role in rs)
+        fields[name] = (choice(allowed), Field(description=Idea.model_fields[name].description))
+    fields["domains"] = (
+        choice(ids),
+        Field(description="Ids (D1, D2, ...) of the inventory domains the question uses."),
+    )
+    idea = create_model("IdeaChoice", __base__=Idea, **fields)
+    return create_model("IdeaBatchChoice", __base__=IdeaBatch, ideas=(list[idea], ...))
 
 
 def generate_ideas(
@@ -414,12 +452,15 @@ def generate_ideas(
     """One call per (design, seed), with the scientific primer and source roles as the system message. A call that
     fails after retries is recorded and skipped: one design failing must not discard the rest of the pool."""
     prompt = load_primed_prompt(IDEAS_PROMPT, source_roles).bind(n_ideas=str(n_ideas), min_new=str(min_new))
-    labels = {domain_label(d) for d in inv.domains}
-    new = new_domain_labels(inv)
+    ids = domain_ids(inv)
+    label_of = {i: label for label, i in ids.items()}
+    cited = {i: label.split(" / ", 1)[0] for label, i in ids.items()}  # id -> source_id
+    new = {ids[label] for label in new_domain_labels(inv)}
     inventory = inventory_text(inv, sources, roles)
+    batch = constrained_batch(roles, list(ids.values()))
     pool, records = IdeaPool(), []
     for name, design in designs.items():
-        validator = ideas_validator(n_ideas, design, roles, labels, new, min_new)
+        validator = ideas_validator(n_ideas, design, roles, cited, new, min_new)
         user = prompt.render(
             design=design.instruction,
             manuscripts=manuscripts_text(decomps),
@@ -434,7 +475,7 @@ def generate_ideas(
                     client,
                     prompt,
                     user,
-                    IdeaBatch,
+                    batch,
                     stage=stage,
                     validator=validator,
                     checkpoint_dir=checkpoint_dir,
@@ -459,7 +500,11 @@ def generate_ideas(
                         design=name,
                         seed=seed,
                         model=client.model,
-                        **idea.model_dump(),
+                        **{
+                            **idea.model_dump(),
+                            **{f"{r}_sources": list(dict.fromkeys(v)) for r, v in idea.by_role().items()},
+                            "domains": [label_of[i] for i in dict.fromkeys(idea.domains)],
+                        },
                     )
                 )
     return pool, records

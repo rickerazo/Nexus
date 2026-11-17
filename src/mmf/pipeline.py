@@ -394,7 +394,7 @@ class Run:
         cache = b_crosscheck.VectorCache(self.embedder(), self.cfg.cache_dir.parent / "embeddings")
         matches = c_ideas.match_domains(inv, role_map, cache.vectors, self.cfg.c_domain_match_threshold)
         (self.run_dir / "C_domain_matches.json").write_text(json.dumps([m.model_dump() for m in matches], indent=1))
-        matches_text = c_ideas.domain_matches_text(matches)
+        matches_text = c_ideas.domain_matches_text(matches, c_ideas.domain_ids(inv))
         key = _h(
             *(d.model_dump_json() for d in decs),
             inv.model_dump_json(),

@@ -185,3 +185,26 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
   - Each call needs at least `c_min_new_ideas` (2) ideas using a domain marked NEW, meaning no manuscript uses it.
   - The prompt asks the model to think outside the field's usual questions.
 - **Reference ideas:** the investigator called all ideas highlighted from the role-based run good reference points for importance scoring: I32/I39, I34/I36, I43, I81/I82, I80/I83 and I72 in `C_ideas.roles-14b.md`. The remaining goal is to widen the out-of-the-box thinking.
+- **Mon 16:40 PST, run with (a)+(b), 14B; done 19:24.** 16 of 18 calls failed after retries, leaving 10 ideas from `exposure_rates` s2 and `case_case` s2.
+  - **Cause:** almost all of the 66 rejections were label errors, not idea errors. The model:
+    - put domain labels in the source fields (`'ncfrp_v51 / Pregnancy Weight Gain'` as a case source);
+    - appended `(NEW)` or `[new]`;
+    - wrote match pairs `A <-> B` as one label;
+    - invented near-miss names such as `ncfrp_v51 / Maternal Smoking` or `prams_p8_arf / Pregnancy Weight Gain`.
+
+    Copying exact strings from a 324-label list is a task 14B can't do reliably.
+  - **What survived did move:** hospital stay after birth, prenatal care adequacy, maternal mental health, illicit drugs, domestic violence, decreased fetal movement, and sleep environment in SUID vs other deaths. Design errors remain: "incidence" in a case-case question, and stillbirths compared with SUID. These are left for C3.
+  - Saved as `C_ideas.domains-labels-14b.{md,json}`.
+
+## Fix 2026-11-16: domains cited by id, grammar-restricted
+- Each inventory domain gets a short id (`D1`…`D324`, in inventory order; same-named domains in a source share one). The inventory and domain matches show `D12 ncfrp_v51 / Name`.
+- `c_ideas.constrained_batch` builds the C1 output schema per run:
+  - `case_sources`, `reference_sources` and `denominator_sources` are enums of the source ids with that role; a role no source has admits only an empty list;
+  - `domains` is an enum of the ids.
+- Grammar decoding therefore rules out unknown sources, wrong roles and misspelled domains. Checked live: with a prompt that asks for labels, `qwen2.5:14b` still returned valid ids, with a 4 kB schema and 42 s for 2 ideas.
+- The validator still checks:
+  - design needs;
+  - that each domain belongs to a listed source;
+  - the NEW minimum.
+- The pool stores full labels, with duplicate sources and domains folded.
+- This is a change to C1's own output schema only. B, C_gaps and D's Strategy are untouched.

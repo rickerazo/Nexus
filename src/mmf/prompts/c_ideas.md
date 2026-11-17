@@ -5,7 +5,7 @@ Rules:
 - Respect the source roles: outcomes come only from case series, exposure prevalence only from population reference sources (using their survey weight), and the population at risk only from denominator sources. List each source you use under the role it plays in this question; leave a role empty if the question does not use it.
 - `comparison`: who is compared with whom, in which period. Check that the periods of the sources you combine overlap.
 - Think outside the field's usual questions. At least $min_new ideas must be built mainly on inventory domains marked NEW (no manuscript uses them). The domain matches below show where a case series and a population reference record similar things, including comparisons no manuscript has made.
-- `domains`: the inventory domains the question uses, each copied exactly as its label (`source_id / domain name`), from sources you list under a role.
+- `domains`: the ids (D1, D2, ...) of the inventory domains the question uses, only from sources you list under a role. Source fields take only the source ids shown, not domain names.
 - `question`: one sentence. `why_open`: one or two sentences on why it is unanswered and what an answer would change. `data`: how those domains would be used.
 - Do not invent variable names, and do not propose a question that needs data no source documents.
 
@@ -18,7 +18,7 @@ $cross_role
 Domain matches between case series and population reference (embedding similarity; both sides NEW first):
 $matches
 
-Data inventory (label [NEW if no manuscript uses it, size, use by the manuscripts]: summary):
+Data inventory (id source_id / domain name [NEW if no manuscript uses it, size, use by the manuscripts]: summary):
 $inventory
 
 Design for this request:
