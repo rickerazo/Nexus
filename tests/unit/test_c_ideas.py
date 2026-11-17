@@ -298,6 +298,15 @@ def test_constrained_batch_admits_only_role_sources_and_domain_ids():
         lone.model_validate_json(IdeaBatch(ideas=[_idea("a?", domains=["D1"])]).model_dump_json())
 
 
+def test_unlisted_source_domains_are_dropped_on_the_final_attempt():
+    cited = {"D1": "ncfrp", "D3": "prams"}
+    b = IdeaBatch(ideas=[_idea("a?", reference=(), domains=["D1", "D3"]), _idea("b?", domains=["D3"])])
+    pruned, dropped = c_ideas.drop_unlisted_domains(cited)(b, [])
+    assert [i.domains for i in pruned.ideas] == [["D1"], ["D3"]]
+    assert dropped == ["idea 1: domain D3 (prams, source not listed)"]
+    assert b.ideas[0].domains == ["D1", "D3"]  # the original is not modified
+
+
 def test_ideas_prompt_is_primed_with_the_source_roles():
     from mmf.llm.prompts import load_primed_prompt
 

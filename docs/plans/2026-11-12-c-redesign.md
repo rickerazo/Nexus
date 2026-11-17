@@ -208,3 +208,21 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
   - the NEW minimum.
 - The pool stores full labels, with duplicate sources and domains folded.
 - This is a change to C1's own output schema only. B, C_gaps and D's Strategy are untouched.
+- **Mon 19:27 PST, run with domain ids, 14B; done 21:34.** 11 of 18 calls were accepted, giving 55 ideas. The 7 failures were in `exposure_rates` s0/s2, `case_case` s2, `trends` s1/s2 and `measurement` s1/s2. Saved as `C_ideas.domains-ids-14b.{md,json}`.
+  - **Rejections:** 42 in total. Most were for citing a domain whose source the idea does not list (PRAMS domains 61, `cdc_linkco15` 6, `ncfrp_v51` 4); the rest were idea count (4) and missing roles (3). There were no spelling or role errors: the grammar fix worked.
+  - **Out of the box:** 54 of 55 ideas use a NEW domain, against 0 of 90 in the role-based run. Smoking dropped from 23 ideas to 0; obesity/BMI from 17 to 4.
+  - **New topics:**
+    - pregnancy weight gain; hospital stay after birth; maternal stressors;
+    - prenatal and pre-pregnancy care visits; postpartum contraception;
+    - previous child deaths; cesarean delivery; multiple gestation; breastfeeding;
+    - substances and toxins; domestic violence; postpartum mental health.
+  - **New weaknesses:**
+    - Topics concentrate on the top domain matches: weight gain appears in 8 ideas, hospital stay in 8, stressors in 4.
+    - Design drift:
+      - `case_case` s0 asks incidence questions with no comparison outcome;
+      - several `case_only` ideas say "risk";
+      - `measurement` s0 asks case-population questions, not how measurement differs.
+    - Some data claims need checking, such as postpartum contraception in NCFRP.
+
+    All of this falls to C3 (design checks) and C4 (scoring).
+- **Fix (salvage):** on the final attempt, `drop_unlisted_domains` removes domain citations whose source the idea does not list under any role. The drop is recorded, and the rest must still pass. An idea left with no domains still fails. `C1_LOGIC_VERSION` is in the stage key, so the pool is rebuilt while the 11 accepted calls resume from their checkpoints.

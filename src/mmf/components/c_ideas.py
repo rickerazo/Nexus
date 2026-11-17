@@ -407,6 +407,30 @@ def ideas_validator(
     return check
 
 
+# Bumped when C1's acceptance logic changes without a prompt or schema change, so the cached pool is rebuilt (the
+# per-call checkpoints still resume).
+C1_LOGIC_VERSION = "2"  # 2: unlisted-source domains dropped on the final attempt
+
+
+def drop_unlisted_domains(cited: dict[str, str]) -> Salvage[IdeaBatch]:
+    """Final-attempt salvage: remove domain citations whose source the idea does not list under any role (the
+    most common rejection on 2026-11-16, e.g. a case-only idea citing a PRAMS domain). Ideas are never added to
+    or rewritten; the dropped citations are recorded."""
+
+    def salvage(b: IdeaBatch, problems: list[str]) -> tuple[IdeaBatch, list[str]]:
+        out, dropped = b.model_copy(deep=True), []
+        for i, idea in enumerate(out.ideas, start=1):
+            named = {sid for ids in idea.by_role().values() for sid in ids}
+            keep = [d for d in idea.domains if cited.get(d) in named]
+            dropped += [
+                f"idea {i}: domain {d} ({cited.get(d)}, source not listed)" for d in idea.domains if d not in keep
+            ]
+            idea.domains = keep
+        return out, dropped
+
+    return salvage
+
+
 def constrained_batch(roles: dict[str, list[str]], ids: list[str]) -> type[IdeaBatch]:
     """IdeaBatch whose source fields accept only the sources with that role and whose `domains` accept only the
     inventory ids, so the grammar rules out misspelled or invented citations."""
@@ -478,6 +502,7 @@ def generate_ideas(
                     batch,
                     stage=stage,
                     validator=validator,
+                    salvage=drop_unlisted_domains(cited),
                     checkpoint_dir=checkpoint_dir,
                     salt=salt,
                     seed=seed,

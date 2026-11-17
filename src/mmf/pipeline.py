@@ -409,6 +409,7 @@ class Run:
             json.dumps(self.cfg.c_ideation_seeds),
             str(self.cfg.c_ideas_per_call),
             str(self.cfg.c_min_new_ideas),
+            c_ideas.C1_LOGIC_VERSION,
         )
         pool = self._cached("C_ideas", key, IdeaPool, "C_ideas.json")
         if pool is None:
