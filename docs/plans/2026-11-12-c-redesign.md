@@ -226,3 +226,12 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
 
     All of this falls to C3 (design checks) and C4 (scoring).
 - **Fix (salvage):** on the final attempt, `drop_unlisted_domains` removes domain citations whose source the idea does not list under any role. The drop is recorded, and the rest must still pass. An idea left with no domains still fails. `C1_LOGIC_VERSION` is in the stage key, so the pool is rebuilt while the 11 accepted calls resume from their checkpoints.
+- **Mon 21:35 PST, rerun of the 7 failed calls with the salvage; done 22:31.**
+  - The 11 accepted calls resumed from checkpoints. 4 of the 7 failed calls now succeed: `exposure_rates` s0 and `measurement` s1 needed the salvage (6 citations dropped), and `exposure_rates` s1 and `trends` s1 needed none.
+  - Still failing: `exposure_rates` s2, `trends` s2 and `measurement` s2.
+  - **Pool:** 75 ideas; 74 use a NEW domain. Smoking 2, obesity/BMI 4, weight gain 10, hospital stay 13.
+  - Saved as `C_ideas.domains-ids2-14b.{md,json}`.
+  - **Salvage caveat:** in `measurement` s1, the dropped citations were the PRAMS half of NCFRP-vs-PRAMS comparisons; PRAMS was named in the question but not listed as a source. For this design, an unlisted cited source more likely means a missing source listing than a stray citation. C3 must check that the sources the question names are the sources it lists.
+  - **New design drift:**
+    - `trends` s1 uses 2016–2021, beyond NCFRP's 2019 end;
+    - it also compares with population incidence, which is not a within-case trend.
