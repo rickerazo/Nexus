@@ -25,7 +25,7 @@ from mmf.components.roles import ROLE_NAMES
 from mmf.config import SourceSpec
 from mmf.llm.base import LLMClient
 from mmf.llm.prompts import Prompt, load_primed_prompt
-from mmf.llm.structured import GenerationFailedError, reason
+from mmf.llm.structured import GenerationFailedError, Salvage, reason
 from mmf.schemas.dataset import DataSource, Variable, VariableRef, VariableType
 from mmf.schemas.gap import KnowledgeGap
 from mmf.schemas.ideas import (
@@ -255,6 +255,34 @@ def grounding_validator(
     return check
 
 
+def drop_out_of_period_sources(specs: dict[str, SourceSpec]) -> Salvage[GroundingAnswer]:
+    """Final-attempt salvage: remove listed sources whose coverage excludes the answer's period, and their variables.
+    In the 2026-11-17 smoke test the JSON turn listed every possible source (both PRAMS phases and natality), so no
+    common year existed, and it did not drop one when told to. The result must still pass every check (e.g. the
+    roles the design needs); the dropped sources are recorded."""
+
+    def salvage(a: GroundingAnswer, problems: list[str]) -> tuple[GroundingAnswer, list[str]]:
+        if not a.groundable:
+            return a, []
+        out, dropped = a.model_copy(deep=True), []
+        for role in ROLE_NAMES:
+            keep = []
+            for sid in getattr(out, f"{role}_sources"):
+                cov = specs[sid].period if sid in specs else None
+                if cov and not (cov[0] <= a.period_start and a.period_end <= cov[1]):
+                    dropped.append(
+                        f"{sid} as {ROLE_NAMES[role]} (covers {cov[0]}-{cov[1]}; period {a.period_start}-{a.period_end})"
+                    )
+                else:
+                    keep.append(sid)
+            setattr(out, f"{role}_sources", keep)
+        listed = {sid for ids in out.by_role().values() for sid in ids}
+        out.variables = [v for v in out.variables if v.split(":", 1)[0] in listed]
+        return out, dropped
+
+    return salvage
+
+
 def ground_ideas(
     pool: IdeaPool,
     deduped: DedupedPool,
@@ -323,6 +351,7 @@ def ground_ideas(
                 model,
                 stage=stage,
                 validator=grounding_validator(design, roles, specs, claim_ids),
+                salvage=drop_out_of_period_sources(specs),
                 checkpoint_dir=checkpoint_dir,
                 salt=salt,
                 seed=seed,
@@ -363,6 +392,7 @@ def ground_ideas(
                 period_end=ans.period_end,
                 cannot_establish=ans.cannot_establish,
                 reasoning=thought,
+                salvaged=rec.dropped if rec is not None else [],
             )
         )
     return out, records
@@ -575,6 +605,7 @@ def review_markdown(pool: IdeaPool, deduped: DedupedPool, grounding: Grounding, 
             f"- Prior art: {g.prior_art}",
             f"- Cannot establish: {g.cannot_establish}",
             f"- Original idea: {ideas[g.idea_id].question if g.idea_id in ideas else ''}",
+            *([f"- Sources dropped for the period: {'; '.join(g.salvaged)}"] if g.salvaged else []),
             "",
             "<details><summary>Reasoning turn</summary>",
             "",

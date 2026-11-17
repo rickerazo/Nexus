@@ -143,6 +143,16 @@ def test_grounding_validator_enforces_the_design_checks():
     assert check(_answer(groundable=False, why_not="no")) != []
 
 
+def test_out_of_period_sources_are_dropped_on_the_final_attempt():
+    a = _answer(denominator_sources=["natl"], variables=["ncfrp:SMOKE", "prams:SMK", "prams:WT", "natl:SEX"])
+    check = c_narrow.grounding_validator(DESIGNS["case_population"], ROLES, SPECS, {"m.C1"})
+    assert any("outside natl's coverage 2015-2015" in p for p in check(a))
+    pruned, dropped = c_narrow.drop_out_of_period_sources(SPECS)(a, [])
+    assert pruned.denominator_sources == [] and "natl:SEX" not in pruned.variables and check(pruned) == []
+    assert dropped == ["natl as denominator (covers 2015-2015; period 2016-2019)"]
+    assert a.denominator_sources == ["natl"]  # the original is not modified
+
+
 def test_answer_model_restricts_sources_and_variables():
     model = c_narrow.answer_model(ROLES, ["ncfrp:SMOKE", "prams:WT"])
     schema = json.dumps(model.model_json_schema())

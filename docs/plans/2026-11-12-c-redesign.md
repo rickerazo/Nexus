@@ -306,3 +306,8 @@ It never writes `C_gaps.json`: your pick of 5 becomes D's input in a later step.
   - every other gap with its reason for being skipped;
   - the ideas dropped as not groundable;
   - the merged duplicates.
+- **Tue 14:20 PST, live smoke test of C3 on I2 and I21** (scratch checkpoints; the run directory was untouched).
+  - Embedding all variables once took about 6 minutes. After that, each idea took about 5 minutes: reasoning about 2 minutes (about 8.5k prompt tokens, 930 generated), then the JSON turn.
+  - The reasoning was sound: stressor variables in NCFRP and PRAMS, selection and recall bias, prior art with claim ids.
+  - The JSON turn listed every possible source (PRAMS Phase 7 and 8 plus natality), so no common year existed, and it did not drop one when the retry message asked it to. I2 failed all 4 attempts this way.
+  - **Fix (salvage):** on the final attempt, `drop_out_of_period_sources` removes listed sources whose `period` excludes the answer's period, along with their variables. The result must still pass every check. The drop is recorded in the call record and in `GroundedGap.salvaged`, and shown in the review.

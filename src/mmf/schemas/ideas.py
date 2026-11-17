@@ -136,6 +136,10 @@ class GroundedGap(KnowledgeGap):
     period_end: int
     cannot_establish: str
     reasoning: str = Field(description="The free-text reasoning turn, kept for review.")
+    salvaged: list[str] = Field(
+        default_factory=list,
+        description="Sources dropped on the final attempt because their coverage excluded the period.",
+    )
 
 
 class DroppedIdea(BaseModel):
