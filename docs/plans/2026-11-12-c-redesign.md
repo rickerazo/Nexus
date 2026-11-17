@@ -160,3 +160,16 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
   - C2–C5;
   - the D and E changes;
   - moving D and E onto the primer.
+- **Mon 15:52 PST, role-based C1 on 14B; done 16:33.**
+  - 90 ideas. One call needed 3 attempts: twice the validator caught a source listed in a role it doesn't have, once `cdc_natl15` as a reference.
+  - Saved as `C_ideas.roles-14b.{md,json}`; the lens-based pool is in `prev_lenses/`.
+  - **Better:**
+    - No PRAMS-as-outcome ideas.
+    - The form of the questions follows the designs: SUID compared with suffocation, congenital-anomaly and external-cause deaths; NCFRP vs PRAMS recording of sleeping arrangements; birth-certificate vs PRAMS BMI; trends in proportions within cases.
+    - Only 2 ideas rely on unmeasured things.
+  - **Still wrong:**
+    - Topics stay on the manuscripts' concepts (obesity 29, smoking 22). The cross-role table lists only manuscript concepts, and it anchors the model.
+    - Case-only ideas ask about "incidence".
+    - Trend periods run past the case series (2015–2021, when NCFRP ends in 2019).
+    - The linked file and NCFRP are combined as case sources, which double-counts deaths unless the two are deduplicated, and they can't be linked.
+    - One idea uses geography within states.
