@@ -125,6 +125,15 @@ class RunConfig(BaseModel):
     )
     c_ideation_seeds: list[int] = Field(default=[0, 1, 2], description="One C1 call per (lens, seed).")
     c_ideas_per_call: int = Field(default=5, description="Ideas requested from each C1 call.")
+    c_min_new_ideas: int = Field(
+        default=2, description="Each C1 call must return at least this many ideas built on a domain no manuscript uses."
+    )
+    c_domain_match_threshold: float = Field(
+        default=0.70,
+        description="Cosine similarity at or above which a case-series domain and a population-reference domain are "
+        "shown to C1 as a possible cross-role comparison. Provisional: chosen 2026-11-16 by inspecting the SUID "
+        "inventory (55 pairs at 0.70; noise below about 0.65).",
+    )
     out_dir: Path = Path("runs")
     cache_dir: Path = Path(".cache/documents")
 

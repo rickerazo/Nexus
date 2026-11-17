@@ -173,3 +173,15 @@ Estimate (not measured): about 44 inventory calls, 30–40 minutes; 18 idea call
     - Trend periods run past the case series (2015–2021, when NCFRP ends in 2019).
     - The linked file and NCFRP are combined as case sources, which double-counts deaths unless the two are deduplicated, and they can't be linked.
     - One idea uses geography within states.
+
+## Built 2026-11-16: (a) domain matches across roles, (b) cited NEW domains (approved)
+- **(a) Domain matches:**
+  - `c_ideas.match_domains` embeds each C0 domain (`name: summary`, `mxbai-embed-large`, cached) and pairs every case-series domain with its most similar population-reference domain at or above `c_domain_match_threshold`.
+  - The threshold is 0.70, provisional: chosen by inspection, with 55 SUID pairs at 0.70 and noise below about 0.65.
+  - Pairs where both domains are unused by the manuscripts are listed first. On SUID: 54 pairs, 34 with both sides NEW.
+  - Written to `C_domain_matches.json` and shown to C1.
+- **(b) Cited domains:**
+  - Each idea lists `domains` as exact inventory labels (`source_id / domain name`) from sources it lists under a role.
+  - Each call needs at least `c_min_new_ideas` (2) ideas using a domain marked NEW, meaning no manuscript uses it.
+  - The prompt asks the model to think outside the field's usual questions.
+- **Reference ideas:** the investigator called all ideas highlighted from the role-based run good reference points for importance scoring: I32/I39, I34/I36, I43, I81/I82, I80/I83 and I72 in `C_ideas.roles-14b.md`. The remaining goal is to widen the out-of-the-box thinking.

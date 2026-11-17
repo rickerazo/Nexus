@@ -390,12 +390,16 @@ class Run:
         client = self.client if model == self.cfg.model else self._client_for(model)
         role_map = {s.id: [str(r) for r in s.roles] for s in self.cfg.codebooks if s.id in sources}
         source_roles = self.source_roles(sources)
-        inventory = c_ideas.inventory_text(inv, sources, role_map)
         cross = roles.cross_role_text(roles.cross_role_concepts(smap, self.cfg.codebooks))
+        cache = b_crosscheck.VectorCache(self.embedder(), self.cfg.cache_dir.parent / "embeddings")
+        matches = c_ideas.match_domains(inv, role_map, cache.vectors, self.cfg.c_domain_match_threshold)
+        (self.run_dir / "C_domain_matches.json").write_text(json.dumps([m.model_dump() for m in matches], indent=1))
+        matches_text = c_ideas.domain_matches_text(matches)
         key = _h(
             *(d.model_dump_json() for d in decs),
-            inventory,
+            inv.model_dump_json(),
             cross,
+            matches_text,
             source_roles,
             c_ideas.ideas_prompt_hash(),
             c_ideas.designs_hash(c_ideas.DESIGNS),
@@ -404,20 +408,24 @@ class Run:
             str(self.cfg.c_ideation_temperature),
             json.dumps(self.cfg.c_ideation_seeds),
             str(self.cfg.c_ideas_per_call),
+            str(self.cfg.c_min_new_ideas),
         )
         pool = self._cached("C_ideas", key, IdeaPool, "C_ideas.json")
         if pool is None:
             kw = self._llm_kwargs()
             pool, recs = c_ideas.generate_ideas(
                 decs,
-                inventory,
+                inv,
+                sources,
                 cross,
+                matches_text,
                 source_roles,
                 role_map,
                 client,
                 designs=c_ideas.DESIGNS,
                 seeds=self.cfg.c_ideation_seeds,
                 n_ideas=self.cfg.c_ideas_per_call,
+                min_new=self.cfg.c_min_new_ideas,
                 temperature=self.cfg.c_ideation_temperature,
                 max_retries=kw["max_retries"],
                 log_dir=kw["log_dir"],

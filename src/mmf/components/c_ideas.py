@@ -15,6 +15,7 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import TypeVar
 
+import numpy as np
 from pydantic import BaseModel
 
 from mmf.components.roles import ROLE_NAMES
@@ -27,6 +28,7 @@ from mmf.schemas.ideas import (
     BlockDomains,
     Candidate,
     DataInventory,
+    DomainMatch,
     IdeaBatch,
     IdeaPool,
     InventoryDomain,
@@ -244,18 +246,66 @@ def build_inventory(
     return inv, records
 
 
+def domain_label(d: InventoryDomain) -> str:
+    return f"{d.source_id} / {d.name}"
+
+
+def new_domain_labels(inv: DataInventory) -> set[str]:
+    """Labels whose domains contain no variable the manuscripts use (every same-named domain in that source)."""
+    used = {domain_label(d) for d in inv.domains if d.used}
+    return {domain_label(d) for d in inv.domains} - used
+
+
 def inventory_text(inv: DataInventory, sources: dict[str, DataSource], roles: dict[str, list[str]]) -> str:
-    """Domains per source, headed by the source's roles (described in full in the primer)."""
+    """Domains per source, headed by the source's roles (described in full in the primer). Each line starts with
+    the exact label ideas must cite; NEW marks domains no manuscript uses."""
+    new = new_domain_labels(inv)
     parts = []
     for sid, src in sources.items():
-        doms = [d for d in inv.domains if d.source_id == sid]
         role = " and ".join(ROLE_NAMES[r] for r in roles.get(sid, [])) or "lookup list, no role"
         lines = [f"## {sid}: {src.title} ({role})"]
-        for d in doms:
+        for d in (d for d in inv.domains if d.source_id == sid):
+            label = domain_label(d)
+            tag = "NEW, " if label in new else ""
             used = f"{len(d.used)} used by the manuscripts" if d.used else "none used by the manuscripts"
-            lines.append(f"- {d.name} ({len(d.variables)} variables, {used}): {d.summary}")
+            lines.append(f"- {label} [{tag}{len(d.variables)} variables, {used}]: {d.summary}")
         parts.append("\n".join(lines))
     return "\n\n".join(parts)
+
+
+def match_domains(
+    inv: DataInventory, roles: dict[str, list[str]], vectors: Callable[[list[str]], np.ndarray], threshold: float
+) -> list[DomainMatch]:
+    """For each case-series domain, the most similar population-reference domain at or above `threshold`."""
+    case = [d for d in inv.domains if "case" in roles.get(d.source_id, [])]
+    ref = [d for d in inv.domains if "reference" in roles.get(d.source_id, [])]
+    if not case or not ref:
+        return []
+    vecs = vectors([f"{d.name}: {d.summary}" for d in (*case, *ref)])
+    sims = vecs[: len(case)] @ vecs[len(case) :].T
+    new = new_domain_labels(inv)
+    out: dict[tuple[str, str], DomainMatch] = {}
+    for i, d in enumerate(case):
+        j = int(np.argmax(sims[i]))
+        if sims[i, j] < threshold:
+            continue
+        pair = (domain_label(d), domain_label(ref[j]))
+        score = round(float(sims[i, j]), 3)
+        if pair not in out or out[pair].score < score:
+            out[pair] = DomainMatch(
+                case=pair[0], reference=pair[1], score=score, case_new=pair[0] in new, reference_new=pair[1] in new
+            )
+    # both sides unused by the manuscripts first: the comparisons nobody has made
+    return sorted(out.values(), key=lambda m: (-(m.case_new + m.reference_new), -m.score))
+
+
+def domain_matches_text(matches: list[DomainMatch]) -> str:
+    lines = []
+    for m in matches:
+        tags = [t for t, on in (("case domain NEW", m.case_new), ("reference domain NEW", m.reference_new)) if on]
+        suffix = "; " + ", ".join(tags) if tags else ""
+        lines.append(f"- {m.case} <-> {m.reference} (similarity {m.score:.2f}{suffix})")
+    return "\n".join(lines) or "(no matching domains)"
 
 
 # ---- C1: idea generation --------------------------------------------------------------
@@ -275,11 +325,22 @@ def manuscripts_text(decomps: list[ManuscriptDecomposition]) -> str:
     return "\n\n".join(parts)
 
 
-def ideas_validator(n_ideas: int, design: Design, roles: dict[str, list[str]]) -> Callable[[IdeaBatch], list[str]]:
-    """Each source must be listed under a role it has, and each idea must have the roles its design needs."""
+def ideas_validator(
+    n_ideas: int,
+    design: Design,
+    roles: dict[str, list[str]],
+    labels: set[str] | None = None,
+    new: set[str] | None = None,
+    min_new: int = 0,
+) -> Callable[[IdeaBatch], list[str]]:
+    """Each source must be listed under a role it has, each idea must have the roles its design needs, its domains
+    must be inventory labels from its sources, and at least `min_new` ideas must use a domain no manuscript uses.
+    `labels=None` skips the domain checks."""
+    new_labels = new or set()
 
     def check(b: IdeaBatch) -> list[str]:
         problems = []
+        n_new = 0
         if len(b.ideas) != n_ideas:
             problems.append(f"return exactly {n_ideas} ideas, got {len(b.ideas)}")
         seen: set[str] = set()
@@ -305,6 +366,26 @@ def ideas_validator(n_ideas: int, design: Design, roles: dict[str, list[str]]) -
                     problems.append(f"idea {i}: this design needs at least {n} {ROLE_NAMES[role]} source(s)")
             if len({sid for ids in listed.values() for sid in ids}) < design.min_sources:
                 problems.append(f"idea {i}: this design needs at least {design.min_sources} different sources")
+            if labels is None:
+                continue
+            if not idea.domains:
+                problems.append(f"idea {i}: list the inventory domains it uses in `domains`")
+            named = {sid for ids in listed.values() for sid in ids}
+            for label in idea.domains:
+                if label not in labels:
+                    problems.append(
+                        f"idea {i}: domain {label!r} is not in the inventory; copy labels exactly as 'source_id / "
+                        "domain name'"
+                    )
+                elif label.split(" / ", 1)[0] not in named:
+                    problems.append(f"idea {i}: domain {label!r} belongs to a source not listed under any role")
+            if any(label in new_labels for label in idea.domains):
+                n_new += 1
+        if labels is not None and n_new < min_new:
+            problems.append(
+                f"only {n_new} idea(s) use a domain marked NEW; at least {min_new} must be built mainly on domains "
+                "no manuscript uses"
+            )
         return problems
 
     return check
@@ -312,8 +393,10 @@ def ideas_validator(n_ideas: int, design: Design, roles: dict[str, list[str]]) -
 
 def generate_ideas(
     decomps: list[ManuscriptDecomposition],
-    inventory: str,
+    inv: DataInventory,
+    sources: dict[str, DataSource],
     cross_role: str,
+    matches: str,
     source_roles: str,
     roles: dict[str, list[str]],
     client: LLMClient,
@@ -321,6 +404,7 @@ def generate_ideas(
     designs: dict[str, Design],
     seeds: list[int],
     n_ideas: int,
+    min_new: int,
     temperature: float,
     max_retries: int,
     log_dir: Path | None,
@@ -329,14 +413,18 @@ def generate_ideas(
 ) -> tuple[IdeaPool, list[LLMCallRecord]]:
     """One call per (design, seed), with the scientific primer and source roles as the system message. A call that
     fails after retries is recorded and skipped: one design failing must not discard the rest of the pool."""
-    prompt = load_primed_prompt(IDEAS_PROMPT, source_roles).bind(n_ideas=str(n_ideas))
+    prompt = load_primed_prompt(IDEAS_PROMPT, source_roles).bind(n_ideas=str(n_ideas), min_new=str(min_new))
+    labels = {domain_label(d) for d in inv.domains}
+    new = new_domain_labels(inv)
+    inventory = inventory_text(inv, sources, roles)
     pool, records = IdeaPool(), []
     for name, design in designs.items():
-        validator = ideas_validator(n_ideas, design, roles)
+        validator = ideas_validator(n_ideas, design, roles, labels, new, min_new)
         user = prompt.render(
             design=design.instruction,
             manuscripts=manuscripts_text(decomps),
             cross_role=cross_role,
+            matches=matches,
             inventory=inventory,
         )
         for seed in seeds:
@@ -390,6 +478,7 @@ def pool_markdown(pool: IdeaPool) -> str:
                 f"- Comparison: {c.comparison}",
                 f"- Why open: {c.why_open}",
                 f"- Sources: {roles}",
+                f"- Domains: {'; '.join(c.domains)}",
                 f"- Data: {c.data}",
                 "",
             ]

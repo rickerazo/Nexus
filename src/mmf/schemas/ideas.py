@@ -36,6 +36,17 @@ class DataInventory(BaseModel):
     domains: list[InventoryDomain] = Field(default_factory=list)
 
 
+class DomainMatch(BaseModel):
+    """A case-series domain and the most similar population-reference domain (embedding cosine), so C1 can see
+    comparisons across roles beyond the concepts the manuscripts named."""
+
+    case: str = Field(description="'source_id / domain name' of the case-series domain.")
+    reference: str
+    score: float
+    case_new: bool = Field(description="No variable of the case domain is used by the manuscripts.")
+    reference_new: bool
+
+
 class Idea(BaseModel):
     """One candidate research question, as returned by the model. Every field is required (grammar decoding)."""
 
@@ -45,7 +56,8 @@ class Idea(BaseModel):
     case_sources: list[str] = Field(description="source_ids used as case series (outcomes come only from these).")
     reference_sources: list[str] = Field(description="source_ids used as population reference (prevalence).")
     denominator_sources: list[str] = Field(description="source_ids used for the population at risk.")
-    data: str = Field(description="Which domains and concepts of those sources it would use.")
+    domains: list[str] = Field(description="Inventory domains used, each copied as 'source_id / domain name'.")
+    data: str = Field(description="How those domains and concepts would be used.")
 
     def by_role(self) -> dict[str, list[str]]:
         return {"case": self.case_sources, "reference": self.reference_sources, "denominator": self.denominator_sources}

@@ -6,6 +6,7 @@ from pathlib import Path
 from tests.unit.test_structured import FakeClient
 
 from mmf.components import c_ideas
+from mmf.schemas.dataset import DataSource
 from mmf.schemas.ideas import BlockDomain, BlockDomains, Idea, IdeaBatch
 from mmf.schemas.manuscript import Claim, ManuscriptDecomposition, VariableMention
 
@@ -101,8 +102,8 @@ def test_build_inventory_and_text(sources, tmp_path: Path):
     assert "UCOD: Underlying cause of death" in client.calls[0]
     text = c_ideas.inventory_text(inv, sources, {"cdc": ["case", "denominator"]})
     assert "## cdc: mini (case series and denominator)" in text
-    assert "- Births (5 variables, 1 used by the manuscripts): Birth record items." in text
-    assert "- Deaths (2 variables, none used by the manuscripts)" in text
+    assert "- cdc / Births [5 variables, 1 used by the manuscripts]: Birth record items." in text
+    assert "- cdc / Deaths [NEW, 2 variables, none used by the manuscripts]" in text
     # a rerun resumes from the checkpoint instead of calling the model
     again, recs2 = c_ideas.build_inventory(
         sources,
@@ -122,7 +123,7 @@ def test_build_inventory_and_text(sources, tmp_path: Path):
 ROLES = {"cdc": ["case", "denominator"], "ncfrp": ["case"], "prams": ["reference"], "names": []}
 
 
-def _idea(q, case=("ncfrp",), reference=("prams",), denominator=()):
+def _idea(q, case=("ncfrp",), reference=("prams",), denominator=(), domains=("ncfrp / Scene",)):
     return Idea(
         question=q,
         comparison="cases vs population",
@@ -130,6 +131,7 @@ def _idea(q, case=("ncfrp",), reference=("prams",), denominator=()):
         case_sources=list(case),
         reference_sources=list(reference),
         denominator_sources=list(denominator),
+        domains=list(domains),
         data="d",
     )
 
@@ -184,23 +186,83 @@ def test_manuscripts_text_lists_findings_not_methods_or_quotes():
     assert "Poisson" not in text and "Variables used: X (exposure)" in text
 
 
+def _inv():
+    from mmf.schemas.ideas import DataInventory, InventoryDomain
+
+    return DataInventory(
+        domains=[
+            InventoryDomain(source_id="ncfrp", name="Scene", summary="sleep surface", variables=["A"], used=[]),
+            InventoryDomain(source_id="ncfrp", name="Birth", summary="gestation", variables=["B"], used=["B"]),
+            InventoryDomain(source_id="prams", name="Practices", summary="sleep surface", variables=["C"], used=[]),
+            InventoryDomain(source_id="prams", name="Smoking", summary="smoking", variables=["D"], used=["D"]),
+        ]
+    )
+
+
+def test_ideas_validator_checks_domain_labels_and_new_domains():
+    inv = _inv()
+    labels = {c_ideas.domain_label(d) for d in inv.domains}
+    new = c_ideas.new_domain_labels(inv)
+    assert new == {"ncfrp / Scene", "prams / Practices"}
+    check = c_ideas.ideas_validator(2, c_ideas.DESIGNS["case_population"], ROLES, labels, new, min_new=2)
+    assert check(IdeaBatch(ideas=[_idea("a?"), _idea("b?", domains=["prams / Practices", "ncfrp / Birth"])])) == []
+    problems = " | ".join(
+        check(
+            IdeaBatch(
+                ideas=[
+                    _idea("a?", domains=["ncfrp / Birth"]),
+                    _idea("b?", domains=["NCFRP/scene", "cdc / Births"]),
+                ]
+            )
+        )
+    )
+    assert "domain 'NCFRP/scene' is not in the inventory" in problems
+    assert "only 0 idea(s) use a domain marked NEW; at least 2" in problems
+
+
+def test_match_domains_pairs_case_with_reference_and_puts_new_first():
+    from tests.unit.test_crosscheck import KeywordEmbedder
+
+    from mmf.components.b_crosscheck import VectorCache
+
+    inv = _inv()
+    inv.domains[0].summary = "smok smok"  # case 'Scene' now resembles reference 'Smoking'
+    inv.domains[1].summary = "sex"
+    inv.domains[2].summary = "sex"
+    vectors = VectorCache(KeywordEmbedder(), None).vectors
+    matches = c_ideas.match_domains(inv, ROLES, vectors, threshold=0.9)
+    # equal NEW count and score: case order is kept
+    assert [(m.case, m.reference) for m in matches] == [
+        ("ncfrp / Scene", "prams / Smoking"),
+        ("ncfrp / Birth", "prams / Practices"),
+    ]
+    assert (matches[0].case_new, matches[0].reference_new) == (True, False)
+    text = c_ideas.domain_matches_text(matches)
+    assert "- ncfrp / Birth <-> prams / Practices (similarity 1.00; reference domain NEW)" in text
+    assert c_ideas.match_domains(inv, {"ncfrp": ["case"]}, vectors, 0.9) == []
+
+
 def test_generate_ideas_pools_every_design_and_seed_and_skips_failed_calls():
     def batch(*qs):
         return IdeaBatch(ideas=[_idea(q) for q in qs]).model_dump_json()
 
     designs = {k: c_ideas.DESIGNS[k] for k in ("case_population", "case_only")}
+    srcs = {sid: DataSource(id=sid, title=sid, document_path="p", document_sha256="0") for sid in ("ncfrp", "prams")}
     # case_population: seeds 0 and 1 succeed; case_only seed 0 fails on both attempts, seed 1 succeeds
     client = FakeClient([batch("q1", "q2"), batch("q3", "q4"), "not json", "still not json", batch("q5", "q6")])
     pool, recs = c_ideas.generate_ideas(
         [_dec()],
-        "INVENTORY",
+        _inv(),
+        srcs,
         "CROSS-ROLE",
+        "MATCHES",
         "ROLES-TABLE",
         ROLES,
         client,
         designs=designs,
         seeds=[0, 1],
         n_ideas=2,
+        min_new=1,
         temperature=0.9,
         max_retries=1,
         log_dir=None,
@@ -210,14 +272,12 @@ def test_generate_ideas_pools_every_design_and_seed_and_skips_failed_calls():
     assert pool.failed_calls == ["C_ideas_case_only_s0"]
     assert len(recs) == 4 and [r.ok for r in recs].count(False) == 1
     first = client.calls[0]
-    assert (
-        "INVENTORY" in first
-        and "CROSS-ROLE" in first
-        and first.rstrip().endswith(designs["case_population"].instruction)
-    )
+    assert "- ncfrp / Scene [NEW, 1 variables, none used by the manuscripts]: sleep surface" in first
+    assert "CROSS-ROLE" in first and "MATCHES" in first
+    assert first.rstrip().endswith(designs["case_population"].instruction)
     md = c_ideas.pool_markdown(pool)
     assert "Failed calls (no ideas): C_ideas_case_only_s0" in md and "**I5** (seed 1, fake-1) q5" in md
-    assert "- Sources: case series: ncfrp; population reference: prams" in md
+    assert "- Sources: case series: ncfrp; population reference: prams" in md and "- Domains: ncfrp / Scene" in md
 
 
 def test_ideas_prompt_is_primed_with_the_source_roles():
