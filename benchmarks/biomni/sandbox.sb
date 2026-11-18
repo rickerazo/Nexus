@@ -1,0 +1,15 @@
+(version 1)
+; Confines a Biomni run: the agent executes model-written Python and bash on the host.
+; Network: only the local Ollama server. Writes: only the run directory, the Biomni venv's caches, temp dirs.
+(allow default)
+(deny network-outbound)
+(allow network-outbound (remote ip "localhost:11434"))
+(allow network-outbound (remote unix-socket))
+(deny file-write*)
+(allow file-write*
+  (subpath (param "RUN_DIR"))
+  (subpath "/private/tmp")
+  (subpath "/private/var/folders")
+  (literal "/dev/null")
+  (literal "/dev/tty")
+  (literal "/dev/dtracehelper"))
