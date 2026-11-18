@@ -286,8 +286,8 @@ It never writes `C_gaps.json`: your pick of 5 becomes D's input in a later step.
   | `cdc_natl15` | 2015 | |
   | `ncfrp_v51` | 2004–2019 | |
   | `prams_p7_arf` | 2012–2015 | |
-  | `prams_p8_arf` | 2016–2021 | **assumed** from the bed-sharing manuscript; to confirm |
-  | `prams_p8_std2` | 2016–2021 | **assumed**, as above |
+  | `prams_p8_arf` | 2016–2021 | confirmed by the investigator 2026-11-18 |
+  | `prams_p8_std2` | 2016–2021 | confirmed, as above |
 
   - Consequence: exposure-rate designs combining natality (2015) with PRAMS Phase 8 (2016+) have no common year. Only PRAMS Phase 7 plus 2015 births pass.
 - **C4 scoring (`c_narrow.shortlist`).**
@@ -359,3 +359,8 @@ It never writes `C_gaps.json`: your pick of 5 becomes D's input in a later step.
   - **G6:** it uses PRAMS `SLEEPPOS` (sleep position) as the population measure of sleeping with an adult.
   - **G41:** the statement says 2012–2019, but the period is 2016–2019. "Proportion among infants with complications" is a rate phrased so that the incidence/risk check does not catch it.
 - **Outcome:** this ends the tuning round. Next comes the investigator's pick of 5 in `review_C_shortlist.md`, then the Biomni benchmark plan.
+- **Investigator note, 2026-11-18:**
+  - PRAMS Phase 8 covers 2016–2021 (confirmed).
+  - Each source's `period` is the years we currently hold. More years can be acquired (PRAMS, natality, linked files), so a period mismatch is a limit of the current data holdings. It is not an epistemological limit of the question.
+  - The ideas dropped for having no common period (I16, I60) and the 11 period salvages should therefore be read as "answerable once the matching years are acquired", not as infeasible.
+  - Code is unchanged, since tuning has stopped. The review and the benchmark should keep this distinction.

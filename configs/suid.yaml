@@ -56,7 +56,7 @@ codebooks:
     roles: [reference]
     unit: "one sampled mother of a live birth, surveyed a few months after the birth"
     years: "Phase 8 (the bed-sharing manuscript uses 2016-2021, 43 sites)"
-    period: [2016, 2021]  # Phase 8 years as used by the bed-sharing manuscript (assumed; confirm)
+    period: [2016, 2021]  # Phase 8 years held (confirmed 2026-11-18); more years can be acquired
     geography: "participating sites only; NCHS urban/rural (2 levels) available; no case source has urban/rural"
     linkage: "none at the individual level: group-level comparisons with case series only"
     weight_variable: WTANAL
@@ -69,7 +69,7 @@ codebooks:
     roles: [reference]
     unit: "one sampled mother of a live birth, surveyed a few months after the birth"
     years: "Phase 8"
-    period: [2016, 2021]  # as prams_p8_arf (assumed; confirm)
+    period: [2016, 2021]  # as prams_p8_arf (confirmed 2026-11-18)
     geography: "participating sites only"
     linkage: "none at the individual level: group-level comparisons with case series only; its items are used with the Phase 8 ARF, whose WTANAL weight applies"
     missing: "don't know is coded separately (e.g. 7777); never count it as exposed"
