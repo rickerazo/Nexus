@@ -12,6 +12,7 @@ import hashlib
 import logging
 import re
 from collections.abc import Callable
+from datetime import date
 from pathlib import Path
 from typing import Any, Literal
 
@@ -49,6 +50,11 @@ log = logging.getLogger(__name__)
 
 GROUND_PROMPT, ANSWER_PROMPT, IMPORTANCE_PROMPT = "c_ground", "c_ground_answer", "c_importance"
 Vectors = Callable[[list[str]], np.ndarray]
+
+
+# Part of the C3 stage key. 2: the years held never exclude an idea (no coverage check, no years-based
+# not-groundable verdict, years to acquire recorded); claim ids by grammar; bookkeeping fixed on the final attempt.
+C3_LOGIC_VERSION = "2"
 
 
 def prompt_hashes() -> list[str]:
@@ -156,9 +162,12 @@ def needs_text(design: Design) -> str:
     return ", ".join(parts) or "any sources"
 
 
-def answer_model(roles: dict[str, list[str]], var_keys: list[str]) -> type[GroundingAnswer]:
-    """GroundingAnswer whose source fields accept only sources with that role and whose `variables` accept only
-    the candidate variables of this idea."""
+def answer_model(
+    roles: dict[str, list[str]], var_keys: list[str], claim_ids: list[str] | None = None
+) -> type[GroundingAnswer]:
+    """GroundingAnswer whose source fields accept only sources with that role, whose `variables` accept only
+    the candidate variables of this idea, and whose `supporting_claim_ids` accept only real claim ids (on
+    2026-11-17 two ideas failed on bare ids such as `C10`)."""
 
     def choice(values: list[str]) -> Any:
         if not values:
@@ -171,10 +180,25 @@ def answer_model(roles: dict[str, list[str]], var_keys: list[str]) -> type[Groun
         allowed = sorted(sid for sid, rs in roles.items() if role in rs)
         fields[name] = (choice(allowed), Field(max_length=0) if not allowed else Field())
     fields["variables"] = (choice(var_keys), Field(description=GroundingAnswer.model_fields["variables"].description))
+    if claim_ids:
+        fields["supporting_claim_ids"] = (
+            choice(sorted(claim_ids)),
+            Field(description=GroundingAnswer.model_fields["supporting_claim_ids"].description),
+        )
     return create_model("GroundingChoice", __base__=GroundingAnswer, **fields)
 
 
 _NO_RATE = re.compile(r"\b(incidence|risks?)\b", re.IGNORECASE)
+# A not-groundable verdict that rests on the years held. Years are a data holding, not a limitation (investigator,
+# 2026-11-18): more years of every source can be acquired.
+_YEARS_REASON = re.compile(
+    r"\b(periods?|years?|coverage|covers?|covered|overlap\w*|time ?frames?|(19|20)\d\d)\b", re.IGNORECASE
+)
+YEARS_FEEDBACK = (
+    "why_not refers to years or periods. The years a source holds now are not a limitation: more years of every "
+    "source can be acquired. If the years are the only obstacle, set groundable to true and give the years the "
+    "question needs. Otherwise state the epistemological, logical or logistical reason without referring to years"
+)
 
 
 def grounding_validator(
@@ -182,14 +206,20 @@ def grounding_validator(
     roles: dict[str, list[str]],
     specs: dict[str, SourceSpec],
     claim_ids: set[str],
+    max_year: int | None = None,
 ) -> Callable[[GroundingAnswer], list[str]]:
     """The design checks, in code: roles the design needs, variables from the listed sources only and from each
-    case and reference source, the survey weight of each reference source, a period within every source's coverage,
-    no incidence or risk wording without a denominator, and prior art."""
+    case and reference source, the survey weight of each reference source, a coherent period that is not in the
+    future, no incidence or risk wording without a denominator, and prior art. The years a source holds are not
+    checked: they never exclude an idea (see `years_to_acquire`). A not-groundable verdict must give a reason
+    other than years."""
+    last_year = max_year if max_year is not None else date.today().year - 1
 
     def check(a: GroundingAnswer) -> list[str]:
         if not a.groundable:
-            return [] if len(a.why_not.split()) >= 8 else ["why_not must say which data or design element is missing"]
+            if len(a.why_not.split()) < 8:
+                return ["why_not must say which data or design element is missing"]
+            return [YEARS_FEEDBACK] if _YEARS_REASON.search(a.why_not) else []
         problems: list[str] = []
         if not a.statement.strip():
             problems.append("statement must not be empty")
@@ -223,13 +253,8 @@ def grounding_validator(
                 problems.append(f"a prevalence from {sid} needs its survey weight: add {sid}:{w} to variables")
         if a.period_start > a.period_end:
             problems.append("period_start is after period_end")
-        for sid in sorted(used):
-            cov = specs[sid].period if sid in specs else None
-            if cov and not (cov[0] <= a.period_start and a.period_end <= cov[1]):
-                problems.append(
-                    f"period {a.period_start}-{a.period_end} is outside {sid}'s coverage {cov[0]}-{cov[1]}; choose "
-                    "years every source covers, or drop that source"
-                )
+        if a.period_end > last_year:
+            problems.append(f"period_end {a.period_end} is in the future: no data exist after {last_year}")
         if "denominator" not in design.needs and _NO_RATE.search(a.statement):
             problems.append(
                 "this design has no denominator source, so it cannot estimate incidence or risk: compare proportions "
@@ -255,30 +280,53 @@ def grounding_validator(
     return check
 
 
-def drop_out_of_period_sources(specs: dict[str, SourceSpec]) -> Salvage[GroundingAnswer]:
-    """Final-attempt salvage: remove listed sources whose coverage excludes the answer's period, and their variables.
-    In the 2026-11-17 smoke test the JSON turn listed every possible source (both PRAMS phases and natality), so no
-    common year existed, and it did not drop one when told to. The result must still pass every check (e.g. the
-    roles the design needs); the dropped sources are recorded."""
+def _spans(years: list[int]) -> str:
+    """[2016, 2017, 2018, 2021] -> '2016-2018, 2021'."""
+    spans: list[list[int]] = []
+    for y in years:
+        if spans and y == spans[-1][1] + 1:
+            spans[-1][1] = y
+        else:
+            spans.append([y, y])
+    return ", ".join(f"{a}" if a == b else f"{a}-{b}" for a, b in spans)
+
+
+def years_to_acquire(a: GroundingAnswer, specs: dict[str, SourceSpec]) -> list[str]:
+    """Per listed source, the years of the period it does not hold yet. A record for the investigator, never a
+    reason to exclude a gap."""
+    out = []
+    for sid in dict.fromkeys(sid for ids in a.by_role().values() for sid in ids):
+        held = specs[sid].period if sid in specs else None
+        if not held:
+            continue
+        missing = [y for y in range(a.period_start, a.period_end + 1) if not held[0] <= y <= held[1]]
+        if missing:
+            out.append(f"{sid}: {_spans(missing)} (held {held[0]}-{held[1]})")
+    return out
+
+
+def fix_bookkeeping(specs: dict[str, SourceSpec]) -> Salvage[GroundingAnswer]:
+    """Final-attempt salvage for bookkeeping errors that say nothing about the idea: add the survey weight of each
+    population reference, and remove supporting claims the text does not discuss (supporting claims are optional).
+    On 2026-11-17 four ideas failed on these alone. The result must still pass every check; fixes are recorded."""
 
     def salvage(a: GroundingAnswer, problems: list[str]) -> tuple[GroundingAnswer, list[str]]:
         if not a.groundable:
             return a, []
-        out, dropped = a.model_copy(deep=True), []
-        for role in ROLE_NAMES:
-            keep = []
-            for sid in getattr(out, f"{role}_sources"):
-                cov = specs[sid].period if sid in specs else None
-                if cov and not (cov[0] <= a.period_start and a.period_end <= cov[1]):
-                    dropped.append(
-                        f"{sid} as {ROLE_NAMES[role]} (covers {cov[0]}-{cov[1]}; period {a.period_start}-{a.period_end})"
-                    )
-                else:
-                    keep.append(sid)
-            setattr(out, f"{role}_sources", keep)
-        listed = {sid for ids in out.by_role().values() for sid in ids}
-        out.variables = [v for v in out.variables if v.split(":", 1)[0] in listed]
-        return out, dropped
+        out, fixed = a.model_copy(deep=True), []
+        have = {v.upper() for v in out.variables}
+        for sid in dict.fromkeys(out.reference_sources):
+            w = specs[sid].weight_variable if sid in specs else None
+            if w and f"{sid}:{w}".upper() not in have:
+                out.variables.append(f"{sid}:{w}")
+                fixed.append(f"added survey weight {sid}:{w}")
+        undiscussed = {
+            m.group(1) for p in problems if (m := re.match(r"supporting claim (\S+) is not discussed", p)) is not None
+        }
+        if undiscussed:
+            out.supporting_claim_ids = [c for c in out.supporting_claim_ids if c not in undiscussed]
+            fixed += [f"removed undiscussed supporting claim {c}" for c in sorted(undiscussed)]
+        return out, fixed
 
     return salvage
 
@@ -343,7 +391,7 @@ def ground_ideas(
             )
             if rec is not None:
                 records.append(rec)
-            model = answer_model(roles, [var_key(s, v) for s, v in cands])
+            model = answer_model(roles, [var_key(s, v) for s, v in cands], sorted(claim_ids))
             ans, rec = _checkpointed(
                 client,
                 answer,
@@ -351,7 +399,7 @@ def ground_ideas(
                 model,
                 stage=stage,
                 validator=grounding_validator(design, roles, specs, claim_ids),
-                salvage=drop_out_of_period_sources(specs),
+                salvage=fix_bookkeeping(specs),
                 checkpoint_dir=checkpoint_dir,
                 salt=salt,
                 seed=seed,
@@ -392,6 +440,7 @@ def ground_ideas(
                 period_end=ans.period_end,
                 cannot_establish=ans.cannot_establish,
                 reasoning=thought,
+                years_to_acquire=years_to_acquire(ans, specs),
                 salvaged=rec.dropped if rec is not None else [],
             )
         )
@@ -605,7 +654,8 @@ def review_markdown(pool: IdeaPool, deduped: DedupedPool, grounding: Grounding, 
             f"- Prior art: {g.prior_art}",
             f"- Cannot establish: {g.cannot_establish}",
             f"- Original idea: {ideas[g.idea_id].question if g.idea_id in ideas else ''}",
-            *([f"- Sources dropped for the period: {'; '.join(g.salvaged)}"] if g.salvaged else []),
+            *([f"- Years to acquire (not held yet): {'; '.join(g.years_to_acquire)}"] if g.years_to_acquire else []),
+            *([f"- Fixed in code on the final attempt: {'; '.join(g.salvaged)}"] if g.salvaged else []),
             "",
             "<details><summary>Reasoning turn</summary>",
             "",
@@ -619,6 +669,11 @@ def review_markdown(pool: IdeaPool, deduped: DedupedPool, grounding: Grounding, 
         lines.append(
             f"- {s.gap_id} ({s.design}) {gaps[s.gap_id].statement} — novelty {s.novelty:.2f}, feasibility "
             f"{s.feasibility:.2f}, importance {s.importance}; {s.skipped_reason}"
+            + (
+                f"; years to acquire: {'; '.join(gaps[s.gap_id].years_to_acquire)}"
+                if gaps[s.gap_id].years_to_acquire
+                else ""
+            )
         )
     if grounding.dropped:
         lines += ["", "## Judged not groundable by C3", ""]

@@ -42,7 +42,7 @@ def source_roles_text(specs: list[SourceSpec], sources: dict[str, DataSource]) -
         for label, value in (
             ("One record", spec.unit),
             ("Covers", spec.population),
-            ("Period", spec.years),
+            ("Years held (more can be acquired)", spec.years),
             ("Geography", spec.geography),
             ("Linkage", spec.linkage),
             ("Survey weight (required for any prevalence)", spec.weight_variable),

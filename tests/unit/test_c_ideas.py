@@ -338,7 +338,10 @@ def test_source_roles_config_and_cross_role_table(sources):
     srcs = {"cdc": sources["cdc"], "prams": prams}
     assert roles.role_problems(specs, srcs) == ["prams: weight_variable 'WTANAL' is not a documented variable"]
     text = roles.source_roles_text(specs, srcs)
-    assert "- cdc (mini). Role: case series and denominator." in text and "Period: 2015." in text
+    assert (
+        "- cdc (mini). Role: case series and denominator." in text
+        and "Years held (more can be acquired): 2015." in text
+    )
     smap = SchemaMap(
         mappings=[
             ConceptMapping(concept="smoking", source_id="cdc", variable="CIG_REC", compatibility="direct"),

@@ -133,7 +133,8 @@ def test_grounding_validator_enforces_the_design_checks():
     )
     assert "needs its survey weight: add prams:WT" in problems
     assert "natl:SEX is from natl, which is not listed" in problems
-    assert "period 2010-2019 is outside prams's coverage 2016-2021" in problems
+    assert "coverage" not in problems  # the years held are never checked
+    assert any("in the future" in x for x in check(_answer(period_end=2999)))
     # a case-only design cannot talk about risk
     co = c_narrow.grounding_validator(DESIGNS["case_only"], ROLES, SPECS, {"m.C1"})
     p = co(_answer(statement="Does gestation modify SUID risk?", reference_sources=[], variables=["ncfrp:GEST"]))
@@ -141,28 +142,51 @@ def test_grounding_validator_enforces_the_design_checks():
     # not groundable: only the reason is checked
     assert check(_answer(groundable=False, why_not="No source records the exposure among the cases at all.")) == []
     assert check(_answer(groundable=False, why_not="no")) != []
+    # ... and must not rest on the years held
+    years = check(_answer(groundable=False, why_not="PRAMS Phase 8 does not cover 2015, so no common period exists."))
+    assert years == [c_narrow.YEARS_FEEDBACK]
 
 
-def test_out_of_period_sources_are_dropped_on_the_final_attempt():
-    a = _answer(denominator_sources=["natl"], variables=["ncfrp:SMOKE", "prams:SMK", "prams:WT", "natl:SEX"])
-    check = c_narrow.grounding_validator(DESIGNS["case_population"], ROLES, SPECS, {"m.C1"})
-    assert any("outside natl's coverage 2015-2015" in p for p in check(a))
-    pruned, dropped = c_narrow.drop_out_of_period_sources(SPECS)(a, [])
-    assert pruned.denominator_sources == [] and "natl:SEX" not in pruned.variables and check(pruned) == []
-    assert dropped == ["natl as denominator (covers 2015-2015; period 2016-2019)"]
-    assert a.denominator_sources == ["natl"]  # the original is not modified
+def test_years_not_held_are_recorded_not_rejected():
+    a = _answer(
+        denominator_sources=["natl"],
+        variables=["ncfrp:SMOKE", "prams:SMK", "prams:WT", "natl:SEX"],
+        period_start=2014,
+        period_end=2023,
+    )
+    check = c_narrow.grounding_validator(DESIGNS["case_population"], ROLES, SPECS, {"m.C1"}, max_year=2025)
+    assert check(a) == []
+    assert c_narrow.years_to_acquire(a, SPECS) == [
+        "ncfrp: 2020-2023 (held 2004-2019)",
+        "prams: 2014-2015, 2022-2023 (held 2016-2021)",
+        "natl: 2014, 2016-2023 (held 2015-2015)",
+    ]
+    assert c_narrow.years_to_acquire(_answer(), SPECS) == []
+
+
+def test_bookkeeping_is_fixed_on_the_final_attempt():
+    check = c_narrow.grounding_validator(DESIGNS["case_population"], ROLES, SPECS, {"m.C1", "m.C3"})
+    a = _answer(variables=["ncfrp:SMOKE", "prams:SMK"], supporting_claim_ids=["m.C1", "m.C3"])
+    problems = check(a)
+    assert any("survey weight" in p for p in problems) and any("m.C3 is not discussed" in p for p in problems)
+    fixed, notes = c_narrow.fix_bookkeeping(SPECS)(a, problems)
+    assert check(fixed) == [] and fixed.variables[-1] == "prams:WT" and fixed.supporting_claim_ids == ["m.C1"]
+    assert notes == ["added survey weight prams:WT", "removed undiscussed supporting claim m.C3"]
+    assert a.variables == ["ncfrp:SMOKE", "prams:SMK"]  # the original is not modified
 
 
 def test_answer_model_restricts_sources_and_variables():
-    model = c_narrow.answer_model(ROLES, ["ncfrp:SMOKE", "prams:WT"])
+    model = c_narrow.answer_model(ROLES, ["ncfrp:SMOKE", "prams:WT"], ["m.C1", "m.C3"])
     schema = json.dumps(model.model_json_schema())
-    assert '"enum": ["ncfrp:SMOKE", "prams:WT"]' in schema
+    assert '"enum": ["ncfrp:SMOKE", "prams:WT"]' in schema and '"enum": ["m.C1", "m.C3"]' in schema
     ok = _answer(variables=["ncfrp:SMOKE", "prams:WT"]).model_dump_json()
     assert model.model_validate_json(ok).variables == ["ncfrp:SMOKE", "prams:WT"]
     with pytest.raises(pydantic.ValidationError):
         model.model_validate_json(_answer(variables=["ncfrp:NOPE"]).model_dump_json())
     with pytest.raises(pydantic.ValidationError):
         model.model_validate_json(_answer(case_sources=["prams"]).model_dump_json())
+    with pytest.raises(pydantic.ValidationError):
+        model.model_validate_json(_answer(variables=["ncfrp:SMOKE"], supporting_claim_ids=["C10"]).model_dump_json())
 
 
 def test_candidate_variables_include_nearest_cited_domain_and_weight():
@@ -206,7 +230,7 @@ def test_ground_ideas_two_turns_drop_and_failure(tmp_path):
     assert len(deduped.groups) == 3
     good = _answer().model_dump_json()
     dropped = _answer(groundable=False, why_not="No case source records gestation in a usable way here.")
-    bad = _answer(variables=["ncfrp:SMOKE"]).model_dump_json()  # missing the weight and a prams variable
+    bad = _answer(variables=["prams:SMK", "prams:WT"]).model_dump_json()  # the case source contributes nothing
     client = TwoTurnClient(["think 1", "think 2", "think 3"], [good, dropped.model_dump_json(), bad, bad])
     g, _ = c_narrow.ground_ideas(
         pool,

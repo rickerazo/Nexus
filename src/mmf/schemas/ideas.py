@@ -114,8 +114,8 @@ class GroundingAnswer(BaseModel):
     case_sources: list[str]
     reference_sources: list[str]
     denominator_sources: list[str]
-    period_start: int = Field(description="First calendar year of the data used.")
-    period_end: int = Field(description="Last calendar year of the data used.")
+    period_start: int = Field(description="First calendar year the question needs (may be outside the years held).")
+    period_end: int = Field(description="Last calendar year the question needs (may be outside the years held).")
     required_concepts: list[str]
     variables: list[str] = Field(description="'source_id:NAME' of every variable used, from the candidate list.")
     cannot_establish: str = Field(description="What this design cannot establish (causation, individual linkage, ...).")
@@ -136,9 +136,14 @@ class GroundedGap(KnowledgeGap):
     period_end: int
     cannot_establish: str
     reasoning: str = Field(description="The free-text reasoning turn, kept for review.")
+    years_to_acquire: list[str] = Field(
+        default_factory=list,
+        description="Per source, the years of the gap's period not held yet (computed). Years held are a data "
+        "holding, not a limitation: they never exclude a gap.",
+    )
     salvaged: list[str] = Field(
         default_factory=list,
-        description="Sources dropped on the final attempt because their coverage excluded the period.",
+        description="Bookkeeping fixed in code on the final attempt (survey weight added, uncited claims removed).",
     )
 
 

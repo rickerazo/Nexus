@@ -483,6 +483,7 @@ class Run:
             json.dumps({k: v.model_dump(mode="json") for k, v in sorted(specs.items())}, sort_keys=True),
             source_roles,
             *c_narrow.prompt_hashes(),
+            c_narrow.C3_LOGIC_VERSION,
             c_ideas.designs_hash(c_ideas.DESIGNS),
             json.dumps(GroundingAnswer.model_json_schema(), sort_keys=True),
             cfg.model,

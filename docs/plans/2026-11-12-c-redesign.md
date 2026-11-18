@@ -364,3 +364,40 @@ It never writes `C_gaps.json`: your pick of 5 becomes D's input in a later step.
   - Each source's `period` is the years we currently hold. More years can be acquired (PRAMS, natality, linked files), so a period mismatch is a limit of the current data holdings. It is not an epistemological limit of the question.
   - The ideas dropped for having no common period (I16, I60) and the 11 period salvages should therefore be read as "answerable once the matching years are acquired", not as infeasible.
   - Code is unchanged, since tuning has stopped. The review and the benchmark should keep this distinction.
+
+### Fix 2026-11-18: the years held never exclude an idea
+
+The investigator's rule: ideas may be weeded out only for epistemological, logical or logistical reasons. The years a source holds now are a data holding, because more years can be acquired.
+
+On 2026-11-17, years caused:
+- 6 of the 9 failed calls (I8, I17, I21, I23, I28, I70);
+- 2 of the 11 not-groundable verdicts (I16, I60);
+- all 11 salvages, which removed sources.
+
+The other failures were bookkeeping:
+- a missing survey weight (I20, I28, I70);
+- bare claim ids such as `C10` (I53, I61);
+- a cited claim the text did not discuss (I21).
+
+These say nothing about the idea either.
+
+Changes:
+- **C3 checks:**
+  - The coverage check is gone.
+  - The period must still have start ≤ end and must not be in the future.
+  - A not-groundable verdict whose `why_not` refers to years or periods is sent back. The feedback says to set `groundable` to true if years are the only obstacle; otherwise, give the epistemological, logical or logistical reason.
+- **Years to acquire:** recorded in code as `GroundedGap.years_to_acquire`, per source. For example: `prams_p7_arf: 2016-2019 (held 2012-2015)`. Shown in the review; never used in scoring.
+- **Bookkeeping:**
+  - `supporting_claim_ids` is restricted by the grammar to real claim ids.
+  - On the final attempt, `fix_bookkeeping` replaces the period salvage. It adds each population reference's survey weight and removes supporting claims the text does not discuss. Both are optional bookkeeping, and both fixes are recorded in `salvaged`.
+- **Prompts:**
+  - C3 reasoning step 3 now asks for the years the question needs and the years to acquire.
+  - Step 8 lists the reasons that count: a concept no source measures, a comparison the roles cannot support (such as a rate without a denominator source), measurements that cannot be made comparable, or data that cannot be obtained.
+  - The C3 JSON turn has matching wording.
+  - C1 no longer asks for overlapping periods. It asks for the years the comparison needs and says never to avoid a question because of them.
+  - The source-roles text labels the period "Years held (more can be acquired)".
+- **Cache key:** `C3_LOGIC_VERSION = "2"`.
+
+Rerun scope: C1 through C5. C1 must rerun because the C1 prompt and the source-roles text changed, so the idea pool changes. C0 is still cached.
+
+The 2026-11-17 outputs are kept as `*.narrow-14b.*`.
