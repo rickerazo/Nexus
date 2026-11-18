@@ -311,3 +311,51 @@ It never writes `C_gaps.json`: your pick of 5 becomes D's input in a later step.
   - The reasoning was sound: stressor variables in NCFRP and PRAMS, selection and recall bias, prior art with claim ids.
   - The JSON turn listed every possible source (PRAMS Phase 7 and 8 plus natality), so no common year existed, and it did not drop one when the retry message asked it to. I2 failed all 4 attempts this way.
   - **Fix (salvage):** on the final attempt, `drop_out_of_period_sources` removes listed sources whose `period` excludes the answer's period, along with their variables. The result must still pass every check. The drop is recorded in the call record and in `GroundedGap.salvaged`, and shown in the review.
+
+### Run 2026-11-17: C2–C5 on the 75-idea pool (qwen2.5:14b, local Ollama)
+
+- **Time:** 14:40–19:42 PST (about 5 h). C0 and C1 were cache hits. Exit 0.
+- **C2 dedupe (question-only, cosine 0.93):** 75 → 72. Two groups were merged: I1 with I7 and I66; I2 with I13.
+- **C3 grounding (72 ideas):**
+
+  | Outcome | Count |
+  |---|---|
+  | Grounded | 52 |
+  | Judged not groundable | 11 |
+  | Failed after 4 attempts | 9 (I8, I17, I20, I21, I23, I28, I53, I61, I70) |
+
+  - **Accepted after the period salvage:** 11 gaps. The salvage mostly dropped `prams_p7_arf` or `cdc_natl15` against a 2016–2019 period, or `prams_p8_arf` against 2015.
+  - **Why ideas were dropped:** mostly no denominator source (I31, I38, I51, I59, I62, I67), no common period (I16, I60), or no measure of the concept (I15, I19, I25).
+  - **Designs of the 52 gaps:**
+
+    | Design | Gaps |
+    |---|---|
+    | `case_only` | 13 |
+    | `case_case` | 12 |
+    | `case_population` | 11 |
+    | `measurement` | 7 |
+    | `trends` | 6 |
+    | `exposure_rates` | 3 |
+- **C4 scoring:**
+  - **Importance:** 3 for 29 gaps, 4 for 23. None scored below 3, so the filter removed nothing, and importance did not separate the gaps.
+  - **Novelty:** 0.16–0.43, a narrow range. Feasibility (0.5–1.0) therefore largely decides the ranking.
+  - **Similarity skip:** one gap (too similar to G21).
+- **Shortlist (by score):**
+
+  | Gap | Idea | Design | Score | Gap statement, in brief |
+  |---|---|---|---|---|
+  | G39 | I55 | case_only | 0.32 | Breastfeeding mode within SUID cases |
+  | G52 | I75 | measurement | 0.21 | Pregnancy stressors: NCFRP vs PRAMS P8 |
+  | G44 | I64 | trends | 0.21 | Pre-pregnancy health checks in cases, 2012–2015 |
+  | G48 | I71 | measurement | 0.20 | Weight gain and postpartum smoking: NCFRP vs PRAMS P8 |
+  | G51 | I74 | measurement | 0.20 | Prenatal care coordination: NCFRP vs PRAMS P7 |
+  | G21 | I34 | case_case | 0.18 | Maternal health problems: SUID vs other deaths |
+  | G6 | I6 | case_population | 0.17 | Bed-sharing in cases vs 2015 population |
+  | G50 | I73 | measurement | 0.17 | Previous preterm births: NCFRP vs PRAMS P8 |
+  | G10 | I12 | case_population | 0.16 | Previous child deaths: cases vs PRAMS P8 |
+  | G41 | I57 | trends | 0.15 | Cases with prior complications, 2012–2019 |
+- **Quality problems the investigator's review must catch (left untuned, per the decision to stop tuning):**
+  - **G39:** the statement is circular, and its feasibility of 1.0 rests on a single variable.
+  - **G6:** it uses PRAMS `SLEEPPOS` (sleep position) as the population measure of sleeping with an adult.
+  - **G41:** the statement says 2012–2019, but the period is 2016–2019. "Proportion among infants with complications" is a rate phrased so that the incidence/risk check does not catch it.
+- **Outcome:** this ends the tuning round. Next comes the investigator's pick of 5 in `review_C_shortlist.md`, then the Biomni benchmark plan.
