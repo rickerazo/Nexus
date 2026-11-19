@@ -113,3 +113,28 @@ benchmarks/biomni/run.sh runs/biomni_20261118 0 --budget-min 300   # then 1, 2
   - Biomni's first step (the tool retriever) took 11 minutes, because it queued behind the MMF run on the same Ollama server. Scored runs therefore wait until MMF is done.
   - Scorer tested on the 2026-11-17 MMF shortlist plus a hand-made Biomni answer with planted errors (an unknown variable, a missing weight, risk without a denominator, a wrong role, a future year). Every error was caught.
   - Fixed: answer recovery had matched the JSON template in the task (step 1 of the stream is the task itself). It now reads only a `<solution>` block from a later step.
+- **Biomni seeds** (Wed 22:10 – Thu 03:36 PST; MMF was idle throughout):
+
+  | Seed | Status | Steps | Minutes | Gaps |
+  |---|---|---|---|---|
+  | 0 | stopped at the 300-minute budget; `answer.json` was written mid-run | 130 | 302 | 5 |
+  | 1 | finished | 37 | 14 | 9 |
+  | 2 | finished | 26 | 10 | 3 |
+
+  - The step logs show no sandbox blocks. Biomni loaded every dictionary CSV. Its "file not found" errors come from paths the model mistyped.
+- **MMF:** the C3 rerun with the bookkeeping fixes ran Thu 03:36–04:52 PST. The first scoring, made before that fix, is kept as `*.pre-c3fix.*`.
+- **Scores, Thu 04:52 PST** (`runs/biomni_20261118/report.md`, top 10 per run):
+
+  | Arm | Gaps | Pass all checks | Unknown variables | Weight missing | Novelty (mean) | Feasibility (mean) | Max pairwise cosine |
+  |---|---|---|---|---|---|---|---|
+  | MMF | 10 | 10 | 0/66 | 0 | 0.33 | 0.63 | 0.85 |
+  | Biomni seed 0 | 5 | 0 | 8/8 | 5 | 0.20 | 0.00 | 0.83 |
+  | Biomni seed 1 | 9 | 1 | 9/10 | 0 | 0.26 | 0.11 | 0.87 |
+  | Biomni seed 2 | 3 | 0 | 10/10 | 2 | 0.18 | 0.00 | 0.84 |
+
+- **Reading the Biomni gaps:**
+  - Variable names are invented (`SOCIOECONOMIC_STATUS`, `BED_SHARING`, `MOMEDU`).
+  - The questions are textbook risk factors (smoking, prematurity, SES, maternal age, education), mostly phrased as incidence.
+  - Seed 2 pairs 2015 natality with 2016–2021 cases. Seed 1 asks about geographic variation, which the public-use files do not contain.
+- **Reading the MMF gaps:** the variables are real and every check passes. But 4 of the 10 are PRAMS-vs-PRAMS measurement comparisons with no SUID cases, because novelty-as-distance rewards questions off the topic (see the C redesign log). The code checks cannot see topic relevance; the blinded rating can.
+- **Not yet done:** the blinded rating of 27 questions (`rater_sheet.md` and `rater_sheet.csv`; the key is in `blinding_key.csv`, which is git-ignored).

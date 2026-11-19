@@ -433,3 +433,14 @@ The result must still pass every check. A design that loses a role it needs stil
 Cache key: `C3_LOGIC_VERSION = "3"`. The reasoning turns and accepted JSON turns are checkpointed, so a rerun repeats only the JSON turns of the 16 failed ideas.
 
 The rerun is queued after the Biomni runs, so the two never share Ollama. The 2026-11-18 outputs before this fix are kept as `*.years-14b.*`.
+
+### Run 2026-11-19: C3 rerun with the bookkeeping fixes (03:36–04:52 PST)
+
+- **C3:** 78 grounded (before: 67), 2 not groundable, 5 failed. The fix-ups rescued 11 ideas; each repair is recorded on the gap.
+- **The 5 failures:**
+  - **Logical:** I55 and I63 kept stating risk with no denominator source.
+  - **Bookkeeping, still open:** I24, I54 and I59 cite bare claim ids (`C16`, `C8`, `C3`) that exist in more than one manuscript. The fix-up does not guess between them.
+- **Correction to the 2026-11-18 entry:** I71–I76 were not logical failures. The `measurement` design needs no case series (`needs={}`, two sources). Once the unused NCFRP was dropped, these PRAMS-vs-PRAMS comparisons passed every check.
+- **Shortlist flaw (logged, not tuned):** 4 of the 10 are PRAMS-vs-PRAMS measurement comparisons that involve no SUID cases: G64 weight gain, G66 preventive-care talks, G68 Medicaid, G65 smoking. Novelty is 1 minus the cosine to the manuscripts' claims, so questions off the SUID topic score as novel, and the selection rule ranks them high.
+  - Separately, G13 combines NCFRP cases with natality births to form a rate, although NCFRP does not ascertain every case. The code checks do not catch this.
+  - The blinded importance and coherence ratings are where both problems should surface.
