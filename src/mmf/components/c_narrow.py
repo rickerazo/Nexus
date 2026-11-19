@@ -54,7 +54,8 @@ Vectors = Callable[[list[str]], np.ndarray]
 
 # Part of the C3 stage key. 2: the years held never exclude an idea (no coverage check, no years-based
 # not-groundable verdict, years to acquire recorded); claim ids by grammar; bookkeeping fixed on the final attempt.
-C3_LOGIC_VERSION = "2"
+# 3: more bookkeeping fixed on the final attempt (stray variables, idle sources, cited but unlisted claims).
+C3_LOGIC_VERSION = "3"
 
 
 def prompt_hashes() -> list[str]:
@@ -305,15 +306,34 @@ def years_to_acquire(a: GroundingAnswer, specs: dict[str, SourceSpec]) -> list[s
     return out
 
 
-def fix_bookkeeping(specs: dict[str, SourceSpec]) -> Salvage[GroundingAnswer]:
-    """Final-attempt salvage for bookkeeping errors that say nothing about the idea: add the survey weight of each
-    population reference, and remove supporting claims the text does not discuss (supporting claims are optional).
-    On 2026-11-17 four ideas failed on these alone. The result must still pass every check; fixes are recorded."""
+def fix_bookkeeping(specs: dict[str, SourceSpec], claim_ids: set[str] | None = None) -> Salvage[GroundingAnswer]:
+    """Final-attempt salvage for bookkeeping errors that say nothing about the idea, in this order:
+    1. drop variables from sources not listed under any role;
+    2. drop case or population-reference sources that contribute no variable;
+    3. add the survey weight of each remaining population reference;
+    4. remove supporting claims the text does not discuss (supporting claims are optional);
+    5. add claims that prior_art cites but supporting_claim_ids omits (a bare `C8` only if exactly one claim
+       id ends in `.C8`).
+    On 2026-11-17 and 2026-11-18, 12 ideas failed on these alone. The result must still pass every check (so a
+    design that loses a role it needs still fails, as it should); every fix is recorded."""
+    known = claim_ids or set()
 
     def salvage(a: GroundingAnswer, problems: list[str]) -> tuple[GroundingAnswer, list[str]]:
         if not a.groundable:
             return a, []
         out, fixed = a.model_copy(deep=True), []
+        listed = {sid for ids in out.by_role().values() for sid in ids}
+        stray = [v for v in out.variables if v.split(":", 1)[0] not in listed]
+        if stray:
+            out.variables = [v for v in out.variables if v not in stray]
+            fixed += [f"dropped variable {v} (source not listed)" for v in stray]
+        used = {v.split(":", 1)[0] for v in out.variables}
+        for role in ("case", "reference"):
+            ids = getattr(out, f"{role}_sources")
+            idle = [sid for sid in dict.fromkeys(ids) if sid not in used]
+            if idle:
+                setattr(out, f"{role}_sources", [sid for sid in ids if sid not in idle])
+                fixed += [f"dropped {sid} as {ROLE_NAMES[role]} (no variable used)" for sid in idle]
         have = {v.upper() for v in out.variables}
         for sid in dict.fromkeys(out.reference_sources):
             w = specs[sid].weight_variable if sid in specs else None
@@ -326,6 +346,15 @@ def fix_bookkeeping(specs: dict[str, SourceSpec]) -> Salvage[GroundingAnswer]:
         if undiscussed:
             out.supporting_claim_ids = [c for c in out.supporting_claim_ids if c not in undiscussed]
             fixed += [f"removed undiscussed supporting claim {c}" for c in sorted(undiscussed)]
+        for p in problems:
+            m = re.match(r"prior_art cites (\S+), which is not in supporting_claim_ids", p)
+            if m is None:
+                continue
+            cited = m.group(1)
+            full = [cited] if cited in known else [c for c in sorted(known) if c.endswith(f".{cited}")]
+            if len(full) == 1 and full[0] not in out.supporting_claim_ids:
+                out.supporting_claim_ids.append(full[0])
+                fixed.append(f"added cited claim {full[0]}")
         return out, fixed
 
     return salvage
@@ -399,7 +428,7 @@ def ground_ideas(
                 model,
                 stage=stage,
                 validator=grounding_validator(design, roles, specs, claim_ids),
-                salvage=fix_bookkeeping(specs),
+                salvage=fix_bookkeeping(specs, claim_ids),
                 checkpoint_dir=checkpoint_dir,
                 salt=salt,
                 seed=seed,

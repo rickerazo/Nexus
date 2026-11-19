@@ -341,3 +341,27 @@ def test_c3_and_c4_prompts_are_primed():
     for name in ("c_ground", "c_ground_answer", "c_importance"):
         p = load_primed_prompt(name, "ROLES")
         assert p.system.rstrip().endswith("ROLES")
+
+
+def test_more_bookkeeping_is_fixed_but_design_needs_still_fail():
+    claims = {"m.C1", "m.C3", "x.C3"}
+    check = c_narrow.grounding_validator(DESIGNS["case_population"], ROLES, SPECS, claims)
+    fix = c_narrow.fix_bookkeeping(SPECS, claims)
+    # a stray variable, an idle denominator is left alone (no variable needed), a cited but unlisted claim
+    a = _answer(
+        variables=["ncfrp:SMOKE", "prams:SMK", "prams:WT", "natl:SEX"],
+        prior_art=_answer().prior_art + " See also m.C1 and m.C3.",
+    )
+    fixed, notes = fix(a, check(a))
+    assert check(fixed) == [] and "natl:SEX" not in fixed.variables
+    assert fixed.supporting_claim_ids == ["m.C1", "m.C3"]
+    assert notes == ["dropped variable natl:SEX (source not listed)", "added cited claim m.C3"]
+    # an ambiguous bare id is not guessed
+    b = _answer(prior_art=_answer().prior_art + " Compare C3.")
+    fixed_b, _ = fix(b, check(b))
+    assert any("cites C3" in p for p in check(fixed_b))
+    # a case source with no variable is dropped, and then the design lacks a case series: still fails
+    c = _answer(variables=["prams:SMK", "prams:WT"])
+    fixed_c, notes_c = fix(c, check(c))
+    assert notes_c == ["dropped ncfrp as case series (no variable used)"]
+    assert any("needs at least 1 case series" in p for p in check(fixed_c))

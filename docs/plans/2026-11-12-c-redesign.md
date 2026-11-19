@@ -401,3 +401,35 @@ Changes:
 Rerun scope: C1 through C5. C1 must rerun because the C1 prompt and the source-roles text changed, so the idea pool changes. C0 is still cached.
 
 The 2026-11-17 outputs are kept as `*.narrow-14b.*`.
+
+### Run 2026-11-18: C1–C5 with years held never excluding an idea (qwen2.5:14b)
+
+- **Time:** 14:19–22:10 PST. C0 was cached; C1 reran.
+- **C1:** 85 ideas, all six designs present: 15 each, except `case_population` with 10, because one call failed after 4 attempts. Before the fix the pool had 75.
+- **C2:** no near-duplicates at 0.93.
+- **C3:** 67 grounded, 2 judged not groundable, 16 failed.
+  - Before the fix: 52 grounded, 11 not groundable, 9 failed.
+  - Both not-groundable verdicts give real reasons: I31, the case series does not measure pre-pregnancy BMI; I68, no denominator for a rate.
+  - 46 of the 67 gaps record years to acquire.
+- **The 16 failures:**
+
+  | Kind | Ideas | Reason |
+  |---|---|---|
+  | Logical | I71–I76 | PRAMS-vs-PRAMS measurement ideas with no case series. The design compares case and reference measurement, so the model listed NCFRP to meet the design but used none of its variables. |
+  | Logical | I55, I63 | Kept stating risk with no denominator source. |
+  | Bookkeeping | I24, I33, I54, I59 | prior_art cites a claim not listed in supporting_claim_ids. |
+  | Bookkeeping | I42, I81 | A variable from a source not listed under any role. |
+  | Bookkeeping | I5, I23 | A listed source contributed no variable. |
+
+### Fix 2026-11-18 (2): more bookkeeping fixed on the final attempt
+
+`fix_bookkeeping` now also:
+- drops variables from unlisted sources;
+- drops case or reference sources that contribute no variable;
+- adds claims that prior_art cites but omits from supporting_claim_ids. A bare id is added only when exactly one claim matches.
+
+The result must still pass every check. A design that loses a role it needs still fails (I71–I76, correctly).
+
+Cache key: `C3_LOGIC_VERSION = "3"`. The reasoning turns and accepted JSON turns are checkpointed, so a rerun repeats only the JSON turns of the 16 failed ideas.
+
+The rerun is queued after the Biomni runs, so the two never share Ollama. The 2026-11-18 outputs before this fix are kept as `*.years-14b.*`.
