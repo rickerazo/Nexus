@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The frequency and quality of prenatal care visits differ between PRAMS surveys for live births and NCFRP_v51 case reports for SUID deaths.",
+ "rationale": "This study design can compare how prenatal care visits are recorded in PRAMS (population reference) versus NCFRP_v51 (case series), though it cannot establish causation due to observational nature and potential biases.",
+ "prior_art": "SUID_manuscript_v9_clean.C12 [limitation] notes vital-record data may have exposure misclassification issues, indicating that NCFRP data quality for prenatal care documentation is a concern. This question remains open as it focuses on methodological differences rather than causal relationships.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C12"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2004,
+ "period_end": 2021,
+ "required_concepts": [
+  "prenatal care visits"
+ ],
+ "variables": [
+  "ncfrp_v51:INFprenatal",
+  "prams_p8_arf:PNC_VST",
+  "prams_p7_arf:PNC_VST",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish the absolute incidence or risk of SUID based on prenatal care differences, nor can it establish causal relationships between prenatal care quality and SUID occurrence due to the observational nature of both data sources."
+}

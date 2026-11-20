@@ -1,0 +1,44 @@
+{
+ "ideas": [
+  {
+   "question": "Does infant sleep position variability contribute to sudden unexpected infant death (SUID) incidence?",
+   "why_open": "Despite extensive research, less is known about how dynamic changes in sleep positioning affect SUID risk, beyond static recommendations.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Physical Attributes"
+  },
+  {
+   "question": "How does maternal physical abuse during pregnancy correlate with the incidence of sudden unexpected infant death (SUID)?",
+   "why_open": "The impact of maternal abuse on neonatal health outcomes, especially in relation to SUID, remains understudied and requires further investigation.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Physical Attributes"
+  },
+  {
+   "question": "Does the presence of environmental pollutants at home predict higher risk for sudden unexpected infant death (SUID)?",
+   "why_open": "Environmental factors like pollution have not been thoroughly examined in their role as potential SUID risk factors.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Home Interview Conducted"
+  },
+  {
+   "question": "Can the type of sleep surface (e.g., crib, bed) impact sudden unexpected infant death (SUID) rates?",
+   "why_open": "There is a need to explore how different sleeping environments might influence SUID risk beyond current knowledge on co-sleeping practices.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Infant Disposition"
+  },
+  {
+   "question": "How does maternal substance abuse during pregnancy affect the incidence of sudden unexpected infant death (SUID)?",
+   "why_open": "The relationship between prenatal substance use and SUID has not been fully explored, especially regarding specific substances.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Substance Abuse"
+  }
+ ]
+}

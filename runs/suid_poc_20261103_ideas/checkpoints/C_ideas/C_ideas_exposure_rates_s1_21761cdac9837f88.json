@@ -1,0 +1,103 @@
+{
+ "ideas": [
+  {
+   "question": "Is there a difference in the incidence of sudden unexpected infant death (SUID) among infants born with different pregnancy weight gain categories?",
+   "comparison": "Infants in SUID cases with high, moderate, and low pregnancy weight gain groups compared to live births stratified by these same categories.",
+   "why_open": "Previous studies have examined maternal obesity as a risk factor for SUID but not specifically the relationship between pregnancy weight gain and SUID. Identifying this association could inform interventions targeting healthy weight gain during pregnancy.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_std2",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D299",
+    "D304"
+   ],
+   "data": "Case series: SUID cases with pregnancy weight gain (ncfrp_v51). Population reference: prevalence of high, moderate, and low weight gain categories (prams_p8_std2 and prams_p7_arf). Denominator: live births stratified by weight gain category (cdc_natl15)."
+  },
+  {
+   "question": "How does maternal pre-pregnancy health care utilization relate to the incidence of SUID in infants?",
+   "comparison": "Infants who died from SUID compared to live births among mothers with different levels of pre-pregnancy healthcare visits.",
+   "why_open": "There is limited understanding of how pre-pregnancy healthcare utilization affects infant outcomes like SUID. Understanding this relationship could help identify high-risk groups and target preventive measures early in pregnancy.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D264",
+    "D304"
+   ],
+   "data": "Case series: SUID cases (ncfrp_v51). Population reference: prevalence of pre-pregnancy healthcare visits (prams_p7_arf, prams_p8_arf). Denominator: live births stratified by level of pre-pregnancy healthcare utilization (cdc_natl15)."
+  },
+  {
+   "question": "Does the incidence rate of SUID differ among infants born to mothers who had prenatal care issues versus those without such issues?",
+   "comparison": "Infants in SUID cases compared to live births based on maternal reports of prenatal care quality and adequacy.",
+   "why_open": "Prenatal care quality can influence infant health outcomes, but its specific impact on SUID rates is not well understood. This information could guide improvements in prenatal services for high-risk mothers.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D243",
+    "D304"
+   ],
+   "data": "Case series: SUID cases (ncfrp_v51). Population reference: prevalence of prenatal care issues, such as inadequate assessments or late entry to care (prams_p7_arf, prams_p8_arf). Denominator: live births stratified by maternal reports of prenatal care quality and adequacy (cdc_natl15)."
+  },
+  {
+   "question": "Is there a variation in SUID incidence among infants born to mothers with different pre-pregnancy health behaviors and conditions?",
+   "comparison": "SUID cases compared to live births based on maternal pre-pregnancy health behaviors, such as smoking or physical activity.",
+   "why_open": "Understanding the impact of maternal pre-pregnancy health behaviors on infant outcomes like SUID could provide insights into preventive strategies. Current knowledge is limited in this area.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D274",
+    "D304"
+   ],
+   "data": "Case series: SUID cases (ncfrp_v51). Population reference: prevalence of pre-pregnancy health behaviors and conditions, including smoking, physical activity, and emotional support (prams_p7_arf, prams_p8_arf). Denominator: live births stratified by maternal reports of these behaviors and conditions (cdc_natl15)."
+  },
+  {
+   "question": "Does infant sleeping arrangement influence the incidence rate of SUID between infants who have died from SUID compared to those who survived?",
+   "comparison": "SUID cases with different sleeping arrangements versus live births stratified similarly.",
+   "why_open": "While bed-sharing has been studied extensively, less is known about other types of sleeping arrangements and their impact on SUID rates. This knowledge could enhance safe sleep guidelines for preventing infant deaths.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D20",
+    "D281"
+   ],
+   "data": "Case series: SUID cases with sleeping arrangements (ncfrp_v51). Population reference: prevalence of different sleeping arrangements such as bed-sharing, room-sharing, or separate rooms (prams_p8_arf). Denominator: live births stratified by infant sleeping arrangement (cdc_natl15)."
+  }
+ ]
+}

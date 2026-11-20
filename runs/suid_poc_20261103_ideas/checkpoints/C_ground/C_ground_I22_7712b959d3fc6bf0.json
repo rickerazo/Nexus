@@ -1,0 +1,36 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "Infants born to mothers with a history of mental health issues have higher rates of SUID compared to those whose mothers did not report such histories.",
+ "rationale": "This design estimates exposure-specific rates by combining the cases from a case series (numerator), the exposure prevalence from a population reference source, and the population at risk from a denominator source. It can establish associations but not causation due to its observational nature.",
+ "prior_art": "The manuscript claims do not closely address the specific association between maternal mental health history and SUID rates; hence, this question remains open for investigation (SUID_manuscript_v9_clean.C10, bedsharing_ms_v7.C24).",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C24"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2008,
+ "period_end": 2015,
+ "required_concepts": [
+  "Maternal Mental Health History",
+  "SUID Cases",
+  "Population at Risk"
+ ],
+ "variables": [
+  "prams_p8_arf:MH_PGDX8",
+  "prams_p8_arf:PG8_ANX",
+  "prams_p8_arf:MOMSMOKE",
+  "ncfrp_v51:ISSmhpregdepres",
+  "cdc_natl15:F_RF_PPB",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "This design can estimate exposure-specific rates but cannot establish causation due to its observational nature. It also does not account for unmeasured or residual confounding factors that could influence both maternal mental health status and infant mortality risk."
+}

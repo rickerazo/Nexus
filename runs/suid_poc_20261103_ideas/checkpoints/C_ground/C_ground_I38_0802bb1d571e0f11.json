@@ -1,0 +1,30 @@
+{
+ "groundable": false,
+ "why_not": "The data lack a denominator source to estimate incidence or risk ratios, and the case series may suffer from selection bias.",
+ "statement": "",
+ "rationale": "The current data can compare SUID cases with non-SUID cases in terms of preconception and chronic disease care measures as well as prenatal care. However, without a denominator source, it cannot establish incidence or risk ratios. The case series may also suffer from selection bias.",
+ "prior_art": "Manuscripts like C10 and C12 focus on prenatal factors but do not address preconception or chronic disease care measures in the context of SUID, leaving this question open.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C12"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "preconception and chronic disease care measures",
+  "prenatal care measures"
+ ],
+ "variables": [
+  "ncfrp_v51:ISSprechronicdiseasebef",
+  "ncfrp_v51:ISSprechronicdiseasedur",
+  "ncfrp_v51:ISSprechronicdiseaseaft",
+  "ncfrp_v51:INFprenatalcare",
+  "ncfrp_v51:INF4precare"
+ ],
+ "cannot_establish": "Incidence rates or risk ratios due to lack of denominator data; causal relationships between preconception and chronic disease care measures and SUID."
+}

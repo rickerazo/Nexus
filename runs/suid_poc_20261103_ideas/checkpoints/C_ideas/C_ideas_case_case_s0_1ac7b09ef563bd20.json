@@ -1,0 +1,89 @@
+{
+ "ideas": [
+  {
+   "question": "Is there a difference in the incidence of SUID between infants whose mothers experienced prenatal stress and those who did not?",
+   "comparison": "SUID cases compared with other causes of infant death within ncfrp_v51, using prams_p7_arf for exposure prevalence.",
+   "why_open": "The role of maternal stress on SUID risk is not well understood. An answer could inform preventive interventions aimed at reducing stress during pregnancy.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D100",
+    "D324"
+   ],
+   "data": "For each case, use ncfrp_v51 to identify the cause of death and determine if it was SUID. For exposure, match maternal stressors (ncfrp_v51:D100) with prenatal stress measures from prams_p7_arf (D324)."
+  },
+  {
+   "question": "Does hospitalization for newborn complications before the first birthday correlate with an increased risk of SUID?",
+   "comparison": "SUID cases compared with non-SUID infant deaths within ncfrp_v51, using prams_p8_arf for hospital stay length.",
+   "why_open": "The impact of early-life medical issues on later SUID risk has not been thoroughly investigated. This could reveal critical periods requiring intervention.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D49",
+    "D279"
+   ],
+   "data": "Identify cases of SUID and other causes in ncfrp_v51 (D49) by cause of death. Use prams_p8_arf to determine if hospitalization occurred within the first year for any reason (D279)."
+  },
+  {
+   "question": "Do infants from families with preconception health issues exhibit higher SUID incidence compared to those without?",
+   "comparison": "SUID cases compared with non-SUID infant deaths within ncfrp_v51, using prams_p8_arf for family preconception care.",
+   "why_open": "This relationship is underexplored but could provide insights into long-term health effects of early-stage maternal and family well-being on infants' survival rates.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D49",
+    "D270"
+   ],
+   "data": "For SUID cases, use ncfrp_v51 to determine the cause of death and if it was a non-SUID case. Use prams_p8_arf to identify families with preconception health issues (D270)."
+  },
+  {
+   "question": "Is there an increased risk of SUID in infants whose mothers did not receive adequate prenatal care compared to those who received adequate care?",
+   "comparison": "SUID cases compared with non-SUID infant deaths within ncfrp_v51, using prams_p8_arf for prenatal healthcare visits.",
+   "why_open": "Understanding the importance of timely and sufficient prenatal care could improve public health policies aimed at reducing SUID risk through targeted prenatal interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D49",
+    "D272"
+   ],
+   "data": "Use ncfrp_v51 to identify SUID cases and other deaths (D49). Utilize prams_p8_arf to assess prenatal care adequacy via healthcare visit records (D272)."
+  },
+  {
+   "question": "Does inadequate postpartum health care access contribute to higher rates of SUID in infants?",
+   "comparison": "SUID cases compared with non-SUID infant deaths within ncfrp_v51, using prams_p8_arf for postpartum healthcare visits.",
+   "why_open": "Postnatal support is critical but understudied in relation to SUID. Investigating this could enhance targeted interventions and services during the postpartum period.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D49",
+    "D283"
+   ],
+   "data": "Use ncfrp_v51 to identify SUID cases and other infant deaths (D49). Use prams_p8_arf to assess postpartum healthcare access (D283) for exposure comparison."
+  }
+ ]
+}

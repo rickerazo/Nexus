@@ -1,0 +1,91 @@
+### Design
+
+**Rephrased Question:**
+Does hospital stay length after birth correlate with the risk of Sudden Unexpected Infant Death (SUID) in a population sample? Specifically, do infants who had longer or shorter hospital stays have different rates of SUID compared to those with average hospital stays?
+
+**Design Type:** Exposure-specific rates. Estimate outcome rates by exposure group using cases from a case series (numerator), the exposure prevalence from a population reference source, and the population at risk from a denominator source.
+
+### Sources by Role
+
+- **Case Series Source:**
+  - **ncfrp_v51**: Provides SUID cases.
+  - **Rationale**: This dataset contains detailed information on child deaths reviewed by fatality review teams, making it suitable for identifying SUID cases.
+  
+- **Population Reference Source:**
+  - **prams_p7_arf** and **prams_p8_arf**: Provide data from surveys of mothers a few months after live births.
+  - **Rationale**: PRAMS collects detailed information on maternal health, behaviors, and infant care practices that can serve as exposure measures.
+
+- **Denominator Source:**
+  - **cdc_linkco15** or **cdc_natl15**: Provides the denominator for SUID incidence (i.e., live births in a given year).
+  - **Rationale**: CDC natality files provide comprehensive data on live births, which is necessary to calculate rates of SUID.
+
+### Period
+
+- **Period:** The period that lies within the coverage of all sources is 2016-2019. This allows for sufficient overlap between PRAMS Phase 8 (2016-2021), NCFRP data (2014-2019), and CDC natality files (2015).
+
+### Variables
+
+**Exposure: Hospital Stay Length**
+
+- **Case Series Source (ncfrp_v51):**
+  - Variable: `INF4infhospdays`: Total number of days infant hospitalized
+  - Missing answers: Unknown is documented (e.g., `UNK`), and blanks are treated as unknowns.
+
+**Outcome: SUID Incidence**
+
+- **Case Series Source (ncfrp_v51):**
+  - Variable: Any entry in the dataset that identifies a case as an SUID.
+  - Missing answers: Cases missing details on cause of death or hospital stay length are excluded.
+
+**Exposure Prevalence from Population Reference Sources**
+
+- **PRAMS Phase 8 (prams_p8_arf) and PRAMS Phase 7 (prams_p7_arf):**
+  - Variable: `LTH_HOSP`: Length of time baby spent in the hospital.
+  - Missing answers: .B = Don't know or blank, .S = Skipped; these are not counted as exposed.
+
+**Population at Risk from Denominator Source**
+
+- **CDC Natality Files (cdc_linkco15/cdc_natl15):**
+  - Live births in the period of interest.
+  - Missing answers: Documented per item and treated accordingly.
+
+### Biases
+
+**Selection Bias:**
+
+- The NCFRP cases may not represent all SUID deaths due to varying participation rates across states.
+- PRAMS samples are biased towards higher-risk populations, potentially affecting exposure measurements.
+
+**Information Bias:**
+
+- Hospital stay length may be reported inaccurately in both case series and population reference sources.
+- Maternal recall bias can affect the accuracy of hospital stay lengths reported in PRAMS surveys.
+
+**Confounding:**
+
+- Confounders like prematurity, maternal smoking, socioeconomic status, and other risk factors for SUID need to be controlled for in analyses.
+
+### What the Design Cannot Establish
+
+The design cannot establish causation; it only estimates rates and associations. The correlation between hospital stay length and SUID incidence does not imply that longer stays cause higher risks of SUID.
+
+### Prior Art
+
+- **Claim C13 from `bedsharing_ms_v7`:** Postconceptional age (PCA) may clarify how bed sharing, maternal smoking, and prematurity relate to Sudden Unexpected Infant Death (SUID).
+  - This claim explores the timing of risk factors but does not directly address hospital stay length.
+- **Claim C10 from `bedsharing_ms_v7`:** The study uses vital-record data, which may have exposure and cause-of-death misclassification issues.
+
+### Verdict
+
+These data can answer a version of the question: Does hospital stay length after birth correlate with SUID incidence? However, several limitations exist:
+
+- **Selection Bias:** NCFRP captures only reviewed cases, leading to potential underreporting.
+- **Information Bias:** Maternal recall and reporting errors in PRAMS surveys need careful handling.
+- **Confounding Factors:** Prematurity, maternal smoking, socioeconomic status, and other risk factors must be controlled for.
+
+To address these limitations:
+1. Include comprehensive covariates from both case series and population references to control confounders.
+2. Use multiple imputation techniques for missing data where appropriate.
+3. Perform sensitivity analyses to assess the robustness of findings under varying assumptions about selection bias and information accuracy.
+
+Overall, the data can be used to estimate rates but should be interpreted with caution regarding causation due to potential biases and limitations in data collection methods.

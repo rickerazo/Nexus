@@ -1,0 +1,34 @@
+{
+ "domains": [
+  {
+   "start": "INCHospital",
+   "name": "Incident Location",
+   "summary": "Place of incident including specific locations such as hospital, reservation, child's home, etc."
+  },
+  {
+   "start": "INCTimeOFIncidentUnknown",
+   "name": "Time and Substance Abuse",
+   "summary": "Approximate time of day the incident occurred and whether substance abuse was involved"
+  },
+  {
+   "start": "INCactdrive",
+   "name": "Child's Activity at Incident",
+   "summary": "The child’s activity at the time of the incident, such as driving or sleeping"
+  },
+  {
+   "start": "INCadultdth",
+   "name": "Incident Event Deaths",
+   "summary": "Number of adult and child deaths at the incident event"
+  },
+  {
+   "start": "INCdateday",
+   "name": "Date and Day of Week",
+   "summary": "Date of incident event including day, month, year, and day of week"
+  },
+  {
+   "start": "INCdisaster",
+   "name": "Disaster and Event Details",
+   "summary": "Whether death was attributed to a disaster event, including type and circumstances"
+  }
+ ]
+}

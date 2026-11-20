@@ -1,0 +1,62 @@
+{
+ "ideas": [
+  {
+   "question": "To determine whether SUID cases differ from non-SUID infant deaths on maternal prepregnancy body mass index (BMI) and smoking during pregnancy.",
+   "comparison": "SUID cases vs. other infant death causes recorded in ncfrp_v51",
+   "why_open": "This question explores a specific risk factor for SUID compared to other types of infant deaths, which could identify unique vulnerabilities or exposures leading specifically to SUID rather than broader neonatal mortality factors.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "BMI, smoking during pregnancy (risk factors), SUID vs. non-SUID outcomes (outcomes)"
+  },
+  {
+   "question": "To investigate if prematurity and low birth weight are associated with higher rates of SUID compared to other types of infant deaths in the first year.",
+   "comparison": "SUID cases vs. full-term infant deaths recorded in ncfrp_v51",
+   "why_open": "This question aims to uncover whether preterm or underweight status contributes uniquely to the risk of sudden unexpected infant death, beyond general mortality risks for such infants.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "prematurity, birth weight (risk factors), SUID vs. non-SUID outcomes (outcomes)"
+  },
+  {
+   "question": "To examine whether the use of sleep aids or sedatives by mothers is a risk factor specific to SUID cases compared to other infant death causes.",
+   "comparison": "SUID cases vs. infant deaths due to suffocation, accidental injury, and undetermined causes recorded in ncfrp_v51",
+   "why_open": "Exploring whether maternal use of sleep aids or sedatives correlates specifically with SUID can help identify unique environmental factors linked to sudden infant death.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "use of sleep aids/sedatives (risk factor), SUID vs. other causes outcomes (outcomes)"
+  },
+  {
+   "question": "To compare the incidence of congenital anomalies between SUID cases and other infant death types in the same case series.",
+   "comparison": "SUID cases vs. infant deaths due to congenital anomalies recorded in ncfrp_v51",
+   "why_open": "This question seeks to establish whether congenital conditions are overrepresented among sudden unexpected infant deaths compared to general mortality rates, indicating unique vulnerabilities.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "congenital anomalies (risk factor), SUID vs. other causes outcomes (outcomes)"
+  },
+  {
+   "question": "To assess whether maternal obesity specifically increases the risk of SUID compared to its association with other types of infant mortality.",
+   "comparison": "SUID cases vs. deaths due to SIDS, accidental suffocation recorded in ncfrp_v51",
+   "why_open": "This question aims to isolate maternal obesity as a unique risk factor for SUID by comparing it across different death causes, potentially revealing mechanisms specific to sudden death scenarios.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "maternal obesity (risk factor), SUID vs. other causes outcomes (outcomes)"
+  }
+ ]
+}

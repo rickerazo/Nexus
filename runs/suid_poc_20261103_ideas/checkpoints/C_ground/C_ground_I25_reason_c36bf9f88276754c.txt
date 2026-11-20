@@ -1,0 +1,81 @@
+### Design
+
+**Question:**
+Is there a difference in Sudden Unexpected Infant Death (SUID) rates among infants whose mothers received inadequate prenatal care compared to those who did?
+
+**Design Type:** Exposure-specific rates. Estimate outcome rates by exposure group using cases from a case series as the numerator, and the exposure prevalence from a population reference source. Use a denominator source for the population at risk.
+
+### Sources by Role
+
+- **Case Series:**
+  - **ncfrp_v51**: This dataset provides detailed information on reviewed child deaths including SUID cases, serving as the numerator in our study.
+  
+- **Population Reference:**
+  - **prams_p8_arf**: This is a weighted survey of mothers after live births, providing data on prenatal care practices, which will be used to assess exposure prevalence.
+  
+- **Denominator Source:**
+  - **cdc_linkco15** or **cdc_natl15**: To estimate the population at risk, we need either cdc_linkco15 (which provides both cases and denominators) or cdc_natl15 for live births in 2015.
+
+### Period
+
+- **Period:** The common period that lies within the coverage of all sources is 2015. Hence, the study will focus on data from 2015 only.
+  
+### Variables
+
+**Exposure: Prenatal Care Adequacy**
+
+- **Case Series (ncfrp_v51):**
+  - `INFprenatalcare`: Prenatal care provided
+  - `ISSpnclate`: Late entry to prenatal care
+  - `ISSpncnone`: No prenatal care
+  - `INFisschcare`: Access or compliance issues related to prenatal care
+  
+- **Population Reference (prams_p8_arf):**
+  - `PNC_VST`: Number of prenatal care visits
+  - `PREV_LBW_RAW`: Previous low birth weight
+  - `MM_HBP`: Hypertension during pregnancy
+
+**Outcome: SUID**
+
+- **Case Series (ncfrp_v51):**
+  - Records whether the infant death is classified as SUID.
+  
+- **Denominator Source (cdc_linkco15 or cdc_natl15):**
+  - `PRECARE`, `PREVIS`: Measures prenatal care visits and timing.
+
+### Biases
+
+**Selection Bias:**
+
+- **Case Series (ncfrp_v51)**: Only includes deaths reviewed by fatality review teams, potentially excluding cases not reported to these teams.
+  
+- **Population Reference (prams_p8_arf)**: Sampling method may introduce bias if the sample is not representative of all live births.
+
+**Information Bias:**
+
+- **Case Series (ncfrp_v51)**: Information on prenatal care issues might be incomplete or biased due to reporting practices in fatality review systems.
+  
+- **Population Reference (prams_p8_arf)**: Survey responses may contain biases due to recall errors and social desirability.
+
+**Confounding Bias:**
+
+- Potential confounders such as maternal smoking, socioeconomic status, age of the mother, and other health conditions should be controlled for. However, these variables are not consistently measured across all datasets or do not capture enough detail to control adequately.
+
+### What the Design Cannot Establish
+
+The design cannot establish causation between inadequate prenatal care and SUID incidence due to its observational nature. It can only show an association.
+
+### Prior Art
+
+- **Manuscripts' Claims:**
+  - None of the manuscript claims closely address the specific question about prenatal care adequacy and SUID rates, but some discuss related factors such as maternal smoking (e.g., bedsharing_ms_v7.C12).
+
+### Verdict
+
+**These data can partially answer a version of the research question.**
+
+- **Missing Element:** The study lacks detailed information on confounding variables like socioeconomic status and other health conditions that could influence prenatal care adequacy and SUID risk.
+  
+- **Data Limitation:** The case series does not provide comprehensive maternal health history or behavioral details, limiting the ability to control for potential confounders.
+
+To fully answer this question, additional data sources capturing detailed maternal health histories and socioeconomic factors would be necessary.

@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "How has the incidence of Sudden Unexpected Infant Death (SUID) and its risk factors changed over different decades, from the late 1980s to the present?",
+   "why_open": "There is limited research on long-term trends in SUID rates and their associated risk factors across multiple decades. Understanding these trends could provide insights into the effectiveness of public health interventions and shifts in societal behaviors.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Birth Location and Time, Mother's Demographics, Smoking During Pregnancy, Maternal Complications, Maternal Morbidity"
+  },
+  {
+   "question": "What is the relationship between SUID incidence rates in different geographic regions (urban vs. rural) over time, and how does this vary by socioeconomic status?",
+   "why_open": "SUID rates may differ based on urban versus rural settings and socioeconomic status due to varying access to healthcare, living conditions, and public health initiatives. Analyzing these differences can inform targeted interventions.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Birth Location and Time, Mother's Demographics, Smoking During Pregnancy, Maternal Complications, Maternal Morbidity, Residence Information"
+  },
+  {
+   "question": "How does the risk of SUID differ between infants whose mothers experienced significant stressors during pregnancy (e.g., natural disasters, economic hardship) compared to those who did not?",
+   "why_open": "Stressful life events during pregnancy might impact fetal development and neonatal health outcomes. Investigating this relationship could reveal new avenues for prenatal support.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Maternal Stressors, Medical Complications During Pregnancy, Maternal Health Problems, Pregnancy Insurance Coverage, Prenatal Care"
+  },
+  {
+   "question": "What is the impact of changes in sleep environment recommendations and public health messaging on SUID rates over time?",
+   "why_open": "Public health campaigns can influence caregiver behavior regarding infant care practices. Evaluating these interventions’ effectiveness over time could guide future policy decisions.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Demographics and Dates, Residence Information, Infant Sleep Environment, Healthcare Provider Interactions, Smoking During Pregnancy"
+  },
+  {
+   "question": "How does maternal prepregnancy body mass index (BMI) correlate with SUID rates in preterm versus full-term infants?",
+   "why_open": "Prepregnancy BMI is a known risk factor for adverse pregnancy outcomes. Investigating its differential impact on SUID rates between preterm and full-term infants could provide insights into preventive measures.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Gestational Age at Birth, Maternal Complications During Pregnancy, Smoking During Pregnancy, Mother's Demographics, Maternal BMI (Prepregnancy)"
+  }
+ ]
+}

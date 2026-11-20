@@ -1,0 +1,288 @@
+{
+  "reports": [
+    {
+      "strategy_id": "S1",
+      "resolutions": [
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "UCOD"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "UCOD",
+            "label": "UCOD",
+            "type": "unknown",
+            "levels": [],
+            "years": [],
+            "page": 40,
+            "notes": ""
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "BMI_R"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "BMI_R",
+            "label": "Body Mass Index Recode",
+            "type": "unknown",
+            "levels": [
+              "1=Underweight <18.5"
+            ],
+            "years": [],
+            "page": 26,
+            "notes": "position=287; file=P,G"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "COMBGEST"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "COMBGEST",
+            "label": "Combined Gestation – Detail in Weeks",
+            "type": "unknown",
+            "levels": [
+              "17-47=17th through 47th week of Gestation",
+              "99=Unknown"
+            ],
+            "years": [],
+            "page": 34,
+            "notes": "position=490-491; file=P,G"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "AGED"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "AGED",
+            "label": "AGED",
+            "type": "unknown",
+            "levels": [],
+            "years": [],
+            "page": 39,
+            "notes": ""
+          },
+          "note": ""
+        }
+      ],
+      "blockers": [
+        "The variable `UCOD` (Sudden Unexpected Infant Death) lacks detailed documentation on how it identifies SUID cases, making it impossible to confirm if the outcome can be reliably identified from this source.",
+        "The variable `BMI_R` (Body Mass Index Recode) is documented with only one level (`1=Underweight <18.5`). This does not provide sufficient information to assess prepregnancy obesity accurately."
+      ],
+      "caveats": [
+        "The variable `UCOD` (Sudden Unexpected Infant Death) is documented as 'unknown' in type and lacks specific levels or years, which may introduce uncertainty in its measurement and definition.",
+        "The variable `BMI_R` (Body Mass Index Recode) is documented with only one level (`1=Underweight <18.5`). This does not provide information on the full range of BMI categories necessary to assess prepregnancy obesity accurately.",
+        "The variable `COMBGEST` (Combined Gestation – Detail in Weeks) includes an 'Unknown' category, which may introduce missingness and affect the stratification by postconceptional age windows.",
+        "The variable `AGED` is documented as 'unknown', lacking specific levels or years, which could impact its use as a covariate."
+      ],
+      "cross_source_notes": [],
+      "not_assessed": [
+        "statistical power",
+        "causal validity / confounding adequacy",
+        "actual missingness rates (documentation only; no row-level data read)"
+      ]
+    },
+    {
+      "strategy_id": "S2",
+      "resolutions": [
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "UCOD"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "UCOD",
+            "label": "UCOD",
+            "type": "unknown",
+            "levels": [],
+            "years": [],
+            "page": 40,
+            "notes": ""
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "CIG_REC"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "CIG_REC",
+            "label": "Cigarette Recode (Revised) 270",
+            "type": "unknown",
+            "levels": [
+              "Y=Yes",
+              "N=No",
+              "U=Unknown or not stated"
+            ],
+            "years": [],
+            "page": 26,
+            "notes": "position=269; file=P,G"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "GESTREC3"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "GESTREC3",
+            "label": "Combined Gestation Recode 3",
+            "type": "unknown",
+            "levels": [
+              "1=Under 37 weeks",
+              "2=37 weeks and over",
+              "3=Not stated",
+              "3=FILLER"
+            ],
+            "years": [],
+            "page": 34,
+            "notes": "position=494; file=P,G"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "AGED"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "AGED",
+            "label": "AGED",
+            "type": "unknown",
+            "levels": [],
+            "years": [],
+            "page": 39,
+            "notes": ""
+          },
+          "note": ""
+        }
+      ],
+      "blockers": [
+        "The documentation does not provide specific levels or years for UCOD, which makes it impossible to accurately identify SUID cases. This could render the outcome variable unidentifiable.",
+        "Similarly, AGED is documented as 'unknown', making it unclear how to stratify data by PCA windows."
+      ],
+      "caveats": [
+        "The variable UCOD (UCOD) is documented as 'unknown' with no specific levels or years provided. This makes it difficult to ascertain the exact definition and coverage of Sudden Unexpected Infant Death (SUID).",
+        "CIG_REC (Cigarette Recode Revised 270) has levels 'Y=Yes', 'N=No', and 'U=Unknown or not stated'. The presence of an unknown category suggests potential missingness in maternal smoking data.",
+        "GESTREC3 (Combined Gestation Recode 3) includes a level 'Not stated' which indicates likely missingness for gestational age information. This could affect the accuracy of preterm birth classification.",
+        "AGED is documented as 'unknown', making it unclear how to interpret this variable in terms of stratification by PCA windows."
+      ],
+      "cross_source_notes": [],
+      "not_assessed": [
+        "statistical power",
+        "causal validity / confounding adequacy",
+        "actual missingness rates (documentation only; no row-level data read)"
+      ]
+    },
+    {
+      "strategy_id": "S3",
+      "resolutions": [
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "UCOD"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "UCOD",
+            "label": "UCOD",
+            "type": "unknown",
+            "levels": [],
+            "years": [],
+            "page": 40,
+            "notes": ""
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "AGED"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "AGED",
+            "label": "AGED",
+            "type": "unknown",
+            "levels": [],
+            "years": [],
+            "page": 39,
+            "notes": ""
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "COMBGEST"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "COMBGEST",
+            "label": "Combined Gestation – Detail in Weeks",
+            "type": "unknown",
+            "levels": [
+              "17-47=17th through 47th week of Gestation",
+              "99=Unknown"
+            ],
+            "years": [],
+            "page": 34,
+            "notes": "position=490-491; file=P,G"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc_linkco15",
+            "name": "SEX"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "SEX",
+            "label": "Sex of Infant",
+            "type": "unknown",
+            "levels": [
+              "M=Male",
+              "F=Female"
+            ],
+            "years": [],
+            "page": 33,
+            "notes": "position=475; file=P,G"
+          },
+          "note": ""
+        }
+      ],
+      "blockers": [],
+      "caveats": [
+        "The variable `UCOD` (cdc_linkco15, UCOD) is documented as 'unknown' type and lacks specific levels or years. This makes it unclear how to interpret the cause-of-death codes R95, W75, and R99 within this dataset.",
+        "The variable `AGED` (cdc_linkco15, AGED), which is used for stratification by postconceptional age, is also documented as 'unknown' type without specific levels or years. This makes it difficult to understand how PCA is calculated or represented in the data.",
+        "The covariate `COMBGEST` (cdc_linkco15, COMBGEST) includes an 'Unknown' level (99), which may introduce missingness and bias if not properly accounted for.",
+        "The covariate `SEX` (cdc_linkco15, SEX) is documented as having levels 'M=Male', 'F=Female'. However, the documentation does not specify how to handle cases where sex is unknown or unspecified."
+      ],
+      "cross_source_notes": [],
+      "not_assessed": [
+        "statistical power",
+        "causal validity / confounding adequacy",
+        "actual missingness rates (documentation only; no row-level data read)"
+      ]
+    }
+  ]
+}

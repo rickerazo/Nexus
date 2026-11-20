@@ -1,0 +1,104 @@
+{
+ "ideas": [
+  {
+   "question": "What proportion of SUID cases involved infants who slept with an adult compared to the general population of live-born infants?",
+   "comparison": "SUID cases vs. general population",
+   "why_open": "This question explores whether sharing a sleeping surface with an adult is more common among SUID cases than in the general population, potentially indicating a risk factor for SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D102",
+    "D281"
+   ],
+   "data": "Case series: ncfrp_v51:D102 Infant Sleep Environment, specifically whether the infant shared a sleeping surface with an adult. Population reference: prams_p8_arf:D281 Sleeping Arrangements, also focusing on sharing a sleeping surface with an adult."
+  },
+  {
+   "question": "How does pregnancy weight gain differ between mothers of SUID cases compared to the general population of live-born infants?",
+   "comparison": "SUID cases vs. general population",
+   "why_open": "This question examines whether mothers who experienced a sudden unexpected infant death had different patterns of pregnancy weight gain, which could be associated with risk factors for SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_std2"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D88",
+    "D299"
+   ],
+   "data": "Case series: ncfrp_v51:D88 Pregnancy Weight Gain. Population reference: prams_p8_std2:D299 Pregnancy Weight Gain."
+  },
+  {
+   "question": "What is the prevalence of maternal health problems among mothers of SUID cases compared to the general population of live-born infants?",
+   "comparison": "SUID cases vs. general population",
+   "why_open": "This question assesses whether mothers who experienced a sudden unexpected infant death had higher rates of specific maternal health issues, which could contribute to increased risk.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D66",
+    "D269"
+   ],
+   "data": "Case series: ncfrp_v51:D66 Medical Complications and other health issues. Population reference: prams_p8_arf:D269 Maternal Health Problems."
+  },
+  {
+   "question": "How does the prevalence of preterm birth differ between mothers of SUID cases compared to the general population?",
+   "comparison": "SUID cases vs. general population",
+   "why_open": "This question explores whether there is a higher rate of preterm births among mothers who experienced sudden unexpected infant death, which could suggest an association with increased risk.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D67",
+    "D303"
+   ],
+   "data": "Case series: ncfrp_v51:D67 Pregnancy History, focusing on preterm births. Population reference: prams_p7_arf:D303 Previous Birth History."
+  },
+  {
+   "question": "Is there a difference in the prevalence of prenatal care issues between mothers of SUID cases and the general population?",
+   "comparison": "SUID cases vs. general population",
+   "why_open": "This question investigates whether inadequate or delayed prenatal care is more common among mothers who experienced sudden unexpected infant death, potentially indicating a risk factor.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D243",
+    "D272"
+   ],
+   "data": "Case series: ncfrp_v51:D243 Prenatal Care Issues. Population reference: prams_p8_arf:D272 Healthcare Visits During Pregnancy."
+  }
+ ]
+}

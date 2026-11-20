@@ -1,0 +1,87 @@
+### Design
+
+**Question Restated:** How does the prevalence of preterm birth differ between mothers who experienced sudden unexpected infant death (SUID) cases compared to the general population?
+
+- **Design Type:** Case-population comparison.
+- **Comparison:** SUID cases vs. general population.
+
+### Sources by Role
+
+1. **Case Series:**
+   - **Source:** ncfrp_v51
+   - **Role:** Provides the numerator for the case group (SUID cases).
+   - **Reasoning:** This dataset captures detailed information on infant deaths reviewed by fatality review teams, including maternal pregnancy history and birth outcomes.
+
+2. **Population Reference:**
+   - **Source:** prams_p7_arf
+   - **Role:** Provides a weighted prevalence estimate for the general population.
+   - **Reasoning:** PRAMS surveys mothers who have recently given birth to gather data on various health-related factors, including previous preterm births.
+
+3. **Denominator:**
+   - **Source:** cdc_linkco15 (or cdc_natl15)
+   - **Role:** Provides the denominator for SUID cases.
+   - **Reasoning:** CDC linked birth/infant death data includes both live births and infant deaths, allowing us to calculate incidence rates among a defined population.
+
+### Period
+
+**Period Covered:**
+- 2012-2015 (for PRAMS Phase 7)
+- 2008-2019 for SUID cases in ncfrp_v51
+- This period is the common range where data overlap exists across all three sources.
+
+### Variables
+
+**Concept:** Preterm Birth Exposure
+
+- **Case Series:**
+  - Variable: `ncfrp_v51:INF3prevpreterm` (Previous pregnancies - Preterm)
+  - Reporting: The variable indicates whether previous births were preterm.
+
+- **Population Reference:**
+  - Variable: `prams_p7_arf:P_PRTERM` (Previous preterm births)
+  - Weight: `prams_p7_arf:WTANAL`
+  - Reporting: This variable captures the occurrence of previous preterm births among mothers surveyed in PRAMS.
+  
+- **Denominator Source:**
+  - Variable: `cdc_linkco15:RF_PPB` (Previous Preterm Birth)
+  - Flag: `cdc_linkco15:F_RF_PPB`
+  - Reporting: The variable indicates the occurrence of previous preterm births among live births in CDC data.
+
+**Measurement Differences:**
+
+- **Case Series vs. Population Reference:** Both use a binary measure for whether a mother had any previous preterm birth, but PRAMS provides weighted survey estimates while ncfrp_v51 records actual cases.
+  
+### Biases
+
+1. **Selection Bias:**
+   - The case series (ncfrp_v51) includes only reviewed infant deaths; it does not capture all SUID cases or non-SUID outcomes in the general population.
+   
+2. **Information Bias:**
+   - PRAMS relies on self-reported maternal data, potentially subject to recall bias and social desirability bias.
+   - The ncfrp_v51 records are based on case reviews, which may be influenced by reporting inconsistencies.
+
+3. **Confounding:**
+   - Confounders like socioeconomic status, prenatal care quality, and access to healthcare differ between the SUID cases and general population.
+
+### What the Design Cannot Establish
+
+- This design can establish whether there is a difference in the prevalence of preterm birth between mothers who experienced SUID and the general population. However, it cannot:
+  - Estimate incidence rates or risk.
+  - Determine causality or temporal relationships.
+  - Account for unmeasured confounders such as socioeconomic status and healthcare access.
+
+### Prior Art
+
+- **SUID Manuscript Claims:**
+  - C10 (limitation): The analysis excludes extremely preterm infants, similar to our design limitation that the case series may not capture all SUID cases.
+  
+- **Bedsharing Manuscripts:**
+  - C9 (finding): Prematurity is positively correlated with SUID incidence, aligning with our focus on preterm birth as a risk factor.
+
+### Verdict
+
+**These data can answer the question:** Whether the prevalence of preterm birth differs between mothers who experienced sudden unexpected infant death and those in the general population. However, due to selection biases and confounding factors, the findings should be interpreted cautiously regarding causality or incidence rates. The study would need additional methods (e.g., propensity score matching) to adjust for potential confounders.
+
+**Missing Elements:**
+- No denominator source directly links SUID cases to live births.
+- PRAMS data lacks urban/rural and state identifiers, making it challenging to match with the case series accurately at finer geographic levels.

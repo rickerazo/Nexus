@@ -1,0 +1,29 @@
+{
+ "groundable": false,
+ "why_not": "The data sources do not provide a denominator for neonatal deaths, and there are inconsistencies in measuring pregnancy weight gain and hospital stay length between case series and population reference sources.",
+ "statement": "",
+ "rationale": "This design cannot establish incidence rates or risk profiles due to the lack of a denominator source. Additionally, variables like pregnancy weight gain and hospital stay lengths differ significantly between death reviews (ncfrp_v51) and birth records (prams_p8_arf), making direct comparisons unreliable.",
+ "prior_art": "The closest tested work is suid_literature_abstracts.C10, which identifies maternal obesity as a risk factor for SUID. However, this claim does not address pregnancy weight gain specifically or compare it to other neonatal deaths, leaving the question of differences in risk profiles open.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2014,
+ "period_end": 2019,
+ "required_concepts": [
+  "Pregnancy weight gain",
+  "Hospital stay length"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4infhospdays",
+  "prams_p8_arf:LTH_HOSP",
+  "prams_p8_arf:MOMLBS",
+  "prams_p8_arf:PG8_SC",
+  "prams_p8_arf:MM_FEVER"
+ ],
+ "cannot_establish": "incidence rates, risk profiles due to lack of denominator source; direct comparisons between SUID cases and other neonatal deaths are unreliable due to inconsistent variable measurement."
+}

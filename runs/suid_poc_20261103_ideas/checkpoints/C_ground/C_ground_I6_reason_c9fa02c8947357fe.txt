@@ -1,0 +1,84 @@
+### Design
+
+**Question:**
+How does the prevalence of hospital overnight stays differ between SUID cases and a population reference?
+
+**Design:**
+Case-population comparison. Compare how common an exposure (hospital overnight stay) is among the cases (SUID deaths from the case series) with its weighted prevalence in the general population (PRAMS mothers from the population reference).
+
+### Sources by Role
+
+- **Case Series:** NCFRP_v51
+  - Reason: Records SUID cases and includes information on hospital stays.
+
+- **Population Reference:** PRAMS_P8_ARF
+  - Reason: Provides a weighted survey of mothers who had live births, allowing for estimating the prevalence of hospital overnight stays in the general population.
+
+### Period
+
+**Years Needed:**
+- Cases (NCFRP_v51): 2008-2019.
+- Reference (PRAMS_P8_ARF): 2016-2021 (the manuscript uses this period).
+
+**Data Acquisition Required:**
+- For cases, the years are already held for NCFRP_v51.
+- PRAMS data needs to be acquired from 2008-2019 to match the case series period.
+
+### Variables
+
+**Concept: Hospital Overnight Stay**
+
+- **Case Series (NCFRP_v51):**
+  - Variable: INF4hosprtn (If yes, hospital overnight stay)
+  - Missing answers: Unknown is documented and should be excluded from analysis as it does not indicate exposure or non-exposure.
+
+- **Population Reference (PRAMS_P8_ARF):**
+  - Variable: LTH_HOSP (Hosp baby stay -- length of time)
+    - Values:
+      - 1 = < 1 DAY
+      - 2 = 1-2 DAYS
+      - 3 = 3-5 DAYS
+      - etc.
+  - Missing answers: BLANK and DK/BLANK should be excluded from analysis as they do not indicate exposure or non-exposure.
+
+### Biases
+
+**Selection Bias:**
+- **Case Series (NCFRP_v51):**
+  - May include only cases reviewed by participating fatality review teams, which can introduce selection bias.
+  
+- **Population Reference (PRAMS_P8_ARF):**
+  - The PRAMS survey is weighted to represent a broader population but may not be representative of all mothers due to sampling and non-response biases.
+
+**Information Bias:**
+- **Case Series (NCFRP_v51):**
+  - Reporting inconsistencies or missing data for hospital stays.
+  
+- **Population Reference (PRAMS_P8_ARF):**
+  - PRAMS survey responses might have recall bias, as they are collected a few months post-birth.
+
+**Confounding:**
+- Confounders such as maternal smoking, prematurity, and socioeconomic status should be considered when comparing the two groups. However, these variables may not be measured consistently across both sources.
+
+### What the Design Cannot Establish
+
+The design cannot establish causation or temporal relationships between hospital overnight stays and SUID incidence. It can only compare proportions of mothers who had babies admitted to hospital overnight stays in the case series versus the population reference. 
+
+### Prior Art
+
+- **Manuscript Claims:**
+  - The claims provided do not specifically address hospital overnight stays as a risk factor for SUID.
+  
+- **Open Question:**
+  - While prior studies have examined other risk factors like maternal smoking, prematurity, and bed sharing, the role of short-term hospital admissions is understudied. Therefore, this study remains relevant to understanding potential warning signs and intervention points.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, the proposed design can be carried out using NCFRP_v51 (case series) for SUID cases and PRAMS_P8_ARF (population reference) for the general population. The variables INF4hosprtn in NCFRP_v51 and LTH_HOSP in PRAMS_P8_ARF measure hospital overnight stays, albeit with different details.
+
+**Limitations:**
+- Need to acquire additional PRAMS data from 2008-2019.
+- Selection biases in both case series and population reference sources must be acknowledged.
+- The design can only compare proportions and cannot establish causation or temporal relationships.

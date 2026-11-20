@@ -1,0 +1,80 @@
+### Design
+
+**Design:** Trends within cases. Compare proportions among the cases across periods.
+
+**Restated Question:**
+Does the proportion of SUID cases with hospital overnight stays change over time, and is there a correlation with maternal pregnancy weight gain?
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (2008-2019)
+  - **Reason for Role:** This source provides detailed information on child deaths reviewed by fatality review teams, including hospital overnight stays.
+
+- **Population Reference:** prams_p8_arf (2016-2021) and prams_p7_arf (2012-2015)
+  - **Reason for Role:** PRAMS surveys provide detailed information on maternal pregnancy weight gain in a population-representative sample of live births.
+
+### Period
+
+**Years Needed:**
+- Case Series (ncfrp_v51): 2008-2019
+- Population Reference (prams_p7_arf and prams_p8_arf): 2016-2021 (for recent trends) and 2012-2015 (additional years for trend analysis).
+
+### Variables
+
+**Concept:** Hospital Overnight Stays
+- **Case Series (ncfrp_v51):**
+  - INF4hosprtn: Infant return to hospital overnight after delivery
+  - INF4hosprtnold: If yes, hospital overnight - how old was infant in weeks
+  - INF4hosprtnnum: If yes, hospital overnight - number of nights
+
+**Concept:** Maternal Pregnancy Weight Gain
+- **Population Reference (prams_p8_arf):**
+  - MOMLBS: Maternal weight gain (LBS)
+  - MAT_PRWT: Maternal weight - Prepregnancy
+  - WTANAL: Analysis weight (required for prevalence)
+
+- **Comparison with Additional Years from PRAMS P7:**
+  - MOMLBS: Maternal Weight Gain (LBS)
+  - MAT_PRWT: Maternal weight - Prepregnancy
+  - WTANAL: Analysis weight (required for prevalence)
+
+### Biases
+
+**Selection Bias:**
+- The case series (ncfrp_v51) captures deaths reviewed by fatality review teams, which may differ from all SUID cases. Participation in the Fatality Review Case Reporting System varies over time.
+- PRAMS surveys capture live births and do not record infant deaths.
+
+**Information Bias:**
+- Hospital overnight stays are recorded at death investigation but may be subject to reporting inconsistencies.
+- Pregnancy weight gain is self-reported by mothers after birth, possibly with recall bias or misreporting.
+
+**Confounding Bias:**
+- Other factors such as maternal smoking, prenatal care, and medical complications may influence both hospital overnight stays and pregnancy weight gain, complicating the correlation analysis.
+
+### What the Design Cannot Establish
+
+This design can only compare proportions of cases with hospital overnight stays over time. It cannot establish incidence rates or causation due to lack of a denominator source for incidence calculations.
+
+### Prior Art
+
+**Relevant Claims:**
+- **SUID_manuscript_v9_clean.C10:** Maternal smoking is associated with higher SUID incidence.
+- **bedsharing_ms_v7.C8:** Bed sharing was recorded for 59.5% of SUID cases, and these cases were more often associated with maternal smoking during pregnancy (52.2%) compared to non-bed-sharing cases.
+
+**Why Open:**
+The proposed study aims to uncover the relationship between hospital overnight stays and maternal pregnancy weight gain trends over time. While there are studies linking maternal smoking and other factors like bed sharing to SUID incidence, none has investigated the specific correlation with hospital overnight stays and pregnancy weight gain as detailed in this proposal.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, these data can support an analysis that compares trends in proportions of SUID cases with hospital overnight stays over time. However, they cannot establish incidence rates or causation due to the lack of a denominator source for calculating such metrics. The study will need to rely on case series data and population reference surveys for trend analysis.
+
+### Additional Considerations
+
+- **Data Acquisition:** More years of PRAMS data (2012-2015) should be acquired for a comprehensive time-series analysis.
+- **Measurement Differences:**
+  - Hospital overnight stays are recorded in the context of death investigation.
+  - Pregnancy weight gain is self-reported by mothers after birth.
+  
+These differences will require careful consideration to ensure comparability and validity in trend analysis.

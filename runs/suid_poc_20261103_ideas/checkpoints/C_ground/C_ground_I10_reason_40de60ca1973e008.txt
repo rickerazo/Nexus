@@ -1,0 +1,71 @@
+### Design
+
+**Question Restated:** What is the difference in smoking cessation before pregnancy between SUID cases and a population reference?
+
+**Design Type:** Case-population comparison.
+
+**Case Series Source (SUID Cases):**
+- **Source:** ncfrp_v51 (National Fatality Review Case Reporting System)
+- **Role:** To provide information on SUID cases, specifically maternal smoking cessation before pregnancy.
+- **Selection Bias:** Selection bias is present because the case series only includes child deaths reviewed by fatality review teams and does not account for all infant deaths in the population.
+
+**Population Reference Source (PRAMS Mothers):**
+- **Source:** prams_p8_arf (Behavioral Risk Factor Surveillance System - Pregnancy Risk Assessment Monitoring System)
+- **Role:** To provide a weighted sample of live births to estimate smoking cessation before pregnancy among women who have had a recent live birth.
+- **Selection Bias:** PRAMS surveys are designed for live births and not deaths, potentially missing high-risk groups like those who experience infant mortality.
+
+**Denominator Source (Births):**
+- **Source:** None required as this is a comparison of proportions between two groups rather than incidence rates.
+
+### Period
+
+The study period needs to cover the years 2008-2019 for both SUID cases and PRAMS data. The ncfrp_v51 covers these years, while prams_p8_arf also includes data from this time frame. No additional years need to be acquired as all necessary data is available.
+
+### Variables
+
+**Concept:** Smoking cessation before pregnancy
+- **Case Series (ncfrp_v51):**
+  - Variable: `INFsmbefpregcig` (If yes, smoke before pregnancy, number cigarettes)
+  - Missing Answers: Documented per item; unknown quantity coded as "unknown" or exposed.
+  
+- **Population Reference (prams_p8_arf):**
+  - Variable: `SMK63B_A` (VAR: YES/NO SMOKE 3 BEF PREG)
+  - Missing Answers: Blank or don't know (`.B=DK/BLANK`)
+  - Weighted Prevalence: Use WTANAL survey weight for population prevalence.
+
+**Differences in Measurement:**
+- **Case Series:** Reports on smoking habits before pregnancy, focusing specifically on the number of cigarettes smoked.
+- **Population Reference:** Binary measure indicating whether the mother smoked in the three months prior to pregnancy (yes/no).
+
+### Biases
+
+1. **Selection Bias:**
+   - **Case Series:** Only includes deaths reviewed by fatality review teams and may not represent all infant deaths.
+   - **Population Reference:** PRAMS is a survey of live births, potentially excluding high-risk groups like those who experience infant mortality.
+
+2. **Information Bias:**
+   - **Case Series:** Detailed smoking cessation history before pregnancy but lacks information on post-pregnancy behavior changes due to case review limitations.
+   - **Population Reference:** May include recall bias as mothers are surveyed months after birth regarding their pre-pregnancy smoking habits.
+
+3. **Confounding Factors:**
+   - **Case Series & Population Reference:** Potential confounders like socioeconomic status, education level, and access to healthcare may differ between groups and impact smoking cessation rates.
+
+### What the Design Cannot Establish
+
+- The design cannot establish causation or temporal relationships between smoking cessation before pregnancy and SUID risk. It only compares proportions between cases and a population reference.
+- No denominator source is used, so incidence rates or risks cannot be calculated; this limits understanding of the absolute impact on infant mortality.
+
+### Prior Art
+
+The manuscript claims indicate that maternal smoking during pregnancy has been established as a significant risk factor for SUID (claims C9, C10 from bedsharing_ms_v7). However, there is no specific mention of smoking cessation before pregnancy. Therefore, this study would provide new insights into the effectiveness of pre-pregnancy smoking cessation programs.
+
+### Verdict
+
+**Can these sources answer the question?**
+
+Yes, these data can support a comparison between SUID cases and PRAMS mothers to assess differences in smoking cessation behaviors before pregnancy. However, several limitations must be acknowledged:
+- **Selection Bias:** The case series may not fully represent all infant deaths.
+- **Information Bias:** Recall bias exists for PRAMS data on pre-pregnancy habits.
+- **Confounding Factors:** Socioeconomic and healthcare access disparities could affect results.
+
+Despite these challenges, the design is feasible with the available data sources.

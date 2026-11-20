@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "INFcereal",
+   "name": "Infant Meal Details",
+   "summary": "Records infant's last meal type and specifies if cereal or other."
+  },
+  {
+   "start": "INFchorio",
+   "name": "Medical Complications",
+   "summary": "Documents various medical complications during pregnancy and delivery."
+  },
+  {
+   "start": "INFchschacad",
+   "name": "School Problems",
+   "summary": "Indicates if the child had academic, behavioral, or other school-related issues."
+  },
+  {
+   "start": "INFcmhillmed",
+   "name": "Mental Health History",
+   "summary": "Captures information about the child's mental health history and medication use."
+  },
+  {
+   "start": "INFcrimasslt",
+   "name": "Criminal History",
+   "summary": "Documents criminal activities such as assaults, drug-related offenses, and other delinquencies."
+  },
+  {
+   "start": "INFcyanosis",
+   "name": "Health Conditions",
+   "summary": "Records history of cyanosis and other health conditions prior to the last 72 hours."
+  },
+  {
+   "start": "INFeducate",
+   "name": "Education Level",
+   "summary": "Identifies the child's highest level of education attained."
+  },
+  {
+   "start": "INFemp",
+   "name": "Employment Status",
+   "summary": "Documents whether the child was employed and their employment status."
+  }
+ ]
+}

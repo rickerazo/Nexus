@@ -1,0 +1,71 @@
+### Design
+
+**Question Restated:** What is the association between pregnancy weight gain and Sudden Unexpected Infant Death (SUID) compared to other causes of infant death?
+
+This study will employ a case-case comparison design, which compares cases of different outcomes recorded in the same case series. This approach allows us to identify factors that are specific to SUID rather than to all types of infant deaths.
+
+### Sources by Role
+
+- **Case Series:**
+  - **ncfrp_v51:** This source records child deaths reviewed by fatality review teams and is used to capture both SUID cases and other causes of infant death. It provides the numerator for both groups.
+  
+- **Population Reference:**
+  - **prams_p8_arf & prams_p8_std2:** These sources provide a weighted survey of mothers after live births, supplying population-level prevalence data on pregnancy weight gain.
+
+### Period
+
+**Years Needed:**
+The years needed are 2016-2021. While the current holdings for ncfrp_v51 cover 2004-2019, additional years would need to be acquired from 2016-2021. The PRAMS data covers these years, so no acquisition is needed.
+
+### Variables
+
+**Pregnancy Weight Gain:**
+- **ncfrp_v51:** 
+  - Variable: `INF4momwtgn` (Mother's pregnancy weight gain or loss in pounds)
+  - Missing: Unknown values are coded appropriately.
+  
+- **prams_p8_arf & prams_p8_std2:**
+  - Variables:
+    - `MOMLBS` (Maternal Weight Gain (LBS))
+    - `PGWTGN8_DK` (Preg weight gain with DK)
+    - Missing: Don't know (DK) and skip values are coded separately.
+
+**Outcome Measurement:**
+- **ncfrp_v51:** 
+  - Variable: `ACTcausids`: If yes, prior deaths - Caused - SIDS.
+  - Variable: Other causes of death as recorded in the same dataset.
+
+### Biases
+
+**Selection Bias:**
+- ncfrp_v51 is a case series and may not be representative of all infant deaths. It only includes cases reviewed by fatality review teams, which might introduce selection bias if these reviews are more thorough or biased towards certain types of events.
+  
+**Information Bias:**
+- Differences in how pregnancy weight gain is measured between ncfrp_v51 and PRAMS data (e.g., timing, reporting methods) could lead to inconsistencies. For instance, PRAMS collects data a few months after birth, while ncfrp_v51 records information through post-mortem reviews.
+  
+**Confounding:**
+- Other factors such as maternal smoking, previous preterm births, and socioeconomic status might confound the association between pregnancy weight gain and SUID versus other causes of infant death.
+
+### What the Design Cannot Establish
+
+The case-case comparison design can only establish associations, not causation. It cannot control for all potential confounding variables or account for differences in exposure measurement precision across sources.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C10:** Maternal smoking was associated with higher SUID incidence.
+- **bedsharing_ms_v7.C8:** Bed sharing and maternal smoking were recorded for a subset of cases.
+  
+The existing literature has established associations between pregnancy factors (e.g., smoking) and SUID but not specifically compared pregnancy weight gain in SUID versus other infant deaths.
+
+### Verdict
+
+**Can these sources answer the question?**
+
+Yes, these sources can be used to investigate an association between pregnancy weight gain and SUID compared to other causes of infant death. However, there are several limitations:
+
+1. **Selection Bias:** The case series only includes reviewed cases and may not fully represent all infant deaths.
+2. **Information Bias:** Measurement discrepancies exist between PRAMS and ncfrp_v51 due to different data collection methods and timing.
+3. **Confounding:** Other factors like maternal smoking, previous preterm births, and socioeconomic status could confound the association.
+
+To mitigate these biases, future research should aim for a more comprehensive case series that includes all infant deaths and uses consistent exposure measurement across both cases and population reference sources.

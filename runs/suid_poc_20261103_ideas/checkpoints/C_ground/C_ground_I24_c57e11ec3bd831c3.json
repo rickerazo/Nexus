@@ -1,0 +1,32 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The incidence of Sudden Unexpected Infant Death (SUID) among infants born via cesarean delivery is estimated to be higher compared to those born vaginally in the year 2015.",
+ "rationale": "This design uses a case series source for SUID cases, population reference sources for exposure prevalence, and denominator sources for the overall birth population. The chosen period (2015) lies within the coverage of all sources used.",
+ "prior_art": "The closest tested work is none in the inputs as no previous manuscript has specifically compared cesarean and vaginal deliveries regarding SUID incidence using these data sources.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_linkco15",
+  "cdc_natl15"
+ ],
+ "period_start": 2015,
+ "period_end": 2015,
+ "required_concepts": [
+  "SUID",
+  "Delivery Method"
+ ],
+ "variables": [
+  "ncfrp_v51:IEMdeliver",
+  "prams_p7_arf:DEL_VAG",
+  "cdc_linkco15:DMETH_REC",
+  "cdc_natl15:ME_TRIAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or address time-varying exposures post-delivery."
+}

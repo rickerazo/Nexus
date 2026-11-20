@@ -1,0 +1,68 @@
+{
+  "source_id": "cdc_natl15",
+  "n_variables": 245,
+  "anchors_checked": 0,
+  "unmatched_anchors": [],
+  "census": [
+    {
+      "token": "FILLER_RF",
+      "page": 21,
+      "context": "FILLER_RF",
+      "count": 1
+    },
+    {
+      "token": "RF_CESARN",
+      "page": 21,
+      "context": "RF_CESARN",
+      "count": 1
+    },
+    {
+      "token": "FILLER_IP",
+      "page": 22,
+      "context": "FILLER_IP",
+      "count": 1
+    },
+    {
+      "token": "FILLER_OB",
+      "page": 23,
+      "context": "FILLER_OB",
+      "count": 1
+    },
+    {
+      "token": "FILLER_LD",
+      "page": 24,
+      "context": "FILLER_LD",
+      "count": 1
+    },
+    {
+      "token": "FILLER_ME",
+      "page": 25,
+      "context": "FILLER_ME",
+      "count": 1
+    },
+    {
+      "token": "FILLER_MM",
+      "page": 26,
+      "context": "FILLER_MM",
+      "count": 1
+    },
+    {
+      "token": "FILLER_AB",
+      "page": 31,
+      "context": "FILLER_AB",
+      "count": 1
+    },
+    {
+      "token": "FILLER_CA",
+      "page": 33,
+      "context": "FILLER_CA",
+      "count": 1
+    },
+    {
+      "token": "ADDENDUM",
+      "page": 37,
+      "context": "ADDENDUM",
+      "count": 1
+    }
+  ]
+}

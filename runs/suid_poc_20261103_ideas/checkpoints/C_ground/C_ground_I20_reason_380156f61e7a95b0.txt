@@ -1,0 +1,69 @@
+### Design
+
+**Question Restated:** Estimate the incidence rate of Sudden Unexpected Infant Death (SUID) by infant sleeping arrangement among infants who died from SUID compared to live births with similar sleeping arrangements.
+
+**Design Explanation:**
+- **Exposure-specific rates**: This design estimates outcome rates by exposure group using cases as numerators, prevalence from population reference sources for denominators.
+- **Comparison Groups**: SUID cases with specific sleeping arrangements (cases) versus live births stratified similarly (denominator).
+
+### Sources by Role
+
+**Case Series: ncfrp_v51**
+- **Role:** Provides the numerator by recording SUID cases and their sleep environments at the time of death.
+- **Rationale:** This source captures all child deaths reviewed, including those from SUID, with detailed information on sleeping arrangements.
+
+**Population Reference: prams_p8_arf**
+- **Role:** Provides exposure prevalence for live births by surveying mothers about their infants' sleeping habits a few months after birth.
+- **Rationale:** PRAMS surveys are designed to capture behaviors and conditions related to infant health and safety, including sleep practices.
+
+**Denominator: cdc_natl15**
+- **Role:** Provides the denominator by supplying total live births with information on infant sleeping arrangements.
+- **Rationale:** CDC natality data offers comprehensive birth records but does not include deaths. However, PRAMS can provide a proxy for exposure prevalence in live births.
+
+### Period
+
+**Years Needed:**
+- For **ncfrp_v51**: 2008-2019 (as specified).
+- For **prams_p8_arf**: 2016-2021.
+- For **cdc_natl15**: 2016-2021.
+
+### Variables
+
+**Sleeping Arrangements:**
+- **Case Series:** ncfrp_v51:CIRroomshare (Child sleeping in the same room as caregiver/supervisor at time of death); CIRwadultnum, CIRwchild (Child sleeping on same surface with adult(s) or other children).
+- **Population Reference:** prams_p8_arf:SLP_ROOM_RAW (Baby slept -- in room with mom), SLP_SAK_RAW (Baby slept -- in sleep sack or wearable blanket), SLP_CHR_RAW (Baby slept -- on couch/futon/chair).
+- **Denominator Source:** cdc_natl15 variables are not directly applicable, but PRAMS can proxy for these.
+
+### Biases
+
+**Selection Bias:**
+- **Case Series:** The NCFRP data is from reviewing states and may not be nationally representative.
+- **Population Reference:** PRAMS covers specific sites and does not capture all live births; it’s a weighted sample designed to estimate behaviors in live-born infants but cannot cover SUID cases.
+
+**Information Bias:**
+- **Case Series:** Sleep environment ascertainment can vary by case review team and may have issues with misclassification.
+- **Population Reference:** PRAMS collects data via phone surveys, which might introduce recall bias or social desirability bias regarding sleep practices.
+
+**Confounding:**
+- Confounders like maternal smoking, prematurity, socioeconomic status, and environmental factors should be accounted for in the analysis. However, these variables are not uniformly measured across all sources, making direct adjustment challenging.
+
+### What the Design Cannot Establish
+
+- **Causality:** This study design can only establish associations; it cannot infer causation.
+- **Incidence Rates Directly:** The denominator source does not provide the exact population at risk for specific sleeping arrangements. Instead, exposure prevalence from PRAMS is used to estimate incidence rates.
+
+### Prior Art
+
+**Manuscript Claims:**
+- bedsharing_ms_v7.C1, C3-C5: Previous studies have extensively examined bed-sharing and its association with SUID incidence but did not focus on other sleep arrangements.
+- suid_literature_abstracts.C26-C49: Literature has detailed biological mechanisms underlying SIDS/SUID but does not cover the impact of different sleeping arrangements.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, these data can support an analysis to estimate the incidence rates of SUID by infant sleeping arrangement. However, several limitations need addressing:
+- **Denominator Source Limitations:** The denominator is derived indirectly from PRAMS surveys, which does not capture SUID cases.
+- **Selection and Information Biases:** Potential biases must be acknowledged and mitigated through careful analysis.
+
+The design can provide a comparative estimate of exposure-specific rates but cannot establish causation or directly measure incidence. This study would enhance understanding of the impact of sleeping arrangements on SUID risk while acknowledging its limitations.

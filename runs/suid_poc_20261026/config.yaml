@@ -1,0 +1,45 @@
+manuscripts:
+- data/manuscripts/SUID_manuscript_v9_clean.docx
+- data/manuscripts/bedsharing_ms_v7.docx
+- data/manuscripts/literature/suid_literature_abstracts.md
+codebooks:
+- id: cdc_linkco15
+  path: data/codebooks/LinkCO15Guide.pdf
+  title: CDC linked birth/infant death public-use file guide, 2015
+  llm_extract: false
+- id: cdc_natl15
+  path: data/documentation/natl2015.pdf
+  title: CDC natality public-use file guide, 2015
+  llm_extract: false
+- id: cdc_codenames
+  path: data/documentation/CDC_database_codeNames.xlsx
+  title: CDC birth/death file variable names and labels (analysis extract)
+  llm_extract: false
+- id: ncfrp_v51
+  path: data/documentation/Codebook_Version5-1_031122.xlsx
+  title: National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1
+  llm_extract: false
+- id: prams_p8_arf
+  path: data/codebooks/PRAMS_Phase_8_ARF_Codebook.pdf
+  title: PRAMS Phase 8 Analytic Research File codebook
+  llm_extract: false
+- id: prams_p8_std2
+  path: data/codebooks/PRAMS_Phase_8_Standard_Section_II_Codebook.pdf
+  title: PRAMS Phase 8 Standard Section II codebook
+  llm_extract: false
+- id: prams_p7_arf
+  path: data/codebooks/PRAMS_Phase_7_ARF_Codebook.pdf
+  title: PRAMS Phase 7 Analytic Research File codebook
+  llm_extract: false
+backend: ollama
+model: qwen2.5:14b
+allow_cloud: false
+seed: 0
+temperature: 0.0
+num_ctx: 32768
+chunk_tokens: 12000
+max_retries: 3
+n_gaps: 3
+b_max_vars_per_call: 600
+out_dir: runs
+cache_dir: .cache/documents

@@ -1,0 +1,84 @@
+{
+ "ideas": [
+  {
+   "question": "What is the relationship between maternal obesity and Sudden Unexpected Infant Death (SUID) incidence rates?",
+   "comparison": "Maternal obesity status groups from PRAMS with overall birth population from CDC natality; case series of SUID cases linked to these groups.",
+   "why_open": "While studies suggest a link between maternal obesity and SUID, the specific rate differences by level of obesity are not yet fully understood. This study could provide more precise measures of risk and help target public health interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI), Sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "How does prenatal tobacco exposure affect the incidence of Sudden Unexpected Infant Death (SUID) compared to non-exposure?",
+   "comparison": "Prenatal smoking status groups from PRAMS with overall birth population; case series of SUID cases linked to these groups.",
+   "why_open": "The association between maternal smoking during pregnancy and SUID is well-documented, but the specific rate differences by level of exposure are less clear. Identifying precise risk levels could guide more targeted cessation programs.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Maternal smoking during pregnancy, Sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "Does preterm birth alter the incidence of Sudden Unexpected Infant Death (SUID) compared to full-term births?",
+   "comparison": "Gestational age at birth groups from PRAMS with overall birth population; case series of SUID cases linked to these groups.",
+   "why_open": "While there is evidence that preterm infants are at higher risk for SUID, the rate differences by degree of prematurity and corresponding implications remain unclear. Clarifying these could improve targeted care protocols.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Gestational age at birth, Sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "What is the incidence rate of Sudden Unexpected Infant Death (SUID) among infants born to mothers with mental health disorders compared to those without?",
+   "comparison": "Mental health problem status groups from PRAMS with overall birth population; case series of SUID cases linked to these groups.",
+   "why_open": "Though studies suggest a link between maternal mental health and SUID, detailed rate differences are not well-established. This research could pinpoint specific conditions contributing to higher risk for targeted interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Maternal health problems (depression, anxiety), Sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "How do breastfeeding practices differ in the incidence of Sudden Unexpected Infant Death (SUID) among infants who were breastfed versus those who were not?",
+   "comparison": "Breastfeeding status groups from PRAMS with overall birth population; case series of SUID cases linked to these groups.",
+   "why_open": "While research indicates potential benefits of breastfeeding for infant health, the specific protective effect against SUID remains uncertain. Understanding this could highlight breastfeeding as a preventive measure.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Breastfeeding practices, Sudden unexpected infant death (SUID)"
+  }
+ ]
+}

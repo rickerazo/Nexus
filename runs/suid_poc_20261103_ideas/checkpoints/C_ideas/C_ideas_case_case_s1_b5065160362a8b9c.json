@@ -1,0 +1,62 @@
+{
+ "ideas": [
+  {
+   "question": "Is SUID associated with distinct sleep environments compared to non-SUID infant deaths?",
+   "comparison": "SUID cases from ncfrp_v51 compared with other cause-of-death categories within ncfrp_v51 (2008-2019).",
+   "why_open": "While the case series records bed sharing, it is unclear if this reflects a unique risk factor for SUID or a more general sleep environment characteristic. If distinct, it may imply specific preventive measures.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "Infant Sleep Environment (cfrp_v51:INFbedsharing)"
+  },
+  {
+   "question": "Do maternal infections during pregnancy have a different incidence in SUID compared to other causes of infant death?",
+   "comparison": "SUID cases from cdc_linkco15 and ncfrp_v51 are compared with deaths due to congenital anomalies, external causes, or injuries within the same sources (2008-2019).",
+   "why_open": "Maternal infections are known risk factors for SIDS but their role in SUID is less clear. If different incidences exist, it may suggest specific screening and interventions.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "Maternal infections in pregnancy (cdc_linkco15:IP_CHLAM, cdc_linkco15:IP_GON, cdc_natl15:IP_HEPC)"
+  },
+  {
+   "question": "Is the incidence of SUID higher among infants born to mothers who experienced socioeconomic stressors compared with non-SUID infant deaths?",
+   "comparison": "SUID cases from ncfrp_v51 are contrasted against other causes of death within the same series (2008-2019).",
+   "why_open": "The role of socioeconomic factors in SUID is understudied despite known risks for overall infant mortality. Differences could indicate targeted interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "Socioeconomic status indicators (ncfrp_v51:STRESS, ncfrp_v51:HUNGER)"
+  },
+  {
+   "question": "Does SUID have a distinct postconceptional age pattern compared to other causes of infant mortality?",
+   "comparison": "SUID cases from cdc_linkco15 and ncfrp_v51 are contrasted against deaths due to congenital anomalies, external injuries, or sudden deaths within the same period (2008-2019).",
+   "why_open": "Establishing a unique pattern could provide insights into developmental risk factors specific to SUID.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "Postconceptional age (PCA) (cdc_linkco15:COMBGEST, cdc_natl15:AGED)"
+  },
+  {
+   "question": "Is there a differential incidence of SUID in infants with specific prenatal conditions compared to other causes of infant death?",
+   "comparison": "SUID cases from cdc_linkco15 and ncfrp_v51 are contrasted against deaths due to congenital anomalies, external injuries, or sudden deaths within the same period (2008-2019).",
+   "why_open": "Understanding if specific prenatal conditions uniquely predict SUID would clarify prevention strategies.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "Prenatal conditions (cdc_natl15:GEST_WK_PU, cdc_natl15:HYPERTENS)"
+  }
+ ]
+}

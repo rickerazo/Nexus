@@ -1,0 +1,39 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "SUID cases are more likely to have maternal health problems compared to other neonatal deaths within the same case series.",
+ "rationale": "The design compares specific subgroups of infant mortality within the same case series to identify differences in maternal health conditions, insurance status, and healthcare utilization. The ncfrp_v51 source provides detailed information on child deaths reviewed by fatality review teams, while PRAMS Phase 8 (2016-2021) serves as a population reference.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and bedsharing_ms_v7.C8 provide context but do not address the specific question regarding maternal health problems, insurance coverage, and healthcare visits during pregnancy. The question remains open due to the need for more comprehensive data linkage and better control over confounding variables.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "maternal_health_problems",
+  "insurance_coverage",
+  "healthcare_visits"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4medical",
+  "prams_p8_arf:PG8_ASMA",
+  "prams_p8_arf:PG8_SC",
+  "prams_p8_arf:PG8_NAUS",
+  "prams_p8_arf:PG8_ALRGI",
+  "prams_p8_arf:PG8_PRET",
+  "ncfrp_v51:INF3isscover",
+  "prams_p8_arf:HI_MEDIC",
+  "ncfrp_v51:INF4referinfch",
+  "prams_p8_arf:TYP_ILLN_RAW",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design can establish associations but cannot infer causation due to its observational nature. It also does not account for potential confounding variables that may influence both SUID cases and other neonatal deaths."
+}

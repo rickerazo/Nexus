@@ -1,0 +1,85 @@
+### Design
+
+**Question:** Is there an association between maternal health problems during pregnancy and Sudden Unexpected Infant Death (SUID)?
+
+This question can be addressed through a case-only analysis, where we will examine the prevalence of various maternal health conditions among cases recorded in the National Fatality Review Case Reporting System (NFR-CRS) dataset. The design does not include a population reference to estimate incidence or risk, but rather focuses on comparing proportions of different maternal health issues within the SUID case series.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - This source provides detailed information about child deaths reviewed by fatality review teams.
+  
+No denominator source is needed for this analysis since it does not estimate incidence or risk but rather focuses on comparing proportions among cases.
+
+### Period
+
+**Period:** The manuscript uses data from 2008-2019, which falls within the coverage of ncfrp_v51 (2004-2019).
+
+### Variables
+
+The candidate variables to explore maternal health problems during pregnancy are:
+
+#### Maternal Health Conditions
+- **ncfrp_v51:INFmedical:** During pregnancy did mother have medical complications/infections 
+  - Values: Yes, No, Unknown
+  
+- **ncfrp_v51:INF3prevmedical:** Did mother have medical complications in previous pregnancies
+  - Values: Yes, No, Unknown
+  
+- **ncfrp_v51:INF4medical:** During pregnancy did mother have medical complications/infections
+  - Values: Yes, No, Unknown
+
+#### Pre-pregnancy and Pregnancy Complications:
+- **cdc_linkco15:NO_MMORB:** No Maternal Morbidity Checked [1=True; 0=False; 9=Not Reported]
+  
+- **cdc_natl15:NO_MMORB:** No Maternal Morbidity Reported
+  
+- **prams_p8_arf:MM_NOMD:** BC: No medical risk factors? (Note: This is a composite variable indicating the absence of several types of medical risks)
+  - Values: Yes, No, Unknown
+
+#### Hypertension:
+- **cdc_linkco15:RF_PHYPE:** Pre-pregnancy Hypertension [U=Unknown or not stated]
+  
+- **cdc_natl15:RF_PHYPE:** Pre-pregnancy Hypertension
+  
+- **prams_p8_arf:MM_HBP:** BC: hypertension? (Note: Composite variable indicating pre-pregnancy or gestational hypertension)
+  - Values: Yes, No, Unknown
+
+#### Diabetes:
+- **cdc_linkco15:NO_ABNORM:** No Abnormal Conditions Checked [1=True; 0=False; 9=Not Reported]
+  
+- **cdc_natl15:NO_ABNORM:** No Abnormal Conditions Checked
+  
+- **prams_p8_arf:PG_GDB8:** Health prob during preg -- Diabetes [.B=DK/BLANK; 1=NO; 2=YES]
+
+### Biases
+
+#### Selection Bias
+- The NFR-CRS dataset only includes cases reviewed by fatality review teams, which may not be representative of all SUID cases in the US. Additionally, participation rates vary over time and between states, potentially introducing bias.
+
+#### Information Bias
+- Reporting inconsistencies: Variables related to maternal health conditions are likely to differ in how they are recorded across sources.
+  
+- Missing data: Many variables have missing values or "not reported" categories that need careful handling to avoid biased estimates.
+
+#### Confounding
+- Other unmeasured factors like socioeconomic status, environmental exposures, and postnatal care can confound the observed associations between maternal health conditions and SUID risk. These are not captured by the available data sources.
+
+### What the Design Cannot Establish
+
+This design cannot establish causal relationships or incidence rates. It only allows for an exploratory analysis of associations within a case-only framework. The lack of a denominator source means we cannot calculate risks, odds ratios, or other measures that would imply causation.
+
+### Prior Art
+
+- **SUID Manuscript:** Claims such as C9 and C10 have examined maternal smoking during pregnancy in relation to SUID risk but do not address the broader range of maternal health conditions. This leaves open questions about how various maternal health issues might impact SUID risk independently or interactively.
+  
+- **Bed Sharing Manuscript:** Claims such as C8 and C12 discuss bed sharing, maternal smoking, and prematurity in relation to SUID incidence but do not cover the broader spectrum of maternal health conditions.
+
+### Verdict
+
+**Can these data answer a version of the question?**
+
+Yes, these data can be used to conduct an exploratory analysis examining associations between various maternal health issues (as recorded in ncfrp_v51) and SUID cases. However, due to the case-only design and lack of denominator source, this analysis cannot establish causal relationships or estimate incidence rates.
+
+**Missing Element:**
+To fully address the question with a more robust study design, we would need additional data sources that provide population-level denominators (e.g., live births) for calculating risks and odds ratios.

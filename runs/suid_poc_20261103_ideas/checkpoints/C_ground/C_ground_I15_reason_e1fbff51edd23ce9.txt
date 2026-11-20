@@ -1,0 +1,74 @@
+### Design
+
+**Question Restated:** What is the incidence of Sudden Unexpected Infant Death (SUID) among infants born to mothers who experienced significant medical complications during pregnancy compared to those with uncomplicated pregnancies, from 2016-2021?
+
+**Design Type:**
+Exposure-specific rates. Estimate outcome rates by exposure group by combining cases from a case series (numerator), the exposure prevalence from a population reference source, and the population at risk from a denominator source.
+
+### Sources by Role
+
+**Case Series:** ncfrp_v51
+- **Role:** Provides SUID cases with information on maternal medical complications.
+  
+**Population Reference:** prams_p8_arf, prams_p7_arf
+- **Role:** Supplies exposure prevalence for significant medical complications during pregnancy (weighted survey data from mothers of live births).
+
+**Denominator Source:** cdc_natl15, cdc_linkco15
+- **Role:** Provides population at risk (live births and denominators) to estimate incidence rates.
+
+### Period
+
+Years needed: 2016-2021
+
+Years acquired:
+- ncfrp_v51: Death data needs to be expanded to include cases from 2016-2021.
+- prams_p8_arf, prams_p7_arf: Survey data for live births in 2016-2021 are already included (2016-2021).
+- cdc_natl15, cdc_linkco15: Birth data from 2016-2021 can be acquired.
+
+### Variables
+
+**Maternal Medical Complications:**
+- **ncfrp_v51:** INFmedical (During pregnancy did mother have medical complications/infections)
+- **prams_p8_arf, prams_p7_arf:** MM_FEVER (BC: mom had fever), PG8_UTI (Health prob during preg -- Kidney/bladder infection), PG8_NAUS (Health prob during preg -- Nausea/vomiting/dehydration)
+
+**Exposure Prevalence:**
+- **prams_p8_arf, prams_p7_arf:** WTANAL (BC WT: ANALYSIS WT) for weighted survey data.
+
+**Population at Risk:**
+- **cdc_natl15, cdc_linkco15:** Birth records from 2016 to 2021.
+
+### Biases
+
+**Selection Bias:**
+- ncfrp_v51 only includes cases reviewed by fatality review teams; it does not capture all SUID cases.
+  
+**Information Bias:**
+- **Case Series (ncfrp_v51):** Data on medical complications may be retrospectively reported and less reliable than contemporaneous data from live births.
+- **Population Reference (PRAMS):** Self-reported data can suffer from recall bias or social desirability bias.
+
+**Confounding:**
+- Potential confounders like maternal smoking, socioeconomic status, and preterm birth are not consistently measured across all sources. 
+- Lack of detailed medical records may lead to unmeasured confounders affecting the outcome (SUID).
+
+### What the Design Cannot Establish
+
+This design can estimate exposure-specific rates but cannot establish causation or temporal relationships due to its observational nature.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C10 [limitation]** and **bedsharing_ms_v7.C26 [limitation]** highlight limitations related to data quality and completeness, similar concerns apply here.
+  
+The closest prior work is:
+- **suid_literature_abstracts.C10 [finding]**: Maternal obesity as a risk factor for SUID. This claim addresses another aspect of maternal health but does not address medical complications during pregnancy.
+
+### Verdict
+
+**Can Answer the Question:** Yes, with some limitations and necessary data acquisition.
+- The design can estimate incidence rates using exposure-specific groups from 2016 to 2021 by combining case series (SUID cases), population reference (PRAMS survey data for medical complications), and denominator sources (CDC birth records).
+- However, the study will need additional years of SUID case data (ncfrp_v51) from 2016-2021 to cover the full period.
+
+**Limitations:**
+- Selection bias due to non-comprehensive case series.
+- Information biases in retrospective reporting.
+- Confounding variables like maternal smoking and socioeconomic status may affect results without proper adjustment.

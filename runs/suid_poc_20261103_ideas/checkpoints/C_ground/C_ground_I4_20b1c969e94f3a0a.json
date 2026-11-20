@@ -1,0 +1,27 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers using postpartum contraception differs between those who experienced SUID and those who did not.",
+ "rationale": "This design compares the prevalence of postpartum contraceptive use among mothers with SUID cases to those in a representative sample from PRAMS. The data can support this comparison, though it has limitations due to differences in measurement timing and potential biases.",
+ "prior_art": "None in the inputs; existing manuscripts focus on risk factors like bed sharing and maternal smoking but do not address postpartum contraception use.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "postpartum contraception use",
+  "SUID cases"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4bc",
+  "prams_p8_arf:BC_NOW4",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot establish causality or incidence rates due to the lack of a denominator that includes both live births and infant deaths for the same period."
+}

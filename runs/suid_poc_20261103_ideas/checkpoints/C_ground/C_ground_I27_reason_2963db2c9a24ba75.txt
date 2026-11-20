@@ -1,0 +1,63 @@
+### Design
+
+**Question:**
+How does maternal weight gain during pregnancy correlate with Sudden Unexpected Infant Death (SUID) compared to non-SUID infant deaths?
+
+**Design Restated:**
+The study aims to compare the proportions of maternal weight gain among cases of SUID and other recorded infant deaths using a case-case comparison design. This design compares two groups of cases from the same case series source, where one group represents SUID cases and the other represents non-SUID infant deaths.
+
+### Sources by Role
+
+**Case Series Source:**
+- **ncfrp_v51:** Covers child deaths reviewed by participating fatality review teams; this dataset will provide information on both SUID and non-SUID infant deaths.
+  
+**Population Reference:**
+- None needed for a case-case comparison, as it does not require population prevalence estimates.
+
+### Period
+
+The study period is specified as 2016-2021. The years held for **ncfrp_v51** are 2004-2019, which covers the required period of interest (2016-2021).
+
+### Variables
+
+**Maternal Weight Gain During Pregnancy:**
+- **ncfrp_v51:** INF4momwtgn (Mother's pregnancy weight gain or loss in pounds)
+  - Values: Numeric value representing weight gain/loss
+  - Missing answers: Unknown (INF4momwtgnunk)
+
+**Comparison Group Identification:**
+- **ncfrp_v51:** SUPdthsids and BIO1dthsids to identify SUID cases.
+  
+### Biases
+
+#### Selection Bias:
+- The case series source (NCFRP) captures deaths reviewed by fatality review teams, which may not be fully representative of all infant deaths in the population. Participation rates vary over time.
+
+#### Information Bias:
+- Differences in how maternal weight gain is reported and recorded between the two sources need to be considered.
+  - In **ncfrp_v51**, the variable INF4momwtgn captures weight gain/loss during pregnancy, which may differ from how PRAMS captures it (PGWTGN8).
+  
+#### Confounding:
+- Potential confounders such as maternal smoking, preterm births, and other health conditions should be controlled for in analysis.
+  - **ncfrp_v51:** Variables like RF_PHYPE, IEMweightchange, etc., can help adjust for these factors.
+
+### What the Design Cannot Establish
+
+The design cannot establish causation or incidence rates. It only allows comparison of proportions between SUID and non-SUID cases within the same case series source.
+
+### Prior Art
+
+**Claims Close to the Question:**
+- **suid_literature_abstracts.C10:** Maternal obesity is a risk factor for SUID, with an increased risk associated with higher maternal BMI.
+  - This finding suggests that body weight-related factors during pregnancy may influence SUID incidence but does not specifically address maternal weight gain.
+  
+**Why the Question Is Still Open:**
+- Existing studies have explored various prenatal and environmental factors influencing SUID but lack a specific focus on how maternal weight gain during pregnancy correlates with SUID compared to non-SUID infant deaths.
+
+### Verdict
+
+These sources can answer a version of the question, as they allow for a comparison between SUID cases and other recorded infant deaths using available variables from the **ncfrp_v51** dataset. The main limitation is that it cannot establish incidence rates or causation but only associations within the case series.
+
+### Conclusion
+
+The design uses the NCFRP (ncfrp_v51) as a case series to compare maternal weight gain during pregnancy between SUID cases and non-SUID infant deaths. This comparison can provide insights into relative proportions of weight gain but does not establish incidence or causation. The data available from 2016-2021 in the NCFRP dataset are sufficient for this analysis, though careful consideration of biases is necessary.

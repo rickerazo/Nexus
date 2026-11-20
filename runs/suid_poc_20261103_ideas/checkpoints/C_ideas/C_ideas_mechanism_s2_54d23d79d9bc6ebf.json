@@ -1,0 +1,48 @@
+{
+ "ideas": [
+  {
+   "question": "Does maternal obesity, as measured by prepregnancy body mass index (BMI), influence the postconceptional age (PCA) developmental window for sudden unexpected infant death (SUID)?",
+   "why_open": "While maternal obesity is known to be a risk factor for SUID, it remains unclear how this relationship may affect the critical PCA windows described in previous studies. A deeper understanding could provide insights into targeted prevention strategies based on specific developmental stages.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI) (exposure), postconceptional age (PCA) (outcome), Sudden unexpected infant death (SUID) (outcome)"
+  },
+  {
+   "question": "Is the presence of inner ear dysfunction documented in newborn hearing tests predictive of a heightened risk for sudden unexpected infant death (SUID)?",
+   "why_open": "The potential role of inner ear dysfunction in SUID is intriguing but underexplored. Investigating the link could lead to new preventive measures by identifying and monitoring infants at higher risk.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Newborn Care Interventions (exposure), Inner ear dysfunction (outcome)"
+  },
+  {
+   "question": "Do variations in paternal demographic factors, such as education level and race/ethnicity, correlate with sudden unexpected infant death (SUID) incidence when controlling for maternal smoking and postconceptional age?",
+   "why_open": "The role of paternal characteristics in SUID risk has not been well studied. This research could uncover important social determinants that influence risk factors previously linked to maternal behaviors.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Father's Demographics (exposure), Maternal smoking during pregnancy (covariate), Postconceptional age (PCA) (outcome), Sudden unexpected infant death (SUID) (outcome)"
+  },
+  {
+   "question": "Can the incidence of sudden unexpected infant death (SUID) be predicted by the mother’s prenatal health care visits and duration, including the first trimester?",
+   "why_open": "While maternal smoking is a well-established risk factor for SUID, it remains to be seen whether specific patterns in prenatal healthcare could modulate this risk. This research could inform tailored interventions during pregnancy.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Healthcare Visits During Pregnancy (exposure), Prenatal Care (outcome), Maternal smoking during pregnancy (covariate)"
+  },
+  {
+   "question": "Are there differences in SUID incidence rates among infants born to mothers with varying degrees of socioeconomic status, as measured by household income and number of dependents?",
+   "why_open": "Socioeconomic factors can influence access to prenatal care, environmental exposures, and other risk modifiers. This research could help identify high-risk populations that may benefit from targeted interventions.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Income and Dependent Information (exposure), Sudden unexpected infant death (SUID) (outcome)"
+  }
+ ]
+}

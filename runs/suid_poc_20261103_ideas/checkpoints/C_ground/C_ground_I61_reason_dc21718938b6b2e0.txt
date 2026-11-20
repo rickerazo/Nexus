@@ -1,0 +1,85 @@
+### Design
+
+**Question:** Does the proportion of SUID cases involving maternal stressors change over time?
+
+**Design Type:** Trends within cases. Compare proportions among the cases across periods. When a case series' coverage changes over time, changes in case counts are not changes in incidence.
+
+### Sources by Role
+
+- **Case Series (ncfrp_v51):**
+  - This source provides information on child deaths reviewed by fatality review teams.
+  - It covers SUID cases from 2004 to 2019 and is used to identify the presence of maternal stressors among these cases.
+
+- **Population Reference (prams_p8_arf):**
+  - PRAMS Phase 8 provides data on live births, including mothers' health and behavioral factors during pregnancy.
+  - It serves as a reference for understanding general exposure patterns in the population at risk, such as healthcare visits and support services.
+
+### Period
+
+- **Period:** 2016-2021 (PRAMS Phase 8) 
+- **Case Series Period:** 2004-2019 (ncfrp_v51)
+
+The common period for analysis is from 2016 to 2019, as this overlaps the coverage of both sources.
+
+### Variables
+
+**Maternal Stressors:**
+
+- **ncfrp_v51:** 
+  - `INF4stress`: Mother experienced stressor during pregnancy
+  - `CIR2socpregnancy`: Life stressors - Social/economic - Pregnancy
+  - `INFexpipv`: During pregnancy did mother experience intimate partner violence
+  - `INFissupport`: If yes, prenatal issues - Lack of family/social support
+  - `INF3prevmedical`: Did mother have medical complications in previous pregnancies
+
+- **prams_p8_arf:**
+  - `PG8_ANX`: Health prob during preg -- Anxiety
+  - `MH_PGDX8`: Health prob during preg -- Depression
+  - `VAR: POST-PARTUM DEPRESSION`
+  - `MM_NOMD`: BC: No medical risk factors
+  - `RF_PHYPE`: Prepregnancy hypertension (2020 onwards)
+  
+**Healthcare Visits and Support Services:**
+
+- **ncfrp_v51:** 
+  - `INFisscare`: Access or compliance issues related to prenatal care
+
+- **prams_p8_arf:**
+  - `TYP_MH`: Health care type -- visit for depression or anxiety
+  - `TYP_BC`: Health care type -- visit for family planning / birth control
+  - `TYP_ILLN`: Health care type -- visit for illness
+  - `TYP_OBGN`: Health care type -- checkup with OB/GYN
+
+### Biases
+
+**Selection Bias:**
+- **Case Series (ncfrp_v51):** 
+  - Case ascertainment varies by state and year as participation in the fatality review teams increases over time.
+  
+- **Population Reference (prams_p8_arf):**
+  - Sampling biases may exist due to selective surveying of live births, potentially missing high-risk pregnancies.
+
+**Information Bias:**
+- Maternal stressors and healthcare visits are self-reported differently between case series and population reference. 
+- Case reports might include more detailed information about maternal stressors because they involve in-depth reviews by fatality review teams.
+  
+**Confounding:**
+- Socioeconomic status, urban/rural location, and other contextual factors not measured directly may influence the results.
+
+### What the Design Cannot Establish
+
+The design can only compare proportions of SUID cases involving maternal stressors over time. It cannot establish incidence or causation due to the absence of a denominator source for rates. The comparison is limited to case series data alone.
+
+### Prior Art
+
+- **Manuscript Claims:**
+  - `C12`: Maternal smoking was associated with higher SUID incidence across both windows.
+  - `C14`: Future research will focus on understanding the long-term consequences of separation from the mother in human infants and how it may predispose males to increased vulnerability to SIDS.
+
+The closest claim is `C14`, which suggests that future work should explore environmental stressors, but no study has analyzed changes over time specifically regarding maternal stressors. Thus, the question remains open.
+
+### Verdict
+
+**Yes**, these data can answer a version of the candidate research idea: "Does the proportion of SUID cases involving maternal stressors change over time?" 
+
+However, the design is limited to trends within cases and cannot estimate incidence or causation due to the lack of a denominator source. The study will compare proportions of SUID cases involving maternal stressors from 2016-2019 using ncfrp_v51 (case series) and prams_p8_arf (population reference).

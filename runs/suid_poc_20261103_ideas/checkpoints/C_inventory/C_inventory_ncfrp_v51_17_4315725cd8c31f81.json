@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "SDY72symppsych",
+   "name": "Recent Symptoms",
+   "summary": "Symptoms experienced within the last 72 hours, including psychiatric symptoms, slurred speech, and vomiting."
+  },
+  {
+   "start": "SDYathlete",
+   "name": "Athletic Status",
+   "summary": "Whether the child was an athlete, participation in competitive sports six months prior, and type of sport."
+  },
+  {
+   "start": "SDYblrelaortic",
+   "name": "Blood Relative Health Conditions",
+   "summary": "Health conditions present among blood relatives including aortic aneurysm, arrhythmia, cardiomyopathy, congenital heart disease, connective tissue disease, and others."
+  },
+  {
+   "start": "SDYcardtxablation",
+   "name": "Cardiac Treatments",
+   "summary": "Types of cardiac treatments received such as ablation, catheterization, device placement, surgery, transplant, or none."
+  },
+  {
+   "start": "SDYdiaganeurysm",
+   "name": "Diagnoses",
+   "summary": "Various diagnoses including aneurysm, arrhythmia, asthma, brain hemorrhage, cardiomyopathy, congenital disorders, connective tissue disease, and others."
+  },
+  {
+   "start": "SDYgatekeeper",
+   "name": "Case Classification",
+   "summary": "Whether the case is a gatekeeper case or if the death was due to homicide, suicide, overdose, or injury."
+  },
+  {
+   "start": "SDYphysactbreath",
+   "name": "Physical Activity Symptoms",
+   "summary": "Symptoms experienced during physical activity such as shortness of breath, chest pain, confusion, convulsions, dizziness, fainting, headache, palpitations, and others."
+  },
+  {
+   "start": "SDYpriorinjury",
+   "name": "Previous Injuries",
+   "summary": "Information on previous serious injuries including whether they occurred and details of the injury if applicable."
+  }
+ ]
+}

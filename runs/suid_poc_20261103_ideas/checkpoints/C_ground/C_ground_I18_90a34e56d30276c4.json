@@ -1,0 +1,32 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers with any medical complications during pregnancy is higher among those whose infants experienced SUID compared to the general population of new mothers.",
+ "rationale": "This study uses a case series (ncfrp_v51) for SUID cases and a population reference (prams_p7_arf) for exposure prevalence, along with a denominator source (cdc_linkco15) for live births in 2015. The design allows estimating the proportion of mothers with medical complications during pregnancy between SUID cases and the general population.",
+ "prior_art": "The closest tested work is SUID_manuscript_v9_clean.C10, which excludes certain preterm infants who died early in postnatal life. This study still addresses an understudied aspect by focusing on maternal health issues related to SUID incidence.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_linkco15"
+ ],
+ "period_start": 2015,
+ "period_end": 2015,
+ "required_concepts": [
+  "Maternal Physical Health Problems",
+  "SUID Cases",
+  "General Population of New Mothers"
+ ],
+ "variables": [
+  "ncfrp_v51:INFmedical",
+  "prams_p7_arf:WTANAL",
+  "cdc_linkco15:NO_MMORB"
+ ],
+ "cannot_establish": "Causation, temporal relationships between maternal health issues and SUID incidence."
+}

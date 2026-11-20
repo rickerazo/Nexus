@@ -1,0 +1,80 @@
+{
+ "ideas": [
+  {
+   "question": "How does the prevalence of hospital overnight stays among infants differ between low birthweight and non-low birthweight cases in the case series?",
+   "comparison": "Cases are compared based on their birthweight status (low vs. non-low) within the case series.",
+   "why_open": "This question explores whether neonatal health complications requiring postnatal hospitalization differ by birth weight among infant deaths, reflecting early life vulnerability and care needs.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D82",
+    "D67"
+   ],
+   "data": "Use D82 to compare hospital overnight stay prevalence between low and non-low birthweight infants (from domain D67). Weight or stratify by relevant demographic variables as needed."
+  },
+  {
+   "question": "Does the presence of medical complications during pregnancy differ based on maternal prepregnancy BMI in the case series?",
+   "comparison": "Cases are compared based on maternal prepregnancy BMI levels within the case series.",
+   "why_open": "This question aims to understand if there is a relationship between maternal obesity and neonatal health outcomes, indicating potential avenues for intervention.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D68",
+    "D67",
+    "D240"
+   ],
+   "data": "Use D68 to analyze medical complications during pregnancy and compare them across prepregnancy BMI categories (from domain D240). Adjust for other relevant factors as necessary."
+  },
+  {
+   "question": "How does the distribution of infant sleep environments vary among infants who died from SUID compared with those in non-SUID deaths, focusing on shared sleeping surfaces within the case series?",
+   "comparison": "Cases are stratified based on cause-of-death categories (SUID vs. non-SUID) and further by whether the infant was sharing a sleeping surface at time of death.",
+   "why_open": "This question addresses discrepancies in sleep environment safety for infants who suffer SUID versus those who die from other causes, potentially highlighting risk factors specific to certain scenarios.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D201",
+    "D198"
+   ],
+   "data": "Use D201 (sleeping location) and stratify by SUID vs. non-SUID cause of death, then further analyze differences in shared sleeping surface conditions (from domain D198)."
+  },
+  {
+   "question": "What are the trends in hospital overnight stays among infants who experienced postnatal medical complications versus those without such complications within the case series?",
+   "comparison": "Cases with and without documented postnatal medical complications during their stay after birth.",
+   "why_open": "This query investigates whether infants requiring extended hospital stays due to complications have distinct characteristics compared to those discharged shortly after birth, aiding in targeted early intervention strategies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D84",
+    "D246"
+   ],
+   "data": "Utilize D84 (hospital overnight stay) and compare with the presence of postnatal medical complications from domain D246, analyzing differences in hospitalization trends between groups."
+  },
+  {
+   "question": "How does the history of maternal mental health problems relate to the likelihood of a child experiencing SUID compared to non-SUID deaths within the case series?",
+   "comparison": "Cases are stratified based on whether the mother has documented history of mental health issues versus none.",
+   "why_open": "This question explores potential links between maternal psychological well-being and infant mortality risk, offering insights into preventive measures.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D240",
+    "D68"
+   ],
+   "data": "Utilize domain D240 to capture maternal health conditions, specifically focusing on mental health issues. Compare these against SUID vs. non-SUID death outcomes (using domains like D68 for further context)."
+  }
+ ]
+}

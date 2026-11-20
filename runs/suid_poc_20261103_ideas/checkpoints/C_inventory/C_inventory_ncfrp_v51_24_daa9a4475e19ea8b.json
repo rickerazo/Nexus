@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "REVssrec",
+   "name": "Data Sources",
+   "summary": "Availability of various data sources for review by the team."
+  },
+  {
+   "start": "OUTid",
+   "name": "Case ID",
+   "summary": "Unique identifier for each case, not linking to other tables."
+  },
+  {
+   "start": "ISSculbeliefs",
+   "name": "Cultural Issues",
+   "summary": "Beliefs and cultural barriers related to pregnancy and health."
+  },
+  {
+   "start": "ISSdocinconsist",
+   "name": "Document Quality",
+   "summary": "Inconsistent or unclear information in documents, missing data, lack of doll re-enactment, death scene investigation, and other document issues."
+  },
+  {
+   "start": "ISSdvcpsrefer",
+   "name": "Child Welfare",
+   "summary": "CPS referrals, current and historical abuse/neglect involving the infant and family members."
+  },
+  {
+   "start": "ISSenfhousing",
+   "name": "Environmental Factors",
+   "summary": "Substandard housing, misuse of apnea monitors, improper sleep positions, breastfeeding issues, car seat use, formula preparation problems, lack of supervision, objects in sleep environment, overcrowding, overheating, second-hand smoke exposure, unsafe neighborhood, and other environmental risks."
+  },
+  {
+   "start": "ISSfamfailcontr",
+   "name": "Family Circumstances",
+   "summary": "Failed contraception, unintended pregnancy, lack of knowledge about birth control methods, no birth control use, family transitions such as divorce or frequent moves, living in shelters, and other family issues."
+  },
+  {
+   "start": "ISShxsubalc",
+   "name": "Health History",
+   "summary": "Alcohol history, birth injuries, congenital anomalies, developmental delays, low birth weight conditions, feeding problems, infections, intrauterine growth restriction, prematurity, prenatal drug use, respiratory distress syndrome, and other health issues."
+  }
+ ]
+}

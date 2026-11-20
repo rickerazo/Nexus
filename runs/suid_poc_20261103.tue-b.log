@@ -1,0 +1,70 @@
+INFO mmf.pipeline: ingest_cdc_linkco15: cache hit
+WARNING mmf.pipeline: ingest_cdc_linkco15: 14 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/cdc_linkco15.audit.json
+INFO mmf.pipeline: ingest_cdc_natl15: cache hit
+WARNING mmf.pipeline: ingest_cdc_natl15: 10 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/cdc_natl15.audit.json
+INFO mmf.pipeline: ingest_cdc_codenames: cache hit
+INFO mmf.pipeline: ingest_ncfrp_v51: cache hit
+WARNING mmf.pipeline: ingest_ncfrp_v51: 16 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/ncfrp_v51.audit.json
+INFO mmf.pipeline: ingest_prams_p8_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_arf: 64 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p8_arf.audit.json
+INFO mmf.pipeline: ingest_prams_p8_std2: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_std2: 2 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p8_std2.audit.json
+INFO mmf.pipeline: ingest_prams_p7_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p7_arf: 55 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p7_arf.audit.json
+INFO mmf.pipeline: A_SUID_manuscript_v9_clean: cache hit
+INFO mmf.pipeline: A_bedsharing_ms_v7: cache hit
+INFO mmf.pipeline: A_suid_literature_abstracts: cache hit
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_3_0 attempt 1 rejected: ["mapping for 'Maternal smoking during pregnancy': 'INFsmanytime' is not a documented variable in ncfrp_v51", "mapping for 'Preterm birth': 'INFgestage' is not a documented variable in ncfrp_v51", "mapping for 'Breastfeeding status at discharge': 'INFbreastatdeath' is not a documented variable in ncfrp_v51"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_4_0 attempt 1 rejected: ["mapping for 'Maternal prepregnancy body mass index (BMI)': 'BIO1mombmi' is not a documented variable in ncfrp_v51"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_5_0 attempt 1 rejected: ["mapping for 'year of birth or death': 'INVdateday' is not a documented variable in ncfrp_v51"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_5_0 attempt 2 rejected: ["mapping for 'Sudden unexpected infant death (SUID)': 'INVdisastername' not documented in ncfrp_v51; put one variable name per mapping and add a separate mapping row for each additional variable", "mapping for 'year of birth or death': 'INVdateyear' is not a documented variable in ncfrp_v51", "mapping for 'SUID': 'INVdisastername' not documented in ncfrp_v51; put one variable name per mapping and add a separate mapping row for each additional variable"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.pipeline: B: B_schema_map_0_0: no row for 3 (concept, source) pair(s): sex / cdc_linkco15; birthweight / cdc_linkco15; chronological age / cdc_linkco15
+WARNING mmf.pipeline: B: B_schema_map_1_0: no row for 2 (concept, source) pair(s): sex / cdc_natl15; birthweight / cdc_natl15
+WARNING mmf.pipeline: B: B_schema_map_2_0: no row for 2 (concept, source) pair(s): sex / cdc_codenames; birthweight / cdc_codenames
+WARNING mmf.pipeline: B: B_schema_map_3_0: 4 multi-variable rows split into one row per variable
+WARNING mmf.pipeline: B: B_schema_map_3_0: no row for 3 (concept, source) pair(s): sex / ncfrp_v51; birthweight / ncfrp_v51; chronological age / ncfrp_v51
+WARNING mmf.pipeline: B: B_schema_map_6_0: no row for 2 (concept, source) pair(s): sex / ncfrp_v51; birthweight / ncfrp_v51
+WARNING mmf.pipeline: B: B_schema_map_8_0: 4 multi-variable rows split into one row per variable
+WARNING mmf.pipeline: B: B_schema_map_8_0: no row for 2 (concept, source) pair(s): sex / ncfrp_v51; birthweight / ncfrp_v51
+WARNING mmf.pipeline: B: B_schema_map_9_0: no row for 5 (concept, source) pair(s): chronological age / ncfrp_v51; diaphragm activity / ncfrp_v51; vagus nerve activity / ncfrp_v51; cervical sympathetic nerve activity / ncfrp_v51; chronic intermittent hypoxia (IH) / ncfrp_v51
+WARNING mmf.pipeline: B: B_schema_map_10_0: no row for 3 (concept, source) pair(s): sex / ncfrp_v51; birthweight / ncfrp_v51; Gestational age at birth / ncfrp_v51
+WARNING mmf.pipeline: B: B_schema_map_11_0: no row for 2 (concept, source) pair(s): sex / prams_p8_arf; birthweight / prams_p8_arf
+WARNING mmf.pipeline: B: B_schema_map_12_0: no row for 2 (concept, source) pair(s): sex / prams_p8_std2; birthweight / prams_p8_std2
+WARNING mmf.pipeline: B: B_schema_map_13_0: no row for 2 (concept, source) pair(s): sex / prams_p7_arf; birthweight / prams_p7_arf
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+WARNING mmf.pipeline: B_check: 70 (concept, source) pair(s) where embeddings and the LLM disagree; {'agree': 42, 'llm_outside_topk': 24, 'possible_miss': 46, 'both_none': 266}
+Stage B awaits review: edit runs/suid_poc_20261103/review_B.md and set 'approved: true', then re-run.
+Resume with: mmf run configs/suid.yaml --run-dir runs/suid_poc_20261103

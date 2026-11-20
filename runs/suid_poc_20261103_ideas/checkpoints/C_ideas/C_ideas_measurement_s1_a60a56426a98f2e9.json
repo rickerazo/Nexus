@@ -1,0 +1,92 @@
+{
+ "ideas": [
+  {
+   "question": "How does pregnancy weight gain differ between case series SUID deaths recorded in NCFRP_v51 and population reference births reported in PRAMS_P8_ARF?",
+   "comparison": "Compare the concept of pregnancy weight gain in cases of sudden unexpected infant death (SUID) as recorded by the National Fatality Review Case Reporting System (NFR-CRS, source: ncfrp_v51) with the same concept for live births reported through the Pregnancy Risk Assessment Monitoring System (PRAMS, sources: prams_p8_arf and prams_p8_std2).",
+   "why_open": "The pregnancy weight gain data are recorded differently in death case reports versus population reference surveys. SUID cases may be underreported due to incomplete medical records or inaccurate self-reporting from family members post-facto, while live birth surveys may capture more accurate and consistent information directly from the mother.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p8_std2"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D88",
+    "D299"
+   ],
+   "data": "Case series: ncfrp_v51 / Pregnancy Weight Gain (D88). Population reference: prams_p8_arf / Pregnancy Weight Gain (D299), prams_p8_std2 / Pregnancy Weight Gain (D299)."
+  },
+  {
+   "question": "How does maternal physical health assessment differ between SUID cases recorded in NCFRP_v51 and live births reported through PRAMS_P7_ARF?",
+   "comparison": "Compare the concept of maternal physical health conditions as recorded by NCFRP (source: ncfrp_v51) for SUID cases versus the same information from PRAMS (source: prams_p7_arf) for live births.",
+   "why_open": "Maternal physical health is assessed differently in case series and population reference sources. SUID case reviews may capture a broader range of conditions, including acute complications not identified during pregnancy monitoring, while PRAMS focuses on pre-pregnancy and prenatal health status reported by the mother directly.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D240",
+    "D302"
+   ],
+   "data": "Case series: ncfrp_v51 / Maternal Weight and Care (D240). Population reference: prams_p7_arf / Maternal Physical Attributes (D302)."
+  },
+  {
+   "question": "How do prenatal care visits reported in PRAMS differ from those recorded for SUID cases by NCFRP_v51?",
+   "comparison": "Compare the frequency and quality of prenatal care visits as documented in PRAMS surveys for live births against how these are captured in NCFRP case reports for SUID deaths.",
+   "why_open": "Prenatal care information may be more detailed and accurate from population reference sources where mothers report directly, compared to cases series that rely on medical records or proxy reporting which might miss nuances of regular visits.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D243",
+    "D272"
+   ],
+   "data": "Case series: ncfrp_v51 / Prenatal Care Issues (D243). Population reference: prams_p7_arf / Healthcare Visits During Pregnancy (D272), prams_p8_arf / Healthcare Visits During Pregnancy (D272)."
+  },
+  {
+   "question": "What discrepancies exist in reporting infant sleeping arrangements between SUID case reports and PRAMS surveys?",
+   "comparison": "Compare the consistency of infant sleep environment details reported by parents via PRAMS for live births versus proxy-reported information documented in NCFRP cases for SUID deaths.",
+   "why_open": "Sleeping arrangements are a critical factor studied for SIDS risk but may be inconsistently reported. Parents directly reporting to surveys might provide more reliable data on typical practices compared to emergency case reviews or family member recall post-event.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D102",
+    "D281"
+   ],
+   "data": "Case series: ncfrp_v51 / Infant Sleep Environment (D102). Population reference: prams_p8_arf / Sleeping Arrangements (D281)."
+  },
+  {
+   "question": "How does the recording of mental health conditions in SUID cases differ from live birth reports in PRAMS?",
+   "comparison": "Examine discrepancies in documenting maternal mental health conditions between NCFRP case reviews for SUID deaths and direct mother surveys conducted through PRAMS for live births.",
+   "why_open": "Maternal mental health can significantly influence infant outcomes. Direct self-reports to PRAMS might yield more nuanced data than medical record or proxy reporting after a sudden death event.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D66",
+    "D270"
+   ],
+   "data": "Case series: ncfrp_v51 / Medical Complications (D66), Maternal Health Conditions (D243). Population reference: prams_p8_arf / Maternal Physical Attributes (D302), pre-pregnancy health checks (D304); PRAMS Phase 7 codebook: pre-pregnancy health problems (D270)."
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+### Design
+
+**Question:** Are there differences in maternal stressors between SUID cases and the general population?
+
+**Design:** Case-population comparison. Compare how common an exposure is among the cases (from a case series) with its weighted prevalence in the general population (from a population reference source).
+
+**Sources by Role:**
+- **Case Series:** ncfrp_v51
+  - **Reason:** Captures detailed information on child deaths reviewed by fatality review teams, including maternal stressors.
+- **Population Reference:** prams_p8_arf and prams_p7_arf
+  - **Reason:** Provides weighted prevalence of maternal stressors among live births sampled from birth certificates in participating states.
+- **Denominator Source:** cdc_natl15
+  - **Reason:** Supplies the total number of live births to calculate incidence.
+
+### Period
+
+**Period:** 2016-2021 (PRAMS Phase 8, used for SUID cases), and 2012-2015 (PRAMS Phase 7) for population reference.
+
+### Variables
+
+#### Maternal Stressors
+- **Case Series (ncfrp_v51):**
+  - `INF4stress`: Mother experienced a stressor during pregnancy.
+  - `CIR2socpregnancy`: Life stressors – social/economic during pregnancy.
+  - `INF3prevmedical`: Did mother have medical complications in previous pregnancies.
+- **Population Reference (PRAMS Phase 8 and PRAMS Phase 7):**
+  - `PG8_ANX`: Health problem during pregnancy -- anxiety.
+  - `VAR: POST-PARTUM DEPRESSION`
+  - `STRS_WRK`, `STRS_FM3`, `STRS_DRG`: Stressors related to job loss, family member illness, and drug use.
+
+### Biases
+
+**Selection Bias:** 
+- **Case Series (ncfrp_v51):** Only captures cases reviewed by fatality review teams; cases may be overrepresented in certain regions or demographics.
+- **Population Reference (PRAMS Phase 8 and PRAMS Phase 7):** Surveys are weighted to represent the general population, but sampling bias can still occur if certain groups are underrepresented.
+
+**Information Bias:**
+- **Case Series:** Variables measured at different times post-mortem vs. during pregnancy for live births.
+- **Population Reference (PRAMS):** Self-reported data may be subject to recall biases and social desirability biases.
+
+**Confounding:**
+- Unmeasured confounders such as socioeconomic status, education level, healthcare access, and other environmental factors could influence both maternal stressors and SUID risk. These are not fully captured in the available variables.
+
+### What the Design Cannot Establish
+
+The design can establish differences in the prevalence of maternal stressors between SUID cases and live births but cannot establish causation or estimate incidence rates due to lack of a denominator that links directly to individual case data.
+
+### Prior Art
+
+**Closest Claims:**
+- **SUID_manuscript_v9_clean.C10:** The analysis excludes certain death categories, similar to how the proposed study will exclude non-SUID cases.
+- **bedsharing_ms_v7.C11 and C23:** Findings related to maternal smoking and prematurity, which are also confounders in this study.
+
+**Why Open:**
+- The manuscript does not directly address differences in maternal stressors between SUID cases and the general population. While there is some discussion of risk factors like smoking and prematurity, no claim specifically examines maternal stressors as a comparative factor.
+
+### Verdict
+
+These data can be used to conduct a case-population comparison for maternal stressors but cannot establish causation or incidence rates due to the lack of direct linkage between cases and denominators. The study design is feasible given the proposed variables and sources, though it will require careful handling of potential biases in measurement and selection.
+
+### Missing Elements
+
+- **Denominator Source:** While `cdc_natl15` provides a denominator for live births, there is no direct link to individual SUID cases, making incidence rate estimation challenging.
+- **Direct Linkage:** A source that directly links SUID cases to live birth denominators would be necessary to estimate rates and account for confounding factors more rigorously.
+
+### Conclusion
+
+The proposed study design can establish differences in maternal stressor prevalence between SUID cases and the general population, but it cannot fully address incidence or causation due to lack of direct linkage data.

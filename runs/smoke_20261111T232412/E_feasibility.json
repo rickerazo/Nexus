@@ -1,0 +1,200 @@
+{
+  "reports": [
+    {
+      "strategy_id": "S1",
+      "resolutions": [
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "UCOD"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "UCOD",
+            "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+            "type": "unknown",
+            "levels": [
+              "R95 = SIDS",
+              "R99 = UNSPECIFIED",
+              "W75 = ACCIDENTAL SUFFOCATION"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: ICDF (not explicitly stated, inferred from documentation format). Type: categorical"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "CIG_REC"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "CIG_REC",
+            "label": "Cigarette smoking during pregnancy",
+            "type": "unknown",
+            "levels": [
+              ".B=DK/BLANK",
+              "1=NO",
+              "2=YES"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "format=NYF"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "COMBGEST"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "COMBGEST",
+            "label": "Combined gestation in weeks GESTF 17-47=WEEKS",
+            "type": "unknown",
+            "levels": [
+              "99=UNKNOWN"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: GESTF (not explicitly stated, inferred from documentation format). Type: ordinal"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "AGED"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "AGED",
+            "label": "Age at death in days NUMF 0-364=DAYS",
+            "type": "unknown",
+            "levels": [
+              "0-364 = DAYS"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: NUMF (not explicitly stated, inferred from documentation format). Type: continuous"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "SEX"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "SEX",
+            "label": "Sex of infant",
+            "type": "unknown",
+            "levels": [
+              "1=MALE",
+              "2=FEMALE"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "format=SEXF"
+          },
+          "note": ""
+        }
+      ],
+      "blockers": [],
+      "caveats": [
+        "The variable `UCOD` (Underlying cause of death) is documented as categorical with levels 'R95 = SIDS', 'R99 = UNSPECIFIED', and 'W75 = ACCIDENTAL SUFFOCATION'. However, the documentation does not specify if these codes are mutually exclusive or if a single death can be classified under multiple categories. This ambiguity could affect the interpretation of sudden unexpected infant death risk.",
+        "The variable `CIG_REC` (Cigarette smoking during pregnancy) is documented as having levels '.B=DK/BLANK', '1=NO', and '2=YES'. The level '.B=DK/BLANK' indicates missing or unknown data, which could introduce bias if not properly accounted for in the analysis.",
+        "The variable `COMBGEST` (Combined gestation in weeks) is documented as having a single level '99=UNKNOWN', indicating that there may be substantial missingness in gestational age information. This missingness can affect the stratification by postconceptional age and introduce bias if not addressed appropriately.",
+        "The variable `AGED` (Age at death in days) is continuous but documented as having levels '0-364 = DAYS'. The documentation does not specify how to handle ages outside this range, which could be a limitation for the analysis of postconceptional age effects.",
+        "Linkage between prenatal smoking (`CIG_REC`) and gestational age (`COMBGEST`) is required but not explicitly documented. This linkage may introduce additional complexity in data management and potential missingness issues."
+      ],
+      "cross_source_notes": [],
+      "not_assessed": [
+        "statistical power",
+        "causal validity / confounding adequacy",
+        "actual missingness rates (documentation only; no row-level data read)"
+      ]
+    },
+    {
+      "strategy_id": "S2",
+      "resolutions": [
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "UCOD"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "UCOD",
+            "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+            "type": "unknown",
+            "levels": [
+              "R95 = SIDS",
+              "R99 = UNSPECIFIED",
+              "W75 = ACCIDENTAL SUFFOCATION"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: ICDF (not explicitly stated, inferred from documentation format). Type: categorical"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "SEX"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "SEX",
+            "label": "Sex of infant",
+            "type": "unknown",
+            "levels": [
+              "1=MALE",
+              "2=FEMALE"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "format=SEXF"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "COMBGEST"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "COMBGEST",
+            "label": "Combined gestation in weeks GESTF 17-47=WEEKS",
+            "type": "unknown",
+            "levels": [
+              "99=UNKNOWN"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: GESTF (not explicitly stated, inferred from documentation format). Type: ordinal"
+          },
+          "note": ""
+        }
+      ],
+      "blockers": [],
+      "caveats": [
+        "The variable `UCOD` is documented as having a level 'R95 = SIDS', which matches the strategy's definition of Sudden Infant Death Syndrome. However, it also includes levels for unspecified causes ('R99') and accidental suffocation ('W75'), which may introduce variability in the outcome classification that could affect the risk assessment.",
+        "The variable `COMBGEST` is documented as having a level '99=UNKNOWN', indicating likely missingness or unknown gestational age. This missing data can impact the accuracy of postconceptional age calculations and thus the timing analysis specified in the research question.",
+        "The linkage between `SEX`, `UCOD`, and `COMBGEST` variables is required to ensure that all necessary information for each infant death record is available, which may introduce additional complexity or missing data issues if not fully linked."
+      ],
+      "cross_source_notes": [],
+      "not_assessed": [
+        "statistical power",
+        "causal validity / confounding adequacy",
+        "actual missingness rates (documentation only; no row-level data read)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+### Design
+
+**Question:** What changes have occurred in the proportion of SUID cases with maternal health conditions during pregnancy from 2008 to 2019?
+
+This design compares proportions among cases across different periods using a case series (ncfrp_v51) and a population reference (PRAMS). Since there is no denominator source, we cannot estimate incidence or rates. Instead, the study will compare trends in proportions of SUID cases with maternal health conditions over time.
+
+### Sources by Role
+- **Case Series:** ncfrp_v51 (2008-2019) – This dataset provides detailed information on child deaths reviewed by fatality review teams, including maternal health conditions during pregnancy.
+- **Population Reference:** prams_p8_arf and prams_p7_arf – These datasets provide population-level data from weighted surveys of mothers shortly after live births, which can be used to estimate prevalence of maternal health conditions in the general population.
+
+### Period
+**Years Needed:**
+- ncfrp_v51 (2008-2019)
+- prams_p7_arf (2012-2015)
+- prams_p8_arf (2016-2021)
+
+All these years are already held, so no additional data acquisition is needed.
+
+### Variables
+**Maternal Health Conditions During Pregnancy:**
+- **ncfrp_v51:** 
+  - `INF4medical`: Medical complications/infections during pregnancy.
+  - `ISSprechronicdiseasebef`, `ISSprechronicdiseaseaft`: Chronic disease control before and after pregnancy.
+  - `INF3prevmedical`: Previous medical complications during previous pregnancies.
+
+- **prams_p8_arf & prams_p7_arf:**
+  - `MM_NOMD`: No medical risk factors (if all risk factors are coded as "no").
+  - `PG8_NAUS`, `PG8_ALRGI`, `PG8_SC`, `PG8_ASMA`, `PG8_PRET`: Specific health problems during pregnancy (e.g., nausea, allergies, sickle cell).
+
+### Biases
+**Selection Bias:**
+- **ncfrp_v51:** The cases are those reviewed by fatality review teams and may not be representative of all SUID cases.
+- **PRAMS:** The surveys sample mothers who had live births and are weighted to represent the population. PRAMS does not capture infant deaths.
+
+**Information Bias:**
+- Reporting differences between case series (ncfrp_v51) and population reference (prams).
+  - Case series may have more detailed information on medical conditions due to comprehensive reviews.
+  - Population surveys may underreport or misclassify certain health conditions.
+
+**Confounding:**
+- Potential confounders like socioeconomic status, access to healthcare, geographic location, and demographic factors are not consistently measured across all sources. These differences can lead to biased comparisons between the case series and population reference.
+
+### What the Design Cannot Establish
+- **Incidence:** Without a denominator source, incidence rates or risk cannot be calculated.
+- **Causation:** Observational data from this design do not establish causality; only associations can be inferred.
+- **Population Representativeness:** The fatality review case series is unlikely to capture all SUID cases and may overrepresent certain subgroups with higher reporting.
+
+### Prior Art
+**Manuscript Claims:**
+- C10 [limitation]: Excludes cases at the extremes of PCA distribution, including extremely preterm infants.
+- C11 [limitation]: Does not account for postnatal exposures that change during infancy.
+- suid_literature_abstracts.C10 [finding]: Maternal obesity increases SUID risk.
+- suid_literature_abstracts.C11 [finding]: Maternal smoking significantly increases the risk of SUID.
+
+These claims discuss maternal health conditions (e.g., smoking, obesity) and their association with SUID but do not provide longitudinal trends in proportions of cases with these conditions. Thus, this question remains open for analysis using the proposed design.
+
+### Verdict
+**Can be Answered:**
+Yes, the proposed data sources can answer a version of the question by comparing changes in the proportion of SUID cases with maternal health conditions from 2008 to 2019 using ncfrp_v51 as the case series and PRAMS (prams_p7_arf and prams_p8_arf) as population references. However, limitations such as selection bias, information bias, and confounding must be acknowledged in interpreting results.
+
+**Logical Reason:**
+The design uses a longitudinal comparison of proportions within a case series (ncfrp_v51) to examine trends over time without needing a denominator source for incidence estimates. The inclusion of PRAMS datasets provides context on general population prevalence but does not impact the trend analysis directly.
+
+**Epistemological Reason:**
+While the study cannot establish causation or provide precise incidence rates, it can offer insights into changes in case characteristics over time within the reviewed SUID cases.

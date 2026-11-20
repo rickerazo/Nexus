@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "BFINF_HOT_RAW",
+   "name": "Breastfeeding Information Sources",
+   "summary": "Whether the mother received breastfeeding information from various sources."
+  },
+  {
+   "start": "INFLIVE5_RAW",
+   "name": "Infant Status",
+   "summary": "Current status of the infant, including whether alive and living with the mother."
+  },
+  {
+   "start": "LTH_HOSP",
+   "name": "Hospital Stay Length",
+   "summary": "Length of time the baby stayed in the hospital after birth."
+  },
+  {
+   "start": "BF5EVER_RAW",
+   "name": "Breastfeeding Practices",
+   "summary": "Whether the mother ever breastfed, duration of breastfeeding, and whether she is still breastfeeding."
+  },
+  {
+   "start": "SLEEPOWN_RAW",
+   "name": "Sleeping Arrangements",
+   "summary": "Details about where and how the baby sleeps, including sleeping alone or with a parent in the same room."
+  },
+  {
+   "start": "BCB_PREG_RAW",
+   "name": "Postpartum Contraception Barriers",
+   "summary": "Reasons why the mother did not want to use postpartum contraception methods."
+  },
+  {
+   "start": "PPV_CHK",
+   "name": "Postpartum Visits and Recommendations",
+   "summary": "Whether the mother received a postpartum visit, including specific recommendations from healthcare providers."
+  },
+  {
+   "start": "INCOME8",
+   "name": "Income and Dependent Information",
+   "summary": "Total household income in the past 12 months and number of dependents."
+  }
+ ]
+}

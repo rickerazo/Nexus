@@ -1,0 +1,33 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The measurement of pregnancy weight gain differs between SUID cases recorded in NCFRP_v51 and live births reported in PRAMS_P8_ARF.",
+ "rationale": "This study aims to compare how the concept of pregnancy weight gain is measured differently in two distinct data sources: the National Fatality Review Case Reporting System (NFR-CRS) for SUID deaths, and the Pregnancy Risk Assessment Monitoring System (PRAMS) for live births. The design can only compare proportions or odds among cases due to the lack of a denominator source.",
+ "prior_art": "The closest tested work is bedsharing_ms_v7.C18, which discusses ascertainment heterogeneity but does not focus on pregnancy weight gain data. This question remains open as it addresses measurement differences that may reflect real disparities in data collection methods.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C18"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "pregnancy weight gain"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4momwtgnunk",
+  "ncfrp_v51:INF4momwtgn",
+  "prams_p8_arf:MOMLBS",
+  "prams_p8_arf:PG8_NAUS",
+  "prams_p7_arf:MOMLBS",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish incidence rates or causation due to the lack of a denominator source for SUID cases."
+}

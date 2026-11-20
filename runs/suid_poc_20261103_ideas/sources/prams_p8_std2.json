@@ -1,0 +1,66 @@
+{
+  "id": "prams_p8_std2",
+  "title": "PRAMS Phase 8 Standard Section II codebook",
+  "document_path": "data/codebooks/PRAMS_Phase_8_Standard_Section_II_Codebook.pdf",
+  "document_sha256": "792402034db4bcfefa3f908a18b42c9438171f9b0e323624163c22066604eeee",
+  "variables": [
+    {
+      "name": "PGWTGN8",
+      "label": "Preg weight gain",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK",
+        ".D=DK",
+        ".S=SKIP",
+        "77=DK"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=NUMSDF"
+    },
+    {
+      "name": "PGWTGN8_DK",
+      "label": "Preg weight gain (DONT KNOW = 7777)",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK",
+        ".S=SKIP",
+        "77=DK",
+        "7777=DK"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=NUMSDF"
+    },
+    {
+      "name": "PGWTGNU8",
+      "label": "Unit of preg weight gain",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK",
+        ".D=DONT KNOW",
+        "1=POUNDS",
+        "2=KILOGRAMS",
+        "3=DIDNT GAIN WEIGHT"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=PGWTGNU8F"
+    },
+    {
+      "name": "PGWTGNU8_DK",
+      "label": "Unit of preg weight gain (DONT KNOW = 7)",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK",
+        "1=POUNDS",
+        "2=KILOGRAMS",
+        "3=DIDNT GAIN WEIGHT",
+        "7=DONT KNOW"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=PGWTGNU8F"
+    }
+  ]
+}

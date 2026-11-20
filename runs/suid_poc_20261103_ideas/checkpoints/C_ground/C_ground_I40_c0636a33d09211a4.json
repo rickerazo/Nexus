@@ -1,0 +1,30 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "Infants with previous hospitalizations for medical complications are more likely to be SUID cases compared to other causes of infant death.",
+ "rationale": "The case-case comparison using ncfrp_v51 can compare proportions among cases but cannot establish causation or incidence rates due to the absence of denominator sources for live births.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and bedsharing_ms_v7.C21 provide related findings on risk factors, but do not address previous hospitalizations for medical complications specifically. The question remains open as these studies did not examine this specific variable in relation to SUID cases.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C21"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "previous medical complications",
+  "cause of death"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3prevmedical",
+  "ncfrp_v51:INF4medical",
+  "ncfrp_v51:INF2acuteill",
+  "ncfrp_v51:INF72infinj",
+  "ncfrp_v51:INFchronlung"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates; it can only compare proportions of infants with prior medical complications between SUID cases and other causes of death."
+}

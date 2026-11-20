@@ -1,0 +1,32 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "Among SUID cases, infants who spent time in the hospital overnight after birth are more likely to have been born preterm compared to those who did not.",
+ "rationale": "The design uses a case-only approach to compare hospital stay status and gestational age among SUID cases. It does not estimate incidence or risk but compares proportions within the case series.",
+ "prior_art": "None in the inputs; existing claims focus on developmental windows, bed sharing, and maternal smoking but do not address hospital stays and gestational age at birth.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "hospital overnight stay status",
+  "gestational age at birth"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn",
+  "ncfrp_v51:INF372infinj",
+  "ncfrp_v51:CIRdeathsleepenv",
+  "ncfrp_v51:INFprevpreterm",
+  "ncfrp_v51:INF4infhospdays",
+  "ncfrp_v51:INF4hosprtnold",
+  "ncfrp_v51:INF3nicu",
+  "ncfrp_v51:INF4hosprtnnum",
+  "ncfrp_v51:INF4hosprtnoldunk",
+  "ncfrp_v51:INF4hosprtnnumunk"
+ ],
+ "cannot_establish": "incidence, risk estimates, or causation due to lack of denominator source and uncontrolled confounding factors."
+}

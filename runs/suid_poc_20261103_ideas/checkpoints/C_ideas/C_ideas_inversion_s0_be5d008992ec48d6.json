@@ -1,0 +1,47 @@
+{
+ "ideas": [
+  {
+   "question": "What protective factors are present among infants with maternal smoking during pregnancy who do not experience sudden unexpected infant death (SUID)?",
+   "why_open": "While maternal smoking is a well-known risk factor for SUID, there may be certain protective mechanisms or environments that prevent these outcomes in some infants. Identifying such factors could provide novel insights into reducing the impact of maternal smoking on SUID.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Smoking During Pregnancy (source: cdc_linkco15); Morbidities During Nursery Stay, Prenatal Issues, Newborn Care Interventions (source: ncfrp_v51)"
+  },
+  {
+   "question": "Among infants who have mothers with low birth weight status but do not experience SUID, what protective factors are identified?",
+   "why_open": "Low maternal pre-pregnancy body mass index is associated with adverse outcomes; however, some infants may be protected from these risks. Understanding the protective mechanisms could lead to targeted interventions.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI) (source: cdc_linkco15); Maternal Physical Attributes (source: prams_p8_arf)"
+  },
+  {
+   "question": "What protective factors are present in SUID cases where the infant was bed-sharing but did not experience sudden unexpected infant death?",
+   "why_open": "Bed sharing is a known risk factor for SUID. However, some infants who bed share do not succumb to SUID. Identifying these factors can help clarify the complexity of the association and guide safety recommendations.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Sleeping Arrangements (source: ncfrp_v51)"
+  },
+  {
+   "question": "What protective measures exist among infants born to mothers with a history of maternal obesity, yet who do not experience SUID?",
+   "why_open": "Maternal obesity is considered a risk factor for SUID. Studying infants within this group who remain unaffected could uncover environmental or biological factors that mitigate the associated risks.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p7_arf"
+   ],
+   "data": "Pregnancy Weight Gain (source: prams_p7_arf); Maternal prepregnancy body mass index (BMI) (source: ncfrp_v51)"
+  },
+  {
+   "question": "What protective factors contribute to the absence of SUID in infants born preterm and bed-sharing?",
+   "why_open": "Preterm birth is a recognized risk factor for SUID, yet some preterm infants who share beds do not experience adverse outcomes. This study could uncover protective elements within these high-risk groups.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Medical Complications (source: ncfrp_v51); Sleeping Arrangements (source: ncfrp_v51)"
+  }
+ ]
+}

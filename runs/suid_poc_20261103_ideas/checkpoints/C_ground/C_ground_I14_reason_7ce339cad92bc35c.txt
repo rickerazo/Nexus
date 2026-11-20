@@ -1,0 +1,75 @@
+### Design
+
+**Question:** How do the prevalence rates of medical complications during pregnancy differ between SUID cases and live births in the general population?
+
+**Design:** Case-population comparison. Compare how common an exposure is among SUID cases (from a case series) with its weighted prevalence in the general population of live births (from a population reference source).
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - Covers: Child deaths reviewed by participating fatality review teams, focusing on SUID cases.
+  - Reason: It includes detailed medical and pregnancy history for each case.
+
+- **Population Reference:** prams_p8_arf
+  - Covers: Survey of mothers a few months after a live birth, weighted to represent the general population.
+  - Reason: Provides a comprehensive assessment of health conditions during pregnancy in live births.
+
+### Period
+
+**Period:** 2016-2021 (for PRAMS Phase 8)
+- The manuscript using prams_p8_arf covers this period.
+
+### Variables
+
+**Concept:** Medical Complications During Pregnancy
+- **Case Series:**
+  - `INF4medical`: During pregnancy did mother have medical complications/infections
+  - `INF3pretermlab`: Medical complications - Preterm labor
+  - `INF4preeclampsia`: Medical complications - Pre-eclampsia
+
+**Comparison with Live Births in the General Population:**
+- **Population Reference:**
+  - `PG8_UTI`: Health problem during pregnancy -- Kidney/bladder infection
+  - `PG8_SEIZ`: Health problem during pregnancy -- Epilepsy
+  - `PG8_ANX`: Health problem during pregnancy -- Anxiety
+  - `PG8_ASMA`: Health problem during pregnancy -- Asthma
+
+**Measurement Differences:**
+- **Case Series (ncfrp_v51):**
+  - Detailed medical records focusing on specific complications.
+  
+- **Population Reference (prams_p8_arf):**
+  - Surveys conducted a few months after birth, asking about various health conditions experienced during pregnancy.
+
+### Biases
+
+**Selection Bias:**
+- **Case Series:** Includes only cases reviewed by fatality review teams. Participation varies over time and across jurisdictions.
+- **Population Reference:** Random sampling of live births; not all live births are surveyed due to the complex survey design.
+
+**Information Bias:**
+- **Case Series:** Detailed medical records likely capture more information but may have reporting biases.
+- **Population Reference:** Self-reported data subject to recall bias and social desirability bias.
+
+**Confounding:**
+- Maternal age, socioeconomic status, access to healthcare, smoking history, and other confounders are not uniformly measured across sources. Adjusting for these would require additional variables or assumptions that may be biased or missing.
+
+### What the Design Cannot Establish
+
+The design can only establish differences in prevalence between SUID cases and live births but cannot infer causation or risk factors due to its observational nature. The lack of a denominator source prevents estimation of incidence rates, which would require detailed records of all live births at risk for SUID during the same period.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID Manuscript (C9):** Maternal smoking was associated with higher SUID incidence.
+- **Bedsharing Manuscript (C8, C12):** Bed sharing and maternal smoking were independently associated with SUID incidence across different developmental windows.
+
+These claims discuss associations but do not compare the prevalence of pregnancy complications between SUID cases and live births. The candidate idea seeks to fill this gap by examining specific medical complications during pregnancy in a case-population comparison, which is distinct from the existing studies.
+
+### Verdict
+
+**Can these data answer the question?**
+
+Yes, these data can answer a version of the question: "How do the prevalence rates of medical complications during pregnancy differ between SUID cases and live births in the general population?" The design uses detailed case records (ncfrp_v51) for SUID cases and survey-based estimates from PRAMS Phase 8 (prams_p8_arf) to compare the frequency of specific health conditions.
+
+However, caution is needed regarding causality due to the observational nature of the data. Additionally, the lack of a denominator source means that incidence rates cannot be estimated directly. This study can only provide insights into relative differences in prevalence between SUID cases and live births based on available measures.

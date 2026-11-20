@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "BF5WEEKS",
+   "name": "Breastfeeding Duration",
+   "summary": "Number of weeks the baby was breastfed."
+  },
+  {
+   "start": "DRK63B_A",
+   "name": "Alcohol Consumption Before Pregnancy",
+   "summary": "Whether respondent drank alcohol 3 months before pregnancy and changes in drinking habits during pregnancy."
+  },
+  {
+   "start": "FLUTRIM",
+   "name": "Flu Vaccination During Pregnancy",
+   "summary": "Month of trimester when the mother received a flu shot, along with specific month and year details."
+  },
+  {
+   "start": "HIVTEST_DK",
+   "name": "HIV Testing Status",
+   "summary": "Whether the respondent was tested for HIV."
+  },
+  {
+   "start": "INFWMOM5",
+   "name": "Infant Living Situation",
+   "summary": "Whether the infant is living with the mother now and if they were in intensive care."
+  },
+  {
+   "start": "MOM_BMI",
+   "name": "Maternal BMI",
+   "summary": "Mother's body mass index before pregnancy, grouped into categories."
+  },
+  {
+   "start": "NBC_GET",
+   "name": "Reasons for Not Using Birth Control",
+   "summary": "Various reasons why the respondent did not use birth control."
+  },
+  {
+   "start": "PGWAIT",
+   "name": "Timing of Pregnancy",
+   "summary": "When the pregnancy was wanted and whether it was planned or unplanned."
+  }
+ ]
+}

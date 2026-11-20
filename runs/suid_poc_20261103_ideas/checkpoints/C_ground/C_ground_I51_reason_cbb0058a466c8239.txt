@@ -1,0 +1,48 @@
+### Design
+
+**Question Restated:** Does the prevalence of maternal health problems vary among SUID cases based on postconceptional age?
+
+The design is a case-only analysis, which compares subgroups within the case series (ncfrp_v51) defined by postconceptional age. This approach allows us to explore how the circumstances recorded for the cases vary across different developmental stages but does not provide rates or risk comparisons against a general population.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 - Contains detailed reviews of child deaths, including SUID cases.
+- **Denominator (Not Used):** cdc_linkco15, cdc_natl15 - Not needed for this case-only analysis as the design does not require incidence rates or population comparisons.
+
+### Period
+
+The manuscript uses data from 2008 to 2019. The ncfrp_v51 source covers child deaths reviewed by participating fatality review teams during this period (24,314 cases). Therefore, we need the years 2008-2019.
+
+### Variables
+
+#### Postconceptional Age (PCA)
+
+- **ncfrp_v51: D240:** This variable provides information on postconceptional age at death. It is used to define subgroups within SUID cases.
+  
+#### Maternal Health Problems
+
+- **ncfrp_v51: D68:** This variable captures whether the mother had a chronic disease before, during, or after pregnancy.
+
+### Biases
+
+**Selection Bias:**
+- The ncfrp_v51 data includes only child deaths reviewed by participating fatality review teams, which may not be representative of all SUID cases in the US. Participating states and years vary over time, potentially leading to sampling biases.
+  
+**Information Bias:**
+- Different case sources may collect information on maternal health conditions differently. For example, ncfrp_v51 captures detailed reviews based on medical records and interviews, whereas other data sources (e.g., PRAMS) are survey-based with potential recall bias.
+
+**Confounding:**
+- Unmeasured confounders such as socioeconomic status, environmental factors, or other unreported health conditions could influence the relationship between maternal health problems and SUID cases. Additionally, postconceptional age may be a proxy for gestational age at birth, which itself can be influenced by various underlying factors.
+
+### What the Design Cannot Establish
+
+- **Incidence Rates:** The case-only design cannot estimate incidence rates or risk ratios as there is no denominator source.
+- **Causation:** This study does not establish causation; it only explores associations among cases within the selected subgroups.
+
+### Prior Art
+
+The manuscript claims (e.g., C6, C7) and literature abstracts (e.g., suid_literature_abstracts.C10, C11) already discuss maternal health conditions such as smoking and obesity in relation to SUID. However, these studies do not specifically explore the variation of maternal health problems by postconceptional age. Therefore, while there is some overlap in discussing maternal health risks, the specific focus on PCA remains an open question.
+
+### Verdict
+
+Yes, these sources can answer a version of the question: "Does the prevalence of maternal health problems vary among SUID cases based on postconceptional age?" The case-only design using ncfrp_v51 data allows for such comparisons within the reviewed cases. However, limitations include potential selection biases and lack of population-based rates or risk estimates.

@@ -1,0 +1,69 @@
+### Design
+
+**Restated Question**: What is the trend in SUID cases where the infant was exposed to substances or toxins between 2004 and 2019?
+
+**Design Type**: Trends within cases. This design compares proportions among the cases across periods, as a case series with no denominator source cannot estimate incidence.
+
+### Sources by Role
+
+- **Case Series**: ncfrp_v51 (National Fatality Review Case Reporting System)
+  - *Why*: It covers child deaths reviewed between 2004 and 2019, providing detailed information on SUID cases.
+  
+- **Population Reference**: prams_p8_arf (PRAMS Phase 8 Analytic Research File)
+  - *Why*: PRAMS surveys mothers after live births; it provides a population reference for exposure prevalence in the general population.
+
+### Period
+
+**Period Range: 2004 to 2019**
+
+- ncfrp_v51 covers child deaths reviewed from 2004 to 2019.
+- prams_p8_arf has data from 2016 to 2021 but serves as a reference for trends and exposure prevalence.
+
+### Variables
+
+**Substance or Toxin Exposure**
+
+- **Case Series (ncfrp_v51)**:
+  - `INF3nicudrug`: If yes, NICU - Drug/alcohol exposure
+  - `INFdrugbirth`: Illicit drugs - Infant born drug exposed
+  
+- **Population Reference (prams_p8_arf)**:
+  - No exact match for substance or toxin exposure in PRAMS, but maternal smoking and alcohol use can be proxies.
+  - `DRK6_3B`: DRK -- 3 months before pregnancy, drinks/week
+  - `DRK8_3B`: DRK -- 3 months before delivery, drinks/week
+
+### Biases
+
+1. **Selection Bias**:
+   - ncfrp_v51 only includes cases reviewed by fatality review teams, which may not be representative of all SUID cases.
+   - prams_p8_arf is a survey of mothers after live births and does not capture infant deaths.
+
+2. **Information Bias**:
+   - Reporting on substance exposure can differ between case series and population reference due to differences in questionnaire design and recall periods (e.g., 3 months before pregnancy vs. 3 months before delivery).
+
+3. **Confounding Bias**:
+   - Maternal smoking and alcohol use may be confounders that are not fully adjusted for.
+   - Other factors like socioeconomic status, urban/rural setting, and access to healthcare can influence both exposure and outcomes.
+
+### What the Design Cannot Establish
+
+- The design cannot establish incidence or rates of SUID cases exposed to substances/toxins because it lacks a denominator source.
+- It can only compare proportions among cases over time.
+- Causal relationships between substance/toxin exposure and SUID cannot be established due to observational nature.
+
+### Prior Art
+
+The closest claims from the manuscript:
+- **SUID_manuscript_v9_clean.C10**: The analysis excludes a small number of deaths at the extremes, including extremely preterm infants. This limitation aligns with focusing on trends over time.
+- **bedsharing_ms_v7.C24**: PCA alignment resolves heterogeneity and provides a smooth developmental curve, which is relevant for analyzing trends over periods.
+
+However, these claims do not address substance or toxin exposure directly. The question remains open as no prior study has examined the trend in SUID cases involving such exposures specifically from 2004 to 2019.
+
+### Verdict
+
+**Can these data answer a version of the question?**
+
+- **Yes**, but with limitations.
+- The design can track trends within SUID cases exposed to substances/toxins over time using ncfrp_v51. However, it cannot provide incidence or adjust for confounders effectively without additional denominator data.
+
+**Missing Data Element**: A denominator source (e.g., national birth registry) would allow calculating rates and adjusting for potential confounders more accurately.

@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "INF4heducwt",
+   "name": "Health Education and Complications",
+   "summary": "Indicates if health education was provided, presence of medical complications such as HELLP syndrome, HIV/AIDS, HPV, chronic hypertension, incompetent cervix, IUGR."
+  },
+  {
+   "start": "INF4homehealthtype",
+   "name": "Referrals and Housing Stability",
+   "summary": "Details about referrals to homemaker/home health services, housing authority, Medicaid, and whether the mother had stable housing during pregnancy."
+  },
+  {
+   "start": "INF4hosprtn",
+   "name": "Hospital Overnight Stay",
+   "summary": "Indicates if infant was returned to hospital overnight after delivery, number of nights, age in weeks at time of stay."
+  },
+  {
+   "start": "INF4houseoth",
+   "name": "Housing Details",
+   "summary": "Specifics about unstable housing conditions and other housing situations."
+  },
+  {
+   "start": "INF4infhospdate",
+   "name": "Infant Hospitalization",
+   "summary": "Date of infant's last discharge from hospital, total number of days hospitalized."
+  },
+  {
+   "start": "INF4inftop",
+   "name": "Safety Topics Discussed",
+   "summary": "Topics discussed regarding infant safety such as abusive head trauma, bath safety, car seat use, emergency care locations."
+  },
+  {
+   "start": "INF4injury",
+   "name": "Evidence of Injury",
+   "summary": "Indicates if there was evidence of injury at death excluding birth process and specifies other injuries."
+  },
+  {
+   "start": "INF4insldihs",
+   "name": "Insurance Coverage",
+   "summary": "Payer source for labor and delivery, pregnancy, pre-pregnancy, post-pregnancy periods including Indian Health Service, Medicaid, private insurance."
+  }
+ ]
+}

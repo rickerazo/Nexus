@@ -1,0 +1,35 @@
+{
+ "mappings": [
+  {
+   "concept": "microglia activation",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of microglia activation assessed by Iba1 staining is a cellular biology measure that does not have an equivalent in the National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1."
+  },
+  {
+   "concept": "cell death",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of cell death assessed by cleaved caspase 3 (CC3) staining is a cellular biology measure that does not have an equivalent in the National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1."
+  },
+  {
+   "concept": "glutamatergic transmission",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of glutamatergic transmission assessed in the nucleus accumbens and amygdala is a neuroscience measure that does not have an equivalent in the National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1."
+  },
+  {
+   "concept": "hypoglossal motor nucleus (XIIn)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of hypoglossal motor nucleus assessed by electrophysiological recordings from brainstem slices is a neuroscience measure that does not have an equivalent in the National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1."
+  }
+ ],
+ "source_summaries": {
+  "ncfrp_v51": "The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 does not contain variables that directly or indirectly measure cellular biology outcomes such as microglia activation, cell death, glutamatergic transmission, and electrophysiological assessments of the hypoglossal motor nucleus. The data sources are focused on social, medical, and environmental factors related to infant deaths."
+ }
+}

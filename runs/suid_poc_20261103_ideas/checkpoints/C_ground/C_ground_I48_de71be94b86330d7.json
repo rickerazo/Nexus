@@ -1,0 +1,28 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The presence of urinary tract infections during pregnancy is associated with higher odds of SUID mortality among infants compared to cases without such infections.",
+ "rationale": "This study focuses on comparing the presence and type of maternal health conditions within a case-only analysis, specifically looking at urinary tract infections as an example. The design does not require incidence rates or denominators but can compare proportions or odds among cases.",
+ "prior_art": "The closest tested work is SUID_manuscript_v9_clean.C9 and bedsharing_ms_v7.C8 to C13, which discuss risk factors like maternal smoking and prematurity but do not cover other health conditions. This question remains open as it explores new maternal health conditions beyond those previously studied.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C9",
+  "bedsharing_ms_v7.C8",
+  "bedsharing_ms_v7.C13"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2004,
+ "period_end": 2019,
+ "required_concepts": [
+  "Maternal Health Conditions",
+  "SUID Mortality"
+ ],
+ "variables": [
+  "ncfrp_v51:INFmedical",
+  "ncfrp_v51:ISSmothuti"
+ ],
+ "cannot_establish": "incidence rates or risk ratios due to the lack of a denominator source."
+}

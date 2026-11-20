@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "How does maternal prepregnancy body mass index (BMI) interact with prenatal smoking status to predict Sudden Unexpected Infant Death (SUID)?",
+   "why_open": "Previous studies have investigated the effects of maternal obesity and smoking individually on SUID risk. However, the interaction between these two factors has not been thoroughly explored. Understanding this could provide more precise risk assessment.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI), maternal smoking during pregnancy"
+  },
+  {
+   "question": "Can preterm birth combined with gestational age at death predict SUID incidence in the context of PCA alignment?",
+   "why_open": "The role of exact gestational age at death within the overall postconceptional age framework remains to be explored. This could reveal if certain developmental stages, especially those affected by prematurity, are more vulnerable.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Preterm birth, Gestational age at birth"
+  },
+  {
+   "question": "Does socioeconomic status influence the risk of SUID when postconceptional age (PCA) and maternal smoking are controlled?",
+   "why_open": "Socioeconomic factors may interact with biological mechanisms to affect SUID risk. Controlling for PCA and maternal smoking can help isolate these interactions, which have not been extensively investigated.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Insurance Coverage, Maternal prepregnancy body mass index (BMI)"
+  },
+  {
+   "question": "Is there a correlation between birth location and SUID incidence across different postconceptional age windows?",
+   "why_open": "The influence of birth setting on the risk of SUID has not been thoroughly examined. Different healthcare standards or exposures at various locations may affect SUID incidence within developmental windows.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Birth Location and Time"
+  },
+  {
+   "question": "Do paternal characteristics, such as smoking habits or socioeconomic status, have an impact on SUID risk when adjusted for maternal factors?",
+   "why_open": "Paternal contributions to the risk of SUID are understudied. Paternal behaviors may influence developmental trajectories independently from maternal factors and could provide new insights into prevention strategies.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Father's Details, Insurance Coverage"
+  }
+ ]
+}

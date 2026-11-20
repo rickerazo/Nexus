@@ -1,0 +1,32 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with maternal mental health issues prior to pregnancy is compared to the weighted prevalence of such issues in a population reference.",
+ "rationale": "This study aims to compare the presence of pre-pregnancy mental health issues among SUID cases (from case series) and their prevalence in a general population sample (population reference).",
+ "prior_art": "None in the inputs. Previous research has not extensively examined how maternal pre-pregnancy psychological state affects SUID risk, despite significant potential impact on infant care and development.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_linkco15"
+ ],
+ "period_start": 2012,
+ "period_end": 2021,
+ "required_concepts": [
+  "Maternal mental health issues prior to pregnancy",
+  "SUID cases"
+ ],
+ "variables": [
+  "ncfrp_v51:ISSmhpregdepres",
+  "prams_p7_arf:PRE_DEPR",
+  "prams_p8_arf:PRE_MHDP_RAW",
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "Causation, incidence rates without a full denominator source."
+}

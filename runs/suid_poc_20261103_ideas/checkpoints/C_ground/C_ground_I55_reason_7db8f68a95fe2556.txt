@@ -1,0 +1,53 @@
+### Design
+
+**Question Restated:** 
+Is the prevalence of infant sleep environment risk factors associated with preterm birth status among SUID cases? This question will be addressed using a case-only analysis to compare the circumstances recorded for the cases within subgroups based on their preterm birth status and sleeping arrangements.
+
+### Sources by Role
+- **Case Series:**
+  - **ncfrp_v51:** The NFR-CRS is used because it records the outcome events (SUID deaths) and includes infant sleep environment risk factors. It is the only source that captures both SUID cases and their relevant environmental circumstances.
+  
+- **Population Reference:**
+  - No population reference is needed for this case-only design, as we are comparing subgroups within the same case series without requiring a denominator or general population prevalence.
+
+### Period
+The manuscript claims suggest a need to analyze data over multiple years due to developmental stages and trends. Therefore, we would require:
+- **NFR-CRS (ncfrp_v51):** 2008-2019 (as per the manuscript's use).
+
+### Variables
+
+#### Preterm Birth Status
+- **ncfrp_v51:INFprevpreterm:** Medical complications - Previous preterm/SGA infant.
+- **cdc_linkco15:RF_PPB & cdc_natl15:RF_PPTERM:** Reporting flags and actual variables for previous preterm birth in the denominator sources; however, these are not used directly since we're focusing on SUID cases.
+
+#### Infant Sleep Environment Risk Factors
+- **ncfrp_v51:CIRdeathsleepenv:** Was the death related to sleeping or the sleep environment?
+  - This variable captures whether the death involved a sleep-related issue.
+- **ncfrp_v51:INF5havecrib, INF5havecriboften:** Infant have crib/pack 'n play/bassinet/bedside sleeper/baby box; and how often they slept in it.
+- **prams_p8_arf:SLP_ROOM_RAW & SLP_CRB8_RAW:** Sleep -- baby in room with mom and Baby slept -- in crib/bassinette/play yard (these variables are from PRAMS, but will be compared against ncfrp_v51 for consistency).
+
+### Biases
+
+#### Selection Bias
+- **ncfrp_v51** only includes SUID cases reviewed by participating fatality review teams. Participation varies over time and may not represent all SUID deaths equally across years or states. This could introduce selection bias.
+
+#### Information Bias
+- Reporting of preterm birth status can vary between sources, especially when relying on maternal reporting vs. clinical records.
+- Sleep environment data in **ncfrp_v51** is often based on review team findings and may not capture all possible risk factors uniformly across cases.
+
+#### Confounding
+- Variables like smoking during pregnancy (captured in PRAMS but not directly in ncfrp_v51) could confound the association between preterm birth status and sleep environment risks.
+- Other socioeconomic and environmental factors, such as maternal stress and access to healthcare, may also influence both preterm birth and SUID risk.
+
+### What the Design Cannot Establish
+The case-only design can only establish associations within the SUID cases. It cannot determine causal relationships or estimate population-level incidence rates due to the absence of a denominator source for calculating rates.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C10 [limitation]:** The analysis excludes preterm infants at the extremes, which is relevant as our focus includes these cases.
+- **bedsharing_ms_v7.C24 [limitation]:** Sleep-environment classification in case-report systems may be subject to heterogeneity in ascertainment and reporting.
+
+The literature suggests that maternal smoking and prematurity are associated with SUID incidence but does not directly address the specific association of preterm birth status with sleep environment risks. Therefore, there is a gap that this study aims to fill.
+
+### Verdict
+Yes, these sources can answer a version of the question as stated. The design will compare infant sleep environment risk factors among SUID cases stratified by preterm birth status using data from **ncfrp_v51**. However, due to selection and information biases inherent in the case series, any findings should be interpreted with caution regarding generalizability beyond the specific reviewed cases.

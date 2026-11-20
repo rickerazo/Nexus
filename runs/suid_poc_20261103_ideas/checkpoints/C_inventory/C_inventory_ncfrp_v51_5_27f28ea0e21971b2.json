@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "INF4momwtgnunk",
+   "name": "Pregnancy Weight Gain",
+   "summary": "Mother's pregnancy weight gain or loss in pounds, with an unknown option."
+  },
+  {
+   "start": "INF4morbid",
+   "name": "Morbidities During Nursery Stay",
+   "summary": "Various morbidities noted during the nursery stay including anemia, asphyxia, jaundice, convulsion, feeding inadequacy, hemolysis, hypoglycemia, hypothermia, hypotonia, birth injury, respiratory distress syndrome, neonatal sepsis, perinatal STI, and temperature instability."
+  },
+  {
+   "start": "INF4move",
+   "name": "Decreased Fetal Movement",
+   "summary": "Medical complications related to decreased fetal movement including referral and timeframe information."
+  },
+  {
+   "start": "INF4msafp",
+   "name": "Abnormal MSAFP",
+   "summary": "Medical complications related to abnormal maternal serum alpha-fetoprotein (MSAFP) test, with referral and timeframe details."
+  },
+  {
+   "start": "INF4nsvd",
+   "name": "Type of Delivery",
+   "summary": "Indicates if the delivery was a non-stress vaginal delivery (NSVD)."
+  },
+  {
+   "start": "INF4nuchal",
+   "name": "Nuchal Cord Complications",
+   "summary": "Medical complications related to nuchal cord, including referral and timeframe information."
+  },
+  {
+   "start": "INF4olighyd",
+   "name": "Oligohydramnios",
+   "summary": "Medical complications related to oligohydramnios, with referral and timeframe details."
+  },
+  {
+   "start": "INF4oral",
+   "name": "Oral Health/Dental Complications",
+   "summary": "Medical complications related to oral health/dental issues including birth control methods and referral information."
+  }
+ ]
+}

@@ -1,0 +1,85 @@
+{
+  "manuscript_id": "mini_manuscript",
+  "title": "Developmental timing of sudden unexpected infant death",
+  "document_sha256": "93c9a343932cf03801e9525c9166aa7901616ae2c723a043c285121dd66b70ce",
+  "research_questions": [
+    "What is the developmental timing of sudden unexpected infant death?"
+  ],
+  "designs": [
+    "population_incidence"
+  ],
+  "model_classes": [
+    "poisson_regression",
+    "negative_binomial"
+  ],
+  "data_sources_used": [
+    "linked birth and infant death records"
+  ],
+  "variables": [
+    {
+      "concept": "outcome",
+      "role": "outcome",
+      "operationalization": "underlying cause of death codes R95, R99 and W75",
+      "quote": "sudden unexpected infant death, defined by underlying cause of death codes R95, R99 and W75",
+      "page": 1
+    },
+    {
+      "concept": "age at outcome",
+      "role": "outcome",
+      "operationalization": "age at death in days",
+      "quote": "with age at death in days",
+      "page": 1
+    },
+    {
+      "concept": "postconceptional age",
+      "role": "exposure",
+      "operationalization": "gestational age at birth plus chronological age",
+      "quote": "aligned infants by postconceptional age (gestational age at birth plus chronological age)",
+      "page": 1
+    },
+    {
+      "concept": "male sex",
+      "role": "stratifier",
+      "operationalization": "not specified, but implied as a stratifying variable for risk analysis",
+      "quote": "Male excess risk emerged only after 44 weeks postconceptional age",
+      "page": 1
+    },
+    {
+      "concept": "prenatal smoking",
+      "role": "exposure",
+      "operationalization": "not specified, but implied as an exposure variable affecting timing of risk onset",
+      "quote": "Prenatal smoking was associated with earlier onset of risk",
+      "page": 1
+    }
+  ],
+  "claims": [
+    {
+      "id": "mini_manuscript.C1",
+      "kind": "method",
+      "statement": "The study used linked birth and infant death records to examine sudden unexpected infant death.",
+      "quote": "We used linked birth and infant death records.",
+      "page": 1
+    },
+    {
+      "id": "mini_manuscript.C2",
+      "kind": "finding",
+      "statement": "Male infants showed an excess risk of sudden unexpected infant death after reaching 44 weeks postconceptional age.",
+      "quote": "Male excess risk emerged only after 44 weeks postconceptional age.",
+      "page": 1
+    },
+    {
+      "id": "mini_manuscript.C3",
+      "kind": "finding",
+      "statement": "Prenatal smoking was associated with an earlier onset of the risk for sudden unexpected infant death.",
+      "quote": "Prenatal smoking was associated with earlier onset of risk.",
+      "page": 1
+    },
+    {
+      "id": "mini_manuscript.C4",
+      "kind": "limitation",
+      "statement": "The study lacked information on the sleep environment, which is not available in the linked birth-death files.",
+      "quote": "A limitation is that the sleep environment was not available in the linked birth-death files.",
+      "page": 1
+    }
+  ]
+}

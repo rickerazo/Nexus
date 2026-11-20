@@ -1,0 +1,50 @@
+{
+ "ideas": [
+  {
+   "question": "Does maternal obesity during pregnancy modify the risk of SUID associated with postconceptional age (PCA) developmental windows?",
+   "why_open": "The manuscripts show that maternal smoking and prematurity are strongly linked to SUID incidence across different PCA windows, but do not consider the role of maternal BMI. Investigating how maternal obesity interacts with PCA could clarify conflicting risk factors.",
+   "sources": [
+    "cdc_linkco15",
+    "cdc_natl15",
+    "prams_p8_arf"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI), postconceptional age (PCA) aligned SUID incidence, smoking during pregnancy."
+  },
+  {
+   "question": "How does socioeconomic status at birth impact the development of SUID risk trajectories according to PCA windows?",
+   "why_open": "While maternal smoking and prematurity have been shown to correlate with increased SUID risk across PCA windows, little is known about how socioeconomic status may influence these patterns. This research could resolve inconsistencies in risk factor attributions.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Income and dependent information (proxy for socioeconomic status), birth location (proxied by urban/rural residence or zip code wealth index), postconceptional age (PCA) aligned SUID incidence."
+  },
+  {
+   "question": "Do racial/ethnic disparities in infant mortality rates vary across PCA developmental windows during the pandemic era?",
+   "why_open": "The literature suggests non-SUID infant mortality trends reversed during the pandemic, but the impact on SUID and its racial/ethnic distribution by developmental window remains unexplored. Understanding these dynamics could clarify conflicting patterns observed.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Mother's race, ethnicity; maternal smoking during pregnancy; birthweight (low, non-low); preterm birth; Sudden unexpected infant death (SUID) incidence; geographic location."
+  },
+  {
+   "question": "How does the association between inner ear dysfunction and arousal response to hypoxia-hypercarbia vary across developmental stages defined by PCA?",
+   "why_open": "Research indicates that inner ear dysfunction suppresses hypercapnic responses but its interaction with SUID risk over different developmental stages is unclear. This study would address unexplained variability in risk mechanisms.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Inner ear dysfunction (IED), hypercapnic ventilatory response (HCVR), arousal movement suppression, postconceptional age (PCA) developmental windows."
+  },
+  {
+   "question": "What is the effect of maternal employment status during pregnancy on SUID risk across PCA developmental windows?",
+   "why_open": "Studies have highlighted the importance of prenatal care and socioeconomic factors in SUID risk but do not specifically address how maternal employment impacts these risks over different developmental stages. This research could help resolve conflicting results.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Maternal employment status during pregnancy, postconceptional age (PCA) aligned SUID incidence."
+  }
+ ]
+}

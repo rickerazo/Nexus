@@ -1,0 +1,2015 @@
+{
+  "id": "cdc_codenames",
+  "title": "CDC birth/death file variable names and labels (analysis extract)",
+  "document_path": "data/documentation/CDC_database_codeNames.xlsx",
+  "document_sha256": "0ef67f25e365f4b25954e1d81c2e8c99c5d582dae7157adcafec971debe2f6d2",
+  "variables": [
+    {
+      "name": "AB_ANTI",
+      "label": "Antibiotics for Newborn",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "AB_AVEN1",
+      "label": "Assisted Ventilation (immediately)",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "AB_AVEN6",
+      "label": "Assisted Ventilation > 6 hrs",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "AB_NICU",
+      "label": "Admission to NICU",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "AB_SEIZ",
+      "label": "Seizures",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "AB_SURF",
+      "label": "Surfactant",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "APGAR10",
+      "label": "Ten Minute APGAR Score",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "APGAR10R",
+      "label": "Ten Minute APGAR Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "APGAR5",
+      "label": "Five Minute APGAR Score",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "APGAR5R",
+      "label": "Five Minute APGAR Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ATTEND",
+      "label": "Attendant at Birth",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "BFACIL",
+      "label": "Birth Place",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "BFACIL3",
+      "label": "Facility Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "BFED",
+      "label": "Infant Breastfed at Discharge",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "BMI",
+      "label": "Body Mass Index",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "BMI_R",
+      "label": "Body Mass Index Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "BWTR12",
+      "label": "Birth Weight Recode 12",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "BWTR4",
+      "label": "Birth Weight Recode 4",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_ANEN",
+      "label": "Anencephaly",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_CCHD",
+      "label": "Cyanotic Congenital Heart Disease",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_CDH",
+      "label": "Congenital Diaphragmatic Hernia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_CLEFT",
+      "label": "Cleft Lip w/ or w/o Cleft Palate",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_CLPAL",
+      "label": "Cleft Palate alone",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_DISOR",
+      "label": "Suspected Chromosomal Disorder",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_DOWNS",
+      "label": "Reporting Flag for Down Syndrome",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_GAST",
+      "label": "Gastroschisis",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_HYPO",
+      "label": "Hypospadias",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_LIMB",
+      "label": "Limb Reduction Defect",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_MNSB",
+      "label": "Meningomyelocele / Spina Bifida",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CA_OMPH",
+      "label": "Omphalocele",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CIG0_R",
+      "label": "Cigarettes Before Pregnancy Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CIG1_R",
+      "label": "Cigarettes 1st Trimester Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CIG2_R",
+      "label": "Cigarettes 2nd Trimester Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CIG3_R",
+      "label": "Cigarettes 3rd Trimester Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CIG_0",
+      "label": "Cigarettes Before Pregnancy",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CIG_1",
+      "label": "Cigarettes 1st Trimester",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CIG_2",
+      "label": "Cigarettes 2nd Trimester",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CIG_3",
+      "label": "Cigarettes 3rd Trimester",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "CIG_REC",
+      "label": "Cigarette Recode (Revised)",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "COMBGEST",
+      "label": "Combined Gestation – Detail in Weeks",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "COMPGST_IMP",
+      "label": "Combined Gestation Imputation Flag",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "DBWT",
+      "label": "Birth Weight – Detail in Grams",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "DLMP_MM",
+      "label": "Last Normal Menses Month",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "DLMP_YY",
+      "label": "Last Normal Menses Year",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "DMAR",
+      "label": "Marital Status",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "DMETH_REC",
+      "label": "Delivery Method Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "DOB_MM",
+      "label": "Birth Month",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "DOB_TT",
+      "label": "Time of Birth",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "DOB_WK",
+      "label": "Birth Day of Week",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "DOB_YY",
+      "label": "Birth Year",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "DPLURAL",
+      "label": "Plurality Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "DWGT_R",
+      "label": "Delivery Weight Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "FAGECOMB",
+      "label": "Father’s Combined Age (Revised)",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "FAGEREC11",
+      "label": "Father’s Age Recode 11",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "FAGERPT_FLG",
+      "label": "Father’s Reported Age Used",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "FEDUC",
+      "label": "Father’s Education",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "FHISP_R",
+      "label": "Father’s Hispanic Origin Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "FRACE15",
+      "label": "Father’s Race Recode 15",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "FRACE31",
+      "label": "Father’s Race Recode 31",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "FRACE6",
+      "label": "Father’s Race Recode 6",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "FRACEHISP",
+      "label": "Father’s Race/Hispanic Origin",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_AB_ANTIBIO",
+      "label": "Reporting Flag for Antibiotics",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_AB_NICU",
+      "label": "Reporting Flag for Admission to NICU",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_AB_SEIZ",
+      "label": "Reporting Flag for Seizures",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_AB_SURFAC",
+      "label": "Reporting Flag for Surfactant",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_AB_VENT",
+      "label": "Reporting Flag for Assisted Ventilation (immediately)",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_AB_VENT6",
+      "label": "Reporting Flag for Assisted Ventilation >6 hrs",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_APGAR5",
+      "label": "Reporting Flag for Five minute APGAR",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_BFED",
+      "label": "Reporting Flag for Breastfed at Discharge",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_ANEN",
+      "label": "Reporting Flag for Anencephaly",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_CHROM",
+      "label": "Reporting Flag for Suspected Chromosomal Disorder",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_CLEFT",
+      "label": "Reporting Flag for Cleft Plate Alone",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_CLEFTLP",
+      "label": "Reporting Flag for Cleft Lip with or without Cleft Palat",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_DOWNS",
+      "label": "Reporting Flag for Down Syndrome",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_GASTRO",
+      "label": "Reporting Flag for Gastroschisis",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_HEART",
+      "label": "Reporting Flag for Cyanotic Congenital Heart Disease 0",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_HERNIA",
+      "label": "Reporting Flag for Congenital Diaphragmatic Hernia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_HYPOS",
+      "label": "Reporting Flag for Hypospadias",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_LIMB",
+      "label": "Reporting Flag for Limb Reduction Defect",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_MENIN",
+      "label": "Reporting Flag for Meningomyelocele/Spina Bifida",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CA_OMPHA",
+      "label": "Reporting Flag for Omphalocele",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CIGS_0",
+      "label": "Reporting Flag for Cigarettes before Pregnancy 0",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CIGS_1",
+      "label": "Reporting Flag for Cigarettes 1st Trimester",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CIGS_2",
+      "label": "Reporting Flag for Cigarettes 2nd Trimester",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_CIGS_3",
+      "label": "Reporting Flag for Cigarettes 3rd Trimester",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_DMETH_REC",
+      "label": "Reporting Flag for Method of Delivery Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_DWGT",
+      "label": "Reporting Flag for Delivery Weight",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_FACILITY",
+      "label": "Reporting Flag for Birth Place",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_FHISP",
+      "label": "Reporting Flag for Father’s Origin",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_IP_CHLAM",
+      "label": "Reporting Flag for Chlamydia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_IP_GONOR",
+      "label": "Reporting Flag for Gonorrhea",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_IP_HEPATB",
+      "label": "Reporting Flag for Hepatitis B",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_IP_HEPATC",
+      "label": "Reporting Flag for Hepatitis C",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_IP_SYPH",
+      "label": "Reporting Flag for Syphilis",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_LD_ANES",
+      "label": "Reporting Flag for Anesthesia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_LD_ANTB",
+      "label": "Reporting Flag for Antibiotics",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_LD_AUGM",
+      "label": "Reporting Flag for Augmentation of Labor",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_LD_CHOR",
+      "label": "Reporting Flag for Chorioamnionitis",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_LD_INDL",
+      "label": "Reporting Flag for Induction of Labor",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_LD_STER",
+      "label": "Reporting Flag for Steroids",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_MAR_P",
+      "label": "Reporting Flag for Paternity Acknowledged",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_MEDUC",
+      "label": "Reporting Flag for Education of Mother",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_ME_PRES",
+      "label": "Reporting Flag for Fetal Presentation",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_ME_ROUT",
+      "label": "Reporting Flag for Final Route and Method of Deliver",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_ME_TRIAL",
+      "label": "Reporting Flag for Trial of Labor Attempted",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_MHISP",
+      "label": "Reporting Flag for Mother’s Origin",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_MM_AICU",
+      "label": "Reporting Flag for Admission to Intensive Care",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_MM_MTR",
+      "label": "Reporting Flag for Maternal Transfusion",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_MM_RUPT",
+      "label": "Reporting Flag for Ruptured Uterus",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_MM_UHYST",
+      "label": "Reporting Flag for Unplanned Hysterectomy",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_MPCB",
+      "label": "Reporting Flag for Month Prenatal Care Began",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_M_HT",
+      "label": "Reporting Flag for Mother’s Height",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_OB_FAIL",
+      "label": "Reporting Flag for Failed External Cephalic Version",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_OB_SUCC",
+      "label": "Reporting Flag for Successful External Cephalic Version",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_PAY",
+      "label": "Reporting Flag for Source of Payment",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_PAY_REC",
+      "label": "Reporting Flag for Payment Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_PWGT",
+      "label": "Reporting Flag for Pre-pregnancy Weight",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_RF_CESAR",
+      "label": "Reporting Flag for Previous Cesarean",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_RF_ECLAMP",
+      "label": "Reporting Flag for Hypertension Eclampsia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_RF_GDIAB",
+      "label": "Reporting Flag for Gestational Diabetes",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_RF_GHYPER",
+      "label": "Reporting Flag for Gestational Hypertension",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_RF_INF_ART",
+      "label": "Reporting Flag for Reproductive Technology",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_RF_INF_DRG",
+      "label": "Reporting Flag for Fertility Enhance Drugs",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_RF_NCESAR",
+      "label": "Reporting Flag for Number of Previous Cesareans 0",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_RF_PDIAB",
+      "label": "Reporting Flag for Pre-pregnancy Diabetes",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_RF_PHYPER",
+      "label": "Reporting Flag for Pre-pregnancy Hypertension 0",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_RF_PPB",
+      "label": "Reporting Flag for Previous Preterm Birth",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_TOBACO",
+      "label": "Reporting Flag for Tobacco use",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_TPCV",
+      "label": "Reporting Flag for Total Prenatal Care Visits",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_WIC",
+      "label": "Reporting Flag for WIC",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "F_WTGAIN",
+      "label": "Reporting Flag for Weight Gain",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "GESTREC10",
+      "label": "Combined Gestation Recode 10",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "GESTREC3",
+      "label": "Combined Gestation Recode 3",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ILIVE",
+      "label": "Infant Living at Time of Report",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ILLB_R",
+      "label": "Interval Since Last Live Birth Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ILLB_R11",
+      "label": "Interval Since Last Live Birth Recode 11",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ILOP_R",
+      "label": "Interval Since Last Other Pregnancy Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ILOP_R11",
+      "label": "Interval Since Last Other Pregnancy Recode 11",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ILP_R",
+      "label": "Interval Since Last Pregnancy Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ILP_R11",
+      "label": "Interval Since Last Pregnancy Recode 11",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "IMP_PLUR",
+      "label": "Plurality Imputed",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "IMP_SEX",
+      "label": "Imputed Sex",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "IP_CHLAM",
+      "label": "Chlamydia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "IP_GON",
+      "label": "Gonorrhea",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "IP_HEPATB",
+      "label": "Reporting Flag for Hepatitis B",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "IP_HEPATC",
+      "label": "Hepatitis C",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "IP_SYPH",
+      "label": "Syphilis",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ITRAN",
+      "label": "Infant Transferred",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "LBO_REC",
+      "label": "Live Birth Order Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "LD_ANES",
+      "label": "Anesthesia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "LD_ANTB",
+      "label": "Antibiotics",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "LD_AUGM",
+      "label": "Augmentation of Labor",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "LD_CHOR",
+      "label": "Chorioamnionitis",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "LD_INDL",
+      "label": "Induction of Labor",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "LD_STER",
+      "label": "Steroids",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "LMPUSED",
+      "label": "Combined Gestation Used Flag",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MAGER",
+      "label": "Mother’s Single Years of Age",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MAGER14",
+      "label": "Mother’s Age Recode 14",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MAGER9",
+      "label": "Mother’s Age Recode 9",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MAGE_IMPFLG",
+      "label": "Mother’s Age Imputed",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MAGE_REPFLG",
+      "label": "Reported Age of Mother Used Flag",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MAR_IMP",
+      "label": "Mother’s Marital Status Imputed",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MAR_P",
+      "label": "Paternity Acknowledged",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MBSTATE_REC",
+      "label": "Mother’s Nativity",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MEDUC",
+      "label": "Mother’s Education",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ME_PRES",
+      "label": "Fetal Presentation at Delivery",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ME_ROUT",
+      "label": "Final Route & Method of Delivery",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "ME_TRIAL",
+      "label": "Trial of Labor Attempted",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MHISP_R",
+      "label": "Mother’s Hispanic Origin Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MM_AICU",
+      "label": "Admit to Intensive Care",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MM_MTR",
+      "label": "Maternal Transfusion",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MM_PLAC",
+      "label": "Perineal Laceration",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MM_RUPT",
+      "label": "Ruptured Uterus",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MM_UHYST",
+      "label": "Unplanned Hysterectomy",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MRACE15",
+      "label": "Mother’s Race Recode 15",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MRACE31",
+      "label": "Mother’s Race Recode 31",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MRACE6",
+      "label": "Mother’s Race Recode 6",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MRACEHISP",
+      "label": "Mother’s Race/Hispanic Origin",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MRACEIMP",
+      "label": "Mother’s Race Imputed Flag",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "MTRAN",
+      "label": "Mother Transferred",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "M_HT_IN",
+      "label": "Mother’s Height in Total Inches",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "NO_ABNORM",
+      "label": "No Abnormal Conditions Checked",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "NO_CONGEN",
+      "label": "No Congenital Anomalies Checked",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "NO_INFEC",
+      "label": "No Infections Reported",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "NO_LBRDLV",
+      "label": "No Characteristics of Labor Reported",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "NO_MMORB",
+      "label": "No Maternal Morbidity Reported",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "NO_RISKS",
+      "label": "No Risk Factors Reported",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "OBGEST_FLG",
+      "label": "Obstetric Estimate of Gestation Used Flag",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "OB_ECVF",
+      "label": "Failed External Cephalic Version",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "OB_ECVS",
+      "label": "Successful External Cephalic Version",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "OEGEST_COMB",
+      "label": "Obstetric Estimate Edited",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "OEGEST_R10",
+      "label": "Obstetric Estimate Recode10",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "OEGEST_R3",
+      "label": "Obstetric Estimate Recode 3",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "PAY",
+      "label": "Payment Source for Delivery",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "PAY_REC",
+      "label": "Payment Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "PRECARE",
+      "label": "Month Prenatal Care Began",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "PRECARE5",
+      "label": "Month Prenatal Care Began Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "PREVIS",
+      "label": "Number of Prenatal Visits",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "PREVIS_REC",
+      "label": "Number of Prenatal Visits Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "PRIORDEAD",
+      "label": "Prior Births Now Dead",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "PRIORLIVE",
+      "label": "Prior Births Now Living",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "PRIORTERM",
+      "label": "Prior Other Terminations",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "PWGT_R",
+      "label": "Pre-pregnancy Weight Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RDMETH_REC",
+      "label": "Delivery Method Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RESTATUS",
+      "label": "Residence Status",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RF_ARTEC",
+      "label": "Asst. Reproductive Technology",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RF_CESAR",
+      "label": "Previous Cesarean",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RF_CESARN",
+      "label": "Number of Previous Cesareans",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RF_EHYPE",
+      "label": "Hypertension Eclampsia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RF_FEDRG",
+      "label": "Fertility Enhancing Drugs",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RF_GDIAB",
+      "label": "Gestational Diabetes",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RF_GHYPE",
+      "label": "Gestational Hypertension",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RF_INFTR",
+      "label": "Infertility Treatment Used",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RF_PDIAB",
+      "label": "Pre-pregnancy Diabetes",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RF_PHYPE",
+      "label": "Pre-pregnancy Hypertension",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "RF_PPTERM",
+      "label": "Previous Preterm Birth",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "SETORDER_R",
+      "label": "Set Order Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "SEX",
+      "label": "Sex of Infant",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "TBO_REC",
+      "label": "Total Birth Order Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "WIC",
+      "label": "WIC",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "WTGAIN",
+      "label": "Weight Gain",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "WTGAIN_REC",
+      "label": "Weight Gain Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    },
+    {
+      "name": "date",
+      "label": "Date",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 1,
+      "notes": ""
+    }
+  ]
+}

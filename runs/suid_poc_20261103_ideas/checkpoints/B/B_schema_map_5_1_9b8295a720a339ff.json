@@ -1,0 +1,35 @@
+{
+ "mappings": [
+  {
+   "concept": "microglia activation",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept 'microglia activation' assessed by Iba1 staining is a biological measurement not covered in the provided data sources."
+  },
+  {
+   "concept": "cell death",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept 'cell death' assessed by cleaved caspase 3 (CC3) staining is a biological measurement not covered in the provided data sources."
+  },
+  {
+   "concept": "glutamatergic transmission",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept 'glutamatergic transmission' assessed in the nucleus accumbens and amygdala is a biological measurement not covered in the provided data sources."
+  },
+  {
+   "concept": "hypoglossal motor nucleus (XIIn)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept 'hypoglossal motor nucleus' assessed by electrophysiological recordings from brainstem slices is a biological measurement not covered in the provided data sources."
+  }
+ ],
+ "source_summaries": {
+  "ncfrp_v51": "This dataset focuses on social services, substance abuse history, criminal background, disability status, and other demographic information related to caregivers and biological parents involved in child fatalities. It does not contain any variables that directly or indirectly measure microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus activity."
+ }
+}

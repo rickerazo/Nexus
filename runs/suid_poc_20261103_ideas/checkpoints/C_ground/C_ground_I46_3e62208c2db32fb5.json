@@ -1,0 +1,25 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with varying patterns of maternal gestational weight gain differs by pregnancy stage as recorded in the NFR-CRS.",
+ "rationale": "This study uses a case-only design to analyze how prenatal weight gain varies among SUID cases within ncfrp_v51. The findings will be descriptive and limited in their ability to draw causal conclusions, but they can provide insights into variations within SUID cases.",
+ "prior_art": "The closest tested work is bedsharing_ms_v7.C13, which discusses developmental timing of SUID incidence and suggests that associations with risk factors may vary by stage. However, there is no specific evidence regarding prenatal weight gain patterns across pregnancy stages in SUID cases, making this question still open for investigation.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C13"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Pregnancy Stage",
+  "Maternal Weight Gain"
+ ],
+ "variables": [
+  "ncfrp_v51:IEMweightchange"
+ ],
+ "cannot_establish": "This design cannot establish causality or incidence rates because it is a case-only study without a denominator source or comparison group. The findings will provide insights into variations within SUID cases but do not allow for external validity to estimate population-level risk factors."
+}

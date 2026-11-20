@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of infants experiencing prenatal maternal stress is different between SUID cases and other causes of infant death.",
+ "rationale": "This study uses a case-case comparison to compare the proportions of prenatal maternal stress exposure between SUID cases and other causes of infant death. It does not estimate incidence rates due to the lack of denominator data.",
+ "prior_art": "The closest tested work is SUID_manuscript_v9_clean.C10, which discusses limitations in excluding certain deaths from analysis. However, none directly address prenatal stress specifically in relation to SUID incidence.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2015,
+ "required_concepts": [
+  "maternal_stress",
+  "other_risk_factors",
+  "SUID_cases_and_other_deaths"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4stress",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot establish causality or estimate incidence rates for SUID due to the absence of a denominator source. It can only compare proportions or odds between SUID cases and other causes of infant death regarding prenatal maternal stress exposure."
+}

@@ -1,0 +1,380 @@
+[
+ {
+  "case": "ncfrp_v51 / Pregnancy Weight Gain",
+  "reference": "prams_p8_std2 / Pregnancy Weight Gain",
+  "score": 0.863,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Hospital Overnight Stay",
+  "reference": "prams_p8_arf / Hospital Stay Length",
+  "score": 0.848,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Pregnancy History",
+  "reference": "prams_p8_arf / Previous Births",
+  "score": 0.817,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Maternal Weight and Care",
+  "reference": "prams_p7_arf / Maternal Physical Attributes",
+  "score": 0.801,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Medical Complications",
+  "reference": "prams_p8_arf / Medical Conditions",
+  "score": 0.786,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "cdc_linkco15 / Reporting Flags for Birth Details",
+  "reference": "prams_p8_arf / Birth Location",
+  "score": 0.785,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Infant Hospitalization",
+  "reference": "prams_p8_arf / Hospital Stay Length",
+  "score": 0.785,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Medications and Drugs",
+  "reference": "prams_p8_arf / Medical Conditions",
+  "score": 0.781,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Medication Use During Pregnancy",
+  "reference": "prams_p8_arf / Medical Conditions",
+  "score": 0.776,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Father's Information",
+  "reference": "prams_p8_arf / Birth Location",
+  "score": 0.775,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Maternal Health Conditions",
+  "reference": "prams_p8_arf / Maternal Health Problems",
+  "score": 0.767,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Infant Disposition",
+  "reference": "prams_p8_arf / Infant Status",
+  "score": 0.764,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Maternal Characteristics",
+  "reference": "prams_p7_arf / Maternal Physical Attributes",
+  "score": 0.764,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "cdc_linkco15 / Birth History",
+  "reference": "prams_p7_arf / Previous Birth History",
+  "score": 0.762,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Prior Child Deaths",
+  "reference": "prams_p8_arf / Previous Births",
+  "score": 0.756,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Maternal Stressors",
+  "reference": "prams_p8_arf / Maternal Health Problems",
+  "score": 0.755,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Future Pregnancy Plans",
+  "reference": "prams_p7_arf / Timing of Pregnancy",
+  "score": 0.753,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Health History",
+  "reference": "prams_p8_arf / Medical Conditions",
+  "score": 0.745,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Pregnancy Characteristics",
+  "reference": "prams_p8_arf / Medical Conditions",
+  "score": 0.742,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Prior Child Deaths",
+  "reference": "prams_p7_arf / Previous Birth History",
+  "score": 0.734,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Child Care Arrangements",
+  "reference": "prams_p7_arf / Infant Living Situation",
+  "score": 0.731,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Other Maternal Factors",
+  "reference": "prams_p8_arf / Maternal Health Problems",
+  "score": 0.73,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Oral Health/Dental Complications",
+  "reference": "prams_p8_arf / Healthcare Visits",
+  "score": 0.728,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "cdc_linkco15 / Mother's Demographics",
+  "reference": "prams_p7_arf / Maternal Physical Attributes",
+  "score": 0.724,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "cdc_linkco15 / Prenatal Care and Reporting Flags",
+  "reference": "prams_p7_arf / Smoking During Pregnancy",
+  "score": 0.724,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Preconception and Chronic Disease Care",
+  "reference": "prams_p7_arf / Pre-Pregnancy Health Checks",
+  "score": 0.724,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "cdc_linkco15 / Mother's Age and Imputation",
+  "reference": "prams_p8_arf / Birth Location",
+  "score": 0.709,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Prenatal Care Issues",
+  "reference": "prams_p8_arf / Healthcare Visits During Pregnancy",
+  "score": 0.709,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Prenatal Issues",
+  "reference": "prams_p7_arf / Health Problems Before Pregnancy",
+  "score": 0.708,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "cdc_linkco15 / Mother Transfer",
+  "reference": "prams_p7_arf / Previous Birth History",
+  "score": 0.707,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Mental Health Medication",
+  "reference": "prams_p8_arf / Healthcare Visits During Pregnancy",
+  "score": 0.705,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Maternal Injury",
+  "reference": "prams_p8_arf / Healthcare Visits During Pregnancy",
+  "score": 0.705,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "cdc_linkco15 / Maternal Morbidity",
+  "reference": "prams_p8_arf / Healthcare Visits During Pregnancy",
+  "score": 0.703,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Pregnancy Tests",
+  "reference": "prams_p7_arf / Pre-Pregnancy Health Checks",
+  "score": 0.703,
+  "case_new": true,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Delivery Type",
+  "reference": "prams_p7_arf / Delivery Method",
+  "score": 0.889,
+  "case_new": true,
+  "reference_new": false
+ },
+ {
+  "case": "cdc_linkco15 / Smoking During Pregnancy",
+  "reference": "prams_p7_arf / Smoking During Pregnancy",
+  "score": 0.888,
+  "case_new": false,
+  "reference_new": true
+ },
+ {
+  "case": "cdc_linkco15 / Last Menstrual Period",
+  "reference": "prams_p8_arf / Date Information",
+  "score": 0.863,
+  "case_new": false,
+  "reference_new": true
+ },
+ {
+  "case": "cdc_linkco15 / Delivery Method",
+  "reference": "prams_p7_arf / Delivery Method",
+  "score": 0.821,
+  "case_new": true,
+  "reference_new": false
+ },
+ {
+  "case": "ncfrp_v51 / Infant Sleep Environment",
+  "reference": "prams_p8_arf / Sleeping Arrangements",
+  "score": 0.803,
+  "case_new": true,
+  "reference_new": false
+ },
+ {
+  "case": "cdc_linkco15 / Birth Location and Time",
+  "reference": "prams_p8_arf / Birth Location",
+  "score": 0.8,
+  "case_new": false,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Insurance Coverage",
+  "reference": "prams_p8_arf / Pregnancy Insurance Coverage",
+  "score": 0.771,
+  "case_new": false,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Demographics and Dates",
+  "reference": "prams_p8_arf / Demographic Information",
+  "score": 0.756,
+  "case_new": true,
+  "reference_new": false
+ },
+ {
+  "case": "ncfrp_v51 / Caregiver Demographics",
+  "reference": "prams_p8_arf / Demographic Information",
+  "score": 0.755,
+  "case_new": true,
+  "reference_new": false
+ },
+ {
+  "case": "ncfrp_v51 / Physical Attributes",
+  "reference": "prams_p7_arf / Maternal Physical Attributes",
+  "score": 0.744,
+  "case_new": false,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Infant Health in Last 72 Hours",
+  "reference": "prams_p8_arf / Infant Status",
+  "score": 0.732,
+  "case_new": false,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Type of Delivery",
+  "reference": "prams_p7_arf / Delivery Method",
+  "score": 0.728,
+  "case_new": true,
+  "reference_new": false
+ },
+ {
+  "case": "ncfrp_v51 / Male Demographics",
+  "reference": "prams_p8_arf / Demographic Information",
+  "score": 0.721,
+  "case_new": true,
+  "reference_new": false
+ },
+ {
+  "case": "ncfrp_v51 / Shared sleeping surface",
+  "reference": "prams_p8_arf / Sleeping Arrangements",
+  "score": 0.715,
+  "case_new": true,
+  "reference_new": false
+ },
+ {
+  "case": "ncfrp_v51 / Residence Information",
+  "reference": "prams_p8_arf / Birth Location",
+  "score": 0.713,
+  "case_new": false,
+  "reference_new": true
+ },
+ {
+  "case": "ncfrp_v51 / Caregiver Race and Ethnicity",
+  "reference": "prams_p8_arf / Demographic Information",
+  "score": 0.713,
+  "case_new": true,
+  "reference_new": false
+ },
+ {
+  "case": "ncfrp_v51 / Date Components",
+  "reference": "prams_p8_arf / Date Information",
+  "score": 0.707,
+  "case_new": false,
+  "reference_new": true
+ },
+ {
+  "case": "cdc_linkco15 / APGAR Scores",
+  "reference": "prams_p8_arf / Infant Characteristics",
+  "score": 0.706,
+  "case_new": true,
+  "reference_new": false
+ },
+ {
+  "case": "ncfrp_v51 / Family Circumstances",
+  "reference": "prams_p7_arf / Birth Control Usage",
+  "score": 0.702,
+  "case_new": true,
+  "reference_new": false
+ },
+ {
+  "case": "ncfrp_v51 / Infant Service Discrimination",
+  "reference": "prams_p8_arf / Infant Characteristics",
+  "score": 0.701,
+  "case_new": true,
+  "reference_new": false
+ }
+]

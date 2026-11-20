@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "GIV2malperpunk",
+   "name": "Caregiver Maltreatment History",
+   "summary": "Indicates whether the caregiver has a history of being a perpetrator or victim of various types of maltreatment."
+  },
+  {
+   "start": "GIV2milbrnch",
+   "name": "Military Service Details",
+   "summary": "Records military service branch and active duty status for the caregiver."
+  },
+  {
+   "start": "GIV2perpcpsrefer",
+   "name": "Caregiver Maltreatment Services",
+   "summary": "Documents CPS referrals, substantiations, family preservation services, and prevention services received by caregivers involved in maltreatment cases."
+  },
+  {
+   "start": "GIV2priordeath",
+   "name": "Prior Child Deaths",
+   "summary": "Indicates if the caregiver has a history of prior child deaths due to various causes."
+  },
+  {
+   "start": "GIV2raceai",
+   "name": "Caregiver Race and Ethnicity",
+   "summary": "Captures race and ethnicity details for the caregiver, including specific tribal affiliations."
+  },
+  {
+   "start": "GIV2recmh",
+   "name": "Mental Health Services",
+   "summary": "Indicates whether the caregiver was receiving mental health services at the time of review."
+  },
+  {
+   "start": "GIV2sex",
+   "name": "Caregiver Demographics",
+   "summary": "Records the sex and language spoken by the caregiver."
+  },
+  {
+   "start": "GIV2ssdisins",
+   "name": "Social Services Provided",
+   "summary": "Documents various social services provided to the caregiver, including disability insurance, food stamps, housing assistance, and more."
+  }
+ ]
+}

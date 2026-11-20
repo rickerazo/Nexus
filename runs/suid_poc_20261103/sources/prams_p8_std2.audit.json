@@ -1,0 +1,20 @@
+{
+  "source_id": "prams_p8_std2",
+  "n_variables": 4,
+  "anchors_checked": 0,
+  "unmatched_anchors": [],
+  "census": [
+    {
+      "token": "NUMSDF",
+      "page": 1,
+      "context": "NUMSDF",
+      "count": 2
+    },
+    {
+      "token": "PGWTGNU8F",
+      "page": 1,
+      "context": "PGWTGNU8F",
+      "count": 2
+    }
+  ]
+}

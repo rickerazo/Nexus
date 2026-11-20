@@ -1,0 +1,77 @@
+{
+ "ideas": [
+  {
+   "question": "How does maternal smoking during pregnancy differ in reporting accuracy and completeness between case series (NCFRP) and population reference sources (PRAMS), and what is the potential impact of these differences on estimates of SUID risk?",
+   "comparison": "ncfrp_v51:CIG_REC vs prams_p8_arf:MOMSMOKE, prams_p7_arf:MOMSMOKE",
+   "why_open": "Maternal smoking is a critical risk factor for SUID. However, the accuracy and completeness of maternal self-reporting during pregnancy versus reporting from medical records or case reviews can introduce biases in exposure estimation.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal smoking during pregnancy (exposure)"
+  },
+  {
+   "question": "How do discrepancies in the measurement of infant sleeping arrangements between case series (NCFRP) and population reference sources (PRAMS) impact estimates of SUID risk factors?",
+   "comparison": "ncfrp_v51:CIRsamesurf vs prams_p8_arf:SLEEPOWN_RAW",
+   "why_open": "Infant sleep environment is a crucial factor in SUID, but case series and population surveys may differ in how they capture this information due to differences in reporting methods and biases.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Infant sleep environment (exposure)"
+  },
+  {
+   "question": "What are the differences in how maternal prepregnancy body mass index (BMI) is recorded in case series data (NCFRP) versus population reference surveys (PRAMS), and what implications do these differences have for SUID risk estimation?",
+   "comparison": "ncfrp_v51:INF4mombmi vs prams_p8_arf:MOM_BMI_BC, prams_p7_arf:MOM_BMI_BC",
+   "why_open": "BMI is a significant predictor of various health outcomes including infant mortality. However, BMI measurement can vary between medical records and self-reported surveys, impacting the accuracy of SUID risk assessments.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal prepregnancy body mass index (BMI) (exposure)"
+  },
+  {
+   "question": "How do the definitions and coding of birth weight differ between case series data from NCFRP and PRAMS surveys, and what are the implications for SUID risk estimation?",
+   "comparison": "cdc_linkco15:BWTR4 vs prams_p8_arf:GRAM_NAPHSIS",
+   "why_open": "Birth weight is a key variable in assessing infant health and mortality risks. Differences in how birth weight is recorded can affect the comparability of SUID risk estimates.",
+   "case_sources": [
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Birth weight (low, non-low) (exposure)"
+  },
+  {
+   "question": "How do maternal smoking during pregnancy and infant breastfeeding practices vary in their measurement methods between case series data from NCFRP and PRAMS surveys, and what are the implications for SUID risk estimation?",
+   "comparison": "ncfrp_v51:INFsmanytime vs prams_p8_arf:MOMSMOKE; cdc_linkco15:BFED vs prams_p8_arf:BF5EVER_RAW",
+   "why_open": "Both maternal smoking and infant breastfeeding are critical factors in SUID. Differences in how these variables are measured can introduce biases into risk estimates.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal smoking during pregnancy (exposure), Breastfeeding status at discharge (covariate)"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+### Design and Study Plan
+
+#### 1. The Design
+**Restated Question:** What changes have occurred in the proportion of SUID cases where infants had a crib or similar sleeping arrangement from 2008 to 2019?
+
+This question can be answered using a case series design that compares proportions among SUID cases over time. This design does not estimate incidence, rates, or risk but rather assesses trends within the cases.
+
+#### 2. Sources by Role
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System)
+  - Reason: Records child deaths reviewed by fatality review teams from 2008 to 2019, providing SUID case information.
+  
+- **Population Reference:** prams_p7_arf and prams_p8_arf
+  - Reason: Weighted surveys of mothers who gave birth in participating states, providing demographic information and sleep environment details.
+
+#### 3. Period
+**Years Needed:**
+- ncfrp_v51: 2008 to 2019 (already held)
+- prams_p7_arf: 2012 to 2015 (already held)
+- prams_p8_arf: 2016 to 2021 (already held)
+
+**Years to Acquire:**
+- To align with the case series years, additional data from prams_p8_arf is needed for 2016 to 2019.
+
+#### 4. Variables
+- **Case Series (ncfrp_v51):**
+  - D102: Infant Sleep Environment (INF5havecrib)
+    - Label: Did the infant have a crib, Pack 'n Play, bassinet, bedside sleeper, or baby box?
+    - Values: Yes/No
+  
+- **Population Reference (prams_p8_arf and prams_p7_arf):**
+  - SLP_CRB8_RAW: Baby slept -- in crib / bassinet / play yard
+    - Label: Did the baby sleep in a crib, bassinet, or play yard?
+    - Values: Yes/No
+  
+#### 5. Biases
+- **Selection Bias:** 
+  - Case series (ncfrp_v51) covers only child deaths reviewed by fatality review teams; this may not be representative of all SUID cases.
+  
+- **Information Bias:**
+  - Different case-reporting systems and survey methodologies introduce variability in how sleep environment information is collected and reported.
+
+- **Confounding:**
+  - Potential confounders like maternal smoking, prematurity, and previous preterm births should be accounted for when analyzing trends over time. These variables may differ between the population reference and case series sources.
+
+#### 6. What the Design Cannot Establish
+- The design can only establish trends in proportions among SUID cases; it cannot determine incidence rates or causality.
+  
+#### 7. Prior Art
+The manuscript claims do not closely address the specific trend analysis of crib use over time for SUID cases:
+- **Closest Relevant Claim:** bedsharing_ms_v7.C8: Bed sharing was recorded for 59.5% of SUID cases, and these cases were more often associated with maternal smoking during pregnancy (52.2%) compared to non-bed-sharing cases (40.8%). 
+  - This claim discusses associations but does not cover trends over time regarding crib use.
+
+#### 8. Verdict
+**Yes**, these sources can answer a version of the question by comparing proportions of SUID cases with and without cribs or similar sleeping arrangements from 2008 to 2019, using ncfrp_v51 as the case series source and prams_p7_arf/prams_p8_arf as population references. However, the study should be cautious about interpreting trends in light of potential selection and information biases.
+
+### Conclusion
+The data sources allow for a trend analysis within SUID cases regarding crib use from 2008 to 2019. This design will help evaluate changes over time but cannot establish incidence rates or causality due to the limitations inherent in case series designs.

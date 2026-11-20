@@ -1,0 +1,92 @@
+{
+  "source_id": "cdc_linkco15",
+  "n_variables": 270,
+  "anchors_checked": 253,
+  "unmatched_anchors": [],
+  "census": [
+    {
+      "token": "INPUT",
+      "page": 5,
+      "context": "INPUT",
+      "count": 1
+    },
+    {
+      "token": "LATEREC",
+      "page": 14,
+      "context": "LATEREC",
+      "count": 1
+    },
+    {
+      "token": "RF_CESARN",
+      "page": 28,
+      "context": "RF_CESARN",
+      "count": 1
+    },
+    {
+      "token": "D_RESTATUS",
+      "page": 42,
+      "context": "D_RESTATUS",
+      "count": 1
+    },
+    {
+      "token": "DOD_MM",
+      "page": 43,
+      "context": "DOD_MM",
+      "count": 1
+    },
+    {
+      "token": "DOD_YY",
+      "page": 43,
+      "context": "DOD_YY",
+      "count": 1
+    },
+    {
+      "token": "DWEEKDAY",
+      "page": 43,
+      "context": "DWEEKDAY",
+      "count": 1
+    },
+    {
+      "token": "HOSPD",
+      "page": 43,
+      "context": "HOSPD",
+      "count": 1
+    },
+    {
+      "token": "ADDENDUM",
+      "page": 44,
+      "context": "ADDENDUM",
+      "count": 1
+    },
+    {
+      "token": "DCNTYPOP",
+      "page": 45,
+      "context": "DCNTYPOP",
+      "count": 1
+    },
+    {
+      "token": "DOCNTY",
+      "page": 45,
+      "context": "DOCNTY",
+      "count": 1
+    },
+    {
+      "token": "DOSTATE",
+      "page": 45,
+      "context": "DOSTATE",
+      "count": 1
+    },
+    {
+      "token": "DRCNTY",
+      "page": 46,
+      "context": "DRCNTY",
+      "count": 1
+    },
+    {
+      "token": "DRSTCNTRY",
+      "page": 46,
+      "context": "DRSTCNTRY",
+      "count": 1
+    }
+  ]
+}

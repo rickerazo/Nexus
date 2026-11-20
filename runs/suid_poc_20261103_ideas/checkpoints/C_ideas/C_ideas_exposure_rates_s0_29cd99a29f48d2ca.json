@@ -1,0 +1,108 @@
+{
+ "ideas": [
+  {
+   "question": "What is the rate of sudden unexpected infant death (SUID) among infants whose mothers experienced pregnancy-related stressors compared to those who did not?",
+   "comparison": "Infants with pregnant mothers experiencing significant stressors vs. no stressors, from 2016-2021.",
+   "why_open": "This question explores the impact of maternal stress on SUID rates and could identify new risk factors or protective behaviors that might reduce mortality in high-risk groups.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15",
+    "cdc_linkco15"
+   ],
+   "domains": [
+    "D100",
+    "D264"
+   ],
+   "data": "ncfrp_v51.D100_Maternal Stressors combined with prams_p8_arf.D264_Suicide personal crisis for maternal stress exposure prevalence and cdc_linkco15 & cdc_natl15 for denominator."
+  },
+  {
+   "question": "What is the incidence rate of SUID among infants born to mothers who gained less than recommended weight during pregnancy compared to those who met or exceeded recommendations?",
+   "comparison": "Infants born to mothers with inadequate vs. adequate prenatal weight gain, from 2016-2021.",
+   "why_open": "This question evaluates the relationship between maternal nutrition and SUID incidence, which has not been extensively studied beyond general health impacts.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_std2",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15",
+    "cdc_linkco15"
+   ],
+   "domains": [
+    "D88",
+    "D302"
+   ],
+   "data": "ncfrp_v51.D88_Pregnancy Weight Gain combined with prams_p7_arf.D302_Maternal Physical Attributes and prams_p8_std2.D299_Pregnancy Weight Gain for maternal weight gain exposure prevalence and cdc_linkco15 & cdc_natl15 for denominator."
+  },
+  {
+   "question": "What is the difference in SUID rates between infants whose mothers experienced severe mental health issues during pregnancy versus those who did not?",
+   "comparison": "Infants born to mothers with vs. without significant mental health problems during pregnancy, from 2016-2021.",
+   "why_open": "This question addresses the impact of maternal mental health on infant survival, an underexplored area that may reveal critical risk factors for SUID not currently understood.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15",
+    "cdc_linkco15"
+   ],
+   "domains": [
+    "D240",
+    "D269"
+   ],
+   "data": "ncfrp_v51.D240_Maternal Weight and Care combined with prams_p8_arf.D269_Maternal Health Problems for maternal health problems exposure prevalence and cdc_linkco15 & cdc_natl15 for denominator."
+  },
+  {
+   "question": "What is the rate of SUID among infants born to mothers who experienced preterm labor compared to those who did not?",
+   "comparison": "Infants whose mothers experienced vs. did not experience preterm labor, from 2016-2021.",
+   "why_open": "This question investigates whether preterm labor independently affects SUID risk, beyond known associations with low birth weight and prematurity.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15",
+    "cdc_linkco15"
+   ],
+   "domains": [
+    "D243",
+    "D303"
+   ],
+   "data": "ncfrp_v51.D243_Prenatal Care Issues combined with prams_p7_arf.D303_Previous Birth History for maternal preterm labor exposure prevalence and cdc_linkco15 & cdc_natl15 for denominator."
+  },
+  {
+   "question": "What is the incidence of SUID among infants born to mothers who experienced significant medical complications during pregnancy compared to those with uncomplicated pregnancies?",
+   "comparison": "Infants whose mothers had vs. did not have major medical issues during pregnancy, from 2016-2021.",
+   "why_open": "This question aims to uncover how maternal health conditions affect infant survival rates, potentially highlighting new avenues for intervention and prevention strategies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15",
+    "cdc_linkco15"
+   ],
+   "domains": [
+    "D239",
+    "D264"
+   ],
+   "data": "ncfrp_v51.D239_Maternal Health Conditions combined with prams_p7_arf.D264_Physical abuse triggers for maternal medical complications exposure prevalence and cdc_linkco15 & cdc_natl15 for denominator."
+  }
+ ]
+}

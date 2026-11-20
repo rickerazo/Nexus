@@ -1,0 +1,84 @@
+{
+ "ideas": [
+  {
+   "question": "To assess how differences in recording pregnancy weight gain between PRAMS Phase 8 (P8) Analytic Research File and its Standard Section II might affect the comparison of SUID risk factors.",
+   "comparison": "PRAMS P8 ARF vs. PRAMS P8 STD2, both from 2016-2021",
+   "why_open": "Current studies use weight gain data solely from one source without evaluating potential discrepancies between PRAMS data collection methods in Phase 8.",
+   "case_sources": [],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p8_std2"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D279",
+    "D299"
+   ],
+   "data": "P8 ARF would be used for its comprehensive health tracking, while P8 STD2 could reveal discrepancies in reporting and potentially affect the reliability of weight gain data as a SUID risk factor."
+  },
+  {
+   "question": "To investigate whether differences in how PRAMS Phase 7 records smoking during pregnancy impact comparisons with PRAMS Phase 8 regarding infant mortality risks.",
+   "comparison": "PRAMS P7 vs. PRAMS P8, both from respective phases",
+   "why_open": "Existing studies use only one phase of PRAMS data to assess smoking as an SUID risk factor without exploring potential variances between different phases.",
+   "case_sources": [],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D315",
+    "D296"
+   ],
+   "data": "P7 ARF will provide baseline smoking patterns and P8 ARF will give a more recent comparison to understand how changes in data collection methods may alter smoking's impact on SUID."
+  },
+  {
+   "question": "To examine disparities in healthcare communication about preventive practices between PRAMS Phase 7 and Phase 8 to evaluate the consistency of risk factor reporting for Sudden Unexpected Infant Death (SUID).",
+   "comparison": "PRAMS P7 vs. PRAMS P8, both from respective phases",
+   "why_open": "Current research does not consider discrepancies in preventive practice discussions as recorded across different PRAMS data collection phases.",
+   "case_sources": [],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D306",
+    "D297"
+   ],
+   "data": "Using P7 ARF for historical context and P8 ARF to observe recent trends will highlight any shifts in healthcare providers' discussions about preventive practices."
+  },
+  {
+   "question": "To evaluate how inconsistencies in the recording of postpartum birth control usage between PRAMS Phase 7 and Phase 8 may influence perceptions of SUID risk factors.",
+   "comparison": "PRAMS P7 vs. PRAMS P8, both from respective phases",
+   "why_open": "Current studies do not explore differences in how various birth control methods are recorded across different phases of PRAMS data collection for SUID risk assessment.",
+   "case_sources": [],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D309",
+    "D296"
+   ],
+   "data": "Comparing P7 ARF's and P8 ARF's methodologies will reveal any discrepancies in how postpartum birth control use is reported, impacting its reliability as a SUID risk factor."
+  },
+  {
+   "question": "To investigate the effect of differences in insurance coverage documentation between PRAMS Phase 7 and Phase 8 on assessing disparities in infant mortality risks.",
+   "comparison": "PRAMS P7 vs. PRAMS P8, both from respective phases",
+   "why_open": "Current research does not account for potential variations in how insurance status is recorded across different phases of PRAMS data collection that could affect SUID risk factor analysis.",
+   "case_sources": [],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D301",
+    "D275"
+   ],
+   "data": "Utilizing P7 ARF for established patterns and P8 ARF to observe recent changes will help identify inconsistencies in insurance coverage reporting that may influence SUID risk factor assessments."
+  }
+ ]
+}

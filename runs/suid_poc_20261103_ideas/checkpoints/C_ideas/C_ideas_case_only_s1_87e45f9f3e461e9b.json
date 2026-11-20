@@ -1,0 +1,74 @@
+{
+ "ideas": [
+  {
+   "question": "How does hospital overnight stay frequency differ between live-born infants who later died of SUID compared to those that survived beyond infancy?",
+   "comparison": "Within-case variation among live-born infants, from birth until the first year; 2015-2019.",
+   "why_open": "This question explores whether infants who experience hospital overnight stays more frequently during their first year are at higher risk for SUID compared to those with fewer or no such stays. Hospital stays could indicate medical vulnerabilities that precede SUID, and this is not yet fully understood.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D82"
+   ],
+   "data": "Domain D82 (Hospital Overnight Stay) from ncfrp_v51, which includes whether the infant had hospital overnight stays and the number of nights spent in the hospital. The analysis will focus on infants who died of SUID compared to those that survived beyond infancy."
+  },
+  {
+   "question": "What is the relationship between prenatal care issues and infant mortality among live-born infants who later die from SUID?",
+   "comparison": "Within-case variation during pregnancy and first year; 2015-2019.",
+   "why_open": "Understanding whether infants with documented prenatal care issues are at higher risk for SUID can shed light on potential preventable factors. This knowledge is critical to developing targeted interventions that address prenatal health disparities.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D243"
+   ],
+   "data": "Domain D243 (Prenatal Care Issues) from ncfrp_v51, which includes indicators of inadequate prenatal care assessments, late entry to care, missed appointments, and multiple providers. The analysis will focus on infants who died of SUID compared to those that survived beyond infancy."
+  },
+  {
+   "question": "Do maternal health conditions during pregnancy correlate with infant mortality due to SUID?",
+   "comparison": "Within-case variation during pregnancy and first year; 1983-2019.",
+   "why_open": "Exploring whether specific health conditions in mothers are predictive of increased risk for SUID among their infants can highlight critical areas for intervention during prenatal care.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D239"
+   ],
+   "data": "Domain D239 (Maternal Health Conditions) from ncfrp_v51, which includes details about prolonged rupture of membranes, sexually transmitted infections, urinary tract infections, and gestational weight gain. The analysis will focus on infants who died of SUID compared to those that survived beyond infancy."
+  },
+  {
+   "question": "What are the patterns in medication use during pregnancy among live-born infants who later die from SUID?",
+   "comparison": "Within-case variation during pregnancy; 2015-2019.",
+   "why_open": "Investigating medication exposure during pregnancy may reveal potential risk factors for SUID that could be mitigated through better prenatal care and health advisories.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D251"
+   ],
+   "data": "Domain D251 (Medication Use During Pregnancy) from ncfrp_v51, which includes use of various medications and drugs during pregnancy. The analysis will focus on infants who died of SUID compared to those that survived beyond infancy."
+  },
+  {
+   "question": "How does the history of prior child deaths among siblings affect infant mortality due to SUID?",
+   "comparison": "Within-case variation across siblings; 2015-2019.",
+   "why_open": "Identifying whether a familial pattern of infant death increases risk for SUID can help in early identification and prevention strategies within high-risk families.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D120"
+   ],
+   "data": "Domain D120 (Prior Child Deaths) from ncfrp_v51, which includes details about prior child deaths due to various causes. The analysis will focus on infants who died of SUID compared to those that survived beyond infancy."
+  }
+ ]
+}

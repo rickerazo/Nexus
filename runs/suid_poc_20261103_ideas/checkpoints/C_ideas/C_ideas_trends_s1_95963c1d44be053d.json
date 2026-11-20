@@ -1,0 +1,89 @@
+{
+ "ideas": [
+  {
+   "question": "Does the proportion of SUID cases involving maternal stressors change over time?",
+   "comparison": "ncfrp_v51 case series 2004-2019 with prams_p8_arf population reference Phase 8",
+   "why_open": "No previous study has analyzed changes in the role of maternal stressors over time, which could provide insights into whether societal or economic factors influence SUID incidence.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D100",
+    "D297"
+   ],
+   "data": "Use the maternal stressors domain D100 from ncfrp_v51 to identify cases involving stressors such as financial problems or relationship issues. Compare these proportions over time with data on healthcare visits and other support services obtained from prams_p8_arf's D297."
+  },
+  {
+   "question": "Has the proportion of SUID cases related to preterm birth remained stable between 2016-2021?",
+   "comparison": "ncfrp_v51 case series 2004-2019 with prams_p8_arf population reference Phase 8",
+   "why_open": "This question explores whether the association between preterm birth and SUID has changed over time, potentially reflecting improvements or worsening in prenatal care.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D67",
+    "D284"
+   ],
+   "data": "Utilize the preterm birth history domain D67 from ncfrp_v51 to identify cases involving preterm infants. Compare these proportions over time with data on income and dependent information obtained from prams_p8_arf's D284."
+  },
+  {
+   "question": "Is there a trend in hospital overnight stays for SUID cases compared to the population?",
+   "comparison": "ncfrp_v51 case series 1990-2020 with prams_p7_arf population reference Phase 7",
+   "why_open": "This question investigates whether postnatal care, as indicated by hospital overnight stays, has changed over time and correlates with SUID incidence.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82",
+    "D309"
+   ],
+   "data": "Use the hospital overnight stay domain D82 from ncfrp_v51 to identify cases involving extended postnatal care. Compare these proportions over time with data on health insurance coverage obtained from prams_p7_arf's D309."
+  },
+  {
+   "question": "Do changes in pre-pregnancy health checks correlate with SUID incidence trends?",
+   "comparison": "ncfrp_v51 case series 2004-2019 with prams_p7_arf population reference Phase 7",
+   "why_open": "This question aims to understand if improvements or declines in pre-pregnancy health checks have impacted SUID incidence, potentially indicating shifts in preventive healthcare practices.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D66",
+    "D304"
+   ],
+   "data": "Utilize the pre-pregnancy health checks domain D66 from ncfrp_v51 to identify cases with inadequate pre-pregnancy care. Compare these proportions over time with data on pre-pregnancy health checks obtained from prams_p7_arf's D304."
+  },
+  {
+   "question": "Has the proportion of SUID cases where mothers did not use birth control changed since 2016?",
+   "comparison": "ncfrp_v51 case series 2008-2019 with prams_p7_arf population reference Phase 7",
+   "why_open": "This question explores whether there have been changes in contraceptive usage among mothers of SUID cases, which could reflect broader trends in reproductive health practices.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D83",
+    "D308"
+   ],
+   "data": "Use the birth control use domain D83 from ncfrp_v51 to identify cases involving unintended pregnancies. Compare these proportions over time with data on reasons for not using birth control obtained from prams_p7_arf's D308."
+  }
+ ]
+}

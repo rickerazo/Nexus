@@ -1,0 +1,93 @@
+{
+ "ideas": [
+  {
+   "question": "What are the differences in how pregnancy weight gain is recorded between NCFRP and PRAMS, and how might these discrepancies affect comparisons of risk factors for SUID?",
+   "comparison": "NCFRP (2015) vs. PRAMS Phase 8 (2016-2021)",
+   "why_open": "The manuscripts have not addressed the comparability or differences in recording pregnancy weight gain between case series and population reference datasets, which could influence risk factor analysis for SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p8_std2"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D88",
+    "D297"
+   ],
+   "data": "The comparison would look at how pregnancy weight gain is measured in the case series (ncfrp_v51) versus population reference sources (prams_p8_arf, prams_p8_std2). This involves examining the definitions of these variables, their timing (when data were collected), and any discrepancies in who reports them. It would also assess how missing answers are handled and coded in both datasets to identify potential biases."
+  },
+  {
+   "question": "How do case series and population reference sources differ in recording infant sleep environment details, and what implications might this have for understanding SUID risk factors?",
+   "comparison": "NCFRP (2015) vs. PRAMS Phase 8 (2016-2021)",
+   "why_open": "The manuscripts did not explore the comparability of infant sleep environment data recorded in case series versus population reference datasets, which could be crucial for understanding environmental risk factors related to SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D102",
+    "D281"
+   ],
+   "data": "This question would compare how infant sleep environment details are documented in the case series (ncfrp_v51) versus population reference sources (prams_p8_arf, prams_p7_arf). This includes examining definitions of variables related to sleeping arrangements and whether infants sleep alone or with parents. It would also look at differences in reporting timing, respondent roles, and missing data handling to identify potential biases in the comparison."
+  },
+  {
+   "question": "What are the disparities in how maternal health problems are recorded between NCFRP and PRAMS, and what impact might these have on evaluating SUID risk factors?",
+   "comparison": "NCFRP (2015) vs. PRAMS Phase 7 (2012-2015), Phase 8 (2016-2021)",
+   "why_open": "The literature has not yet compared how maternal health problems are recorded in case series versus population reference datasets, which could introduce biases when assessing risk factors for SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D239",
+    "D269"
+   ],
+   "data": "This question would assess how maternal health problems are recorded in case series (ncfrp_v51) versus population reference sources (prams_p7_arf, prams_p8_arf). This includes comparing definitions of variables related to various health conditions during pregnancy and missing data handling. Understanding these differences can help identify biases that might affect the comparability of risk factor analysis for SUID."
+  },
+  {
+   "question": "How do NCFRP and PRAMS differ in recording healthcare visits during pregnancy, and what implications might this have for assessing SUID risk factors?",
+   "comparison": "NCFRP (2015) vs. PRAMS Phase 8 (2016-2021)",
+   "why_open": "The manuscripts did not examine the comparability of healthcare visits during pregnancy between case series and population reference datasets, which could introduce biases when assessing SUID risk factors.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D243",
+    "D272"
+   ],
+   "data": "This question would compare how healthcare visits during pregnancy are recorded in the case series (ncfrp_v51) versus population reference sources (prams_p8_arf). This includes examining definitions of variables related to prenatal care, missing data handling, and timing differences. Understanding these disparities can help identify biases that might affect the assessment of SUID risk factors."
+  },
+  {
+   "question": "What discrepancies exist in recording smoking behavior during pregnancy between NCFRP and PRAMS datasets, and how might these impact comparisons for assessing SUID risk factors?",
+   "comparison": "NCFRP (2015) vs. PRAMS Phase 8 (2016-2021)",
+   "why_open": "The literature has not yet explored the comparability of smoking behavior during pregnancy between case series and population reference datasets, which could introduce biases in SUID risk factor assessments.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D68",
+    "D315"
+   ],
+   "data": "This question would assess how smoking behavior during pregnancy is recorded in case series (ncfrp_v51) versus population reference sources (prams_p8_arf, prams_p7_arf). This includes comparing definitions of variables related to smoking habits, missing data handling, and timing differences. Understanding these discrepancies can help identify biases that might affect the comparability of SUID risk factor assessments."
+  }
+ ]
+}

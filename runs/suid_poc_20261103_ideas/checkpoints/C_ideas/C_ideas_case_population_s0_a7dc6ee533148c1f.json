@@ -1,0 +1,104 @@
+{
+ "ideas": [
+  {
+   "question": "Does pregnancy weight gain differ between SUID cases and mothers of live births?",
+   "comparison": "ncfrp_v51 (case series) compared with prams_p8_std2 (population reference); cdc_natl15 (denominator)",
+   "why_open": "This question aims to explore whether there is a significant difference in pregnancy weight gain between mothers who experienced SUID and those who did not, which could potentially indicate unmeasured risk factors or behavioral differences.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_std2",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D88",
+    "D299"
+   ],
+   "data": "Case series (ncfrp_v51:INF4mombmi) records the pregnancy weight gain of mothers who experienced SUID, while population reference (prams_p8_std2 and prams_p7_arf:PREGWTGAIN or PREG_WKGAIN) provides the weighted prevalence of pregnancy weight gain among a representative sample of live births."
+  },
+  {
+   "question": "Are there differences in maternal stressors between SUID cases and the general population?",
+   "comparison": "ncfrp_v51 (case series) compared with prams_p8_arf (population reference); cdc_natl15 (denominator)",
+   "why_open": "By comparing the prevalence of maternal stressors, this research could shed light on whether certain stressful life events or conditions disproportionately affect mothers who experience SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D100",
+    "D247"
+   ],
+   "data": "Case series (ncfrp_v51:INFstressor) captures maternal stressors among mothers who experienced SUID, while population reference (prams_p8_arf and prams_p7_arf:D100) provides weighted prevalence of these same stressors in a representative sample of live births."
+  },
+  {
+   "question": "How do health care visits during pregnancy differ between SUID cases and the general population?",
+   "comparison": "ncfrp_v51 (case series) compared with prams_p8_arf (population reference); cdc_natl15 (denominator)",
+   "why_open": "Investigating healthcare utilization can reveal whether inadequate or excessive use of health care during pregnancy is associated with an increased risk of SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D239",
+    "D272"
+   ],
+   "data": "Case series (ncfrp_v51:PREG_VISIT) captures prenatal healthcare visits among mothers who experienced SUID, while population reference (prams_p8_arf and prams_p7_arf:HEALTHCARE_VISITS_DURING_PREGNANCY) provides weighted prevalence of these health care visits in a representative sample."
+  },
+  {
+   "question": "What is the difference in postpartum contraception use between mothers who experienced SUID and those who did not?",
+   "comparison": "ncfrp_v51 (case series) compared with prams_p8_arf, prams_p7_arf (population reference); cdc_natl15 (denominator)",
+   "why_open": "This comparison can highlight whether the use of postpartum contraception differs between mothers who experienced SUID and those who did not.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D239",
+    "D308"
+   ],
+   "data": "Case series (ncfrp_v51:BCMETHOD) captures postpartum contraception use among mothers who experienced SUID, while population reference (prams_p8_arf and prams_p7_arf:BIRTH_CONTROL_USAGE) provides weighted prevalence of these methods in a representative sample."
+  },
+  {
+   "question": "Is there an association between substance abuse during pregnancy and the incidence of SUID?",
+   "comparison": "ncfrp_v51 (case series) compared with prams_p8_arf, prams_p7_arf (population reference); cdc_natl15 (denominator)",
+   "why_open": "This question seeks to understand whether substance abuse during pregnancy is more common among mothers who experienced SUID compared to those who did not.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D240",
+    "D309"
+   ],
+   "data": "Case series (ncfrp_v51:INFdruguse) captures substance use among mothers who experienced SUID, while population reference (prams_p8_arf and prams_p7_arf:D309) provides weighted prevalence of these behaviors in a representative sample."
+  }
+ ]
+}

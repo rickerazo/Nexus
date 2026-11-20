@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "CIRother1tang",
+   "name": "Objects in sleeping area",
+   "summary": "Indicates whether objects were tangled around, on top of, under the child, or if their position is unknown."
+  },
+  {
+   "start": "CIRouttemp",
+   "name": "Environmental conditions",
+   "summary": "Records outside temperature and overcrowding in the home/living space."
+  },
+  {
+   "start": "CIRoverheat",
+   "name": "Overheating factors",
+   "summary": "Indicates if the child was overheated, whether due to room being too hot or excessive bedding/clothing."
+  },
+  {
+   "start": "CIRpacifier",
+   "name": "Sleeping accessories",
+   "summary": "Records use of a pacifier and presence/position of pillows, sleep positioners, toys, and other objects in the sleeping area."
+  },
+  {
+   "start": "CIRpresadult",
+   "name": "Shared sleeping surface",
+   "summary": "Indicates if an adult was present on the same sleeping surface as the child and their relationship to the child."
+  },
+  {
+   "start": "CIRproduct",
+   "name": "Product details",
+   "summary": "Describes the product involved in the incident, its safety label status, and whether it was used properly."
+  },
+  {
+   "start": "CIRprostitutn",
+   "name": "Crime type",
+   "summary": "Identifies if the death is related to prostitution, robbery/burglary, sexual assault, or witness intimidation."
+  },
+  {
+   "start": "CIRsleepplace",
+   "name": "Sleeping location",
+   "summary": "Details where the child was found sleeping at the time of death and usual sleep place."
+  }
+ ]
+}

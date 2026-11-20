@@ -1,0 +1,392 @@
+{
+  "source_id": "prams_p8_arf",
+  "n_variables": 485,
+  "anchors_checked": 0,
+  "unmatched_anchors": [],
+  "census": [
+    {
+      "token": "HTUF",
+      "page": 1,
+      "context": "HTUF",
+      "count": 1
+    },
+    {
+      "token": "LBKGUF",
+      "page": 1,
+      "context": "LBKGUF",
+      "count": 1
+    },
+    {
+      "token": "NUMF",
+      "page": 1,
+      "context": "NUMF",
+      "count": 14
+    },
+    {
+      "token": "NY1F",
+      "page": 1,
+      "context": "NY1F",
+      "count": 55
+    },
+    {
+      "token": "NYS1F",
+      "page": 2,
+      "context": "NYS1F",
+      "count": 147
+    },
+    {
+      "token": "NYSF",
+      "page": 2,
+      "context": "NYSF",
+      "count": 80
+    },
+    {
+      "token": "NYF",
+      "page": 4,
+      "context": "NYF",
+      "count": 29
+    },
+    {
+      "token": "NUMSF",
+      "page": 6,
+      "context": "NUMSF",
+      "count": 4
+    },
+    {
+      "token": "PGINTEN",
+      "page": 6,
+      "context": "PGINTEN",
+      "count": 1
+    },
+    {
+      "token": "FL12GETF",
+      "page": 8,
+      "context": "FL12GETF",
+      "count": 1
+    },
+    {
+      "token": "PREGNANCY",
+      "page": 8,
+      "context": "PREGNANCY",
+      "count": 2
+    },
+    {
+      "token": "CIGARETTE",
+      "page": 9,
+      "context": "CIGARETTE",
+      "count": 6
+    },
+    {
+      "token": "MORE",
+      "page": 9,
+      "context": "MORE",
+      "count": 6
+    },
+    {
+      "token": "SMOKE5F",
+      "page": 9,
+      "context": "SMOKE5F",
+      "count": 6
+    },
+    {
+      "token": "DAY",
+      "page": 10,
+      "context": "DAY",
+      "count": 6
+    },
+    {
+      "token": "ECIG_FRE",
+      "page": 10,
+      "context": "ECIG_FRE",
+      "count": 2
+    },
+    {
+      "token": "LESS",
+      "page": 10,
+      "context": "LESS",
+      "count": 2
+    },
+    {
+      "token": "ASKED",
+      "page": 11,
+      "context": "ASKED",
+      "count": 8
+    },
+    {
+      "token": "DRINK8F",
+      "page": 11,
+      "context": "DRINK8F",
+      "count": 2
+    },
+    {
+      "token": "WEEK",
+      "page": 11,
+      "context": "WEEK",
+      "count": 8
+    },
+    {
+      "token": "HOSPITAL",
+      "page": 12,
+      "context": "HOSPITAL",
+      "count": 1
+    },
+    {
+      "token": "LTH_HOS",
+      "page": 12,
+      "context": "LTH_HOS",
+      "count": 1
+    },
+    {
+      "token": "ALWAYS",
+      "page": 13,
+      "context": "ALWAYS",
+      "count": 4
+    },
+    {
+      "token": "BFDUR4F",
+      "page": 13,
+      "context": "BFDUR4F",
+      "count": 2
+    },
+    {
+      "token": "BFUNIT4F",
+      "page": 13,
+      "context": "BFUNIT4F",
+      "count": 2
+    },
+    {
+      "token": "FREQ5F",
+      "page": 13,
+      "context": "FREQ5F",
+      "count": 4
+    },
+    {
+      "token": "SLEEPPO",
+      "page": 13,
+      "context": "SLEEPPO",
+      "count": 1
+    },
+    {
+      "token": "BCF",
+      "page": 20,
+      "context": "BCF",
+      "count": 13
+    },
+    {
+      "token": "FD_ATTEND",
+      "page": 20,
+      "context": "FD_ATTEND",
+      "count": 1
+    },
+    {
+      "token": "YNF",
+      "page": 20,
+      "context": "YNF",
+      "count": 33
+    },
+    {
+      "token": "NP_MAGE",
+      "page": 21,
+      "context": "NP_MAGE",
+      "count": 4
+    },
+    {
+      "token": "PU_GSTWK",
+      "page": 21,
+      "context": "PU_GSTWK",
+      "count": 1
+    },
+    {
+      "token": "PU_MAGE",
+      "page": 21,
+      "context": "PU_MAGE",
+      "count": 2
+    },
+    {
+      "token": "ILLB_R",
+      "page": 22,
+      "context": "ILLB_R",
+      "count": 1
+    },
+    {
+      "token": "KESSNERF",
+      "page": 22,
+      "context": "KESSNERF",
+      "count": 1
+    },
+    {
+      "token": "NP_GRAM",
+      "page": 22,
+      "context": "NP_GRAM",
+      "count": 1
+    },
+    {
+      "token": "DEGREEF",
+      "page": 23,
+      "context": "DEGREEF",
+      "count": 2
+    },
+    {
+      "token": "EDUCF",
+      "page": 23,
+      "context": "EDUCF",
+      "count": 2
+    },
+    {
+      "token": "MARRIEDF",
+      "page": 23,
+      "context": "MARRIEDF",
+      "count": 1
+    },
+    {
+      "token": "ISLNDR",
+      "page": 24,
+      "context": "ISLNDR",
+      "count": 2
+    },
+    {
+      "token": "PU_RACE",
+      "page": 24,
+      "context": "PU_RACE",
+      "count": 2
+    },
+    {
+      "token": "RACEAKF",
+      "page": 24,
+      "context": "RACEAKF",
+      "count": 2
+    },
+    {
+      "token": "BCLBSF",
+      "page": 25,
+      "context": "BCLBSF",
+      "count": 1
+    },
+    {
+      "token": "BCSMOKEF",
+      "page": 25,
+      "context": "BCSMOKEF",
+      "count": 1
+    },
+    {
+      "token": "BMIG4REV",
+      "page": 25,
+      "context": "BMIG4REV",
+      "count": 2
+    },
+    {
+      "token": "O_TERMF",
+      "page": 26,
+      "context": "O_TERMF",
+      "count": 1
+    },
+    {
+      "token": "URB_RUR",
+      "page": 26,
+      "context": "URB_RUR",
+      "count": 1
+    },
+    {
+      "token": "NP_PRELB",
+      "page": 27,
+      "context": "NP_PRELB",
+      "count": 1
+    },
+    {
+      "token": "PAY_DELF",
+      "page": 27,
+      "context": "PAY_DELF",
+      "count": 1
+    },
+    {
+      "token": "PLURALF",
+      "page": 27,
+      "context": "PLURALF",
+      "count": 1
+    },
+    {
+      "token": "PNC_MTHF",
+      "page": 27,
+      "context": "PNC_MTHF",
+      "count": 1
+    },
+    {
+      "token": "POBF",
+      "page": 27,
+      "context": "POBF",
+      "count": 1
+    },
+    {
+      "token": "SEXF",
+      "page": 28,
+      "context": "SEXF",
+      "count": 1
+    },
+    {
+      "token": "VT_NONHISPANIC_WHIT",
+      "page": 28,
+      "context": "VT_NONHISPANIC_WHIT",
+      "count": 1
+    },
+    {
+      "token": "BCFLAGF",
+      "page": 29,
+      "context": "BCFLAGF",
+      "count": 1
+    },
+    {
+      "token": "MODEF",
+      "page": 29,
+      "context": "MODEF",
+      "count": 2
+    },
+    {
+      "token": "PARTICIPATE",
+      "page": 29,
+      "context": "PARTICIPATE",
+      "count": 1
+    },
+    {
+      "token": "QX_TYPE",
+      "page": 29,
+      "context": "QX_TYPE",
+      "count": 1
+    },
+    {
+      "token": "STRATCF",
+      "page": 29,
+      "context": "STRATCF",
+      "count": 1
+    },
+    {
+      "token": "BF_DURF",
+      "page": 33,
+      "context": "BF_DURF",
+      "count": 1
+    },
+    {
+      "token": "ECIG_FREQ",
+      "page": 34,
+      "context": "ECIG_FREQ",
+      "count": 4
+    },
+    {
+      "token": "BMIG4F",
+      "page": 35,
+      "context": "BMIG4F",
+      "count": 1
+    },
+    {
+      "token": "INDICATOR",
+      "page": 36,
+      "context": "INDICATOR",
+      "count": 1
+    },
+    {
+      "token": "SMK_CHNG",
+      "page": 40,
+      "context": "SMK_CHNG",
+      "count": 3
+    }
+  ]
+}

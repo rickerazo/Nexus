@@ -1,0 +1,94 @@
+{
+ "ideas": [
+  {
+   "question": "Does the risk profile of SUID cases differ from other neonatal deaths in relation to pregnancy weight gain and hospital stay length?",
+   "comparison": "Cases with Sudden Unexpected Infant Death (SUID) compared to other neonatal deaths within the same case series.",
+   "why_open": "While studies have explored various risk factors for SUID, less is known about how these cases differ from other types of infant mortality in terms of pregnancy health and hospital care measures. Understanding these differences could provide insights into unique contributing factors or protective elements specific to SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D88",
+    "D279"
+   ],
+   "data": "Use ncfrp_v51 domains D67 and D49 to identify pregnancy-related health indicators (e.g., weight gain) for SUID cases. Use prams_p8_arf domain D279 to compare hospital stay lengths between SUID cases and other neonatal deaths."
+  },
+  {
+   "question": "Are there distinct patterns of maternal physical measurements and pre-pregnancy health behaviors in SUID cases versus other infant mortality cases?",
+   "comparison": "Cases with Sudden Unexpected Infant Death (SUID) compared to other causes of infant mortality within the same case series.",
+   "why_open": "Existing literature often focuses on risk factors common across all infant deaths. However, unique patterns in maternal health behaviors and physical measurements might distinguish SUID cases from others, suggesting targeted preventive measures.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D230",
+    "D270",
+    "D274"
+   ],
+   "data": "Use ncfrp_v51 domain D230 to identify maternal health problems and pre-pregnancy behaviors for SUID cases. Compare these with prams_p8_arf domains D270 (physical measurements) and D274 (pre-pregnancy conditions) in a group-level comparison."
+  },
+  {
+   "question": "How does the use of postpartum contraception differ between SUID cases and other infant mortality cases?",
+   "comparison": "Cases with Sudden Unexpected Infant Death (SUID) compared to non-SUID infant deaths within the same case series.",
+   "why_open": "Existing research often categorizes all infant deaths similarly but may overlook unique aspects like postpartum contraception use that could differentiate SUID from other causes of infant mortality. Understanding these differences can inform targeted prevention strategies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D282",
+    "D308"
+   ],
+   "data": "Use ncfrp_v51 domain D282 to identify postpartum contraception barriers for SUID cases. Compare these with prams_p8_arf and prams_p7_arf domains D308 (birth control usage) in a group-level comparison."
+  },
+  {
+   "question": "Do SUID cases differ from other neonatal deaths regarding maternal health problems, insurance coverage, and healthcare visits during pregnancy?",
+   "comparison": "Cases with Sudden Unexpected Infant Death (SUID) compared to non-SUID infant mortality within the same case series.",
+   "why_open": "Existing research often does not differentiate between various types of infant mortality but understanding these distinctions can lead to more targeted interventions. Identifying unique maternal health, insurance coverage, and healthcare access patterns specific to SUID could highlight areas for improved prevention strategies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D269",
+    "D276"
+   ],
+   "data": "Use ncfrp_v51 domain D269 to identify maternal health problems for SUID cases. Compare these with prams_p8_arf domains D276 (pregnancy insurance coverage) and other relevant variables in a group-level comparison."
+  },
+  {
+   "question": "Do patterns of sleeping arrangements differ between SUID cases and non-SUID infant deaths, considering the hospital stay length?",
+   "comparison": "Cases with Sudden Unexpected Infant Death (SUID) compared to non-SUID infant mortality within the same case series.",
+   "why_open": "Although studies frequently explore general risk factors for infant death, unique sleeping arrangements may be specific to certain types of infant deaths. Understanding differences in how infants sleep could provide clues about environmental risks contributing uniquely to SUID versus other causes.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D201",
+    "D281"
+   ],
+   "data": "Use ncfrp_v51 domain D201 to identify sleeping arrangements for SUID cases. Compare these with prams_p8_arf and prams_p7_arf domains D281 (sleeping arrangements) in a group-level comparison."
+  }
+ ]
+}

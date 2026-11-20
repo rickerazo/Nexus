@@ -1,0 +1,34 @@
+{
+ "groundable": false,
+ "why_not": "The data sources do not provide sufficient variables to measure pre-pregnancy health checks in the case series (ncfrp_v51).",
+ "statement": "",
+ "rationale": "The proposed design cannot establish a direct comparison between mothers with infants experiencing SUID and those who did not, due to missing variables in ncfrp_v51 that capture pre-pregnancy health checks. Additionally, PRAMS data from 2015 is limited, reducing the common period for analysis.",
+ "prior_art": "None in the inputs; existing claims such as C8 and C9 discuss risk factors like smoking but do not address pre-pregnancy health checks.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_linkco15"
+ ],
+ "period_start": 2015,
+ "period_end": 2015,
+ "required_concepts": [
+  "Maternal health checks before pregnancy",
+  "SUID cases",
+  "General population of new mothers"
+ ],
+ "variables": [
+  "prams_p7_arf:WTANAL",
+  "prams_p7_arf:P_PRTERM",
+  "prams_p7_arf:PRE_LB_NAPHSIS",
+  "prams_p7_arf:MM_FEVER",
+  "prams_p7_arf:MOM_WT",
+  "prams_p7_arf:MAT_PRWT",
+  "prams_p7_arf:PNC_VST"
+ ],
+ "cannot_establish": "The design cannot establish causal relationships or estimate rates due to missing denominator-specific variables for pre-pregnancy health checks. It also lacks longitudinal data on maternal behaviors before pregnancy from the case series source (ncfrp_v51)."
+}

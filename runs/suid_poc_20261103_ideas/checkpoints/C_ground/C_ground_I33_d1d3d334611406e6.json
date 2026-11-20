@@ -1,0 +1,33 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of infants who had a hospital overnight stay after delivery is higher among sudden unexpected infant death (SUID) cases compared to other causes of infant death.",
+ "rationale": "This study aims to compare the proportions of hospital overnight stays between SUID cases and other causes of infant death within the same case series. The design uses ncfrp_v51 as a case series source, which captures detailed information on child deaths reviewed by fatality review teams, including SUID cases. PRAMS (prams_p8_arf) is used to provide population-level prevalence estimates for hospital stays.",
+ "prior_art": "The closest tested work includes bedsharing_ms_v7.C3 and C4, which focus on the association between bed sharing and SUID incidence over specific developmental windows but do not address hospital stays. The question remains open as there is no prior research comparing hospital overnight stays specifically in relation to SUID compared to other causes of infant death.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C4",
+  "bedsharing_ms_v7.C3"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "hospital overnight stay",
+  "SUID cases",
+  "other causes of infant death"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtnnum",
+  "ncfrp_v51:INF4hosprtnoldunk",
+  "ncfrp_v51:INF4hosprtnnumunk",
+  "prams_p8_arf:LTH_HOSP",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or provide denominators for incidence rates, so it can only compare proportions of hospital stays between SUID cases and other causes of infant death."
+}

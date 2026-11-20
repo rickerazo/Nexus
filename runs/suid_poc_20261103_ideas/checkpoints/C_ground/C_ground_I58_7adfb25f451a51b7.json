@@ -1,0 +1,35 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases involving infants with sleep environment issues and mothers reporting substance use during pregnancy increased from 2008 to 2019.",
+ "rationale": "This study aims to explore temporal trends in the proportion of SUID cases involving specific risk factors, using case series data for SUID cases and population reference data for maternal smoking. The design can establish trends within cases but cannot estimate incidence or risk.",
+ "prior_art": "The closest tested work is bedsharing_ms_v7.C8, which notes an association between bed sharing and smoking, but it does not examine these factors over time or together comprehensively. This study aims to bridge the gap by examining temporal trends in sleep environment issues and maternal substance use among SUID cases.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "sleep environment issues",
+  "maternal substance use during pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3nicudrug",
+  "ncfrp_v51:INFexpipv",
+  "ncfrp_v51:INFuseddrug",
+  "ncfrp_v51:INFusedalc",
+  "prams_p8_arf:MOMSMOKE",
+  "prams_p7_arf:MOMSMOKE",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot estimate incidence or risk; it can only establish trends within cases."
+}

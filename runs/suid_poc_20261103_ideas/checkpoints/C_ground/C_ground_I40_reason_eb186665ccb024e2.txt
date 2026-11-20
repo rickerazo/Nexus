@@ -1,0 +1,76 @@
+### Design
+
+**Question Restated:** Do mothers of SUID cases report fewer instances of adequate prenatal care visits compared to those whose infants survived, as measured by the number and timing of healthcare visits during pregnancy?
+
+**Design Type:** Case-case comparison. Compare the cases of SUID with surviving infants from the same case series and denominator sources.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System)
+  - This source provides a detailed record of child deaths reviewed by fatality review teams, including those categorized as Sudden Unexpected Infant Death Syndrome (SUID).
+  
+- **Population Reference:** prams_p8_arf (PRAMS Phase 8 Analytic Research File codebook)
+  - PRAMS is a weighted survey of mothers following live births and provides data on healthcare utilization during pregnancy.
+
+- **Denominator Source:** cdc_linkco15, cdc_natl15
+  - CDC-linked birth/infant death public-use file guide (cdc_linkco15) and the natality public-use file guide (cdc_natl15) provide denominators for live births in the United States. 
+
+### Period
+
+- **Years Needed:**
+  - The study needs data from 2014 to 2019 to align with the period of interest.
+  
+- **Current Years Held:** 
+  - cdc_linkco15 and cdc_natl15 cover live births in 2015, which is insufficient for a case-case comparison over multiple years. Additional years (2014-2019) need to be acquired.
+
+### Variables
+
+**Prenatal Care Visits:**
+
+- **ncfrp_v51:** `INF4visnum` - Number of primary care provider visits during pregnancy.
+  - This variable captures the number of prenatal care visits reported by mothers for SUID cases in ncfrp_v51.
+
+- **prams_p8_arf:** `PNC_VST` - Number of prenatal care visits (Revised).
+  - PRAMS reports the number of prenatal care visits, which will be used to compare with the ncfrp_v51 data. 
+
+**Timing and Reporting Flags:**
+
+- **ncfrp_v51:** 
+  - `INF4edvisits` - Number of L&D/triage/ED visits during pregnancy.
+  - `INFprenatalcare` - Prenatal care provided (yes/no).
+
+- **cdc_linkco15, cdc_natl15:**
+  - `PREVIS`, `F_MPCB`, `PREVIS_REC` - Number of prenatal visits and reporting flags for the timing of prenatal care initiation.
+
+### Biases
+
+**Selection Bias:** 
+- The ncfrp_v51 case series includes only child deaths reviewed by fatality review teams, while prams_p8_arf includes live births from participating states. This may lead to differences in maternal characteristics and healthcare access between cases (SUID) and the reference group.
+
+**Information Bias:**
+- Reporting of prenatal care visits can vary between sources; mothers reporting on SUID cases might have different recall biases compared to survey respondents for surviving infants.
+  
+**Confounding:** 
+- Factors like socioeconomic status, insurance coverage, urban/rural residence, and maternal health conditions are not consistently measured across all datasets. This could confound the relationship between prenatal care visits and SUID risk.
+
+### What the Design Cannot Establish
+
+- **Causality:** The case-case comparison cannot establish causation; it can only identify associations.
+- **Incidence Rates:** Without a denominator source, the design cannot estimate incidence rates or risks but rather compares proportions of adequate prenatal care between cases (SUID) and surviving infants.
+
+### Prior Art
+
+**Existing Claims:**
+- Several claims from manuscripts discuss risk factors for SUID such as maternal smoking, bed sharing, and prematurity. However, none directly address the impact of inadequate prenatal care visits on SUID incidence.
+  
+**Comparison with Candidate Question:**
+- The candidate question focuses specifically on prenatal care utilization, a variable not extensively covered in prior work regarding SUID.
+
+### Verdict
+
+The sources can support a version of this research idea by comparing mothers' reports of prenatal healthcare visits between SUID cases and surviving infants. However, several logistical issues must be addressed:
+
+1. **Data Acquisition:** Additional years (2014-2019) need to be acquired for cdc_linkco15 and cdc_natl15 to ensure a sufficient sample size.
+2. **Measurement Consistency:** Ensuring that prenatal care measurements are comparable between ncfrp_v51, prams_p8_arf, and CDC denominator sources is critical.
+
+Given these considerations, the study design can be carried out but requires additional data acquisition and rigorous variable alignment across datasets to mitigate biases.

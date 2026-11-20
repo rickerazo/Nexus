@@ -1,0 +1,237 @@
+INFO mmf.pipeline: ingest_cdc_linkco15: cache hit
+WARNING mmf.pipeline: ingest_cdc_linkco15: 14 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/cdc_linkco15.audit.json
+INFO mmf.pipeline: ingest_cdc_natl15: cache hit
+WARNING mmf.pipeline: ingest_cdc_natl15: 10 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/cdc_natl15.audit.json
+INFO mmf.pipeline: ingest_cdc_codenames: cache hit
+INFO mmf.pipeline: ingest_ncfrp_v51: cache hit
+WARNING mmf.pipeline: ingest_ncfrp_v51: 16 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/ncfrp_v51.audit.json
+INFO mmf.pipeline: ingest_prams_p8_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_arf: 64 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/prams_p8_arf.audit.json
+INFO mmf.pipeline: ingest_prams_p8_std2: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_std2: 2 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/prams_p8_std2.audit.json
+INFO mmf.pipeline: ingest_prams_p7_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p7_arf: 55 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/prams_p7_arf.audit.json
+INFO mmf.pipeline: A_SUID_manuscript_v9_clean: cache hit
+INFO mmf.pipeline: A_bedsharing_ms_v7: cache hit
+INFO mmf.pipeline: A_suid_literature_abstracts: cache hit
+INFO mmf.pipeline: B: cache hit
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO mmf.pipeline: B_check: cache hit
+WARNING mmf.pipeline: B_check: 63 (concept, source) pair(s) where embeddings and the LLM disagree; {'llm_outside_topk': 34, 'agree': 51, 'both_none': 264, 'possible_miss': 29}
+INFO mmf.pipeline: C_inventory: cache hit
+INFO mmf.pipeline: C_ideas: cache hit
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I5 attempt 1 rejected: ['cdc_linkco15 is listed but none of its variables is used', 'a prevalence from prams_p7_arf needs its survey weight: add prams_p7_arf:WTANAL to variables']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I5 attempt 2 rejected: ['cdc_linkco15 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I5 attempt 3 rejected: ['cdc_linkco15 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I5 attempt 4 accepted after dropping 1 item(s): ['dropped cdc_linkco15 as case series (no variable used)']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I23 attempt 1 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I23 attempt 2 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I23 attempt 3 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I23 attempt 4 accepted after dropping 1 item(s): ['dropped ncfrp_v51 as case series (no variable used)']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I24 attempt 1 rejected: ['prior_art cites C16, which is not in supporting_claim_ids', 'supporting claim bedsharing_ms_v7.C4 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it', 'supporting claim bedsharing_ms_v7.C5 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I24 attempt 2 rejected: ['prior_art cites C16, which is not in supporting_claim_ids', 'supporting claim bedsharing_ms_v7.C4 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it', 'supporting claim bedsharing_ms_v7.C5 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I24 attempt 3 rejected: ['prior_art cites C16, which is not in supporting_claim_ids', 'supporting claim bedsharing_ms_v7.C4 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it', 'supporting claim bedsharing_ms_v7.C5 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I24 attempt 4 rejected: ['prior_art cites C16, which is not in supporting_claim_ids', 'supporting claim bedsharing_ms_v7.C4 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it', 'supporting claim bedsharing_ms_v7.C5 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+WARNING mmf.components.c_narrow: C_ground_I24: no valid grounding after 4 attempts; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I33 attempt 1 rejected: ['supporting claim bedsharing_ms_v7.C4 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I33 attempt 2 rejected: ['prior_art cites bedsharing_ms_v7.C3, which is not in supporting_claim_ids', 'prior_art cites C5, which is not in supporting_claim_ids']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I33 attempt 3 rejected: ['prior_art cites C5, which is not in supporting_claim_ids', 'supporting claim bedsharing_ms_v7.C4 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I33 attempt 4 accepted after dropping 1 item(s): ['added cited claim bedsharing_ms_v7.C3']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I42 attempt 1 rejected: ['variable prams_p8_arf:MOM_BMIG_QX_REV is from prams_p8_arf, which is not listed under any role; list it or drop it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I42 attempt 2 rejected: ['variable prams_p7_arf:MOM_BMIG_QX_REV is from prams_p7_arf, which is not listed under any role; list it or drop it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I42 attempt 3 rejected: ['variable prams_p8_arf:MOM_BMIG_QX_REV is from prams_p8_arf, which is not listed under any role; list it or drop it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I42 attempt 4 accepted after dropping 1 item(s): ['dropped variable prams_p8_arf:MOM_BMIG_QX_REV (source not listed)']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I54 attempt 1 rejected: ['prior_art cites C8, which is not in supporting_claim_ids', 'supporting claim SUID_manuscript_v9_clean.C7 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I54 attempt 2 rejected: ['prior_art cites C8, which is not in supporting_claim_ids', 'supporting claim SUID_manuscript_v9_clean.C7 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I54 attempt 3 rejected: ['prior_art cites C8, which is not in supporting_claim_ids', 'supporting claim SUID_manuscript_v9_clean.C7 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I54 attempt 4 rejected: ['prior_art cites C8, which is not in supporting_claim_ids', 'supporting claim SUID_manuscript_v9_clean.C7 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+WARNING mmf.components.c_narrow: C_ground_I54: no valid grounding after 4 attempts; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I55 attempt 1 rejected: ['this design has no denominator source, so it cannot estimate incidence or risk: compare proportions or odds among cases']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I55 attempt 2 rejected: ['this design has no denominator source, so it cannot estimate incidence or risk: compare proportions or odds among cases', 'supporting claim SUID_manuscript_v9_clean.C10 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it', 'supporting claim bedsharing_ms_v7.C24 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I55 attempt 3 rejected: ['this design has no denominator source, so it cannot estimate incidence or risk: compare proportions or odds among cases']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I55 attempt 4 rejected: ['this design has no denominator source, so it cannot estimate incidence or risk: compare proportions or odds among cases']
+WARNING mmf.components.c_narrow: C_ground_I55: no valid grounding after 4 attempts; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I59 attempt 1 rejected: ['a prevalence from prams_p8_arf needs its survey weight: add prams_p8_arf:WTANAL to variables', 'supporting claim SUID_manuscript_v9_clean.C9 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I59 attempt 2 rejected: ['prior_art cites bedsharing_ms_v7.C3, which is not in supporting_claim_ids', 'prior_art cites C6, which is not in supporting_claim_ids']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I59 attempt 3 rejected: ['prior_art cites C10, which is not in supporting_claim_ids', 'prior_art cites C6, which is not in supporting_claim_ids', 'supporting claim bedsharing_ms_v7.C4 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I59 attempt 4 rejected: ['prior_art cites C3, which is not in supporting_claim_ids', 'prior_art cites C5, which is not in supporting_claim_ids']
+WARNING mmf.components.c_narrow: C_ground_I59: no valid grounding after 4 attempts; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I63 attempt 1 rejected: ['this design has no denominator source, so it cannot estimate incidence or risk: compare proportions or odds among cases']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I63 attempt 2 rejected: ['this design has no denominator source, so it cannot estimate incidence or risk: compare proportions or odds among cases']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I63 attempt 3 rejected: ['this design has no denominator source, so it cannot estimate incidence or risk: compare proportions or odds among cases']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I63 attempt 4 rejected: ['this design has no denominator source, so it cannot estimate incidence or risk: compare proportions or odds among cases']
+WARNING mmf.components.c_narrow: C_ground_I63: no valid grounding after 4 attempts; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I71 attempt 1 rejected: ['ncfrp_v51 is listed but none of its variables is used', 'a prevalence from prams_p8_arf needs its survey weight: add prams_p8_arf:WTANAL to variables']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I71 attempt 2 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I71 attempt 3 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I71 attempt 4 accepted after dropping 1 item(s): ['dropped ncfrp_v51 as case series (no variable used)']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I72 attempt 1 rejected: ['ncfrp_v51 is listed but none of its variables is used', 'a prevalence from prams_p8_arf needs its survey weight: add prams_p8_arf:WTANAL to variables', 'this design has no denominator source, so it cannot estimate incidence or risk: compare proportions or odds among cases']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I72 attempt 2 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I72 attempt 3 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I72 attempt 4 accepted after dropping 1 item(s): ['dropped ncfrp_v51 as case series (no variable used)']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I73 attempt 1 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I73 attempt 2 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I73 attempt 3 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I73 attempt 4 accepted after dropping 1 item(s): ['dropped ncfrp_v51 as case series (no variable used)']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I74 attempt 1 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I74 attempt 2 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I74 attempt 3 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I74 attempt 4 accepted after dropping 1 item(s): ['dropped ncfrp_v51 as case series (no variable used)']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I75 attempt 1 rejected: ['ncfrp_v51 is listed but none of its variables is used', 'this design has no denominator source, so it cannot estimate incidence or risk: compare proportions or odds among cases', 'prior_art cites C6, which is not in supporting_claim_ids']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I75 attempt 2 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I75 attempt 3 rejected: ['ncfrp_v51 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I75 attempt 4 accepted after dropping 1 item(s): ['dropped ncfrp_v51 as case series (no variable used)']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I76 attempt 1 rejected: ['a prevalence from prams_p8_arf needs its survey weight: add prams_p8_arf:WTANAL to variables']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I76 attempt 2 rejected: ['supporting claim bedsharing_ms_v7.C18 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I76 attempt 3 rejected: ['prams_p8_std2 is listed but none of its variables is used']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I76 attempt 4 accepted after dropping 1 item(s): ['added survey weight prams_p7_arf:WTANAL']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I81 attempt 1 rejected: ['a prevalence from prams_p8_arf needs its survey weight: add prams_p8_arf:WTANAL to variables']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I81 attempt 2 rejected: ['prams_p8_std2 is listed but none of its variables is used', 'this design has no denominator source, so it cannot estimate incidence or risk: compare proportions or odds among cases', 'prior_art must name the closest tested work or say why none is close (too short)']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I81 attempt 3 rejected: ['prams_p7_arf is listed but none of its variables is used', 'a prevalence from prams_p7_arf needs its survey weight: add prams_p7_arf:WTANAL to variables']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ground_I81 attempt 4 accepted after dropping 4 item(s): ['dropped variable prams_p7_arf:WTANAL (source not listed)', 'added survey weight prams_p8_arf:WTANAL', 'removed undiscussed supporting claim SUID_manuscript_v9_clean.C10', 'removed undiscussed supporting claim bedsharing_ms_v7.C18']
+WARNING mmf.pipeline: C_ground_I24: no valid grounding after retries; skipped
+WARNING mmf.pipeline: C_ground_I54: no valid grounding after retries; skipped
+WARNING mmf.pipeline: C_ground_I55: no valid grounding after retries; skipped
+WARNING mmf.pipeline: C_ground_I59: no valid grounding after retries; skipped
+WARNING mmf.pipeline: C_ground_I63: no valid grounding after retries; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+Ideas: runs/suid_poc_20261103_ideas/review_C_shortlist.md

@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "BPG_DEPRS8",
+   "name": "Maternal Health Problems",
+   "summary": "Indicates whether the mother has various health problems such as depression, diabetes, high blood pressure, allergies, anxiety, asthma, heart conditions, anemia, PCOS, sickle cell disease, epilepsy, and thyroid issues."
+  },
+  {
+   "start": "MOMLBKGU",
+   "name": "Maternal Physical Measurements",
+   "summary": "Records the mother's weight in pounds or kilograms, height in feet and inches or centimeters, and whether these measurements were taken before pregnancy."
+  },
+  {
+   "start": "PRE_VIST",
+   "name": "Pre-Pregnancy Health Care",
+   "summary": "Indicates if the mother had health care visits, took folic acid supplements, and improved her health prior to pregnancy."
+  },
+  {
+   "start": "TYP_BC_RAW",
+   "name": "Healthcare Visits During Pregnancy",
+   "summary": "Records whether the mother visited healthcare providers for various reasons such as family planning, dental checkups, general checkups, illness, injury, mental health issues, OB/GYN visits, and other unspecified reasons."
+  },
+  {
+   "start": "VITAMIN",
+   "name": "Multivitamin Use",
+   "summary": "Indicates the frequency of multivitamin use during pregnancy."
+  },
+  {
+   "start": "PRE_ABUS_RAW",
+   "name": "Pre-Pregnancy Health Behaviors and Conditions",
+   "summary": "Records whether the mother experienced emotional or physical abuse, had birth defects or diseases, was tested for Hepatitis B and HIV, wanted to have children, felt depressed, controlled medical conditions, used birth control, smoked during pregnancy, talked about sexually transmitted infections, worked before pregnancy, and took steps to improve her health."
+  },
+  {
+   "start": "INSCHIP",
+   "name": "Insurance Coverage",
+   "summary": "Indicates whether the mother had insurance coverage from various sources such as state-specific SCHIP/CHIP, other government plans, Health Care Exchange, Medicaid, military or tribal programs, no insurance, and other unspecified types."
+  },
+  {
+   "start": "HI_CHIP",
+   "name": "Pregnancy Insurance Coverage",
+   "summary": "Records whether the mother had pregnancy-related insurance coverage from various sources such as state-specific SCHIP/CHIP, Health Care Exchange, Medicaid, parent's plan, job-based insurance, and other unspecified types."
+  }
+ ]
+}

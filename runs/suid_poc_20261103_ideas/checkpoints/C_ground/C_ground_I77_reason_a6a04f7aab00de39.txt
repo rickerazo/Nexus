@@ -1,0 +1,60 @@
+### Design and Question Restatement
+
+**Design:** Measurement comparison. Compare how the same concept is recorded in two or more sources (wording, timing, who reports it, how missing answers are coded) and ask how the difference would bias a comparison between them.
+
+**Restated Question:**
+How does maternal physical health assessment differ between SUID cases recorded in NCFRP_v51 and live births reported through PRAMS_P7_ARF?
+
+### Sources by Role
+
+- **Case Series:** NCFRP_v51 (SUID cases)
+  - **Role:** Case series because it records the outcome events, specifically SUID cases.
+  
+- **Population Reference:** PRAMS_P7_ARF
+  - **Role:** Population reference because it provides a weighted survey of mothers who have given birth but does not record outcomes.
+
+### Period
+
+**Period Needed:**
+The comparison requires data from both NCFRP_v51 and PRAMS_P7_ARF. The manuscript uses SUID cases between 2008-2019 (as mentioned in the source documentation). Since PRAMS_P7_ARF covers years 2012-2015, we need to acquire data for NCFRP_v51 from 2012-2015 to align with the available PRAMS period.
+
+### Variables
+
+**Concept:** Maternal Physical Health Conditions
+- **NCFRP_v51:**
+  - `INF3prevmedical`: Did mother have medical complications in previous pregnancies (before pregnancy)
+  - `INF4visnum`: Number of primary care provider visits during pregnancy
+  - `INF4momwtgn`: Mother's pregnancy weight gain or loss in pounds
+  - `ISSprechronicdiseasebef`: Chronic disease control Education - before pregnancy
+
+- **PRAMS_P7_ARF:**
+  - `PNC_VST`: Number of prenatal care visit
+  - `MAT_PRWT`: Maternal pre-pregnancy weight (pounds)
+  - `MOMLBS`: Maternal weight gain during pregnancy (pounds)
+  - `MOM_BMIG_QX_REV`: Mother's BMI grouped from questionnaire
+
+### Biases
+
+- **Selection Bias:**
+  - NCFRP_v51 includes only SUID cases reviewed by participating fatality review teams.
+  - PRAMS_P7_ARF samples live births from birth certificates in participating states.
+
+- **Information Bias:**
+  - Different timing of information collection: NCFRP_v51 collects data post-mortem via reviews, while PRAMS_P7_ARF collects pre-pregnancy and prenatal health status directly from mothers.
+  - Missing answers differ between sources. NCFRP_v51 uses documented missing codes (e.g., "9" for unknown), while PRAMS_P7_ARF includes separate categories for "don't know," "blank," and skipped items.
+
+- **Confounding:**
+  - Differences in maternal health assessments may be confounded by socioeconomic status, urban/rural differences, and other contextual factors not directly measured or comparable between sources.
+  
+### What the Design Cannot Establish
+
+The design can only compare how maternal physical health conditions are recorded differently between SUID cases (NCFRP_v51) and live births (PRAMS_P7_ARF). It cannot establish incidence rates, risks, or causality since it does not include a denominator source for calculating rates.
+
+### Prior Art
+
+None of the manuscript claims directly address how maternal physical health conditions are recorded differently between SUID cases and live births. Therefore, this specific comparison remains open.
+
+### Verdict
+
+**Verdict: Yes**
+The sources can answer a version of the question by comparing how maternal physical health conditions are measured in NCFRP_v51 (SUID cases) versus PRAMS_P7_ARF (live births). The data and design allow for examining differences in reporting and measurement between these two distinct datasets.

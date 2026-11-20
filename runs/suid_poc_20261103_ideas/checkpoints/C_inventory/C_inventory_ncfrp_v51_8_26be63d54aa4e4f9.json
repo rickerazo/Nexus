@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "BIO1ssdisins",
+   "name": "Female Social Services",
+   "summary": "Social services provided to the female biological parent including insurance, food assistance, housing support, home visiting, Medicaid, other services."
+  },
+  {
+   "start": "BIO1viccpsrefer",
+   "name": "Female Maltreatment History",
+   "summary": "Number of CPS referrals and substantiations for maltreatment, foster care history for the female biological parent."
+  },
+  {
+   "start": "BIO2SocialServices",
+   "name": "Male Social Services",
+   "summary": "Receiving social services status and specific types of support provided to the male biological parent."
+  },
+  {
+   "start": "BIO2abalc",
+   "name": "Male Substance Abuse",
+   "summary": "Substance abuse history for the male biological parent including alcohol, cocaine, marijuana, methamphetamine, opioids, over-the-counter drugs, prescription drugs, and unknown substances."
+  },
+  {
+   "start": "BIO2age",
+   "name": "Male Demographics",
+   "summary": "Age of the male biological parent in years, criminal history, disability or chronic illness status, education level, employment status, language proficiency, ethnicity, immigration origin, income level, military service."
+  },
+  {
+   "start": "BIO2dthabnum",
+   "name": "Male Prior Child Deaths",
+   "summary": "History of prior child deaths involving the male biological parent categorized by cause such as abuse, accident, neglect, SIDS, suicide, undetermined causes."
+  },
+  {
+   "start": "GIV1SocialServices",
+   "name": "Caregiver Social Services",
+   "summary": "Receiving social services status and specific types of support provided to the caregiver."
+  },
+  {
+   "start": "GIV1abalc",
+   "name": "Caregiver Substance Abuse",
+   "summary": "Substance abuse history for the caregiver including alcohol, cocaine, marijuana, methamphetamine, opioids, over-the-counter drugs, prescription drugs, and unknown substances."
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "DROdorwater",
+   "name": "Door Details",
+   "summary": "Whether door opens to water."
+  },
+  {
+   "start": "DROenviron",
+   "name": "Environmental Factors",
+   "summary": "Contributing environmental factors and their specifications."
+  },
+  {
+   "start": "DROequip",
+   "name": "Rescue Equipment",
+   "summary": "Presence of appropriate rescue equipment."
+  },
+  {
+   "start": "DROfloatdev",
+   "name": "Flotation Device",
+   "summary": "Type and specifications of personal flotation device, including whether it is Coast Guard approved or not."
+  },
+  {
+   "start": "DROfncheight",
+   "name": "Fence Height",
+   "summary": "Height in feet of the fence surrounding water."
+  },
+  {
+   "start": "DROfncsurrnd",
+   "name": "Fence Surrounding Water",
+   "summary": "Whether the fence surrounds water on all sides."
+  },
+  {
+   "start": "DROfnctype",
+   "name": "Fence Type",
+   "summary": "Description of the type of fence surrounding water."
+  },
+  {
+   "start": "DROforce",
+   "name": "Forced Submersion",
+   "summary": "Whether child was forcibly submerged in water."
+  }
+ ]
+}

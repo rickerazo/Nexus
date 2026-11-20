@@ -1,0 +1,63 @@
+### Design
+
+**Question Restated:** What are the patterns in medication use during pregnancy among live-born infants who later die from Sudden Unexpected Infant Death Syndrome (SUID)?
+
+This design will be a case-only analysis. It will focus on comparing within-case variation in medication use during pregnancy for infants who died of SUID, without making comparisons to surviving infants or the general population.
+
+### Sources by Role
+
+**Case Series:**  
+- **ncfrp_v51**: This dataset is used because it contains information on child deaths reviewed by fatality review teams. It includes detailed data on medications and drugs used during pregnancy (e.g., `INFmisotcrx`, `INF3meds`, etc.). Since the manuscript focuses only on infants who died from SUID, this source captures all necessary cases.
+
+**Denominator Source:**  
+- **None required**: This study does not need a denominator source because it is a case-only analysis focusing solely on patterns within cases of SUID. Incidence rates or prevalence comparisons are not part of the scope here.
+
+**Population Reference:**  
+- **Not applicable**: The manuscript focuses only on infants who died from SUID, so no population reference is needed for comparison purposes.
+
+### Period
+
+The candidate idea specifies the period 2015-2019. However, since this study is case-only and does not require a denominator source to estimate incidence or risk, it can be conducted using any available data years within ncfrp_v51 (2008-2019). 
+
+### Variables
+
+**Medication Use During Pregnancy:**
+- **ncfrp_v51**: 
+  - `INFmisotcrx`: During pregnancy did mother misuse over-the-counter or prescription drugs (Yes/No).
+  - `INF3meds`: Did mother use any medications, drugs, or other substances during pregnancy (Yes/No).
+  - Various detailed medication variables such as `IEMmedsop`, `IEMmedspsych`, etc., indicating specific types of medications used.
+  
+**Timing and Reporting:**
+- These data are collected postmortem by fatality review teams, which may differ in how they document and report drug use. The exact timing (e.g., trimester-specific) is not available but can be inferred from the overall pattern of medication use.
+
+### Biases
+
+#### Selection Bias:
+- **ncfrp_v51**: This dataset only includes cases reviewed by fatality review teams, potentially missing some SUID cases that were not reported or investigated. Additionally, participation in fatality reviews varies across jurisdictions over time.
+  
+#### Information Bias: 
+- Reporting of medication use may be incomplete due to the nature of postmortem investigations and variability in how different jurisdictions record this information.
+- Medication variables are recorded after the death has occurred, which might not capture all details about timing or duration.
+
+#### Confounding:
+- **ncfrp_v51**: The dataset lacks detailed prenatal care history (e.g., when medication use was first reported) that could be important for understanding patterns of drug exposure.
+  
+### What the Design Cannot Establish
+
+This design cannot establish incidence rates, prevalence comparisons with a general population, or causal relationships between medication use and SUID. It can only describe patterns within cases of SUID.
+
+### Prior Art
+- **SUID Manuscripts**: 
+  - The manuscript claims focus on developmental timing, maternal smoking, prematurity, and bed sharing in relation to SUID incidence.
+  - There is no direct comparison or hypothesis about medication use during pregnancy influencing SUID. However, the findings related to maternal smoking (e.g., `C9` and `C10`) suggest that drug exposures could be relevant.
+
+### Verdict
+**Can Answer a Version of the Question:** Yes
+
+The available data from ncfrp_v51 can provide insights into patterns in medication use during pregnancy among infants who later die from SUID. The case-only design is appropriate for this analysis, focusing on within-case variation without requiring a denominator source or population reference. However, limitations in reporting and selection biases should be acknowledged when interpreting the findings.
+
+**Additional Data Needed:**
+- For a more comprehensive understanding of medication patterns during pregnancy, additional data on prenatal care and drug use history would be beneficial. This could include variables from PRAMS (e.g., `MOMCIG`, `PNC_MTH`, etc.) to better contextualize medication exposure within the broader context of maternal health.
+
+### Conclusion
+The design can establish patterns in medication use during pregnancy among infants who later die from SUID, but limitations and biases should be carefully considered.

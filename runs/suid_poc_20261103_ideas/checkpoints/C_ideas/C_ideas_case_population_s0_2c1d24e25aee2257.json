@@ -1,0 +1,79 @@
+{
+ "ideas": [
+  {
+   "question": "Is the rate of maternal obesity higher among SUID cases compared to the general population of new mothers?",
+   "comparison": "SUID cases from cdc_linkco15, ncfrp_v51 against general population of new mothers from prams_p8_arf, prams_p7_arf",
+   "why_open": "Despite evidence linking maternal obesity with SUID risk, the comparative prevalence between cases and a broader sample of postpartum women is not well established. This study aims to determine if higher maternal BMI among SUID cases reflects a causal association.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal prepregnancy body mass index (BMI) [3] and Sudden unexpected infant death (SUID) [2]"
+  },
+  {
+   "question": "Is bed-sharing more prevalent among families of infants who experienced SUID compared to the general population?",
+   "comparison": "SUID cases from cdc_linkco15, ncfrp_v51 against general population of new mothers from prams_p8_arf, prams_p7_arf",
+   "why_open": "While bed-sharing is known as a risk factor for SIDS and SUID, it's not clear how often this practice occurred among those affected compared to the broader infant population. This research seeks to quantify this difference.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "bed sharing [2], Sudden unexpected infant death (SUID) [2]"
+  },
+  {
+   "question": "Is the prevalence of smoking during pregnancy higher among mothers whose infants died from SUID than in the general population?",
+   "comparison": "SUID cases from cdc_linkco15, ncfrp_v51 against general population of new mothers from prams_p8_arf, prams_p7_arf",
+   "why_open": "Although maternal smoking is a well-known risk factor for SIDS and SUID, its relative frequency among those who experienced such outcomes remains understudied. This study aims to clarify the proportionate impact.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal smoking during pregnancy [3], Sudden unexpected infant death (SUID) [2]"
+  },
+  {
+   "question": "Is there a higher proportion of preterm births among infants who died from SUID compared to the general population?",
+   "comparison": "SUID cases from cdc_linkco15, ncfrp_v51 against general population of new mothers from prams_p8_arf, prams_p7_arf",
+   "why_open": "Though preterm birth is linked with elevated risk for SIDS and SUID, the comparative prevalence remains unexplored. This research evaluates if a higher incidence of preterm births exists among those affected by SUID.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Preterm birth [3], Sudden unexpected infant death (SUID) [2]"
+  },
+  {
+   "question": "Are there differences in breastfeeding practices between mothers of infants who died from SUID and the general population?",
+   "comparison": "SUID cases from cdc_linkco15, ncfrp_v51 against general population of new mothers from prams_p8_arf, prams_p7_arf",
+   "why_open": "Despite breastfeeding's potential benefits for infant health, its role in SIDS and SUID outcomes remains uncertain. This study investigates whether differences in breastfeeding practices exist between affected families and the broader postpartum population.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Breastfeeding status at discharge [3], Sudden unexpected infant death (SUID) [2]"
+  }
+ ]
+}

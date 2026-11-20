@@ -1,0 +1,23 @@
+INFO mmf.pipeline: ingest_cdc_linkco15: cache hit
+INFO mmf.pipeline: ingest_cdc_natl15: cache hit
+INFO mmf.pipeline: ingest_cdc_codenames: cache hit
+INFO mmf.pipeline: ingest_ncfrp_v51: cache hit
+INFO mmf.pipeline: ingest_prams_p8_arf: cache hit
+INFO mmf.pipeline: ingest_prams_p8_std2: cache hit
+INFO mmf.pipeline: ingest_prams_p7_arf: cache hit
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_SUID_manuscript_v9_clean_0 attempt 1 rejected: ['claim C1: not verbatim in the document: "To test whether male excess risk in SUID reflects a constant effect from birth or a developmentally timed phenomenon by ". Closest text (p.1): "to test whether male excess risk in sudden unexpected infant death (suid) reflects a constant effect from birth or a developmentally timed phenomenon by applying a postconceptional age (pca) alignment framework that acco"', 'claim C15: not verbatim in the document: "In the late window, male incidence exceeded female incidence (incidence rate ratio [IRR] 1.36, 95% CI 1.29–1.42).". Closest text (p.1): "lemental table 2. in the late window, male incidence exceeded female incidence (irr 1.36, 95% ci 1.29-1.42; figur"', 'claim C17: not verbatim in the document: "In the late window, maternal smoking remained associated with higher incidence (IRR 4.55, 95% CI 4.32–4.79), while the p". Closest text (p.1): "pplemental table 4). maternal smoking remained associated with higher incidence (irr 4.55, 95% ci 4.32-4.79), while the preterm association was attenuated (irr 1.47, 95% ci 1.35-1.59)"']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_SUID_manuscript_v9_clean_0 attempt 2 rejected: ['claim C4: not verbatim in the document: "infant age was aligned using pca (gestational age at birth plus postnatal age) and served as the primary developmental t". Closest text (p.1): "a was defined in weeks as gestational age at birth plus postnatal age at death and served as the primary developmental time scale."', 'claim C9: not verbatim in the document: "confirmatory windowed models quantified this transition (figure 4).". Closest text (p.1): " negative binomial models quantified this transition (figure 4). in"']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO mmf.ingest.pdf: loaded bedsharing_ms_v7.docx (1 pages, 36121 chars)
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO mmf.ingest.pdf: loaded suid_literature_abstracts.md (1 pages, 120755 chars)
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_suid_literature_abstracts_0 attempt 1 rejected: ['output did not parse as ManuscriptDecomposition: 1 validation error for ManuscriptDecomposition\n  Invalid JSON: EOF while parsing a value at line 1 column 1181718 [type=json_invalid, input_value=\'{ "manuscript_id": "SUID...214", "kind": "method",\', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_invalid']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"

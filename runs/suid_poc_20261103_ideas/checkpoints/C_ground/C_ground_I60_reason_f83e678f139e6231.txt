@@ -1,0 +1,66 @@
+### Design
+
+**Design:** Trends within cases. Compare proportions among the SUID cases across periods (2008-2019). When a case series' coverage changes over time, changes in case counts are not changes in incidence.
+
+**Rephrased Question:**
+Is there a trend over time from 2008 to 2019 in the proportion of SUID cases involving mothers who received pre-pregnancy health checks compared to trends in previous births?
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (SUID case series)
+  - Covers: Child deaths reviewed by participating fatality review teams from 2008-2019.
+  - No denominator source; only compares proportions among cases.
+
+- **Population Reference:** prams_p7_arf
+  - Covers: Mothers of live births sampled from birth certificates in 2012-2015 (Phase 7).
+  - Provides population reference data on previous births and pre-pregnancy health checks.
+
+### Period
+
+**Years Needed:**
+- **Case Series:** ncfrp_v51 already covers the required years, 2008-2019.
+- **Population Reference:** prams_p7_arf covers Phase 7 (2012-2015), but we need data from earlier phases to match the case series period. Therefore, more years of PRAMS data must be acquired for pre-2012.
+
+### Variables
+
+#### Pre-Pregnancy Health Checks
+- **ncfrp_v51: PREV_LB (Previous live birth)**
+  - This variable indicates if there were any previous live births.
+  
+- **prams_p7_arf: PRE_CKBP (Pre-pregnancy check for high blood pressure)**
+  - Indicates whether the mother received a pre-pregnancy health check.
+
+#### Previous Births
+- **ncfrp_v51: INF4pregpreterm (Previous pregnancy - Number of premature live births)**
+  - Indicates number of previous preterm births.
+  
+- **prams_p7_arf: PREV_PRE (Previous preterm births)**
+  - Indicates if there were any previous preterm births.
+
+### Biases
+
+**Selection Bias:** 
+- The case series (ncfrp_v51) covers only child deaths reviewed by fatality review teams, which may not be representative of all SUID cases across the US.
+- PRAMS population reference is a weighted survey sample and cannot serve as a denominator for incidence; it provides proportions in the general population.
+
+**Information Bias:**
+- The pre-pregnancy health check variable (`PRE_CKBP`) is self-reported by mothers, which may lead to underreporting or misclassification. 
+- `INF4pregpreterm` measures previous births but does not provide a denominator for incidence calculation.
+
+**Confounding:**
+- Potential confounders such as socioeconomic status, maternal age, and smoking habits are not uniformly measured across both sources.
+- Differences in reporting between ncfrp_v51 and PRAMS may introduce biases.
+
+### What the Design Cannot Establish
+
+The design can only establish trends among SUID cases. It cannot estimate incidence rates or risks due to a lack of denominator data for population at risk. The comparison will be limited to proportions within the case series and reference populations separately.
+
+### Prior Art
+
+None of the manuscript claims directly address trends in pre-pregnancy health checks or previous births over time related to SUID cases. Thus, this study would provide novel insights into these factors and their temporal associations with SUID incidence.
+
+### Verdict
+
+**Verdict:** The sources can answer a version of the question about trends within SUID cases involving mothers who received pre-pregnancy health checks compared to previous births. However, due to the lack of denominator data for population at risk, the study is limited to comparing proportions among case series and reference populations separately. 
+
+To strengthen this analysis, acquiring PRAMS Phase 6 (2008-2011) and earlier phases would allow a more comprehensive temporal comparison with ncfrp_v51 data from 2008 to 2019.

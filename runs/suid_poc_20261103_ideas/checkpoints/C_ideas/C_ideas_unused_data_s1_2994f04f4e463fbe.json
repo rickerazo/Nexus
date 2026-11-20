@@ -1,0 +1,47 @@
+{
+ "ideas": [
+  {
+   "question": "What is the association between maternal weight gain during pregnancy, categorized into different ranges, and sudden unexpected infant death (SUID) incidence among live births in the US in 2015?",
+   "why_open": "While previous studies have examined the effects of pre-pregnancy BMI on SUID risk, the impact of maternal weight gain during pregnancy has not been extensively explored. Understanding this relationship could provide insights into pregnancy management practices that might mitigate SUID risk.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "maternal prepregnancy body mass index (BMI), prenatal care and reporting flags, weight gain"
+  },
+  {
+   "question": "How do maternal oral health issues during pregnancy relate to the incidence of sudden unexpected infant death (SUID) among live births in the US in 2015?",
+   "why_open": "Maternal oral health is an underexplored area that could influence SUID risk due to its impact on overall maternal and fetal health. This research would shed light on whether dental visits during pregnancy should be prioritized as part of prenatal care.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_linkco15"
+   ],
+   "data": "oral health/dental complications, medical conditions"
+  },
+  {
+   "question": "Does the presence and frequency of school problems in children with a history of SUID contribute to any long-term educational outcomes?",
+   "why_open": "This question explores how a child's history of SUID might affect their siblings or other close relatives' educational trajectories, indicating broader family impacts that are yet unexplored.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "school problems"
+  },
+  {
+   "question": "What is the role of maternal pre-pregnancy health behaviors and conditions in predicting sudden unexpected infant death (SUID) among live births in the US in 2015?",
+   "why_open": "The manuscripts have not examined pre-pregnancy behaviors beyond smoking and BMI. Expanding this to include a range of health behaviors could provide a more comprehensive understanding of modifiable risk factors.",
+   "sources": [
+    "prams_p8_arf"
+   ],
+   "data": "pre-pregnancy health care, maternal physical measurements"
+  },
+  {
+   "question": "How does the type of delivery method (e.g., cesarean vs vaginal) influence sudden unexpected infant death (SUID) rates among live births in the US in 2015?",
+   "why_open": "Delivery methods have not been extensively studied as a risk factor for SUID, yet they could impact neonatal health and potentially influence SUID risk.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_linkco15"
+   ],
+   "data": "type of delivery"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with hospital overnight stays increased from 2008 to 2019, and there is a correlation between maternal pregnancy weight gain and hospital overnight stays.",
+ "rationale": "This design compares trends in proportions of SUID cases with hospital overnight stays over time using the case series data. It also examines the relationship between hospital overnight stays and maternal pregnancy weight gain using population reference surveys.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and bedsharing_ms_v7.C8 provide relevant context on factors like maternal smoking, but no current research investigates the specific correlation with hospital overnight stays and pregnancy weight gain. This study aims to fill that gap.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Hospital Overnight Stays",
+  "Maternal Pregnancy Weight Gain"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn",
+  "ncfrp_v51:INF4hosprtnold",
+  "ncfrp_v51:INF4hosprtnnum",
+  "prams_p8_arf:MOMLBS",
+  "prams_p8_arf:MAT_PRWT",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:MOMLBS",
+  "prams_p7_arf:MAT_PRWT",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot establish incidence rates or causation due to the lack of a denominator source for calculating such metrics."
+}

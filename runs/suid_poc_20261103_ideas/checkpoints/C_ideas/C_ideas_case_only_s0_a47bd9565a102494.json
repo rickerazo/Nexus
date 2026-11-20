@@ -1,0 +1,85 @@
+{
+ "ideas": [
+  {
+   "question": "Is there an association between maternal prepregnancy body mass index (BMI) and postconceptional age at death in SUID cases?",
+   "comparison": "SUID cases across the full spectrum of BMI levels",
+   "why_open": "Maternal obesity has been linked to increased risk for Sudden Unexpected Infant Death Syndrome (SUID), but little is known about how this risk evolves over developmental time. Studying BMI and postconceptional age could reveal if higher maternal BMIs correlate with earlier ages at death, providing insights into the timing of vulnerability.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D240",
+    "D239"
+   ],
+   "data": "Utilize BMI from ncfrp_v51 (maternal prepregnancy body mass index) and postconceptional age data from both cdc_linkco15 and ncfrp_v51. Analyze the distribution of postconceptional ages at death for infants born to mothers in different BMI categories."
+  },
+  {
+   "question": "Do cases with previous child deaths differ in their sleep environment and prenatal care issues compared to those without?",
+   "comparison": "SUID cases with prior child deaths vs. SUID cases without",
+   "why_open": "Little is known about the cumulative risk factors for families with a history of infant mortality. By comparing these two groups, we might identify specific vulnerabilities or protective factors that could inform future interventions.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D246",
+    "D70",
+    "D120"
+   ],
+   "data": "Use prior child death data (D120) from ncfrp_v51 and compare it to sleep environment information (D102, sleeping arrangements) and prenatal care issues (D243) in cases with and without previous deaths."
+  },
+  {
+   "question": "Are maternal stressors during pregnancy more common among SUID cases where the infant was preterm?",
+   "comparison": "SUID cases of premature infants vs. full-term infants",
+   "why_open": "Prematurity is known to increase risk for Sudden Unexpected Infant Death Syndrome (SUID). Understanding whether additional maternal stressors contribute could shed light on why some preterm infants are more vulnerable.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D246",
+    "D100"
+   ],
+   "data": "Analyze cases from ncfrp_v51 and cdc_linkco15 to determine if maternal stressors (D100) occur more frequently among preterm infants compared to full-term infants."
+  },
+  {
+   "question": "How do the reported health conditions of SUID mothers vary between infants who shared a sleep surface with an adult and those who did not?",
+   "comparison": "SUID cases where infant shares sleeping surface with an adult vs. those who don't",
+   "why_open": "Shared sleeping surfaces have been identified as risk factors for SUID, but it is unknown if the presence of health conditions in mothers contributes to this risk.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D246",
+    "D102"
+   ],
+   "data": "From ncfrp_v51 and cdc_linkco15, compare the health conditions of mothers (D239) between infants who shared a sleeping surface with an adult and those who did not."
+  },
+  {
+   "question": "Does the presence of multiple gestation in SUID cases correlate with different patterns of prenatal care issues?",
+   "comparison": "SUID cases with multiple births vs. singleton births",
+   "why_open": "Multiple pregnancies carry unique risks, yet their impact on Sudden Unexpected Infant Death Syndrome (SUID) is underexplored. Identifying specific challenges or omissions in prenatal care for these high-risk scenarios could lead to targeted preventive measures.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D246",
+    "D72"
+   ],
+   "data": "Examine prenatal care issues (D243) and multiple gestation status (D72) in SUID cases from ncfrp_v51 and cdc_linkco15 to identify any differences."
+  }
+ ]
+}

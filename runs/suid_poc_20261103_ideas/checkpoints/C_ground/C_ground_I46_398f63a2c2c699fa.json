@@ -1,0 +1,24 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "Infants who later died from Sudden Unexpected Infant Death (SUID) had a higher proportion of hospital overnight stays compared to those that survived beyond infancy.",
+ "rationale": "The design uses the ncfrp_v51 case series to compare within-case variation for live-born infants recorded in the dataset. This comparison measures proportions and odds rather than rates due to the lack of a denominator source.",
+ "prior_art": "SUID_manuscript_v9_clean.C9 tested maternal smoking's association with SUID incidence, but this question focuses on hospital overnight stays as a potential risk factor, making it distinct and still open.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C9"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2015,
+ "period_end": 2019,
+ "required_concepts": [
+  "Hospital Overnight Stay"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtnnum"
+ ],
+ "cannot_establish": "This design can only establish associations between hospital overnight stay frequency and subsequent SUID occurrence within the cases reviewed by fatality review teams. It cannot estimate incidence or establish causation due to the lack of a denominator source."
+}

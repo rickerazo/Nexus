@@ -1,0 +1,58 @@
+### Study Design for Investigating Trends in Hospital Overnight Stays for SUID Cases Compared to the Population
+
+#### 1. The Design
+**Restated Question:** 
+Is there a trend over time in the proportion of Sudden Unexpected Infant Death (SUID) cases involving hospital overnight stays compared to the general population of live births?
+
+**Design Type:**
+Trends within cases. Compare proportions among the cases across periods. When a case series' coverage changes over time, changes in case counts are not changes in incidence.
+
+#### 2. Sources by Role
+- **Case Series:** ncfrp_v51 (NFR-CRS)
+  - Why: Contains detailed information on SUID cases and hospital stays.
+  
+- **Population Reference:** prams_p7_arf 
+  - Why: Provides data from a population-based survey of mothers, including variables related to health care utilization after delivery.
+
+#### 3. Period
+**Period:** 2012–2015
+
+**Justification for the period choice:**
+- The PRAMS Phase 7 (prams_p7_arf) covers this time range.
+- ncfrp_v51 data are available from 2008 onwards, but we need to align with PRAMS' coverage.
+
+#### 4. Variables
+| Concept                  | Candidate Variable(s)                          | Wording/Timing/Who Reports It/Coding of Missing Answers |
+|--------------------------|-------------------------------------------------|-----------------------------------------------------------|
+| Hospital Overnight Stay  | ncfrp_v51:INF4hosprtn (Yes, infant returned to hospital overnight after delivery) <br> ncfrp_v51:INF4infhospdays (Total number of days infant hospitalized) | Reported by the reviewing fatality review team; missing coded as unknown. |
+| Health Care Utilization  | prams_p7_arf:LTH_HOSP (Length of hospital stay for baby) <br> prams_p7_arf:PNC_VST (Number of prenatal care visits) | Surveyed mothers a few months post-delivery; missing coded as unknown or not stated. |
+| Month Prenatal Care Began| ncfrp_v51:PRECARE5 (Month prenatal care began recode); prams_p7_arf:PNC_MTH (Month of first prenatal care visit) | Reported by medical records and survey, respectively; missing coded as unknown or no prenatal care. |
+
+#### 5. Biases
+**Selection Bias:** 
+- **Case Series (ncfrp_v51):** The NFR-CRS is subject to varying participation rates across states and over time. Changes in case counts may reflect changes in reporting rather than incidence.
+  
+**Information Bias:**
+- **Hospital Overnight Stay:** Reporting by fatality review teams, which might differ from actual occurrences due to incomplete or inconsistent documentation.
+- **Health Care Utilization (PNC visits):** Reported by mothers a few months post-delivery and could be subject to recall bias.
+
+**Confounding:**
+- **Potential Confounders Not Accounted for:** Health insurance status, socioeconomic factors, maternal health conditions such as smoking and obesity. These variables are not available in the case series or population reference data used here.
+
+#### 6. What the Design Cannot Establish
+The design can only compare trends within SUID cases and cannot establish incidence rates or causal relationships between hospital overnight stays and SUID risk. The lack of a denominator source precludes estimating overall risk in the general population.
+
+#### 7. Prior Art: 
+- **SUID_manuscript_v9_clean.C10:** Exclusion of extremely premature infants may introduce bias but does not address trends in postnatal care.
+- **bedsharing_ms_v7.C8, C11:** Focuses on the association between bed sharing and SUID incidence across PCA windows but does not address trends in hospital overnight stays.
+
+#### 8. Verdict
+**Can these data answer a version of the question?**
+
+Yes, but with limitations:
+- The design can assess trends in hospital overnight stays among SUID cases compared to health care utilization patterns reported by mothers from a population reference.
+- However, due to missing denominators and potential biases (selection, information), definitive causal claims or incidence estimates cannot be made.
+
+**What is Missing:**
+- **Denominator Source:** A denominator source to estimate overall hospital overnight stays in the general live birth population would strengthen the analysis.
+- **Confounding Variables:** Data on maternal health insurance status, socioeconomic factors, and other potential confounders are needed for a more comprehensive risk assessment.

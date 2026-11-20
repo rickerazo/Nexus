@@ -1,0 +1,39 @@
+INFO mmf.pipeline: ingest_cdc_linkco15: cache hit
+WARNING mmf.pipeline: ingest_cdc_linkco15: 14 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/cdc_linkco15.audit.json
+INFO mmf.pipeline: ingest_cdc_natl15: cache hit
+WARNING mmf.pipeline: ingest_cdc_natl15: 10 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/cdc_natl15.audit.json
+INFO mmf.pipeline: ingest_cdc_codenames: cache hit
+INFO mmf.pipeline: ingest_ncfrp_v51: cache hit
+WARNING mmf.pipeline: ingest_ncfrp_v51: 16 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/ncfrp_v51.audit.json
+INFO mmf.pipeline: ingest_prams_p8_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_arf: 64 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p8_arf.audit.json
+INFO mmf.pipeline: ingest_prams_p8_std2: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_std2: 2 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p8_std2.audit.json
+INFO mmf.pipeline: ingest_prams_p7_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p7_arf: 55 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p7_arf.audit.json
+INFO mmf.pipeline: A_SUID_manuscript_v9_clean: cache hit
+INFO mmf.pipeline: A_bedsharing_ms_v7: cache hit
+INFO mmf.pipeline: A_suid_literature_abstracts: cache hit
+INFO mmf.pipeline: B: cache hit
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO mmf.pipeline: B_check: cache hit
+WARNING mmf.pipeline: B_check: 63 (concept, source) pair(s) where embeddings and the LLM disagree; {'llm_outside_topk': 34, 'agree': 51, 'both_none': 264, 'possible_miss': 29}
+INFO mmf.pipeline: C: cache hit
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: D_strategy_G1 attempt 1 rejected: ['derived variable PCA is declared but not used; to use it, put {"source_id": "derived", "name": "PCA"} in exposures, covariates, stratification, an interaction or time_scale (in place of the variables it is computed from), or remove it from `derived`', "negative_binomial requires an offset (denominator) variable or a denominator_source (one of ['cdc_linkco15', 'cdc_natl15'])"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: D_strategy_G2 attempt 1 rejected: ["denominator_source 'ncfrp_v51' is not a denominator source; use one of ['cdc_linkco15', 'cdc_natl15'] or null", "negative_binomial requires an offset (denominator) variable or a denominator_source (one of ['cdc_linkco15', 'cdc_natl15'])"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: D_strategy_G3 attempt 1 rejected: ["derived variable PCA combines sources ['cdc_linkco15', 'ncfrp_v51']; inputs must come from one source (records are not linked across sources)", 'derived variable PCA is declared but not used; to use it, put {"source_id": "derived", "name": "PCA"} in exposures, covariates, stratification, an interaction or time_scale (in place of the variables it is computed from), or remove it from `derived`', 'at least one exposure is required; if the question is how incidence changes along a time axis or across subtypes, list that time-axis variable (e.g. a derived postconceptional age) as the exposure']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: D_strategy_G3 attempt 2 rejected: ["poisson_regression requires an offset (denominator) variable or a denominator_source (one of ['cdc_linkco15', 'cdc_natl15'])"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: D_strategy_G3 attempt 3 rejected: ["denominator_source 'ncfrp_v51' is not a denominator source; use one of ['cdc_linkco15', 'cdc_natl15'] or null", "poisson_regression requires an offset (denominator) variable or a denominator_source (one of ['cdc_linkco15', 'cdc_natl15'])"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+Report: runs/suid_poc_20261103/report.md

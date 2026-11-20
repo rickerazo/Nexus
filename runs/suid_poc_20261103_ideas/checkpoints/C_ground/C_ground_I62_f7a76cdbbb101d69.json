@@ -1,0 +1,30 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases where infants had a crib or similar sleeping arrangement increased from 2008 to 2019.",
+ "rationale": "This study design uses the ncfrp_v51 case series source and prams_p7_arf/prams_p8_arf population references to compare proportions of SUID cases with cribs over time. The data allows for trend analysis but cannot establish incidence rates or causality due to inherent limitations in case series designs.",
+ "prior_art": "The closest relevant claim is bedsharing_ms_v7.C8, which discusses associations between bed sharing and maternal smoking among SUID cases but does not cover trends regarding crib use over time. This question remains open as it focuses on longitudinal changes in sleep environments for SUID cases.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "crib use"
+ ],
+ "variables": [
+  "ncfrp_v51:INF5havecrib",
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:WTANAL",
+  "prams_p8_arf:SLP_CRB8_RAW"
+ ],
+ "cannot_establish": "incidence rates or causality due to limitations in case series designs."
+}

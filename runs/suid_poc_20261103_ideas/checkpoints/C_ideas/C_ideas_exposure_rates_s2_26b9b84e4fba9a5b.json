@@ -1,0 +1,83 @@
+{
+ "ideas": [
+  {
+   "question": "To determine whether the prevalence of maternal smoking during pregnancy varies by infant sex and how this association affects sudden unexpected infant death (SUID) rates.",
+   "comparison": "Male vs. female infants, stratified by maternal smoking status, comparing SUID incidence rates between sexes for both smokers and non-smokers within a population at risk.",
+   "why_open": "While prior studies have examined the effects of maternal smoking on SUID rates, this question aims to elucidate if there is a differential effect of maternal smoking on SUID rates according to infant sex. This could reveal additional vulnerabilities or protective factors linked to biological differences in male and female infants exposed to prenatal tobacco smoke.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "data": "The data uses infant sex from case series sources, maternal smoking during pregnancy and exposure prevalence from population reference surveys, and the total live births at risk for SUID to compute rates."
+  },
+  {
+   "question": "To evaluate whether the incidence of sudden unexpected infant death (SUID) differs based on maternal obesity status and if this relationship varies across different postconceptional age windows.",
+   "comparison": "High vs. low maternal BMI groups, stratified by developmental PCA window, comparing SUID incidence rates between BMI categories within specific age ranges.",
+   "why_open": "Maternal obesity is a known risk factor for adverse pregnancy outcomes but its impact on SUID specifically and whether this effect varies with the infant's postconceptional age have not been thoroughly examined. This analysis could help identify critical developmental periods where maternal obesity poses the highest risks to neonatal health and survival.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "data": "The data utilizes maternal prepregnancy body mass index (BMI) from population reference surveys, SUID outcomes and postconceptional age windows from case series sources, and the denominator from vital records to establish incidence rates."
+  },
+  {
+   "question": "To investigate if bed sharing practices differ between infants of mothers who smoked during pregnancy compared to those whose mothers did not smoke.",
+   "comparison": "Infants of smoking vs. non-smoking mothers, comparing bed-sharing prevalence between these groups.",
+   "why_open": "While the association between bed sharing and SUID is well-documented, understanding whether maternal smoking influences bed-sharing practices could provide insights into environmental risk factors that exacerbate or mitigate the risks associated with bed sharing. This information can help tailor public health messaging to address specific vulnerabilities in different populations.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "data": "The data uses maternal smoking during pregnancy from population reference surveys, bed sharing information from case series sources, and birth counts to determine the prevalence of bed-sharing practices."
+  },
+  {
+   "question": "To assess whether infants born prematurely are at a higher risk for SUID compared to full-term infants in the context of postconceptional age development.",
+   "comparison": "Preterm vs. term births, stratified by PCA window, comparing SUID incidence rates between preterm and full-term infants within different developmental stages.",
+   "why_open": "Although prematurity is recognized as a risk factor for adverse health outcomes, little research has explored how this risk evolves over time in relation to postconceptional age development. Understanding the temporal dynamics of prematurity's impact on SUID could highlight critical periods where targeted interventions are most needed.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "data": "The data incorporates preterm birth status from population reference surveys, SUID outcomes and postconceptional age windows from case series sources, and the denominator based on live births to compute incidence rates."
+  },
+  {
+   "question": "To explore whether infants born to mothers with a history of smoking during pregnancy have higher rates of sudden unexpected infant death (SUID) compared to those born to non-smokers, across different geographic regions within participating states.",
+   "comparison": "Geographic region stratified by maternal smoking status, comparing SUID incidence between smokers and non-smokers in various regions within participating states.",
+   "why_open": "Regional variations may influence environmental factors such as healthcare access, socioeconomic conditions, or cultural practices that could modify the risk of SUID associated with maternal smoking. Identifying these disparities can inform targeted public health interventions tailored to specific geographic areas.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "data": "The data involves maternal smoking history from population reference surveys, SUID outcomes and geographic location from case series sources, and live birth counts to estimate SUID incidence rates by region."
+  }
+ ]
+}

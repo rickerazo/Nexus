@@ -1,0 +1,75 @@
+### Design
+
+**Design:** Case-population comparison. Compare how common an exposure is among the cases (from a case series) with its weighted prevalence in the general population (from a population reference source).
+
+**Restated Question:**
+Is the use of medications during preconception and pregnancy linked to SUID incidence? This study will compare the proportion of medication use among SUID cases from the NCFRP_v51 or CDC_linkco15 case series with the weighted prevalence of similar medication exposure in a population reference source (PRAMS_p7_arf and PRAMS_p8_arf).
+
+### Sources by Role
+
+- **Case Series:**
+  - **CDC_linkco15:** Provides detailed information on infant deaths linked to birth records. It includes cases from US live births in the 2015 cohort, with their first-year outcomes.
+  - **NCFRP_v51:** Provides reviewed child death cases by fatality review teams (SUID cases), although it does not provide incidence denominators.
+
+- **Population Reference:**
+  - **PRAMS_p7_arf:** Weighted survey of mothers a few months after live births in participating states, covering the years 2012-2015.
+  - **PRAMS_p8_arf:** Similar to PRAMS_p7_arf but for the Phase 8 period (2016 onwards).
+
+### Period
+
+**Period:**
+The proposed study covers the years 2012-2021. To ensure that all necessary data is available, we need:
+- **CDC_linkco15:** Requires additional years beyond 2015 for a comprehensive analysis.
+- **NCFRP_v51:** Covers 2008-2019 but needs more recent years (2020-2021).
+- **PRAMS_p7_arf:** Already covers 2012-2015, so no additional data is needed.
+- **PRAMS_p8_arf:** Covers 2016 onwards up to 2021.
+
+### Variables
+
+**Medication Use During Preconception and Pregnancy:**
+- **Case Series (CDC_linkco15):**
+  - Relevant variables like `F_CIGS_0` for cigarettes before pregnancy.
+  
+- **Case Series (NCFRP_v51):**
+  - `INF3meds`: Did mother use any medications, drugs, or other substances during pregnancy?
+  - Additional detailed medication variables (`IEMmedsarthritis`, `IEMmedspod`, etc.)
+
+- **Population Reference (PRAMS_p7_arf and PRAMS_p8_arf):**
+  - `PRE_RX`: Pre-pregnancy prescription medications.
+  - Variables for specific conditions like asthma, allergies, nausea/vomiting, depression/anxiety, epilepsy, kidney/bladder infections.
+
+### Biases
+
+**Selection Bias:**
+- **Case Series (CDC_linkco15 and NCFRP_v51):** Both sources include only SUID cases and may not be representative of the general population.
+- **Population Reference (PRAMS_p7_arf and PRAMS_p8_arf):** Sampled mothers from live births, which excludes those who did not survive to birth.
+
+**Information Bias:**
+- Reporting flags in CDC_linkco15 and NCFRP_v51 may lead to underreporting or misclassification of medications.
+- Timing and method of data collection differ between case series and population references (e.g., PRAMS collects data a few months post-birth, whereas NCFRP records are reviewed retrospectively).
+
+**Confounding:**
+- Confounders such as socioeconomic status, maternal age, education level, smoking during pregnancy, and other health conditions need to be accounted for.
+
+### What the Design Cannot Establish
+
+This design can only establish associations between medication use and SUID incidence. It cannot definitively prove causation due to observational nature of the data.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C10:** Discusses limitations related to missing maternal smoking status.
+- **bedsharing_ms_v7.C23:** Addresses potential confounding factors like prematurity and bed sharing.
+- **suid_literature_abstracts.C11, C45:** Consistently reports on the association of maternal smoking with SUID risk.
+
+The proposed study is distinct from these claims as it focuses specifically on medication use during preconception and pregnancy. 
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, the data can support an analysis to compare the proportion of medication use among SUID cases (from NCFRP_v51 or CDC_linkco15) with the weighted prevalence in PRAMS_p7_arf and PRAMS_p8_arf. The key limitations are the need for additional years beyond 2015 from CDC_linkco15 and the potential biases mentioned.
+
+**Logical Reasoning:**
+- Case series sources provide detailed information on SUID cases.
+- Population reference sources provide weighted survey data on medication use among live births.
+- Variables exist to measure preconception and pregnancy medication use in both types of sources, allowing for a group-level comparison.

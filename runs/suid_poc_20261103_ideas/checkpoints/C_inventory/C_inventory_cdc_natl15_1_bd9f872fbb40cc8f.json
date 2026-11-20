@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "MTRAN",
+   "name": "Mother Transfer Status",
+   "summary": "Whether the mother was transferred to another facility."
+  },
+  {
+   "start": "NO_MMORB",
+   "name": "Maternal Morbidity Reporting",
+   "summary": "Indicates whether maternal morbidity information is reported."
+  },
+  {
+   "start": "PAY",
+   "name": "Payment Information",
+   "summary": "Details about payment sources and recodes for payment methods."
+  },
+  {
+   "start": "APGAR10",
+   "name": "APGAR Scores",
+   "summary": "Ten-minute and five-minute APGAR scores and their recodes."
+  },
+  {
+   "start": "DPLURAL",
+   "name": "Plurality",
+   "summary": "Recode of the plurality (number of babies born at once)."
+  },
+  {
+   "start": "FILLER_A",
+   "name": "Filler Variables",
+   "summary": "Placeholder variables used to fill space."
+  },
+  {
+   "start": "SEX",
+   "name": "Sex and Gestation Details",
+   "summary": "Imputed sex, combined gestational age details, recodes, and flags for estimation methods."
+  },
+  {
+   "start": "BWTR12",
+   "name": "Birth Weight",
+   "summary": "Recode of birth weight in grams and related flags."
+  }
+ ]
+}

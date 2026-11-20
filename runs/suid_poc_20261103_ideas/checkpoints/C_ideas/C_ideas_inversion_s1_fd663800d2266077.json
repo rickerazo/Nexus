@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "What maternal behaviors or environmental conditions correlate with reduced SUID incidence among preterm infants?",
+   "why_open": "Preterm birth is a recognized risk factor for Sudden Unexpected Infant Death (SUID). However, some preterm infants have better outcomes than expected. Understanding protective factors could help mitigate risks.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal smoking during pregnancy, Preterm birth, Birth weight, Maternal prepregnancy body mass index (BMI), Mother's age"
+  },
+  {
+   "question": "What socio-economic factors or community support programs are associated with lower SUID rates in inner-city neighborhoods?",
+   "why_open": "Inner-city areas often face higher risks of infant mortality due to various social and economic challenges. Identifying specific protective elements within these communities could guide targeted interventions.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Mother's education level, Geographic location, Insurance coverage, Family income, Maternal smoking during pregnancy"
+  },
+  {
+   "question": "How do variations in breastfeeding practices and duration influence SUID incidence among infants born to mothers with a history of mental health issues?",
+   "why_open": "Mothers with mental health conditions may face challenges that affect infant care. Investigating how different breastfeeding durations or types relate to SUID rates could provide insights into potential protective benefits.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Breastfeeding practices, Mental health history, Maternal smoking during pregnancy, Infant age at death"
+  },
+  {
+   "question": "What role do non-SUID infant deaths play in revealing protective factors against SUID among infants from low-income families?",
+   "why_open": "Low-income families often experience higher rates of both non-SUID and Sudden Unexpected Infant Deaths. Comparing these two groups might uncover unique circumstances or preventive measures that contribute to lower SUID incidence.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Non-SUID infant mortality, Family income, Maternal smoking status, Postnatal care utilization"
+  },
+  {
+   "question": "How does the absence of maternal smoking impact SUID rates in infants who are exclusively breastfed?",
+   "why_open": "The benefits of exclusive breastfeeding and the risks associated with maternal smoking on infant health are well-documented. Examining their combined effect could highlight synergistic protective mechanisms against SUID.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Exclusive breastfeeding, Maternal smoking during pregnancy, Infant age at death, Birth weight"
+  }
+ ]
+}

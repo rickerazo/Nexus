@@ -1,0 +1,83 @@
+### Design
+
+**Question:** How does the frequency of multivitamin use differ between SUID cases and a population reference?
+
+**Design Type:** Case-population comparison. This design compares the proportion of an exposure among cases (SUID deaths) with its weighted prevalence in a general population sample.
+
+**Sources by Role:**
+- **Case Series:** NCFRP_v51
+  - Reason: It captures detailed information about SUID cases, including medication use during pregnancy.
+  
+- **Population Reference:** PRAMS_p7_arf
+  - Reason: PRAMS is designed to provide population-level data on maternal behaviors and health conditions during pregnancy.
+
+### Period
+
+**Years Needed for Analysis:** 2012-2015 (as proposed).
+
+### Variables
+
+#### Concept: Multivitamin Use
+
+- **Case Series Source (ncfrp_v51)**
+  - Variable: `INF4facid`: Mother taking folic acid or multivitamin.
+    - Values: Yes/No
+    - Documentation: This variable captures whether the mother took any form of vitamin during pregnancy, specifically mentioning folic acid.
+
+- **Population Reference Source (prams_p7_arf)**
+  - Variable: `VITAMIN`: Multivitamin -- # of times /wk.
+    - Values: 1 = Did not take vitamin; 2 = 1-3 times/week; 3 = 4-6 times/week
+    - Documentation: This variable captures the frequency of multivitamin use during pregnancy.
+
+**Measurement Differences Between Sources:**
+- **Case Series (ncfrp_v51):**
+  - Binary measure (yes/no).
+  
+- **Population Reference (prams_p7_arf):**
+  - Frequency-based measure (number of times per week).
+
+To make these measures comparable, the binary case series variable should be transformed into a frequency measure. For instance, "Yes" could be coded as "2-3 times/week" based on previous studies indicating moderate use.
+
+### Biases
+
+#### Selection Bias
+- **Case Series (ncfrp_v51):**
+  - Cases are SUID cases reported by fatality review teams; not a census of all SUID deaths.
+  
+- **Population Reference (prams_p7_arf):**
+  - PRAMS is a weighted sample survey, potentially leading to underrepresentation or overrepresentation of certain subpopulations.
+
+#### Information Bias
+- **Case Series (ncfrp_v51):**
+  - Reporting may be influenced by case review team protocols and available information from families.
+  
+- **Population Reference (prams_p7_arf):**
+  - PRAMS relies on self-reported data collected a few months postpartum, which might suffer from recall bias.
+
+#### Confounding
+- Potential confounders include maternal age, socioeconomic status, education level, smoking during pregnancy, and access to healthcare. These factors are not directly measured or controlled for in the proposed comparison but should be noted as limitations.
+
+### What the Design Cannot Establish
+
+- This design can only establish an association between multivitamin use and SUID cases compared with a population reference.
+  - It cannot establish causation due to observational nature of both sources.
+  - Incidence rates or risk ratios are not estimable without a denominator source for SUID cases.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C10 [limitation]:** The analysis excludes extremely preterm infants, which is relevant as multivitamin use may differ in this population.
+- **bedsharing_ms_v7.C11 [finding]:** Bed sharing was independently associated with SUID incidence across both rising and declining phases of the developmental curve (PCA).
+
+There are no claims directly addressing multivitamin use among SUID cases or its comparison to a general population reference. However, other studies address risk factors like smoking during pregnancy that could influence the interpretation of multivitamin use.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, the proposed design can compare the frequency of multivitamin use between SUID cases and PRAMS mothers for 2012-2015. However:
+- The comparison will be limited to proportions and odds due to lack of a denominator source.
+- Measurement differences (binary vs. frequency-based) must be harmonized.
+- Confounding factors like maternal smoking should be acknowledged.
+
+The design can provide insights into whether multivitamin use is less common among SUID cases compared with the general population, but cannot establish causation or incidence rates due to inherent limitations in observational data sources.

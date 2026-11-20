@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers reporting stressors during pregnancy differs between NCFRP_v51 and PRAMS_P8_ARF.",
+ "rationale": "This design compares how maternal stressors are recorded in two distinct datasets, focusing on the differences in measurement methods and timing. The period overlap is limited to 2016-2019, which allows for a meaningful comparison within this timeframe.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 discusses exclusion of some cases, highlighting potential discrepancies due to missing data. However, no direct comparison has been made between these specific stressors and family medical history discussions in PRAMS_P8_ARF.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "Maternal stressors during pregnancy",
+  "Family medical history discussions before pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4stress",
+  "prams_p8_arf:WTANAL",
+  "prams_p8_arf:PG8_ANX",
+  "prams_p8_arf:P_PRTERM",
+  "prams_p8_arf:RF_PHYPE"
+ ],
+ "cannot_establish": "This design cannot establish causality or incidence rates related to SUID risk factors. It only compares how maternal stressors and family medical history discussions are recorded differently in two distinct datasets."
+}

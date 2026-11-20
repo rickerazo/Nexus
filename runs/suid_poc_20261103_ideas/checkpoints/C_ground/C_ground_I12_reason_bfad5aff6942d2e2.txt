@@ -1,0 +1,79 @@
+### Design
+
+**Question Restated:** What is the incidence rate of SUID among infants born to mothers who gained less than recommended weight during pregnancy compared to those who met or exceeded recommendations from 2016-2021?
+
+This design uses a case-specific rate by combining the cases from a case series (numerator), the exposure prevalence from a population reference source, and the population at risk from a denominator source.
+
+### Sources by Role
+
+**Case Series:**
+- **ncfrp_v51:** This dataset provides the SUID cases. It cannot supply denominators for incidence rates but is suitable for identifying case series.
+  
+**Population Reference:**
+- **prams_p8_arf, prams_p7_arf:** These datasets provide maternal weight gain exposure prevalence from PRAMS surveys of live births and their mothers.
+
+**Denominator Source:**
+- **cdc_natl15, cdc_linkco15:** Provides the total number of live births as a denominator for incidence rate calculations.
+
+### Period
+
+The question requires data from 2016 to 2021. The available years are:
+- **ncfrp_v51:** Covers deaths 2004-2019, but only cases relevant to the SUID manuscript will be used (2008-2019). Since we need data from 2016-2021 specifically, this source needs additional years for completeness.
+- **prams_p8_arf:** Covers Phase 8 (the bed-sharing manuscript uses 2016-2021).
+- **prams_p7_arf:** Covers Phase 7 (2012-2015), thus requiring acquisition of data from 2016-2021.
+- **cdc_natl15, cdc_linkco15:** Both cover live births in 2015 and can be extended for additional years.
+
+### Variables
+
+**Maternal Weight Gain:**
+- **ncfrp_v51:INF4momwtgn:** Mother's pregnancy weight gain or loss in pounds.
+- **prams_p8_arf:MOMLBS:** Maternal Weight Gain (LBS).
+- **prams_p7_arf:MOMLBS:** Maternal Weight Gain (LBS).
+
+**SUID Cases:**
+- **ncfrp_v51:** SUID cases reported.
+
+**Birth Denominator:**
+- **cdc_natl15, cdc_linkco15:** Live births from 2016 to 2021 as denominators for incidence rates.
+
+### Measurement Differences Between Sources
+
+- **Maternal Weight Gain:**
+  - PRAMS (P8 and P7) captures weight gain in pounds directly.
+  - NCFRP records maternal pregnancy weight gain or loss in pounds but does not distinguish between those who gained less than recommended vs. those who met/exceeded recommendations.
+
+### Biases
+
+**Selection Bias:**
+- **ncfrp_v51:** Limited to participating states and may exclude cases from non-participating states.
+- **prams_p8_arf, prams_p7_arf:** PRAMS surveys are weighted and may not be representative of all live births due to sampling.
+
+**Information Bias:**
+- The timing of weight gain measurements differs between NCFRP (records only deaths) and PRAMS (surveys conducted a few months post-birth).
+  
+**Confounding:**
+- Maternal smoking, prenatal care visits, and other confounders like socioeconomic status must be accounted for in the analysis to isolate the effect of maternal weight gain on SUID incidence.
+
+### What the Design Cannot Establish
+
+This design cannot establish causation between inadequate prenatal weight gain and increased risk of SUID. It can only show an association and estimate rates by exposure group. Additionally, it does not account for potential confounding variables or postnatal exposures.
+
+### Prior Art
+
+- **SUID Manuscript:** Claims C9 and C10 discuss maternal smoking as a risk factor but do not mention prenatal weight gain.
+  
+- **Bedsharing Manuscript:** Claims C8 discusses the association between bed sharing, maternal smoking during pregnancy, and prematurity with SUID incidence. It does not directly address prenatal weight gain.
+
+The existing literature focuses on other factors like smoking and prematurity rather than prenatal weight gain specifically in relation to SUID risk.
+
+### Verdict
+
+**Yes**, these sources can answer a version of the question by estimating the incidence rate of SUID among infants born to mothers with inadequate vs. adequate prenatal weight gain from 2016-2021. However, additional years (specifically 2016-2021) need to be acquired for NCFRP and PRAMS P7 data to cover the entire period of interest.
+
+### Notes
+
+1. **Data Acquisition:** Additional data acquisition is required for the full period from 2016-2021, particularly for ncfrp_v51 and prams_p7_arf.
+2. **Measurement Standardization:** Ensure consistent measurement and coding between PRAMS datasets (P8 and P7) to align with NCFRP data on maternal weight gain exposure.
+3. **Adjustment for Confounders:** Include adjustments for potential confounding variables such as smoking, prenatal care visits, socioeconomic status, etc.
+
+This approach can provide insights into the relationship between prenatal weight gain and SUID risk but requires careful consideration of biases and limitations in the datasets.

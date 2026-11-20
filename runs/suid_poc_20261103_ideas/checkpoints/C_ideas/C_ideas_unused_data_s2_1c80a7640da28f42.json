@@ -1,0 +1,48 @@
+{
+ "ideas": [
+  {
+   "question": "Does maternal pre-pregnancy weight gain impact the incidence rate of sudden unexpected infant death (SUID)?",
+   "why_open": "This question explores a new risk factor that has not been previously studied in relation to SUID, focusing on how changes in maternal body mass index during pregnancy influence infant mortality.",
+   "sources": [
+    "cdc_natl15",
+    "prams_p7_arf"
+   ],
+   "data": "Pregnancy Weight Gain; Maternal Physical Attributes"
+  },
+  {
+   "question": "What role do daily overwhelming feelings experienced by mothers play in predicting the incidence of SUID?",
+   "why_open": "This inquiry aims to understand how a mother's emotional well-being during pregnancy affects the risk of SUID, an area not covered in existing literature.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Daily Overwhelming Feelings; Maternal Health Problems"
+  },
+  {
+   "question": "Can exposure to chronic intermittent hypoxia (CIH) during pregnancy be a contributing factor to SUID incidence?",
+   "why_open": "This question introduces a novel environmental exposure, which has not been considered in previous studies and could shed light on new mechanisms underlying SUID.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Maternal Stressors; Maternal Health Conditions"
+  },
+  {
+   "question": "How does preconception care impact the incidence of sudden unexpected infant death (SUID)?",
+   "why_open": "By exploring the role of preconception care, this question aims to determine if addressing maternal health before pregnancy can reduce SUID rates, an uncharted area in current research.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Pre-Pregnancy Health Care; Preconception and Chronic Disease Care"
+  },
+  {
+   "question": "Does the use of specific medications during pregnancy correlate with increased SUID risk?",
+   "why_open": "Identifying particular drugs that may be associated with higher risks could provide critical information for clinical guidelines, an issue not addressed in existing studies.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Medication Use During Pregnancy; Maternal Health Conditions"
+  }
+ ]
+}

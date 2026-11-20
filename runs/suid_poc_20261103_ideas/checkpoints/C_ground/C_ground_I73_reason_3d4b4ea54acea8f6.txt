@@ -1,0 +1,87 @@
+### Design
+
+**Design:** Measurement comparison. Compare how the same concept is recorded in PRAMS Phase 7 and Phase 8 to evaluate consistency of risk factor reporting for Sudden Unexpected Infant Death (SUID).
+
+**Rephrased Question:**
+To compare the recording of healthcare communication about preventive practices between PRAMS Phase 7 and Phase 8, evaluating any discrepancies or shifts in how maternal health issues and prenatal care are reported across these data collection phases.
+
+### Sources by Role
+
+- **Case Series:** None required since this is a measurement comparison focused on population reference data.
+- **Population Reference:**
+  - PRAMS Phase 7 Analytic Research File (prams_p7_arf): Provides historical context of preventive practice discussions.
+  - PRAMS Phase 8 Analytic Research File (prams_p8_arf): Captures recent trends in preventive practice discussions.
+
+### Period
+
+**Years needed:** 
+- PRAMS Phase 7: 2012-2015
+- PRAMS Phase 8: 2016-2021
+
+More years can be acquired, but the current held periods are sufficient for this comparison.
+
+### Variables
+
+#### Maternal Health Issues:
+- **PRAMS P7 ARF (Phase 7)**
+  - `PGHX`: Previous live births
+  - `PREV_LBW`: Previous low birth weight
+  - `PREV_PRE`: Previous premature birth
+  - `MM_HBP`: Hypertension during pregnancy
+
+- **PRAMS P8 ARF (Phase 8)**
+  - `P_PRTERM`: Previous preterm births
+  - `PG8_SC`: Sickle cell anemia during pregnancy
+  - `PG8_ASMA`: Asthma during pregnancy
+  - `MORB_BP8`: Hypertension during pregnancy
+
+#### Prenatal Care Visits:
+- **PRAMS P7 ARF (Phase 7)**
+  - `PNC_VST`: Number of prenatal care visits
+
+- **PRAMS P8 ARF (Phase 8)**
+  - `PNC_VST`: Number of prenatal care visits
+
+### Biases
+
+#### Selection Bias
+- **PRAMS Phase 7 vs. PRAMS Phase 8:** The sampling procedures and response rates may differ between phases, affecting comparability.
+  
+#### Information Bias
+- **Wording Differences:** 
+  - Reporting formats and specific wording for maternal health issues may vary between Phase 7 and Phase 8.
+  - For example, `PGHX` in Phase 7 versus `P_PRTERM`, `PG8_SC`, etc., in Phase 8 could have different nuances in how they are understood by respondents or recorded.
+
+#### Confounding
+- **Temporal Changes:** 
+  - Shifts in healthcare policies and practices over time may affect the context of prenatal care discussions, introducing confounders that vary between phases.
+  
+### What the Design Cannot Establish
+
+This design can only compare measurement consistency and cannot establish incidence rates or causal relationships. It is limited to identifying any discrepancies in how preventive practices are reported across different PRAMS data collection phases.
+
+### Prior Art
+
+- **SUID Manuscripts:**
+  - The prior research focuses on SUID incidence patterns, risk factors (bed sharing, maternal smoking), and developmental timing.
+  - However, it does not address consistency of reporting over time or between data collection phases.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, these sources can be used to compare how preventive practice discussions are recorded in PRAMS Phase 7 vs. Phase 8. The design focuses on evaluating measurement differences rather than incidence rates, which aligns with the available data and roles of the population reference sources.
+
+### Summary
+
+- **Design:** Measurement comparison
+- **Sources:**
+  - PRAMS P7 ARF (historical context)
+  - PRAMS P8 ARF (recent trends)
+- **Period:** 2012-2015 for Phase 7; 2016-2021 for Phase 8
+- **Variables:** Maternal health issues, prenatal care visits
+- **Biases:** Selection and information biases due to changing data collection procedures over time
+- **Limitation:** Cannot establish incidence rates or causality, only measurement consistency
+- **Prior Art:** No direct comparison of reporting trends across phases in prior research
+
+This design can be implemented using the provided sources to evaluate discrepancies in preventive practice discussions.

@@ -1,0 +1,95 @@
+{
+ "ideas": [
+  {
+   "question": "Does pregnancy weight gain differ between mothers of SUID cases and those from live births?",
+   "comparison": "Mothers whose infants died of Sudden Unexpected Infant Death (SUID) vs. mothers of live births",
+   "why_open": "The effect of maternal weight gain on infant mortality has not been extensively explored, particularly in the context of SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_std2",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D88",
+    "D299",
+    "D302"
+   ],
+   "data": "ncfrp_v51 D88 / Pregnancy Weight Gain (case), prams_p8_std2 D299 / Pregnancy Weight Gain (reference), prams_p7_arf D302 / Maternal Physical Attributes (reference)"
+  },
+  {
+   "question": "How does hospital overnight stay frequency differ between mothers of SUID cases and live births?",
+   "comparison": "Mothers whose infants died from Sudden Unexpected Infant Death (SUID) vs. mothers of live births",
+   "why_open": "There is limited research on the relationship between postnatal hospital stays and risk factors for SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82",
+    "D279"
+   ],
+   "data": "ncfrp_v51 D82 / Hospital Overnight Stay (case), prams_p8_arf D279 / Hospital Stay Length (reference), prams_p7_arf D279 / Hospital Stay Length (reference)"
+  },
+  {
+   "question": "Is there a difference in previous births between mothers of SUID cases and those of live births?",
+   "comparison": "Mothers whose infants died from Sudden Unexpected Infant Death (SUID) vs. mothers who gave birth to live infants",
+   "why_open": "Previous pregnancy history is an important factor that could influence the risk of SUID, but has not been thoroughly investigated.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D67",
+    "D286"
+   ],
+   "data": "ncfrp_v51 D67 / Pregnancy History (case), prams_p8_arf D286 / Previous Births (reference), prams_p7_arf D286 / Previous Births (reference)"
+  },
+  {
+   "question": "Do maternal health problems differ between mothers of SUID cases and those who had live births?",
+   "comparison": "Mothers whose infants died from Sudden Unexpected Infant Death (SUID) vs. mothers of live births",
+   "why_open": "The role of maternal pre-existing conditions in the occurrence of SUID is understudied.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D239",
+    "D269"
+   ],
+   "data": "ncfrp_v51 D239 / Maternal Health Conditions (case), prams_p8_arf D269 / Maternal Health Problems (reference), prams_p7_arf D269 / Maternal Health Problems (reference)"
+  },
+  {
+   "question": "Is there a difference in pre-pregnancy health checks between mothers of SUID cases and live births?",
+   "comparison": "Mothers whose infants died from Sudden Unexpected Infant Death (SUID) vs. mothers who gave birth to live infants",
+   "why_open": "Pre-pregnancy health assessments are crucial but their impact on infant mortality, particularly for SUID, is not well understood.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D240",
+    "D304"
+   ],
+   "data": "ncfrp_v51 D240 / Preconception and Chronic Disease Care (case), prams_p8_arf D304 / Pre-Pregnancy Health Checks (reference), prams_p7_arf D304 / Pre-Pregnancy Health Checks (reference)"
+  }
+ ]
+}

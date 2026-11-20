@@ -1,0 +1,72 @@
+---
+stage: C
+approved: true
+---
+# Review checkpoint: Knowledge gaps (stage C)
+
+MMF proposed the structured output below. Review it, edit `C_*.json` in this run directory
+if anything is wrong, then set `approved: true` above (or run `mmf approve <run_dir> C`) and
+re-run `mmf run`. Downstream stages use the JSON file, not this rendering.
+
+```json
+{
+  "gaps": [
+    {
+      "id": "G1",
+      "statement": "The effect of prenatal smoking on the risk of sudden unexpected infant death may vary by postconceptional age.",
+      "rationale": "While the manuscript found that prenatal smoking was associated with an earlier onset of risk for sudden unexpected infant death, it did not explore whether this association varies at different developmental stages (postconceptional ages).",
+      "prior_art": "The manuscript established a link between prenatal smoking and earlier risk onset but did not investigate how this relationship changes over postconceptional age. This gap remains open as the study lacks an analysis of interaction effects by developmental timing.",
+      "supporting_claim_ids": [
+        "mini_manuscript.C3"
+      ],
+      "required_concepts": [
+        "prenatal smoking",
+        "postconceptional age",
+        "outcome"
+      ],
+      "required_variables": [
+        {
+          "source_id": "cdc",
+          "name": "CIG_REC"
+        },
+        {
+          "source_id": "cdc",
+          "name": "COMBGEST"
+        },
+        {
+          "source_id": "cdc",
+          "name": "UCOD"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "statement": "The risk of sudden unexpected infant death may differ between male and female infants at various postconceptional ages.",
+      "rationale": "Although the manuscript reported that male excess risk emerged after 44 weeks postconceptional age, it did not explore whether this pattern holds true for other developmental stages or if there are differences in risk patterns before this point.",
+      "prior_art": "The study identified a male-specific excess risk emerging at 44 weeks postconceptional age but did not examine the risk dynamics across different ages. This gap remains open as the manuscript does not provide an analysis of sex-specific risks over varying developmental stages.",
+      "supporting_claim_ids": [
+        "mini_manuscript.C2"
+      ],
+      "required_concepts": [
+        "male sex",
+        "postconceptional age",
+        "outcome"
+      ],
+      "required_variables": [
+        {
+          "source_id": "cdc",
+          "name": "SEX"
+        },
+        {
+          "source_id": "cdc",
+          "name": "COMBGEST"
+        },
+        {
+          "source_id": "cdc",
+          "name": "UCOD"
+        }
+      ]
+    }
+  ]
+}
+```

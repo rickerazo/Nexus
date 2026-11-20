@@ -1,0 +1,73 @@
+### Design
+
+**Question Restated:** 
+The study will examine trends in hospital overnight stays among infants who experienced postnatal medical complications compared to those without such complications within the case series, using the National Fatality Review Case Reporting System (NFR-CRS) data.
+
+**Design:**
+- **Case-only analysis**: The design compares proportions or odds of hospital overnight stays between subgroups within a single case series. Since there is no denominator source for incidence rates or risk estimates, the study will focus on descriptive comparisons and trends within cases.
+  
+### Sources by Role
+
+1. **Case Series:**
+   - **Source:** ncfrp_v51
+   - **Reasoning:** This dataset includes records of child deaths reviewed by fatality review teams, which are suitable for studying medical complications and hospital stays among SUID cases.
+
+2. **Population Reference:**
+   - Not applicable in this case-only design.
+   
+3. **Denominator Source:**
+   - Not applicable as the study focuses on a descriptive comparison within the case series data.
+
+### Period
+
+- The years held now for ncfrp_v51 are 2004-2019, but more years can be acquired if needed.
+- Since this is a case-only analysis focused on trends and comparisons within the case series, the period of interest would cover at least 2008-2019 as proposed.
+
+### Variables
+
+**Concept:** Presence of Postnatal Medical Complications
+- **ncfrp_v51:INF4morbid**: Morbidities noted during nursery stay (e.g., respiratory distress, infections)
+- **ncfrp_v51:INF4medical**: During pregnancy did mother have medical complications/infections
+- **ncfrp_v51:INF3prevmedical**: Did mother have medical complications in previous pregnancies
+
+**Concept:** Hospital Overnight Stays
+- **ncfrp_v51:INF4hosprtn**: Infant return to hospital overnight after delivery
+- **ncfrp_v51:INF4infhospdays**: Total number of days infant hospitalized
+- **ncfrp_v51:INF4hosprtnold**: If yes, hospital overnight - how old was infant in weeks
+
+**Comparison within Cases:**
+- The variables for postnatal complications and hospital stays will be compared between cases that experienced medical complications and those that did not.
+
+### Biases
+
+1. **Selection Bias:**
+   - The ncfrp_v51 data includes only cases reviewed by participating fatality review teams, which may not represent all SUID cases in the US.
+   
+2. **Information Bias:**
+   - Reporting inconsistencies or variability in recording postnatal medical complications and hospital stays can introduce bias.
+   - Different states have varying levels of participation, leading to potential heterogeneity in case ascertainment.
+
+3. **Confounding:**
+   - Potential confounders include maternal health conditions (e.g., diabetes, hypertension), preterm births, birth weight, socioeconomic status, and urban/rural differences that may influence hospital stays and medical complications.
+
+### What the Design Cannot Establish
+
+- The design does not estimate incidence or risk; it only compares proportions within cases.
+- It cannot establish causal relationships between postnatal medical complications and hospital stays due to its observational nature.
+- External validity is limited since the data are from a subset of SUID cases reviewed by participating states.
+
+### Prior Art
+
+The manuscript claims do not closely address this specific question. However, some related findings include:
+- **C10**: The analysis excludes a small number of deaths at the extremes of PCA distribution, including extremely and very preterm infants who died early in postnatal life.
+- **C11**: The models did not account for postnatal exposures that may change during infancy, such as breastfeeding.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, the proposed case-only analysis can be carried out using ncfrp_v51 data. It will compare hospital overnight stays and medical complications within SUID cases over the years 2008-2019. However, the limitations in selection and information biases must be acknowledged when interpreting results.
+
+### Summary
+
+The study design is feasible with the provided sources but has inherent limitations due to its case-only nature. The proposed analysis will provide insights into trends and differences within SUID cases regarding hospital stays and postnatal medical complications.

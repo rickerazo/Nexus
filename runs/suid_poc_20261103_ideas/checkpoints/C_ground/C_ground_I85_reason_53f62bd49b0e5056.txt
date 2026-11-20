@@ -1,0 +1,93 @@
+### Design and Question Restatement
+
+**Design:** Measurement comparison. Compare how smoking behavior during pregnancy is recorded in two or more sources (wording, timing, who reports it, how missing answers are coded) and ask how the difference would bias a comparison between them.
+
+**Revised question:**
+What discrepancies exist in recording smoking behavior during pregnancy between NCFRP (ncfrp_v51) and PRAMS datasets (prams_p8_arf, prams_p7_arf), and how might these discrepancies impact comparisons for assessing SUID risk factors?
+
+### Sources by Role
+
+**Case Series:** ncfrp_v51
+- **Role:** The NCFRP is used as a case series to record child deaths reviewed by fatality review teams.
+- **Reasoning:** Provides detailed information on cases of sudden unexpected infant death (SUID), including smoking behavior during pregnancy.
+
+**Population Reference:**
+- **prams_p8_arf, prams_p7_arf**
+  - **Role:** PRAMS surveys provide a population reference to assess the prevalence of various risk factors in a general sample of mothers.
+  - **Reasoning:** These datasets capture information on smoking habits and other health behaviors from a broader population, which can be compared with case series data.
+
+**Denominator Source:**
+- **None needed for this comparison.**
+  - **Reasoning:** The study aims to compare how smoking behavior is recorded in different datasets rather than estimating incidence or risk.
+
+### Period
+
+**Years Needed:**
+- NCFRP (ncfrp_v51): 2018-2019
+- PRAMS Phase 8 (prams_p8_arf): 2016-2021
+- PRAMS Phase 7 (prams_p7_arf): 2012-2015
+
+**Years Currently Held:**
+- NCFRP (ncfrp_v51): 2004-2019 (using 2018-2019 for consistency with PRAMS)
+- PRAMS Phase 8 (prams_p8_arf): 2016-2021
+- PRAMS Phase 7 (prams_p7_arf): 2012-2015
+
+**Years to Acquire:**
+- No additional years need to be acquired as the necessary period is covered.
+
+### Variables
+
+**Concept:** Smoking behavior during pregnancy
+
+**Candidate Variables and Differences Between Sources:**
+
+- **cdc_linkco15 (Denominator) & cdc_natl15 (Denominator):**
+  - **CIG0_R**: Cigarettes Before Pregnancy Recode
+    - Values: [0=Non-Smoker; 5=41 or more; 6=Unknown]
+  - **CIG_2, CIG_3**: Number of cigarettes smoked daily in second and third trimesters
+    - Values: [00-97=Number of cigarettes; 98=98 or more; 99=Unknown]
+
+- **ncfrp_v51 (Case Series):**
+  - **INFsmbefpreg, INF3smbefpreg**: Smoke before pregnancy
+  - **INFsectricig, INF3sectricig**: Number of cigarettes smoked during second trimester
+  - **INFfirsttricig, INF3firsttricig**: Number of cigarettes smoked during first trimester
+  - **INFthirdtricig, INF3thirdtricig**: Number of cigarettes smoked during third trimester
+
+- **prams_p8_arf & prams_p7_arf (Population Reference):**
+  - **MOMSMOKE**: Did mom smoke?
+    - Values: [1=YES; 2=NO]
+  - **CIG_PRIOR, CIG_2TRI, CIG_3TRI**: Number of cigarettes smoked daily before pregnancy and during first, second, third trimester
+    - Values: [0=No smoking; .U=Unknown]
+
+### Biases
+
+**Selection Bias:** 
+- PRAMS samples mothers from live births only and may not be representative of SUID cases.
+  
+**Information Bias:**
+- The timing of the survey (PRAMS) versus case reporting (NCFRP) can introduce differences in recall or measurement accuracy.
+- NCFRP uses detailed medical records, while PRAMS relies on maternal self-reporting.
+
+**Confounding:**
+- Differences in population characteristics between SUID cases and general live births may confound comparisons of smoking behavior.
+
+### What the Design Cannot Establish
+
+The design cannot establish causality or incidence. It can only compare how smoking behavior is recorded differently across datasets, which could introduce biases in risk factor assessments for SUID.
+
+### Prior Art
+
+**Prior Manuscript Claims:**
+- **suid_literature_abstracts.C11:** Maternal smoking during pregnancy significantly increases the risk of SUID.
+  - This claim does not address how smoking behavior is recorded differently between case series and population reference datasets, leaving the question open regarding comparability.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes. The proposed study can be conducted using ncfrp_v51 (case series) and prams_p8_arf/prams_p7_arf (population references) to compare how smoking behavior during pregnancy is recorded differently in case versus population datasets. This will help identify potential biases that may affect the comparability of SUID risk factor assessments.
+
+**Logical Reasoning:**
+- The design allows for a comparison of variable definitions, coding schemes, and measurement timing between NCFRP (case series) and PRAMS (population reference).
+- No denominator source is required since the focus is on comparing recording discrepancies.
+- The necessary years are covered by available datasets.

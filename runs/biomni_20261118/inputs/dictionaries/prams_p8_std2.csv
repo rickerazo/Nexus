@@ -1,0 +1,5 @@
+name,label,type,levels,years,notes
+PGWTGN8,Preg weight gain,unknown,.B=BLANK | .D=DK | .S=SKIP | 77=DK,,format=NUMSDF
+PGWTGN8_DK,Preg weight gain (DONT KNOW = 7777),unknown,.B=BLANK | .S=SKIP | 77=DK | 7777=DK,,format=NUMSDF
+PGWTGNU8,Unit of preg weight gain,unknown,.B=BLANK | .D=DONT KNOW | 1=POUNDS | 2=KILOGRAMS | 3=DIDNT GAIN WEIGHT,,format=PGWTGNU8F
+PGWTGNU8_DK,Unit of preg weight gain (DONT KNOW = 7),unknown,.B=BLANK | 1=POUNDS | 2=KILOGRAMS | 3=DIDNT GAIN WEIGHT | 7=DONT KNOW,,format=PGWTGNU8F

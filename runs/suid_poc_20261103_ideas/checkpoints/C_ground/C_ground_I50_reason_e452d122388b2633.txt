@@ -1,0 +1,69 @@
+### Design
+
+**Question:**
+How does the history of prior child deaths among siblings affect infant mortality due to SUID?
+
+**Design:** Case-only analysis. The study will examine whether infants with a history of sibling deaths have a higher risk of dying from SUID compared to those without such a history.
+
+### Sources by Role
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System)
+  - **Reasoning:** This dataset contains cases of child deaths reviewed by fatality review teams, including SUID cases.
+  
+- **Denominator Source:** Not applicable for this case-only analysis.
+  - **Reasoning:** Since we are only looking at a comparison within the case series (no population reference), we do not need a denominator source.
+
+### Period
+**Years needed:**
+2008-2019
+
+**Data Acquisition Required:**
+The manuscript uses data from 2008 to 2019. Since the current dataset includes these years, no additional data needs to be acquired beyond what is currently held.
+
+### Variables
+
+#### Concept: Prior Child Deaths
+- **Variables:** 
+  - ncfrp_v51:SUPdthsids (If yes, prior child deaths - SIDS)
+  - ncfrp_v51:SUPdthneglct (If yes, prior child deaths - Child neglect)
+  - ncfrp_v51:BIO1dthsids (If yes, prior child deaths - Female - SIDS)
+  - ncfrp_v51:BIO2dthsids (If yes, prior child deaths - Male - SIDS)
+  - ncfrp_v51:SUPdthaccid (If yes, prior child deaths - Accident)
+  - ncfrp_v51:SUPdthother (If yes, prior child deaths - Other)
+  
+#### Concept: Case of SUID
+- **Variables:** 
+  - ncfrp_v51:COD_SIDS (Case is classified as Sudden Infant Death Syndrome)
+
+### Biases
+
+**Selection Bias:**
+- The case series is based on fatalities reviewed by fatality review teams, which may not be representative of all infant deaths. Participation in the review varies over time and by jurisdiction.
+
+**Information Bias:**
+- The definition and recording of prior child deaths vary between datasets. For example, ncfrp_v51 captures specific categories of death (SIDS, neglect, etc.), but does not provide a unified measure for sibling history.
+  
+**Confounding:**
+- Confounding variables such as maternal smoking, prematurity, socioeconomic status, and other risk factors may influence the association between prior sibling deaths and SUID. These need to be controlled in the analysis.
+
+### What the Design Cannot Establish
+- **Causation:** The case-only design cannot establish causation; it can only identify associations.
+- **Population Incidence Rates:** Without a denominator source, incidence rates or risk ratios cannot be calculated.
+
+### Prior Art
+
+**Closest Related Findings:**
+- SUID_manuscript_v9_clean.C10 (Maternal smoking was associated with higher SUID incidence across both windows).
+- bedsharing_ms_v7.C11 (Bed sharing was independently associated with higher incidence of SUID across both rising and declining phases of the developmental curve).
+
+These studies examined factors like maternal smoking and bed-sharing, but none directly addressed sibling history or prior child deaths.
+
+### Verdict
+**Can These Sources Answer a Version of the Question?**
+
+Yes, these sources can answer whether infants with a history of sibling deaths are more likely to die from SUID compared to those without such a history. However, the design is limited to within-case comparisons and cannot establish causation or provide incidence rates.
+
+### Logical Constraints
+- The analysis relies on the available variables in ncfrp_v51 for prior child death categories.
+- Without a denominator source, population-level risk estimates are not possible.
+
+This study can identify associations but cannot address broader epidemiological questions about population incidence without additional data.

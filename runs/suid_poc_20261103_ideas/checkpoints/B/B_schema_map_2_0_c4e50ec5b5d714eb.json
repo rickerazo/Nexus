@@ -1,0 +1,357 @@
+{
+ "mappings": [
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not provide specific variables for SUID as defined by ICD-10 codes R95, R99, and W75."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "cdc_codenames",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "The variable 'SEX' directly corresponds to the infant's biological sex."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for postconceptional age in the CDC data. It would need to be derived from gestational age and chronological age, which are not provided separately."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "cdc_codenames",
+   "variable": "CIG_REC",
+   "compatibility": "proxy",
+   "rationale": "The variable 'CIG_REC' is a recode of maternal cigarette use during pregnancy, which can be used as an indicator for smoking status."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable indicating preterm birth; it would need to be derived from gestational age, which is not available."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "cdc_codenames",
+   "variable": "BFED",
+   "compatibility": "direct",
+   "rationale": "The variable 'BFED' indicates whether the infant was breastfed at hospital discharge."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for postconceptional age; it would need to be derived from gestational and chronological ages, which are not provided."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "cdc_codenames",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "The variable 'SEX' directly corresponds to the infant's biological sex."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for year of birth or death; it would need to be derived from the date of birth, which is not provided."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for SUID as defined by ICD-10 codes R95, R99, and W75."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for bed sharing in the CDC data."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "cdc_codenames",
+   "variable": "BWTR4",
+   "compatibility": "proxy",
+   "rationale": "The variable 'BWTR4' categorizes birth weight into low and normal categories."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for postconceptional age; it would need to be derived from gestational and chronological ages, which are not provided."
+  },
+  {
+   "concept": "chronological age",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for chronological age; it would need to be derived from the date of birth, which is not provided."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "cdc_codenames",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "The variable 'SEX' directly corresponds to the infant's biological sex."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "cdc_codenames",
+   "variable": "BWTR4",
+   "compatibility": "proxy",
+   "rationale": "The variable 'BWTR4' categorizes birth weight into low and normal categories."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "cdc_codenames",
+   "variable": "CIG_REC",
+   "compatibility": "proxy",
+   "rationale": "The variable 'CIG_REC' is a recode of maternal cigarette use during pregnancy."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "cdc_codenames",
+   "variable": "BMI_R",
+   "compatibility": "direct",
+   "rationale": "The variable 'BMI_R' provides the mother's BMI."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for gestational age; it would need to be derived from obstetric estimates, which are not provided."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for maternal infections such as chlamydia, gonorrhea, and hepatitis C."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for age at death; it would need to be derived from the date of birth and death, which are not provided."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for geographic location such as state, latitude, and longitude."
+  },
+  {
+   "concept": "inner ear dysfunction",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to inner ear dysfunction or gentamicin injections."
+  },
+  {
+   "concept": "control condition",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for control conditions such as intra-tympanic saline or intra-peritoneal gentamicin."
+  },
+  {
+   "concept": "body movement arousal response to severe hypoxia-hypercarbia",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to body movement responses to hypoxia and hypercapnia."
+  },
+  {
+   "concept": "hypercapnic ventilatory response",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to hypercapnic ventilatory responses."
+  },
+  {
+   "concept": "age of mice",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for age of mice in the CDC data."
+  },
+  {
+   "concept": "baseline cSN activity",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to baseline sympathetic nerve activity."
+  },
+  {
+   "concept": "breathing frequency",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for breathing frequency in the CDC data."
+  },
+  {
+   "concept": "expiratory time",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to expiratory times."
+  },
+  {
+   "concept": "PiCo specific cholinergic-glutamatergic neurons",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to PiCo-specific neuronal stimulation."
+  },
+  {
+   "concept": "glutamatergic PiCo neurons",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to glutamatergic neuronal stimulation."
+  },
+  {
+   "concept": "ChAT containing neurons",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to ChAT-containing neuronal stimulation."
+  },
+  {
+   "concept": "Dbx1 and Vglut2 neurons",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to Dbx1 and Vglut2 neuronal stimulation."
+  },
+  {
+   "concept": "preBötzinger complex (preBötC)",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to preBötzinger complex neuronal stimulation."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (CIH)",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to chronic intermittent hypoxia exposure."
+  },
+  {
+   "concept": "diaphragm activity",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for diaphragm muscle activity in the CDC data."
+  },
+  {
+   "concept": "vagus nerve activity",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to vagal nerve activity."
+  },
+  {
+   "concept": "cervical sympathetic nerve activity",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for cervical sympathetic nerve activity in the CDC data."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (IH)",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to chronic intermittent hypoxia exposure."
+  },
+  {
+   "concept": "adult neurogenesis",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for adult neurogenesis in the CDC data."
+  },
+  {
+   "concept": "synaptic plasticity",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to synaptic plasticity."
+  },
+  {
+   "concept": "reactive oxygen species (ROS)",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for reactive oxygen species in the CDC data."
+  },
+  {
+   "concept": "breathing patterns",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to breathing patterns."
+  },
+  {
+   "concept": "survival",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for survival rates in the CDC data."
+  },
+  {
+   "concept": "inhibition",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to inhibition."
+  },
+  {
+   "concept": "excitation",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to excitation."
+  },
+  {
+   "concept": "lipopolysaccharide (LPS)",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for lipopolysaccharide exposure in the CDC data."
+  },
+  {
+   "concept": "progesterone",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC data does not contain variables related to progesterone administration."
+  },
+  {
+   "concept": "neurogenesis",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for neurogenesis in the CDC data."
+  }
+ ],
+ "source_summaries": {
+  "cdc_codenames": "The CDC birth/death file provides detailed information on infant characteristics, maternal health behaviors, and pregnancy outcomes. However, it lacks specific variables related to SUID definitions based on ICD-10 codes, postconceptional age, bed sharing, inner ear dysfunction, neuronal stimulation, chronic intermittent hypoxia exposure, breathing patterns, survival rates, inhibition/excitation measures, lipopolysaccharide administration, progesterone treatment, and neurogenesis. Variables for maternal smoking status, preterm birth, breastfeeding status at discharge, and geographic location are available but may require recoding or derivation."
+ }
+}

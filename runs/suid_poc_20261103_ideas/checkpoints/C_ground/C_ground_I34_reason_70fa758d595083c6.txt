@@ -1,0 +1,64 @@
+### Design
+
+**Question:** Do SUID cases differ from other neonatal deaths regarding maternal health problems, insurance coverage, and healthcare visits during pregnancy?
+
+This is a case-case comparison. The design compares specific subgroups of infant mortality within the same case series to identify differences in maternal health conditions, insurance status, and healthcare utilization.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - *Reason:* This source records detailed information on child deaths reviewed by fatality review teams, providing data specifically about SUID cases and other neonatal deaths.
+  
+- **Population Reference:** prams_p8_arf (Phase 8) & prams_p7_arf (Phase 7)
+  - *Reason:* These sources provide a representative sample of live births with detailed maternal health information collected during pregnancy, allowing comparison of exposures in SUID cases to a reference population.
+
+### Period
+
+**Period:** 2016-2021 for PRAMS Phase 8 and 2012-2015 for PRAMS Phase 7. The overlap period is from 2016 onwards, where both sources cover the same time frame (2016-2019).
+
+### Variables
+
+#### Maternal Health Problems
+- **ncfrp_v51:INF4medical:** During pregnancy did mother have medical complications/infections.
+- **prams_p8_arf:PG8_ASMA, PG8_SC, PG8_NAUS, PG8_ALRGI, PG8_PRET:** Health problems during pregnancy.
+
+#### Insurance Coverage
+- **ncfrp_v51:INF3isscover:** If yes, prenatal issues - Limitations of health insurance coverage.
+- **prams_p8_arf:HI_MEDIC:** Insurance paid by -- Medicaid.
+
+#### Healthcare Visits During Pregnancy
+- **ncfrp_v51:INF4referinfch:** If yes, family referred - Infant/child health.
+- **prams_p8_arf:TYP_ILLN_RAW:** Health care type--visit for illness (FORCED SKIP).
+  
+### Biases
+
+**Selection Bias:**
+- The ncfrp_v51 case series includes deaths reviewed by participating fatality review teams, which may not be representative of all infant mortality cases.
+- PRAMS samples live births and captures only a subset of states.
+
+**Information Bias:**
+- Maternal health problems are reported differently between the case series (retrospectively after death) and the population reference (during pregnancy).
+- The variables for insurance coverage and healthcare visits may be subject to recall bias in PRAMS.
+
+**Confounding:**
+- Confounders such as socioeconomic status, urban vs. rural residence, and other maternal characteristics not measured uniformly across sources could affect the comparison.
+
+### What the Design Cannot Establish
+
+The design can establish associations but cannot infer causation due to its observational nature. It also does not account for potential confounding variables that may influence both SUID cases and other neonatal deaths.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C10:** The manuscript mentions the analysis excludes a small number of deaths at the extremes, which is relevant given our focus on neonatal mortality.
+- **bedsharing_ms_v7.C8:** This finding provides context about bed-sharing and maternal smoking among SUID cases but does not address the specific question regarding maternal health problems, insurance coverage, and healthcare visits.
+
+### Verdict
+
+**Can these data answer a version of the question?**
+
+Yes, the proposed study design can be carried out using ncfrp_v51 for the case series and PRAMS Phase 8 and Phase 7 as population references. However, several limitations must be acknowledged:
+- The comparison is limited to neonatal deaths within the period where both sources overlap (2016-2019).
+- Selection bias may affect the generalizability of findings.
+- Information bias due to different reporting mechanisms between case series and population reference could introduce errors.
+
+To improve the study, future research should aim for more comprehensive data linkage that includes a broader range of neonatal deaths and better control over confounding variables.

@@ -1,0 +1,68 @@
+### Design
+
+**Design**: Trends within cases. Compare proportions among the SUID cases across periods. When a case series' coverage changes over time, changes in case counts are not changes in incidence.
+
+**Restated Question**: How do trends in SUID cases with low birth weight compare to live births over time?
+
+### Sources by Role
+
+- **Case Series**: ncfrp_v51 (2008-2019)
+  - Reason: This dataset records child deaths reviewed by fatality review teams, including the SUID cases. It will provide information on low birth weight among SUID cases.
+  
+- **Population Reference**: prams_p7_arf and prams_p8_arf (2012-2021)
+  - Reason: These datasets cover weighted surveys of mothers a few months after live births, providing data on the prevalence of low birth weight among live births.
+
+### Period
+
+**Years Needed for ncfrp_v51**: 2008-2019
+**Years Needed for prams_p7_arf and prams_p8_arf**: 2012-2021
+- **Period to Analyze**: Trends should be evaluated within the overlapping period (2012-2019) since both datasets cover this time frame.
+
+### Variables
+
+**Case Series: ncfrp_v51**
+- Concept: Low birth weight in SUID cases
+  - Variable: `INF3lbwt` - Previous pregnancies - Low birth weight
+  - Missing answers: Documented separately (e.g., unknown)
+
+**Population Reference: prams_p7_arf and prams_p8_arf**
+- Concept: Proportion of live births with low birth weight
+  - Variable: `PREV_LBW_RAW` or `PREGHX` - Previous -- low birth weight / VAR: HX PREV LIVE BIRTHS (low birth weight)
+  - Survey weight: `WTANAL`
+  - Missing answers: Documented separately (e.g., unknown)
+
+### Biases
+
+**Selection Bias**
+- **ncfrp_v51**: Reviews only child deaths, thus selection bias is inherent to the source as it includes only cases and not live births.
+- **prams_p7_arf/prams_p8_arf**: Weighted survey of mothers after live births; however, some sites might have higher participation rates than others.
+
+**Information Bias**
+- Measurement timing: ncfrp_v51 measures birth weight at the time of death (retrospective), while prams_p7_arf/prams_p8_arf measure it during pregnancy or shortly after delivery.
+- Reporting and measurement differences: Mothers in prams may not accurately recall past low birth weights, while medical records in ncfrp_v51 are more precise.
+
+**Confounding**
+- Confounders like maternal smoking, prenatal care quality, socioeconomic status, etc., should be controlled for to ensure the comparison is valid.
+  
+### What the Design Cannot Establish
+
+The design can only establish trends within SUID cases and live births separately. It cannot estimate incidence rates or causal associations between low birth weight and SUID risk due to lack of a denominator source.
+
+### Prior Art
+
+**Manuscript Claims Closest to the Question:**
+- **C10**: The analysis excludes extremely preterm infants, which is relevant since this study focuses on trends in low birth weight.
+- **C28-C32**: These findings relate to breathing patterns and respiratory-sympathetic coupling under chronic intermittent hypoxia, indirectly touching upon conditions that might affect SUID risk.
+
+**Why the Question Remains Open:**
+The existing literature does not specifically address how trends in SUID cases with low birth weight compare to live births over time. The proposed study would fill this gap by examining changes in proportions of low birth weight cases within SUID and live births between 2012-2019.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+Yes, they can answer the modified research question: "How do trends in SUID cases with low birth weight compare to trends in live births with low birth weight over time?" The design allows for evaluating proportions within each dataset separately but does not allow for calculating incidence rates or establishing causality.
+
+**Reasons:**
+- The data sources adequately measure low birth weight in both case series and population reference groups.
+- The overlapping period (2012-2019) is sufficient to analyze trends over time.
+- Both datasets have documented missing values, allowing proper handling of unknown cases.

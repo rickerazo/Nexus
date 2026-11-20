@@ -1,0 +1,48 @@
+{
+ "ideas": [
+  {
+   "question": "How does maternal pre-pregnancy weight status affect SUID risk, independent of other covariates?",
+   "why_open": "Maternal pre-pregnancy BMI and weight gain have not been thoroughly investigated in the context of SUID incidence. Understanding this relationship could provide critical insights into preventive strategies.",
+   "sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "data": "prepregnancy body mass index (BMI), pregnancy weight gain, delivery weight"
+  },
+  {
+   "question": "What role does maternal residence type play in SUID incidence rates among different socioeconomic groups?",
+   "why_open": "The residential setting and its associated socioeconomic factors could influence infant health outcomes, but this area has been less explored compared to other risk factors like smoking.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "residence type, household income, employment status"
+  },
+  {
+   "question": "How does prenatal care quality correlate with SUID rates among different ethnic groups?",
+   "why_open": "Despite the known importance of prenatal care in reducing risks to infants, its impact on specific ethnic populations remains understudied. Understanding this could help tailor interventions.",
+   "sources": [
+    "cdc_natl15",
+    "prams_p8_arf"
+   ],
+   "data": "prenatal care quality assessments, ethnicity/race, insurance coverage"
+  },
+  {
+   "question": "To what extent do environmental factors such as housing conditions and neighborhood safety influence SUID risks?",
+   "why_open": "Environmental factors like overcrowded living conditions and unsafe neighborhoods have not been extensively studied in relation to sudden unexpected infant deaths. Addressing these could improve preventive strategies.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "overcrowding, housing quality (e.g., substandard), neighborhood safety ratings"
+  },
+  {
+   "question": "Does the duration of postpartum depression symptoms predict a higher risk of SUID?",
+   "why_open": "While mental health during pregnancy is often studied, little research has explored the link between postpartum mental health and infant mortality. This could identify critical intervention points.",
+   "sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "data": "postpartum depression symptoms duration, socioeconomic status, breastfeeding practices"
+  }
+ ]
+}

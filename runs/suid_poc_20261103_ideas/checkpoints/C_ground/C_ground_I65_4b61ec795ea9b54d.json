@@ -1,0 +1,30 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases where mothers did not use birth control has changed since 2016.",
+ "rationale": "This study compares proportions among SUID cases across periods using a case series and population reference, but cannot estimate incidence or establish causation due to the lack of a denominator source.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and bedsharing_ms_v7.C18 discuss data quality issues in vital records and sleep-environment classification, respectively. These do not address trends in birth control usage among SUID cases, leaving this question open.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C18"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2015,
+ "required_concepts": [
+  "birth control use",
+  "SUID cases"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4bc",
+  "prams_p7_arf:BC_NOW4",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot establish causation or estimate incidence rates due to the lack of a denominator source."
+}

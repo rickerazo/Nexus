@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "BFACIL",
+   "name": "Birth Location and Time",
+   "summary": "Place, month, time of day, day of week, and year of birth."
+  },
+  {
+   "start": "F_BFACIL",
+   "name": "Reporting Flags for Birth Details",
+   "summary": "Flags indicating whether various birth location details were reported."
+  },
+  {
+   "start": "MAGEIMP",
+   "name": "Mother's Age and Imputation",
+   "summary": "Imputed mother’s age, recoded versions of the mother’s age, and flags for imputation and reporting."
+  },
+  {
+   "start": "MBSTATE_REC",
+   "name": "Mother's Demographics",
+   "summary": "Mother’s nativity status, race, Hispanic origin, residence status, bridged race, and marital status."
+  },
+  {
+   "start": "DMAR",
+   "name": "Father's Details",
+   "summary": "Father’s combined age, reported age used flag, paternity acknowledgment, education, race, and Hispanic origin."
+  },
+  {
+   "start": "LBO_REC",
+   "name": "Birth History",
+   "summary": "Live birth order, prior births now dead or living, other terminations, intervals since last live birth or pregnancy, total birth order."
+  },
+  {
+   "start": "F_MPCB",
+   "name": "Prenatal Care and Reporting Flags",
+   "summary": "Flags for reporting on prenatal care beginning month, interval of last pregnancy, number of visits, cigarette use during pregnancy."
+  },
+  {
+   "start": "CIG0_R",
+   "name": "Smoking During Pregnancy",
+   "summary": "Recode of cigarettes smoked before and during each trimester of pregnancy."
+  }
+ ]
+}

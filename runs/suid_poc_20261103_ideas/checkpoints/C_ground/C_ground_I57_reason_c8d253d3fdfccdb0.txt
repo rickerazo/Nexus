@@ -1,0 +1,73 @@
+### Design
+
+**Question:** How does the proportion of SUID cases among infants with previous medical complications or disabilities change from 2004 to 2019?
+
+**Design Type:** Trends within cases. Compare proportions among the cases across periods.
+
+**Why open:**
+This question aims to understand whether there has been a shift in the proportion of SUID cases among infants with prior medical complications or disabilities over time, potentially indicating changes in neonatal health care practices and outcomes.
+
+### Sources by Role
+
+- **Case Series:** `ncfrp_v51` (2004-2019) - records SUID cases.
+- **Population Reference:** `prams_p7_arf` (Phase 7: 2012-2015) and `prams_p8_arf` (Phase 8: 2016-2021) - surveys of mothers to provide exposure prevalence in the general population.
+- **Denominator:** Not used, since this is a trend analysis within case series.
+
+### Period
+
+**Period:** 2004-2019. This period covers both sources `ncfrp_v51` and relevant portions of PRAMS Phase 7 (2012-2015) and Phase 8 (2016-2021).
+
+### Variables
+
+#### Concepts:
+
+**Previous Medical Complications or Disabilities:**
+- **Case Series (`ncfrp_v51`):**
+  - `INFprevpreterm`: Previous Preterm/Small for Gestation Age Infant
+  - `INF4referinfch`: Family referred (Infant/child health)
+  - `INF372infinj`, `INF72medicatesp`, `INF72vac`, `INFallergy`, `INF72other`: Injuries, medications/recovery, vaccinations, allergies, other disorders in the last 72 hours.
+  
+**Infant Health Status:**
+- **Population Reference (`prams_p8_arf` and `prams_p7_arf`):**
+  - `PREV_PRE`, `P_PRTERM`: Previous preterm births
+  - `MM_FEVER`: Chorioamnionitis (indicates maternal fever or inflammation)
+  - `OTH_TERM`: Number of previous other pregnancy outcomes (losses, ectopic pregnancies)
+
+**Biases**
+
+#### Selection Bias:
+- **Case Series (`ncfrp_v51`):**
+  - Coverage may vary over time due to changing participation rates and jurisdictional coverage.
+  
+- **Population Reference (`prams_p8_arf`, `prams_p7_arf`):**
+  - Only covers participating sites and may not be representative of the entire population.
+
+#### Information Bias:
+- **Case Series (`ncfrp_v51`):**
+  - Data on infant health conditions are reported by reviewing teams, which can vary in quality.
+  
+- **Population Reference (`prams_p8_arf`, `prams_p7_arf`):**
+  - Survey data rely on maternal recall and may be subject to reporting bias.
+
+#### Confounding:
+- Factors such as socioeconomic status, access to healthcare, and environmental factors that could influence the proportion of SUID cases among infants with previous medical complications or disabilities are not controlled for in this analysis.
+
+### What the Design Cannot Establish
+
+The design can only compare proportions within cases over time. It cannot establish incidence rates, risk ratios, or causal relationships between prior medical conditions and SUID outcomes due to a lack of denominator data.
+
+### Prior Art
+
+- **Manuscript Claims:**
+  - `SUID_manuscript_v9_clean.C10`: The analysis excludes extremely preterm infants.
+  - `bedsharing_ms_v7.C23`: Chronic intermittent hypoxia impacts respiratory circuit function.
+  
+**Why Open:** 
+Prior studies focus on factors like maternal smoking, prematurity, and bed sharing but do not specifically address changes in the proportion of SUID cases among infants with prior medical complications or disabilities over time.
+
+### Verdict
+
+These data can be used to analyze trends within SUID cases from 2004-2019 regarding previous medical conditions or disabilities. However, due to the lack of denominator data and potential biases in case series reporting, the results should be interpreted with caution, and further studies would be needed to establish causality and incidence rates.
+
+**Missing Element:** 
+A denominator source (such as `cdc_natl15`) is required to calculate incidence rates or risk ratios if those are desired.

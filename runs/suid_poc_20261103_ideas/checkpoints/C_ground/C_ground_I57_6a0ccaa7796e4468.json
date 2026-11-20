@@ -1,0 +1,40 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with previous child deaths will show trends over time that can be compared to trends in infant care arrangements among live births.",
+ "rationale": "This study design compares proportions within case series and population reference data, focusing on trends from 2008-2019 for SUID cases and 2012-2015 for infant care arrangements. The sources provide necessary variables to measure previous child deaths and infant care arrangements.",
+ "prior_art": "The closest related claims discuss trends in SUID incidence but do not address the specific comparison between previous child deaths and infant care arrangements, leaving this gap unexplored (SUID_manuscript_v9_clean.C6, bedsharing_ms_v7.C7).",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C6",
+  "bedsharing_ms_v7.C7"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "previous child deaths",
+  "infant care arrangements"
+ ],
+ "variables": [
+  "ncfrp_v51:SUPdthneglct",
+  "ncfrp_v51:GIV1dthneglct",
+  "ncfrp_v51:BIO1dthneglct",
+  "ncfrp_v51:GIV2dthneglct",
+  "ncfrp_v51:SUPdthabuse",
+  "ncfrp_v51:BIO1dthabuse",
+  "ncfrp_v51:BIO2dthneglct",
+  "ncfrp_v51:SUPdthsids",
+  "ncfrp_v51:RES1dthneglct",
+  "prams_p7_arf:WTANAL",
+  "prams_p7_arf:INFWMOM5",
+  "prams_p7_arf:VST_CARE_RAW",
+  "prams_p7_arf:INF_ICU"
+ ],
+ "cannot_establish": "The design cannot estimate incidence or establish causation; it can only compare trends in proportions among cases."
+}

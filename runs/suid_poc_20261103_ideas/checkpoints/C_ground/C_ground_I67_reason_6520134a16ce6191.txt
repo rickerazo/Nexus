@@ -1,0 +1,71 @@
+### Design
+
+**Trends within cases**: Compare proportions among SUID cases with and without hospital overnight stays across different years (2008-2019).
+
+**Rephrased question**: What is the trend in the proportion of infants who experienced a hospital overnight stay before their sudden unexpected infant death (SUID) compared to those who did not, from 2008 to 2019?
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - **Role**: Provides SUID cases with information on hospital stays and other relevant exposures.
+  - **Why**: The case series records the outcome events (SUID deaths) and includes details of hospital stays.
+
+- **Population Reference:** prams_p7_arf, prams_p8_arf
+  - **Role**: Provides reference data on hospital overnight stay prevalence among live births to estimate general trends in hospital admissions.
+  - **Why**: These sources provide population-level data on hospital visits and other exposures from mothers of live-born infants.
+
+- **Denominator Source:** Not directly needed for this trend analysis, but CDC natality files could be used if incidence rates were required (not the case here).
+
+### Period
+
+**Years Needed:**
+- Case Series (ncfrp_v51): 2008-2019
+- Population Reference (prams_p7_arf, prams_p8_arf): 2012-2021
+- **Acquisition Required**: No additional years need to be acquired since the required data is already available.
+
+### Variables
+
+#### Case Series: ncfrp_v51
+- **Hospital Overnight Stay:** `INF4hosprtn` (Yes/No)
+- **Age at Hospital Stay:** `INF4hosprtnold` (Number of weeks)
+
+#### Population Reference: prams_p8_arf, prams_p7_arf
+- **Previous Hospitalization for Live Births:** 
+  - `PNC_VST`: Number of prenatal care visits
+  - `PRE_LB_NAPHSIS`: Previous live births grouped by various categories (includes hospital stays)
+  
+**Measurement Differences:**
+- The case series measures whether a SUID infant had an overnight hospital stay before the death, while PRAMS data captures the prevalence of hospitalizations among live-born infants in general.
+
+### Biases
+
+#### Selection Bias
+- **Case Series:** Cases are selected based on SUID events, which may not be representative of all infant deaths or live births.
+  
+- **Population Reference:** PRAMS surveys mothers of live-born infants and does not include data from deceased infants. The sampling is based on birth certificates in participating states.
+
+#### Information Bias
+- **Case Series:** Hospital stay information might be more reliable due to the detailed review process for SUID cases.
+- **Population Reference:** Mothers' self-reports may introduce recall bias, especially for hospital stays that occurred a few months prior to the survey.
+
+#### Confounding
+- **Confounding Variables:**
+  - Prematurity (e.g., `PREV_PRE` in PRAMS)
+  - Maternal smoking (`TYP_ILLN`, `SLP_NPAD_RAW`)
+  - Prenatal care visits (`PNC_VST`)
+
+### What the Design Cannot Establish
+
+- The design cannot establish incidence rates or risk ratios. It can only compare proportions of SUID cases with and without hospital overnight stays across different years.
+  
+- Causal relationships cannot be established due to observational nature.
+
+### Prior Art
+- **SUID_manuscript_v9_clean.C6**: Discusses trends in PCA-aligned incidence but does not focus on hospital overnight stay trends.
+- **bedsharing_ms_v7.C13**: Examines developmental timing of SUID incidence and associations with bed sharing, smoking, and prematurity. The proposed study is distinct as it focuses specifically on hospital stays.
+
+### Verdict
+**Yes**, these data sources can answer a version of the question about trends in proportions of SUID cases with versus without overnight hospital stays from 2008 to 2019. However, the design cannot establish causality or incidence rates directly. The comparison is limited to case-level proportions and may be subject to selection and information biases.
+
+### Conclusion
+The proposed study can analyze trends in hospital overnight stay history among SUID cases using ncfrp_v51 and reference data from prams_p7_arf and prams_p8_arf, but it must acknowledge its limitations regarding causal inference and incidence rate estimation.

@@ -1,0 +1,64 @@
+### Design
+
+**Question:**
+Do variations in maternal substance abuse history differ across postconceptional age (PCA)-defined developmental windows for SUID cases?
+
+**Design Restatement:**
+This study will conduct a case-only analysis to explore how the recorded substance abuse histories of mothers vary among SUID cases within different PCA-defined developmental windows. The design does not include comparisons with a population reference but focuses on exploring patterns and trends within the case series.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (NFR-CRS)
+  - Provides detailed information about each child death reviewed, including maternal substance abuse history.
+  
+- **Denominator:**
+  - None needed for this case-only analysis. Since we are not comparing the SUID cases to a general population, there is no requirement for denominator data.
+
+### Period
+
+**Years Needed:** 
+The manuscript uses deaths from 2008 to 2019. Therefore, the years of interest for ncfrp_v51 would be:
+- **Data Years:** 2008-2019
+
+### Variables
+
+#### Concepts and Candidate Variables:
+
+1. **Maternal Substance Abuse History:**
+   - **ncfrp_v51:RES1drugabuse** (Person 1 has history of substance abuse)
+   - **ncfrp_v51:INFuseddrug** (During pregnancy did mother use illicit drugs)
+   - **ncfrp_v51:RES1abothersp** (Person 1 has history of substance abuse - Other - Specify)
+
+2. **Postconceptional Age (PCA):**
+   - ncfrp_v51 does not provide direct PCA data, but the manuscript uses PCA to define developmental windows based on birth and death records which can be derived from other variables.
+
+### Biases
+
+**Selection Bias:**
+- **ncfrp_v51:** The cases are reviewed by fatality review teams; these teams may have different participation rates or criteria across states. The randomization of state codes prevents linking to other sources.
+  
+**Information Bias:**
+- Substance abuse history is reported in retrospect, potentially subject to recall bias and underreporting.
+
+**Confounding:**
+- Confounders like socioeconomic status, education level, healthcare access are not directly measured but may influence both substance use and SUID risk.
+
+### What the Design Cannot Establish
+
+The case-only design can only describe associations within the cases themselves. It cannot establish causality or estimate rates because there is no denominator source to provide a population comparison for incidence or prevalence.
+
+### Prior Art
+
+- **Manuscripts' Claims:**
+  - The manuscript claims (C1, C6-C8) focus on patterns of SUID incidence and sex differences aligned by PCA but do not address substance abuse history.
+  
+**Relevance:**
+  - While the manuscripts discuss developmental timing and associations with other risk factors like maternal smoking, they do not explore variations in substance abuse history across PCA-defined windows.
+
+### Verdict
+
+These data can be used to conduct a case-only analysis examining how maternal substance abuse history varies among SUID cases within different postconceptional age (PCA)-defined developmental windows. The design focuses on describing patterns within the case series and does not require denominator data for incidence estimates or population comparisons. However, the study cannot establish causality or estimate rates without additional data sources.
+
+### Conclusion
+
+The proposed research question can be addressed using ncfrp_v51 as a case series source. The existing data allow exploring substance abuse history among SUID cases across different developmental windows defined by PCA. This analysis would provide insights into potential patterns and trends within the case population but cannot establish causality or estimate incidence rates due to limitations in the design.

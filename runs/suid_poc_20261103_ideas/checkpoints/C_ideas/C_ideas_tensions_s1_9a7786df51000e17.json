@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "How does postconceptional age (PCA) alignment affect the risk of SUID associated with maternal obesity and preterm birth?",
+   "why_open": "There is evidence that PCA can clarify how bed sharing, maternal smoking, and prematurity relate to SUID incidence. However, the relationship between maternal obesity and these factors remains unexplored in terms of developmental timing.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI), preterm birth, postconceptional age (PCA)"
+  },
+  {
+   "question": "What is the relationship between infant sleep environment and SUID incidence when adjusted for maternal obesity?",
+   "why_open": "While there are established risks associated with factors like bed sharing and maternal smoking, the role of maternal obesity in modulating these risks remains understudied.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI), infant sleep environment, Sudden Unexpected Infant Death (SUID)"
+  },
+  {
+   "question": "How does socioeconomic status modify the relationship between PCA and SUID incidence?",
+   "why_open": "The manuscripts highlight developmental timing but do not account for socioeconomic factors that may influence risk.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Postconceptional age (PCA), socioeconomic status, Sudden Unexpected Infant Death (SUID)"
+  },
+  {
+   "question": "What is the impact of maternal obesity on the decline in early neonatal mortality rates during the pandemic?",
+   "why_open": "Maternal obesity is known to increase SUID risk, but its role in pandemic-associated changes in non-SUID infant mortality remains unclear.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI), early neonatal mortality rates"
+  },
+  {
+   "question": "How do PCA-aligned developmental windows affect the relationship between SUID and inner ear dysfunction?",
+   "why_open": "Inner ear dysfunction is associated with SIDS, but its interaction with developmental timing remains unexplored.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Postconceptional age (PCA), inner ear dysfunction, Sudden Unexpected Infant Death (SUID)"
+  }
+ ]
+}

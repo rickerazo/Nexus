@@ -1,0 +1,86 @@
+{
+ "ideas": [
+  {
+   "question": "Does the proportion of SUID cases with hospital overnight stays change over time and correlate with maternal pregnancy weight gain?",
+   "comparison": "ncfrp_v51 2008-2019, prams_p8_arf 2016-2021",
+   "why_open": "There is no current research that investigates the relationship between hospital overnight stays for infants and maternal pregnancy weight gain. This study aims to uncover if changes in these trends over time could provide insights into factors influencing SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82"
+   ],
+   "data": "ncfrp_v51: Hospital Overnight Stay, prams_p8_arf: Pregnancy Weight Gain"
+  },
+  {
+   "question": "How does the trend of SUID cases with previous child deaths compare over time to trends in infant care arrangements?",
+   "comparison": "ncfrp_v51 2008-2019, prams_p7_arf 2012-2015",
+   "why_open": "No prior study has explored the correlation between SUID cases with a history of previous child deaths and infant care arrangements. This research could highlight underlying factors that affect infant mortality rates.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D120"
+   ],
+   "data": "ncfrp_v51: Prior Child Deaths, prams_p7_arf: Infant Living Situation"
+  },
+  {
+   "question": "Is there a temporal pattern in the proportion of SUID cases involving infants with sleep environment issues and mothers reporting substance use during pregnancy?",
+   "comparison": "ncfrp_v51 2008-2019, prams_p7_arf 2012-2015",
+   "why_open": "This study aims to bridge the gap in understanding by examining whether changes over time in sleep environment issues among SUID cases correlate with maternal substance use during pregnancy.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D102",
+    "D315"
+   ],
+   "data": "ncfrp_v51: Infant Sleep Environment, prams_p7_arf: Smoking During Pregnancy"
+  },
+  {
+   "question": "Do trends in pregnancy complications among SUID cases align with changes in maternal healthcare visit patterns during pregnancy?",
+   "comparison": "ncfrp_v51 2008-2019, prams_p8_arf 2016-2021",
+   "why_open": "This research aims to fill the knowledge gap by examining if trends in pregnancy complications leading to SUID cases correlate with healthcare visit patterns for maternal health during pregnancy.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D66",
+    "D272"
+   ],
+   "data": "ncfrp_v51: Medical Complications, prams_p8_arf: Healthcare Visits During Pregnancy"
+  },
+  {
+   "question": "Is there a change over time in the proportion of SUID cases involving mothers who received pre-pregnancy health checks compared to trends in previous births?",
+   "comparison": "ncfrp_v51 2008-2019, prams_p7_arf 2012-2015",
+   "why_open": "No study has yet addressed the correlation between SUID cases with pre-pregnancy health checks and trends in previous births. This could provide valuable insights into maternal health's impact on infant survival.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D303"
+   ],
+   "data": "ncfrp_v51: Maternal Health Conditions, prams_p7_arf: Previous Birth History"
+  }
+ ]
+}

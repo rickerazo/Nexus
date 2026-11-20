@@ -1,0 +1,33 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with maternal mental health history is higher compared to other causes of infant death.",
+ "rationale": "This study uses a case-case comparison design, comparing SUID cases with other causes of infant death recorded in the same case series. The focus is on identifying differences in maternal mental health history between these two groups.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and suid_literature_abstracts.C10 discuss risk factors like preterm birth and maternal obesity but do not address maternal mental health specifically, leaving this question open.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "Maternal Mental Health History"
+ ],
+ "variables": [
+  "ncfrp_v51:INFmedical",
+  "ncfrp_v51:INF4referinfmh",
+  "prams_p8_arf:PG8_ANX",
+  "prams_p7_arf:PREV_LBW_RAW",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates; it can only identify associations among cases."
+}

@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "How do maternal prepregnancy health problems such as depression, diabetes, and high blood pressure affect the incidence rates of SUID?",
+   "why_open": "Previous studies have focused on prenatal behaviors like smoking but not deeply explored pre-existing conditions. Understanding the role of these issues could uncover new avenues for prevention.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_natl15"
+   ],
+   "data": "Maternal Health Problems"
+  },
+  {
+   "question": "Does living in overcrowded or substandard housing influence SUID rates, and is this effect modified by maternal substance use during pregnancy?",
+   "why_open": "Environmental factors like housing have not been extensively studied alongside more traditional risk factors. Exploring these factors may reveal new protective or harmful environments.",
+   "sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "data": "Environmental Factors"
+  },
+  {
+   "question": "What is the association between maternal multivitamin use during pregnancy and SUID incidence rates?",
+   "why_open": "The influence of prenatal vitamins on SUID has not been well established. This could provide insights into nutritional factors that might reduce risk.",
+   "sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "data": "Multivitamin Use"
+  },
+  {
+   "question": "How does the interaction between maternal age and socioeconomic status influence SUID incidence, particularly in infants born to mothers who experienced financial stress during pregnancy?",
+   "why_open": "Socioeconomic factors have been studied independently but not their combined effect with maternal age. This question may uncover complex interactions that affect risk.",
+   "sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "data": "Income and Dependent Information, Maternal Demographics"
+  },
+  {
+   "question": "Does the frequency of prenatal care visits and adherence to recommended preventative practices correlate with SUID incidence rates?",
+   "why_open": "While overall maternal behaviors have been studied, detailed information on prenatal visit frequencies and preventive practices has not. This may highlight gaps in prenatal healthcare.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_natl15"
+   ],
+   "data": "Healthcare Visits During Pregnancy, Preventive Practices"
+  }
+ ]
+}

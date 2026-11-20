@@ -1,0 +1,26 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with medical complications during pregnancy differs based on maternal prepregnancy BMI levels within the case series.",
+ "rationale": "This study will examine how medical complications during pregnancy vary across subgroups defined by maternal prepregnancy body mass index (BMI) levels within the case series. The design is a case-only analysis, focusing on associations among cases without population-level comparisons.",
+ "prior_art": "suid_literature_abstracts.C10 suggests that maternal obesity increases SUID risk but does not compare medical complications during pregnancy to prepregnancy BMI in SUID cases specifically; bedsharing_ms_v7.C9 shows incidence patterns over time but does not address the relationship between BMI and medical complications.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C10",
+  "bedsharing_ms_v7.C9"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Medical complications during pregnancy",
+  "Maternal prepregnancy BMI"
+ ],
+ "variables": [
+  "ncfrp_v51:INFmedical"
+ ],
+ "cannot_establish": "The design cannot establish incidence rates or causal relationships; it can only show associations among cases based on recorded medical complications and prepregnancy BMI levels within the ncfrp_v51 dataset."
+}

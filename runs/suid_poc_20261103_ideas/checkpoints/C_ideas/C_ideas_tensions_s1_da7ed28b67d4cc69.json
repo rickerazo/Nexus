@@ -1,0 +1,46 @@
+{
+ "ideas": [
+  {
+   "question": "Does maternal obesity have a different effect on SUID risk depending on whether the infant was born preterm?",
+   "why_open": "While maternal obesity has been established as a risk factor for SUID, the manuscripts do not explore how this association changes with gestational age at birth. Understanding if the relationship between maternal obesity and SUID is modified by prematurity could provide insights into differing biological mechanisms.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "maternal prepregnancy body mass index (BMI), preterm birth, sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "How do the patterns of inner ear dysfunction among SUID cases compare to those who died from other causes in the first year?",
+   "why_open": "The finding that inner ear dysfunction could be relevant in the pathophysiology of SIDS is intriguing but needs further context. Comparing inner ear dysfunction across different types of infant deaths would help elucidate whether this is a specific risk factor for SUID or part of broader health vulnerabilities.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "inner ear dysfunction, sudden unexpected infant death (SUID), medical complications"
+  },
+  {
+   "question": "What are the differences in maternal smoking patterns between SUID cases and infants who died from external causes?",
+   "why_open": "Maternal smoking is a well-known risk factor for SUID but its relationship with other causes of infant mortality remains unclear. By comparing maternal smoking across different types of deaths, we can better understand if this risk factor is uniquely associated with SUID or if it has broader impacts on infant health.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "maternal smoking during pregnancy, sudden unexpected infant death (SUID), cause of death"
+  },
+  {
+   "question": "How do the patterns of postnatal hospital stays differ between SUID cases and infants who died from other causes?",
+   "why_open": "The manuscripts indicate that prematurity and maternal smoking are associated with SUID risk, but the role of post-hospital discharge care is less explored. Understanding how the duration and nature of postnatal hospital stays differ between SUID cases and those dying from external or medical causes might reveal critical time periods for intervention.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "hospital overnight stay, sudden unexpected infant death (SUID), cause of death"
+  },
+  {
+   "question": "Do infants with congenital anomalies have different risk profiles for SUID compared to those without?",
+   "why_open": "Congenital anomalies could predispose infants to various health vulnerabilities that might also influence their risk of SUID. Investigating this relationship can help identify subgroups of infants who may require additional monitoring or interventions post-birth.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "congenital anomalies, sudden unexpected infant death (SUID)"
+  }
+ ]
+}

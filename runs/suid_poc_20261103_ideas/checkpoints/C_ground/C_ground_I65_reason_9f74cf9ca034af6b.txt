@@ -1,0 +1,60 @@
+### Design
+
+**Design:** Trends within cases. Compare proportions among the SUID cases across periods using a case series and a population reference.
+
+**Restated Question:**
+Has the proportion of SUID cases where mothers did not use birth control changed since 2016?
+
+### Sources by Role
+
+- **Case Series (ncfrp_v51):** This source provides information on child deaths reviewed by fatality review teams, including SUID cases from 2008 to 2019.
+- **Population Reference (prams_p7_arf):** PRAMS Phase 7 collects data from mothers a few months after live births and can provide insights into birth control use and other factors among the general population of new mothers.
+
+### Period
+
+**Period:**
+The common period between ncfrp_v51 case series (2008-2019) and prams_p7_arf population reference (Phase 7, 2012-2015) is 2012 to 2015.
+
+### Variables
+
+**Variables:**
+1. **Birth Control Use Among SUID Cases:**
+   - **ncfrp_v51:** `INF4bc` - Mother using birth control 3 months prior to pregnancy.
+     - Values: Yes/No
+   - **prams_p7_arf:** `BC_NOW4` - Postpartum BC -- using now.
+     - Values: No, Yes
+
+**Comparison of Variables Across Sources:**
+- The ncfrp_v51 data captures birth control use specifically for SUID cases 3 months prior to pregnancy.
+- prams_p7_arf collects postpartum information on current birth control usage among the general population of new mothers.
+
+### Biases
+
+#### Selection Bias:
+- **Case Series (ncfrp_v51):** The case series only includes deaths reviewed by fatality review teams, which may not be representative of all SUID cases.
+- **Population Reference (prams_p7_arf):** PRAMS Phase 7 includes mothers who are a few months postpartum and can introduce selection bias if the sample is not generalizable to all new mothers.
+
+#### Information Bias:
+- The measurement of birth control use differs between the case series and population reference. `INF4bc` in ncfrp_v51 measures pre-pregnancy usage, while `BC_NOW4` in prams_p7_arf measures current postpartum usage.
+- Missing values for birth control status need to be handled appropriately.
+
+#### Confounding:
+- Other factors such as maternal smoking, education level, and socioeconomic status can confound the relationship between birth control use and SUID incidence. These variables should be controlled if available in both datasets.
+
+### What the Design Cannot Establish
+
+This design cannot establish causation or estimate incidence rates because it only compares proportions among cases without a denominator source to calculate rates or risks.
+
+### Prior Art
+
+**Prior Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C10:** The study uses vital-record data, which may have exposure and cause-of-death misclassification issues.
+- **bedsharing_ms_v7.C18:** Sleep-environment classification in case-report systems may be subject to heterogeneity in ascertainment and reporting.
+
+The closest claims do not directly address changes over time in birth control usage among mothers of SUID cases. Therefore, this specific question remains open as prior studies have not thoroughly examined trends in birth control use related to SUID incidence.
+
+### Verdict
+
+**Verdict:** These data can carry out a study that examines whether the proportion of SUID cases where mothers did not use birth control has changed since 2016. However, it will be limited to comparing proportions among cases and cannot establish causation or estimate rates due to the lack of a denominator source.
+
+The key missing element is a consistent denominator for estimating incidence or prevalence over time, which would allow for more robust comparisons between periods.

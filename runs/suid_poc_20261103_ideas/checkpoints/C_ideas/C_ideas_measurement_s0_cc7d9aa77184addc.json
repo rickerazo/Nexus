@@ -1,0 +1,69 @@
+{
+ "ideas": [
+  {
+   "question": "How does the measurement of maternal smoking during pregnancy differ between CDC-linked birth/infant death files (cdc_linkco15) and PRAMS surveys (prams_p8_arf), and what is the impact on comparing SUID incidence between these sources?",
+   "comparison": "cdc_linkco15 (case series and denominator): Maternal smoking status during pregnancy recorded directly from birth certificates; prams_p8_arf (population reference): Self-reported smoking behavior before pregnancy, 3 months before pregnancy, and current smoking status.",
+   "why_open": "Although both sources record maternal smoking during pregnancy as a risk factor for SUID, the differences in measurement timing and source introduce potential biases that have not yet been systematically evaluated. Understanding these discrepancies is critical to accurately interpreting incidence comparisons between case series data and population-based survey estimates.",
+   "case_sources": [
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal smoking during pregnancy (covariate)"
+  },
+  {
+   "question": "How do the methods of reporting infant birthweight differ between CDC-linked birth/infant death files (cdc_linkco15) and PRAMS surveys (prams_p7_arf), and how might this affect comparisons of SUID incidence by low birth weight?",
+   "comparison": "cdc_linkco15 (case series and denominator): Birthweight recorded directly from birth certificate; prams_p7_arf (population reference): Self-reported infant birth weight.",
+   "why_open": "Birthweight is a critical variable in studying SUID risk, yet differences in how it's measured between case series data and population-based surveys have not been thoroughly examined. Clarifying these discrepancies would help determine the extent to which observed incidence patterns reflect true risks versus reporting biases.",
+   "case_sources": [
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Birthweight (covariate)"
+  },
+  {
+   "question": "What are the differences in how gestational age is estimated and recorded between CDC-linked birth/infant death files (cdc_linkco15) and PRAMS surveys (prams_p7_arf), and how might these variations influence SUID incidence analysis?",
+   "comparison": "cdc_linkco15 (case series and denominator): Gestational age derived from last menstrual period and clinical estimates; prams_p7_arf (population reference): Self-reported gestational age at delivery.",
+   "why_open": "Gestational age is a key indicator in SUID studies, but its measurement variability between administrative records and survey data has not been fully addressed. Investigating these differences would enhance the precision of incidence analyses by accounting for potential misclassification biases.",
+   "case_sources": [
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Gestational age at birth (covariate)"
+  },
+  {
+   "question": "How does the recording of preterm birth differ between CDC-linked birth/infant death files (cdc_linkco15) and PRAMS surveys (prams_p7_arf), and what are the implications for incidence studies of SUID in preterm infants?",
+   "comparison": "cdc_linkco15 (case series and denominator): Preterm status derived from gestational age at birth; prams_p7_arf (population reference): Self-reported information on whether delivery was preterm.",
+   "why_open": "Preterm birth is an established risk factor for SUID, yet how its measurement varies between administrative records and survey data has not been fully explored. Resolving these differences would improve the accuracy of incidence analyses by mitigating potential misclassification biases related to preterm status reporting.",
+   "case_sources": [
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Preterm birth (covariate)"
+  },
+  {
+   "question": "What discrepancies exist in the measurement of maternal prepregnancy BMI between CDC-linked birth/infant death files (cdc_linkco15) and PRAMS surveys (prams_p7_arf), and how might these affect analyses of SUID risk by maternal obesity?",
+   "comparison": "cdc_linkco15 (case series and denominator): Maternal BMI before pregnancy derived from self-report; prams_p7_arf (population reference): Self-reported prepregnancy body mass index.",
+   "why_open": "Maternal prepregnancy BMI is a significant factor in SUID risk studies, but the nuances of how it's recorded across different data sources have not been systematically evaluated. Addressing these inconsistencies would enhance our ability to accurately assess and interpret incidence patterns associated with maternal obesity.",
+   "case_sources": [
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal prepregnancy body mass index (BMI) (covariate)"
+  }
+ ]
+}

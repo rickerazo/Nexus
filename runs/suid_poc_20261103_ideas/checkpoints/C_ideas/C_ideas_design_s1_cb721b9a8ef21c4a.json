@@ -1,0 +1,48 @@
+{
+ "ideas": [
+  {
+   "question": "What is the impact of changes in environmental temperatures during different developmental windows on SUID incidence, and does this interaction differ by infant sex?",
+   "why_open": "This question remains unanswered because prior studies have not focused on the role of environmental temperature variations as a factor affecting SUID risk. Understanding such interactions can lead to new preventive strategies targeted at reducing SUID rates under varying climatic conditions.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Weather Conditions (not directly listed, but may be inferred from Residence Information and Environmental Factors domains), Age of death in SUID cases"
+  },
+  {
+   "question": "How do changes in housing stability over time impact the incidence rate ratios for sudden unexpected infant death (SUID)?",
+   "why_open": "This question is novel as prior studies have not systematically explored how housing instability affects SUID rates. This information could highlight new socio-economic factors contributing to SUID risk, guiding policy interventions.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Housing Details (Unstable Housing Conditions and Other Housing Situations), Infant Disposition (including NICU)"
+  },
+  {
+   "question": "What are the differences in SUID incidence rates between infants born to mothers who received various types of postnatal support services compared to those who did not?",
+   "why_open": "The effect of postnatal support services on reducing SUID risk has not been extensively studied. This could provide insights into whether specific support services can serve as effective interventions.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Received Social Services, Service Discrimination (Infant or Mother), Maternal Health Problems"
+  },
+  {
+   "question": "How do changes in maternal employment status during the postnatal period correlate with SUID incidence rates?",
+   "why_open": "This question is open as previous research has not examined how maternal employment post-birth may influence SUID risk. Understanding these dynamics could lead to better workplace policies and support structures.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Employment Status (Mother), Demographic Information, Infant Characteristics"
+  },
+  {
+   "question": "Is there a difference in SUID incidence rates among infants born to mothers who had different levels of exposure to air pollution during pregnancy?",
+   "why_open": "The potential link between maternal exposure to air pollution and increased risk of SUID has not been thoroughly investigated. This information could contribute to environmental policies aimed at protecting pregnant women.",
+   "sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "data": "Residence Information, Health Conditions (Pregnancy Complications)"
+  }
+ ]
+}

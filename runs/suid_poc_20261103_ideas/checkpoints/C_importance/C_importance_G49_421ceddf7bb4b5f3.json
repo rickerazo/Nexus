@@ -1,0 +1,4 @@
+{
+ "reason": "The gap addresses how medical complications during pregnancy are recorded differently between the NCFRP case series and PRAMS population reference, which could introduce bias when comparing these sources. This is important for understanding potential discrepancies in exposure measurement that can affect case-population comparisons.",
+ "importance": 4
+}

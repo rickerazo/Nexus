@@ -1,0 +1,24 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of infants who had hospital overnight stays is higher among low birthweight cases compared to non-low birthweight cases in the case series.",
+ "rationale": "This study uses a case-only design to compare proportions of hospital overnight stays between low and non-low birthweight infant deaths within the case series. The sources provide sufficient data on both birth weight status and hospital overnight stays, allowing for this comparison without needing a denominator source.",
+ "prior_art": "None in the inputs; while existing manuscripts discuss various risk factors for SUID, none directly address comparisons between low and non-low birthweight cases regarding hospital overnight stays.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "birthweight status",
+  "hospital overnight stays"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3birthwtcat",
+  "ncfrp_v51:INF4hosprtn"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates. It only compares proportions of hospital overnight stays among infants based on their birth weight status, without a population reference to estimate prevalence in a broader context."
+}

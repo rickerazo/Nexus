@@ -1,0 +1,29 @@
+{
+ "domains": [
+  {
+   "start": "ACTcaumvphys",
+   "name": "Child Maltreatment History (Caused)",
+   "summary": "Indicates whether the person has a history of being a victim or perpetrator of child maltreatment, including types and outcomes."
+  },
+  {
+   "start": "ACTconabalc",
+   "name": "Substance Abuse History (Contributed)",
+   "summary": "Records the person's history of substance abuse, specifying types and prior deaths related to abuse."
+  },
+  {
+   "start": "ACTconage",
+   "name": "Age and Legal Outcomes (Contributed)",
+   "summary": "Includes age information and legal outcomes such as charges filed or dismissed for the contributing factors."
+  },
+  {
+   "start": "ACTcondisill",
+   "name": "Disability and Chronic Illness (Contributed)",
+   "summary": "Documents whether the person has a disability or chronic illness, including mental and physical conditions."
+  },
+  {
+   "start": "ACTemotabuse",
+   "name": "Child Abuse and Neglect Types",
+   "summary": "Categorizes types of child abuse (e.g., emotional) and neglect (e.g., emotional neglect)."
+  }
+ ]
+}

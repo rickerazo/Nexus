@@ -1,0 +1,61 @@
+### Design
+
+**Question:** How does the rate of pre-pregnancy healthcare visits differ between SUID cases and live births in the general population?
+
+**Design:** Case-population comparison. Compare how common an exposure is among the cases (from a case series) with its weighted prevalence in the general population (from a population reference source). The concept must be measured in both; say how its measurement differs between them.
+
+### Sources by Role
+
+- **Case Series:** NCFRP_V51
+  - Covers: Child deaths reviewed by participating fatality review teams.
+  - Period: Deaths from 2008 to 2019 (the manuscript uses this period).
+
+- **Population Reference:** PRAMS_P8_ARF
+  - Covers: Weighted survey of mothers a few months after a live birth, sampled from birth certificates in participating states.
+  - Period: Phase 8 (2016-2021).
+
+### Period
+
+The common period covered by both NCFRP_V51 and PRAMS_P8_ARF is **2016 to 2019**.
+
+### Variables
+
+#### Pre-Pregnancy Health Care Visits
+- **NCFRP_V51:** No specific variable for pre-pregnancy health care visits.
+- **PRAMS_P8_ARF: PRE_VIST**
+  - Label: "Pre-pregnancy -- health care visit."
+  - Values: [B=DK/BLANK; U=UNKNOWN; 1=NO; 2=YES]
+  - Weighted prevalence using WTANAL.
+
+### Biases
+
+#### Selection Bias
+- **Case Series (NCFRP_V51):** Includes only reviewed child deaths, and the reviewing states' participation may not reflect national incidence.
+- **Population Reference (PRAMS_P8_ARF):** PRAMS samples live births from participating states, which are typically high-risk areas. This sampling is not representative of all US states.
+
+#### Information Bias
+- **Case Series:** Data on pre-pregnancy healthcare visits might be incomplete or missing in the case series since it focuses on child deaths and may not collect extensive preconception data.
+- **Population Reference:** PRAMS collects self-reported health behaviors, which can suffer from recall bias and reporting errors.
+
+#### Confounding
+- Factors such as maternal education level, socioeconomic status, and geographic location may differ between SUID cases and live births in the general population, influencing access to healthcare before pregnancy.
+
+### What the Design Cannot Establish
+
+This design cannot establish causation. It only compares proportions of pre-pregnancy health care visits among SUID cases versus live births. Any observed differences would suggest an association but do not imply that pre-pregnancy healthcare is a causal factor for SUID.
+
+### Prior Art
+
+- **SUID Manuscript:** C10, C12 (limitations related to exposure misclassification and case ascertainment issues)
+  - The manuscript acknowledges limitations in vital-record data regarding exposure misclassification. However, it does not directly address pre-pregnancy health care visits.
+  
+- **Bed Sharing Manuscript:** C18, C19 (limitation on sleep environment classification and indirect denominator source)
+  - This study highlights the importance of accurately classifying exposures like bed sharing but uses an indirect denominator for prevalence estimates. It does not discuss pre-pregnancy healthcare visits.
+
+### Verdict
+
+These data can answer a version of the question by comparing the proportion of pre-pregnancy health care visits among SUID cases and live births in PRAMS Phase 8, within the period 2016 to 2019. However, due to selection bias (differing coverage between case series and population reference) and information bias (self-reported data from PRAMS), any observed differences should be interpreted with caution.
+
+### Missing Elements
+- **Direct Measure of Pre-pregnancy Healthcare Visits in Case Series:** NCFRP_V51 does not have a direct measure of pre-pregnancy health care visits, which limits the comparability between cases and population reference.
+- **Representative Population Reference Source:** PRAMS Phase 8 is biased towards high-risk areas, potentially skewing results if these factors differ from general populations.

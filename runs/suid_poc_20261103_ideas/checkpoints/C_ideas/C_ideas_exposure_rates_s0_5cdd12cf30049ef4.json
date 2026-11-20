@@ -1,0 +1,97 @@
+{
+ "ideas": [
+  {
+   "question": "Is the prevalence of hospital overnight stays among infants associated with a higher risk of SUID compared to those who did not require an overnight stay?",
+   "comparison": "infants requiring an overnight hospital stay (ncfrp_v51) vs. those without such a requirement (prams_p8_arf), using cdc_linkco15 as the denominator",
+   "why_open": "Hospital stays after birth are common but rarely studied in relation to SUID risk beyond immediate postnatal complications.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "domains": [
+    "D82",
+    "D279"
+   ],
+   "data": "Use D82.ncfrp_v51.Hospital_Overnight_Stay (any stay) as the numerator and apply its prevalence from prams_p8_arf's D279 to cdc_linkco15 births denominator."
+  },
+  {
+   "question": "Does pregnancy weight gain differ between mothers whose infants experienced SUID compared to those who did not?",
+   "comparison": "mothers with infants experiencing SUID (ncfrp_v51) vs. general population of new mothers (prams_p8_arf), using cdc_linkco15 as the denominator",
+   "why_open": "Understanding differences in pregnancy weight gain can provide insights into metabolic or lifestyle factors that may predispose to SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "domains": [
+    "D88"
+   ],
+   "data": "Use D88.ncfrp_v51.Pregnancy_Weight_Gain (any change) as the numerator and apply its prevalence from prams_p8_arf's D299 to cdc_linkco15 births denominator."
+  },
+  {
+   "question": "Is there a difference in maternal physical health problems between mothers whose infants experienced SUID versus those who did not?",
+   "comparison": "mothers with infants experiencing SUID (ncfrp_v51) vs. general population of new mothers (prams_p7_arf), using cdc_linkco15 as the denominator",
+   "why_open": "Maternal health issues might influence infant outcomes, but this aspect remains understudied in relation to SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "domains": [
+    "D239",
+    "D302"
+   ],
+   "data": "Use D239.ncfrp_v51.Maternal_Health_Conditions (any condition) as the numerator and apply its prevalence from prams_p7_arf's D302 to cdc_linkco15 births denominator."
+  },
+  {
+   "question": "Do maternal health checks before pregnancy differ between mothers whose infants experienced SUID compared to those who did not?",
+   "comparison": "mothers with infants experiencing SUID (ncfrp_v51) vs. general population of new mothers (prams_p7_arf), using cdc_linkco15 as the denominator",
+   "why_open": "Pre-pregnancy health checks could indicate underlying conditions influencing birth outcomes, yet their role in SUID prevention is largely unknown.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "domains": [
+    "D240",
+    "D304"
+   ],
+   "data": "Use D240.ncfrp_v51.Prenatal_Care_Issues (any check) as the numerator and apply its prevalence from prams_p7_arf's D304 to cdc_linkco15 births denominator."
+  },
+  {
+   "question": "Is there a significant difference in smoking cessation rates between mothers of SUID infants compared to the general population of new mothers?",
+   "comparison": "mothers with infants experiencing SUID (ncfrp_v51) vs. general population of new mothers (prams_p8_arf), using cdc_linkco15 as the denominator",
+   "why_open": "Smoking cessation is a critical factor in reducing infant mortality risks, but its effectiveness in preventing SUID remains underexplored.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "domains": [
+    "D6"
+   ],
+   "data": "Use D6.ncfrp_v51.Smoking_During_Pregnancy (change in behavior) as the numerator and apply its prevalence from prams_p8_arf's D303 to cdc_linkco15 births denominator."
+  }
+ ]
+}

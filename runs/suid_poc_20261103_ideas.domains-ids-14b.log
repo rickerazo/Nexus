@@ -1,0 +1,132 @@
+INFO mmf.pipeline: ingest_cdc_linkco15: cache hit
+WARNING mmf.pipeline: ingest_cdc_linkco15: 14 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/cdc_linkco15.audit.json
+INFO mmf.pipeline: ingest_cdc_natl15: cache hit
+WARNING mmf.pipeline: ingest_cdc_natl15: 10 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/cdc_natl15.audit.json
+INFO mmf.pipeline: ingest_cdc_codenames: cache hit
+INFO mmf.pipeline: ingest_ncfrp_v51: cache hit
+WARNING mmf.pipeline: ingest_ncfrp_v51: 16 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/ncfrp_v51.audit.json
+INFO mmf.pipeline: ingest_prams_p8_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_arf: 64 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/prams_p8_arf.audit.json
+INFO mmf.pipeline: ingest_prams_p8_std2: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_std2: 2 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/prams_p8_std2.audit.json
+INFO mmf.pipeline: ingest_prams_p7_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p7_arf: 55 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/prams_p7_arf.audit.json
+INFO mmf.pipeline: A_SUID_manuscript_v9_clean: cache hit
+INFO mmf.pipeline: A_bedsharing_ms_v7: cache hit
+INFO mmf.pipeline: A_suid_literature_abstracts: cache hit
+INFO mmf.pipeline: B: cache hit
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO mmf.pipeline: B_check: cache hit
+WARNING mmf.pipeline: B_check: 63 (concept, source) pair(s) where embeddings and the LLM disagree; {'llm_outside_topk': 34, 'agree': 51, 'both_none': 264, 'possible_miss': 29}
+INFO mmf.pipeline: C_inventory: cache hit
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_population_s1 attempt 1 rejected: ['idea 3: domain D322 belongs to prams_p7_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_population_s2 attempt 1 rejected: ['idea 1: domain D299 belongs to prams_p8_std2, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_population_s2 attempt 2 rejected: ['idea 3: domain D311 belongs to prams_p7_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_exposure_rates_s0 attempt 1 rejected: ['idea 2: this design needs at least 1 population reference source(s)']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_exposure_rates_s0 attempt 2 rejected: ['return exactly 5 ideas, got 4']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_exposure_rates_s0 attempt 3 rejected: ['idea 3: domain D6 belongs to cdc_linkco15, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_exposure_rates_s0 attempt 4 rejected: ['idea 2: domain D299 belongs to prams_p8_std2, which is not listed under any role', 'idea 5: domain D303 belongs to prams_p7_arf, which is not listed under any role']
+WARNING mmf.components.c_ideas: C_ideas_exposure_rates_s0: no valid ideas after 4 attempts; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_exposure_rates_s1 attempt 1 rejected: ['idea 5: domain D306 belongs to prams_p7_arf, which is not listed under any role', 'idea 5: domain D310 belongs to prams_p7_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_exposure_rates_s1 attempt 2 rejected: ['idea 5: domain D311 belongs to prams_p7_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_exposure_rates_s2 attempt 1 rejected: ['idea 1: domain D299 belongs to prams_p8_std2, which is not listed under any role', 'idea 2: this design needs at least 1 denominator source(s)', 'idea 3: this design needs at least 1 population reference source(s)']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_exposure_rates_s2 attempt 2 rejected: ['idea 2: domain D306 belongs to prams_p7_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_exposure_rates_s2 attempt 3 rejected: ['idea 2: domain D302 belongs to prams_p7_arf, which is not listed under any role', 'idea 5: domain D306 belongs to prams_p7_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_exposure_rates_s2 attempt 4 rejected: ['idea 1: domain D299 belongs to prams_p8_std2, which is not listed under any role']
+WARNING mmf.components.c_ideas: C_ideas_exposure_rates_s2: no valid ideas after 4 attempts; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_case_s0 attempt 1 rejected: ['idea 1: domain D299 belongs to prams_p8_std2, which is not listed under any role', 'idea 3: domain D284 belongs to prams_p8_arf, which is not listed under any role', 'idea 5: domain D274 belongs to prams_p8_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_case_s0 attempt 2 rejected: ['idea 2: domain D305 belongs to prams_p7_arf, which is not listed under any role', 'idea 2: domain D6 belongs to cdc_linkco15, which is not listed under any role', 'idea 3: domain D6 belongs to cdc_linkco15, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_case_s1 attempt 1 rejected: ['idea 3: domain D269 belongs to prams_p8_arf, which is not listed under any role', 'idea 4: domain D299 belongs to prams_p8_std2, which is not listed under any role', 'idea 4: domain D302 belongs to prams_p7_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_case_s1 attempt 2 rejected: ['idea 3: domain D299 belongs to prams_p8_std2, which is not listed under any role', 'idea 5: domain D272 belongs to prams_p8_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_case_s1 attempt 3 rejected: ['idea 2: domain D269 belongs to prams_p8_arf, which is not listed under any role', 'idea 2: domain D302 belongs to prams_p7_arf, which is not listed under any role', 'idea 3: domain D281 belongs to prams_p8_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_case_s2 attempt 1 rejected: ['idea 2: domain D279 belongs to prams_p8_arf, which is not listed under any role', 'idea 3: domain D272 belongs to prams_p8_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_case_s2 attempt 2 rejected: ['idea 1: domain D279 belongs to prams_p8_arf, which is not listed under any role', 'idea 2: domain D272 belongs to prams_p8_arf, which is not listed under any role', 'idea 3: domain D273 belongs to prams_p8_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_case_s2 attempt 3 rejected: ['idea 5: domain D299 belongs to prams_p8_std2, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_case_s2 attempt 4 rejected: ['idea 1: domain D299 belongs to prams_p8_std2, which is not listed under any role']
+WARNING mmf.components.c_ideas: C_ideas_case_case_s2: no valid ideas after 4 attempts; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_only_s2 attempt 1 rejected: ['idea 5: domain D283 belongs to prams_p8_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_only_s2 attempt 2 rejected: ['idea 4: domain D286 belongs to prams_p8_arf, which is not listed under any role', 'idea 4: domain D302 belongs to prams_p7_arf, which is not listed under any role', 'idea 5: domain D269 belongs to prams_p8_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_case_only_s2 attempt 3 rejected: ['idea 4: domain D269 belongs to prams_p8_arf, which is not listed under any role', 'idea 5: domain D284 belongs to prams_p8_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_trends_s0 attempt 1 rejected: ['idea 5: domain D290 belongs to prams_p8_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_trends_s1 attempt 1 rejected: ['idea 2: domain D299 belongs to prams_p8_std2, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_trends_s1 attempt 2 rejected: ['idea 3: domain D6 belongs to cdc_linkco15, which is not listed under any role', 'idea 5: domain D6 belongs to cdc_linkco15, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_trends_s1 attempt 3 rejected: ['idea 1: domain D88 belongs to ncfrp_v51, which is not listed under any role', 'idea 1: domain D299 belongs to prams_p8_std2, which is not listed under any role', 'idea 2: domain D82 belongs to ncfrp_v51, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_trends_s1 attempt 4 rejected: ['idea 2: domain D279 belongs to prams_p8_arf, which is not listed under any role', 'idea 3: domain D286 belongs to prams_p8_arf, which is not listed under any role']
+WARNING mmf.components.c_ideas: C_ideas_trends_s1: no valid ideas after 4 attempts; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_trends_s2 attempt 1 rejected: ['idea 1: domain D299 belongs to prams_p8_std2, which is not listed under any role', 'idea 2: domain D272 belongs to prams_p8_arf, which is not listed under any role', 'idea 4: domain D306 belongs to prams_p7_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_trends_s2 attempt 2 rejected: ['return exactly 5 ideas, got 4', 'idea 4: domain D276 belongs to prams_p8_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_trends_s2 attempt 3 rejected: ['return exactly 5 ideas, got 4', 'idea 3: domain D299 belongs to prams_p8_std2, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_trends_s2 attempt 4 rejected: ['return exactly 5 ideas, got 4', 'idea 1: domain D299 belongs to prams_p8_std2, which is not listed under any role']
+WARNING mmf.components.c_ideas: C_ideas_trends_s2: no valid ideas after 4 attempts; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_measurement_s1 attempt 1 rejected: ['idea 5: domain D308 belongs to prams_p7_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_measurement_s1 attempt 2 rejected: ['idea 5: domain D299 belongs to prams_p8_std2, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_measurement_s1 attempt 3 rejected: ['idea 2: domain D8 belongs to cdc_linkco15, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_measurement_s1 attempt 4 rejected: ['idea 1: domain D306 belongs to prams_p7_arf, which is not listed under any role', 'idea 3: domain D303 belongs to prams_p7_arf, which is not listed under any role', 'idea 4: domain D298 belongs to prams_p8_arf, which is not listed under any role']
+WARNING mmf.components.c_ideas: C_ideas_measurement_s1: no valid ideas after 4 attempts; skipped
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_measurement_s2 attempt 1 rejected: ['idea 1: domain D239 belongs to ncfrp_v51, which is not listed under any role', 'idea 1: domain D302 belongs to prams_p7_arf, which is not listed under any role', 'idea 4: domain D22 belongs to cdc_natl15, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_measurement_s2 attempt 2 rejected: ['idea 1: domain D299 belongs to prams_p8_std2, which is not listed under any role', 'idea 3: domain D312 belongs to prams_p7_arf, which is not listed under any role', 'idea 5: domain D304 belongs to prams_p7_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_measurement_s2 attempt 3 rejected: ['idea 1: domain D302 belongs to prams_p7_arf, which is not listed under any role']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_ideas_measurement_s2 attempt 4 rejected: ['idea 1: domain D240 belongs to ncfrp_v51, which is not listed under any role', 'idea 1: domain D302 belongs to prams_p7_arf, which is not listed under any role', 'idea 2: domain D315 belongs to prams_p7_arf, which is not listed under any role']
+WARNING mmf.components.c_ideas: C_ideas_measurement_s2: no valid ideas after 4 attempts; skipped
+WARNING mmf.pipeline: C_ideas_exposure_rates_s0: no valid ideas after retries; skipped
+WARNING mmf.pipeline: C_ideas_exposure_rates_s2: no valid ideas after retries; skipped
+WARNING mmf.pipeline: C_ideas_case_case_s2: no valid ideas after retries; skipped
+WARNING mmf.pipeline: C_ideas_trends_s1: no valid ideas after retries; skipped
+WARNING mmf.pipeline: C_ideas_trends_s2: no valid ideas after retries; skipped
+WARNING mmf.pipeline: C_ideas_measurement_s1: no valid ideas after retries; skipped
+WARNING mmf.pipeline: C_ideas_measurement_s2: no valid ideas after retries; skipped
+Ideas: runs/suid_poc_20261103_ideas/C_ideas.md

@@ -1,0 +1,34 @@
+{
+ "domains": [
+  {
+   "start": "SMK63B_A",
+   "name": "Smoking History",
+   "summary": "Whether the respondent smoked before pregnancy, during the last three months of pregnancy, and currently."
+  },
+  {
+   "start": "SMK6C_NW",
+   "name": "Smoking Change",
+   "summary": "Changes in smoking behavior from three months before pregnancy to now."
+  },
+  {
+   "start": "SMK6_3B",
+   "name": "Daily Cigarettes",
+   "summary": "Number of cigarettes smoked daily during different periods (three months before pregnancy, last three months of pregnancy, and currently)."
+  },
+  {
+   "start": "TLK_CIGS",
+   "name": "Healthcare Communication",
+   "summary": "Whether healthcare providers discussed smoking, alcohol consumption, weight gain, and other topics with the respondent."
+  },
+  {
+   "start": "TYP_BC",
+   "name": "Healthcare Visits",
+   "summary": "Types of healthcare visits related to family planning, dental care, general checkups, illness, injury, mental health, obstetric/gynecological care, and other unspecified reasons."
+  },
+  {
+   "start": "VPP_ABUS",
+   "name": "Preventive Practices",
+   "summary": "Whether healthcare providers discussed or addressed various preventive practices such as abuse screening, birth control methods, depression, diabetes testing, alcohol consumption, nutrition, breastfeeding, contraception insertion, prescription medications, and folic acid supplementation."
+  }
+ ]
+}

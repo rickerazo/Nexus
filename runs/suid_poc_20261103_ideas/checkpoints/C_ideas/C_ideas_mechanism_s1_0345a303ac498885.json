@@ -1,0 +1,48 @@
+{
+ "ideas": [
+  {
+   "question": "Is there an association between maternal prepregnancy body mass index (BMI) and variations in the developmental timing of Sudden Unexpected Infant Death (SUID), as measured by postconceptional age?",
+   "why_open": "The hypothesis that maternal obesity is a risk factor for SUID has not been examined in relation to developmental timing using postconceptional age. This could provide insights into how prepregnancy BMI affects the trajectory of SUID incidence.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p7_arf"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI) (exposure), Maternal physical measurements (domain)"
+  },
+  {
+   "question": "Can the presence or absence of newborn hearing suppression be used as a predictive biomarker for subsequent SUID incidence, particularly in relation to postconceptional age?",
+   "why_open": "While there is evidence that inner ear dysfunction plays a role in arousal from suffocating gas mixtures and could precipitate SIDS, there has been no investigation into the use of newborn hearing suppression as a predictive biomarker for SUID incidence across developmental windows.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Newborn Care Interventions (domain)"
+  },
+  {
+   "question": "Does maternal smoking during pregnancy alter the trajectory of SUID incidence over postconceptional age in infants with low birth weight?",
+   "why_open": "The impact of maternal smoking on SUID risk has been well-documented, but it is unknown how this interaction changes when considering infants with low birth weights across different developmental windows.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p7_arf"
+   ],
+   "data": "Smoking During Pregnancy (domain), Birth Weight (domain)"
+  },
+  {
+   "question": "How does maternal smoking during pregnancy interact with the use of prenatal vitamins to influence SUID incidence across postconceptional age?",
+   "why_open": "The combined effect of maternal smoking and nutritional supplementation, such as multivitamins, on SUID incidence has not been studied. This interaction could provide additional insights into modifiable risk factors.",
+   "sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "data": "Smoking During Pregnancy (domain), Multivitamin Use (domain)"
+  },
+  {
+   "question": "Is there a relationship between the mother's weight gain during pregnancy and the timing of SUID incidence as measured by postconceptional age?",
+   "why_open": "Understanding how maternal gestational weight gain influences the developmental trajectory of SUID can provide further insights into modifiable risk factors, which have not been explored in previous studies.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Pregnancy Weight Gain (domain), Maternal Physical Measurements (domain)"
+  }
+ ]
+}

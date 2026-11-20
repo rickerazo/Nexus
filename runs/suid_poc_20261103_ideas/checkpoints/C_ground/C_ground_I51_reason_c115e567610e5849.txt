@@ -1,0 +1,65 @@
+### Design
+
+**Question Restated:** Is there a developmental period during the first year of life where infants with maternal obesity have an increased risk for Sudden Unexpected Infant Death (SUID) compared to those without maternal obesity? The study will explore how postconceptional age and maternal prepregnancy body mass index (BMI) vary within SUID cases.
+
+**Design:** Case-only analysis. Study how the circumstances recorded for the cases vary across subgroups based on postconceptional age and whether the mother had obesity during pregnancy, without a population comparison to estimate incidence or risk but rather by comparing proportions or odds among cases.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System (NFR-CRS))
+  - This is used because it provides detailed information on SUID cases and allows for subgroup analysis within these cases.
+  
+- **Population Reference:** None available
+  - No population reference source that can provide the necessary comparison to estimate incidence or risk in a broader context.
+
+- **Denominator Source:** None needed
+  - Since this is a case-only design, there's no need for denominator data to calculate rates or risks; we only compare proportions within cases.
+
+### Period
+
+The period should be limited to where both sources have overlapping coverage. 
+- ncfrp_v51 covers deaths from 2008-2019.
+- No specific period overlap is required since this is a case-only design focusing on the characteristics of SUID cases alone without needing population denominators or references.
+
+### Variables
+
+**Postconceptional Age (PCA):**
+- **ncfrp_v51: ISSprechronicdiseasebef, ISSprechronicdiseasedur, ISSprechronicdiseaseaft**: While these variables provide information on maternal conditions during pregnancy, they don't directly measure postconceptional age.
+- We need to infer PCA based on reported birth dates and estimated gestational ages if available. However, direct measurements of PCA from the sources are not provided.
+
+**Maternal Obesity (BMI):**
+- **ncfrp_v51: IEMprenatalBMI**: This variable records maternal BMI during pregnancy. 
+- No corresponding variables in other datasets that provide comparable information for a denominator or population reference.
+
+### Biases
+
+#### Selection Bias
+- **Case Series:** ncfrp_v51 captures SUID cases reviewed by participating fatality review teams, which may not be representative of all SUIDs nationally due to varying participation rates across jurisdictions.
+  
+#### Information Bias
+- The data on maternal BMI and other exposures might differ between the case series (ncfrp_v51) and population reference sources, leading to potential misclassification issues.
+
+#### Confounding
+- Potential confounders such as socioeconomic status, urban/rural setting, smoking during pregnancy, and prematurity are not consistently measured or available in a comparable format across all datasets used here.
+
+### What the Design Cannot Establish
+
+This case-only design can only compare proportions of maternal obesity within SUID cases grouped by postconceptional age. It cannot:
+- Estimate incidence rates.
+- Directly establish causation.
+- Provide population-level prevalence or risk estimates due to lack of denominator data.
+
+### Prior Art
+The manuscript claims closest to this idea include:
+- **SUID_manuscript_v9_clean.C10:** The analysis excludes a small number of deaths at the extremes of the PCA distribution, which is relevant but does not address the specific question about maternal obesity and critical developmental periods.
+  
+- **bedsharing_ms_v7.C3-C5:** These findings explore how bed sharing, smoking, and prematurity relate to SUID incidence across different postconceptional age windows. However, they do not focus on maternal obesity.
+
+The closest prior work is **suid_literature_abstracts.C10**, which states that maternal obesity increases the risk of SUID but does not specify developmental periods where this effect may be more pronounced.
+
+### Verdict
+**These data can support a case-only analysis to explore if there are specific postconceptional age windows during which infants with maternal obesity have an increased risk for SUID. However, due to the lack of denominator or population reference sources, it cannot establish incidence rates or provide comparative risk estimates in a broader context.**
+
+### Missing Elements
+- A denominator source (like cdc_natl15) that provides live birth counts could help establish incidence but is not essential for this case-only comparison.
+- Detailed information on maternal BMI and other potential confounders in both cases and population reference would be necessary to fully address the research question.

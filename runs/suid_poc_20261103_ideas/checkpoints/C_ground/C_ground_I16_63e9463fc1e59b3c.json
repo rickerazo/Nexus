@@ -1,0 +1,40 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The incidence of sudden unexpected infant death (SUID) differs among infants born with high, moderate, and low pregnancy weight gain categories.",
+ "rationale": "This design can estimate exposure-specific rates for SUID by combining cases from ncfrp_v51 with pregnancy weight gain prevalence data from PRAMS and live birth denominators stratified by these categories in cdc_natl15. The sources allow estimation of SUID incidence among infants born to mothers with different pregnancy weight gain categories, even though there are potential biases that need careful consideration.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and bedsharing_ms_v7.C8-C25 examine associations between various risk factors like maternal smoking or prematurity but do not address the relationship between pregnancy weight gain and SUID incidence, leaving this question open.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C8",
+  "bedsharing_ms_v7.C25"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2015,
+ "period_end": 2019,
+ "required_concepts": [
+  "SUID cases",
+  "Pregnancy weight gain categories",
+  "Live births stratified by pregnancy weight gain"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4momwtgnunk",
+  "ncfrp_v51:INF4momwtgn",
+  "prams_p8_arf:MOMLBS",
+  "prams_p8_arf:PG8_NAUS",
+  "prams_p7_arf:MOMLBS",
+  "cdc_natl15:F_PWGT",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design can only establish associations; it cannot determine causality due to its observational nature. The comparison is limited to a case series without a matched control group, which restricts causal inference."
+}

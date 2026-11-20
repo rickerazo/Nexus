@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers reporting Medicaid coverage differs between PRAMS Phase 7 and Phase 8.",
+ "rationale": "This design compares how insurance coverage documentation has changed over time, focusing on the differences in proportions reported by mothers in PRAMS Phase 7 (2012-2015) versus Phase 8 (2016-2021).",
+ "prior_art": "The SUID manuscript claims C6 and C9 discuss maternal smoking as a risk factor but do not address changes in insurance coverage documentation over time, leaving this question open.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C6",
+  "SUID_manuscript_v9_clean.C9"
+ ],
+ "case_sources": [],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2021,
+ "required_concepts": [
+  "Insurance Coverage Documentation"
+ ],
+ "variables": [
+  "prams_p7_arf:PP_MEDIC",
+  "prams_p8_arf:PP_MEDIC_RAW",
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence or risk, only proportions among cases."
+}

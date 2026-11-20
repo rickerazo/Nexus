@@ -1,0 +1,105 @@
+### Design
+
+**Question:** What is the prevalence of maternal health problems among mothers of SUID cases compared to the general population of live-born infants?
+
+**Design Type:** Case-population comparison. This design compares how common an exposure (maternal health problems) is among SUID cases versus its weighted prevalence in the general population.
+
+### Sources by Role
+
+- **Case Series:**
+  - **Source:** NCFRP_v51
+  - **Reasoning:** This source records child deaths reviewed by fatality review teams, including those classified as Sudden Unexpected Infant Death (SUID).
+  
+- **Population Reference:**
+  - **Source:** PRAMS_p8_arf
+  - **Reasoning:** This survey collects data from a sample of mothers after the birth of their live-born infants and is weighted to represent the general population.
+  
+- **Denominator:**
+  - **Sources:** CDC_linkco15, CDC_natl15 (optional)
+  - **Reasoning:** These sources provide denominators for US live births in 2015 but are not essential if we focus on a group-level comparison of proportions.
+
+### Period
+
+**Period Range:** The common period is 2008-2019, as NCFRP_v51 covers deaths from 2004 to 2019, and PRAMS_p8_arf surveys mothers in this range (Phase 8).
+
+### Variables
+
+#### Maternal Health Problems:
+
+**Case Series:**
+- **ncfrp_v51:** 
+  - INFmedical: During pregnancy did mother have medical complications/infections
+  - INF4medical: During pregnancy did mother have medical complications/infections
+  - INF3prevmedical: Did mother have medical complications in previous pregnancies
+  - INF3medical: During pregnancy did mother have medical complications/infections
+
+**Population Reference:**
+- **prams_p8_arf:**
+  - PG8_SC: Health prob during preg -- Sickle Cell
+  - PG8_NAUS: Health prob during preg -- Nausea/vomiting/dehydration
+  - PG8_UTI: Health prob during preg -- Kidney/bladder infection
+  - PG8_SEIZ: Health prob during preg -- Epilepsy
+  - PG8_PRET: Health prob during preg -- Labor pains
+  - MOM_BMIG_QX_REV: VAR: MOM BMI GROUPED FROM QX REVISED
+  - PG8_ASMA: Health prob during preg -- Asthma
+  - MH_PGDX8: Health prob during preg -- Depression
+  - MM_NOMD: BC: No medical risk factors?
+  
+#### Missing Answers:
+- **Case Series:** Unknown is coded separately, never exposed.
+- **Population Reference:** Don't know (7) and skip (.S) are treated as unknowns.
+
+### Biases
+
+1. **Selection Bias:**
+   - **Case Source:** NCFRP_v51 may miss some SUID cases due to incomplete participation of fatality review teams, potentially underestimating the exposure among cases.
+   - **Population Reference:** PRAMS_p8_arf excludes women who do not participate in surveys after birth; this could bias toward healthier mothers.
+
+2. **Information Bias:**
+   - **Case Source:** Fatality review teams may miss some medical complications that occurred during pregnancy due to incomplete data collection or reporting issues.
+   - **Population Reference:** Self-reported health problems might be underreported due to recall bias, social desirability bias, or lack of knowledge.
+
+3. **Confounding:**
+   - Potential confounders include socioeconomic status, urban/rural location (unavailable in case series), maternal age, and other demographic factors that are not fully accounted for.
+
+### What the Design Cannot Establish
+
+This design can compare proportions but cannot establish causation or incidence rates because it lacks a proper denominator source to calculate rates among SUID cases. Additionally, it does not account for confounding variables comprehensively.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C10:** The analysis excludes extremely and very preterm infants who died early in postnatal life.
+- **bedsharing_ms_v7.C23:** Inner ear dysfunction is relevant to SIDS/SUID.
+- **suid_literature_abstracts.C10, C11:** Maternal obesity and smoking are risk factors for SUID.
+
+These claims do not directly address maternal health problems among mothers of SUID cases compared to the general population. The current idea remains open as it assesses a specific aspect (maternal health issues) that prior work has not extensively covered.
+
+### Verdict
+
+The data can answer whether maternal health problems are more common among mothers of SUID cases compared to the general population, but cannot estimate incidence rates or establish causation due to missing denominators and potential biases. The design is feasible with the given sources but must acknowledge limitations in causal inference and confounding variables.
+
+### Final Design
+
+**Question Restated:**
+What is the prevalence of maternal health problems among mothers of SUID cases compared to the general population of live-born infants?
+
+**Design Type:** Case-population comparison.
+
+**Sources by Role:**
+- **Case Series:** NCFRP_v51
+- **Population Reference:** PRAMS_p8_arf
+
+**Period:** 2008-2019
+
+**Variables:**
+- Maternal health problems (INFmedical, INF4medical, INF3prevmedical, INF3medical in NCFRP; PG8_SC, PG8_NAUS, PG8_UTI, PG8_SEIZ, PG8_PRET, MOM_BMIG_QX_REV, PG8_ASMA, MH_PGDX8, MM_NOMD in PRAMS)
+
+**Biases:**
+- Selection bias due to incomplete case ascertainment and survey non-response.
+- Information bias from incomplete reporting of maternal health issues.
+
+**Cannot Establish:** Incidence rates or causation. Confounding variables like socioeconomic status and urban/rural location are not fully accounted for.
+
+### Conclusion
+The design can compare the prevalence of maternal health problems among SUID cases versus live-born infants but cannot estimate incidence rates or establish causation due to missing denominators and potential confounders.

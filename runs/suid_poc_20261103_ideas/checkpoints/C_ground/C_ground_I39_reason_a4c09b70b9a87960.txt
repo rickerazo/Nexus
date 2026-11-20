@@ -1,0 +1,72 @@
+### Design
+
+**Question:**
+Is there a higher prevalence of family circumstances contributing to stress and instability in families where SUID occurs compared to those with other child health issues?
+
+**Design Type:**
+Case-case comparison. The design compares cases categorized as SUID (from ncfrp_v51) against cases labeled as low birth weight or preterm births (from cdc_linkco15).
+
+### Sources by Role
+
+- **Case Series:** 
+  - **ncfrp_v51:** This source captures detailed reviews of child deaths, including those categorized as SUID. It provides comprehensive data on family circumstances and potential contributing factors.
+  
+- **Population Reference:**
+  - **cdc_linkco15:** While cdc_linkco15 typically serves as a denominator source for estimating incidence rates, it can also provide cases of low birth weight or preterm births for comparison.
+
+### Period
+
+**Years Needed:**
+The manuscript uses data from 2014-2019. Therefore, the years required are:
+- **ncfrp_v51:** 2014-2019
+- **cdc_linkco15:** 2014-2019
+
+### Variables
+
+**Concepts:**
+- Family circumstances contributing to stress and instability.
+- Low birth weight or preterm births.
+
+**Variables:**
+
+#### Family Circumstances Contributing to Stress and Instability (ncfrp_v51)
+- **INFisssupport:** If yes, prenatal issues - Lack of family/social support
+- **CIR2socpregnancy:** Life stressors - Social/economic - Pregnancy
+- **ISSfamtransillness:** Major illness/death in family
+- **ISShomevisit:** Lack of home visiting (eligible)
+- **ISSfamunwant:** Unwanted pregnancy
+- **INFexpipv:** During pregnancy did mother experience intimate partner violence
+
+#### Low Birth Weight or Preterm Births (cdc_linkco15)
+- **RF_PPB: Previous Preterm Birth**
+- **BWTIMP: Birth Weight Imputed Flag**
+
+### Biases
+
+**Selection Bias:**
+- **ncfrp_v51:** The data is from fatality review teams, which may not be representative of the general population. Participation varies over time and across jurisdictions.
+- **cdc_linkco15:** This source includes all live births but does not include detailed information on families.
+
+**Information Bias:**
+- **ncfrp_v51:** Detailed review data is based on interviews with family members, which may be subject to reporting biases or incomplete information.
+- **cdc_linkco15:** Variables related to low birth weight and preterm births are derived from birth certificates, which might not capture detailed social circumstances.
+
+**Confounding:**
+- Confounders such as maternal smoking, socioeconomic status, and prenatal care quality could influence both SUID risk and low birth weight/preterm birth risk. These confounders need to be accounted for in the analysis.
+
+### What the Design Cannot Establish
+
+The design can only compare proportions or odds between cases of SUID and other poor health outcomes (low birth weight or preterm births). It cannot establish incidence rates, causal relationships, or population-level risks without a denominator source. Additionally, it may not fully capture the nuanced social and environmental factors contributing to family stress and instability.
+
+### Prior Art
+
+The manuscript claims do not address this specific comparison directly:
+- **SUID_manuscript_v9_clean.C14** suggests that socioeconomic and environmental stressors are important avenues for reducing SUID risk. However, it does not explicitly compare these factors between SUID cases and other poor health outcomes.
+- **bedsharing_ms_v7.C8** discusses the association of bed sharing with SUID incidence but does not address family circumstances or low birth weight/preterm births.
+
+### Verdict
+
+These sources can carry out a version of the question by comparing case data from ncfrp_v51 (SUID) against cases of low birth weight or preterm births in cdc_linkco15. However, due to the limitations in capturing detailed family circumstances and potential confounding factors, the results should be interpreted cautiously as they may not fully represent population-level trends.
+
+**Conclusion:**
+The data sources can support a case-case comparison between SUID cases (ncfrp_v51) and other poor health outcomes (low birth weight/preterm births; cdc_linkco15). However, further research is needed to account for confounding variables and capture comprehensive family circumstances.

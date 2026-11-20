@@ -1,0 +1,71 @@
+### Design and Question Restatement
+
+**Design:** Exposure-specific rates. Estimate outcome rates by exposure group using cases from a case series (numerator), exposure prevalence from a population reference source, and the population at risk from a denominator source.
+
+**Question Restated:**
+Does infant sleep environment quality influence the incidence of SUID among infants born prematurely?
+
+### Sources by Role
+
+- **Case Series:** cdc_linkco15
+  - **Reasoning:** It provides both cases (SUID) and denominators (live births), covering premature births in 2015 linked to their infant deaths.
+  
+- **Population Reference:** prams_p8_arf
+  - **Reasoning:** It contains the necessary information about sleep environment quality among mothers of live-born infants.
+
+- **Denominator:** cdc_natl15
+  - **Reasoning:** Provides population at risk data (all US live births in 2015).
+
+### Period
+
+**Required Years:**
+- The design needs data on SUID cases and exposure from the same period to ensure comparability. Since the case series uses data from 2015, we need corresponding exposure data from 2016 onwards (when PRAMS Phase 8 was active) for live births in 2015.
+
+### Variables
+
+- **Prematurity:**
+  - **cdc_linkco15:** RF_PPB (Previous Preterm Birth)
+  - **prams_p8_arf:** P_PRTERM, PREV_PRE
+  - **Note:** The PRAMS data will be used to validate the exposure prevalence in premature infants.
+
+- **Sleep Environment Quality:**
+  - **prams_p8_arf:**
+    - SLP_ROOM_RAW (Baby slept in room with mom)
+    - SLP2CRB_RAW, SLP_CRB8_RAW (Recommend sleep -- place in crib / bassinet / play yard, Baby slept -- in crib / bassinet / play yard)
+
+- **SUID Cases:**
+  - **cdc_linkco15:** UCODR130 (Infant Cause Recode), ILLB_R11 (Interval of Last Live Birth Recode)
+  
+### Biases
+
+**Selection Bias:**
+- The cdc_linkco15 and ncfrp_v51 case series may be affected by selection bias as they capture only cases reported to the registry.
+- PRAMS captures data from a subset of live births, potentially leading to non-representative exposure prevalence.
+
+**Information Bias:**
+- Measurement differences exist between sources:
+  - **Prematurity:** cdc_linkco15 uses obstetric estimates; prams_p8_arf relies on maternal report.
+  - **Sleep Environment Quality:** PRAMS captures mother-reported behaviors post-birth, which may differ from actual practices.
+  
+**Confounding:**
+- Confounders such as socioeconomic status (SES), maternal smoking, and other health factors are not consistently measured across all sources.
+
+### What the Design Cannot Establish
+
+The design can only estimate exposure-specific incidence rates. It cannot establish causation or provide detailed information on mechanisms linking sleep environment quality to SUID in premature infants due to observational nature of data sources.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C10:** Excludes extremely and very preterm infants, which aligns with the current design focusing on full-term and preterm infants.
+- **bedsharing_ms_v7.C3 - C16:** Discusses the association between sleep environment (e.g., bed-sharing) and SUID incidence but does not focus specifically on premature infants.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, the proposed design can estimate exposure-specific rates for SUID among prematurely born infants. However, due to selection bias in case series data and information bias from survey-based exposure measurements, it is essential to interpret results with caution. The study cannot establish causation or detailed mechanisms but can provide insights into associations between sleep environment quality and SUID incidence.
+
+### Additional Considerations
+
+- **Data Availability:** Requires PRAMS Phase 8 data for the year 2016 onwards (to cover live births in 2015) if not already available.
+- **Consistency Checks:** Ensure that exposure measures from PRAMS align with case series data on prematurity and SUID status.

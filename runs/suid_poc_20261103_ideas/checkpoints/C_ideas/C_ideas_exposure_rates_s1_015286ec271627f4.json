@@ -1,0 +1,117 @@
+{
+ "ideas": [
+  {
+   "question": "Does infant sleep environment quality predict the incidence of Sudden Unexpected Infant Death (SUID) among infants from different socioeconomic statuses?",
+   "comparison": "Infants with different sleep environments compared to their socio-economic status in terms of SUID rates.",
+   "why_open": "The relationship between sleep environment and SUID is well-established, but the interaction with socioeconomic factors remains understudied. This could help identify populations most at risk and inform targeted interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D200",
+    "D249",
+    "D281",
+    "D324"
+   ],
+   "data": "Use D200 (ncfrp_v51) for case identification, D249 (ncfrp_v51) for socioeconomic status and D281 (prams_p8_arf) for sleep environment details. The reference population uses D324 (prams_p7_arf) to assess the timing of pregnancy and socio-economic status."
+  },
+  {
+   "question": "How does maternal prepregnancy weight gain relate to Sudden Unexpected Infant Death (SUID) in infants born prematurely?",
+   "comparison": "Prematurely-born infants with varying levels of maternal pre-pregnancy weight gain compared to their risk of experiencing sudden unexpected infant death.",
+   "why_open": "The impact of maternal weight gain on premature birth outcomes is known, but its specific role in SUID among these babies has not been fully explored. This could help tailor prenatal care recommendations for high-risk pregnancies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D240",
+    "D322",
+    "D99",
+    "D256"
+   ],
+   "data": "Use D240 (ncfrp_v51) for maternal weight and care, D322 (prams_p7_arf) to identify preterm birth status, and D99 (ncfrp_v51) for delivery type. The reference population uses D256 (prams_p8_arf) to stratify by socio-economic factors."
+  },
+  {
+   "question": "Does hospital stay length after birth correlate with the risk of Sudden Unexpected Infant Death (SUID) in a population sample?",
+   "comparison": "Infants who had longer or shorter hospital stays compared to their incidence of sudden unexpected infant death.",
+   "why_open": "Hospitalization immediately post-birth is often an opportunity for early interventions, but its long-term effects on survival are not well understood. This could inform neonatal care protocols and discharge practices.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D246",
+    "D279",
+    "D90"
+   ],
+   "data": "Use D246 (ncfrp_v51) for infant health in last 72 hours, D279 (prams_p8_arf) to measure hospital stay length and D90 (ncfrp_v51) to assess maternal complications."
+  },
+  {
+   "question": "What is the incidence of Sudden Unexpected Infant Death (SUID) among infants born via cesarean delivery compared to vaginal delivery?",
+   "comparison": "Infants delivered by cesarean section versus those delivered vaginally in terms of their risk of experiencing sudden unexpected infant death.",
+   "why_open": "While mode of delivery's impact on neonatal morbidity is well studied, its role in SUID remains unclear. This could help clarify whether there are distinct risks associated with surgical vs natural birth methods.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D29",
+    "D306",
+    "D316",
+    "D99"
+   ],
+   "data": "Use D29 (ncfrp_v51) to identify mode of delivery, reference uses D306 and D316 from prams_p7_arf and D99 from ncfrp_v51."
+  },
+  {
+   "question": "Is there a difference in Sudden Unexpected Infant Death (SUID) rates among infants whose mothers received inadequate prenatal care compared to those who did?",
+   "comparison": "Infants born to mothers with insufficient prenatal visits versus adequate prenatal care in terms of their risk for sudden unexpected infant death.",
+   "why_open": "Prenatal care is crucial for early detection and intervention, but its role in preventing SUID remains uncertain. Identifying gaps can aid in developing targeted care programs for high-risk pregnancies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D243",
+    "D272",
+    "D90"
+   ],
+   "data": "Use D243 (ncfrp_v51) to identify prenatal care issues, reference uses D272 (prams_p8_arf) for healthcare visits during pregnancy and D90 (ncfrp_v51) to assess infant health conditions."
+  }
+ ]
+}

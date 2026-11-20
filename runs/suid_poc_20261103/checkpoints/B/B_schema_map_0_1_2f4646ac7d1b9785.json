@@ -1,0 +1,35 @@
+{
+ "mappings": [
+  {
+   "concept": "microglia activation",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC linked birth/infant death public-use file does not contain any variables related to microglia activation or Iba1 staining."
+  },
+  {
+   "concept": "cell death",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC linked birth/infant death public-use file does not contain any variables related to cell death or cleaved caspase 3 (CC3) staining."
+  },
+  {
+   "concept": "glutamatergic transmission",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC linked birth/infant death public-use file does not contain any variables related to glutamatergic transmission in the nucleus accumbens and amygdala."
+  },
+  {
+   "concept": "hypoglossal motor nucleus (XIIn)",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC linked birth/infant death public-use file does not contain any variables related to electrophysiological recordings from the hypoglossal motor nucleus (XIIn)."
+  }
+ ],
+ "source_summaries": {
+  "cdc_linkco15": "This data source contains information about births and infant deaths, including demographic details of mothers and infants, prenatal care, delivery characteristics, neonatal conditions, and causes of death. It does not include any variables related to cellular or molecular biology outcomes such as microglia activation, cell death, glutamatergic transmission, or electrophysiological recordings from specific brain regions."
+ }
+}

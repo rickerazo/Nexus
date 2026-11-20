@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "GIV1disillphysp",
+   "name": "Physical Disabilities",
+   "summary": "Specifies physical or orthopedic disabilities and sensory impairments."
+  },
+  {
+   "start": "GIV1drugabuse",
+   "name": "Substance Abuse History",
+   "summary": "Indicates caregiver's history of substance abuse."
+  },
+  {
+   "start": "GIV1dthabnum",
+   "name": "Prior Child Deaths",
+   "summary": "Records types and numbers of prior child deaths due to various causes."
+  },
+  {
+   "start": "GIV1educt",
+   "name": "Caregiver Background",
+   "summary": "Includes caregiver's education, employment status, language proficiency, ethnicity, immigration status, income level, and military service."
+  },
+  {
+   "start": "GIV1ipvno",
+   "name": "Violence History",
+   "summary": "Documents history of intimate partner violence involving the caregiver as perpetrator or victim."
+  },
+  {
+   "start": "GIV1malperp",
+   "name": "Child Maltreatment History",
+   "summary": "Indicates whether the caregiver has a history of child maltreatment as either a perpetrator or victim, specifying types of abuse and involvement with social services."
+  },
+  {
+   "start": "GIV2SocialServices",
+   "name": "Received Social Services",
+   "summary": "Identifies if the caregiver received various forms of social services support."
+  },
+  {
+   "start": "GIV2disillcogsp",
+   "name": "Cognitive and Mental Health Conditions",
+   "summary": "Specifies cognitive, intellectual, mental health, and substance abuse conditions."
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "domains": [
+  {
+   "start": "IEMincarcerate",
+   "name": "Parental Incarceration Status",
+   "summary": "Incarceration status of the mother and father."
+  },
+  {
+   "start": "IEMinsuff",
+   "name": "Pregnancy Characteristics",
+   "summary": "Whether pregnancy was characterized by placental insufficiency, interpregnancy interval, and other complications."
+  },
+  {
+   "start": "IEMmedsaddict",
+   "name": "Medication Use During Pregnancy",
+   "summary": "Use of various medications and drugs during pregnancy for conditions such as addiction treatment, epilepsy, allergies, arthritis, asthma, cholesterol management, delivery, diabetes, flu prevention, hypertension, hypothyroidism, infections, nausea, preterm labor, psychiatric issues, sleep disorders, polycystic ovarian disease, and more."
+  },
+  {
+   "start": "IEMmomrace",
+   "name": "Maternal Characteristics",
+   "summary": "Race/ethnicity of the mother, placenta location, prolonged premature rupture of membranes, prenatal BMI, previous complications/anomalies, fetal demise history, preterm labor count, delivery type (routine or emergency), sexually transmitted diseases, urinary tract infections, gestational weight gain, and yeast infection."
+  },
+  {
+   "start": "BITacccage",
+   "name": "Animal Access to Child",
+   "summary": "Whether an animal was caged or leashed, if the child had access to the animal, if the animal escaped, type of animal involved, history of biting/attacking, and whether the child provoked the animal."
+  },
+  {
+   "start": "EXPabandon",
+   "name": "Exposure Circumstances",
+   "summary": "Circumstances such as abandonment, ambient temperature, illegal border crossing, other circumstances, unknown circumstances, appropriate clothing, condition of exposure, hours exposed, left in car or room, injured outdoors, lost outdoors, and submerged in water."
+  },
+  {
+   "start": "ACTabandon",
+   "name": "Child Neglect and Abuse",
+   "summary": "Details about child neglect (e.g., abandonment), type of physical abuse (e.g., abusive head trauma, beating/kicking), substance abuse history causing harm, prior arrests, criminal history, disability or chronic illness, impairment at the time of incident, legal outcomes, intimate partner violence history, military service status, and history as a perpetrator/victim of child maltreatment."
+  }
+ ]
+}

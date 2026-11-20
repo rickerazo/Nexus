@@ -1,0 +1,41 @@
+│ /Users/rerazo/Projects/nexus/src/mmf/components/b_schema_map.py:152 in       │
+│ map_schema                                                                   │
+│                                                                              │
+│   149 │   │   │   sent = concepts[bi : bi + batch]                           │
+│   150 │   │   │   stage = f"B_schema_map_{gi}_{bi // batch}"                 │
+│   151 │   │   │   user = prompt.render(concepts=concepts_text(sent),         │
+│       sources=sources_text(group))                                           │
+│ ❱ 152 │   │   │   obj, rec = generate(                                       │
+│   153 │   │   │   │   client,                                                │
+│   154 │   │   │   │   prompt,                                                │
+│   155 │   │   │   │   user,                                                  │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/llm/structured.py:131 in generate       │
+│                                                                              │
+│   128 │   │   )                                                              │
+│   129 │                                                                      │
+│   130 │   record = _record(stage, prompt, client, seed, temperature,         │
+│       max_retries + 1, False, log_path)                                      │
+│ ❱ 131 │   raise GenerationFailedError(stage, problems, max_retries + 1,      │
+│       record)                                                                │
+│   132                                                                        │
+│   133                                                                        │
+│   134 def _log_path(log_dir: Path | None, stage: str) -> Path | None:        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+GenerationFailedError: B_schema_map_3_0: no valid output after 4 attempts; last 
+problems: ["mapping for 'Sudden unexpected infant death (SUID)': 'INF3syphilis, 
+INF4hcthbresult, INF3strep, INF3groupbstrep' is not a documented variable in 
+ncfrp_v51", "mapping for 'Maternal smoking during pregnancy': 'INF3smanytime, 
+INF3smbefpregcigunk, INF3firsttricigunk, INF3sectricigunk, INF3thirdtricigunk' 
+is not a documented variable in ncfrp_v51", "mapping for 'Preterm birth': 
+'INF3gestage, INF3iugr' is not a documented variable in ncfrp_v51", "mapping for
+'Breastfeeding status at discharge': 'INF3breastatdeath, INF3brmilk' is not a 
+documented variable in ncfrp_v51", "mapping for 'SUID': 'INF3syphilis, 
+INF4hcthbresult, INF3strep, INF3groupbstrep' is not a documented variable in 
+ncfrp_v51", "mapping for 'chronological age': 'INFdayslive, INFageinyears' is 
+not a documented variable in ncfrp_v51", "mapping for 'maternal smoking status 
+(smoking, non-smoking)': 'INF3smanytime, INF3smbefpregcigunk, 
+INF3firsttricigunk, INF3sectricigunk, INF3thirdtricigunk' is not a documented 
+variable in ncfrp_v51", "mapping for 'Age of death in SUID cases': 'INFdayslive,
+INFageinyears' is not a documented variable in ncfrp_v51"]
+run failed before review B (rc=1); see runs/suid_poc_20261103.log

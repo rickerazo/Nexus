@@ -1,0 +1,29 @@
+{
+ "groundable": false,
+ "why_not": "The period 2008-2019 for the case series ncfrp_v51 does not fully overlap with prams_p8_arf's coverage of 2016-2021. The population reference source is only available from 2016 onwards, limiting direct comparison.",
+ "statement": "",
+ "rationale": "The design aims to examine trends in SUID cases involving domestic violence or abuse between 2008 and 2019 using the case series ncfrp_v51. However, the population reference source prams_p8_arf only covers from 2016 onwards, making it impossible to establish a valid comparison period.",
+ "prior_art": "The closest tested work is suid_literature_abstracts.C10, which focuses on maternal smoking during pregnancy and its association with SUID. However, this study does not address trends in domestic violence or abuse over time, leaving the question open.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "domestic violence or abuse"
+ ],
+ "variables": [
+  "ncfrp_v51:INFipvvic",
+  "prams_p8_arf:PAD6HUS",
+  "prams_p8_arf:PAB_XHUS",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "Incidence rates of SUID cases involving domestic violence or abuse cannot be estimated due to lack of denominator. Causal relationships and population-level prevalence cannot be established."
+}

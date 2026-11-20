@@ -1,0 +1,92 @@
+{
+ "ideas": [
+  {
+   "question": "How does the prevalence of hospital overnight stays among infants with SUID differ from those who survive past their first year?",
+   "comparison": "Cases in ncfrp_v51 (SUID) compared to cases in cdc_linkco15 (surviving infants) in 2015. The comparison examines whether infants that experienced SUID were more likely to have had hospital overnight stays than those who survived the first year of life.",
+   "why_open": "This question explores whether hospital admissions shortly after birth are associated with an increased risk for SUID compared to non-fatal cases. Understanding this could identify critical early warning signs or conditions warranting closer monitoring post-discharge.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D82",
+    "D279"
+   ],
+   "data": "For SUID cases in ncfrp_v51, use domain D82 (Hospital Overnight Stay) to assess whether hospital admissions after birth are more frequent among infants who later experience SUID compared to a reference group of surviving infants from the denominator source cdc_linkco15. The population reference prams_p8_arf can provide prevalence data on overnight stays using its domain D279 (Hospital Stay Length)."
+  },
+  {
+   "question": "Is the incidence of prenatal complications higher among infants who experience SUID compared to those with other fetal or neonatal conditions?",
+   "comparison": "Cases in ncfrp_v51 categorized as SUID are compared against cases in ncfrp_v51 categorized as congenital anomalies, birth injuries, respiratory distress syndrome, or prematurity in 2014-2019.",
+   "why_open": "This investigation aims to determine if specific prenatal complications, such as hypertension, diabetes, and infections, contribute uniquely to SUID risk compared to other adverse outcomes. It could highlight critical pathways for intervention.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D68",
+    "D90",
+    "D238"
+   ],
+   "data": "For SUID cases in ncfrp_v51, use domain D68 (Medical Complications) to identify various prenatal complications. Compare the incidence of these complications with those found among infants who had congenital anomalies, birth injuries, respiratory distress syndrome, or prematurity, also recorded in ncfrp_v51 using domains D90 (Fetal Movement), and D238 (Health History)."
+  },
+  {
+   "question": "Does infant sleep environment influence the risk of SUID compared to other causes of death among infants?",
+   "comparison": "Cases in ncfrp_v51 categorized as SUID are compared against cases in ncfrp_v51 categorized as accidental deaths, homicide, or undetermined causes in 2014-2019.",
+   "why_open": "This study seeks to understand whether specific aspects of the infant sleep environment, such as sleeping position and shared surfaces, have a unique impact on SUID risk compared to other types of death. Identifying these factors could provide targeted safety recommendations for reducing SUID incidents.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D102",
+    "D136"
+   ],
+   "data": "Use domain D102 (Infant Sleep Environment) in ncfrp_v51 to assess sleep arrangements among SUID cases. Compare this with data on sleeping environments from infants who died of other causes, such as accidental deaths or homicides, also recorded in the same source using domain D136 (Incident Event Deaths)."
+  },
+  {
+   "question": "Is there a higher prevalence of family circumstances contributing to stress and instability in families where SUID occurs compared to those with other child health issues?",
+   "comparison": "Cases in ncfrp_v51 categorized as SUID are compared against cases in cdc_linkco15 labeled as low birth weight or preterm births in 2014-2019.",
+   "why_open": "This question explores whether familial stressors and instability uniquely contribute to an increased risk of SUID relative to other poor health outcomes. Identifying specific family issues may help target preventive measures to support at-risk families.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "domains": [
+    "D237",
+    "D80"
+   ],
+   "data": "For SUID cases in ncfrp_v51, use domain D237 (Family Circumstances) to assess contributing factors such as unemployment or frequent moves. Compare this data with families where infants were born preterm or had low birth weight from cdc_linkco15 using domain D80 (Pregnancy Complications)."
+  },
+  {
+   "question": "Do mothers of SUID cases report more instances of inadequate healthcare visits during pregnancy compared to those whose infants survived?",
+   "comparison": "Cases in ncfrp_v51 categorized as SUID are compared against surviving infants from cdc_linkco15 or denominator source for 2014-2019.",
+   "why_open": "This question investigates whether mothers of SUID cases had fewer healthcare visits during pregnancy, possibly due to barriers such as lack of insurance or access. Identifying gaps in prenatal care could improve preventive strategies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D272",
+    "D67"
+   ],
+   "data": "Use domain D272 (Healthcare Visits During Pregnancy) in prams_p8_arf to assess the frequency of healthcare visits for SUID cases recorded in ncfrp_v51. Compare this with data from surviving infants or denominator sources using similar measures, such as pregnancy history domains like D67 (Pregnancy History) in ncfrp_v51."
+  }
+ ]
+}

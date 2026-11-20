@@ -1,0 +1,58 @@
+### Design
+
+**Design**: Case-case comparison. Compare the cases of SUID with other causes of infant death recorded in the same case series to find what is specific to SUID rather than common to all events.
+
+**Restated Question**: How does hospital overnight stay after delivery relate specifically to sudden unexpected infant death (SUID) compared to other causes of infant death?
+
+### Sources by Role
+
+- **Case Series**: ncfrp_v51
+  - **Reason**: The NFR-CRS case series captures detailed information on child deaths reviewed by fatality review teams, including SUID cases.
+  
+- **Population Reference**: prams_p8_arf
+  - **Reason**: PRAMS is a weighted survey of mothers after live births and can provide population-level prevalence estimates for hospital stays.
+
+### Period
+
+**Years Needed**: 2016-2021 (as specified by the candidate idea)
+
+**Additional Years to Acquire**: None required as these years are already held in both ncfrp_v51 and prams_p8_arf.
+
+### Variables
+
+#### Hospital Overnight Stay After Delivery
+- **Case Series Source (ncfrp_v51)**: 
+  - INF4hosprtnoldunk: If yes, hospital overnight - how old was infant - Unknown.
+  - INF4hosprtnnumunk: If yes, hospital overnight - number of nights - Unknown.
+  - INF4hosprtnnum: If yes, hospital overnight - number of nights.
+
+- **Population Reference Source (prams_p8_arf)**:
+  - LTH_HOSP: Hosp baby stay -- length of time [1=< 1 DAY; 2=1-2 DAYS; 3=3-5 DAYS …]
+
+#### Other Causes of Infant Death
+- **Case Series Source (ncfrp_v51)**: 
+  - CIRdeathsleepenv: Was the death related to sleeping or the sleep environment? (only asked if child is less than 5 years old)
+  
+### Biases
+
+**Selection Bias**: The NFR-CRS covers only deaths reviewed by participating fatality review teams, which may not be representative of all infant deaths. The PRAMS survey also involves a weighted sample and does not capture all live births or their outcomes.
+
+**Information Bias**: Reporting on hospital stays can differ between sources due to timing (e.g., post-delivery surveys vs. retrospective case reviews). Missing data in both sources must be accounted for appropriately.
+
+**Confounding**: Potential confounders include factors like maternal health, socioeconomic status, and environmental exposures that are not consistently measured or reported across sources.
+
+### What the Design Cannot Establish
+
+The design can only compare proportions of hospital stays between SUID cases and other causes of infant death within the same case series. It cannot establish causation due to its observational nature. Additionally, it does not provide denominators for incidence rates, so relative risks or odds ratios cannot be calculated.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C1**: The manuscript focuses on sex differences and temporal trends in SUID but does not address hospital stays.
+  
+- **bedsharing_ms_v7.C3 - C5**: These findings relate to bed sharing, smoking, and prematurity associated with SUID incidence over specific developmental windows. They do not cover hospital stays.
+
+### Verdict
+
+The proposed sources can be used to conduct a case-case comparison of hospital overnight stays between SUID cases and other infant deaths within the same case series. However, the design cannot establish causation or provide denominators for rates, limiting its ability to quantify risk or incidence. The study is feasible given the available data but should be interpreted with these limitations in mind.
+
+**Verdict**: Feasible, but limited to proportions and comparisons without establishing causation or providing incidence estimates.

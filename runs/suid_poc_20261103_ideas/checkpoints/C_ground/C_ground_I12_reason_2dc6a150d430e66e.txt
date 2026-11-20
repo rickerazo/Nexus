@@ -1,0 +1,75 @@
+### Design
+
+**Restated Question:** What is the difference in prevalence of previous child deaths between SUID cases and live births from PRAMS Phase 8?
+
+**Design Type:**
+- **Case-population comparison.** This design compares how common an exposure (previous child deaths) is among SUID cases (case series) with its weighted prevalence in the general population of live births (population reference).
+
+### Sources by Role
+
+1. **Case Series:** NCFRP V5.1
+   - **Purpose:** To provide information on SUID cases, including whether prior child deaths occurred.
+   - **Limitation:** Cannot supply denominators for incidence calculations due to its case-only nature and randomized state codes.
+
+2. **Population Reference:** PRAMS Phase 8 ARF
+   - **Purpose:** To measure the prevalence of previous child deaths among live births from a weighted survey, providing general population exposure estimates.
+   - **Limitation:** Does not include infant death information; only live birth data.
+
+### Period
+
+**Period:**
+- **2016-2021**
+
+This period is selected because PRAMS Phase 8 covers the years 2016-2021, and NCFRP V5.1 includes SUID cases from 2008-2019. The overlapping timeframe for analysis would be 2016-2019.
+
+### Variables
+
+**Concept:** Previous Child Deaths
+- **NCFRP V5.1:**
+  - `RES1priordeath`: Person 1 has prior child deaths.
+  - `GIV1dthneglct`, `BIO1dthsids`, etc.: Specific types of previous child death (e.g., SIDS, neglect).
+  
+- **PRAMS Phase 8 ARF:**
+  - No direct variable for "previous child deaths." However, the manuscript suggests using PRAMS data on other adverse pregnancy outcomes and prior live births to infer a proxy measure.
+  - `PRE_LB_NAPHSIS`: Number of previous live births.
+  - `P_PRTERM`: Previous preterm births.
+
+### Biases
+
+1. **Selection Bias:**
+   - NCFRP V5.1 covers child deaths reviewed by participating fatality review teams, which may not be a representative sample of all SUID cases in the U.S. 
+   - PRAMS Phase 8 is a weighted survey of mothers of live births from birth certificates and does not capture infant mortality.
+
+2. **Information Bias:**
+   - NCFRP V5.1 relies on retrospective review by fatality review teams, which may introduce recall bias.
+   - PRAMS Phase 8 collects data through surveys with potential reporting biases related to social desirability or lack of detailed knowledge about previous live births.
+
+3. **Confounding:**
+   - Confounders such as maternal smoking, socioeconomic status, and prenatal care are not directly measured in the same manner across both datasets.
+   - The randomized state codes in NCFRP V5.1 prevent linking to PRAMS for individual-level matching, thus confounding variables cannot be controlled.
+
+### What the Design Cannot Establish
+
+- **Causation:** This design can only establish associations between previous child deaths and SUID cases compared to live births; it does not establish causality.
+- **Incidence Rates:** Without a denominator source that provides both numerator (cases) and denominator (at-risk population), incidence rates cannot be calculated.
+
+### Prior Art
+
+The manuscripts do not directly address the question of whether prior child deaths are associated with SUID risk. The closest claims relate to maternal smoking, prematurity, and environmental factors, but none specifically investigate previous family infant mortality as a risk factor for SUID.
+
+- **SUID Manuscripts:** Focus on temporal patterns (PCA-aligned incidence) and exposures like maternal smoking and bed sharing.
+- **Bedsharing Manuscript:** Explores the timing of associations between bed sharing, smoking, and prematurity with SUID but does not consider previous child deaths as a risk factor.
+
+### Verdict
+
+**The data can answer a version of the question.**
+
+However, due to the lack of direct measurement for "previous child deaths" in PRAMS Phase 8, an indirect approach using proxy variables (like prior live births and adverse pregnancy outcomes) would be necessary. This introduces uncertainty about whether these proxies accurately reflect previous child deaths.
+
+### Recommendations
+
+1. **Proxy Variables:** Use PRAMS data on prior live births and other adverse pregnancy outcomes as a proxy for measuring exposure to "previous child deaths."
+2. **Limitations Acknowledgment:** Clearly acknowledge the limitations in using indirect measures.
+3. **Further Data Collection:** Consider collecting additional data on previous infant mortality from PRAMS or integrating it with other datasets if possible.
+
+By employing these strategies, the study can provide insights into whether families with prior child deaths exhibit higher prevalence of SUID risk factors compared to those without such histories, while recognizing the inherent limitations in proxy measures.

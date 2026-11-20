@@ -1,0 +1,81 @@
+### Design
+
+**Restated Question:** 
+Is there a difference in pre-pregnancy health checks between mothers of Sudden Unexpected Infant Death (SUID) cases and live births?
+
+**Design:**
+This is a measurement comparison design. It aims to compare the concept of "pre-pregnancy health checks" as recorded in two different sources: a case series (ncfrp_v51) and a population reference (PRAMS Phase 8 and PRAMS Phase 7).
+
+### Sources by Role
+
+- **Case Series:** 
+  - ncfrp_v51
+  - Reason: This source includes detailed information about the circumstances surrounding infant deaths reviewed by fatality review teams, including pre-pregnancy health checks.
+
+- **Population Reference:**
+  - prams_p8_arf, prams_p7_arf
+  - Reason: These sources include data from a population-based survey of mothers shortly after giving birth, which can be used to estimate the prevalence of various behaviors and conditions among live births.
+
+### Period
+
+**Period:** 
+2016-2021 (PRAMS Phase 8) and 2012-2015 (PRAMS Phase 7)
+
+### Variables
+
+#### Pre-pregnancy Health Checks
+- **ncfrp_v51:**
+  - ISSprechronicdiseasebef: Chronic disease control education before pregnancy.
+  - MEDnotpreg: Mother didn't think she was pregnant.
+  - INF3prevmedical: Medical complications in previous pregnancies.
+
+- **PRAMS Phase 8 and PRAMS Phase 7:**
+  - PRE_HLTH_RAW: Improved health before pregnancy (from PRAMS).
+  - PRE_CKBP, PRE_CKD, PRE_DEPR, PRE_DDS, PRE_HIST, PRE_RX, PRE_EXER, PRE_DIET: Pre-pregnancy checks for various conditions and behaviors.
+
+**Measurement Differences:**
+- The ncfrp_v51 data focuses on specific health complications during pregnancy and pre-pregnancy care issues.
+- PRAMS surveys capture a broader range of behaviors and conditions before conception, including whether mothers were advised to improve their health prior to pregnancy.
+
+### Biases
+
+#### Selection Bias:
+- **Case Series:** 
+  - The ncfrp_v51 data only includes reviewed infant deaths; it does not include all SUID cases or live births.
+- **Population Reference:**
+  - PRAMS surveys are conducted in a subset of states and may not be representative of the entire U.S. population.
+
+#### Information Bias:
+- **Case Series:** 
+  - ncfrp_v51 relies on post-hoc reports from review teams, which might differ from pre-pregnancy records.
+- **Population Reference:**
+  - PRAMS data is collected through surveys and may be subject to recall bias or underreporting of behaviors.
+
+#### Confounding:
+- Factors such as socioeconomic status, access to healthcare, and prenatal care quality can confound the association between pre-pregnancy health checks and SUID incidence. These factors are not fully accounted for in the available data sources.
+
+### What the Design Cannot Establish
+The design cannot establish a causal relationship between pre-pregnancy health checks and SUID incidence due to its observational nature. It also lacks detailed information on potential confounders such as socioeconomic status, healthcare access, and other maternal behaviors.
+
+### Prior Art
+
+- **Manuscript Claims:**
+  - The bedsharing_ms_v7 manuscript (C8) mentions that bed sharing was recorded for a high proportion of SUID cases.
+  - suid_literature_abstracts.C10 to C12 discuss the risk factors such as maternal smoking and BMI, but do not directly address pre-pregnancy health checks.
+
+- **Why Open:**
+  The existing literature does not provide detailed comparisons between mothers of SUID cases and live births regarding specific pre-pregnancy health checks. This study aims to fill that gap by comparing how these concepts are recorded in different data sources.
+
+### Verdict
+
+**Can these data answer the question?**
+
+Yes, the available data can be used to compare pre-pregnancy health check behaviors between mothers of SUID cases and live births using the measurement comparison design. However, due to selection bias and information bias, the findings should be interpreted with caution and cannot establish causation.
+
+### Limitations
+- The case series (ncfrp_v51) is not representative of all SUID cases.
+- PRAMS surveys are conducted in a limited subset of states and may not generalize to the entire U.S. population.
+- The design lacks detailed information on potential confounders, such as socioeconomic status and healthcare access.
+
+### Conclusion
+The proposed study can be carried out using ncfrp_v51 for SUID cases and PRAMS Phase 8/7 for live births, but its findings should be interpreted with consideration of the biases inherent in these data sources.

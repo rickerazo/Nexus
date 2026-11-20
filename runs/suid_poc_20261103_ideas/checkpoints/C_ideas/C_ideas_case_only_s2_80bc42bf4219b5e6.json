@@ -1,0 +1,91 @@
+{
+ "ideas": [
+  {
+   "question": "Does the prevalence of maternal health problems vary among SUID cases based on postconceptional age?",
+   "comparison": "SUID cases are compared within subgroups defined by postconceptional age (PCA).",
+   "why_open": "The relationship between specific maternal health conditions and SUID risk at different developmental stages has not been fully explored, making this a novel avenue for identifying modifiable risk factors.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D68",
+    "D240"
+   ],
+   "data": "Use maternal health condition data (D68) from ncfrp_v51 to explore its prevalence across subgroups defined by postconceptional age (PCA, derived from D240)."
+  },
+  {
+   "question": "Is the presence of hospital overnight stays among SUID cases associated with gestational weight gain?",
+   "comparison": "SUID cases are compared within subgroups based on whether they had an overnight stay and by preterm birth status.",
+   "why_open": "Understanding if early or late postnatal issues correlate with in-hospital stays can provide insights into modifiable risk factors during the perinatal period.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D82",
+    "D240"
+   ],
+   "data": "Use hospital overnight stay data (D82) from ncfrp_v51 to assess its association with gestational weight gain patterns across different subgroups of SUID cases."
+  },
+  {
+   "question": "How does the incidence of infant health issues in the last 72 hours before death vary among SUID cases by preterm birth status?",
+   "comparison": "SUID cases are compared within subgroups based on their preterm birth status and whether they experienced any of the specified health issues.",
+   "why_open": "This analysis could reveal critical periods during which specific interventions might mitigate SUID risk, especially for infants born prematurely.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D246"
+   ],
+   "data": "Use infant health issues in the last 72 hours data (D246) from ncfrp_v51 to explore differences among SUID cases based on preterm birth status."
+  },
+  {
+   "question": "Do variations in maternal substance abuse history differ across PCA-defined developmental windows for SUID cases?",
+   "comparison": "SUID cases are compared within subgroups defined by postconceptional age (PCA) and their substance abuse histories.",
+   "why_open": "Identifying patterns of substance use at specific developmental stages could inform targeted prevention strategies during these critical periods.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D68"
+   ],
+   "data": "Use substance abuse history data (D68) from ncfrp_v51 to analyze its variation across different PCA-defined developmental windows."
+  },
+  {
+   "question": "Is the prevalence of infant sleep environment risk factors associated with preterm birth in SUID cases?",
+   "comparison": "SUID cases are compared within subgroups based on their preterm birth status and sleeping arrangements.",
+   "why_open": "Understanding if certain sleep environments pose a higher risk for preterm infants could lead to more tailored guidelines for reducing SUID risk.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D102"
+   ],
+   "data": "Use infant sleep environment data (D102) from ncfrp_v51 to assess its association with preterm birth status among SUID cases."
+  }
+ ]
+}

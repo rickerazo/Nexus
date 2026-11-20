@@ -1,0 +1,33 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases involving hospital overnight stays increased from 2012 to 2015 compared to health care utilization trends reported by mothers in PRAMS.",
+ "rationale": "This design assesses trends within the case series data and compares them with population reference data, but cannot establish incidence or causal relationships due to missing denominators and potential biases.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and bedsharing_ms_v7.C8, C11 focus on different aspects of SUID risk factors but do not address trends in hospital overnight stays. The question remains open as these studies lack the necessary data to assess postnatal care trends.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C8",
+  "bedsharing_ms_v7.C11"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2015,
+ "required_concepts": [
+  "Hospital Overnight Stay",
+  "Health Care Utilization"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn",
+  "ncfrp_v51:INF4infhospdays",
+  "prams_p7_arf:LTH_HOSP",
+  "prams_p7_arf:PNC_VST",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish incidence rates or causal relationships between hospital overnight stays and SUID risk due to missing denominators and potential biases."
+}

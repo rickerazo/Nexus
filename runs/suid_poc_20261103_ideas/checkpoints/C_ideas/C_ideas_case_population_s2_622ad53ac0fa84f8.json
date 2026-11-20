@@ -1,0 +1,89 @@
+{
+ "ideas": [
+  {
+   "question": "How does the prevalence of hospital overnight stays among SUID cases compare with that in the general population of live births?",
+   "comparison": "SUID cases (ncfrp_v51) vs. Live births from PRAMS Phase 8 (prams_p8_arf)",
+   "why_open": "This question explores whether infants who spend nights in the hospital after birth are at a higher risk for SUID compared to those who do not. If there is an elevated prevalence, it could indicate that specific conditions necessitating hospital stays might also predispose to sudden infant death.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82",
+    "D279"
+   ],
+   "data": "Case series uses ncfrp_v51: Hospital Overnight Stay (D82); Reference source uses prams_p8_arf: Hospital Stay Length (D279)."
+  },
+  {
+   "question": "What is the difference in prevalence of previous child deaths between SUID cases and the general population of live births?",
+   "comparison": "SUID cases (ncfrp_v51) vs. Live births from PRAMS Phase 8 (prams_p8_arf)",
+   "why_open": "This question aims to determine whether a history of family infant mortality could be an unrecognized risk factor for Sudden Unexpected Infant Death, indicating that such families might need more intensive monitoring or preventive care.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D120",
+    "D120"
+   ],
+   "data": "Both case series and reference source use ncfrp_v51: Prior Child Deaths (D120); PRAMS may not have this exact domain, but we can infer by asking about any previous infant deaths."
+  },
+  {
+   "question": "Is there a difference in the prevalence of maternal stressors between SUID cases and the general population of live births?",
+   "comparison": "SUID cases (ncfrp_v51) vs. Live births from PRAMS Phase 8 (prams_p8_arf)",
+   "why_open": "Exploring if mothers experiencing significant stress during pregnancy are at higher risk for having infants who die unexpectedly could lead to better support services and interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D100",
+    "D274"
+   ],
+   "data": "Case series uses ncfrp_v51: Maternal Stressors (D100); Reference source uses prams_p8_arf: Pre-Pregnancy Health Behaviors and Conditions, including maternal stress indicators."
+  },
+  {
+   "question": "How do the prevalence rates of pregnancy complications differ between SUID cases and live births in the general population?",
+   "comparison": "SUID cases (ncfrp_v51) vs. Live births from PRAMS Phase 8 (prams_p8_arf)",
+   "why_open": "Understanding if certain pregnancy-related health issues contribute to higher risk of SUID could provide critical insights for prenatal care and early interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D66",
+    "D274"
+   ],
+   "data": "Case series uses ncfrp_v51: Medical Complications (D66); Reference source uses prams_p8_arf: Pre-Pregnancy Health Behaviors and Conditions, including any health conditions present during pregnancy."
+  },
+  {
+   "question": "How does the rate of pre-pregnancy healthcare visits differ between SUID cases and live births in the general population?",
+   "comparison": "SUID cases (ncfrp_v51) vs. Live births from PRAMS Phase 8 (prams_p8_arf)",
+   "why_open": "This question evaluates whether access to health care before pregnancy is a protective factor against Sudden Unexpected Infant Death, indicating that better preconception care might reduce risks.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D274",
+    "D274"
+   ],
+   "data": "Both case series and reference source use prams_p8_arf: Pre-Pregnancy Health Behaviors and Conditions, including health care visits before pregnancy."
+  }
+ ]
+}

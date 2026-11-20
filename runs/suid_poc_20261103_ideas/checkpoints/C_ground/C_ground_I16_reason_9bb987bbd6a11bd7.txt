@@ -1,0 +1,82 @@
+### Design
+
+**Question Restated:** Estimate the incidence of sudden unexpected infant death (SUID) among infants born with different pregnancy weight gain categories.
+
+**Design Type:** Exposure-specific rates. This design compares exposure prevalence from a population reference source and live birth denominators stratified by pregnancy weight gain to estimate SUID incidence in each category.
+
+### Sources by Role
+
+- **Case Series:**
+  - ncfrp_v51 (NFR-CRS) for case identification of SUID.
+  
+- **Population Reference:**
+  - prams_p8_arf and prams_p7_arf (PRAMS ARF) to get the prevalence of pregnancy weight gain categories among live births.
+
+- **Denominator Source:**
+  - cdc_natl15 (CDC natality public-use file) for live birth denominators stratified by pregnancy weight gain.
+
+### Period
+
+**Years Needed:** 
+2015-2019 for ncfrp_v51, 2016-2021 and 2012-2015 for prams_p8_arf and prams_p7_arf, respectively. The manuscript uses 2008-2019 data from ncfrp_v51.
+
+### Variables
+
+**Pregnancy Weight Gain:**
+- **ncfrp_v51:** 
+  - INF4momwtgnunk (Mother's pregnancy weight gain or loss in pounds – Unknown)
+  - INF4momwtgn (Mother's pregnancy weight gain or loss in pounds)
+
+- **prams_p8_arf and prams_p7_arf:**
+  - MOMLBS (Maternal Weight Gain (LBS))
+  - PGWTGN8 (Preg weight gain) 
+  - PGWTGNU8_DK (Unit of preg weight gain)
+  - PGWTGN8_DK (Preg weight gain)
+
+**Live Birth Denominators:**
+- **cdc_natl15:**
+  - F_PWGT (Reporting Flag for Pre-pregnancy Weight)
+  - MOM_BMIG_QX_REV (VAR: MOM BMI GROUPED FROM QX REVISED)
+  - MOM_BMIG_BC (VAR: MOM BMI GROUPED FROM BC)
+
+### Biases
+
+**Selection Bias:**
+- ncfrp_v51 only includes cases reviewed by fatality review teams, which may not be representative of all SUID cases. The ramp-up in participation over time affects case counts but not incidence.
+  
+- PRAMS is a voluntary survey and may not capture the full live birth population, leading to potential selection bias.
+
+**Information Bias:**
+- Case series (ncfrp_v51) and denominator source (cdc_natl15) may have different reporting and measurement methods for pregnancy weight gain.
+  - ncfrp_v51 measures weight gain directly from case review.
+  - PRAMS surveys mothers a few months postpartum to estimate weight gain.
+
+**Confounding:**
+- Other factors like maternal smoking, preterm birth, etc., could confound the relationship between pregnancy weight gain and SUID incidence. These variables are not consistently measured across all sources or may differ in coding.
+
+### What the Design Cannot Establish
+
+The design can only establish associations; it cannot determine causality due to its observational nature. The comparison is limited to a case series without a matched control group, which restricts causal inference.
+
+### Prior Art
+- **SUID_manuscript_v9_clean.C10:** Excludes extremely preterm infants who died early in postnatal life.
+  
+- **bedsharing_ms_v7.C8-C25:** Examines associations between bed sharing and SUID incidence but does not address pregnancy weight gain.
+
+There is no close prior work specifically examining the relationship between pregnancy weight gain categories and SUID incidence. The closest claims discuss other risk factors like maternal smoking or prematurity, which are distinct from the proposed variable of interest (pregnancy weight gain).
+
+### Verdict
+
+**Can Answer: Yes**
+
+The design can estimate exposure-specific rates for SUID by combining cases from ncfrp_v51 with pregnancy weight gain prevalence data from PRAMS and live birth denominators stratified by these categories in cdc_natl15. The sources allow estimation of SUID incidence among infants born to mothers with different pregnancy weight gain categories, even though there are potential biases that need careful consideration.
+
+### Logical Considerations
+
+- **Measurement Differences:** PRAMS measures postpartum recall of pregnancy weight gain, while ncfrp_v51 likely captures it from medical records at the time of review. This may introduce misclassification bias.
+  
+- **Data Acquisition:** The manuscript would require acquiring data for all years specified to ensure comprehensive coverage.
+
+### Conclusion
+
+The proposed design can logically estimate SUID incidence by pregnancy weight gain categories using the available sources, with appropriate attention to potential biases and limitations inherent in observational studies of this nature.

@@ -1,0 +1,70 @@
+{
+ "ideas": [
+  {
+   "question": "To determine whether SUID cases differ from other infant deaths regarding maternal smoking during pregnancy and preterm birth status.",
+   "comparison": "Sudden unexpected infant death (SUID) cases vs. other causes of infant death, using data from the NCFRP case series for both outcome groups; CDC natality for population at risk; PRAMS Phase 8 ARF for exposure prevalence among live births",
+   "why_open": "Maternal smoking and preterm birth are established risk factors for SUID but may not be unique. Identifying specific differences between outcomes would clarify prevention priorities.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Outcome: Sudden unexpected infant death (SUID) vs. other causes of infant death; Exposure: Maternal smoking during pregnancy, Preterm birth status; Population at risk: All live births; Prevalence: Surveyed mothers' responses on maternal smoking and gestational age."
+  },
+  {
+   "question": "To examine if SUID cases have a different postconceptional age (PCA) distribution compared to deaths due to congenital anomalies.",
+   "comparison": "Sudden unexpected infant death (SUID) cases vs. congenital anomalies, using data from the NCFRP case series for both outcome groups; CDC natality for population at risk",
+   "why_open": "Age-specific risks are critical for prevention efforts. Understanding if SUID timing differs could highlight periods of greater vulnerability.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Outcome: Sudden unexpected infant death (SUID) vs. congenital anomalies; Exposure: Postconceptional age (PCA); Population at risk: All live births."
+  },
+  {
+   "question": "To determine whether maternal obesity is uniquely associated with SUID compared to deaths due to external causes.",
+   "comparison": "Sudden unexpected infant death (SUID) cases vs. external cause deaths, using data from the NCFRP case series for both outcome groups; CDC natality for population at risk",
+   "why_open": "Maternal obesity is known to influence various health outcomes but its role in SUID specifically requires clarification.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Outcome: Sudden unexpected infant death (SUID) vs. external cause deaths; Exposure: Maternal prepregnancy BMI; Population at risk: All live births."
+  },
+  {
+   "question": "To assess whether sleep environment differences exist between SUID cases and those with accidental suffocation.",
+   "comparison": "Sudden unexpected infant death (SUID) cases vs. accidental suffocation deaths, using data from the NCFRP case series for both outcome groups",
+   "why_open": "Understanding specific risk factors can guide targeted prevention strategies. Differences in sleep environments might indicate actionable interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "Outcome: Sudden unexpected infant death (SUID) vs. accidental suffocation; Exposure: Sleep environment factors, including bed sharing and sleeping location."
+  },
+  {
+   "question": "To explore if there are differences in the distribution of birth weight between SUID cases and deaths due to respiratory issues.",
+   "comparison": "Sudden unexpected infant death (SUID) cases vs. respiratory cause deaths, using data from the NCFRP case series for both outcome groups; CDC natality for population at risk",
+   "why_open": "Identifying differential patterns in birth weight could reveal critical periods or pathways affecting SUID that differ from other causes of infant mortality.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Outcome: Sudden unexpected infant death (SUID) vs. respiratory cause deaths; Exposure: Birth weight; Population at risk: All live births."
+  }
+ ]
+}

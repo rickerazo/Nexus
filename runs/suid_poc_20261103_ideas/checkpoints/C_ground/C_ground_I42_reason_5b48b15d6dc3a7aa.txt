@@ -1,0 +1,66 @@
+### Design
+
+**Question:** Do SUID cases with previous child deaths differ in their sleep environment and prenatal care issues compared to those without?
+
+**Design Type:** Case-only analysis.
+
+**Restated Question:** How do the recorded circumstances (sleep environment, prenatal care) of SUID cases vary among subgroups defined by prior child deaths?
+
+### Sources by Role
+
+- **Case Series:**
+  - ncfrp_v51: This is a case series recording detailed reviews of child deaths.
+  
+- **Population Reference:**
+  - None needed in this design as the focus is on comparing SUID cases with and without previous child deaths, rather than comparing these cases to a reference population.
+
+- **Denominator Source:**
+  - None needed since we are not calculating incidence or prevalence but analyzing differences within cases only.
+
+### Period
+
+**Common Period:** The data from ncfrp_v51 covers the years 2008-2019. This is the period that will be used for this analysis.
+
+### Variables
+
+#### Prior Child Deaths (ncfrp_v51)
+- **CIRdeathsleepenv**: Was the death related to sleeping or the sleep environment?
+- **BIO1dthsids, BIO1dthneglct, BIO1dthabuse, BIO1dthundeternum, BIO1dthnegnum**: Prior child deaths (SIDS, neglect, abuse, undetermined causes, number of prior child deaths)
+  
+#### Sleep Environment (ncfrp_v51)
+- **CIRdeathsleepenv**: Was the death related to sleeping or the sleep environment?
+
+#### Prenatal Care Issues (ncfrp_v51)
+- **PRECARE, PREVIS**: Month prenatal care began and number of prenatal visits.
+- **NO_MMORB, F_RF_PHYPE, RF_PHYPE**: No maternal morbidity checked, reporting flag for pre-pregnancy hypertension, and pre-pregnancy hypertension.
+
+#### Sleep Environment (PRAMS population reference)
+- None needed in this case-only design.
+
+### Biases
+
+**Selection Bias:** The ncfrp_v51 dataset only includes child deaths reviewed by participating fatality review teams. Participation rates vary over time and may not be representative of all SUID cases across the US, introducing selection bias.
+
+**Information Bias:**
+- **Sleep Environment:** ncfrp_v51 records sleep environment data based on case reviews; this might differ from self-reported data.
+- **Prenatal Care Issues:** ncfrp_v51 captures prenatal care issues through detailed review but may miss nuances captured in population surveys like PRAMS.
+
+**Confounding:**
+- Confounding variables such as socioeconomic status, maternal education, and other environmental factors that affect both sleep environment and prenatal care need to be controlled for. These are not directly measured in ncfrp_v51 but could introduce unmeasured confounding.
+  
+### What the Design Cannot Establish
+
+The case-only design can only establish associations within cases (SUID) with previous child deaths compared to those without, but it cannot determine causality or provide population-level estimates.
+
+### Prior Art
+
+**Closest Claims:**
+- **bedsharing_ms_v7.C8:** Bed sharing was recorded for 59.5% of SUID cases and these cases were more often associated with maternal smoking during pregnancy (52.2%) compared to non-bed-sharing cases (40.8%). This claim is similar in scope but focuses on bed sharing rather than prior child deaths.
+  
+**Open Question:** While there are studies on sleep environment and prenatal care issues, none specifically compare SUID cases based on whether they had previous child deaths.
+
+### Verdict
+
+The proposed data can be used to conduct a case-only analysis comparing SUID cases with and without prior child deaths in terms of their sleep environment and prenatal care issues. However, the limitations include potential selection bias due to varying participation rates in the ncfrp_v51 dataset, as well as information bias from review-based rather than survey-reported data.
+
+To strengthen this study, additional data on confounding variables such as socioeconomic status would be beneficial. Additionally, combining case series with a population reference (PRAMS) could provide more robust insights but would require further design adjustments to include these comparisons.

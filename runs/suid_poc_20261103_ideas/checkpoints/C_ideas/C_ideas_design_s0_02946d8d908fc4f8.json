@@ -1,0 +1,48 @@
+{
+ "ideas": [
+  {
+   "question": "How has the incidence of Sudden Unexpected Infant Death (SUID) changed over time among infants born before and after the start of the pandemic?",
+   "why_open": "The impact of the pandemic on SUID rates is not fully understood, as previous studies have focused primarily on non-SUID infant mortality changes. Assessing temporal trends can help identify potential shifts in risk factors and prevention needs post-pandemic.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Age of death in SUID cases, Maternal smoking during pregnancy"
+  },
+  {
+   "question": "Does the geographical location influence the rate of sudden unexpected infant deaths (SUID) among infants born before and after the pandemic?",
+   "why_open": "The current research does not explore geographical variations, but understanding regional differences could highlight localized risk factors or protective measures that vary by region.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Geographic location, Age of death in SUID cases"
+  },
+  {
+   "question": "How does the reporting accuracy and ascertainment of sleep environment characteristics (e.g., bed-sharing) vary across different jurisdictions?",
+   "why_open": "The current manuscripts acknowledge limitations in case-report systems’ heterogeneity but do not assess how accurately these factors are recorded. Exploring this can help improve data quality and subsequent research.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Incident location, Child's activity at incident"
+  },
+  {
+   "question": "What differences exist in SUID incidence rates between infants born via vaginal delivery versus cesarean section before and after the pandemic?",
+   "why_open": "Delivery type can influence infant outcomes, but current research does not address these changes in relation to SUID. This question could highlight important trends related to delivery practices and SUID risk.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Type of delivery, Age of death in SUID cases"
+  },
+  {
+   "question": "How does the prevalence and type of maternal insurance coverage vary between infants who died from SUID versus those who survived?",
+   "why_open": "Understanding how maternal insurance influences access to healthcare and risk factors for SUID can inform public health policies. This comparison has not been studied in detail.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Insurance Coverage, Age of death in SUID cases"
+  }
+ ]
+}

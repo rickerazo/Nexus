@@ -1,0 +1,39 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The incidence rate of SUID among infants born to mothers who gained less than recommended weight during pregnancy is estimated compared to those who met or exceeded recommendations from 2016-2021.",
+ "rationale": "This design uses a case-specific rate by combining the cases from a case series (numerator), the exposure prevalence from a population reference source, and the population at risk from a denominator source. The sources can provide the necessary data for this comparison.",
+ "prior_art": "The existing literature focuses on other factors like smoking and prematurity but does not directly address prenatal weight gain in relation to SUID risk (SUID_manuscript_v9_clean.C9, bedsharing_ms_v7.C8).",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C9",
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15",
+  "cdc_linkco15"
+ ],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "Maternal weight gain during pregnancy",
+  "SUID cases",
+  "Live births"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4momwtgn",
+  "prams_p8_arf:MOMLBS",
+  "prams_p7_arf:MOMLBS",
+  "cdc_natl15:BWTR4",
+  "cdc_linkco15:BWTR4",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot establish causation between inadequate prenatal weight gain and increased risk of SUID. It can only show an association and estimate rates by exposure group."
+}

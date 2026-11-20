@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "Mothers of SUID cases report fewer prenatal care visits during pregnancy compared to mothers whose infants survived.",
+ "rationale": "The design uses a case-case comparison to assess whether mothers of SUID cases had fewer healthcare visits during pregnancy, which could indicate barriers such as lack of insurance or access. The sources provide the necessary data for this comparison.",
+ "prior_art": "None in the inputs; existing claims discuss risk factors like maternal smoking and prematurity but do not address prenatal care utilization specifically.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_linkco15",
+  "cdc_natl15"
+ ],
+ "period_start": 2014,
+ "period_end": 2019,
+ "required_concepts": [
+  "Prenatal Care Visits"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4visnum",
+  "prams_p8_arf:PNC_VST",
+  "cdc_linkco15:F_MPCB",
+  "cdc_natl15:F_MPCB",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "Causation, incidence rates or risks; only proportions among cases can be compared."
+}

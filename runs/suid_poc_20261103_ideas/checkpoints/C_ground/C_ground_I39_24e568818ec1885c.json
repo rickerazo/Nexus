@@ -1,0 +1,37 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of families experiencing stress and instability, as indicated by lack of family/social support or major illness/death in the family, is higher among SUID cases compared to low birth weight or preterm births.",
+ "rationale": "This design compares detailed case data from ncfrp_v51 (SUID) against cases of low birth weight or preterm births in cdc_linkco15. However, it cannot establish incidence rates or causal relationships due to the lack of a denominator source and potential confounding factors.",
+ "prior_art": "The manuscript claims suggest that socioeconomic and environmental stressors are important for SUID risk (SUID_manuscript_v9_clean.C14), but do not directly compare these factors between SUID cases and other poor health outcomes. This question remains open to explore unique familial stressors in SUID.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C14"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_linkco15"
+ ],
+ "period_start": 2014,
+ "period_end": 2019,
+ "required_concepts": [
+  "Family Circumstances Contributing to Stress and Instability",
+  "Low Birth Weight or Preterm Births"
+ ],
+ "variables": [
+  "ncfrp_v51:INFisssupport",
+  "ncfrp_v51:CIR2socpregnancy",
+  "ncfrp_v51:ISSfamtransillness",
+  "ncfrp_v51:ISShomevisit",
+  "ncfrp_v51:ISSfamunwant",
+  "cdc_linkco15:RF_PPB",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence rates, causal relationships, or population-level risks without a denominator source."
+}

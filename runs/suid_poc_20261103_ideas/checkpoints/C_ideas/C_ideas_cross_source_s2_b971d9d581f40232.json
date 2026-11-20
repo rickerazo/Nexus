@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "How do maternal health problems before pregnancy recorded in PRAMS Phase 8 (prams_p8_arf) relate to SUID incidence among infants as captured by the CDC linked birth/infant death public-use file guide (cdc_linkco15)?",
+   "why_open": "While existing studies have explored specific factors like smoking and prematurity, no research has comprehensively evaluated a broad array of pre-pregnancy health problems in relation to SUID. The combined dataset would provide a more comprehensive picture.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_linkco15"
+   ],
+   "data": "Maternal Health Problems (pre-pregnancy) (prams_p8_arf); Maternal Complications (cdc_linkco15)"
+  },
+  {
+   "question": "What is the impact of maternal socioeconomic status, as detailed in PRAMS Phase 8 (prams_p7_arf), on SUID risk factors and incidence among infants born to those mothers, according to the CDC linked birth/infant death file guide (cdc_linkco15)?",
+   "why_open": "The interplay between socioeconomic status and SUID has not been extensively studied in detail, and this would allow a deeper understanding of how economic pressures might contribute to risk factors.",
+   "sources": [
+    "prams_p7_arf",
+    "cdc_linkco15"
+   ],
+   "data": "Income and Dependent Information (prams_p7_arf); Birth Details 2 (cdc_linkco15)"
+  },
+  {
+   "question": "How does the frequency of multivitamin use during pregnancy, as recorded in PRAMS Phase 8 (prams_p8_std2), correlate with SUID incidence among infants in the CDC natality public-use file guide (cdc_natl15)?",
+   "why_open": "Previous research has not extensively examined the role of maternal vitamin intake in relation to SUID risk, which could provide insights into potential protective factors.",
+   "sources": [
+    "prams_p8_std2",
+    "cdc_natl15"
+   ],
+   "data": "Multivitamin Use (prams_p8_std2); Smoking and Weight (cdc_natl15)"
+  },
+  {
+   "question": "What are the effects of breastfeeding practices during the postpartum period, as documented in PRAMS Phase 7 (prams_p7_arf), on SUID incidence among infants recorded in the National Fatality Review Case Reporting System (ncfrp_v51)?",
+   "why_open": "While there is some data on breastfeeding and infant health, a more detailed analysis of postpartum practices could shed light on potential protective or risk factors for SUID.",
+   "sources": [
+    "prams_p7_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Breastfeeding Status (prams_p7_arf); Infant Sleep Environment and Disposition Details (ncfrp_v51)"
+  },
+  {
+   "question": "How does the presence of a crib or similar sleeping arrangement, as recorded in the National Fatality Review Case Reporting System (ncfrp_v51), impact SUID incidence among infants whose mothers reported on their postpartum care and breastfeeding practices in PRAMS Phase 8 (prams_p8_arf)?",
+   "why_open": "While many studies have focused on sleep environment as a risk factor, combining these datasets could provide deeper insights into how specific arrangements correlate with SUID.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Infant Sleep Environment (ncfrp_v51); Breastfeeding Information Sources and Practices (prams_p8_arf)"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "ideas": [
+  {
+   "question": "Does maternal obesity alter the developmental timing of SUID incidence?",
+   "why_open": "While maternal obesity is known to be a risk factor for SUID, its impact on the timing of this risk throughout postconceptional age has not been explored. Understanding how maternal obesity influences the developmental trajectory of SUID could reveal critical windows for intervention.",
+   "sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI), Sudden Unexpected Infant Death (SUID) cases, postconceptional age (PCA)"
+  },
+  {
+   "question": "How does maternal smoking interact with inner ear dysfunction to influence SUID incidence?",
+   "why_open": "Although both maternal smoking and inner ear dysfunction have been identified as risk factors for SUID, their combined effect has not yet been investigated. This interaction could elucidate a novel mechanism underlying higher mortality rates.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Maternal smoking during pregnancy (covariate), inner ear dysfunction (exposure), Sudden Unexpected Infant Death (SUID) cases"
+  },
+  {
+   "question": "What is the impact of chronic intermittent hypoxia on respiratory patterns and subsequent risk for SIDS?",
+   "why_open": "While chronic intermittent hypoxia affects adult neurogenesis and breathing rhythms, its specific influence on infant respiratory patterns and risk factors for SIDS has not been thoroughly examined. This research could offer insights into preventive measures.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Chronic intermittent hypoxia (CIH) exposure, preterm birth status, breathing patterns at discharge"
+  },
+  {
+   "question": "Does variation in postnatal care quality modify the association between maternal smoking and SUID risk?",
+   "why_open": "While maternal smoking is a well-established risk factor for SUID, its interaction with quality of postnatal care has not been extensively studied. This research would help identify how postpartum interventions could mitigate risks.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_natl15"
+   ],
+   "data": "Maternal smoking during pregnancy (covariate), hospital stay length after birth, infant's living status with mother"
+  },
+  {
+   "question": "How does socioeconomic status influence the developmental trajectory of SUID incidence in relation to postconceptional age?",
+   "why_open": "Socioeconomic factors are known to impact health outcomes, but their specific role in shaping the developmental pattern of SUID risk has not been thoroughly explored. This research could reveal targeted interventions for vulnerable populations.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_natl15"
+   ],
+   "data": "Household income and dependent information, socioeconomic status indicators, postconceptional age (PCA), Sudden Unexpected Infant Death (SUID) cases"
+  }
+ ]
+}

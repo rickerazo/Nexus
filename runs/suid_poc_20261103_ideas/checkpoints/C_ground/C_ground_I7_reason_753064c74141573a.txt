@@ -1,0 +1,73 @@
+### Design
+
+**Question:** What is the difference in prenatal care visit adherence between SUID cases and a population reference?
+
+This design compares the proportion of prenatal care visits among SUID cases (case series) with its weighted prevalence in PRAMS mothers (population reference). The concept must be measured consistently across both sources.
+
+### Sources by Role
+
+- **Case Series:** `ncfrp_v51` (National Fatality Review Case Reporting System)
+  - Reasons: It records the outcome events (SUID cases only).
+  
+- **Population Reference:** `prams_p8_arf` (PRAMS Phase 8 Analytic Research File)
+  - Reasons: This provides a weighted survey of mothers after live births, capturing prenatal care adherence among PRAMS participants.
+
+### Period
+
+The manuscript requires data from 2008 to 2019. The necessary years are:
+
+- `ncfrp_v51` (SUID cases): 2008-2019
+- `prams_p8_arf` (PRAMS mothers): 2016-2021
+
+To ensure a consistent comparison, we need to use the overlapping period from 2016 to 2019.
+
+### Variables
+
+#### Prenatal Care Visits:
+
+**Case Series (`ncfrp_v51`):**
+- `INFissprechronicdiseasebef`: Chronic disease control Education - before pregnancy
+- `INF4visnum`: Number of primary care provider visits during pregnancy
+- `INFissunwill`: If yes, prenatal issues - Unwilling to obtain care
+- `INFprenatalcare`: Prenatal care provided
+- `ISSpnclate`: Late entry to prenatal care
+
+**Population Reference (`prams_p8_arf`):**
+- `PNC_VST`: Number of prenatal care visit (weighted using WTANAL)
+- `PRE_VIST`: Pre-pregnancy health care visit
+- `PNC_MTH`: Month of first prenatal care visit
+- `P_PRTERM`: Previous preterm births
+
+### Biases:
+
+#### Selection Bias:
+- **Case Series (`ncfrp_v51`):** Only includes cases reported by participating fatality review teams, which may not be nationally representative. 
+- **Population Reference (`prams_p8_arf`):** PRAMS is a weighted sample of mothers in specific states and years, potentially biased if participation rates vary.
+
+#### Information Bias:
+- **Case Series:** Reviews conducted after death; information on prenatal care adherence might be incomplete or retrospective.
+- **Population Reference:** Self-reported data from postpartum surveys may have recall bias and social desirability bias.
+
+#### Confounding:
+- Differences in demographic characteristics (e.g., age, race/ethnicity) between SUID cases and PRAMS mothers can confound the association. 
+
+### What the Design Cannot Establish:
+
+This design cannot establish causation or temporal relationships. It only compares proportions of prenatal care adherence among SUID cases versus a general population reference.
+
+### Prior Art
+
+The closest manuscript claims are related to risk factors but do not address prenatal care specifically:
+- **`bedsharing_ms_v7.C8`** (finding): Bed sharing was recorded for 59.5% of SUID cases, and these cases were more often associated with maternal smoking during pregnancy.
+- **`SUID_manuscript_v9_clean.C10`** (limitation): The analysis excludes a small number of deaths at the extremes of the PCA distribution, including some extremely and very preterm infants who died early in postnatal life.
+
+These claims do not provide information about prenatal care adherence. Therefore, this specific comparison remains open.
+
+### Verdict
+
+Yes, these data can answer a version of the question: "What is the difference in prenatal care visit adherence between SUID cases (2016-2019) and PRAMS mothers (2016-2019)?". The study design compares proportions among SUID cases with weighted prevalence from PRAMS. However, it cannot establish causation or temporal relationships due to the nature of the data sources.
+
+### Notes:
+- Acquire additional years for `prams_p8_arf` if needed.
+- Ensure that demographic variables are consistent across both datasets for adjustment in analysis.
+- Consider combining multiple prenatal care adherence measures from different sources to strengthen comparability.

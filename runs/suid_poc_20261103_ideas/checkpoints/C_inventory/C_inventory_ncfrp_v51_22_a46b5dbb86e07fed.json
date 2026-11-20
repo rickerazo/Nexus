@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "RES1sleeping",
+   "name": "Person 1 Status",
+   "summary": "Whether Person 1 was asleep or understood English at the time of incident."
+  },
+  {
+   "start": "RES1tortchrg",
+   "name": "Legal Outcomes - Person 1",
+   "summary": "Legal outcomes and unknown status for Person 1, including tort charges and specifications."
+  },
+  {
+   "start": "RES1type",
+   "name": "Person 1 Type",
+   "summary": "Type of person involved (e.g., victim) and specification if needed."
+  },
+  {
+   "start": "RES1viccpsrefer",
+   "name": "Maltreatment History - Person 1",
+   "summary": "Number of CPS referrals, substantiations, and foster care history for maltreated victims."
+  },
+  {
+   "start": "RES2abalc",
+   "name": "Substance Abuse - Person 2",
+   "summary": "History of substance abuse including alcohol, cocaine, marijuana, methamphetamine, opioids, over-the-counter drugs, prescription drugs, and other substances."
+  },
+  {
+   "start": "RES2absent",
+   "name": "Incident Presence - Person 2",
+   "summary": "Whether Person 2 was absent at the time of incident and unknown status for substance abuse history."
+  },
+  {
+   "start": "RES2act",
+   "name": "Act Contributing to Death - Person 2",
+   "summary": "The act that caused or contributed to death, with specification if other."
+  },
+  {
+   "start": "RES2age",
+   "name": "Person 2 Age and Unknown Status",
+   "summary": "Age of Person 2 at the time of incident and unknown status for age."
+  }
+ ]
+}

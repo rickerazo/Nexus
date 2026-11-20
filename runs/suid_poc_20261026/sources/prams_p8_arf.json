@@ -1,0 +1,2598 @@
+{
+  "id": "prams_p8_arf",
+  "title": "PRAMS Phase 8 Analytic Research File codebook",
+  "document_path": "data/codebooks/PRAMS_Phase_8_ARF_Codebook.pdf",
+  "document_sha256": "9d5b3d4dd9092af205977978f66c2b071210b3eedac55950a494e72f031e0152",
+  "variables": [
+    {
+      "name": "BPG_DEPRS8",
+      "label": "Health prob -- Depression",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 4d_L11a Health prob -- Asthma",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 4e_L11b Health prob -- Anemia",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 4f_L11c Health prob -- Heart",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 4g_L11d Health prob -- Epilepsy",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 4h_L11e Health prob -- Thyroid",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 4i_L11f Health prob -- PCOS",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 4j_L11g Health prob -- Anxiety",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 4k_MS Health prob -- Sickle Cell",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 4k_NYYC Health prob -- Allergies",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "BPG_DIAB8",
+      "label": "Health prob -- Diabetes",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "BPG_HBP8",
+      "label": "Health prob -- HBP",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "MOMLBKGU",
+      "label": "Moms weight -- lbs or kilos",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK",
+        "1=POUNDS",
+        "2=KILOGRAMS"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=LBKGUF"
+    },
+    {
+      "name": "MOM_CM",
+      "label": "Moms height -- centimeters",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=NUMF"
+    },
+    {
+      "name": "MOM_FEET",
+      "label": "Moms height -- feet",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=NUMF"
+    },
+    {
+      "name": "MOM_HTU",
+      "label": "Moms height -- feet-inch/cm",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK/DK",
+        "1=FEET, INCHES",
+        "2=CENTIMETERS"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=HTUF"
+    },
+    {
+      "name": "MOM_INCH",
+      "label": "Moms height -- inches",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=NUMF"
+    },
+    {
+      "name": "MOM_LBKG",
+      "label": "Moms weight -- bef preg",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=NUMF"
+    },
+    {
+      "name": "PRE_VIST",
+      "label": "Pre preg--health care visit",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "PRE_VIT_RAW",
+      "label": "Pre-preg -- folic acid",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "PRE_WT_RAW",
+      "label": "Pre-preg -- weight",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "TYP_BC_RAW",
+      "label": "Health care type--visit for family planning/birth control",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "TYP_DDS_RAW",
+      "label": "Health care type--visit with dentist",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "TYP_DOCT_RAW",
+      "label": "Health care type--checkup with dr",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "TYP_ILLN_RAW",
+      "label": "Health care type--visit for illness",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "TYP_INJR_RAW",
+      "label": "Health care type--visit for injury",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "TYP_MH_RAW",
+      "label": "Health care type--visit for depression or anxiety",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "TYP_OBGN_RAW",
+      "label": "Health care type--checkup with my OB/GYN",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "TYP_OTHR_RAW",
+      "label": "Health care type--other",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "TYP_WHAT_RAW",
+      "label": "Health care type--other specified",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 2,
+      "notes": ""
+    },
+    {
+      "name": "VITAMIN",
+      "label": "Multivitamin -- # of times /wk",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK/DK",
+        "1=DIDNT TAKE VITAMIN",
+        "2=1-3 TIMES/WEEK",
+        "3=4-6 TIMES/WEEK",
+        "4=EVERY DAY/WEEK"
+      ],
+      "years": [],
+      "page": 2,
+      "notes": "format=VITAMIN"
+    },
+    {
+      "name": "PRE_ABUS_RAW",
+      "label": "Pre-preg --hurt emotional/physical",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 3,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "PRE_HIVT_RAW",
+      "label": "Pre-preg -- tested for HIV",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 8m_LA Pre-preg -- tested for Hepatitis B",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 8m_WA Pre-preg -- birth Defect or deseases",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 3,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "PRE_HLTH_RAW",
+      "label": "Pre-preg--improve health before preg",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 3,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "PRE_KIDS_RAW",
+      "label": "Pre-preg -- want to have kids",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 3,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "PRE_MHDP_RAW",
+      "label": "Pre-preg --feeling down/depressed",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 3,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "PRE_MORB_RAW",
+      "label": "Pre-preg-- control med conditions",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 3,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "PRE_PRBC_RAW",
+      "label": "Pre-preg -- birth control tp prevent preg",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 3,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "PRE_SMK_RAW",
+      "label": "Pre-preg --smk during preg",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 3,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "PRE_STI_RAW",
+      "label": "Pre-preg -- talk about STIs",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 3,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "PRE_WORK_RAW",
+      "label": "Pre-preg -- kind of work",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 3,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "INSCHIP",
+      "label": "Insurance paid by -- <state specific SCHIP/CHIP>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "INSGOV",
+      "label": "Insurance paid by -- <state specific other state plan>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "INSGOV2",
+      "label": "Insurance paid by -- <state specific other state plan>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "INSHCEX",
+      "label": "Insurance paid by -- Health Care Exchange",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "INSIHS",
+      "label": "Insurance paid by -- <state specific IHS/Tribal>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "INSMED",
+      "label": "Insurance paid by -- Medicaid",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "INSMIL",
+      "label": "Insurance paid by -- <state specific TRICARE or military>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "INSNONE",
+      "label": "Insurance paid by -- No insurance",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "INSOTH",
+      "label": "Insurance paid by -- other",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "INSPAR",
+      "label": "Insurance paid by -- parent",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "INSTYPE",
+      "label": "Insurance paid by -- Other specified",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 4,
+      "notes": ""
+    },
+    {
+      "name": "INSWORK8",
+      "label": "Insurance paid by -- job",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "PP8_HCEX_RAW",
+      "label": "Insurance paid by -- Health Care Exchange",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "PP8_NOPNC",
+      "label": "Insurance paid by - didn’t have any PNC",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "PP8_PAR_RAW",
+      "label": "Insurance paid by -- parent",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "PP8_WORK_RAW",
+      "label": "Insurance paid by -- job",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 4,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "HI_CHIP",
+      "label": "Insurance paid by -- <state specific SCHIP/CHIP>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "HI_HCEX",
+      "label": "Insurance paid by -- Health Care Exchange",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "HI_MEDIC",
+      "label": "Insurance paid by -- Medicaid",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "HI_PAR",
+      "label": "Insurance paid by -- parent",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "HI_WORK8",
+      "label": "Insurance paid by -- job",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "PP_CHIP_RAW",
+      "label": "Insurance paid by -- <state specific SCHIP/CHIP>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "PP_GOV2_RAW",
+      "label": "Insurance paid by -- <state specific other state plan>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "PP_GOV_RAW",
+      "label": "Insurance paid by -- <state specific other state plan>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "PP_IHS_RAW",
+      "label": "Insurance paid by -- <state specific IHS/Tribal>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "PP_MEDIC_RAW",
+      "label": "Insurance paid by -- Medicaid",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "PP_MILIT_RAW",
+      "label": "Insurance paid by -- <state specific TRICARE or military>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "PP_NONE_RAW",
+      "label": "Insurance paid by -- No insurance",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "PP_OTH_RAW",
+      "label": "Insurance paid by -- other",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 5,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "PP_TYPE_RAW",
+      "label": "Insurance paid by -- Other specified",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 5,
+      "notes": ""
+    },
+    {
+      "name": "ASK_MEDS_RAW",
+      "label": "HCW ask -- prescript meds",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "HI_GOV",
+      "label": "Insurance paid by -- <state specific other government>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "HI_GOV2",
+      "label": "Insurance paid by -- <state specific other government>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "HI_IHS",
+      "label": "Insurance paid by -- <state specific IHS/Tribal>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "HI_MILIT",
+      "label": "Insurance paid by -- <state specific TRICARE or military>",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "HI_NONE",
+      "label": "Insurance paid by -- No insurance",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "HI_OTH",
+      "label": "Insurance paid by -- other",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "HI_TYPE",
+      "label": "Insurance paid by -- Other specified",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 6,
+      "notes": ""
+    },
+    {
+      "name": "PGINTENT",
+      "label": "Preg -- intention PGINTEN T",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK",
+        "1=LATER",
+        "2=SOONER",
+        "3=THEN",
+        "4=DID NOT WANT THEN OR ANY TIME",
+        "5=WAS NOT SURE"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": ""
+    },
+    {
+      "name": "PNC_1ST",
+      "label": "1st PNC visit -- number",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": "format=NUMSF"
+    },
+    {
+      "name": "PNC_1STU",
+      "label": "1st PNC visit -- wks/mnths PNC_1ST U",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=WEEKS",
+        "2=MONTHS",
+        "3=DID NOT GO"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": ""
+    },
+    {
+      "name": "TLK_CIGS_RAW",
+      "label": "HCW ask -- if smoking cigs",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "TLK_ETOH_RAW",
+      "label": "HCW ask -- if drinking alcohol",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "TLK_WT_RAW",
+      "label": "HCW ask -- amt weight gain",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 6,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "ASK_ABUS_RAW",
+      "label": "HCW ask -- hurt emotional/physical",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 7,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "ASK_BF_RAW",
+      "label": "HCW ask -- plan to breastfeed",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 7,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "ASK_DPRS_RAW",
+      "label": "HCW ask -- if down/depressed",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 7,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "ASK_DRUG_RAW",
+      "label": "HCW ask -- using drugs",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 7,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "ASK_HIVT_RAW",
+      "label": "HCW ask -- want HIV test",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 7,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "ASK_PPBC_RAW",
+      "label": "HCW ask -- plan to use PP BC",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 14k_WA HCW ask -- high levels of mercury/fish",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 14l_WA HCW ask -- Early labor start",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 14m_WA HCW ask -- Birth defects or deseases/family",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 14k_YC HCW ask -- about my risk for lead poisoning",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 14l_YC HCW ask -- about second hand smoke exposure",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 7,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "FLUSHOT",
+      "label": "Flu vacc -- info from care workers",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 7,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "DDS_CLN",
+      "label": "DDS -- teeth cleaned",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 8,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "FLUPREG",
+      "label": "Flu vacc -- before delivery",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK/DK",
+        "1=NO",
+        "2=YES,BEFORE",
+        "3=YES,DURING"
+      ],
+      "years": [],
+      "page": 8,
+      "notes": "format=FL12GETF"
+    },
+    {
+      "name": "MH_PGDX8",
+      "label": "Health prob during preg -- Depression",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 18d_SAOa Health prob during preg -- Asthma",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 18e_SAOb Health prob during preg -- Anemia",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 18f_SAOc Health prob during preg -- Heart",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 18g_SAO d Health prob during preg -- Epilepsy",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 18h_SAOe Health prob during preg -- Thyroid",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 18i_SAOf Health prob during preg – PCOS Note: This variable is only used by Connecticut and will only be available through a separate request to Connecticut",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 18j_SAOg Health prob during preg -- Anxiety",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 18k_ARS C Healthprobduringpreg--Gumdisease",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 18l_MI Health prob during preg -- Kidney/bladder infection",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 18m_MI Health prob during preg -- Nausea/vomiting/dehydration",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 8,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "MORB_BP8",
+      "label": "Health prob during preg -- HBP",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 8,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "PG_GDB8",
+      "label": "Health prob during preg -- Diabetes",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 8,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "SMK2YRS",
+      "label": "SMK --  >=1 cigs last 2 yrs",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 9,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "SMK6_3B_RAW",
+      "label": "SMK -- 3 mnths bef, # cigs/day",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=41 CIGARETTES OR",
+        "2=21 TO 40 CIGARETTES",
+        "3=11 TO 20 CIGARETTES",
+        "4=6 TO 10 CIGARETTES",
+        "5=1 TO 5 CIGARETTES",
+        "6=LESS THAN 1",
+        "7=NONE (0 CIGARETTES)"
+      ],
+      "years": [],
+      "page": 9,
+      "notes": "format=SMOKE5F"
+    },
+    {
+      "name": "SMK6_3L_RAW",
+      "label": "SMK -- last 3 mnths, # cigs/day",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=41 CIGARETTES OR",
+        "2=21 TO 40 CIGARETTES",
+        "3=11 TO 20 CIGARETTES",
+        "4=6 TO 10 CIGARETTES",
+        "5=1 TO 5 CIGARETTES",
+        "6=LESS THAN 1",
+        "7=NONE (0 CIGARETTES)"
+      ],
+      "years": [],
+      "page": 9,
+      "notes": "format=SMOKE5F"
+    },
+    {
+      "name": "SMK6_3N_RAW",
+      "label": "SMK -- now, # cigs/day",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=41 CIGARETTES OR",
+        "2=21 TO 40 CIGARETTES",
+        "3=11 TO 20 CIGARETTES",
+        "4=6 TO 10 CIGARETTES",
+        "5=1 TO 5 CIGARETTES",
+        "6=LESS THAN 1",
+        "7=NONE (0 CIGARETTES)"
+      ],
+      "years": [],
+      "page": 9,
+      "notes": "format=SMOKE5F"
+    },
+    {
+      "name": "SMK_ECIG",
+      "label": "SMK --used ecigs in last 2 yrs",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 9,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "DRK_2YRS",
+      "label": "DRK -- last 2 years",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 10,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "ECIG_3B_RAW",
+      "label": "ECIG -- 3 mnths bef, how often ECIG_FRE Q",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK/DK",
+        ".S=SKIP",
+        "1=MORE THAN ONCE A",
+        "2=ONCE A DAY",
+        "3=2-6 DAYS A WEEK",
+        "4=1 DAY A WEEK OR",
+        "5=NOT USE ELECTRONIC VAPOR PRODUCTS"
+      ],
+      "years": [],
+      "page": 10,
+      "notes": ""
+    },
+    {
+      "name": "ECIG_3L_RAW",
+      "label": "ECIG -- last 3 mnths, how often ECIG_FRE Q",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK/DK",
+        ".S=SKIP",
+        "1=MORE THAN ONCE A",
+        "2=ONCE A DAY",
+        "3=2-6 DAYS A WEEK",
+        "4=1 DAY A WEEK OR",
+        "5=NOT USE ELECTRONIC VAPOR PRODUCTS"
+      ],
+      "years": [],
+      "page": 10,
+      "notes": ""
+    },
+    {
+      "name": "SMK_HOOK",
+      "label": "SMK --used hookah in last 2 yrs",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 23c_SAO SMK -- chewing tobacco, snuff, snus, dip",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 23d_SAO SMK -- cigars, cigarillos, filtered cigars",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 23e_AL SMK -- chew, snus, cigars, cigarillos, etc.",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 23f_HI SMK -- Betel nut or betel quid",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 23g_LA SMK -- cigarillos or flavored little cigars(Black and Milds, Swisher Sweets, etc)",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 23h_TX SMK -- nicotine patch, nicotine gum, nicotine lozenge Note: This variable is only used by Texas and will only be available through a separate request to Texas",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 23i_CNMI CT SMK -- Betel nut with chewing tobacco",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES 23j_CNMI SMK -- Betel nut without chewing tobacco",
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 10,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "DRK8_3B_RAW",
+      "label": "DRK -- 3 mnths bef, drinks/wk",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=14 DRINKS OR MORE A",
+        "2=8 TO 13 DRINKS A",
+        "3=4 TO 7 DRINKS A",
+        "4=1 TO 3 DRINKS A",
+        "5=LESS THAN 1 DRINK A",
+        "6=I DIDNT DRINK THEN"
+      ],
+      "years": [],
+      "page": 11,
+      "notes": "format=DRINK8F"
+    },
+    {
+      "name": "IDOB_MTH",
+      "label": "Infant birth -- month",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK"
+      ],
+      "years": [],
+      "page": 11,
+      "notes": "format=NUMF"
+    },
+    {
+      "name": "IDOB_YR4",
+      "label": "Infant birth -- year",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK"
+      ],
+      "years": [],
+      "page": 11,
+      "notes": "format=NUMF"
+    },
+    {
+      "name": "PAB6HUS",
+      "label": "Abuse -- 12 mnths b4 preg, h/p",
+      "type": "unknown",
+      "levels": [
+        ".T=TEEN MOM - NOT",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 11,
+      "notes": ""
+    },
+    {
+      "name": "PAB_XHUS",
+      "label": "Abuse -- 12 mnths b4 preg, ex-h/p",
+      "type": "unknown",
+      "levels": [
+        ".T=TEEN MOM - NOT",
+        "1=NO",
+        "2=YES 28c_SAO Abuse -- 12 mnths b4 preg, another family member Some sites did not include this question for minors, as defined in the jurisdiction",
+        ".B=DK/BLANK",
+        ".T=TEEN MOM - NOT",
+        "1=NO",
+        "2=YES 28d_SAO Abuse -- 12 mnths b4 preg, someone else Some sites did not include this question for minors, as defined in the jurisdiction B=DK/BLANK",
+        ".T=TEEN MOM - NOT",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 11,
+      "notes": ""
+    },
+    {
+      "name": "PAD6HUS",
+      "label": "Abuse --during preg, h/p",
+      "type": "unknown",
+      "levels": [
+        ".T=TEEN MOM - NOT",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 11,
+      "notes": ""
+    },
+    {
+      "name": "PAD_XHUS",
+      "label": "Abuse -- during preg, ex-h/p",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".T=TEEN MOM - NOT",
+        "1=NO",
+        "2=YES 29c_SAO Abuse -- during preg, another family member Some sites did not include this question for minors, as defined in the jurisdiction B=DK/BLANK",
+        ".T=TEEN MOM - NOT",
+        "1=NO",
+        "2=YES 29d_SAO Abuse -- during preg, someone else Some sites did not include this question for minors, as defined in the jurisdiction",
+        ".B=DK/BLANK",
+        ".T=TEEN MOM - NOT",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 11,
+      "notes": ""
+    },
+    {
+      "name": "BFINF_BDR_RAW",
+      "label": "BF info--baby doc",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 12,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "BFINF_DR_RAW",
+      "label": "BF info--from my doctor",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 12,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "BFINF_FAM_RAW",
+      "label": "BF info--from family/friends",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 12,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "BFINF_GRP_RAW",
+      "label": "BF info--breasfeed support grp",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 12,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "BFINF_HOT_RAW",
+      "label": "BF info--breasfeed hotline",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 12,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "BFINF_NUR_RAW",
+      "label": "BF info--from nurse/midwide/doula",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 12,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "BFINF_OTH_RAW",
+      "label": "BF info--other",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 12,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "BFINF_SPC_RAW",
+      "label": "BF info--breasfeeding/lactation spec",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 12,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "BFINF_TYPE_RAW",
+      "label": "BF info--other specified",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 12,
+      "notes": ""
+    },
+    {
+      "name": "INFLIVE5_RAW",
+      "label": "Infant alive -- now",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 12,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "INFWMOM5_RAW",
+      "label": "Infant living -- with mom",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 12,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "LTH_HOSP",
+      "label": "Hosp baby stay -- length of time LTH_HOS P",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK",
+        "1=< 1 DAY",
+        "2=1-2 DAYS",
+        "3=3-5 DAYS",
+        "4=6-14 DAYS",
+        "5=MORE THAN 14 DAYS",
+        "6=NOT BORN IN",
+        "7=STILL IN HOSPITAL"
+      ],
+      "years": [],
+      "page": 12,
+      "notes": ""
+    },
+    {
+      "name": "BF5EVER_RAW",
+      "label": "Breastfeed -- ever",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 13,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "BF5LNGTH_RAW",
+      "label": "BF duration -- length of time",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK",
+        ".S=SKIP",
+        "41=LESS THAN 1 WEEK"
+      ],
+      "years": [],
+      "page": 13,
+      "notes": "format=BFDUR4F"
+    },
+    {
+      "name": "BF5LNGTU_RAW",
+      "label": "BF duration -- wks/mnths",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK",
+        ".S=SKIP",
+        "1=WEEKS",
+        "2=MONTHS",
+        "5=LESS THAN 1 WEEK"
+      ],
+      "years": [],
+      "page": 13,
+      "notes": "format=BFUNIT4F"
+    },
+    {
+      "name": "BF5STILL_RAW",
+      "label": "Breastfeed -- still",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 13,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLEEPOWN_RAW",
+      "label": "Sleep -- baby alone",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK/DK",
+        ".S=SKIP",
+        "1=ALWAYS",
+        "2=OFTEN/ALMOST",
+        "3=SOMETIMES",
+        "4=RARELY",
+        "5=NEVER"
+      ],
+      "years": [],
+      "page": 13,
+      "notes": "format=FREQ5F"
+    },
+    {
+      "name": "SLEEPPOS_RAW",
+      "label": "Sleeping position -- baby SLEEPPO S",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=SIDE",
+        "2=BACK",
+        "3=STOMACH",
+        "4=SIDE/BACK",
+        "5=SIDE/STOMACH",
+        "6=BACK/STOMACH",
+        "7=ALL 3 POSITIONS"
+      ],
+      "years": [],
+      "page": 13,
+      "notes": ""
+    },
+    {
+      "name": "SLP_CHR_RAW",
+      "label": "Baby slept -- on couch/futon/chair",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 13,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLP_CRB8_RAW",
+      "label": "Baby slept -- in crib/bassinette/play yard",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 13,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLP_MAT8_RAW",
+      "label": "Baby slept -- on mattress/bed",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 13,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLP_ROOM_RAW",
+      "label": "Sleep -- baby in room with mom",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 13,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "BCB_PREG_RAW",
+      "label": "PP BC barrs -- want preg",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BC_NOW4",
+      "label": "Postpartum BC -- using now",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "SLP2BACK_RAW",
+      "label": "Recommend sleep--place on back",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLP2CRB_RAW",
+      "label": "Recommend sleep--place in crib/bassinet/play yard",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLP2MYRM_RAW",
+      "label": "Recommend sleep--place baby crib/bed in my room",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLP2NTBD_RAW",
+      "label": "Recommend sleep--can or cannot go in baby bed",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 42e_MI Recommend sleep--place baby alone to sleep",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLP_NBLK_RAW",
+      "label": "Baby slept -- with blanket",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLP_NPAD_RAW",
+      "label": "Baby slept -- with bumper pads",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLP_SAK_RAW",
+      "label": "Baby slept --  in sleep sack or wearable blanket",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLP_SWG_RAW",
+      "label": "Baby slept -- in car seat/swing",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "SLP_TOYPIL_RAW",
+      "label": "Baby slept -- with toys, cushions or pillows",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "BCB_HUSB_RAW",
+      "label": "PP BC barrs -- husb/part didnt want",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCB_NSEX_RAW",
+      "label": "PP BC barrs -- abstinence",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCB_OTH_RAW",
+      "label": "PP BC barrs -- other",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCB_PAY_RAW",
+      "label": "PP BC barrs -- cant pay",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCB_PNOW_RAW",
+      "label": "PP BC barrs -- preg now",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCB_SIDE_RAW",
+      "label": "PP BC barrs -- side effect",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCB_TUBE_RAW",
+      "label": "PP BC barrs -- tubes tied/blocked",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCB_WANT_RAW",
+      "label": "PP BC barrs -- didnt want to use",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCB_WHAT_RAW",
+      "label": "PP BC barrs -- other specified",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 15,
+      "notes": ""
+    },
+    {
+      "name": "BCP_COND_RAW",
+      "label": "BC postpart -- condoms",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_PILL_RAW",
+      "label": "BC postpart -- pill",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_TUBE_RAW",
+      "label": "BC postpart -- tubes tied",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_VASE_RAW",
+      "label": "BC postpart -- vasectomy",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_IMPL_RAW",
+      "label": "BC postpart -- contraceptive implant",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_IUD_RAW",
+      "label": "BC postpart -- IUD",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_NSEX_RAW",
+      "label": "BC postpart -- abstinence",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_OTH_RAW",
+      "label": "BC postpart -- other",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_PTRG_RAW",
+      "label": "BC postpart -- contraceptive patch/ring",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_PULL_RAW",
+      "label": "BC postpart -- withdrawal",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_RHYT_RAW",
+      "label": "BC postpart -- rhythm",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_SHT3_RAW",
+      "label": "BC postpart -- shots every 3 mnths",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO (UNCHECKED)",
+        "2=YES (CHECKED)"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NYSF"
+    },
+    {
+      "name": "BCP_WHAT_RAW",
+      "label": "BC postpart -- other specified",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 16,
+      "notes": ""
+    },
+    {
+      "name": "PPV_CHK",
+      "label": "PPV -- checkup for self",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NY1F"
+    },
+    {
+      "name": "VPP_EAT_RAW",
+      "label": "PP talk -- eating and exercise",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "VPP_VIT_RAW",
+      "label": "PPV -- folic acid",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "VPP_WAIT_RAW",
+      "label": "PPV -- wait before preg",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "VPP_ABUS_RAW",
+      "label": "PPV--HCW ask about abuse",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 17,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "VPP_BCM_RAW",
+      "label": "PPV -- BC methods",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 17,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "VPP_DEPR_RAW",
+      "label": "PPV -- ask about depression",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 17,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "VPP_DIAB_RAW",
+      "label": "PPV--test for diabetes",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 47k_MI W PPV -- ask about taking prescrip pain relievers",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 47l_MI PPV -- ask about taking other prescrip meds",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 47m_MI PPV -- ask about drinking alcohol",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES 47k_NYY C PPV -- breastfeeding status",
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 17,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "VPP_NSRT_RAW",
+      "label": "PPV -- insert IUD or implant",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 17,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "VPP_PRESBC_RA",
+      "label": "W PPV -- prescribe birth control",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 17,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "VPP_SMOK_RAW",
+      "label": "PPV --HCW ask about smoking cigs",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        ".S=SKIP",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 17,
+      "notes": "format=NYS1F"
+    },
+    {
+      "name": "INCOME8",
+      "label": "Income -- 12 mnths bef, total income INCOME8 F",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=$     0 TO $16,000",
+        "2=$16,001 TO $20,000",
+        "3=$20,001 TO $24,000",
+        "4=$24,001 TO $28,000",
+        "5=$28,001 TO $32,000",
+        "6=$32,001 TO $40,000",
+        "7=$40,001 TO $48,000",
+        "8=$48,001 TO $57,000",
+        "9=$57,001 TO $60,000",
+        "10=$60,001 TO $73,000",
+        "11=$73,001 TO $85,000",
+        "12=$85,001 OR MORE",
+        "13=$    0 TO $10,000",
+        "14=$10,001 TO $16,000",
+        "15=$85,001 TO $99,999",
+        "16=$100,000 OR MORE",
+        "17=$85,001 TO $99,000",
+        "18=$99,001 TO $109,000",
+        "19=$109,001 OR MORE",
+        "20=$ 85,001 TO $100,000",
+        "21=$100,001 TO $120,000",
+        "22=$120,001 OR MORE",
+        "101=$   0 TO $ 20,000",
+        "102=$20,001 TO $ 25,000",
+        "103=$ 25,001 TO $ 30,000",
+        "104=$ 30,001 TO $ 36,000",
+        "105=$ 36,001 TO $ 40,000",
+        "106=$ 40,001 TO $ 50,000",
+        "107=$ 50,001 TO $ 60,000",
+        "108=$ 60,001 TO $ 71,000",
+        "109=$ 71,001 TO $ 75,000",
+        "110=$ 75,001 TO $ 91,000",
+        "111=$ 91,001 TO $107,000",
+        "112=$107,001 OR MORE",
+        "201=$     0 TO $ 18,000",
+        "202=$18,001 TO $ 23,000",
+        "203=$23,001 TO $ 28,000",
+        "204=$28,001 TO $ 33,000",
+        "205=$33,001 TO $ 37,000",
+        "206=$37,001 TO $ 46,000"
+      ],
+      "years": [],
+      "page": 18,
+      "notes": ""
+    },
+    {
+      "name": "MH_PPDPR",
+      "label": "MH -- depress since birth",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK/DK",
+        "1=ALWAYS",
+        "2=OFTEN/ALMOST",
+        "3=SOMETIMES",
+        "4=RARELY",
+        "5=NEVER"
+      ],
+      "years": [],
+      "page": 18,
+      "notes": "format=FREQ5F"
+    },
+    {
+      "name": "MH_PPINT",
+      "label": "MH -- no interest since birth",
+      "type": "unknown",
+      "levels": [
+        ".B=BLANK/DK",
+        "1=ALWAYS",
+        "2=OFTEN/ALMOST",
+        "3=SOMETIMES",
+        "4=RARELY",
+        "5=NEVER"
+      ],
+      "years": [],
+      "page": 18,
+      "notes": "format=FREQ5F"
+    },
+    {
+      "name": "INC_NDEP",
+      "label": "Income -- dependents (+self)",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK"
+      ],
+      "years": [],
+      "page": 19,
+      "notes": "format=NUMF"
+    },
+    {
+      "name": "TOD_MTH",
+      "label": "Today -- month",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK"
+      ],
+      "years": [],
+      "page": 19,
+      "notes": "format=NUMF"
+    },
+    {
+      "name": "TOD_YR4",
+      "label": "Today -- year",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK"
+      ],
+      "years": [],
+      "page": 19,
+      "notes": "format=NUMF"
+    },
+    {
+      "name": "VAR",
+      "label": "POST-PARTUM DEPRESSION",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": ""
+    }
+  ]
+}

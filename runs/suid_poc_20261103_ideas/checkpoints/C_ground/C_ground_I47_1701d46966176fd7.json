@@ -1,0 +1,24 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with an overnight hospital stay is compared to those without.",
+ "rationale": "This design uses a case-only analysis to examine the presence of hospital stays in SUID cases. It compares proportions among cases but cannot estimate incidence or risk due to the lack of a denominator source.",
+ "prior_art": "The closest tested work includes bedsharing_ms_v7.C3, which examines the timing of exposure effects on SUID incidence, but does not address hospital stays specifically. This question remains open as it focuses on different aspects of SUID risk factors.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C3"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Hospital Overnight Stay"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn"
+ ],
+ "cannot_establish": "The design cannot estimate incidence or risk; it can only compare proportions among cases."
+}

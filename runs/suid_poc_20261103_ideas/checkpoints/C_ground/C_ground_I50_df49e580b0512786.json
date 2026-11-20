@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "Infants with prior sibling deaths due to SIDS are more likely to die from SUID compared to those without such a history.",
+ "rationale": "The study will examine whether infants with a history of sibling deaths have a higher risk of dying from SUID compared to those without such a history, using the ncfrp_v51 dataset.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and bedsharing_ms_v7.C11 examined factors like maternal smoking and bed-sharing but did not address sibling history or prior child deaths. This question remains open as it explores a new risk factor for SUID.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C11"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Prior Child Deaths",
+  "Case of SUID"
+ ],
+ "variables": [
+  "ncfrp_v51:SUPdthsids",
+  "ncfrp_v51:BIO1dthsids",
+  "ncfrp_v51:BIO2dthsids",
+  "ncfrp_v51:GIV1dthsids"
+ ],
+ "cannot_establish": "Causation, population incidence rates or risk ratios."
+}

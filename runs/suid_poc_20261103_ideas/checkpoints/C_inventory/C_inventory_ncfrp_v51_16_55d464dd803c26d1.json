@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "POIbleach",
+   "name": "Cleaning Substances",
+   "summary": "Type of cleaning substance involved in the incident."
+  },
+  {
+   "start": "POIbloodpres",
+   "name": "Prescription Medications",
+   "summary": "Types and sources of prescription medications involved, including blood pressure medication, cardiac medication, methadone, pain medication (opioids and non-opioids), and other prescriptions."
+  },
+  {
+   "start": "POIcalled",
+   "name": "Poison Control Interaction",
+   "summary": "Whether Poison Control was called and who made the call."
+  },
+  {
+   "start": "POIcarbmono",
+   "name": "Carbon Monoxide Exposure",
+   "summary": "Type of substance involved, source of carbon monoxide exposure, presence and functioning of CO alarms."
+  },
+  {
+   "start": "POIchildvit",
+   "name": "Over-the-Counter Substances",
+   "summary": "Types of over-the-counter substances involved such as children’s vitamins, cough medicine, iron supplements, pain medication, stimulants, and other OTC products."
+  },
+  {
+   "start": "POIcircum",
+   "name": "Incident Circumstances",
+   "summary": "Circumstances leading to the incident including whether it was an accident or intentional act."
+  },
+  {
+   "start": "POIdietpill",
+   "name": "Illicit Drugs and Other Chemicals",
+   "summary": "Types of illicit drugs, other chemicals, pesticides, plants, street drugs, and unknown substances involved in the incident."
+  },
+  {
+   "start": "MEDcare48hrs",
+   "name": "Health Care Access",
+   "summary": "Whether the child was receiving health care for their medical condition within 48 hours of death and details about access or compliance issues related to healthcare."
+  }
+ ]
+}

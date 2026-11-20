@@ -1,0 +1,41 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The incidence rate of SUID differs among infants born to mothers who experienced prenatal care issues compared to those without such issues.",
+ "rationale": "This design involves estimating outcome rates by exposure group using a case series (numerator), population reference source for exposure prevalence, and denominator source for the population at risk. The sources can provide necessary data on SUID cases, maternal reports of prenatal care quality, and live births to estimate incidence rates.",
+ "prior_art": "The manuscript claims C10 mentions exclusion criteria that do not align with this study's focus on prenatal care issues, while claim C23 discusses bed sharing but does not address prenatal care quality. Claim C10 highlights maternal smoking as a risk factor for SUID but does not specifically cover prenatal care issues.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C23"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "SUID cases",
+  "Prenatal care issues",
+  "Live births"
+ ],
+ "variables": [
+  "ncfrp_v51:INFisschcare",
+  "ncfrp_v51:ISSprechronicdiseasedur",
+  "ncfrp_v51:INFisssupport",
+  "ncfrp_v51:INFissmultprov",
+  "ncfrp_v51:INFexpipv",
+  "ncfrp_v51:INFisscultr",
+  "prams_p7_arf:PNC_VST",
+  "prams_p8_arf:PNC_VST",
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot establish causation due to its observational nature and may not fully control for all potential confounders."
+}

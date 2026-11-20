@@ -1,0 +1,36 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The incidence rate of Sudden Unexpected Infant Death (SUID) differs among infants who died from SUID compared to live births with similar sleeping arrangements.",
+ "rationale": "This study aims to estimate the incidence rates of SUID by infant sleeping arrangement, comparing cases and live births stratified similarly. Previous studies have extensively examined bed-sharing but not other types of sleep arrangements.",
+ "prior_art": "The closest tested work is bedsharing_ms_v7.C3-C5, which examines the association between bed sharing and SUID incidence but does not cover other sleeping arrangements. This knowledge gap remains open as less is known about the impact of different sleeping arrangements on SUID rates.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C3",
+  "bedsharing_ms_v7.C5"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "sleeping arrangement",
+  "SUID incidence rate"
+ ],
+ "variables": [
+  "ncfrp_v51:CIRroomshare",
+  "ncfrp_v51:CIRwadultnum",
+  "ncfrp_v51:CIRwchild",
+  "prams_p8_arf:WTANAL",
+  "prams_p8_arf:SLP_ROOM_RAW",
+  "prams_p8_arf:SLP_SAK_RAW",
+  "prams_p8_arf:SLP_CHR_RAW"
+ ],
+ "cannot_establish": "Causation, direct incidence rates without a denominator source for specific sleeping arrangements."
+}

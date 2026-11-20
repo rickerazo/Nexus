@@ -1,0 +1,32 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with high pregnancy weight gain is different from the proportion of other infant deaths with high pregnancy weight gain.",
+ "rationale": "This study uses a case-case comparison design to investigate whether pregnancy weight gain is associated with Sudden Unexpected Infant Death (SUID) compared to other causes of infant death. The sources provide data on both SUID cases and other infant deaths, allowing for the comparison of proportions within these groups.",
+ "prior_art": "The existing literature has established associations between maternal smoking and SUID (C10), but there is no specific comparison of pregnancy weight gain in SUID versus other causes of infant death. This question remains open as it explores a new dimension of risk factors for SUID.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p8_std2"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "pregnancy weight gain",
+  "SUID cases",
+  "other infant deaths"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4momwtgn",
+  "prams_p8_arf:MOMLBS",
+  "prams_p8_std2:PGWTGN8_DK",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates. It can only compare proportions among cases."
+}

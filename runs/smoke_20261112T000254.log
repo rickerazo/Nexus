@@ -1,0 +1,38 @@
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO mmf.ingest.codebook: cdc: pass1=6 pass2=6 accepted=6 rejected=0
+WARNING mmf.pipeline: ingest_cdc: 6 identifier(s) in the codebook are not extracted variables; see runs/smoke_20261112T000254/sources/cdc.audit.json
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+Stage B awaits review: edit runs/smoke_20261112T000254/review_B.md and set 'approved: true', then re-run.
+Resume with: mmf run configs/smoke.yaml --run-dir runs/smoke_20261112T000254
+approved stage B in runs/smoke_20261112T000254
+INFO mmf.pipeline: ingest_cdc: cache hit
+WARNING mmf.pipeline: ingest_cdc: 6 identifier(s) in the codebook are not extracted variables; see runs/smoke_20261112T000254/sources/cdc.audit.json
+INFO mmf.pipeline: A_mini_manuscript: cache hit
+INFO mmf.pipeline: B: cache hit
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO mmf.pipeline: B_check: cache hit
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_gaps attempt 1 rejected: ['G1: supporting claim mini_manuscript.C2 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it', 'G2: supporting claim mini_manuscript.C3 is not discussed in prior_art or rationale; cite only claims the gap builds on and say how each one bears on it']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+Stage C awaits review: edit runs/smoke_20261112T000254/review_C.md and set 'approved: true', then re-run.
+Resume with: mmf run configs/smoke.yaml --run-dir runs/smoke_20261112T000254
+approved stage C in runs/smoke_20261112T000254
+INFO mmf.pipeline: ingest_cdc: cache hit
+WARNING mmf.pipeline: ingest_cdc: 6 identifier(s) in the codebook are not extracted variables; see runs/smoke_20261112T000254/sources/cdc.audit.json
+INFO mmf.pipeline: A_mini_manuscript: cache hit
+INFO mmf.pipeline: B: cache hit
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO mmf.pipeline: B_check: cache hit
+INFO mmf.pipeline: C: cache hit
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+Report: runs/smoke_20261112T000254/report.md
+smoke OK: runs/smoke_20261112T000254/report.md

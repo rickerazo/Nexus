@@ -1,0 +1,66 @@
+### Design
+
+**Design Restatement**: The study aims to estimate the incidence of Sudden Unexpected Infant Death (SUID) among infants with different sleep environments and socio-economic statuses. It will compare these rates across various socioeconomic groups.
+
+**Sources by Role**:
+- **Case Series**: ncfrp_v51 (National Fatality Review Case Reporting System)
+  - Reason: The case series records infant deaths reviewed by fatality review teams, specifically SUID cases.
+  
+- **Population Reference**: prams_p7_arf and prams_p8_arf (PRAMS Phase 7 & Phase 8 Analytic Research Files)
+  - Reason: These sources provide weighted survey data on mothers of live births a few months postpartum, which can estimate the prevalence of sleep environment quality and socioeconomic status in the general population.
+  
+- **Denominator**: cdc_linkco15 (CDC linked birth/infant death public-use file guide, 2015) and cdc_natl15 (CDC natality public-use file guide, 2015)
+  - Reason: These sources provide detailed counts of live births in the US for 2015, serving as denominators to estimate population at risk.
+
+**Period**: The study will use data from 2016-2021 (Phase 8 PRAMS) and 2015 (CDC denominator files).
+
+### Variables
+
+#### Sleep Environment Quality
+- **Case Series: ncfrp_v51**
+  - CIRdeathsleepenv: Was the death related to sleeping or the sleep environment? 
+  - INF4inftopsuid, INF372infinj, INF3nicudrug, etc. (various indicators of sleep safety and injury)
+
+- **Population Reference**: prams_p8_arf
+  - SLP_ROOM_RAW: Sleep -- baby in room with mom
+  - SLP2CRB_RAW, SLP2NTBD_RAW, SLP2ALON_RAW: Recommend sleep--place in crib/bassinet/play yard; can or cannot go in baby bed; place baby alone to sleep
+
+#### Socioeconomic Status
+- **Population Reference**: prams_p8_arf and prams_p7_arf (Survey includes various socioeconomic indicators)
+  - CIR2socpregnancy: Life Stressors - Social/economic - Pregnancy (ncfrp_v51)
+  - PREGHX, TLK_PRET, VST_CARE, TLK_BDEF, etc. (prams_p8_arf)
+
+#### Incidence Rates
+- **Case Series**: ncfrp_v51
+  - CIRdeathsleepenv: Was the death related to sleeping or the sleep environment? 
+
+### Biases
+
+**Selection Bias**:
+- The case series from NCFRP covers only cases reviewed by fatality review teams, which may not be representative of all SUID cases in the US.
+  
+**Information Bias**:
+- Sleep environment details in the case series are recorded post-hoc and may differ from how these were reported during pregnancy or early infancy. 
+- PRAMS data is self-reported by mothers after birth, potentially underreporting issues or over-reporting ideal behaviors.
+
+**Confounding**:
+- Confounders include maternal age, smoking status, prematurity, and other lifestyle factors that might influence both sleep environment quality and SUID incidence.
+  
+### What the Design Cannot Establish
+- The design can estimate rates but cannot establish causation. It also cannot address temporal trends or changes over time due to cross-sectional nature of PRAMS data.
+
+### Prior Art
+
+The manuscripts suggest some related work:
+- **SUID_manuscript_v9_clean.C10**: Maternal smoking is associated with higher SUID incidence.
+- **bedsharing_ms_v7.C8**: Bed sharing was more strongly associated with SUID incidence in an early developmental window compared to a later one.
+
+However, none of the claims directly address the interaction between socioeconomic status and sleep environment quality on SUID rates.
+
+### Verdict
+
+These data can be used to estimate exposure-specific SUID incidence rates among different socio-economic statuses and sleep environments. However, the study design cannot establish causation or temporal trends. The NCFRP case series is limited in geographic detail and might not fully represent all US SUID cases, leading to potential selection bias.
+
+To improve the study:
+- Incorporate additional data sources that provide broader geographic coverage of SUID cases.
+- Include longitudinal data to better understand temporal changes in sleep environment quality and socioeconomic status.

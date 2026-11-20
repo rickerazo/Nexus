@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "ISSmothprolonged",
+   "name": "Maternal Health Conditions",
+   "summary": "Variables related to maternal health conditions such as prolonged rupture of membranes, STI status, teen pregnancy, and infections."
+  },
+  {
+   "start": "ISSmothweight",
+   "name": "Maternal Weight and Care",
+   "summary": "Variables measuring mother's weight, weight gain adequacy, pre-existing hypertension, and other maternal health care factors."
+  },
+  {
+   "start": "ISSoth",
+   "name": "Other Maternal Factors",
+   "summary": "Miscellaneous variables related to other maternal factors including employment issues, history of mental illness, substance use, and other unspecified conditions."
+  },
+  {
+   "start": "ISSpedassess",
+   "name": "Pediatric Care Issues",
+   "summary": "Variables indicating inadequate pediatric care assessment, inappropriate ER use, missed appointments, multiple providers, lack of referrals, and standard of care issues."
+  },
+  {
+   "start": "ISSpncassess",
+   "name": "Prenatal Care Issues",
+   "summary": "Variables related to prenatal care including inadequate assessments, late entry to care, missed appointments, multiple providers, no prenatal care, lack of referrals, and standard of care issues."
+  },
+  {
+   "start": "ISSprebereave",
+   "name": "Preconception and Chronic Disease Care",
+   "summary": "Variables related to preconception care, chronic disease control education at different stages (before, during, after pregnancy), dental care, pregnancy planning/BC education, weight management/dietician services."
+  },
+  {
+   "start": "ISSserdisatsupport",
+   "name": "Service Satisfaction and Eligibility",
+   "summary": "Variables indicating client dissatisfaction with support services, eligibility issues, inadequate information, lack of child care, poor communication between providers, and other service-related factors."
+  },
+  {
+   "start": "INF72apnea",
+   "name": "Infant Health in Last 72 Hours",
+   "summary": "Variables indicating infant health conditions such as apnea, difficulty breathing, choking, cyanosis, diarrhea, fever, fussiness, lethargy, seizures, stool changes, excessive sweating, vomiting, and other disorders."
+  }
+ ]
+}

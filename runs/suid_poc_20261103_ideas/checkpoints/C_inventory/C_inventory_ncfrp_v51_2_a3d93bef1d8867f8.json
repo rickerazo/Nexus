@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "INF3isssupport",
+   "name": "Prenatal Issues",
+   "summary": "Indicates lack of family/social support and transportation during pregnancy."
+  },
+  {
+   "start": "INF3iugr",
+   "name": "Medical Complications",
+   "summary": "Records medical complications such as IUGR, low birth weight, multiple gestation, and other conditions."
+  },
+  {
+   "start": "INF3livebirth",
+   "name": "Pregnancy History",
+   "summary": "Documents number of live births, pregnancies, prenatal visits, and previous pregnancy outcomes."
+  },
+  {
+   "start": "INF3marj",
+   "name": "Medications and Drugs",
+   "summary": "Indicates use of various medications, drugs, and substances during pregnancy."
+  },
+  {
+   "start": "INF3metab",
+   "name": "Newborn Screening",
+   "summary": "Records abnormal metabolic newborn screening results."
+  },
+  {
+   "start": "INF3mothinj",
+   "name": "Maternal Injury",
+   "summary": "Indicates if the mother was injured during pregnancy and specifies the injury."
+  },
+  {
+   "start": "INF3move",
+   "name": "Fetal Movement",
+   "summary": "Records decreased fetal movement as a medical complication."
+  },
+  {
+   "start": "INF3multbirth",
+   "name": "Multiple Gestation",
+   "summary": "Indicates multiple gestation and specifies the number of fetuses."
+  }
+ ]
+}

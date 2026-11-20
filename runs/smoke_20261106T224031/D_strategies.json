@@ -1,0 +1,64 @@
+{
+  "strategies": [
+    {
+      "id": "S1",
+      "gap_id": "G1",
+      "research_question": "Does the effect of prenatal smoking on the risk of sudden unexpected infant death vary by postconceptional age?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc",
+          "name": "UCOD"
+        },
+        "definition": "Underlying cause of death (ICD-10 codes R95 for SIDS, R99 for unspecified, W75 for accidental suffocation)"
+      },
+      "exposures": [
+        {
+          "source_id": "cdc",
+          "name": "CIG_REC"
+        }
+      ],
+      "covariates": [],
+      "interactions": [],
+      "stratification": [],
+      "offset": null,
+      "time_scale": {
+        "source_id": "cdc",
+        "name": "AGED"
+      },
+      "design": "cohort",
+      "model_class": "cox_proportional_hazards",
+      "rationale": "A cohort study design is appropriate to follow individuals from pregnancy through the first year of life, capturing prenatal smoking status and timing of sudden unexpected infant death. The Cox proportional hazards model allows for time-to-event analysis, which is suitable for assessing how risk changes over postconceptional age.",
+      "expected_direction": "The effect of prenatal smoking on the risk of sudden unexpected infant death should vary across different intervals of postconceptional age. For example, there might be a stronger association at earlier ages compared to later ages or vice versa, depending on developmental vulnerabilities and exposure timing effects during pregnancy and early infancy."
+    },
+    {
+      "id": "S2",
+      "gap_id": "G2",
+      "research_question": "Does the sleep environment modify the risk of sudden unexpected infant death (SUID) for male infants after reaching 44 weeks postconceptional age?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc",
+          "name": "UCOD"
+        },
+        "definition": "Underlying cause of death classified as Sudden Infant Death Syndrome (ICD-10: R95), Unspecified Cause of Death (R99), or Accidental Suffocation and Strangulation in Bed (W75)"
+      },
+      "exposures": [
+        {
+          "source_id": "cdc",
+          "name": "SEX"
+        }
+      ],
+      "covariates": [],
+      "interactions": [],
+      "stratification": [],
+      "offset": null,
+      "time_scale": {
+        "source_id": "cdc",
+        "name": "AGED"
+      },
+      "design": "cohort",
+      "model_class": "cox_proportional_hazards",
+      "rationale": "A cohort study design is appropriate to follow male infants over time and assess the risk of SUID. The Cox proportional hazards model allows for the inclusion of time-varying covariates (such as sleep environment if it were available) and can handle censored data, which is common in survival analysis.",
+      "expected_direction": "The risk of SUID should be higher for male infants after reaching 44 weeks postconceptional age compared to before this age. The inclusion of sleep environment data would help determine if and how it modifies this risk pattern, but the current dataset does not capture this information, limiting our ability to draw definitive conclusions about its influence."
+    }
+  ]
+}

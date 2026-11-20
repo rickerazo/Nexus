@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "INF2chschoth",
+   "name": "School Problems",
+   "summary": "Indicates if the child had school problems including suspensions, truancy, and other unspecified issues."
+  },
+  {
+   "start": "INF2cmhillmed",
+   "name": "Mental Health Medication",
+   "summary": "Records whether the child was on medications for mental illness and details about prior and current mental health services received."
+  },
+  {
+   "start": "INF2cmhissue",
+   "name": "Mental Health Barriers",
+   "summary": "Identifies issues preventing the child from receiving mental health services, including specific barriers specified by review teams."
+  },
+  {
+   "start": "INF2criminal",
+   "name": "Criminal History",
+   "summary": "Documents if the child had a delinquent or criminal history and specifies types of offenses such as assaults, drugs, robbery, and other crimes."
+  },
+  {
+   "start": "INF2drugabuse",
+   "name": "Substance Abuse",
+   "summary": "Indicates whether the child had a history of substance use or abuse including tobacco/nicotine use."
+  },
+  {
+   "start": "INF2educate",
+   "name": "Education Level",
+   "summary": "Reports the highest level of education attained by the child, with an option to specify if not listed."
+  },
+  {
+   "start": "INF2emp",
+   "name": "Employment Status",
+   "summary": "Describes whether the child was employed and provides details on employment status."
+  },
+  {
+   "start": "INF2genderid",
+   "name": "Gender Identity",
+   "summary": "Captures the gender identity of the child, with an option to specify if other than listed categories."
+  }
+ ]
+}

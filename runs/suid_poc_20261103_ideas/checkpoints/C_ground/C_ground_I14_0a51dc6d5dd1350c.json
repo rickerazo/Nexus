@@ -1,0 +1,36 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The rate of Sudden Unexpected Infant Death (SUID) among infants born to mothers who experienced preterm labor is estimated using exposure-specific rates from the case series, population reference, and denominator sources.",
+ "rationale": "This study can estimate SUID rates by maternal preterm labor status using a combination of case series data, population reference surveys, and live birth denominators. However, it cannot establish causality due to observational nature and potential biases.",
+ "prior_art": "The bedsharing manuscript (bedsharing_ms_v7.C10) investigates developmental windows but does not address maternal preterm labor specifically, leaving this question open for further investigation.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15",
+  "cdc_linkco15"
+ ],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "SUID cases",
+  "Maternal preterm labor exposure",
+  "Live births at risk"
+ ],
+ "variables": [
+  "ncfrp_v51:INFpretermlab",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL",
+  "cdc_natl15:RF_PPTERM",
+  "cdc_linkco15:F_RF_PPB"
+ ],
+ "cannot_establish": "Causality between preterm labor and SUID risk; only associative relationships can be estimated."
+}

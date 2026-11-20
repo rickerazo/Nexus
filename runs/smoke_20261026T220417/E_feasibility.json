@@ -1,0 +1,202 @@
+{
+  "reports": [
+    {
+      "strategy_id": "S1",
+      "resolutions": [
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "UCOD"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "UCOD",
+            "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+            "type": "unknown",
+            "levels": [
+              "R95 = SIDS",
+              "R99 = UNSPECIFIED",
+              "W75 = ACCIDENTAL SUFFOCATION"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: ICDF (not explicitly stated, inferred from documentation format). Type: categorical"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "CIG_REC"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "CIG_REC",
+            "label": "Cigarette smoking during pregnancy",
+            "type": "unknown",
+            "levels": [
+              ".B=DK/BLANK",
+              "1=NO",
+              "2=YES"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "format=NYF"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "MAGER9"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "MAGER9",
+            "label": "Mother's age recode 9",
+            "type": "unknown",
+            "levels": [
+              "1=UNDER 15",
+              "2=15-19",
+              "3=20-24"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "format=AGE9F"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "AGED"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "AGED",
+            "label": "Age at death in days NUMF 0-364=DAYS",
+            "type": "unknown",
+            "levels": [
+              "0-364 = DAYS"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: NUMF (not explicitly stated, inferred from documentation format). Type: continuous"
+          },
+          "note": ""
+        }
+      ],
+      "blockers": [],
+      "caveats": [
+        "The variable `UCOD` is defined with ICD-10 codes R95, R99, and W75. However, the documentation does not specify if these codes are mutually exclusive or if they can overlap in a single record, which could lead to misclassification of SUID.",
+        "The variable `CIG_REC` has levels `.B=DK/BLANK`, `1=YES`, and `2=NO`. The presence of `.B=DK/BLANK` suggests that there may be missing or unknown smoking status data for some pregnancies, which could introduce bias if not properly addressed in the analysis.",
+        "The variable `MAGER9` is recoded into three categories (under 15, 15-19, and 20-24). This limited categorization might not capture the full range of maternal ages, potentially leading to loss of information or misclassification if there are significant differences in SUID risk among other age groups.",
+        "The variable `AGED` is continuous but documented as a numeric format with values from 0 to 364 days. The precision and accuracy of this variable could be affected by data entry errors, particularly for very young infants where the exact day of death might not always be recorded accurately."
+      ],
+      "cross_source_notes": [],
+      "not_assessed": [
+        "statistical power",
+        "causal validity / confounding adequacy",
+        "actual missingness rates (documentation only; no row-level data read)"
+      ]
+    },
+    {
+      "strategy_id": "S2",
+      "resolutions": [
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "UCOD"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "UCOD",
+            "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+            "type": "unknown",
+            "levels": [
+              "R95 = SIDS",
+              "R99 = UNSPECIFIED",
+              "W75 = ACCIDENTAL SUFFOCATION"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: ICDF (not explicitly stated, inferred from documentation format). Type: categorical"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "SEX"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "SEX",
+            "label": "Sex of infant",
+            "type": "unknown",
+            "levels": [
+              "1=MALE",
+              "2=FEMALE"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "format=SEXF"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "COMBGEST"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "COMBGEST",
+            "label": "Combined gestation in weeks GESTF 17-47=WEEKS",
+            "type": "unknown",
+            "levels": [
+              "99=UNKNOWN"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: GESTF (not explicitly stated, inferred from documentation format). Type: ordinal"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "CIG_REC"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "CIG_REC",
+            "label": "Cigarette smoking during pregnancy",
+            "type": "unknown",
+            "levels": [
+              ".B=DK/BLANK",
+              "1=NO",
+              "2=YES"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "format=NYF"
+          },
+          "note": ""
+        }
+      ],
+      "blockers": [],
+      "caveats": [
+        "The variable `UCOD` (Underlying cause of death) includes codes for SIDS, unspecified causes, and accidental suffocation. This may introduce misclassification issues since the outcome is specifically defined as Sudden Unexpected Infant Death (SUID), which might not fully align with these ICD-10 codes.",
+        "The variable `COMBGEST` (Combined gestation in weeks) has a level of '99=UNKNOWN', indicating that there will be missing data for gestational age, which could affect the analysis if this is prevalent.",
+        "The variable `CIG_REC` (Cigarette smoking during pregnancy) includes levels '.B=DK/BLANK' and '1=YES'. The presence of 'DK/BLANK' suggests potential non-response or missingness in reporting prenatal smoking status."
+      ],
+      "cross_source_notes": [],
+      "not_assessed": [
+        "statistical power",
+        "causal validity / confounding adequacy",
+        "actual missingness rates (documentation only; no row-level data read)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1209 @@
+{
+  "candidates": [
+    {
+      "question": "Does pregnancy weight gain differ between SUID cases and mothers of live births?",
+      "comparison": "ncfrp_v51 (case series) compared with prams_p8_std2 (population reference); cdc_natl15 (denominator)",
+      "why_open": "This question aims to explore whether there is a significant difference in pregnancy weight gain between mothers who experienced SUID and those who did not, which could potentially indicate unmeasured risk factors or behavioral differences.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_std2",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Pregnancy Weight Gain",
+        "prams_p8_std2 / Pregnancy Weight Gain"
+      ],
+      "data": "Case series (ncfrp_v51:INF4mombmi) records the pregnancy weight gain of mothers who experienced SUID, while population reference (prams_p8_std2 and prams_p7_arf:PREGWTGAIN or PREG_WKGAIN) provides the weighted prevalence of pregnancy weight gain among a representative sample of live births.",
+      "id": "I1",
+      "design": "case_population",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Are there differences in maternal stressors between SUID cases and the general population?",
+      "comparison": "ncfrp_v51 (case series) compared with prams_p8_arf (population reference); cdc_natl15 (denominator)",
+      "why_open": "By comparing the prevalence of maternal stressors, this research could shed light on whether certain stressful life events or conditions disproportionately affect mothers who experience SUID.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Maternal Stressors",
+        "ncfrp_v51 / Infant Meal Details"
+      ],
+      "data": "Case series (ncfrp_v51:INFstressor) captures maternal stressors among mothers who experienced SUID, while population reference (prams_p8_arf and prams_p7_arf:D100) provides weighted prevalence of these same stressors in a representative sample of live births.",
+      "id": "I2",
+      "design": "case_population",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How do health care visits during pregnancy differ between SUID cases and the general population?",
+      "comparison": "ncfrp_v51 (case series) compared with prams_p8_arf (population reference); cdc_natl15 (denominator)",
+      "why_open": "Investigating healthcare utilization can reveal whether inadequate or excessive use of health care during pregnancy is associated with an increased risk of SUID.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Maternal Health Conditions",
+        "prams_p8_arf / Healthcare Visits During Pregnancy"
+      ],
+      "data": "Case series (ncfrp_v51:PREG_VISIT) captures prenatal healthcare visits among mothers who experienced SUID, while population reference (prams_p8_arf and prams_p7_arf:HEALTHCARE_VISITS_DURING_PREGNANCY) provides weighted prevalence of these health care visits in a representative sample.",
+      "id": "I3",
+      "design": "case_population",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What is the difference in postpartum contraception use between mothers who experienced SUID and those who did not?",
+      "comparison": "ncfrp_v51 (case series) compared with prams_p8_arf, prams_p7_arf (population reference); cdc_natl15 (denominator)",
+      "why_open": "This comparison can highlight whether the use of postpartum contraception differs between mothers who experienced SUID and those who did not.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Maternal Health Conditions",
+        "prams_p7_arf / Birth Control Usage"
+      ],
+      "data": "Case series (ncfrp_v51:BCMETHOD) captures postpartum contraception use among mothers who experienced SUID, while population reference (prams_p8_arf and prams_p7_arf:BIRTH_CONTROL_USAGE) provides weighted prevalence of these methods in a representative sample.",
+      "id": "I4",
+      "design": "case_population",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there an association between substance abuse during pregnancy and the incidence of SUID?",
+      "comparison": "ncfrp_v51 (case series) compared with prams_p8_arf, prams_p7_arf (population reference); cdc_natl15 (denominator)",
+      "why_open": "This question seeks to understand whether substance abuse during pregnancy is more common among mothers who experienced SUID compared to those who did not.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Maternal Weight and Care",
+        "prams_p7_arf / Postpartum Birth Control"
+      ],
+      "data": "Case series (ncfrp_v51:INFdruguse) captures substance use among mothers who experienced SUID, while population reference (prams_p8_arf and prams_p7_arf:D309) provides weighted prevalence of these behaviors in a representative sample.",
+      "id": "I5",
+      "design": "case_population",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What proportion of SUID cases involved infants who slept with an adult compared to the general population of live-born infants?",
+      "comparison": "SUID cases vs. general population",
+      "why_open": "This question explores whether sharing a sleeping surface with an adult is more common among SUID cases than in the general population, potentially indicating a risk factor for SUID.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15",
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Infant Sleep Environment",
+        "prams_p8_arf / Sleeping Arrangements"
+      ],
+      "data": "Case series: ncfrp_v51:D102 Infant Sleep Environment, specifically whether the infant shared a sleeping surface with an adult. Population reference: prams_p8_arf:D281 Sleeping Arrangements, also focusing on sharing a sleeping surface with an adult.",
+      "id": "I6",
+      "design": "case_population",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does pregnancy weight gain differ between mothers of SUID cases compared to the general population of live-born infants?",
+      "comparison": "SUID cases vs. general population",
+      "why_open": "This question examines whether mothers who experienced a sudden unexpected infant death had different patterns of pregnancy weight gain, which could be associated with risk factors for SUID.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_std2"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15",
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Pregnancy Weight Gain",
+        "prams_p8_std2 / Pregnancy Weight Gain"
+      ],
+      "data": "Case series: ncfrp_v51:D88 Pregnancy Weight Gain. Population reference: prams_p8_std2:D299 Pregnancy Weight Gain.",
+      "id": "I7",
+      "design": "case_population",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What is the prevalence of maternal health problems among mothers of SUID cases compared to the general population of live-born infants?",
+      "comparison": "SUID cases vs. general population",
+      "why_open": "This question assesses whether mothers who experienced a sudden unexpected infant death had higher rates of specific maternal health issues, which could contribute to increased risk.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15",
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Medical Complications",
+        "prams_p8_arf / Maternal Health Problems"
+      ],
+      "data": "Case series: ncfrp_v51:D66 Medical Complications and other health issues. Population reference: prams_p8_arf:D269 Maternal Health Problems.",
+      "id": "I8",
+      "design": "case_population",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the prevalence of preterm birth differ between mothers of SUID cases compared to the general population?",
+      "comparison": "SUID cases vs. general population",
+      "why_open": "This question explores whether there is a higher rate of preterm births among mothers who experienced sudden unexpected infant death, which could suggest an association with increased risk.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15",
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Pregnancy History",
+        "prams_p7_arf / Previous Birth History"
+      ],
+      "data": "Case series: ncfrp_v51:D67 Pregnancy History, focusing on preterm births. Population reference: prams_p7_arf:D303 Previous Birth History.",
+      "id": "I9",
+      "design": "case_population",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a difference in the prevalence of prenatal care issues between mothers of SUID cases and the general population?",
+      "comparison": "SUID cases vs. general population",
+      "why_open": "This question investigates whether inadequate or delayed prenatal care is more common among mothers who experienced sudden unexpected infant death, potentially indicating a risk factor.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15",
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Prenatal Care Issues",
+        "prams_p8_arf / Healthcare Visits During Pregnancy"
+      ],
+      "data": "Case series: ncfrp_v51:D243 Prenatal Care Issues. Population reference: prams_p8_arf:D272 Healthcare Visits During Pregnancy.",
+      "id": "I10",
+      "design": "case_population",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the prevalence of hospital overnight stays among SUID cases compare with that in the general population of live births?",
+      "comparison": "SUID cases (ncfrp_v51) vs. Live births from PRAMS Phase 8 (prams_p8_arf)",
+      "why_open": "This question explores whether infants who spend nights in the hospital after birth are at a higher risk for SUID compared to those who do not. If there is an elevated prevalence, it could indicate that specific conditions necessitating hospital stays might also predispose to sudden infant death.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Hospital Overnight Stay",
+        "prams_p8_arf / Hospital Stay Length"
+      ],
+      "data": "Case series uses ncfrp_v51: Hospital Overnight Stay (D82); Reference source uses prams_p8_arf: Hospital Stay Length (D279).",
+      "id": "I11",
+      "design": "case_population",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What is the difference in prevalence of previous child deaths between SUID cases and the general population of live births?",
+      "comparison": "SUID cases (ncfrp_v51) vs. Live births from PRAMS Phase 8 (prams_p8_arf)",
+      "why_open": "This question aims to determine whether a history of family infant mortality could be an unrecognized risk factor for Sudden Unexpected Infant Death, indicating that such families might need more intensive monitoring or preventive care.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Prior Child Deaths"
+      ],
+      "data": "Both case series and reference source use ncfrp_v51: Prior Child Deaths (D120); PRAMS may not have this exact domain, but we can infer by asking about any previous infant deaths.",
+      "id": "I12",
+      "design": "case_population",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a difference in the prevalence of maternal stressors between SUID cases and the general population of live births?",
+      "comparison": "SUID cases (ncfrp_v51) vs. Live births from PRAMS Phase 8 (prams_p8_arf)",
+      "why_open": "Exploring if mothers experiencing significant stress during pregnancy are at higher risk for having infants who die unexpectedly could lead to better support services and interventions.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Maternal Stressors",
+        "prams_p8_arf / Pre-Pregnancy Health Behaviors and Conditions"
+      ],
+      "data": "Case series uses ncfrp_v51: Maternal Stressors (D100); Reference source uses prams_p8_arf: Pre-Pregnancy Health Behaviors and Conditions, including maternal stress indicators.",
+      "id": "I13",
+      "design": "case_population",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How do the prevalence rates of pregnancy complications differ between SUID cases and live births in the general population?",
+      "comparison": "SUID cases (ncfrp_v51) vs. Live births from PRAMS Phase 8 (prams_p8_arf)",
+      "why_open": "Understanding if certain pregnancy-related health issues contribute to higher risk of SUID could provide critical insights for prenatal care and early interventions.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Medical Complications",
+        "prams_p8_arf / Pre-Pregnancy Health Behaviors and Conditions"
+      ],
+      "data": "Case series uses ncfrp_v51: Medical Complications (D66); Reference source uses prams_p8_arf: Pre-Pregnancy Health Behaviors and Conditions, including any health conditions present during pregnancy.",
+      "id": "I14",
+      "design": "case_population",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the rate of pre-pregnancy healthcare visits differ between SUID cases and live births in the general population?",
+      "comparison": "SUID cases (ncfrp_v51) vs. Live births from PRAMS Phase 8 (prams_p8_arf)",
+      "why_open": "This question evaluates whether access to health care before pregnancy is a protective factor against Sudden Unexpected Infant Death, indicating that better preconception care might reduce risks.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "prams_p8_arf / Pre-Pregnancy Health Behaviors and Conditions"
+      ],
+      "data": "Both case series and reference source use prams_p8_arf: Pre-Pregnancy Health Behaviors and Conditions, including health care visits before pregnancy.",
+      "id": "I15",
+      "design": "case_population",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does infant sleep environment quality predict the incidence of Sudden Unexpected Infant Death (SUID) among infants from different socioeconomic statuses?",
+      "comparison": "Infants with different sleep environments compared to their socio-economic status in terms of SUID rates.",
+      "why_open": "The relationship between sleep environment and SUID is well-established, but the interaction with socioeconomic factors remains understudied. This could help identify populations most at risk and inform targeted interventions.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15",
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Crime type",
+        "ncfrp_v51 / Parental Incarceration Status",
+        "prams_p8_arf / Sleeping Arrangements",
+        "prams_p7_arf / Timing of Pregnancy"
+      ],
+      "data": "Use D200 (ncfrp_v51) for case identification, D249 (ncfrp_v51) for socioeconomic status and D281 (prams_p8_arf) for sleep environment details. The reference population uses D324 (prams_p7_arf) to assess the timing of pregnancy and socio-economic status.",
+      "id": "I16",
+      "design": "exposure_rates",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does maternal prepregnancy weight gain relate to Sudden Unexpected Infant Death (SUID) in infants born prematurely?",
+      "comparison": "Prematurely-born infants with varying levels of maternal pre-pregnancy weight gain compared to their risk of experiencing sudden unexpected infant death.",
+      "why_open": "The impact of maternal weight gain on premature birth outcomes is known, but its specific role in SUID among these babies has not been fully explored. This could help tailor prenatal care recommendations for high-risk pregnancies.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15",
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Maternal Weight and Care",
+        "prams_p7_arf / Maternal BMI",
+        "ncfrp_v51 / Delivery Type",
+        "ncfrp_v51 / Child Maltreatment History (Caused)"
+      ],
+      "data": "Use D240 (ncfrp_v51) for maternal weight and care, D322 (prams_p7_arf) to identify preterm birth status, and D99 (ncfrp_v51) for delivery type. The reference population uses D256 (prams_p8_arf) to stratify by socio-economic factors.",
+      "id": "I17",
+      "design": "exposure_rates",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does hospital stay length after birth correlate with the risk of Sudden Unexpected Infant Death (SUID) in a population sample?",
+      "comparison": "Infants who had longer or shorter hospital stays compared to their incidence of sudden unexpected infant death.",
+      "why_open": "Hospitalization immediately post-birth is often an opportunity for early interventions, but its long-term effects on survival are not well understood. This could inform neonatal care protocols and discharge practices.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15",
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Infant Health in Last 72 Hours",
+        "prams_p8_arf / Hospital Stay Length",
+        "ncfrp_v51 / Decreased Fetal Movement"
+      ],
+      "data": "Use D246 (ncfrp_v51) for infant health in last 72 hours, D279 (prams_p8_arf) to measure hospital stay length and D90 (ncfrp_v51) to assess maternal complications.",
+      "id": "I18",
+      "design": "exposure_rates",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What is the incidence of Sudden Unexpected Infant Death (SUID) among infants born via cesarean delivery compared to vaginal delivery?",
+      "comparison": "Infants delivered by cesarean section versus those delivered vaginally in terms of their risk of experiencing sudden unexpected infant death.",
+      "why_open": "While mode of delivery's impact on neonatal morbidity is well studied, its role in SUID remains unclear. This could help clarify whether there are distinct risks associated with surgical vs natural birth methods.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15",
+        "cdc_natl15"
+      ],
+      "domains": [
+        "cdc_natl15 / Plurality",
+        "prams_p7_arf / Insurance Types",
+        "prams_p7_arf / Delivery Method",
+        "ncfrp_v51 / Delivery Type"
+      ],
+      "data": "Use D29 (ncfrp_v51) to identify mode of delivery, reference uses D306 and D316 from prams_p7_arf and D99 from ncfrp_v51.",
+      "id": "I19",
+      "design": "exposure_rates",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a difference in Sudden Unexpected Infant Death (SUID) rates among infants whose mothers received inadequate prenatal care compared to those who did?",
+      "comparison": "Infants born to mothers with insufficient prenatal visits versus adequate prenatal care in terms of their risk for sudden unexpected infant death.",
+      "why_open": "Prenatal care is crucial for early detection and intervention, but its role in preventing SUID remains uncertain. Identifying gaps can aid in developing targeted care programs for high-risk pregnancies.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15",
+        "cdc_natl15"
+      ],
+      "domains": [
+        "ncfrp_v51 / Prenatal Care Issues",
+        "prams_p8_arf / Healthcare Visits During Pregnancy",
+        "ncfrp_v51 / Decreased Fetal Movement"
+      ],
+      "data": "Use D243 (ncfrp_v51) to identify prenatal care issues, reference uses D272 (prams_p8_arf) for healthcare visits during pregnancy and D90 (ncfrp_v51) to assess infant health conditions.",
+      "id": "I20",
+      "design": "exposure_rates",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a difference in the incidence of SUID between infants whose mothers experienced prenatal stress and those who did not?",
+      "comparison": "SUID cases compared with other causes of infant death within ncfrp_v51, using prams_p7_arf for exposure prevalence.",
+      "why_open": "The role of maternal stress on SUID risk is not well understood. An answer could inform preventive interventions aimed at reducing stress during pregnancy.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Maternal Stressors",
+        "prams_p7_arf / Timing of Pregnancy"
+      ],
+      "data": "For each case, use ncfrp_v51 to identify the cause of death and determine if it was SUID. For exposure, match maternal stressors (ncfrp_v51:D100) with prenatal stress measures from prams_p7_arf (D324).",
+      "id": "I21",
+      "design": "case_case",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does hospitalization for newborn complications before the first birthday correlate with an increased risk of SUID?",
+      "comparison": "SUID cases compared with non-SUID infant deaths within ncfrp_v51, using prams_p8_arf for hospital stay length.",
+      "why_open": "The impact of early-life medical issues on later SUID risk has not been thoroughly investigated. This could reveal critical periods requiring intervention.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Case Identification",
+        "prams_p8_arf / Hospital Stay Length"
+      ],
+      "data": "Identify cases of SUID and other causes in ncfrp_v51 (D49) by cause of death. Use prams_p8_arf to determine if hospitalization occurred within the first year for any reason (D279).",
+      "id": "I22",
+      "design": "case_case",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Do infants from families with preconception health issues exhibit higher SUID incidence compared to those without?",
+      "comparison": "SUID cases compared with non-SUID infant deaths within ncfrp_v51, using prams_p8_arf for family preconception care.",
+      "why_open": "This relationship is underexplored but could provide insights into long-term health effects of early-stage maternal and family well-being on infants' survival rates.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Case Identification",
+        "prams_p8_arf / Maternal Physical Measurements"
+      ],
+      "data": "For SUID cases, use ncfrp_v51 to determine the cause of death and if it was a non-SUID case. Use prams_p8_arf to identify families with preconception health issues (D270).",
+      "id": "I23",
+      "design": "case_case",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there an increased risk of SUID in infants whose mothers did not receive adequate prenatal care compared to those who received adequate care?",
+      "comparison": "SUID cases compared with non-SUID infant deaths within ncfrp_v51, using prams_p8_arf for prenatal healthcare visits.",
+      "why_open": "Understanding the importance of timely and sufficient prenatal care could improve public health policies aimed at reducing SUID risk through targeted prenatal interventions.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Case Identification",
+        "prams_p8_arf / Healthcare Visits During Pregnancy"
+      ],
+      "data": "Use ncfrp_v51 to identify SUID cases and other deaths (D49). Utilize prams_p8_arf to assess prenatal care adequacy via healthcare visit records (D272).",
+      "id": "I24",
+      "design": "case_case",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does inadequate postpartum health care access contribute to higher rates of SUID in infants?",
+      "comparison": "SUID cases compared with non-SUID infant deaths within ncfrp_v51, using prams_p8_arf for postpartum healthcare visits.",
+      "why_open": "Postnatal support is critical but understudied in relation to SUID. Investigating this could enhance targeted interventions and services during the postpartum period.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Case Identification",
+        "prams_p8_arf / Postpartum Visits and Recommendations"
+      ],
+      "data": "Use ncfrp_v51 to identify SUID cases and other infant deaths (D49). Use prams_p8_arf to assess postpartum healthcare access (D283) for exposure comparison.",
+      "id": "I25",
+      "design": "case_case",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does the risk profile of SUID cases differ from other neonatal deaths in relation to pregnancy weight gain and hospital stay length?",
+      "comparison": "Cases with Sudden Unexpected Infant Death (SUID) compared to other neonatal deaths within the same case series.",
+      "why_open": "While studies have explored various risk factors for SUID, less is known about how these cases differ from other types of infant mortality in terms of pregnancy health and hospital care measures. Understanding these differences could provide insights into unique contributing factors or protective elements specific to SUID.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Pregnancy Weight Gain",
+        "prams_p8_arf / Hospital Stay Length"
+      ],
+      "data": "Use ncfrp_v51 domains D67 and D49 to identify pregnancy-related health indicators (e.g., weight gain) for SUID cases. Use prams_p8_arf domain D279 to compare hospital stay lengths between SUID cases and other neonatal deaths.",
+      "id": "I26",
+      "design": "case_case",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Are there distinct patterns of maternal physical measurements and pre-pregnancy health behaviors in SUID cases versus other infant mortality cases?",
+      "comparison": "Cases with Sudden Unexpected Infant Death (SUID) compared to other causes of infant mortality within the same case series.",
+      "why_open": "Existing literature often focuses on risk factors common across all infant deaths. However, unique patterns in maternal health behaviors and physical measurements might distinguish SUID cases from others, suggesting targeted preventive measures.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Advanced Review Information",
+        "prams_p8_arf / Maternal Physical Measurements",
+        "prams_p8_arf / Pre-Pregnancy Health Behaviors and Conditions"
+      ],
+      "data": "Use ncfrp_v51 domain D230 to identify maternal health problems and pre-pregnancy behaviors for SUID cases. Compare these with prams_p8_arf domains D270 (physical measurements) and D274 (pre-pregnancy conditions) in a group-level comparison.",
+      "id": "I27",
+      "design": "case_case",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the use of postpartum contraception differ between SUID cases and other infant mortality cases?",
+      "comparison": "Cases with Sudden Unexpected Infant Death (SUID) compared to non-SUID infant deaths within the same case series.",
+      "why_open": "Existing research often categorizes all infant deaths similarly but may overlook unique aspects like postpartum contraception use that could differentiate SUID from other causes of infant mortality. Understanding these differences can inform targeted prevention strategies.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "prams_p8_arf / Postpartum Contraception Barriers",
+        "prams_p7_arf / Birth Control Usage"
+      ],
+      "data": "Use ncfrp_v51 domain D282 to identify postpartum contraception barriers for SUID cases. Compare these with prams_p8_arf and prams_p7_arf domains D308 (birth control usage) in a group-level comparison.",
+      "id": "I28",
+      "design": "case_case",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Do SUID cases differ from other neonatal deaths regarding maternal health problems, insurance coverage, and healthcare visits during pregnancy?",
+      "comparison": "Cases with Sudden Unexpected Infant Death (SUID) compared to non-SUID infant mortality within the same case series.",
+      "why_open": "Existing research often does not differentiate between various types of infant mortality but understanding these distinctions can lead to more targeted interventions. Identifying unique maternal health, insurance coverage, and healthcare access patterns specific to SUID could highlight areas for improved prevention strategies.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "prams_p8_arf / Maternal Health Problems",
+        "prams_p8_arf / Pregnancy Insurance Coverage"
+      ],
+      "data": "Use ncfrp_v51 domain D269 to identify maternal health problems for SUID cases. Compare these with prams_p8_arf domains D276 (pregnancy insurance coverage) and other relevant variables in a group-level comparison.",
+      "id": "I29",
+      "design": "case_case",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Do patterns of sleeping arrangements differ between SUID cases and non-SUID infant deaths, considering the hospital stay length?",
+      "comparison": "Cases with Sudden Unexpected Infant Death (SUID) compared to non-SUID infant mortality within the same case series.",
+      "why_open": "Although studies frequently explore general risk factors for infant death, unique sleeping arrangements may be specific to certain types of infant deaths. Understanding differences in how infants sleep could provide clues about environmental risks contributing uniquely to SUID versus other causes.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Sleeping location",
+        "prams_p8_arf / Sleeping Arrangements"
+      ],
+      "data": "Use ncfrp_v51 domain D201 to identify sleeping arrangements for SUID cases. Compare these with prams_p8_arf and prams_p7_arf domains D281 (sleeping arrangements) in a group-level comparison.",
+      "id": "I30",
+      "design": "case_case",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there an association between maternal prepregnancy body mass index (BMI) and postconceptional age at death in SUID cases?",
+      "comparison": "SUID cases across the full spectrum of BMI levels",
+      "why_open": "Maternal obesity has been linked to increased risk for Sudden Unexpected Infant Death Syndrome (SUID), but little is known about how this risk evolves over developmental time. Studying BMI and postconceptional age could reveal if higher maternal BMIs correlate with earlier ages at death, providing insights into the timing of vulnerability.",
+      "case_sources": [
+        "ncfrp_v51",
+        "cdc_linkco15"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Maternal Weight and Care",
+        "ncfrp_v51 / Maternal Health Conditions"
+      ],
+      "data": "Utilize BMI from ncfrp_v51 (maternal prepregnancy body mass index) and postconceptional age data from both cdc_linkco15 and ncfrp_v51. Analyze the distribution of postconceptional ages at death for infants born to mothers in different BMI categories.",
+      "id": "I31",
+      "design": "case_only",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Do cases with previous child deaths differ in their sleep environment and prenatal care issues compared to those without?",
+      "comparison": "SUID cases with prior child deaths vs. SUID cases without",
+      "why_open": "Little is known about the cumulative risk factors for families with a history of infant mortality. By comparing these two groups, we might identify specific vulnerabilities or protective factors that could inform future interventions.",
+      "case_sources": [
+        "ncfrp_v51",
+        "cdc_linkco15"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Infant Health in Last 72 Hours",
+        "ncfrp_v51 / Maternal Injury",
+        "ncfrp_v51 / Prior Child Deaths"
+      ],
+      "data": "Use prior child death data (D120) from ncfrp_v51 and compare it to sleep environment information (D102, sleeping arrangements) and prenatal care issues (D243) in cases with and without previous deaths.",
+      "id": "I32",
+      "design": "case_only",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Are maternal stressors during pregnancy more common among SUID cases where the infant was preterm?",
+      "comparison": "SUID cases of premature infants vs. full-term infants",
+      "why_open": "Prematurity is known to increase risk for Sudden Unexpected Infant Death Syndrome (SUID). Understanding whether additional maternal stressors contribute could shed light on why some preterm infants are more vulnerable.",
+      "case_sources": [
+        "ncfrp_v51",
+        "cdc_linkco15"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Infant Health in Last 72 Hours",
+        "ncfrp_v51 / Maternal Stressors"
+      ],
+      "data": "Analyze cases from ncfrp_v51 and cdc_linkco15 to determine if maternal stressors (D100) occur more frequently among preterm infants compared to full-term infants.",
+      "id": "I33",
+      "design": "case_only",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How do the reported health conditions of SUID mothers vary between infants who shared a sleep surface with an adult and those who did not?",
+      "comparison": "SUID cases where infant shares sleeping surface with an adult vs. those who don't",
+      "why_open": "Shared sleeping surfaces have been identified as risk factors for SUID, but it is unknown if the presence of health conditions in mothers contributes to this risk.",
+      "case_sources": [
+        "ncfrp_v51",
+        "cdc_linkco15"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Infant Health in Last 72 Hours",
+        "ncfrp_v51 / Infant Sleep Environment"
+      ],
+      "data": "From ncfrp_v51 and cdc_linkco15, compare the health conditions of mothers (D239) between infants who shared a sleeping surface with an adult and those who did not.",
+      "id": "I34",
+      "design": "case_only",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does the presence of multiple gestation in SUID cases correlate with different patterns of prenatal care issues?",
+      "comparison": "SUID cases with multiple births vs. singleton births",
+      "why_open": "Multiple pregnancies carry unique risks, yet their impact on Sudden Unexpected Infant Death Syndrome (SUID) is underexplored. Identifying specific challenges or omissions in prenatal care for these high-risk scenarios could lead to targeted preventive measures.",
+      "case_sources": [
+        "ncfrp_v51",
+        "cdc_linkco15"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Infant Health in Last 72 Hours",
+        "ncfrp_v51 / Multiple Gestation"
+      ],
+      "data": "Examine prenatal care issues (D243) and multiple gestation status (D72) in SUID cases from ncfrp_v51 and cdc_linkco15 to identify any differences.",
+      "id": "I35",
+      "design": "case_only",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does prenatal weight gain differ by pregnancy stage in SUID cases?",
+      "comparison": "ncfrp_v51 (case series) - D88 (Pregnancy Weight Gain)",
+      "why_open": "There is no evidence on whether the timing of maternal weight gain during pregnancy affects SUID risk.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Pregnancy Weight Gain"
+      ],
+      "data": "Use D88 from ncfrp_v51 to study changes in maternal weight gain over pregnancy stages.",
+      "id": "I36",
+      "design": "case_only",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does the presence of a hospital overnight stay impact SUID risk?",
+      "comparison": "ncfrp_v51 (case series) - D82 (Hospital Overnight Stay)",
+      "why_open": "There is limited research on whether brief hospital stays affect infant mortality risks.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Hospital Overnight Stay"
+      ],
+      "data": "Use D82 from ncfrp_v51 to investigate hospital stays and their impact on SUID outcomes.",
+      "id": "I37",
+      "design": "case_only",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does maternal weight gain during pregnancy vary by maternal BMI in SUID cases?",
+      "comparison": "ncfrp_v51 (case series) - D88 (Pregnancy Weight Gain), D240 (Maternal Weight and Care)",
+      "why_open": "No research has explored how the relationship between pre-pregnancy BMI and weight gain during pregnancy affects SUID risk.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Pregnancy Weight Gain",
+        "ncfrp_v51 / Maternal Weight and Care"
+      ],
+      "data": "Use D88 and D240 from ncfrp_v51 to examine the interaction between pre-pregnancy BMI and weight gain.",
+      "id": "I38",
+      "design": "case_only",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there an association between maternal health problems during pregnancy and SUID risk?",
+      "comparison": "ncfrp_v51 (case series) - D239 (Maternal Health Conditions)",
+      "why_open": "Little is known about the relationship between specific maternal health issues and risks for SUID.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Maternal Health Conditions"
+      ],
+      "data": "Use D239 from ncfrp_v51 to explore various maternal health conditions and their impact on SUID.",
+      "id": "I39",
+      "design": "case_only",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does postpartum mental health status differ among groups of SUID cases?",
+      "comparison": "ncfrp_v51 (case series) - D260 (Child Neglect and Abuse), D264 (Physical abuse types)",
+      "why_open": "Current research does not explore the relationship between postpartum mental health and SUID risk factors.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Child Abuse and Neglect Types",
+        "ncfrp_v51 / Physical abuse types"
+      ],
+      "data": "Use D260 and D264 from ncfrp_v51 to study postpartum mental health in the context of SUID.",
+      "id": "I40",
+      "design": "case_only",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a developmental period during the first year of life where infants with maternal obesity have an increased risk for SUID compared to those without maternal obesity?",
+      "comparison": "Cases from ncfrp_v51 (SUID cases) are compared within subgroups based on postconceptional age and whether the mother had obesity during pregnancy.",
+      "why_open": "This study aims to explore a potential critical period where maternal obesity could disproportionately affect SUID risk. Such knowledge would allow targeted interventions aimed at high-risk periods in vulnerable infants.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Maternal Weight and Care",
+        "ncfrp_v51 / Pregnancy History"
+      ],
+      "data": "Postconceptional age and maternal prepregnancy body mass index (BMI) will be compared within SUID cases.",
+      "id": "I41",
+      "design": "case_only",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does hospital overnight stay impact the risk of sudden unexpected infant death in infants with different gestational ages?",
+      "comparison": "Cases from ncfrp_v51 are grouped based on whether the infant spent time in the hospital and their gestational age at birth.",
+      "why_open": "This question examines if neonatal care practices, such as overnight stays post-delivery, influence SUID risk differently across gestational age groups. Understanding this could improve discharge policies and early home monitoring protocols.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Pregnancy History",
+        "ncfrp_v51 / Hospital Overnight Stay"
+      ],
+      "data": "Gestational age at birth (GESTREC3) and hospital overnight stay status will be compared within SUID cases.",
+      "id": "I42",
+      "design": "case_only",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does prior pregnancy history modify the risk of sudden unexpected infant death among infants born to mothers with pre-existing medical conditions?",
+      "comparison": "Cases from ncfrp_v51 are stratified based on whether the mother had a previous live birth and her health condition status.",
+      "why_open": "Identifying if past pregnancies and maternal health impact SUID incidence can inform prenatal care strategies. This would help tailor interventions for women with complex obstetric histories.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Pregnancy History",
+        "ncfrp_v51 / Maternal Health Conditions"
+      ],
+      "data": "Previous live birth history (GEST_WK_PU) and pre-existing medical conditions will be analyzed within SUID cases.",
+      "id": "I43",
+      "design": "case_only",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does the presence of multiple gestation influence the risk pattern of sudden unexpected infant death throughout postconceptional age?",
+      "comparison": "Cases from ncfrp_v51 are grouped based on whether they were part of a multiple gestation and their developmental trajectory.",
+      "why_open": "This question aims to identify if being part of a twin or triplet set alters the risk of SUID over time. Such findings would be crucial for counseling families expecting multiples.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Pregnancy History",
+        "ncfrp_v51 / Maternal Weight and Care"
+      ],
+      "data": "Multiple gestation status and postconceptional age will be analyzed within SUID cases.",
+      "id": "I44",
+      "design": "case_only",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a significant difference in sudden unexpected infant death risk between infants who were breastfed exclusively versus those with mixed feeding methods?",
+      "comparison": "Cases from ncfrp_v51 are stratified by whether the infant was exclusively breastfed or had mixed feeding practices.",
+      "why_open": "Exploring if breastfeeding mode influences SUID could provide insights into early life nutrition's role in risk reduction. This would highlight important early intervention points for infant health.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Pregnancy History",
+        "ncfrp_v51 / Maternal Weight and Care"
+      ],
+      "data": "Feeding method and postconceptional age will be analyzed within SUID cases.",
+      "id": "I45",
+      "design": "case_only",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What trends exist in the proportion of SUID cases that occurred within hospital overnight stays between 2004 and 2019?",
+      "comparison": "ncfrp_v51: 2004-2019; prams_p8_arf: Phase 8 (2016-2021)",
+      "why_open": "This question explores the changing dynamics of SUID cases occurring within hospital overnight stays, which might reflect broader changes in healthcare practices or newborn care policies over time.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Hospital Overnight Stay",
+        "prams_p8_arf / Hospital Stay Length"
+      ],
+      "data": "Case series: D82 - Hospital Overnight Stay (ncfrp_v51). Population Reference: D279 - Hospital Stay Length (prams_p8_arf).",
+      "id": "I46",
+      "design": "trends",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the proportion of SUID cases among infants with previous medical complications or disabilities change from 2004 to 2019?",
+      "comparison": "ncfrp_v51: 2004-2019; prams_p7_arf and prams_p8_arf: Phase 7 (2012-2015) & Phase 8 (2016-2021)",
+      "why_open": "This question aims to understand whether the proportion of SUID cases among infants with prior medical complications or disabilities has changed over time, indicating shifts in neonatal health care.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Infant Health in Last 72 Hours",
+        "prams_p8_arf / Survey Metadata"
+      ],
+      "data": "Case series: D246 - Infant Health in Last 72 Hours (ncfrp_v51). Population Reference: D290 - Survey Metadata, including medical conditions before pregnancy.",
+      "id": "I47",
+      "design": "trends",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What is the trend in SUID cases where the infant was exposed to substances or toxins between 2004 and 2019?",
+      "comparison": "ncfrp_v51: 2004-2019; prams_p8_arf: Phase 8 (2016-2021)",
+      "why_open": "Examining trends in SUID cases involving substance or toxin exposure can reveal environmental changes impacting infant health.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Infant Meal Details",
+        "prams_p8_arf / Healthcare Communication"
+      ],
+      "data": "Case series: D247 - Infant Meal Details (ncfrp_v51). Population Reference: D296 - Healthcare Visits (prams_p8_arf) including substance exposure.",
+      "id": "I48",
+      "design": "trends",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How has the proportion of SUID cases among infants sleeping on shared surfaces with adults changed from 2004 to 2019?",
+      "comparison": "ncfrp_v51: 71.3% of case records (2004-2019); prams_p8_arf: Phase 8 (2016-2021)",
+      "why_open": "Investigating trends in SUID cases involving shared sleeping surfaces could help understand shifts in safe sleep practices over time.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Shared sleeping surface",
+        "prams_p8_arf / Sleeping Arrangements"
+      ],
+      "data": "Case series: D198 - Shared sleeping surface (ncfrp_v51). Population Reference: D281 - Sleeping Arrangements (prams_p8_arf)",
+      "id": "I49",
+      "design": "trends",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What trends exist in SUID cases involving infants who have been exposed to domestic violence or abuse between 2004 and 2019?",
+      "comparison": "ncfrp_v51: 71.3% of case records (2004-2019); prams_p8_arf: Phase 8 (2016-2021)",
+      "why_open": "Understanding trends in SUID cases linked to domestic violence or abuse can inform preventive strategies and highlight the importance of family support systems.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Child Maltreatment History (Caused)",
+        "prams_p8_arf / Survey Metadata"
+      ],
+      "data": "Case series: D256 - Child Neglect and Abuse (ncfrp_v51). Population Reference: D290 - Survey Metadata, including emotional or physical abuse.",
+      "id": "I50",
+      "design": "trends",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does pregnancy weight gain differ between mothers of SUID cases and those from live births?",
+      "comparison": "Mothers whose infants died of Sudden Unexpected Infant Death (SUID) vs. mothers of live births",
+      "why_open": "The effect of maternal weight gain on infant mortality has not been extensively explored, particularly in the context of SUID.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_std2",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Pregnancy Weight Gain",
+        "prams_p8_std2 / Pregnancy Weight Gain",
+        "prams_p7_arf / Maternal Physical Attributes"
+      ],
+      "data": "ncfrp_v51 D88 / Pregnancy Weight Gain (case), prams_p8_std2 D299 / Pregnancy Weight Gain (reference), prams_p7_arf D302 / Maternal Physical Attributes (reference)",
+      "id": "I51",
+      "design": "measurement",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does hospital overnight stay frequency differ between mothers of SUID cases and live births?",
+      "comparison": "Mothers whose infants died from Sudden Unexpected Infant Death (SUID) vs. mothers of live births",
+      "why_open": "There is limited research on the relationship between postnatal hospital stays and risk factors for SUID.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Hospital Overnight Stay",
+        "prams_p8_arf / Hospital Stay Length"
+      ],
+      "data": "ncfrp_v51 D82 / Hospital Overnight Stay (case), prams_p8_arf D279 / Hospital Stay Length (reference), prams_p7_arf D279 / Hospital Stay Length (reference)",
+      "id": "I52",
+      "design": "measurement",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a difference in previous births between mothers of SUID cases and those of live births?",
+      "comparison": "Mothers whose infants died from Sudden Unexpected Infant Death (SUID) vs. mothers who gave birth to live infants",
+      "why_open": "Previous pregnancy history is an important factor that could influence the risk of SUID, but has not been thoroughly investigated.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Pregnancy History",
+        "prams_p8_arf / Previous Births"
+      ],
+      "data": "ncfrp_v51 D67 / Pregnancy History (case), prams_p8_arf D286 / Previous Births (reference), prams_p7_arf D286 / Previous Births (reference)",
+      "id": "I53",
+      "design": "measurement",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Do maternal health problems differ between mothers of SUID cases and those who had live births?",
+      "comparison": "Mothers whose infants died from Sudden Unexpected Infant Death (SUID) vs. mothers of live births",
+      "why_open": "The role of maternal pre-existing conditions in the occurrence of SUID is understudied.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Maternal Health Conditions",
+        "prams_p8_arf / Maternal Health Problems"
+      ],
+      "data": "ncfrp_v51 D239 / Maternal Health Conditions (case), prams_p8_arf D269 / Maternal Health Problems (reference), prams_p7_arf D269 / Maternal Health Problems (reference)",
+      "id": "I54",
+      "design": "measurement",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a difference in pre-pregnancy health checks between mothers of SUID cases and live births?",
+      "comparison": "Mothers whose infants died from Sudden Unexpected Infant Death (SUID) vs. mothers who gave birth to live infants",
+      "why_open": "Pre-pregnancy health assessments are crucial but their impact on infant mortality, particularly for SUID, is not well understood.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "domains": [
+        "ncfrp_v51 / Maternal Weight and Care",
+        "prams_p7_arf / Pre-Pregnancy Health Checks"
+      ],
+      "data": "ncfrp_v51 D240 / Preconception and Chronic Disease Care (case), prams_p8_arf D304 / Pre-Pregnancy Health Checks (reference), prams_p7_arf D304 / Pre-Pregnancy Health Checks (reference)",
+      "id": "I55",
+      "design": "measurement",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    }
+  ],
+  "failed_calls": [
+    "C_ideas_exposure_rates_s0",
+    "C_ideas_exposure_rates_s2",
+    "C_ideas_case_case_s2",
+    "C_ideas_trends_s1",
+    "C_ideas_trends_s2",
+    "C_ideas_measurement_s1",
+    "C_ideas_measurement_s2"
+  ]
+}

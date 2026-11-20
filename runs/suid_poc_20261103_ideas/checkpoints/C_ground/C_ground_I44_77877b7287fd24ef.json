@@ -1,0 +1,26 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases where the mother experienced intimate partner violence is higher among infants who shared a sleep surface with an adult compared to those who did not.",
+ "rationale": "This design uses case-only analysis, comparing reported health conditions within the ncfrp_v51 dataset. It can establish associations but cannot estimate population-level risks or causality due to biases and lack of denominator data.",
+ "prior_art": "The bedsharing_ms_v7 manuscript (C8) provides evidence on the relationship between bed-sharing and SUID incidence, but does not explore maternal health conditions in relation to sleep surface sharing. The question remains open as no prior work has directly compared these specific variables within a case-only analysis.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "sleep_surface_sharing",
+  "maternal_health_conditions"
+ ],
+ "variables": [
+  "ncfrp_v51:CIRwadultobs",
+  "ncfrp_v51:INFexpipv"
+ ],
+ "cannot_establish": "This design cannot establish causality or estimate population-level risks due to the lack of a denominator source and potential biases in case reporting."
+}

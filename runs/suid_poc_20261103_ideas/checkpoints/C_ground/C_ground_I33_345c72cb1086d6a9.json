@@ -1,0 +1,26 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers using postpartum contraception differs between SUID cases and other infant mortality cases.",
+ "rationale": "This design compares the use of postpartum contraception between two groups: SUID cases from ncfrp_v51 and a reference population from PRAMS surveys. The study can establish associations but not causation or incidence rates due to lack of denominators.",
+ "prior_art": "None in the inputs; existing research does not directly address differences in postpartum contraception use between SUID and other infant mortality cases, despite discussing various risk factors like maternal smoking and prematurity.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "postpartum contraception use"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4heduchosppostfplan",
+  "prams_p8_arf:BC_NOW4",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence rates or causation, only associations between groups."
+}

@@ -1,0 +1,94 @@
+{
+ "ideas": [
+  {
+   "question": "How does maternal prepregnancy body mass index (BMI) relate to sudden unexpected infant death (SUID) compared to other causes of infant death?",
+   "comparison": "Cases: Sudden unexpected infant death (SUID); comparison group: Other causes of infant death recorded in the same case series. Years needed: 2008-2019.",
+   "why_open": "Maternal obesity is a known risk factor for SUID, but its role compared to other types of infant deaths remains unclear and needs further investigation to inform specific prevention strategies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D56",
+    "D49",
+    "D287"
+   ],
+   "data": "Use D56 ncfrp_v51 / Maternal Weight and Care to measure maternal prepregnancy BMI for SUID cases, compare with other infant deaths using same domain. Use D287 prams_p8_arf / Medical Conditions or D287 prams_p7_arf / Medical Conditions for prevalence of obesity among mothers in the reference population."
+  },
+  {
+   "question": "What is the association between pregnancy weight gain and SUID compared to other causes of infant death?",
+   "comparison": "Cases: Sudden unexpected infant death (SUID); comparison group: Other causes of infant death recorded in the same case series. Years needed: 2016-2021.",
+   "why_open": "Pregnancy weight gain is an important factor affecting maternal and neonatal health, but its role specifically in SUID compared to other types of deaths is underexplored.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p8_std2"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D88",
+    "D299"
+   ],
+   "data": "Use D88 ncfrp_v51 / Pregnancy Weight Gain to measure weight gain for SUID cases. Compare with other infant deaths using the same domain. For population prevalence, use D299 prams_p8_std2 / Pregnancy Weight Gain or similar variables."
+  },
+  {
+   "question": "How does hospital overnight stay after delivery relate to sudden unexpected infant death (SUID) compared to other causes of infant death?",
+   "comparison": "Cases: Sudden unexpected infant death (SUID); comparison group: Other causes of infant death recorded in the same case series. Years needed: 2016-2021.",
+   "why_open": "Hospital stays after birth can influence neonatal health, but their impact on specific outcomes like SUID is understudied compared to general mortality rates.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82",
+    "D279"
+   ],
+   "data": "Use D82 ncfrp_v51 / Hospital Overnight Stay to measure hospital stays for SUID cases. Compare with other infant deaths using the same domain. For population prevalence, use D279 prams_p8_arf / Hospital Stay Length."
+  },
+  {
+   "question": "How do prenatal care issues relate specifically to sudden unexpected infant death (SUID) compared to other causes of infant death?",
+   "comparison": "Cases: Sudden unexpected infant death (SUID); comparison group: Other causes of infant death recorded in the same case series. Years needed: 2016-2021.",
+   "why_open": "Prenatal care quality is crucial, but its specific role in preventing sudden unexpected infant deaths over other types of mortality is not well understood and needs further investigation.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D243",
+    "D287"
+   ],
+   "data": "Use D243 ncfrp_v51 / Prenatal Care Issues to measure prenatal care issues for SUID cases. Compare with other infant deaths using the same domain. For population prevalence, use D287 prams_p8_arf / Medical Conditions or similar variables."
+  },
+  {
+   "question": "How does maternal mental health history correlate specifically with sudden unexpected infant death (SUID) compared to other causes of infant death?",
+   "comparison": "Cases: Sudden unexpected infant death (SUID); comparison group: Other causes of infant death recorded in the same case series. Years needed: 2016-2021.",
+   "why_open": "Maternal mental health is a critical factor, but its specific impact on sudden unexpected infant deaths compared to other types of mortality has not been extensively studied and requires further research.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D66",
+    "D287"
+   ],
+   "data": "Use D66 ncfrp_v51 / Medical Complications to measure maternal mental health issues for SUID cases. Compare with other infant deaths using the same domain. For population prevalence, use D287 prams_p8_arf / Medical Conditions or similar variables."
+  }
+ ]
+}

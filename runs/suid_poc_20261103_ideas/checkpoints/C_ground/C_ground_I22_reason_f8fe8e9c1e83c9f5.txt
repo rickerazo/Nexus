@@ -1,0 +1,77 @@
+### Design
+
+**Question Restated:** Estimate whether infants born to mothers with a history of mental health issues have higher rates of SUID compared to those whose mothers did not report such histories.
+
+- **Design Type:** Exposure-specific rates (incidence rates by exposure group)
+- **Case Series Source:** ncfrp_v51, cdc_linkco15
+- **Population Reference Source:** prams_p8_arf
+- **Denominator Source:** cdc_natl15
+
+### Sources by Role
+
+**Case Series:**
+- **ncfrp_v51**: Provides SUID cases reviewed by fatality review teams.
+- **cdc_linkco15**: Provides linked live births and infant deaths (SUID cases).
+
+**Population Reference:**
+- **prams_p8_arf**: Weighted survey of mothers after live birth, providing mental health history.
+
+**Denominator Source:**
+- **cdc_natl15**: Covers all US live births in 2015, serving as the population at risk.
+
+### Period
+
+The candidate question does not specify a period but mentions recent data. The sources available cover the following years:
+- Case series (ncfrp_v51): deaths 2008-2019.
+- Population reference (prams_p8_arf): Phase 8, covering 2016-2021.
+
+To align these periods and ensure comparability of data, the study would ideally cover:
+- Case series: 2008-2015
+- Population reference: 2016-2021 (if needed for recent trends)
+
+### Variables
+
+**Exposure Measurement (Maternal Mental Health History):**
+- **prams_p8_arf**: MH_PGDX8 (Depression during pregnancy), PG8_ANX (Anxiety during pregnancy), VAR: POST-PARTUM DEPRESSION, MH_PPDPR (Postpartum depression since birth).
+
+**Outcome Measurement (SUID Cases):**
+- **ncfrp_v51**: SUID cases.
+- **cdc_linkco15**: Linked live births and infant deaths.
+
+**Denominator Measurement (Population at Risk):**
+- **cdc_natl15**: All US live births in 2015.
+
+### Biases
+
+#### Selection Bias
+- The case series includes only reviewed child deaths, potentially undercounting cases if review participation is biased.
+- PRAMS data covers specific participating states and may not be nationally representative.
+  
+#### Information Bias
+- Mental health history measured via retrospective self-report in PRAMS could be subject to recall bias or misreporting.
+- SUID case ascertainment and coding might vary by jurisdiction, leading to differences in diagnostic practices.
+
+#### Confounding
+- Other risk factors like maternal smoking (MOMSMOKE), prematurity, socioeconomic status, and prenatal care may confound the association between mental health history and SUID incidence. Adjustments would be needed for these variables.
+
+### What the Design Cannot Establish
+
+This design can estimate exposure-specific rates but cannot establish causation due to its observational nature.
+- It does not account for unmeasured or residual confounding factors that could influence both maternal mental health status and infant mortality risk.
+- Time-varying exposures during infancy are not captured, limiting understanding of the developmental context.
+
+### Prior Art
+
+The manuscript claims do not closely address the specific association between maternal mental health history and SUID rates:
+- **SUID_manuscript_v9_clean**: Focuses on gender-specific incidence patterns but does not discuss maternal mental health.
+- **bedsharing_ms_v7**: Examines bed sharing, smoking, and prematurity in relation to SUID but lacks data on maternal mental health.
+
+### Verdict
+
+**Yes**, these sources can answer a version of the question about exposure-specific rates for infants born to mothers with a history of mental health issues. However, several limitations need addressing:
+- Ensure alignment between case series (2008-2015) and PRAMS data periods.
+- Address selection bias through appropriate weighting or adjustment methods.
+- Control for confounding factors like maternal smoking, socioeconomic status, and prenatal care.
+- Recognize that the design can establish associations but not causation.
+
+This study would provide valuable insights into whether mental health history is associated with higher SUID rates, informing targeted interventions to improve infant outcomes.

@@ -1,0 +1,64 @@
+### Design
+
+**Question Restated:** Does postpartum mental health status differ among groups of SUID cases?
+
+**Design:** Case-only analysis comparing the recorded circumstances for the cases to identify differences in postpartum mental health status across subgroups.
+
+### Sources by Role
+
+- **Case Series:**
+  - ncfrp_v51 (National Fatality Review Case Reporting System)
+  - Reason: This source includes detailed records of child deaths reviewed by fatality review teams, providing information on the circumstances around SUID cases.
+  
+**Denominator Source:** Not applicable for this case-only design.
+
+**Population Reference:** Not necessary in a case-only analysis.
+
+### Period
+
+- **Period Range:** The manuscript claims refer to data from 2008 to 2019 (SUID_manuscript_v9_clean.C6), so the period range should be within these years.
+  
+### Variables
+
+- **Postpartum Mental Health:**
+  - ncfrp_v51:
+    - INF3postpartdep: Mother have postpartum depression [1=Yes; 0=No]
+    - ISSmhpostdepres: Depression/anxiety/mental illness in the postpartum period [1=Yes; 0=No]
+  
+- **Pre-pregnancy Mental Health:**
+  - ncfrp_v51:
+    - ISSmhpregdepres: Depression/anxiety/mental illness during pregnancy [1=Yes; 0=No]
+
+### Biases
+
+**Selection Bias:** 
+- The case series may not be representative of all SUID cases due to differential participation rates across jurisdictions and over time.
+  
+**Information Bias:** 
+- Reporting inconsistencies between different reviewing states, as codes are randomized (e.g., state fields).
+- Self-reported data on mental health status might vary in reliability.
+
+**Confounding:**
+- Socioeconomic factors, urban/rural location, access to healthcare services may differ across jurisdictions and influence both the recording of mental health issues and SUID incidence.
+
+### What the Design Cannot Establish
+
+A case-only analysis cannot establish causal relationships or estimate risk ratios. It can only identify associations between postpartum mental health status and characteristics within the case series.
+
+### Prior Art
+
+- **Claim Ids:**
+  - C13 (SUID_manuscript_v9_clean): Suggests future research on understanding long-term consequences of separation from the mother in human infants.
+  - C10 (bedsharing_ms_v7): Discusses limitations due to observational data and exposure misclassification issues.
+
+**Why Open:** The relationship between postpartum mental health status and SUID risk factors remains underexplored. While previous studies have identified associations with other factors like smoking and prematurity, there is little direct evidence on the impact of maternal mental health.
+
+### Verdict
+
+The proposed design can be carried out using the available data from ncfrp_v51 to analyze differences in postpartum mental health status among SUID cases. The case-only analysis will compare proportions or odds within the case series and cannot establish causation but can identify associations.
+
+**Data Elements:**
+- Postpartum mental health variables (INF3postpartdep, ISSmhpostdepres) from ncfrp_v51.
+  
+**Design Element:**
+- Case-only design without a denominator source to estimate incidence or risk.

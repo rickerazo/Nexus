@@ -1,0 +1,89 @@
+{
+ "ideas": [
+  {
+   "question": "How does the prevalence of hospital overnight stays differ between SUID cases and a population reference?",
+   "comparison": "SUID cases (ncfrp_v51) compared with PRAMS mothers (prams_p8_arf) in 2008-2019.",
+   "why_open": "The role of hospital stays, especially short-term admissions for issues like respiratory infections or feeding difficulties, is understudied and may indicate underlying health risks contributing to SUID incidence. Understanding these patterns can highlight potential warning signs and intervention points.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82",
+    "D279"
+   ],
+   "data": "Use ncfrp_v51 hospital overnight stay (D82) and prams_p8_arf hospital stay length (D279). Weight PRAMS data using WTANAL for population prevalence."
+  },
+  {
+   "question": "What is the difference in prenatal care visit adherence between SUID cases and a population reference?",
+   "comparison": "SUID cases (ncfrp_v51) compared with PRAMS mothers (prams_p8_arf) during 2008-2019.",
+   "why_open": "Prenatal care is critical for identifying risk factors and ensuring timely intervention to improve birth outcomes. However, there are gaps in understanding how adherence differs between high-risk groups like SUID cases and the general population. This information can guide targeted prenatal support strategies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D243",
+    "D272"
+   ],
+   "data": "Use ncfrp_v51 prenatal care issues (D243) and prams_p8_arf healthcare visits during pregnancy (D272). Weight PRAMS data using WTANAL for population prevalence."
+  },
+  {
+   "question": "How does the use of pre-pregnancy health checks compare between SUID cases and a population reference?",
+   "comparison": "SUID cases (ncfrp_v51) compared with PRAMS mothers (prams_p7_arf) from 2012-2015.",
+   "why_open": "Pre-pregnancy health checks can identify chronic conditions that pose risks to fetal and neonatal development. There is limited research on how these practices vary between high-risk groups such as SUID cases and the general population, potentially revealing gaps in preventive care.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D239",
+    "D304"
+   ],
+   "data": "Use ncfrp_v51 preconception and chronic disease care (D239) and prams_p7_arf pre-pregnancy health checks (D304). Weight PRAMS data using WTANAL for population prevalence."
+  },
+  {
+   "question": "How does the frequency of multivitamin use differ between SUID cases and a population reference?",
+   "comparison": "SUID cases (ncfrp_v51) compared with PRAMS mothers (prams_p7_arf) in 2012-2015.",
+   "why_open": "Multivitamins are essential for maternal health, particularly folic acid which reduces neural tube defects. However, there is little research on how multivitamin use varies between high-risk groups such as SUID cases and the general population. Understanding this can provide insights into nutritional needs during pregnancy.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D250",
+    "D307"
+   ],
+   "data": "Use ncfrp_v51 medication use during pregnancy (D250) and prams_p7_arf multivitamin use (D307). Weight PRAMS data using WTANAL for population prevalence."
+  },
+  {
+   "question": "What is the difference in smoking cessation before pregnancy between SUID cases and a population reference?",
+   "comparison": "SUID cases (ncfrp_v51) compared with PRAMS mothers (prams_p8_arf) during 2008-2019.",
+   "why_open": "Smoking cessation before pregnancy is crucial for reducing risks to fetal development. The extent to which high-risk groups such as SUID cases adhere to this recommendation remains understudied, potentially revealing opportunities for targeted interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D240",
+    "D293"
+   ],
+   "data": "Use ncfrp_v51 maternal characteristics (D240) and prams_p8_arf smoking during pregnancy (D293). Weight PRAMS data using WTANAL for population prevalence."
+  }
+ ]
+}

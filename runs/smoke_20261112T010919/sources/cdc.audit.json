@@ -1,0 +1,44 @@
+{
+  "source_id": "cdc",
+  "n_variables": 6,
+  "anchors_checked": 0,
+  "unmatched_anchors": [],
+  "census": [
+    {
+      "token": "AGE9F",
+      "page": 1,
+      "context": "AGE9F",
+      "count": 1
+    },
+    {
+      "token": "GESTF",
+      "page": 1,
+      "context": "GESTF",
+      "count": 1
+    },
+    {
+      "token": "ICDF",
+      "page": 1,
+      "context": "ICDF",
+      "count": 1
+    },
+    {
+      "token": "NUMF",
+      "page": 1,
+      "context": "NUMF",
+      "count": 1
+    },
+    {
+      "token": "NYF",
+      "page": 1,
+      "context": "NYF",
+      "count": 1
+    },
+    {
+      "token": "SEXF",
+      "page": 1,
+      "context": "SEXF",
+      "count": 1
+    }
+  ]
+}

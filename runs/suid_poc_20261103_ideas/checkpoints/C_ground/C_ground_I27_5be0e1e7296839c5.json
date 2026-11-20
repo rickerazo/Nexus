@@ -1,0 +1,27 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers with significant weight gain during pregnancy is higher among SUID cases compared to non-SUID infant deaths.",
+ "rationale": "This study uses a case-case comparison design, comparing maternal weight gain between SUID and other recorded infant deaths within the same case series source. The NCFRP dataset provides necessary variables for this analysis.",
+ "prior_art": "suid_literature_abstracts.C10 suggests that maternal obesity is a risk factor for SUID but does not specifically address how maternal weight gain during pregnancy correlates with SUID compared to non-SUID infant deaths, leaving the question open.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "maternal weight gain during pregnancy",
+  "SUID cases",
+  "non-SUID infant deaths"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4momwtgn",
+  "ncfrp_v51:SUPdthsids"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates; it only allows comparison of proportions between SUID and non-SUID cases within the same case series source."
+}

@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with a history of infant hospitalization is higher compared to the weighted prevalence of hospitalizations among live births from PRAMS.",
+ "rationale": "A case-population comparison design can be used to evaluate whether infants who experienced hospitalization before their death have a higher prevalence of such history compared to the general population of live births. This design compares the proportion of cases (infants who died from SUID) with prior hospitalizations against the weighted prevalence in a representative sample of the general population.",
+ "prior_art": "None in the inputs; while there are studies on risk factors like maternal obesity, none directly address the impact of infant hospitalization history on subsequent SUID risk.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_linkco15",
+  "cdc_natl15"
+ ],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "prior hospitalization"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4prevhosp",
+  "prams_p8_arf:LTH_HOSP",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causality between prior hospitalizations and increased risk of SUID. It also cannot account for other potential confounders like prematurity, maternal smoking, or environmental factors that might affect both hospitalization likelihood and SUID incidence."
+}

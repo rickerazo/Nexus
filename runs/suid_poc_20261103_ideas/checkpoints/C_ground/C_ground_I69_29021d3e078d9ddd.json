@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with low birth weight increased from 2012 to 2019, while the proportion of live births with low birth weight also showed a trend over the same period.",
+ "rationale": "This study design evaluates trends in proportions of low birth weight among SUID cases and live births separately using available data sources. It does not estimate incidence rates or establish causality due to lack of denominator source for SUID cases.",
+ "prior_art": "The closest tested work is C10, which excludes extremely preterm infants, but the specific trend comparison between SUID cases and live births with low birth weight remains unexplored in existing literature. This study aims to fill this gap by analyzing trends over time.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2019,
+ "required_concepts": [
+  "low_birth_weight"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3lbwt",
+  "prams_p7_arf:PREV_LBW_RAW",
+  "prams_p8_arf:PRE_LB_NAPHSIS",
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot estimate incidence rates or establish causality between low birth weight and SUID risk due to lack of a denominator source."
+}

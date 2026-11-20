@@ -1,0 +1,80 @@
+### Design
+
+**Question:** What is the difference in postpartum contraception use between mothers who experienced SUID and those who did not?
+
+This question can be addressed through a case-population comparison design. We will compare the prevalence of postpartum contraceptive use among mothers who experienced Sudden Unexpected Infant Death (SUID) with its weighted prevalence in a representative sample of mothers from the general population.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - **Reasoning:** This source contains detailed data on child deaths reviewed by fatality review teams, including information about SUID cases.
+  
+- **Population Reference:** prams_p8_arf and prams_p7_arf
+  - **Reasoning:** These sources contain weighted survey data from mothers of live births, which can be used to derive the prevalence of postpartum contraceptive use in a representative sample of mothers.
+
+- **Denominator Source:** cdc_natl15
+  - **Reasoning:** This source provides total numbers of live births, serving as the denominator for incidence rates and providing context on population sizes.
+
+### Period
+
+**Period:**
+The common period that lies within the coverage of all sources is from 2016 to 2019. 
+
+- ncfrp_v51 covers deaths 2008–2019.
+- prams_p8_arf and prams_p7_arf cover Phase 8 (2016-2021) and Phase 7 (2012-2015), respectively. We will use the overlapping period of 2016-2019 for consistency.
+- cdc_natl15 covers all live births in 2015, but we can approximate using data from 2016 to align with PRAMS.
+
+### Variables
+
+**Concept:** Postpartum Contraception Use
+- **Case Series (ncfrp_v51):**
+  - Variable: INF4bc (Mother using birth control 3 months prior to pregnancy)
+  
+- **Population Reference (prams_p8_arf, prams_p7_arf):**
+  - Variable: BC_NOW4 (Postpartum BC -- using now)
+
+**Measurement Differences:**
+
+- ncfrp_v51: 
+  - INF4bc captures contraceptive use before pregnancy.
+  - However, it can be interpreted as postpartum contraceptive use if we assume mothers who used contraception pre-pregnancy are likely to continue it postpartum.
+
+- prams_p8_arf and prams_p7_arf:
+  - BC_NOW4 specifically captures postpartum contraceptive use.
+  
+### Biases
+
+**Selection Bias:**
+- **Case Series (ncfrp_v51):** The cases may be subject to selection bias due to the participation of only a subset of states in fatality review teams. Also, some information might be missing or not reported accurately for SUID cases.
+
+- **Population Reference (PRAMS):** PRAMS data is weighted and adjusted to represent the general population, but it does not capture all live births and may miss mothers with specific characteristics that influence postpartum contraceptive use.
+
+**Information Bias:**
+- **Case Series:** The reporting of contraceptive use in case reports might be inconsistent or incomplete.
+  
+- **Population Reference:** PRAMS data is subject to recall bias as the survey is conducted a few months after birth. However, it provides weighted estimates to adjust for potential biases.
+
+**Confounding:**
+- Socioeconomic status, maternal age, education level, and other demographic factors can confound the relationship between postpartum contraception use and SUID. These variables need to be controlled in analysis.
+
+### What the Design Cannot Establish
+
+This design can only compare proportions of postpartum contraceptive use among mothers with and without SUID cases. It cannot establish causality or temporal relationships, nor can it estimate incidence rates due to lack of a denominator that includes both live births and infant deaths for the same period.
+
+### Prior Art
+
+**Manuscript Claims:**
+
+- **SUID Manuscripts:** No claims directly address differences in postpartum contraceptive use between mothers with SUID cases and those without.
+  
+- **Bedsharing Manuscripts:** These manuscripts focus on associations between bed sharing, maternal smoking, prematurity, and SUID incidence but do not discuss postpartum contraception.
+
+### Verdict
+
+**Conclusion:**
+These data can answer a version of the question by comparing the prevalence of postpartum contraceptive use among mothers with SUID cases to those in the general population. However, several limitations need addressing:
+- The measurement of contraception use differs between sources (pre-pregnancy vs. postpartum).
+- Selection and information biases exist due to the nature of case series and survey data.
+- Confounding variables must be controlled.
+
+To improve this study, additional data on contraceptive use directly after birth would enhance comparability, and controlling for potential confounders is essential.

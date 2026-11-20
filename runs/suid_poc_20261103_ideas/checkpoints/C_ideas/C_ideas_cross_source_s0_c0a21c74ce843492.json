@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "What is the impact of maternal obesity on SUID incidence when accounting for postconceptional age (PCA) alignment?",
+   "why_open": "While existing studies suggest maternal obesity and PCA are both risk factors for SUID, no study has combined these two variables to assess their interactive effect.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "maternal prepregnancy body mass index (BMI), postconceptional age (PCA)"
+  },
+  {
+   "question": "How does environmental stress, as reported in PRAMS surveys, correlate with SUID rates among preterm infants from CDC-linked birth/infant death data?",
+   "why_open": "This question integrates PRAMS's detailed survey of new mothers' environments and health behaviors with the detailed infant mortality records of linked births/deaths data.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_linkco15"
+   ],
+   "data": "Household income, environmental stressors (premature birth, pre-pregnancy health conditions), SUID"
+  },
+  {
+   "question": "How does infant sleeping environment as reported by PRAMS relate to postconceptional age-adjusted SUID risk among bed-sharing infants?",
+   "why_open": "PRAMS provides detailed information on infant care practices and sleeping environments, while the PCA-aligned models from CDC data can be used to adjust for developmental stage.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "sleeping arrangements, postconceptional age (PCA), SUID"
+  },
+  {
+   "question": "How does maternal smoking impact the relationship between preterm birth and SUID incidence when accounting for developmental stage using PCA?",
+   "why_open": "This question explores the interactive effects of maternal smoking, prematurity, and timing in a novel way, by integrating data from different sources to provide a more nuanced view.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "maternal smoking during pregnancy, preterm birth (birthweight), postconceptional age (PCA)"
+  },
+  {
+   "question": "What is the impact of socioeconomic status on SUID incidence when stratified by maternal obesity and postnatal age?",
+   "why_open": "This question combines economic factors with biological risk factors in a way that neither source addresses individually, providing new insights into social determinants of health.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_linkco15"
+   ],
+   "data": "income and dependent information, maternal prepregnancy BMI (BMI), SUID"
+  }
+ ]
+}

@@ -1,0 +1,338 @@
+{
+  "source_id": "prams_p7_arf",
+  "n_variables": 386,
+  "anchors_checked": 0,
+  "unmatched_anchors": [],
+  "census": [
+    {
+      "token": "HTUF",
+      "page": 1,
+      "context": "HTUF",
+      "count": 1
+    },
+    {
+      "token": "LBKGUF",
+      "page": 1,
+      "context": "LBKGUF",
+      "count": 1
+    },
+    {
+      "token": "NUMF",
+      "page": 1,
+      "context": "NUMF",
+      "count": 15
+    },
+    {
+      "token": "NY1F",
+      "page": 1,
+      "context": "NY1F",
+      "count": 52
+    },
+    {
+      "token": "NYF",
+      "page": 1,
+      "context": "NYF",
+      "count": 28
+    },
+    {
+      "token": "NYS1F",
+      "page": 1,
+      "context": "NYS1F",
+      "count": 45
+    },
+    {
+      "token": "NYSF",
+      "page": 3,
+      "context": "NYSF",
+      "count": 82
+    },
+    {
+      "token": "NUMSF",
+      "page": 4,
+      "context": "NUMSF",
+      "count": 4
+    },
+    {
+      "token": "FL12GETF",
+      "page": 6,
+      "context": "FL12GETF",
+      "count": 1
+    },
+    {
+      "token": "NUMSDF",
+      "page": 6,
+      "context": "NUMSDF",
+      "count": 8
+    },
+    {
+      "token": "NYD1F",
+      "page": 6,
+      "context": "NYD1F",
+      "count": 4
+    },
+    {
+      "token": "DRINK5F",
+      "page": 7,
+      "context": "DRINK5F",
+      "count": 4
+    },
+    {
+      "token": "SMOKE5F",
+      "page": 7,
+      "context": "SMOKE5F",
+      "count": 6
+    },
+    {
+      "token": "BFDUR4F",
+      "page": 9,
+      "context": "BFDUR4F",
+      "count": 2
+    },
+    {
+      "token": "BFUNIT4F",
+      "page": 9,
+      "context": "BFUNIT4F",
+      "count": 2
+    },
+    {
+      "token": "FREQ5F",
+      "page": 12,
+      "context": "FREQ5F",
+      "count": 2
+    },
+    {
+      "token": "INCOME7F",
+      "page": 13,
+      "context": "INCOME7F",
+      "count": 1
+    },
+    {
+      "token": "BCF",
+      "page": 14,
+      "context": "BCF",
+      "count": 13
+    },
+    {
+      "token": "YNF",
+      "page": 14,
+      "context": "YNF",
+      "count": 33
+    },
+    {
+      "token": "PU_GSTWK",
+      "page": 15,
+      "context": "PU_GSTWK",
+      "count": 1
+    },
+    {
+      "token": "ILLB_R",
+      "page": 16,
+      "context": "ILLB_R",
+      "count": 1
+    },
+    {
+      "token": "KESSNERF",
+      "page": 16,
+      "context": "KESSNERF",
+      "count": 1
+    },
+    {
+      "token": "NP_GRAM",
+      "page": 16,
+      "context": "NP_GRAM",
+      "count": 1
+    },
+    {
+      "token": "DEGREEF",
+      "page": 17,
+      "context": "DEGREEF",
+      "count": 2
+    },
+    {
+      "token": "EDUCF",
+      "page": 17,
+      "context": "EDUCF",
+      "count": 2
+    },
+    {
+      "token": "MARRIEDF",
+      "page": 17,
+      "context": "MARRIEDF",
+      "count": 1
+    },
+    {
+      "token": "NP_MAGE",
+      "page": 17,
+      "context": "NP_MAGE",
+      "count": 2
+    },
+    {
+      "token": "PU_MAGE",
+      "page": 17,
+      "context": "PU_MAGE",
+      "count": 1
+    },
+    {
+      "token": "PU_RACE",
+      "page": 18,
+      "context": "PU_RACE",
+      "count": 3
+    },
+    {
+      "token": "RACEAKF",
+      "page": 18,
+      "context": "RACEAKF",
+      "count": 2
+    },
+    {
+      "token": "BCLBSF",
+      "page": 19,
+      "context": "BCLBSF",
+      "count": 1
+    },
+    {
+      "token": "BCSMOKEF",
+      "page": 19,
+      "context": "BCSMOKEF",
+      "count": 1
+    },
+    {
+      "token": "BMIG4REV",
+      "page": 19,
+      "context": "BMIG4REV",
+      "count": 2
+    },
+    {
+      "token": "O_TERMF",
+      "page": 20,
+      "context": "O_TERMF",
+      "count": 1
+    },
+    {
+      "token": "URB_RUR",
+      "page": 20,
+      "context": "URB_RUR",
+      "count": 1
+    },
+    {
+      "token": "PAY_DELF",
+      "page": 21,
+      "context": "PAY_DELF",
+      "count": 1
+    },
+    {
+      "token": "PLURALF",
+      "page": 21,
+      "context": "PLURALF",
+      "count": 1
+    },
+    {
+      "token": "PNC_MTHF",
+      "page": 21,
+      "context": "PNC_MTHF",
+      "count": 1
+    },
+    {
+      "token": "POBF",
+      "page": 21,
+      "context": "POBF",
+      "count": 1
+    },
+    {
+      "token": "MENSES",
+      "page": 22,
+      "context": "MENSES",
+      "count": 1
+    },
+    {
+      "token": "NP_PRELB",
+      "page": 22,
+      "context": "NP_PRELB",
+      "count": 1
+    },
+    {
+      "token": "SEXF",
+      "page": 22,
+      "context": "SEXF",
+      "count": 1
+    },
+    {
+      "token": "BCFLAGF",
+      "page": 23,
+      "context": "BCFLAGF",
+      "count": 1
+    },
+    {
+      "token": "MODEF",
+      "page": 23,
+      "context": "MODEF",
+      "count": 2
+    },
+    {
+      "token": "QX_TYPE",
+      "page": 23,
+      "context": "QX_TYPE",
+      "count": 1
+    },
+    {
+      "token": "BF_DURF",
+      "page": 27,
+      "context": "BF_DURF",
+      "count": 1
+    },
+    {
+      "token": "DRK_CHNG",
+      "page": 27,
+      "context": "DRK_CHNG",
+      "count": 1
+    },
+    {
+      "token": "FLUTRIMF",
+      "page": 28,
+      "context": "FLUTRIMF",
+      "count": 1
+    },
+    {
+      "token": "SHOT",
+      "page": 28,
+      "context": "SHOT",
+      "count": 1
+    },
+    {
+      "token": "WEEK",
+      "page": 28,
+      "context": "WEEK",
+      "count": 4
+    },
+    {
+      "token": "BMIG4F",
+      "page": 30,
+      "context": "BMIG4F",
+      "count": 1
+    },
+    {
+      "token": "REVISED",
+      "page": 30,
+      "context": "REVISED",
+      "count": 1
+    },
+    {
+      "token": "INDICATOR",
+      "page": 31,
+      "context": "INDICATOR",
+      "count": 1
+    },
+    {
+      "token": "SMK_CHNG",
+      "page": 33,
+      "context": "SMK_CHNG",
+      "count": 3
+    },
+    {
+      "token": "NOW",
+      "page": 34,
+      "context": "NOW",
+      "count": 1
+    }
+  ]
+}

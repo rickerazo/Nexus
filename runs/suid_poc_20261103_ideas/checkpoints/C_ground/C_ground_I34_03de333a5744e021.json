@@ -1,0 +1,37 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with prenatal care issues is higher compared to other causes of infant death.",
+ "rationale": "This study design uses a case-case comparison to assess the relationship between prenatal care issues and sudden unexpected infant death (SUID) relative to other causes of infant death. The necessary variables exist in both sources, and the years required are available.",
+ "prior_art": "The closest tested work is bedsharing_ms_v7.C8, which discusses associations with SUID but does not specifically address prenatal care issues. This question remains open as it seeks a detailed comparison between SUID cases and other causes of infant death regarding prenatal care issues.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "prenatal care issues",
+  "SUID cases",
+  "other causes of infant death"
+ ],
+ "variables": [
+  "ncfrp_v51:INFisscare",
+  "ncfrp_v51:ISSpnclate",
+  "ncfrp_v51:ISSpncnone",
+  "prams_p8_arf:PNC_MTH",
+  "prams_p8_arf:PNC_VST",
+  "prams_p7_arf:PNC_MTH",
+  "prams_p7_arf:PNC_VST",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "Causation, absolute prevalence rates."
+}

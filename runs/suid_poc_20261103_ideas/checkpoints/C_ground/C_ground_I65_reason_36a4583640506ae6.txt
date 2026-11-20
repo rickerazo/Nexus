@@ -1,0 +1,72 @@
+### Design
+
+**Question Restated:** How has the proportion of SUID cases with prenatal complications such as low birth weight changed over different time periods (2008-2019 vs. 2016-2021)?
+
+This design is a trend analysis among case series, comparing proportions across different time periods without estimating incidence or rates.
+
+### Sources by Role
+
+**Case Series:**
+- **ncfrp_v51:** This dataset provides information on child deaths reviewed by fatality review teams (SUID cases). It will be used to identify SUID cases with prenatal complications.
+  
+**Population Reference:**
+- **prams_p8_arf (2016-2021) and prams_p7_arf (2012-2015):** These surveys provide demographic information on mothers of live births, which can be used to compare the proportions of prenatal complications in a population reference.
+
+### Period
+
+- **Case Series:** 2008-2019
+- **Population Reference:**
+  - **prams_p7_arf:** 2012-2015 (Phase 7)
+  - **prams_p8_arf:** 2016-2021 (Phase 8)
+
+### Variables
+
+**Concepts and Candidate Variables**
+
+#### Prenatal Complications
+- **ncfrp_v51:**
+  - INFprevpreterm: Previous preterm/SGA infant
+  - INF3lbwt: Previous low birth weight
+  - INFmedical: Medical complications during pregnancy
+  - INF4pretermlab: Preterm labor
+  - INF4heducrisk: Health education risk factors identified by prenatal history
+
+- **prams_p7_arf and prams_p8_arf:**
+  - P_PRTERM: Previous preterm births
+  - PREV_LBW_RAW: Previous live birth -- low birth weight
+  - MM_HBP: Hypertension (prepregnancy or gestational)
+  - OTH_TERM: Other pregnancy outcomes (spontaneous/induced losses, ectopic pregnancies)
+
+#### Time Periods
+- **ncfrp_v51:** Year of death (2008-2019)
+- **prams_p7_arf:** Survey year (2012-2015)
+- **prams_p8_arf:** Survey year (2016-2021)
+
+### Biases
+
+**Selection Bias:**
+- The case series (ncfrp_v51) only covers SUID cases reviewed by fatality review teams, which may not be representative of all SUID cases. 
+- PRAMS surveys are state-specific and weighted samples; generalizability to the entire population is uncertain.
+
+**Information Bias:**
+- Reporting differences between ncfrp_v51 and PRAMS for prenatal complications (e.g., timing, who reports it).
+
+**Confounding:**
+- Potential confounders such as socioeconomic status, maternal age, education level, smoking during pregnancy, etc., are not consistently measured across all datasets.
+
+### What the Design Cannot Establish
+
+This design can only establish trends in proportions of SUID cases with prenatal complications over time. It cannot estimate incidence or risk because it lacks a denominator source to calculate rates. The comparison is limited to group-level associations between case series and population reference data.
+
+### Prior Art
+
+- **SUID Manuscripts:** Claims C6, C7, C8 discuss temporal trends in SUID cases but do not focus on prenatal complications.
+- **Bedsharing Study:** Claims such as bedsharing_ms_v7.C3-C12 discuss developmental windows related to SUID incidence but do not address prenatal factors.
+
+### Verdict
+
+The proposed question can be answered using the provided data sources, specifically comparing trends in proportions of SUID cases with prenatal complications over different time periods. However, this analysis is limited to descriptive comparisons and cannot establish causal relationships or rates due to the lack of a denominator source for incidence estimates. The design does not account for potential confounding factors that may influence these trends.
+
+### Conclusion
+
+Yes, these sources can answer the question regarding changes in proportions of SUID cases with prenatal complications over time (2008-2019 vs. 2016-2021), but only as a descriptive analysis without incidence or causal claims.

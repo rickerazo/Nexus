@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "How do socioeconomic factors such as income and insurance coverage in PRAMS Phase 8 affect postnatal sleeping arrangements for infants who later die from SUID?",
+   "why_open": "This question is novel because it links socioeconomic data from PRAMS with infant deaths recorded in NFR-CRS. This cross-source analysis could uncover how economic conditions may influence safe sleep practices that contribute to SUID.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Income and Dependent Information (prams_p8_arf), Insurance Coverage (PRAMS Phase 8 Analytic Research File codebook) (prams_p8_arf), Infant Sleeping Arrangements (ncfrp_v51)"
+  },
+  {
+   "question": "What is the impact of healthcare provider communication on breastfeeding initiation and duration in infants who die from SUID?",
+   "why_open": "This question connects maternal perceptions about healthcare advice from PRAMS Phase 8 with outcomes recorded in NFR-CRS. It investigates how doctor-patient interactions might affect infant feeding practices related to SUID.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Healthcare Communication (prams_p8_arf), Breastfeeding Status and Practices (ncfrp_v51)"
+  },
+  {
+   "question": "How do maternal pre-pregnancy health conditions, as recorded in PRAMS Phase 7, influence the incidence of SUID among infants?",
+   "why_open": "PRAMS Phase 7 provides detailed information about maternal health before pregnancy that can be linked with outcomes from NFR-CRS. This would help understand how prepregnancy health affects infant mortality.",
+   "sources": [
+    "prams_p7_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Health Problems Before Pregnancy (prams_p7_arf), Medical Causes of Death (ncfrp_v51)"
+  },
+  {
+   "question": "How does the frequency and type of healthcare visits during pregnancy, as reported in PRAMS Phase 8, correlate with SUID incidence in infants?",
+   "why_open": "PRAMS Phase 8 collects data on healthcare utilization that can be linked to death outcomes from NFR-CRS. This would assess if more frequent prenatal care reduces the risk of SUID.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Healthcare Visits During Pregnancy (prams_p8_arf), Medical Causes of Death (ncfrp_v51)"
+  },
+  {
+   "question": "What are the effects of maternal health conditions and insurance coverage during pregnancy, as detailed in PRAMS Phase 7, on SUID risk among infants?",
+   "why_open": "This question integrates maternal health information from PRAMS with death records to investigate how healthcare access might influence SUID outcomes. It aims to uncover if better prenatal care correlates with reduced SUID incidence.",
+   "sources": [
+    "prams_p7_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Health Problems Before Pregnancy (prams_p7_arf), Insurance Coverage (PRAMS Phase 7 Analytic Research File codebook) (prams_p7_arf)"
+  }
+ ]
+}

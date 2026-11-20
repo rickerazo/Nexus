@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "What is the association between maternal weight gain patterns during pregnancy (measured in PRAMS Phase 8) and SUID incidence in infants from CDC linked birth/infant death data?",
+   "why_open": "The existing studies have not examined the specific trajectory of maternal weight gain throughout pregnancy as a risk factor for SUID. Understanding this relationship could provide insights into interventions targeting gestational weight management.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_linkco15"
+   ],
+   "data": "Maternal Weight and Care, Birth Location and Time"
+  },
+  {
+   "question": "How does maternal exposure to different environmental factors (recorded in NFR-CRS) affect SUID incidence across various geographic locations using CDC natality data?",
+   "why_open": "Environmental exposures have not been thoroughly investigated for their role in SUID. Analyzing these exposures from the detailed NFR-CRS records can uncover regional disparities and new risk factors.",
+   "sources": [
+    "ncfrp_v51",
+    "cdc_natl15"
+   ],
+   "data": "Environmental Factors, Mother's Demographics"
+  },
+  {
+   "question": "How do socioeconomic status indicators (from PRAMS Phase 7) correlate with SUID incidence in infants from the CDC linked birth/infant death data?",
+   "why_open": "Socioeconomic determinants of health have not been fully explored as contributors to SUID. Identifying these correlations can help target public health interventions.",
+   "sources": [
+    "prams_p7_arf",
+    "cdc_linkco15"
+   ],
+   "data": "Service Limitations, Maternal Characteristics"
+  },
+  {
+   "question": "What is the impact of maternal prenatal care quality (from PRAMS Phase 8) on SUID rates in infants from CDC natality and linked death data?",
+   "why_open": "The effect of varying levels of prenatal care quality has not been well-studied with respect to SUID. This could provide insights into how improving prenatal services can reduce risk.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_natl15"
+   ],
+   "data": "Healthcare Visits During Pregnancy, Medical Conditions"
+  },
+  {
+   "question": "Can maternal postpartum mental health status (recorded in PRAMS Phase 7) predict SUID risk in infants from the CDC linked birth/infant death data?",
+   "why_open": "Postpartum mental health has not been extensively examined as a predictor for SUID. This research could highlight new areas of intervention focusing on maternal mental wellness.",
+   "sources": [
+    "prams_p7_arf",
+    "cdc_linkco15"
+   ],
+   "data": "Postpartum Mental Health, Demographics and Dates"
+  }
+ ]
+}

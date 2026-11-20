@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "MM_PLAC",
+   "name": "Maternal Complications",
+   "summary": "Indicators of maternal complications during delivery such as perineal laceration, uterine rupture, and unplanned hysterectomy."
+  },
+  {
+   "start": "NO_MMORB",
+   "name": "Maternal Morbidity",
+   "summary": "Indicator whether any maternal morbidity was checked and a flag for no maternal morbidity being reported."
+  },
+  {
+   "start": "RDMETH_REC",
+   "name": "Delivery Method",
+   "summary": "Recode of the delivery method including vaginal, primary or repeat cesarean sections."
+  },
+  {
+   "start": "APGAR10",
+   "name": "APGAR Scores",
+   "summary": "Ten-minute and five-minute APGAR scores and their recodes for assessing newborn health at birth."
+  },
+  {
+   "start": "F_APGAR5",
+   "name": "Reporting Flags",
+   "summary": "Flags indicating whether various data points such as the five-minute APGAR score, payment source, and plurality were reported."
+  },
+  {
+   "start": "MTRAN",
+   "name": "Mother Transfer",
+   "summary": "Indicator of whether the mother was transferred to another facility during delivery."
+  },
+  {
+   "start": "PAY",
+   "name": "Payment Source",
+   "summary": "Source and recode of payment for medical services, including Medicaid, private insurance, self-pay, and others."
+  },
+  {
+   "start": "DLMP_MM",
+   "name": "Last Menstrual Period",
+   "summary": "Month and year of the last menstrual period used to estimate gestational age."
+  }
+ ]
+}

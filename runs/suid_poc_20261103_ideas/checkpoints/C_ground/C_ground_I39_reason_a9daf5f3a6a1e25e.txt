@@ -1,0 +1,51 @@
+### Design
+
+**Revised Question:** Does the prevalence of maternal health problems differ between Sudden Unexpected Infant Death (SUID) cases and other cause-of-death infant cases in a case-case comparison?
+
+#### Sources by Role:
+- **Case Series:** `ncfrp_v51` - This dataset records child deaths reviewed by fatality review teams, including both SUID and non-SUID cases.
+- **Population Reference:** `prams_p8_arf` - This weighted survey of mothers after live births can provide exposure prevalence in the general population.
+
+#### Period:
+The common period that fits within the coverage of these sources is 2016-2019. 
+
+- **ncfrp_v51** covers deaths from 2004-2019, but we will focus on cases from 2016 to 2019 for a more recent comparison.
+- **prams_p8_arf** is available from 2016 onwards.
+
+#### Variables:
+1. **Maternal Health Problems (Case Series: `ncfrp_v51`):**
+   - `INFmedical`: During pregnancy did mother have medical complications/infections
+   - `ISSprechronicdiseasebef`, `ISSprechronicdiseaseaft`: Chronic disease control education before and after pregnancy
+   
+2. **Maternal Health Problems (Population Reference: `prams_p8_arf`):**
+   - `PG8_SC`, `PG8_NAUS`, `HTH_ALRGI`, `HTH_ASMA`, `BPG_DIAB8`, `HTH_ANX`, `HTH_PCOS`, `HTH_HRT`, `BPG_HBP8`: Health problems during pregnancy (coded as yes/no)
+   - `WTANAL`: Survey weight required for prevalence estimation
+
+#### Biases:
+1. **Selection Bias:**
+   - The NCFRP dataset includes only cases reported by participating fatality review teams, which may not be representative of all infant deaths in the US.
+   
+2. **Information Bias:**
+   - Maternal health problems are retrospectively recorded in `ncfrp_v51` and self-reported in PRAMS, potentially leading to recall bias or underreporting.
+   
+3. **Confounding:**
+   - Socioeconomic status, urban/rural residence, maternal smoking, birth weight, and gestational age may confound the relationship between maternal health problems and SUID.
+
+#### What the Design Cannot Establish:
+- The design does not establish causality; it only compares proportions of cases with similar outcomes.
+- It cannot provide incidence rates or risk estimates due to a lack of denominator data for population at risk.
+
+#### Prior Art:
+The closest manuscript claim is `SUID_manuscript_v9_clean.C10` and `bedsharing_ms_v7.C23`, which discuss limitations related to exposure misclassification and the exclusion of cases with missing maternal smoking status. However, none of these claims directly address differences in maternal health problems between SUID cases and other cause-of-death infant deaths.
+
+#### Verdict:
+Yes, these data can answer a version of the question: "Does the prevalence of maternal health problems differ between Sudden Unexpected Infant Death (SUID) cases and other cause-of-death infant cases?" 
+
+However, this analysis would be subject to selection bias due to incomplete case ascertainment by fatality review teams, information bias from retrospective reporting, and confounding factors that are not adequately controlled in the available data. Therefore, while it can provide a descriptive comparison, it cannot establish causation or incidence rates.
+
+### Recommendations:
+1. **Expand Case Ascertainment:** Ensure broader participation of fatality review programs to improve case ascertainment.
+2. **Improve Data Quality:** Standardize and enhance reporting mechanisms for maternal health conditions in both case series and population reference datasets.
+3. **Control Confounding Factors:** Use additional covariates such as socioeconomic status, urban/rural residence, and other relevant exposures to better control for confounders.
+
+By addressing these limitations, future studies can provide a more robust comparison of maternal health problems between SUID cases and non-SUID infant deaths.

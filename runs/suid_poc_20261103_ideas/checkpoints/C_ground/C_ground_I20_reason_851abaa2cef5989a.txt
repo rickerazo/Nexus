@@ -1,0 +1,72 @@
+### Design
+
+**Question:** Is there a significant difference in smoking cessation rates between mothers of SUID infants compared to the general population of new mothers?
+
+**Design Type:** Exposure-specific rates. Estimate outcome rates by exposure group by combining the cases from a case series (numerator), the exposure prevalence from a population reference source, and the population at risk from a denominator source.
+
+### Sources by Role
+
+- **Case Series:** `ncfrp_v51` – Records child deaths reviewed by fatality review teams, focusing on SUID cases.
+- **Population Reference:** `prams_p8_arf` – Weighted survey of mothers after live births, providing smoking cessation data for the general population.
+- **Denominator Source:** `cdc_linkco15` – Covers all US live births linked to infant deaths in 2015.
+
+### Period
+
+**Period:** The common period available from all three sources is 2015. 
+
+- `ncfrp_v51`: Fatality review data includes SUID cases up until 2019, but the manuscript uses a limited subset of these cases to align with other time periods (2008-2019).
+- `prams_p8_arf`: Survey period covers Phase 8 (2016-2021), but we use only data from 2015.
+- `cdc_linkco15`: Covers births and deaths in 2015.
+
+### Variables
+
+**Smoking Cessation:**
+- **Case Series (`ncfrp_v51`):** 
+  - `INFsectricig`, `INFfirsttricig`, `INFthirdtricig`
+  - These variables record the number of cigarettes smoked during each trimester. To measure cessation, we need to compare values across trimesters and post-pregnancy.
+  
+- **Population Reference (`prams_p8_arf`):**
+  - `SMK6C_PG`: Variable indicating change in smoking behavior during pregnancy (e.g., smoker who quit, reduced number of cigarettes).
+  - `MOMCIG`: Average number of cigarettes smoked daily across trimesters.
+
+**Denominator Source (`cdc_linkco15`):**
+- Relevant variables for linking births and deaths: `F_CIGS_0`, `CIG0_R`, etc., to measure smoking status before and during pregnancy.
+
+### Biases
+
+#### Selection Bias
+- **Case Series:** Participation of states in the NFR-CRS varies over time, potentially leading to selection bias.
+- **Population Reference:** PRAMS surveys may miss some high-risk populations due to sampling limitations.
+  
+#### Information Bias
+- **Case Series:** Reporting flags and recodes might differ from PRAMS, affecting consistency.
+- **Denominator Source:** Vital records data on smoking behavior may be underreported or misclassified.
+
+#### Confounding
+- **Variables Not Measured:**
+  - Postnatal exposures (e.g., breastfeeding)
+  - Socioeconomic status and environmental stressors
+
+### What the Design Cannot Establish
+
+The design cannot establish causation; it can only identify associations between smoking cessation rates in mothers of SUID infants versus those from the general population. The lack of longitudinal data on postpartum smoking behavior means we cannot fully account for confounders like postnatal exposures.
+
+### Prior Art
+
+**Manuscript Claims:**
+- `bedsharing_ms_v7.C12`: Maternal smoking during pregnancy showed the largest and most consistent association with SUID incidence in both windows.
+- `suid_literature_abstracts.C11`: Maternal smoking during pregnancy significantly increases the risk of SUID.
+
+While these studies highlight a strong association between maternal smoking and SUID, they do not specifically examine smoking cessation rates. Therefore, the question about differences in smoking cessation remains open.
+
+### Verdict
+
+**Can These Data Answer the Question?**
+
+Yes, but with limitations:
+- The data can provide an estimate of smoking cessation rates among mothers of SUID infants compared to the general population.
+- However, the design cannot establish causation or address postnatal exposures which may affect smoking behavior and SUID incidence.
+
+### Missing Elements
+
+To fully answer this question, additional longitudinal data on postpartum smoking behavior would be necessary. This could help control for confounding factors such as socioeconomic status and postnatal environmental risks that influence smoking cessation rates.

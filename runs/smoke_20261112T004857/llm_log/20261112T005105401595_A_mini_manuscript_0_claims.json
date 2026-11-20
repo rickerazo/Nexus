@@ -1,0 +1,18 @@
+{
+  "stage": "A_mini_manuscript_0_claims",
+  "prompt": "a_claims",
+  "system": "You are extracting the claims of a scientific manuscript for study-design planning.\nYou do not judge the science; you report what the manuscript says, anchored to verbatim text.\nRules:\n- `claims` cover findings, hypotheses, methods, limitations, and stated future work. Give each a stable id C1, C2, ...\n- Every claim carries a `quote`: one verbatim span (15-300 characters) copied exactly from the text, character for character, and the `page` from the `[page N]` marker it comes from. Do not shorten, paraphrase, or append page markers to the quote; paraphrases are rejected.\n- `statement` is a faithful one-sentence paraphrase of the claim.\n- Report at most 60 claims. If the text contains more (for example a collection of abstracts), keep the findings and limitations most relevant to study design and skip the rest; never enumerate exhaustively.",
+  "transcript": [
+    {
+      "attempt": 1,
+      "user": "Manuscript \"Developmental timing of sudden unexpected infant death\", pages 1 to 1. Page boundaries are marked `[page N]`.\n\n\n[page 1]\n# Developmental timing of sudden unexpected infant death\n\nWe used linked birth and infant death records. The outcome was sudden unexpected infant death,\ndefined by underlying cause of death codes R95, R99 and W75, with age at death in days.\nWe aligned infants by postconceptional age (gestational age at birth plus chronological age).\nMale excess risk emerged only after 44 weeks postconceptional age. Prenatal smoking was associated\nwith earlier onset of risk. A limitation is that the sleep environment was not available in the\nlinked birth-death files.\n",
+      "response": "{\n    \"claims\": [\n        {\n            \"id\": \"C1\",\n            \"kind\": \"method\",\n            \"statement\": \"The study used linked birth and infant death records to examine sudden unexpected infant death.\",\n            \"quote\": \"We used linked birth and infant death records.\",\n            \"page\": 1\n        },\n        {\n            \"id\": \"C2\",\n            \"kind\": \"finding\",\n            \"statement\": \"Male infants showed an excess risk of sudden unexpected infant death after reaching 44 weeks postconceptional age.\",\n            \"quote\": \"Male excess risk emerged only after 44 weeks postconceptional age.\",\n            \"page\": 1\n        },\n        {\n            \"id\": \"C3\",\n            \"kind\": \"finding\",\n            \"statement\": \"Prenatal smoking was associated with an earlier onset of the risk for sudden unexpected infant death.\",\n            \"quote\": \"Prenatal smoking was associated with earlier onset of risk.\",\n            \"page\": 1\n        },\n        {\n            \"id\": \"C4\",\n            \"kind\": \"limitation\",\n            \"statement\": \"The study lacked information on the sleep environment, which is not available in the linked birth-death files.\",\n            \"quote\": \"A limitation is that the sleep environment was not available in the linked birth-death files.\",\n            \"page\": 1\n        }\n    ]\n}",
+      "usage": {
+        "prompt_tokens": 360,
+        "completion_tokens": 287,
+        "total_duration_ns": 39930685375
+      },
+      "problems": []
+    }
+  ]
+}

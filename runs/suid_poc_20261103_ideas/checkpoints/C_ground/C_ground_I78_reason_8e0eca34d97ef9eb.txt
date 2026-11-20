@@ -1,0 +1,94 @@
+### Design and Question Restatement
+
+**Design:** Measurement comparison. Compare how the same concept is recorded in two or more sources (wording, timing, who reports it, how missing answers are coded) and ask how the difference would bias a comparison between them.
+
+**Restated question:**
+How do prenatal care visits reported in PRAMS differ from those captured for SUID cases by NCFRP_v51? Specifically, we aim to compare the frequency and quality of prenatal care visits as documented in PRAMS surveys for live births against how these are recorded in NCFRP case reports for SUID deaths.
+
+### Sources by Role
+
+**Case series:** NCFRP_v51
+- **Role:** Captures detailed information on SUID cases, including prenatal care documentation.
+- **Why this role:** It provides the only available source of prenatal care information specific to SUID cases.
+
+**Population reference:** PRAMS_p7_arf, PRAMS_p8_arf
+- **Role:** Provides a weighted survey-based assessment of prenatal care for live births across multiple years and states.
+- **Why these roles:** These surveys directly assess prenatal care from mothers' perspectives, offering comprehensive data on prenatal visit frequency and quality.
+
+### Period
+
+**Years needed:**
+- The manuscript uses 2016-2021 (Phase 8) for PRAMS_p8_arf and 2012-2015 (Phase 7) for PRAMS_p7_arf.
+- NCFRP_v51 covers child deaths reviewed by participating fatality review teams from 2004 to 2019.
+
+**Years held now:**
+- PRAMS_p8_arf: Phase 8 (2016-2021)
+- PRAMS_p7_arf: Phase 7 (2012-2015)
+- NCFRP_v51: 2004-2019
+
+**Years that would have to be acquired:**
+- PRAMS_p8_arf needs data from 2008-2015.
+- PRAMS_p7_arf already has the required years.
+
+### Variables
+
+#### Prenatal Care Visits
+- **NCFRP_v51:** INFprenatal (Number of prenatal visits)
+- **PRAMS_p7_arf, PRAMS_p8_arf:**
+  - WTANAL (BC WT: ANALYSIS WT) – Required for prevalence estimates.
+  - PNC_VST (Number of Prenatal Care Visits)
+
+#### Timing and Reporting Flags
+- **NCFRP_v51:** INF4visnum (If yes, antepartum encounters - number of primary care provider visits)
+- **PRAMS_p7_arf, PRAMS_p8_arf:**
+  - PNC_MTH (Month of First Prenatal Care Visit)
+
+#### Quality and Issues
+- **NCFRP_v51:** INFisscare (Access or compliance issues related to prenatal care), ISSpncprog (Lack of progesterone therapy)
+- **PRAMS_p7_arf, PRAMS_p8_arf:**
+  - MM_NOMD (BC: No Medical Risk Factors?)
+  - TLK_PRET_RAW (HCW talk -- preterm labor signs)
+
+#### Missing Answers
+- NCFRP_v51 and PRAMS use different coding schemes for missing answers. In PRAMS, unknown or don't know responses are coded as .U, while in NCFRP they may be recorded differently.
+
+### Biases
+
+**Selection bias:** 
+- **PRAMS:** Samples mothers of live births; the sample is not representative of all women who experience a SUID.
+  
+**Information bias:**
+- **NCFRP_v51:** Case reports rely on medical records and potentially incomplete or biased documentation by healthcare providers.
+- **PRAMS:** Self-reported data can be subject to recall bias and social desirability bias.
+
+**Confounding:**
+- Differences in socioeconomic status, education level, and access to care between PRAMS respondents and NCFRP cases may introduce confounding variables that affect prenatal care quality and frequency.
+
+### What the Design Cannot Establish
+
+The design cannot establish:
+- The absolute incidence or risk of SUID based on prenatal care differences.
+- Causal relationships between prenatal care quality and SUID occurrence due to the observational nature of both data sources.
+  
+### Prior Art
+
+**Closest claims:**
+- **SUID_manuscript_v9_clean.C12 [limitation]:** The study uses vital-record data, which may have exposure and cause-of-death misclassification issues.
+  - This indicates that NCFRP data quality may be a concern for prenatal care documentation.
+
+### Verdict
+
+**Can these sources answer the question?**
+
+Yes, these sources can answer the research question. However, several caveats should be noted:
+- The design focuses on comparing how prenatal care visits are recorded in PRAMS (population reference) versus NCFRP_v51 (case series).
+- Due to differences in data collection methods and potential biases, any observed discrepancies may reflect methodological differences rather than true differences in prenatal care.
+- Additional validation studies would be needed to confirm the reliability of each source's documentation of prenatal care visits.
+
+### Logical Reasoning
+
+The design logically follows as it uses PRAMS for direct mother-reported prenatal visit frequency and quality (population reference) versus NCFRP_v51 which relies on medical records or proxy reporting by healthcare providers. This setup allows a comparison of the two methodologies but does not establish causation due to observational nature.
+
+### Conclusion
+
+This study design can validly compare how prenatal care visits are recorded in PRAMS vs. NCFRP_v51, though it cannot establish causal links between quality and SUID incidence given inherent biases in both data sources.

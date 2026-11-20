@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "SDYstim24phyactdesc",
+   "name": "Stimuli 24 hours",
+   "summary": "Description of physical activity within 24 hours before the incident."
+  },
+  {
+   "start": "SDYstim24physt",
+   "name": "Physical Trauma 24 Hours",
+   "summary": "Indicates if there was physical trauma within 24 hours before the incident."
+  },
+  {
+   "start": "SDYstim24sleepdepr",
+   "name": "Sleep Deprivation 24 Hours",
+   "summary": "Indicates if the child experienced sleep deprivation within 24 hours before the incident."
+  },
+  {
+   "start": "SDYstim24video",
+   "name": "Video Game Stimuli 24 Hours",
+   "summary": "Indicates if there was video game stimuli within 24 hours before the incident."
+  },
+  {
+   "start": "SDYstim24visual",
+   "name": "Visual Stimuli 24 Hours",
+   "summary": "Indicates if there were visual stimuli within 24 hours before the incident."
+  },
+  {
+   "start": "SDYstimatauditory",
+   "name": "Auditory Stimuli Incident",
+   "summary": "Indicates auditory or startle stimuli at the time of the incident."
+  },
+  {
+   "start": "SDYstimatdriving",
+   "name": "Driving Incident",
+   "summary": "Indicates if driving was a factor at the time of the incident."
+  },
+  {
+   "start": "SDYstimatemot",
+   "name": "Emotional Stimuli Incident",
+   "summary": "Indicates emotional stimuli at the time of the incident."
+  }
+ ]
+}

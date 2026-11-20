@@ -1,0 +1,59 @@
+### Design
+
+**Question Restated:** Are hospital overnight stays before discharge associated with a different risk of Sudden Unexpected Infant Death (SUID) compared to other infant deaths?
+
+The design is a **case-case comparison**, which compares cases of the outcome (SUID) with cases of other outcomes recorded in the same case series, to find what is specific to the outcome rather than to every event in the series.
+
+### Sources by Role
+
+**Case Series:** 
+- ncfrp_v51: Provides information on SUID cases and non-SUID infant deaths reviewed by fatality review teams.
+  
+**Population Reference:** Not applicable for this design, as we are not comparing proportions or odds with a population reference. However, if needed, prams_p8_arf could be used to provide background prevalence of hospital overnight stays.
+
+**Denominator Source:**
+- Not required for this case-case comparison. The denominator source is necessary only when estimating incidence rates, which is not applicable here as we are comparing proportions or odds among cases.
+
+### Period
+
+Since the manuscript claims use data from 2008 to 2019 (SUID_manuscript_v9_clean.C6) and PRAMS Phase 8 covers 2016-2021, the overlapping period is **2016-2019**.
+
+### Variables
+
+#### Case Series: ncfrp_v51
+- **INF4hosprtn:** Infant return to hospital overnight after delivery.
+  - Values: Yes/No
+  
+#### Population Reference: prams_p8_arf
+- Not applicable for this design, but if needed:
+  - **LTH_HOSP:** Length of time baby stayed in hospital.
+
+### Biases
+
+**Selection Bias:**
+- ncfrp_v51 only captures cases reviewed by participating fatality review teams and thus may not be representative of all infant deaths. Changes in case counts over time reflect participation trends, not incidence.
+  
+**Information Bias:**
+- Data on hospital overnight stays in ncfrp_v51 might be incomplete or inaccurately reported compared to PRAMS data.
+
+**Confounding:**
+- Other factors such as maternal smoking, prematurity, and socio-economic status may differ between SUID cases and other infant deaths. These variables are not consistently measured across all sources used here.
+
+### What the Design Cannot Establish
+
+The design can only establish associations or differences in proportions between SUID cases and non-SUID infant deaths regarding hospital overnight stays before discharge. It cannot establish causation, estimate risk, or incidence rates without a denominator source.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C10:** The manuscript excludes extremely and very preterm infants, which affects comparability with the proposed study.
+- **bedsharing_ms_v7.C8-C24:** These findings focus on bed sharing, maternal smoking, prematurity, and PCA development windows but do not address hospital overnight stays.
+
+The candidate idea is still open as it focuses specifically on hospital overnight stays before discharge, a variable not extensively studied in the provided claims.
+
+### Verdict
+
+These data can answer a version of the question by comparing SUID cases with other infant deaths from ncfrp_v51 regarding hospital overnight stays before discharge. However, the design lacks a denominator source to estimate incidence or risk and cannot establish causation due to its observational nature. Therefore, it is suitable for identifying associations but not causal relationships.
+
+### Conclusion
+
+The study can proceed using ncfrp_v51 data to identify whether SUID cases differ from other infant deaths in terms of hospital overnight stays before discharge. However, the findings should be interpreted with caution regarding causation and generalizability due to potential biases and lack of a denominator source for incidence estimates.

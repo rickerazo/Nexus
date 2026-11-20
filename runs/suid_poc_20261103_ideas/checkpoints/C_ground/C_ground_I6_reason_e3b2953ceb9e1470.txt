@@ -1,0 +1,82 @@
+### Design
+
+**Question Restated:** What proportion of SUID cases involved infants who slept with an adult compared to the general population of live-born infants?
+
+**Design:** Case-population comparison. This design will compare how common infant sleep-sharing with adults is among SUID cases (case series) versus the general population of live-born infants (population reference).
+
+### Sources by Role
+
+- **Case Series:**
+  - **Source:** ncfrp_v51
+  - **Reasoning:** This dataset contains case-level information on child deaths reviewed by fatality review teams, including specific details about the sleep environment and circumstances surrounding SUID cases.
+
+- **Population Reference:**
+  - **Source:** prams_p8_arf
+  - **Reasoning:** PRAMS (Pregnancy Risk Assessment Monitoring System) provides a weighted survey of mothers who recently had live births, capturing detailed information on infant sleeping arrangements from a general population sample.
+
+- **Denominator Source:**
+  - **Sources:** cdc_linkco15, cdc_natl15
+  - **Reasoning:** CDC linked birth/infant death public-use file (cdc_linkco15) provides both case and denominator data for SUID cases in the 2015 cohort. Additionally, cdc_natl15 serves as a general population reference of live births in 2015.
+
+### Period
+
+**Period:** 
+- **Case Series (ncfrp_v51):** 2008-2019
+- **Population Reference (prams_p8_arf):** 2016-2021
+- **Denominator Source (cdc_linkco15, cdc_natl15):** 2015
+
+The common period for all sources is not available. To align the data, we must use a single year that overlaps with both the case series and denominator source. Given the availability of detailed SUID data from ncfrp_v51 starting in 2008 and the denominator data only available for 2015, the study period will be:
+
+**Period:** 2015
+
+### Variables
+
+- **SUID Cases (ncfrp_v51):**
+  - **Concept:** Infant sleeping with an adult
+    - Variable: `CIRwadultnum` (If yes, child sleeping on same surface with Adult(s))
+
+- **General Population of Live-Born Infants (prams_p8_arf):**
+  - **Concept:** Infant sleeping with an adult
+    - Variable: `SLP_ROOM_RAW` (Sleep -- baby in room with mom)
+    - Variable: `SLP_MAT8_RAW` (Baby slept -- on mattress/bed)
+    - Variable: `SLEEPPOS_RAW` (Sleeping position -- baby)
+
+### Biases
+
+1. **Selection Bias:** 
+   - The case series may not be representative of all SUID cases as it is based on a subset of deaths reviewed by participating fatality review teams, which could introduce bias if these teams have different criteria for inclusion.
+   - PRAMS samples mothers from live births and does not include infant deaths in its denominator.
+
+2. **Information Bias:**
+   - The sleep environment information may be inconsistently reported or misclassified due to differences in how it is measured and recorded in the case series versus population reference sources.
+   - Reporting bias may exist if parents are more likely to recall and report incidents involving bed-sharing during interviews compared to routine medical records.
+
+3. **Confounding:**
+   - Other risk factors such as maternal smoking, prematurity, and socioeconomic status could confound the association between bed-sharing and SUID incidence. These variables should be controlled for in analyses if data are available.
+
+### What the Design Cannot Establish
+
+- The design cannot establish causality; it can only compare proportions or odds of exposure among cases versus the general population.
+- It does not account for temporal dynamics, such as changes in sleep environment practices over time or within the same family.
+
+### Prior Art
+
+The closest claims from the manuscripts are:
+
+1. **SUID_manuscript_v9_clean.C8 [finding]:**
+   - This claim discusses patterns of male and female SUID incidence by postconceptional age (PCA), but does not specifically address bed-sharing practices.
+   
+2. **bedsharing_ms_v7.C8 [finding]:**
+   - This finding states that bed sharing was recorded for 59.5% of SUID cases, indicating a high prevalence among SUID cases compared to the general population, though it does not provide direct comparisons.
+
+These claims suggest that there is some existing research on bed-sharing and its association with SUID but do not specifically address the comparison between cases and the general population.
+
+### Verdict
+
+**Verdict:** These data can answer a version of the question for the year 2015, which is the common period available in both case series (ncfrp_v51) and denominator sources (cdc_linkco15). However, there are limitations due to potential selection bias and information bias. The study should control for confounding factors and acknowledge that it can only compare proportions or odds but not establish causality.
+
+### Recommendations
+
+- **Data Improvement:** Consider extending the case series period to include more recent data where possible.
+- **Additional Controls:** Include variables like maternal smoking, prematurity, socioeconomic status, etc., in analyses to control for confounding.
+- **Bias Mitigation:** Ensure consistent and standardized reporting of sleep environment practices across both cases and general population samples.

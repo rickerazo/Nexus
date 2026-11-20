@@ -1,0 +1,40 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The incidence of Sudden Unexpected Infant Death (SUID) is associated with maternal pre-pregnancy health care utilization levels.",
+ "rationale": "This study design uses a case-specific rate approach to estimate the association between maternal pre-pregnancy healthcare utilization and SUID incidence. The numerator comes from SUID cases, while the denominator comes from live births stratified by pre-pregnancy healthcare utilization levels.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 discusses limitations of vital-record data, similar to our case series. bedsharing_ms_v7.C17-C24 highlight observational study limitations and indirect denominators, but do not address pre-pregnancy health care utilization directly.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C17",
+  "bedsharing_ms_v7.C24"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2014,
+ "period_end": 2019,
+ "required_concepts": [
+  "SUID cases",
+  "Maternal pre-pregnancy health care utilization",
+  "Live births stratified by pre-pregnancy healthcare utilization levels"
+ ],
+ "variables": [
+  "ncfrp_v51:ISSprechronicdiseasebef",
+  "prams_p7_arf:PRE_CKBP",
+  "prams_p7_arf:PRE_CKD",
+  "prams_p7_arf:PRE_RX",
+  "prams_p7_arf:PRE_EXER",
+  "cdc_natl15:PREVIS",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "Causation, detailed mechanisms linking pre-pregnancy healthcare utilization and SUID incidence."
+}

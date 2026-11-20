@@ -1,0 +1,27 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "Among infants who later die from SUID, those with prenatal care issues are more likely to have experienced late entry to prenatal care compared to those without such issues.",
+ "rationale": "The design focuses on descriptive patterns within cases reviewed by NFR-CRS for prenatal care issues among infants who later die from SUID. The sources can provide detailed records of these cases and their associated prenatal care issues, allowing for a comparison of proportions or odds within the case series.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 notes that some extreme cases are excluded, which may impact generalizability. However, this does not address the specific question about prenatal care issues and their distribution among SUID cases compared to survivors. The bedsharing manuscript (bedsharing_ms_v7.C8) highlights detailed case-based information but does not provide population-level associations or rates.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2015,
+ "period_end": 2019,
+ "required_concepts": [
+  "Prenatal Care Issues",
+  "Late Entry to Prenatal Care"
+ ],
+ "variables": [
+  "ncfrp_v51:INFisscare",
+  "ncfrp_v51:ISSpnclate"
+ ],
+ "cannot_establish": "The design cannot establish incidence or rates of prenatal care issues among live-born infants who later die from SUID. It also cannot provide population-level associations or causation due to the lack of a denominator source and comparison group."
+}

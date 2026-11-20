@@ -1,0 +1,58 @@
+### Design
+
+**Question Restated:** How does the frequency of hospital overnight stays differ between live-born infants who later died from Sudden Unexpected Infant Death (SUID) compared to those that survived beyond infancy? This question aims to explore whether more frequent hospital overnight stays during an infant's first year are associated with a higher risk of SUID.
+
+**Design:**
+- **Case-only analysis:** Compare within-case variation for live-born infants recorded in the case series who later died from SUID versus those who survived beyond their first year. This comparison does not include a population reference or denominator source, so it measures proportions and odds rather than rates.
+  
+### Sources by Role
+
+**Case Series:**
+- **ncfrp_v51 (National Fatality Review Case Reporting System):** Contains information on child deaths reviewed by fatality review teams. It captures data on SUID cases but not denominators or population-level exposures.
+
+**Population Reference and Denominator Source:**
+- No suitable denominator source is available to estimate rates or risks, so the analysis focuses solely on within-case comparisons.
+  
+### Period
+
+The candidate idea specifies a period of 2015-2019. To conduct this study, we would require data from ncfrp_v51 for SUID cases during these years.
+
+### Variables
+
+**Hospital Overnight Stays:**
+- **ncfrp_v51 (Case Series):**
+  - `INF4hosprtnnum`: If yes, hospital overnight - number of nights
+  - Missing values are documented and should be handled appropriately.
+
+### Biases
+
+#### Selection Bias:
+- The case series captures only those infants who died from SUID; it does not capture the full population, leading to potential selection bias.
+  
+#### Information Bias:
+- There may be differences in how hospital overnight stays are recorded and reported between surviving infants (who might have different healthcare documentation practices) compared to deceased infants. 
+
+#### Confounding:
+- Other confounders such as medical conditions, prematurity, birth weight, etc., could influence both the frequency of hospital stays and SUID risk. These factors need to be accounted for in the analysis.
+
+### What the Design Cannot Establish
+
+This design can only establish associations between hospital overnight stay frequency and subsequent SUID occurrence within the cases reviewed by fatality review teams. It cannot establish causation or estimate incidence due to the lack of a denominator source.
+
+### Prior Art
+
+The closest manuscript claims that are relevant but do not directly address this question:
+- **SUID_manuscript_v9_clean.C9 [finding]:** Maternal smoking was associated with higher SUID incidence across both windows.
+- **bedsharing_ms_v7.C13 [hypothesis]:** Postconceptional age (PCA) may clarify how bed sharing, maternal smoking, and prematurity relate to Sudden Unexpected Infant Death (SUID) incidence.
+
+The current question is distinct as it focuses on the frequency of hospital overnight stays rather than exposures like smoking or prematurity. However, similar methodological concerns about selection bias and confounding apply.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, but with limitations:
+- **Data Availability:** The ncfrp_v51 dataset can provide within-case comparisons for hospital overnight stays among infants who died from SUID versus those that survived.
+- **Design Limitations:** Without a denominator source or population reference, this study design can only measure proportions and odds rather than rates. Additionally, it cannot establish causation due to the inherent selection bias of case-only studies.
+
+The analysis could provide insights into whether infants with more frequent hospital overnight stays are at higher risk for SUID compared to those with fewer such stays within the context of reviewed cases. However, these findings should be interpreted cautiously given the limitations of the design and potential confounding variables.

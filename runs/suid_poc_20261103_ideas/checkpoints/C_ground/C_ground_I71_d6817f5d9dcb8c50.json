@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers reporting pregnancy weight gain differs between PRAMS Phase 8 Analytic Research File and Standard Section II.",
+ "rationale": "This design can be carried out using the provided data sources as they enable a direct comparison between PRAMS_P8_ARF and PRAMS_P8_STD2 on recording pregnancy weight gain related to SUID risk factors.",
+ "prior_art": "None in the inputs. The manuscript claims do not address discrepancies between PRAMS Phase 8 ARF and Standard Section II, leaving this question open for investigation.",
+ "supporting_claim_ids": [],
+ "case_sources": [],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p8_std2"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "Maternal pre-pregnancy weight",
+  "Pregnancy weight gain"
+ ],
+ "variables": [
+  "prams_p8_arf:MAT_PRWT",
+  "prams_p8_arf:PG_GDB8",
+  "prams_p8_arf:TLK_WT_RAW",
+  "prams_p8_arf:WTANAL",
+  "prams_p8_std2:PGWTGN8_DK",
+  "prams_p8_std2:PGWTGNU8"
+ ],
+ "cannot_establish": "incidence rates or risk ratios since it does not have a denominator source; can only compare proportions among cases."
+}

@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "INF4bv",
+   "name": "Medical Complications",
+   "summary": "Various medical complications and their referral and timeframe details."
+  },
+  {
+   "start": "INF4cbc",
+   "name": "Pregnancy Tests",
+   "summary": "Tests performed during pregnancy, including results for CBC and cervical length."
+  },
+  {
+   "start": "INF4cescothsp",
+   "name": "C-Section Reasons",
+   "summary": "Reasons for cesarean section delivery, including other specified reasons."
+  },
+  {
+   "start": "INF4cigburn",
+   "name": "Injury Evidence",
+   "summary": "Evidence of cigarette burns and fractures on the infant."
+  },
+  {
+   "start": "INF4dadbcountry",
+   "name": "Father's Information",
+   "summary": "Father's country of birth, name components, and unknown status."
+  },
+  {
+   "start": "INF4daycare",
+   "name": "Child Care Arrangements",
+   "summary": "Who watched the infant if mother was employed or a student."
+  },
+  {
+   "start": "INF4disp",
+   "name": "Infant Disposition",
+   "summary": "Disposition of the infant after birth, including NICU and nursery room details."
+  },
+  {
+   "start": "INF4eating",
+   "name": "Eating Disorders",
+   "summary": "Medical complications related to eating disorders and their referral and timeframe details."
+  }
+ ]
+}

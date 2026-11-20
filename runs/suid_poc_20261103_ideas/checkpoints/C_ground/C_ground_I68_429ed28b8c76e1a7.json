@@ -1,0 +1,33 @@
+{
+ "groundable": false,
+ "why_not": "The design lacks a denominator source to estimate incidence or rates, and can only compare proportions among cases.",
+ "statement": "The proportion of SUID cases involving substance abuse during pregnancy increased from 2008-2019 compared to live births in the same period.",
+ "rationale": "The sources can observe trends within SUID cases but cannot establish incidence or causal relationships due to lack of a denominator source for SUID cases and potential biases.",
+ "prior_art": "SUID_manuscript_v9_clean.C9 discusses maternal smoking as a risk factor, but none directly address substance abuse trends over time. The question remains open due to the need for a denominator source.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C9"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2021,
+ "required_concepts": [
+  "substance abuse",
+  "live births"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3nicudrug",
+  "ncfrp_v51:INFuseddrug",
+  "prams_p8_arf:PAD6HUS",
+  "prams_p7_arf:PAB6HUS",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence or causal relationships due to lack of a denominator source for SUID cases."
+}

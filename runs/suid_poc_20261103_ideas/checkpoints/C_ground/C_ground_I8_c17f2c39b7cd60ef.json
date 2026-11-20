@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers who had pre-pregnancy health checks for chronic diseases, high blood pressure, diabetes, and depression/anxiety is compared between SUID cases and PRAMS mothers from 2012-2015.",
+ "rationale": "This study design compares the use of pre-pregnancy health checks between SUID cases and a population reference using available data sources. The variables are measurable in both datasets, allowing for a valid comparison.",
+ "prior_art": "None in the inputs; existing manuscripts focus on developmental windows, bed sharing, smoking during pregnancy, and prematurity but do not address pre-pregnancy health checks specifically.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2015,
+ "required_concepts": [
+  "pre-pregnancy health checks"
+ ],
+ "variables": [
+  "ncfrp_v51:ISSprechronicdiseasebef",
+  "ncfrp_v51:ISSprechronicdiseasedur",
+  "prams_p7_arf:PRE_CKBP",
+  "prams_p7_arf:PRE_CKD",
+  "prams_p7_arf:PRE_DEPR",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causality or incidence rates; it can only compare proportions of pre-pregnancy health checks between SUID cases and the general population."
+}

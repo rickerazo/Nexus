@@ -1,0 +1,62 @@
+### Design
+
+**Question:** Is the incidence of SUID associated with maternal mental health issues prior to pregnancy?
+
+**Design Restatement:** Compare how common an exposure is among cases (from a case series) with its weighted prevalence in the general population (from a population reference source). The concept must be measured in both sources, and the measurement must be comparable.
+
+### Sources by Role
+
+- **Case Series:**
+  - **cdc_linkco15:** Supplies the denominator of live births linked to infant deaths in the first year.
+  - **ncfrp_v51:** Provides detailed data on reviewed child deaths, suitable for identifying SUID cases. However, it does not supply birth denominators.
+
+- **Population Reference:**
+  - **prams_p7_arf (2012-2015) & prams_p8_arf (2016-2021):** Weighted survey of mothers a few months after live births, suitable for identifying maternal mental health issues.
+
+### Period
+
+- The study period is 2012-2021. This period spans the years available in both PRAMS phases and covers the relevant case series data from NCFRP (2008-2019) and CDC Linked Birth/Infant Death files (births in 2015, deaths up to one year post-birth).
+
+### Variables
+
+- **Maternal Mental Health Issues:**
+  - **Case Series (ncfrp_v51):** 
+    - ISSmhpregdepres: Depression/anxiety/mental illness during pregnancy.
+    - BIO1recmh: If yes, disability or chronic illness - Female - Was the female receiving mental health services before pregnancy?
+  
+  - **Population Reference (prams_p7_arf & prams_p8_arf):**
+    - PRE_DEPR: Pre-pregnancy check for depression/anxiety.
+    - PRE_MHDP_RAW: Pre-preg -- feeling down/depressed.
+
+### Biases
+
+- **Selection Bias:** 
+  - The NCFRP and PRAMS samples may not represent the entire population of SUID cases or live births due to geographic limitations, participation rates, and survey response rates.
+
+- **Information Bias:** 
+  - Measurement of mental health issues differs between NCFRP (reporting on mental health services received) and PRAMS (self-reported depression/anxiety symptoms). The timing of data collection (during pregnancy vs. before pregnancy) also introduces potential differences in recall and reporting accuracy.
+
+- **Confounding:** 
+  - Potential confounders such as socioeconomic status, smoking during pregnancy, preterm births, and other maternal health conditions must be accounted for when comparing the cases to the reference population.
+
+### What the Design Cannot Establish
+
+- The design cannot establish causation. It can only show an association between SUID incidence and maternal mental health issues prior to pregnancy.
+- Without a denominator source that includes all live births in the study period, we can estimate proportions but not rates or risks directly from the case series data alone.
+
+### Prior Art
+
+- **Manuscripts' Claims:**
+  - C14 & C10 (SUID_manuscript_v9_clean): These claims do not address maternal mental health issues prior to pregnancy.
+  - bedsharing_ms_v7.C23 and other findings focus on associations with post-conceptional age, smoking during pregnancy, and prematurity but do not discuss pre-pregnancy mental health.
+
+- **Relevance:**
+  - No existing manuscript closely examines the relationship between maternal mental health issues prior to pregnancy and SUID incidence. Therefore, this research question remains open despite extensive literature on other risk factors like smoking and prematurity.
+
+### Verdict
+
+**Yes**, these sources can answer a version of the question about whether there is an association between maternal pre-pregnancy mental health issues and SUID incidence. However, limitations include:
+- The need to acquire full data for 2016-2021 from NCFRP if not already held.
+- Confounding factors that must be controlled in analysis.
+- Lack of denominator source covering all live births (only CDC Linked Birth/Infant Death files provide denominators but only for a subset).
+- The inability to establish causation due to the observational nature of the data.

@@ -1,0 +1,126 @@
+{
+  "strategies": [
+    {
+      "id": "S1",
+      "gap_id": "G1",
+      "research_question": "Does male sex without prenatal smoking exposure increase the risk of sudden unexpected infant death after reaching 44 weeks postconceptional age?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc",
+          "name": "UCOD"
+        },
+        "definition": "Underlying cause of death (ICD-10 codes R95, W75, and R99)",
+        "subtypes": [
+          "R95",
+          "W75",
+          "R99"
+        ]
+      },
+      "exposures": [
+        {
+          "source_id": "cdc",
+          "name": "SEX"
+        }
+      ],
+      "covariates": [
+        {
+          "source_id": "cdc",
+          "name": "COMBGEST"
+        },
+        {
+          "source_id": "cdc",
+          "name": "CIG_REC"
+        }
+      ],
+      "interactions": [
+        [
+          {
+            "source_id": "cdc",
+            "name": "SEX"
+          },
+          {
+            "source_id": "cdc",
+            "name": "COMBGEST"
+          }
+        ]
+      ],
+      "stratification": [
+        {
+          "source_id": "cdc",
+          "name": "CIG_REC"
+        }
+      ],
+      "offset": null,
+      "denominator_source": null,
+      "time_scale": {
+        "source_id": "cdc",
+        "name": "COMBGEST"
+      },
+      "design": "cohort",
+      "model_class": "cox_proportional_hazards",
+      "rationale": "This study design follows a cohort of infants forward in time, examining the risk of sudden unexpected infant death (UCOD) after reaching 44 weeks postconceptional age. The inclusion of an interaction term between sex and postconceptional age allows us to assess whether male infants show an excess risk specifically after this age threshold, independent of prenatal smoking exposure. This model class is chosen because it can handle time-to-event data and adjust for the timing variable (COMBGEST). However, this strategy does not establish causality or provide power calculations.",
+      "expected_direction": "The hypothesis predicts that male infants without prenatal smoking exposure will show an increased risk of sudden unexpected infant death after reaching 44 weeks postconceptional age compared to other groups."
+    },
+    {
+      "id": "S2",
+      "gap_id": "G2",
+      "research_question": "Is the earlier onset of risk for sudden unexpected infant death associated with prenatal smoking exposure consistent across different postconceptional age intervals?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc",
+          "name": "UCOD"
+        },
+        "definition": "Underlying cause of death (ICD-10 codes R95, W75, and R99)",
+        "subtypes": [
+          "R95",
+          "W75",
+          "R99"
+        ]
+      },
+      "exposures": [
+        {
+          "source_id": "cdc",
+          "name": "CIG_REC"
+        }
+      ],
+      "covariates": [
+        {
+          "source_id": "cdc",
+          "name": "COMBGEST"
+        },
+        {
+          "source_id": "cdc",
+          "name": "SEX"
+        }
+      ],
+      "interactions": [
+        [
+          {
+            "source_id": "cdc",
+            "name": "CIG_REC"
+          },
+          {
+            "source_id": "cdc",
+            "name": "COMBGEST"
+          }
+        ]
+      ],
+      "stratification": [
+        {
+          "source_id": "cdc",
+          "name": "COMBGEST"
+        }
+      ],
+      "offset": null,
+      "denominator_source": null,
+      "time_scale": {
+        "source_id": "cdc",
+        "name": "AGED"
+      },
+      "design": "cohort",
+      "model_class": "cox_proportional_hazards",
+      "rationale": "This study design and model class allow us to assess the timing of risk onset associated with prenatal smoking exposure across different postconceptional age intervals. The Cox proportional hazards model is appropriate for time-to-event data, enabling us to evaluate how the hazard ratio changes over time within specified strata (postconceptional age intervals). This approach does not establish causality or provide power calculations.",
+      "expected_direction": "The analysis should reveal whether the risk associated with prenatal smoking exposure varies across different postconceptional age intervals. If the effect is consistent, we would expect to see a similar pattern of hazard ratios across these intervals."
+    }
+  ]
+}

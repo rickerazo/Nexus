@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "Does maternal obesity have a differential effect on SUID incidence based on infant sex?",
+   "why_open": "While studies suggest maternal obesity increases SUID risk, no research has explored if this risk varies by infant gender.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI), Infant sex, Sudden Unexpected Infant Death (SUID)"
+  },
+  {
+   "question": "Does the association between maternal smoking and SUID incidence vary based on socioeconomic status?",
+   "why_open": "Though maternal smoking is established as a risk factor for SUID, its interaction with socioeconomic factors remains unexplored.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Maternal smoking during pregnancy, Household income, Maternal education level, Sudden Unexpected Infant Death (SUID)"
+  },
+  {
+   "question": "How does the influence of bed sharing on SUID incidence differ in relation to maternal smoking and socioeconomic status?",
+   "why_open": "Existing research indicates that bed sharing increases SUID risk, but its interaction with other risk factors like maternal smoking and economic conditions is unclear.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Bed sharing (exposure), Maternal smoking during pregnancy, Household income, Preterm birth, Postconceptional age (PCA), Sudden Unexpected Infant Death (SUID)"
+  },
+  {
+   "question": "What is the interaction effect of inner ear dysfunction and maternal smoking on SUID incidence?",
+   "why_open": "Inner ear dysfunction has been linked to increased SUID risk, but its combined impact with other significant risk factors like maternal smoking remains uninvestigated.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Maternal smoking during pregnancy, Inner ear dysfunction (exposure), Maternal prepregnancy body mass index (BMI), Sudden Unexpected Infant Death (SUID)"
+  },
+  {
+   "question": "Does socioeconomic status modify the relationship between preterm birth and increased risk of SUID?",
+   "why_open": "Preterm birth is a known risk factor for SUID, but its interplay with economic conditions has not been thoroughly examined.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Household income, Preterm birth (exposure), Maternal smoking during pregnancy, Geographic location, Sudden Unexpected Infant Death (SUID)"
+  }
+ ]
+}

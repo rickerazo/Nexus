@@ -1,0 +1,70 @@
+{
+ "ideas": [
+  {
+   "question": "How does the prevalence of maternal obesity differ among SUID cases compared to the general population of new mothers?",
+   "comparison": "SUID cases (ncfrp_v51) vs. PRAMS Phase 7 and Phase 8 populations",
+   "why_open": "Maternal obesity is a risk factor for SUID, but its relative prevalence in affected versus general populations has not been well-established.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal obesity is captured differently: in SUID cases, BMI values are documented directly; PRAMS surveys use a range of categories based on self-report."
+  },
+  {
+   "question": "How does the prevalence of maternal smoking during pregnancy differ between SUID cases and the general population?",
+   "comparison": "SUID cases (ncfrp_v51) vs. PRAMS Phase 8 populations",
+   "why_open": "Maternal smoking is a known risk factor for SIDS/SUID, yet its relative distribution in affected versus healthy infants remains understudied.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal smoking is documented as a direct yes/no item among cases; PRAMS captures various details of smoking habits and reductions during pregnancy."
+  },
+  {
+   "question": "What is the prevalence of bed-sharing in SUID cases compared to new mothers surveyed by PRAMS?",
+   "comparison": "SUID cases (ncfrp_v51) vs. PRAMS Phase 8 populations",
+   "why_open": "Bed-sharing has been linked with an increased risk of SIDS/SUID, but its prevalence among affected versus unaffected infants is not well understood.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Bed-sharing status is documented by case review reports; PRAMS uses a proxy for bed-sharing based on infant sleep arrangements."
+  },
+  {
+   "question": "Is there a difference in breastfeeding practices between mothers of SUID cases and the general population?",
+   "comparison": "SUID cases (ncfrp_v51) vs. PRAMS Phase 7 populations",
+   "why_open": "Breastfeeding has been associated with reduced risk for certain causes of infant mortality but its prevalence among affected versus unaffected infants is unclear.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Breastfeeding status in SUID cases is captured as a proxy variable (e.g., breastfed discharge), whereas PRAMS reports direct questions on breastfeeding duration and exclusivity."
+  },
+  {
+   "question": "How does the prevalence of preterm birth vary between SUID cases and mothers surveyed by PRAMS?",
+   "comparison": "SUID cases (ncfrp_v51) vs. PRAMS Phase 8 populations",
+   "why_open": "Preterm birth is a known risk factor for SIDS/SUID, but its comparative prevalence in affected versus general populations has not been fully explored.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Preterm birth is documented directly among cases based on gestational age; PRAMS captures preterm birth as a binary outcome."
+  }
+ ]
+}

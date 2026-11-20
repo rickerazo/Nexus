@@ -1,0 +1,77 @@
+### Design
+
+**Restated Question**: How do the recording methods for prenatal care issues differ between NCFRP_v51 and PRAMS_P7_ARF? Specifically, how does NCFRP_v51's focus on specific challenges with prenatal care compare to PRAMS_P7_ARF’s broader tracking of pre-pregnancy health checks and dental visits during pregnancy?
+
+**Design**: Measurement comparison. This design compares the ways in which two distinct sources—NCFRP_v51 (case series) and PRAMS_P7_ARF (population reference)—record similar concepts related to prenatal care issues, health checks, and dental visits during pregnancy.
+
+### Sources by Role
+
+- **Case Series: NCFRP_v51**
+  - **Role**: Tracks detailed issues with prenatal care among child deaths.
+  - **Why**: Provides specific insights into problems encountered during prenatal care that led to fatal outcomes.
+
+- **Population Reference: PRAMS_P7_ARF**
+  - **Role**: Surveys mothers after live births regarding general pre-pregnancy health checks and dental visits.
+  - **Why**: Offers a broader view of maternal healthcare practices before and during pregnancy among a representative sample of mothers.
+
+### Period
+
+**Common Period:** 2012-2015
+Both NCFRP_v51 (covers deaths from 2004 to 2019, but the manuscript uses 2008-2019) and PRAMS_P7_ARF (Phase 7 covers 2012-2015) have overlapping coverage in this period.
+
+### Variables
+
+#### Prenatal Care Issues
+- **NCFRP_v51**
+  - `INFissmultprov`: Multiple providers, not coordinated.
+  - `ISSpncprog`: Lack of progesterone therapy.
+  - `INF4referinfch`: Family referred for infant/child health.
+  
+- **PRAMS_P7_ARF**
+  - `PNC_MTH`: Month prenatal care began (calculated from LMP and first prenatal visit).
+  - `MM_NOMD`: No medical risk factors (includes pre-pregnancy hypertension, diabetes, etc.).
+  - `PRE_DDS`: Pre-pregnancy teeth cleaned.
+
+#### Prenatal Care Visits
+- **NCFRP_v51**
+  - `INF4visnum`: Number of antepartum encounters with primary care provider.
+  
+- **PRAMS_P7_ARF**
+  - `PNC_VST`: Number of prenatal care visits.
+  - `PREVIST`: Pre-pregnancy health care visit.
+
+#### Chronic Disease Control
+- **NCFRP_v51**
+  - `ISSprechronicdiseasebef`: Chronic disease control education before pregnancy.
+  
+- **PRAMS_P7_ARF**
+  - `MM_NOMD`: No medical risk factors (includes chronic conditions).
+
+### Biases
+
+**Selection Bias:**
+- NCFRP_v51 includes only child deaths reviewed by fatality review teams, while PRAMS_P7_ARF covers a representative sample of live births in participating states.
+  
+**Information Bias:**
+- The wording and timing of questions differ between sources. For example, NCFRP_v51 captures specific issues related to prenatal care directly from medical records or reviews, whereas PRAMS_P7_ARF surveys mothers after the birth about their pre-pregnancy health check-ups.
+
+**Confounding:**
+- Differences in geographic coverage (PRAMS sites may not match those of NCFRP).
+- Participation biases can influence what data are available for review and how they were recorded.
+  
+### What the Design Cannot Establish
+
+This design cannot establish causality or incidence rates, as it only compares recording methods. It also does not provide a direct comparison between cases and controls.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C12 [limitation]**: The study uses vital-record data with potential exposure and cause-of-death misclassification issues.
+- **bedsharing_ms_v7.C18 [limitation]**: Sleep-environment classification in case-report systems may be subject to heterogeneity in ascertainment and reporting.
+
+**Relevance:**
+While these claims highlight limitations related to data quality and ascertainment, they do not address the specific issue of differences in recording methods between datasets. Therefore, understanding how NCFRP_v51 and PRAMS_P7_ARF differ remains an open question.
+
+### Verdict
+
+Yes, these data can answer a version of the question by comparing how prenatal care issues, pre-pregnancy health checks, and dental visits are recorded differently between NCFRP_v51 (case series) and PRAMS_P7_ARF (population reference). However, the study should be designed to focus on measurement comparison rather than establishing causal relationships or incidence rates.

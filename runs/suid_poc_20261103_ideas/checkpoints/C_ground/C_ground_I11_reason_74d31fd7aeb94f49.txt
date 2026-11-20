@@ -1,0 +1,87 @@
+### Design
+
+**Question Restated:** What is the rate of sudden unexpected infant death (SUID) among infants whose mothers experienced significant stressors during pregnancy compared to those who did not, from 2016-2021?
+
+This design uses an exposure-specific rates approach by combining case series data on SUID cases with population reference data on maternal stressor prevalence and denominator data for the total number of live births.
+
+### Sources by Role
+
+**Case Series:**
+- **Source:** ncfrp_v51 (National Fatality Review Case Reporting System)
+  - **Role:** Provides cases of sudden unexpected infant deaths. 
+  - **Why:** This source is specifically designed to capture details about child fatalities reviewed through fatality review teams, which includes SUID cases.
+  
+**Population Reference:**
+- **Source:** prams_p8_arf (PRAMS Phase 8 Analytic Research File)
+  - **Role:** Provides exposure prevalence among the general population of live births.
+  - **Why:** PRAMS surveys capture information on various maternal stressors and other risk factors during pregnancy, making it suitable for estimating exposure rates.
+
+**Denominator:**
+- **Source:** cdc_natl15 (CDC Natality Public Use File) and cdc_linkco15 (CDC Linked Birth/Infant Death)
+  - **Role:** Provides the total number of live births to calculate incidence rates.
+  - **Why:** The CDC natality files provide comprehensive counts of all live births, while the linked birth file provides both live births and infant deaths necessary for calculating denominators.
+
+### Period
+
+**Required Years:**
+- **Case Series (ncfrp_v51):** 2016-2021
+- **Population Reference (prams_p8_arf):** 2016-2021
+- **Denominator (cdc_natl15, cdc_linkco15):** 2016-2021
+
+### Variables
+
+#### Maternal Stressors Exposure:
+- **Case Series:**
+  - ncfrp_v51:INF4stress: Mother experienced stressor during pregnancy [1=Yes; 9=Unknown or not stated]
+  - ncfrp_v51:CIR2socpregnancy: Life Stressors - Social/economic - Pregnancy
+  - ncfrp_v51:INFexpipv: During pregnancy did mother experience intimate partner violence [1=Yes, 0=No, 9=Unknown or not stated]
+
+- **Population Reference:**
+  - prams_p8_arf:PG8_ANX: Health prob during preg -- Anxiety [.B=DK/BLANK; .S=SKIP; 1=NO; 2=YES]
+  - prams_p8_arf:MH_PGDX8: Health prob during preg -- Depression
+  - prams_p8_arf:P_PRTERM: Previous preterm births (as a proxy for stress)
+  
+- **Denominator:**
+  - No direct maternal stressor variable, but necessary for denominator counts.
+
+### Biases
+
+#### Selection Bias:
+- **Case Series:** 
+  - ncfrp_v51 covers only reviewed child deaths and does not include all SUID cases. Participation in fatality review programs varies by state.
+  
+- **Population Reference:**
+  - prams_p8_arf is a weighted survey of mothers, which may introduce sampling biases or non-response issues.
+
+#### Information Bias:
+- **Case Series:** 
+  - Stressors reported may be incomplete due to variability in data collection and reporting methods across reviewing teams.
+
+- **Population Reference:**
+  - PRAMS surveys are self-reported and may not capture all stressors accurately. Missing answers and unknowns are coded separately but may still introduce bias if systematically misreported.
+
+#### Confounding:
+- Maternal stress could be confounded by other risk factors such as socioeconomic status, prenatal care quality, and medical complications during pregnancy that are also recorded in both PRAMS and case series data but not fully adjusted for.
+
+### What the Design Cannot Establish
+
+- **Causation:** The design can only establish associations between maternal stressors and SUID rates; it cannot establish causality.
+- **Incidence vs. Prevalence:** While incidence rates can be estimated, prevalence of specific stressors may not accurately represent population exposure due to biases in both case series and reference data.
+
+### Prior Art
+
+**Manuscript Claims:**
+- The closest claim is SUID_manuscript_v9_clean.C10 (limitation), which acknowledges that postnatal exposures like breastfeeding are excluded from the analysis. This parallels the current study's need for more comprehensive exposure information.
+  
+- Other claims such as suid_literature_abstracts.C10 and C11, which discuss maternal obesity and smoking risks, suggest that stressors could be an additional risk factor but do not directly address maternal stress.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, the proposed design can estimate rates of SUID among infants whose mothers experienced significant stressors during pregnancy compared to those who did not. However, several limitations exist:
+- **Selection bias:** Participation in fatality review programs and PRAMS varies by state.
+- **Information bias:** Self-reporting and data collection methods may introduce inaccuracies.
+- **Confounding variables:** Other risk factors such as socioeconomic status and prenatal care quality are not fully accounted for.
+
+To mitigate these biases, additional measures like imputations or adjustments would be necessary. Nonetheless, the design provides a foundational framework to explore the association between maternal stressors and SUID rates within the limitations of available data.

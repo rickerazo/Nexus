@@ -1,0 +1,84 @@
+{
+ "ideas": [
+  {
+   "question": "Has there been any change in the proportion of SUID cases associated with maternal obesity from 2015 to 2019?",
+   "comparison": "Cases (ncfrp_v51) in 2015-2019 compared over time.",
+   "why_open": "Though maternal obesity is known to be a risk factor for SUID, the trend of its association with SUID incidence has not been studied longitudinally. Understanding if this risk factor's impact fluctuates over time could inform targeted prevention strategies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Maternal prepregnancy BMI (exposure), SUID (outcome)"
+  },
+  {
+   "question": "How has the proportion of SUID cases with mothers reporting smoking during pregnancy changed from 2015 to 2019?",
+   "comparison": "Cases (ncfrp_v51) in 2015-2019 compared over time.",
+   "why_open": "While maternal smoking is recognized as a significant risk factor for SUID, it remains unclear if the proportion of cases linked to this risk has changed. Understanding trends could highlight shifts in public health messaging or behavioral patterns among pregnant women.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Maternal smoking during pregnancy (exposure), SUID (outcome)"
+  },
+  {
+   "question": "Is there a trend in the proportion of SUID cases linked to preterm birth from 2015 to 2019?",
+   "comparison": "Cases (ncfrp_v51) in 2015-2019 compared over time.",
+   "why_open": "Preterm birth is a known risk factor for SUID, but longitudinal trends have not been extensively studied. Understanding if this trend fluctuates can help tailor preventive measures and resource allocation.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Preterm birth (exposure), SUID (outcome)"
+  },
+  {
+   "question": "Has the proportion of SUID cases with low birth weight infants shifted between 2015 and 2019?",
+   "comparison": "Cases (ncfrp_v51) in 2户型设计建议：2015-2019 compared over time.",
+   "why_open": "Low birth weight is a recognized risk factor for SUID, but there's limited data on its trend over recent years. Investigating this could reveal shifts in obstetric care or underlying health conditions contributing to low birth weight.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Low birth weight (exposure), SUID (outcome)"
+  },
+  {
+   "question": "Is there an increasing trend in the proportion of SUID cases involving maternal infections during pregnancy from 2015 to 2019?",
+   "comparison": "Cases (ncfrp_v51) in 2015-2019 compared over time.",
+   "why_open": "Maternal infections are a risk factor for SUID, and understanding if this proportion has increased could indicate the need for enhanced prenatal monitoring or preventive measures against infection.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Maternal infections (exposure), SUID (outcome)"
+  }
+ ]
+}

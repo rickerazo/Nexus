@@ -1,0 +1,32 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with maternal health conditions during pregnancy has changed over the period from 2008 to 2019.",
+ "rationale": "This design compares proportions among SUID cases across different periods using a case series (ncfrp_v51) and population reference (PRAMS). Since there is no denominator source, we cannot estimate incidence or rates but can compare trends in proportions of SUID cases with maternal health conditions over time.",
+ "prior_art": "The relationship between maternal health during pregnancy and the incidence of SUID has not been extensively studied longitudinally. Claims C10 and C11 from existing manuscripts discuss limitations related to data exclusions and postnatal exposures, but do not provide longitudinal trends in proportions of cases with these conditions (SUID_manuscript_v9_clean.C10, SUID_manuscript_v9_clean.C11).",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "SUID_manuscript_v9_clean.C11"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Maternal Health Conditions During Pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4medical",
+  "ncfrp_v51:ISSprechronicdiseasebef",
+  "ncfrp_v51:ISSprechronicdiseaseaft",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "Incidence, rates or risk; causation; population representativeness."
+}

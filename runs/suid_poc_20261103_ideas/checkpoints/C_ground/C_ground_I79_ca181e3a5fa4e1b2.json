@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of infants reported to have slept in the same room as their caregiver differs between SUID case series and PRAMS surveys.",
+ "rationale": "This study aims to compare how infant sleeping arrangements are reported differently between NCFRP (case series) and PRAMS (population reference). The design leverages the strengths of each data source while acknowledging their limitations, focusing on descriptive comparisons that can shed light on potential discrepancies in reporting practices.",
+ "prior_art": "The closest claim from existing manuscripts suggests that NCFRP case reviews may have reporting issues due to heterogeneity and recall bias [bedsharing_ms_v7.C18]. However, no direct comparison has been made between PRAMS data and NCFRP reports on infant sleeping arrangements. This study aims to fill this gap by comparing how the same concept is reported differently in these two sources.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C18"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "sleeping arrangements",
+  "reporting discrepancies"
+ ],
+ "variables": [
+  "ncfrp_v51:CIRroomshare",
+  "prams_p8_arf:SLP_ROOM_RAW",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates. It can only compare how the same concept (infant sleep environment) is reported in two different sources, highlighting discrepancies but not establishing why these discrepancies exist beyond descriptive comparisons."
+}

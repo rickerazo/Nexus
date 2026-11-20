@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of infants who experienced hospital overnight stays is higher among SUID cases compared to surviving infants in 2015.",
+ "rationale": "This study uses a case-case comparison design, comparing SUID cases from NCFRP_v51 with surviving infants from CDC_linkco15 and PRAMS_p8_arf. The sources provide the necessary variables to assess hospital overnight stays among both groups.",
+ "prior_art": "The closest tested work is C10 in the SUID manuscript, which identifies maternal smoking as a significant factor in SUID incidence. However, this study does not address hospital overnight stays or compare them between SUID cases and surviving infants.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_linkco15",
+  "cdc_natl15"
+ ],
+ "period_start": 2015,
+ "period_end": 2015,
+ "required_concepts": [
+  "Hospital Overnight Stay"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn",
+  "prams_p8_arf:LTH_HOSP",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates due to its observational nature and lack of a direct denominator source for comparing proportions."
+}

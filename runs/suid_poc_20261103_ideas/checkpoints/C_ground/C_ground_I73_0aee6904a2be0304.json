@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers reporting previous preterm births differs between NCFRP_v51 and PRAMS_P8_ARF.",
+ "rationale": "This study compares how detailed information on prior child deaths, previous live births, and preterm birth history is recorded in the case series (NCFRP_v51) versus a population reference source (PRAMS_P8_ARF).",
+ "prior_art": "SUID_manuscript_v9_clean.C10 notes exclusion of extremely preterm infants but does not address discrepancies in recording previous child deaths between sources. The question remains open as no prior work directly compares these records.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "previous child deaths",
+  "previous live births",
+  "preterm birth history"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4pregpreterm",
+  "prams_p8_arf:P_PRTERM",
+  "prams_p8_arf:PRE_LB_NAPHSIS",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish incidence rates or risk due to the lack of a denominator source. It can only compare proportions among cases."
+}

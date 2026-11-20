@@ -1,0 +1,79 @@
+### Design
+
+**Design:** Trends within cases. Compare proportions among the SUID cases across periods.
+
+**Rephrased Question:** How has the proportion of SUID cases exposed to postnatal environmental risks changed over different time periods?
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (2008-2019)
+  - **Reason:** This source provides detailed information on child deaths reviewed by fatality review teams, specifically focusing on SUID cases.
+
+- **Population Reference:** prams_p7_arf and prams_p8_arf
+  - **Reason:** These sources provide weighted survey data from mothers of live births, enabling us to estimate the prevalence of postnatal environmental risks in the general population over time. 
+
+### Period
+
+**Years Required:**
+- ncfrp_v51 (2008-2019)
+- prams_p7_arf (2012-2015)
+- prams_p8_arf (2016-2021)
+
+The sources cover the required years and more can be acquired if needed.
+
+### Variables
+
+#### Postnatal Environmental Risks
+- **ncfrp_v51:**
+  - `CIR2neghazard`: Child neglect - Exposure to hazards
+  - `INF3nicudrug`: If yes, NICU - Drug/alcohol exposure
+  - `ISSprechronicdiseaseaft`: Chronic disease control Education - after pregnancy
+
+- **prams_p7_arf and prams_p8_arf:**
+  - Variables such as:
+    - `MM_FEVER`: Baby slept -- on couch / sofa / chair (FORCED SKIP)
+    - `SLP_CHR_RAW`: Baby slept -- on couch/futon/chair
+    - Other demographic variables like socioeconomic status, housing conditions, and living situations.
+
+#### Timing of Measurement Differences
+
+- **ncfrp_v51:** Measures postnatal exposures directly related to the SUID case.
+- **prams_p7_arf & prams_p8_arf:** Measures pre- and early postnatal factors that indirectly reflect environmental risks. These variables are typically surveyed a few months after birth.
+
+### Biases
+
+#### Selection Bias
+- **ncfrp_v51:** Fatality review teams may not be uniformly distributed or representative across the entire country, leading to potential selection bias.
+  
+- **prams_p7_arf & prams_p8_arf:** PRAMS surveys are limited to participating states and may not reflect national trends accurately.
+
+#### Information Bias
+- **ncfrp_v51:** Reporting of postnatal environmental risks can vary by the quality and thoroughness of the fatality review process.
+  
+- **prams_p7_arf & prams_p8_arf:** Self-reported data from PRAMS surveys may be subject to recall bias or social desirability bias.
+
+#### Confounding
+- Variables such as socioeconomic status, urban/rural setting, and healthcare access can confound the relationship between postnatal environmental risks and SUID. These factors need to be controlled for in analyses.
+
+### What the Design Cannot Establish
+
+The design cannot establish causation or estimate incidence rates due to a lack of a denominator source (population at risk). It only compares proportions among cases over time, so any trends detected would reflect changes in case characteristics rather than true temporal changes in the underlying population risk.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C13:** Mentions that post-hypoxic recovery of respiration is gender-dependent, which may be relevant to environmental risks.
+  
+- **bedsharing_ms_v7.C8:** Discusses bed sharing and maternal smoking in relation to SUID incidence, but does not specifically address postnatal environmental risks over time.
+
+### Verdict
+
+**Verdict: Can these sources answer a version of the question?**
+
+Yes, these data can be used to analyze trends in proportions of SUID cases exposed to postnatal environmental risks over different time periods. However, the study is limited to comparing case characteristics and cannot establish incidence rates or causation due to the absence of a denominator source.
+
+### Key Considerations
+- **Data Limitations:** PRAMS does not capture detailed information on postnatal exposures directly related to SUID cases.
+- **Comparability:** Variables measuring environmental risks need to be carefully compared between ncfrp_v51 and PRAMS sources, given differences in timing (postnatal vs. pre/postnatal) and reporting methods.
+- **Bias Control:** Confounding variables such as socioeconomic status must be controlled for to ensure meaningful comparisons.
+
+Given these considerations, the study can still provide insights into trends within SUID cases but cannot draw definitive conclusions about changes in population risk over time.

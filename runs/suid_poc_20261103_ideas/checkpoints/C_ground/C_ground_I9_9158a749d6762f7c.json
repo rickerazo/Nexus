@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The prevalence of previous preterm birth among mothers with SUID cases differs from the general population.",
+ "rationale": "This design compares the proportion of mothers who experienced a previous preterm birth between those whose infants died due to sudden unexpected infant death (SUID) and the general population of new mothers. The data sources provide necessary information on both case series and population reference, allowing for this comparison.",
+ "prior_art": "The closest tested work is SUID_manuscript_v9_clean.C10, which excludes extremely preterm infants due to limitations in capturing all cases. This question remains open as it explores the prevalence of preterm birth among mothers with SUID cases compared to the general population.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2015,
+ "required_concepts": [
+  "preterm_birth_exposure",
+  "general_population_reference"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3prevpreterm",
+  "prams_p7_arf:P_PRTERM",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot estimate incidence rates or risk, determine causality, or account for unmeasured confounders such as socioeconomic status and healthcare access."
+}

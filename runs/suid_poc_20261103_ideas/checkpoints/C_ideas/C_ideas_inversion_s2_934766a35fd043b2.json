@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "What protective factors contribute to lower SUID rates among full-term infants born during the pandemic despite increases in external causes of mortality?",
+   "why_open": "While full-term infant mortality trends reversed their pre-pandemic declines, specific protective mechanisms or practices that mitigated higher risks during this period remain unknown.",
+   "sources": [
+    "cdc_natl15",
+    "prams_p8_arf"
+   ],
+   "data": "Age at death in SUID cases (outcome), geographic location (stratifier), smoking status (covariate), prenatal care details (covariate), birthweight (low, non-low) (stratifier), insurance coverage (covariate)"
+  },
+  {
+   "question": "How does maternal employment and associated stress levels correlate with SUID rates in different demographic settings?",
+   "why_open": "Maternal employment status might influence childcare quality and home environment, yet the impact on SUID varies by socioeconomic context which needs further investigation.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Caregiver substance abuse (covariate), protective measures against injury (effect_modifier), household income (stratifier), employment status (exposure), child's activity at incident (exposure)"
+  },
+  {
+   "question": "What unique environmental factors in rural settings contribute to lower SUID rates compared to urban areas, despite similar risk profiles?",
+   "why_open": "Rural settings might have distinct protective elements such as community support or less exposure to toxic substances that warrant exploration.",
+   "sources": [
+    "ncfrp_v51",
+    "cdc_natl15"
+   ],
+   "data": "Residence information (stratifier), environmental factors (effect_modifier), infant disposition (covariate), housing details (covariate)"
+  },
+  {
+   "question": "How does access to healthcare and postpartum mental health services affect SUID rates among infants born to mothers with prior depression?",
+   "why_open": "Postpartum care can mitigate risks from pre-existing maternal conditions, but the specific contributions in preventing SUID are unclear.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal health problems (covariate), postpartum mental health (covariate), healthcare provider interactions (effect_modifier), insurance coverage (stratifier)"
+  },
+  {
+   "question": "What role does community-level social support play in reducing SUID risks for infants born to single mothers compared to those with dual-parent households?",
+   "why_open": "Community resources might compensate for lack of parental involvement, but their specific impact needs further investigation.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Caregiver demographics (covariate), social services provided (effect_modifier), household income (stratifier), employment status (exposure)"
+  }
+ ]
+}

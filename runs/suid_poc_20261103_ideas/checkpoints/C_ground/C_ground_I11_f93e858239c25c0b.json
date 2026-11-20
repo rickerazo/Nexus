@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The prevalence of hospital overnight stays among SUID cases is higher compared to live births from PRAMS Phase 8.",
+ "rationale": "This study compares the proportion of infants who spent nights in the hospital after birth between SUID cases and live births, using data from NFR-CRS for cases and PRAMS Phase 8 for population reference. It does not estimate incidence or risk due to lack of a denominator source.",
+ "prior_art": "The closest tested work is bedsharing_ms_v7.C8, which discusses the prevalence of bed sharing among SUID cases but does not address hospital overnight stays specifically. This question remains open as it explores a different exposure's association with SUID.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "Hospital Overnight Stay",
+  "Live Births with Hospital Stays"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn",
+  "prams_p8_arf:LTH_HOSP",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot estimate incidence rates or risks, determine causality, or control for potential confounders without additional data."
+}

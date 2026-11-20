@@ -1,0 +1,25 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of infants who died in SUID cases sleeping in the same room as caregivers/supervisors is different from those dying from other causes.",
+ "rationale": "This design uses a case-case comparison to assess differences in sleep environments between SUID and non-SUID infant deaths within the NCFRP dataset. The data allow for direct comparisons of sleep environment variables, such as whether infants were sleeping in the same room as caregivers/supervisors at the time of death.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 notes limitations in vital-record data and excludes postnatal exposures, while bedsharing_ms_v7.C8 highlights differences in sleep environment variables but does not compare them between SUID and non-SUID deaths. The question remains open as these studies do not directly address the specific comparison of sleep environments.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "sleep environment"
+ ],
+ "variables": [
+  "ncfrp_v51:CIRroomshare"
+ ],
+ "cannot_establish": "This design can only establish associations but cannot infer causation due to its observational nature. It also cannot address temporal relationships or longitudinal trends because it does not track individual cases over time, nor does it provide denominators necessary to estimate rates or risk."
+}

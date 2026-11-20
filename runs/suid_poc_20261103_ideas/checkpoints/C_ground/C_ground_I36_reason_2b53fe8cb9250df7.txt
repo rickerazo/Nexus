@@ -1,0 +1,75 @@
+### Design and Question Restatement
+
+**Design:** Case-case comparison. Compare the cases of SUID (case series) with surviving infants from a denominator source to assess whether hospital overnight stays are more frequent among infants who later experience SUID compared to those who survive.
+
+**Restated Question:**
+How does the prevalence of hospital overnight stays differ between infants who experienced Sudden Unexpected Infant Death (SUID) and infants who survived past their first year, using data from 2015?
+
+### Sources by Role
+
+- **Case Series:** NCFRP_v51
+  - Covers child deaths reviewed by participating fatality review teams.
+  - This source will be used to identify SUID cases.
+
+- **Population Reference:** PRAMS_p8_arf (Phase 8)
+  - Survey of mothers a few months after live birth, not designed to count infant deaths.
+  - Provides prevalence data on overnight stays among surviving infants.
+
+- **Denominator Source:** CDC_linkco15
+  - Records the outcome events and provides denominators for SUID cases but also contains information about surviving infants.
+  - Used to identify surviving infants as a reference group, along with PRAMS_p8_arf for additional context and prevalence data.
+
+### Period
+
+**Years Needed:**
+- For the case series (NCFRP_v51): 2008-2019
+- For the denominator source (CDC_linkco15): 2015
+- For population reference (PRAMS_p8_arf): 2016-2021
+
+### Variables
+
+#### Hospital Overnight Stays:
+- **SUID Cases (NCFRP_v51):** 
+  - INF4hosprtn: Infant return to hospital overnight after delivery.
+  
+- **Surviving Infants (CDC_linkco15 and PRAMS_p8_arf):**
+  - CDC_linkco15 does not have direct information on hospital overnight stays, but it provides details on NICU admissions which can be used as an indicator of infant health status.
+  - PRAMS_p8_arf: LTH_HOSP: Hosp baby stay -- length of time. 
+
+### Biases
+
+#### Selection Bias:
+- **Case Series (NCFRP_v51):** Only covers deaths reviewed by fatality review teams, which may have participation biases.
+- **Denominator Source (CDC_linkco15 and PRAMS_p8_arf):** Both sources cover a broad range of births but do not capture all infant deaths.
+
+#### Information Bias:
+- Different sources measure hospital stays differently: NCFRP_v51 directly asks about overnight stays, while PRAMS_p8_arf measures the length of stay.
+- Missing data and reporting inconsistencies may affect comparability between these variables.
+
+#### Confounding:
+- **Maternal Factors:** Differences in maternal characteristics (e.g., smoking status) could confound comparisons.
+- **Health Status:** Infants who are admitted to NICU or have other morbidities might be at higher risk of both overnight stays and SUID, leading to potential confounding by indication.
+
+### What the Design Cannot Establish
+
+The case-case design can only establish associations between hospital overnight stays and SUID. It cannot determine causation due to its observational nature. Additionally, without a direct denominator source for comparing proportions, it is challenging to estimate incidence or risk accurately.
+
+### Prior Art
+
+- **SUID Manuscript (C10):** The manuscript identifies maternal smoking as a significant factor in SUID incidence.
+  - This suggests that hospital stays and other health indicators might also be relevant but has not been directly compared with surviving infants using the proposed variables.
+
+- **Bedsharing Manuscripts (C3-C5):** These studies indicate differential associations of bed sharing, maternal smoking, and prematurity with SUID risk at different developmental stages.
+  - However, they do not address hospital overnight stays as a specific variable or compare it between SUID cases and surviving infants.
+
+### Verdict
+
+Yes, these sources can answer the research question within certain limitations. The design will allow for comparisons of hospital overnight stay prevalence between SUID cases (from NCFRP_v51) and surviving infants using PRAMS_p8_arf as a population reference. However:
+
+- **Limitations:** 
+  - The case-case comparison does not establish causality.
+  - Missing data and reporting biases need to be addressed in the analysis.
+  - Confounding factors such as maternal smoking, prematurity, and NICU admissions should be controlled for.
+
+### Additional Considerations
+To strengthen the study, consider linking PRAMS_p8_arf with CDC_linkco15 using birth certificate identifiers if possible, or ensure that both sources are appropriately weighted and harmonized to reduce information bias.

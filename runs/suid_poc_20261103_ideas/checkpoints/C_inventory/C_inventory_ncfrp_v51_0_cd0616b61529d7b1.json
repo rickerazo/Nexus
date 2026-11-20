@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "BirthCert",
+   "name": "Case Identification",
+   "summary": "Unique identifiers and case creation details including birth certificate number, date of notification, case number assembly, version, and internal database ID."
+  },
+  {
+   "start": "INFDateOfBirth",
+   "name": "Demographics and Dates",
+   "summary": "Dates of birth and death, age at death, days lived, and related categorical variables such as age categories and disability status."
+  },
+  {
+   "start": "INFaddrapt",
+   "name": "Residence Information",
+   "summary": "Address details including apartment number, city, county, state, street name, zip code, and residence type."
+  },
+  {
+   "start": "INFdisable",
+   "name": "Health Conditions",
+   "summary": "Prior disabilities or chronic illnesses categorized by cognitive, mental health/substance abuse, physical/orthopedic, sensory issues, and special healthcare needs services."
+  },
+  {
+   "start": "INFdobday",
+   "name": "Date Components",
+   "summary": "Specific components of date of birth (month, day, year) and date of death (month, day, year), along with unknown status flags for both dates."
+  },
+  {
+   "start": "INFethnic",
+   "name": "Ethnicity and Race",
+   "summary": "Ethnicity, race categories including American Indian, Alaska Native, Asian, Black/African American, Native Hawaiian, Pacific Islander, multi-racial, and unknown status flags."
+  },
+  {
+   "start": "INFfname",
+   "name": "Child Identification",
+   "summary": "First name, middle name, last name of the child, and unknown status flag for names."
+  },
+  {
+   "start": "INFheightcm",
+   "name": "Physical Attributes",
+   "summary": "Height in centimeters, feet, inches, and unknown status flags; weight in numeric value, grams, ounces, pounds, and unknown status flags."
+  }
+ ]
+}

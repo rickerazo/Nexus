@@ -1,0 +1,71 @@
+### Design
+
+**Question Restated:** How does the distribution of infant sleep environments vary among infants who died from Sudden Unexpected Infant Death (SUID) compared with those in non-SUID deaths, focusing on shared sleeping surfaces within the case series?
+
+**Design Type:** Case-only analysis.
+
+This study will focus solely on the characteristics of cases recorded in the NCFRP_V51 dataset. It aims to compare sleep environment conditions between infants who died from SUID and those who died from other causes within this case series, specifically examining whether they shared a sleeping surface with another person at the time of death.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System)
+  - Covers child deaths reviewed by participating fatality review teams.
+  - Focuses on detailed information about each case, including sleep environments and circumstances leading to death.
+  
+Since the study does not aim to estimate incidence or compare proportions with a population reference, no denominator source is required.
+
+### Period
+
+**Years Needed:**
+- **Case Series (ncfrp_v51):** The manuscript uses 2008-2019 for SUID cases. For this analysis, data from 2008 to 2019 would be sufficient.
+  
+No additional years are required beyond those held.
+
+### Variables
+
+#### Concepts and Candidate Variables:
+
+**Sleep Environment:**
+- **ncfrp_v51:** 
+  - CIRwadultobs (If yes, child sleeping on same surface with adult(s) at time of death)
+  - CIRroomshare (Child sleeping in the same room as caregiver/supervisor at time of death)
+
+#### Missing Answers:
+- ncfrp_v51 uses documented missing answers; unknown is a separate answer.
+
+### Biases
+
+**Selection Bias:**
+- The NCFRP_V51 dataset includes only child deaths reviewed by fatality review teams, which may not be representative of all infant deaths across the US. This selection bias could affect generalizability.
+  
+**Information Bias:**
+- Reporting and recording of sleep environment details in NCFRP_V51 cases might differ from what is reported or recorded for live births or non-SUID deaths in other sources. The detailed nature of case reviews can lead to more thorough reporting but also potential inaccuracies due to incomplete information.
+
+### What the Design Cannot Establish
+
+- **Association vs Causation:** This design cannot establish causality between sleep environment and SUID; it only describes associations observed within the case series.
+  
+- **Incidence or Rates:** Since no denominator source is used, this study can describe proportions but not incidence rates or risk.
+
+### Prior Art
+
+**Relevant Manuscript Claims:**
+
+- **suid_literature_abstracts.C11 [finding]: Maternal smoking during pregnancy significantly increases the risk of SUID.**
+  - This finding highlights a known risk factor for SUID, which might influence sleep environment choices and associated risks.
+  
+- **bedsharing_ms_v7.C8 [finding]: Bed sharing was recorded for 59.5% of SUID cases, and these cases were more often associated with maternal smoking during pregnancy (52.2%) compared to non-bed-sharing cases (40.8%).**
+  - This study provides context on bed sharing as a risk factor in SUID but does not directly address the comparison between SUID and non-SUID deaths within the case series.
+
+### Verdict
+
+**Can These Sources Answer a Version of the Question?**
+
+Yes, these sources can answer the proposed question using the NCFRP_V51 dataset alone. The study will describe how sleep environments vary among infants who died from SUID compared to those in non-SUID deaths, focusing on shared sleeping surfaces within the case series. However, this analysis is limited to describing associations and cannot establish causation or incidence rates due to the lack of a denominator source.
+
+**Summary:**
+- **Design:** Case-only study using NCFRP_V51.
+- **Years Needed:** 2008-2019.
+- **Variables:** Sleep environment details from ncfrp_v51 (CIRwadultobs, CIRroomshare).
+- **Biases:** Selection and information biases are noted.
+- **Limitations:** Cannot establish causation or incidence rates.

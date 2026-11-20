@@ -1,0 +1,32 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases among infants whose mothers had pre-pregnancy health problems compared to those without increased from 2008 to 2019.",
+ "rationale": "This study can analyze trends in the proportion of SUID cases with maternal pre-pregnancy health conditions over time using the case series data. It cannot establish incidence rates or causal relationships due to the lack of a denominator source.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and bedsharing_ms_v7.C24 acknowledge limitations in case ascertainment, but none directly address trends related to maternal pre-pregnancy health conditions. This study aims to fill this gap by focusing on such trends within the existing case data.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C24"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Maternal pre-pregnancy health conditions"
+ ],
+ "variables": [
+  "ncfrp_v51:ISSprechronicdiseasebef",
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:MM_NOMD",
+  "prams_p8_arf:MM_NOMD"
+ ],
+ "cannot_establish": "incidence rates or causal relationships due to the lack of a denominator source."
+}

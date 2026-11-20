@@ -1,0 +1,119 @@
+INFO mmf.pipeline: ingest_cdc_linkco15: cache hit
+WARNING mmf.pipeline: ingest_cdc_linkco15: 14 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/cdc_linkco15.audit.json
+INFO mmf.pipeline: ingest_cdc_natl15: cache hit
+WARNING mmf.pipeline: ingest_cdc_natl15: 10 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/cdc_natl15.audit.json
+INFO mmf.pipeline: ingest_cdc_codenames: cache hit
+INFO mmf.pipeline: ingest_ncfrp_v51: cache hit
+WARNING mmf.pipeline: ingest_ncfrp_v51: 16 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/ncfrp_v51.audit.json
+INFO mmf.pipeline: ingest_prams_p8_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_arf: 64 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p8_arf.audit.json
+INFO mmf.pipeline: ingest_prams_p8_std2: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_std2: 2 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p8_std2.audit.json
+INFO mmf.pipeline: ingest_prams_p7_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p7_arf: 55 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p7_arf.audit.json
+INFO mmf.pipeline: A_SUID_manuscript_v9_clean: cache hit
+INFO mmf.pipeline: A_bedsharing_ms_v7: cache hit
+INFO mmf.pipeline: A_suid_literature_abstracts: cache hit
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_2_0 attempt 1 rejected: ["mapping for 'Sudden unexpected infant death (SUID)': 'CA_DISOR, CA_DOWNS, CA_CDH, CA_GAST, CA_OMPH, CA_LIMB, CA_MNSB, CA_HYPO, CA_CLPAL, CA_CLEFT, CA_ANEN, CA_CCHD' is not a documented variable in cdc_codenames", "mapping for 'Postconceptional age (PCA)': 'COMBGEST, COMPGST_IMP' is not a documented variable in cdc_codenames", "mapping for 'Maternal smoking during pregnancy': 'CIG0_R, CIG1_R, CIG2_R, CIG3_R' is not a documented variable in cdc_codenames"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_3_0 attempt 1 rejected: ["mapping for 'year of birth or death': 'INFdobyear, INFdodyear' is not a documented variable in ncfrp_v51", "mapping for 'SUID': 'INFdthcounty, INF3chlamydia, INF3gonorrhea' is not a documented variable in ncfrp_v51", "mapping for 'Maternal infections in pregnancy': 'INF3chlamydia, INF3gonorrhea' is not a documented variable in ncfrp_v51"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_3_0 attempt 2 rejected: ["mapping for 'Sudden unexpected infant death (SUID)': 'INF3chlamydia, INF3gonorrhea' is not a documented variable in ncfrp_v51", "mapping for 'Maternal smoking during pregnancy': 'INF3smanytime, INF3smbefpregcig, INF3firsttricig, INF3sectricig, INF3thirdtricig' is not a documented variable in ncfrp_v51", "mapping for 'Preterm birth': 'INF3gestage, INF3iugr' is not a documented variable in ncfrp_v51"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_3_0 attempt 3 rejected: ["mapping for 'year of birth or death': 'INFdobyear, INFdodyear' is not a documented variable in ncfrp_v51", "mapping for 'Maternal infections in pregnancy': 'INF3chlamydia, INF3gonorrhea' is not a documented variable in ncfrp_v51", "mapping for 'Geographic location': 'INFaddrst, INFaddrcnty, INFdthstate' is not a documented variable in ncfrp_v51"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_3_0 attempt 4 rejected: ["mapping for 'Sudden unexpected infant death (SUID)': 'INF3syphilis, INF4hcthbresult, INF3strep, INF3groupbstrep' is not a documented variable in ncfrp_v51", "mapping for 'Maternal smoking during pregnancy': 'INF3smanytime, INF3smbefpregcigunk, INF3firsttricigunk, INF3sectricigunk, INF3thirdtricigunk' is not a documented variable in ncfrp_v51", "mapping for 'Preterm birth': 'INF3gestage, INF3iugr' is not a documented variable in ncfrp_v51"]
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/rerazo/Projects/nexus/src/mmf/cli.py:59 in run                        │
+│                                                                              │
+│   56 │   cfg = RunConfig.from_yaml(config)                                   │
+│   57 │   r = Run(cfg, run_dir=run_dir)                                       │
+│   58 │   try:                                                                │
+│ ❱ 59 │   │   report = r.run()                                                │
+│   60 │   except ReviewPending as e:                                          │
+│   61 │   │   typer.echo(str(e))                                              │
+│   62 │   │   typer.echo(f"Resume with: mmf run {config} --run-dir            │
+│      {r.run_dir}")                                                           │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:303 in run                  │
+│                                                                              │
+│   300 │   │   if flagged:                                                    │
+│   301 │   │   │   self._warn(f"B_check: {flagged} (concept, source) pair(s)  │
+│       where embeddings and the LLM disagree; {counts}")                      │
+│   302 │   │   return check                                                   │
+│ ❱ 303 │                                                                      │
+│   304 │   def stage_c(self, decs: list[ManuscriptDecomposition], smap:       │
+│       SchemaMap, sources: dict[str, DataSource]) -> GapSet:                  │
+│   305 │   │   key = _h(                                                      │
+│   306 │   │   │   *(d.model_dump_json() for d in decs),                      │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:312 in _run                 │
+│                                                                              │
+│   309 │   │   │   self.cfg.model,                                            │
+│   310 │   │   │   str(self.cfg.n_gaps),                                      │
+│   311 │   │   )                                                              │
+│ ❱ 312 │   │   cached = self._cached("C", key, GapSet, "C_gaps.json")         │
+│   313 │   │   if cached is None:                                             │
+│   314 │   │   │   cached, recs = c_gaps.find_gaps(                           │
+│   315 │   │   │   │   decs, smap, sources, self.client,                      │
+│       n_gaps=self.cfg.n_gaps, **self._llm_kwargs()                           │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:237 in stage_b              │
+│                                                                              │
+│   234 │   def stage_b(self, decs: list[ManuscriptDecomposition], sources:    │
+│       dict[str, DataSource]) -> SchemaMap:                                   │
+│   235 │   │   key = _h(                                                      │
+│   236 │   │   │   *(d.model_dump_json() for d in decs),                      │
+│ ❱ 237 │   │   │   *(s.model_dump_json() for s in sources.values()),          │
+│   238 │   │   │   *b_schema_map.prompt_hashes(),                             │
+│   239 │   │   │   self.cfg.model,                                            │
+│   240 │   │   │   str(self.cfg.b_max_vars_per_call),                         │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/components/b_schema_map.py:152 in       │
+│ map_schema                                                                   │
+│                                                                              │
+│   149 │   │   │   sent = concepts[bi : bi + batch]                           │
+│   150 │   │   │   stage = f"B_schema_map_{gi}_{bi // batch}"                 │
+│   151 │   │   │   user = prompt.render(concepts=concepts_text(sent),         │
+│       sources=sources_text(group))                                           │
+│ ❱ 152 │   │   │   obj, rec = generate(                                       │
+│   153 │   │   │   │   client,                                                │
+│   154 │   │   │   │   prompt,                                                │
+│   155 │   │   │   │   user,                                                  │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/llm/structured.py:131 in generate       │
+│                                                                              │
+│   128 │   │   )                                                              │
+│   129 │                                                                      │
+│   130 │   record = _record(stage, prompt, client, seed, temperature,         │
+│       max_retries + 1, False, log_path)                                      │
+│ ❱ 131 │   raise GenerationFailedError(stage, problems, max_retries + 1,      │
+│       record)                                                                │
+│   132                                                                        │
+│   133                                                                        │
+│   134 def _log_path(log_dir: Path | None, stage: str) -> Path | None:        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+GenerationFailedError: B_schema_map_3_0: no valid output after 4 attempts; last 
+problems: ["mapping for 'Sudden unexpected infant death (SUID)': 'INF3syphilis, 
+INF4hcthbresult, INF3strep, INF3groupbstrep' is not a documented variable in 
+ncfrp_v51", "mapping for 'Maternal smoking during pregnancy': 'INF3smanytime, 
+INF3smbefpregcigunk, INF3firsttricigunk, INF3sectricigunk, INF3thirdtricigunk' 
+is not a documented variable in ncfrp_v51", "mapping for 'Preterm birth': 
+'INF3gestage, INF3iugr' is not a documented variable in ncfrp_v51", "mapping for
+'Breastfeeding status at discharge': 'INF3breastatdeath, INF3brmilk' is not a 
+documented variable in ncfrp_v51", "mapping for 'SUID': 'INF3syphilis, 
+INF4hcthbresult, INF3strep, INF3groupbstrep' is not a documented variable in 
+ncfrp_v51", "mapping for 'chronological age': 'INFdayslive, INFageinyears' is 
+not a documented variable in ncfrp_v51", "mapping for 'maternal smoking status 
+(smoking, non-smoking)': 'INF3smanytime, INF3smbefpregcigunk, 
+INF3firsttricigunk, INF3sectricigunk, INF3thirdtricigunk' is not a documented 
+variable in ncfrp_v51", "mapping for 'Age of death in SUID cases': 'INFdayslive,
+INFageinyears' is not a documented variable in ncfrp_v51"]

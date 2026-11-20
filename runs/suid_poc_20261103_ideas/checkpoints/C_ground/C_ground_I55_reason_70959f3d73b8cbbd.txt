@@ -1,0 +1,53 @@
+### Design
+
+**Design**: Case-only analysis. The study will examine the breastfeeding mode of infants who experienced sudden unexpected infant death (SUID) and stratify these cases based on whether they were exclusively breastfed or had mixed feeding practices.
+
+**Restated Question**: Is there a significant difference in breastfeeding mode between SUID cases who were exclusively breastfed versus those with mixed feeding methods?
+
+### Sources by Role
+
+- **Case Series Source**: ncfrp_v51
+  - Reason: The NFR-CRS (ncfrp_v51) records child deaths reviewed by fatality review teams, including SUID cases. It cannot provide denominators for incidence but offers detailed circumstances of the cases.
+  
+### Period
+
+**Period**: 
+- 2008-2019
+- This period is selected because it aligns with the data coverage in ncfrp_v51 and avoids using years where participation was lower.
+
+### Variables
+
+**Breastfeeding Mode**
+- **ncfrp_v51:INF3breast6moexc**: If yes, breastfed at 6 months, exclusively? [1 = Yes]
+  - This variable is used to identify infants who were exclusively breastfed for six months.
+- **ncfrp_v51:CIRadltfeedtype**: Caregiver/supervisor fell asleep while feeding child - type of feeding
+  - This variable is not directly related but can provide context on the feeding practices leading up to death.
+
+**Comparison**
+- The primary comparison will be between infants classified as exclusively breastfed versus those with mixed feeding methods (i.e., non-exclusive breastfeeding).
+
+### Biases
+
+1. **Selection Bias**: 
+   - ncfrp_v51 only covers cases reviewed by fatality review teams and does not include all SUID cases in the population. Participation varies over time, which may introduce bias if it is related to the exposure of interest.
+   
+2. **Information Bias**:
+   - The feeding information from ncfrp_v51 relies on caregiver reports and may differ from actual practices due to recall errors or incomplete records.
+  
+3. **Confounding**:
+   - Potential confounders include maternal smoking, prematurity, socio-economic status, and other factors that could influence both breastfeeding mode and SUID risk.
+
+### What the Design Cannot Establish
+
+- This design cannot establish incidence rates, relative risks, or causation due to the absence of a denominator source. It can only compare proportions or odds among cases.
+  
+### Prior Art
+
+The manuscript claims do not closely address the proposed question:
+- Claims like C10 and C11 in the bedsharing_ms_v7 manuscript acknowledge limitations regarding postnatal exposures such as breastfeeding, which aligns with the need for this study but does not test the specific relationship between feeding mode and SUID risk.
+  
+### Verdict
+
+**Verdict**: These data can answer whether there is a significant difference in breastfeeding mode between SUID cases who were exclusively breastfed versus those with mixed feeding methods. However, they cannot establish incidence rates or causal relationships due to missing denominator data.
+
+**Missing Element**: A population reference source (e.g., PRAMS) would be needed to estimate the prevalence of exclusive vs. mixed feeding practices among live births and thereby calculate relative risks or odds ratios comparing SUID cases to the general population.

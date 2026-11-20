@@ -1,0 +1,68 @@
+### Design
+
+**Question:** Is there a variation in SUID incidence among infants born to mothers with different pre-pregnancy health behaviors and conditions?
+
+**Design Type:** Exposure-specific rates. Estimate outcome rates by exposure group by combining the cases from a case series (numerator), the exposure prevalence from a population reference source, and the population at risk from a denominator source.
+
+### Sources by Role
+
+- **Case Series:** `ncfrp_v51` 
+  - **Role:** To provide SUID cases as the numerator for rate calculations.
+  
+- **Population Reference:** `prams_p7_arf`, `prams_p8_arf`
+  - **Role:** To measure pre-pregnancy health behaviors and conditions among mothers in a general population, providing exposure prevalence.
+
+- **Denominator Source:** `cdc_natl15` 
+  - **Role:** To provide the denominator for calculating live births stratified by maternal reports of these behaviors and conditions.
+
+### Period
+
+**Years Needed:**
+- The manuscript uses data from 2016 to 2021 (PRAMS Phase 8) and includes SUID cases reviewed in participating jurisdictions from 2008 to 2019.
+  
+### Variables
+
+#### Pre-pregnancy Health Behaviors and Conditions
+- **Smoking:** 
+  - `cdc_natl15:CIG0_R`: Cigarettes Before Pregnancy Recode [0 = Nonsmoker; 6 = Unknown or not stated]
+  - `prams_p8_arf:MOMCIG`: Number of cigarettes smoked daily during pregnancy (calculated from trimester averages)
+  - `prams_p7_arf:CIG_PRIOR`: No. of cigarettes smoked daily prior to preg [U=UNKNOWN]
+
+- **Physical Activity:** 
+  - `prams_p7_arf:PRE_EXER`: Pre-pregnancy exercise 3+ days/wk [.B=DK/BLANK; 1=NO; 2=YES]
+  
+#### Additional Variables
+- **Previous Live Births:** 
+  - `prams_p8_arf:PRE_LB_NAPHSIS`: Number of previous live births grouped [U=UNKNOWN; 0=NONE; 7=7 OR MORE]
+  - `prams_p7_arf:PRE_LB_NAPHSIS`: Same as above.
+
+- **Medical Risk Factors:** 
+  - `prams_p8_arf:MM_NOMD`: BC: No medical risk factors [U=UNKNOWN; 1=YES; 2=NO]
+
+### Biases
+
+#### Selection Bias
+- **Case Series (`ncfrp_v51`):** Reviews may not be complete and cover only participating jurisdictions, leading to incomplete coverage of national SUID cases.
+  
+- **Population Reference (`prams_p8_arf`, `prams_p7_arf`):** PRAMS surveys a sample of mothers who gave birth in states that participate in PRAMS; it does not represent the entire U.S. population.
+
+#### Information Bias
+- **Case Series (`ncfrp_v51`):** Reporting on pre-pregnancy health behaviors and conditions may be incomplete or inaccurate due to review process limitations.
+  
+- **Population Reference (`prams_p8_arf`, `prams_p7_arf`):** Self-reported data can lead to underreporting of risky behaviors.
+
+#### Confounding
+- The design does not control for confounders such as socioeconomic status, race/ethnicity, and urban/rural differences since these variables are not consistently measured across all sources or included in the analysis.
+
+### What the Design Cannot Establish
+
+The study cannot establish causality. It only compares proportions of exposures among SUID cases versus live births within a given period using available data from different sources with potential selection biases. The lack of linkage between case series and population reference datasets limits individual-level comparisons, thus making it challenging to account for all confounding factors.
+
+### Prior Art
+
+- **Closest Claim:** `SUID_manuscript_v9_clean.C9`: Maternal smoking was associated with higher SUID incidence across both windows.
+  - This claim is relevant but does not address pre-pregnancy behaviors specifically, nor does it stratify by different health conditions and behaviors comprehensively.
+
+### Verdict
+
+**Yes**, these sources can answer a version of the question. The study design allows for estimating SUID rates among infants born to mothers with varying levels of pre-pregnancy health behaviors and conditions by comparing proportions in the case series (SUID cases) versus the population reference (PRAMS surveys). However, due to selection biases and lack of individual-level linkage between sources, causal inference is not feasible. The study can identify associations but cannot establish causation or fully control for confounding variables.

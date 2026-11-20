@@ -1,0 +1,26 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with multiple gestation is associated with different patterns of prenatal care issues compared to singleton births.",
+ "rationale": "This design compares the circumstances recorded for SUID cases involving multiple births versus singleton births within the case series data. It focuses on comparing proportions or odds of prenatal care issues between these subgroups without estimating incidence rates.",
+ "prior_art": "The closest tested work is SUID_manuscript_v9_clean.C10, which acknowledges excluding extremely and very preterm infants, affecting comparability. The question remains open as no study has specifically compared prenatal care issues in multiple gestation versus singleton SUID cases.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "multiple gestation",
+  "prenatal care issues"
+ ],
+ "variables": [
+  "ncfrp_v51:INFmultbirth",
+  "ncfrp_v51:ISSmothmultigest"
+ ],
+ "cannot_establish": "This design cannot establish causality or incidence rates. It can only compare proportions or odds of prenatal care issues between SUID cases with multiple births versus singleton births within the available case series data."
+}

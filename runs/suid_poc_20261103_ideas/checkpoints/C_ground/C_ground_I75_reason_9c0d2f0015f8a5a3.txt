@@ -1,0 +1,74 @@
+### Design
+
+**Question:** What discrepancies exist between NCFRP_v51's documentation of maternal stressors during pregnancy and PRAMS_P8_ARF’s recording of family medical history discussions before pregnancy?
+
+**Design Type:** Measurement comparison. Compare how the same concept is recorded in two or more sources (wording, timing, who reports it, how missing answers are coded) and ask how the difference would bias a comparison between them.
+
+### Sources by Role
+
+- **Case Series:**
+  - **ncfrp_v51**: Captures various maternal stressors during pregnancy.
+  
+- **Population Reference:**
+  - **prams_p8_arf**: Records whether families had discussions about potential genetic conditions and health issues before pregnancy.
+
+- **Denominator Source:** Not required for a measurement comparison design, as the focus is on comparing proportions between two sources without estimating incidence or risk.
+
+### Period
+
+**Period Range:**
+
+- NCFRP_v51 covers 2004-2019.
+- PRAMS_P8_ARF covers Phase 8 (2016-2021).
+
+**Common Period:** 
+Since there is no overlap in the period coverage that includes both sources, we can only compare data from the overlapping years 2016 to 2019.
+
+### Variables
+
+#### Maternal Stressors during Pregnancy
+- **ncfrp_v51:**
+  - `INF4stress`: Mother experienced stressor during pregnancy.
+  - `CIR2socpregnancy`: Social/economic life stressors during pregnancy.
+  - `INFexpipv`: Intimate partner violence during pregnancy.
+
+#### Family Medical History Discussions before Pregnancy
+- **prams_p8_arf:**
+  - `PRE_DEPR`: Pre-pregnancy check for depression/anxiety.
+  - `PNC_VST`: Number of prenatal care visits (indirectly measures discussion frequency).
+  - `PRE_HIST`: Pre-pregnancy talk about family medical history.
+
+### Biases
+
+#### Selection Bias
+- **ncfrp_v51**: Only captures deaths reviewed by participating fatality review teams, which may not be representative of the general population.
+- **prams_p8_arf**: Weighted survey of mothers a few months after live births; sampling method ensures representativeness but excludes infant deaths.
+
+#### Information Bias
+- **ncfrp_v51** captures retrospective reports on stressors and medical issues, which may be incomplete or biased due to recall.
+- **prams_p8_arf** measures through structured surveys with specific items focusing on pre-pregnancy health conditions and discussions; potential bias from survey fatigue or misunderstanding of questions.
+
+#### Confounding
+- Both sources lack data on environmental factors that could influence stressors and family medical history discussions, leading to unmeasured confounders like socioeconomic status and access to healthcare.
+
+### What the Design Cannot Establish
+
+This design can only compare how maternal stressors and family medical history discussions are recorded differently in two distinct datasets. It cannot establish causality or incidence rates related to SUID risk factors.
+
+### Prior Art
+- **SUID_manuscript_v9_clean.C10**: Discusses exclusion of some cases, potentially highlighting differences due to missing data.
+- **bedsharing_ms_v7.C23**: Mentions the need for standardized measures in recording maternal smoking and other exposures during pregnancy.
+- No direct comparison has been made between these specific stressors and family medical history discussions.
+
+### Verdict
+
+**Can these data answer a version of the question?**
+
+Yes, but with limitations:
+- The design can compare how NCFRP_v51 and PRAMS_P8_ARF measure maternal stressors and pre-pregnancy health discussions during pregnancy.
+- However, the period overlap is limited to 2016-2019, which may reduce generalizability.
+
+**Missing Data Element or Design Element:**
+
+- A longer common period would enhance comparability across more years. Additionally, a denominator source could help contextualize these measures within broader trends in SUID incidence.
+- Standardizing the measurement of stressors and family medical history discussions between sources is essential for meaningful comparison.

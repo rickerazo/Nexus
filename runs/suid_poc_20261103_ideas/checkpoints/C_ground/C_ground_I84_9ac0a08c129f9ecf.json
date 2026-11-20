@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers reporting prenatal care visits differs between NCFRP and PRAMS.",
+ "rationale": "This study compares how two different datasets (NCFRP case series and PRAMS population reference) measure healthcare visits during pregnancy, focusing on the number of prenatal care visits. The design can establish differences in recording methods but cannot infer causation or incidence rates due to its observational nature.",
+ "prior_art": "SUID_manuscript_v9_clean.C12 and bedsharing_ms_v7.C18 highlight limitations in case-report systems' ascertainment, leaving open how different datasets measure prenatal care. No manuscript directly compares NCFRP and PRAMS on this specific aspect.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C12",
+  "bedsharing_ms_v7.C18"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2015,
+ "period_end": 2021,
+ "required_concepts": [
+  "Healthcare visits during pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:INFprenatal",
+  "prams_p8_arf:PNC_VST",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates due to its observational nature."
+}

@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "How does the combination of maternal obesity and prenatal smoking impact the risk of Sudden Unexpected Infant Death (SUID) beyond individual effects?",
+   "why_open": "While existing research identifies both maternal obesity and prenatal smoking as risk factors for SUID, their combined effect has not been fully explored. Understanding this interaction could provide insights into more targeted interventions.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI), maternal smoking during pregnancy, Sudden Unexpected Infant Death (SUID)"
+  },
+  {
+   "question": "Does the impact of bed sharing on SUID vary by geographic location and urbanicity?",
+   "why_open": "Existing research has examined bed sharing's association with SUID but not considered how this might differ across diverse geographic settings. Understanding regional variations could inform localized prevention strategies.",
+   "sources": [
+    "cdc_natl15",
+    "ncfrp_v51"
+   ],
+   "data": "Bed sharing, Geographic location, Residence Information"
+  },
+  {
+   "question": "What is the association between socioeconomic status and SUID incidence when adjusted for maternal obesity and smoking?",
+   "why_open": "While socioeconomic factors are known to influence infant mortality rates, their interaction with maternal health behaviors like obesity and smoking has not been thoroughly investigated. This could help identify vulnerable populations.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Income and Dependent Information, Maternal Insurance Coverage, Maternal Smoking During Pregnancy, Sudden Unexpected Infant Death (SUID)"
+  },
+  {
+   "question": "How does maternal prepregnancy BMI influence the effectiveness of postpartum smoking cessation interventions on reducing SUID risk?",
+   "why_open": "Maternal obesity and smoking are significant individual risks for SUID, but their combined impact with smoking cessation efforts is understudied. This question could highlight potential disparities in intervention efficacy.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Pre-pregnancy BMI (Maternal Physical Measurements), Smoking Change, Breastfeeding Practices"
+  },
+  {
+   "question": "Does the developmental timing of SUID incidence differ between infants born to mothers with and without a history of substance abuse?",
+   "why_open": "While prenatal smoking is linked to SUID risk, no studies have explored how the developmental trajectory changes when considering maternal substance use histories beyond smoking. This could reveal new insights into prevention strategies.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal Smoking During Pregnancy (Cigarettes smoked before and during each trimester of pregnancy), Substance Abuse History, Sudden Unexpected Infant Death (SUID)"
+  }
+ ]
+}

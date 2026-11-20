@@ -1,0 +1,74 @@
+### Design
+
+**Question:**
+Do patterns of sleeping arrangements differ between Sudden Unexpected Infant Death (SUID) cases and non-SUID infant deaths, considering the hospital stay length?
+
+This question is addressed through a case-case comparison design. We will compare sleeping arrangement data from SUID cases with non-SUID infant deaths within the same case series to identify unique risk factors specific to SUID.
+
+### Sources by Role
+
+- **Case Series:**
+  - `ncfrp_v51`: This source records child deaths reviewed by fatality review teams, covering both SUID and other infant deaths. It is used as a case series since it captures detailed information on all reviewed cases.
+  
+- **Population Reference:**
+  - `prams_p8_arf` and `prams_p7_arf`: These datasets provide weighted survey data from mothers of live births, capturing sleep arrangements before birth. They serve as population references to understand the general prevalence of sleeping arrangements in a non-SUID cohort.
+
+### Period
+
+**Common period:** The manuscript aims to compare cases over 2008-2019, but `prams_p7_arf` covers only up to 2015 and `prams_p8_arf` from 2016 onwards. Thus, the common period for all datasets is **2016-2019**.
+
+### Variables
+
+#### SUID Cases (ncfrp_v51)
+- **Sleeping Arrangement:**
+  - `CIRdeathsleepenv`: Was the death related to sleeping or sleep environment?
+  - `CIRroomshare`: Child sleeping in the same room as caregiver/supervisor at time of death.
+  - `INF4inftopsuid`: If yes, infant safety topic – SUID/safe sleep education.
+  - `INF4infhospdays`: Total number of days infant hospitalized.
+
+#### Non-SUID Cases (ncfrp_v51)
+- The same variables as above but for non-SUID cases within the same data source.
+
+#### Population Reference (prams_p8_arf and prams_p7_arf)
+- **Sleeping Arrangement:**
+  - `SLP_SAK`: Baby slept -- in sleep sack or wearable blanket.
+  - `SLP_CRB8`: Baby slept -- in crib / bassinet / play yard.
+  - `SLP2NTBD`: Recommend sleep -- can or cannot go in baby bed.
+  - `SLEEPPOS_RAW`: Sleeping position – baby.
+
+### Biases
+
+- **Selection Bias:**
+  - The case series (`ncfrp_v51`) may not be a representative sample of all infant deaths since it only includes cases reviewed by fatality review teams. This limits the generalizability to the broader population.
+  
+- **Information Bias:**
+  - Reporting of sleeping arrangements in `ncfrp_v51` and `prams_p8_arf/prams_p7_arf` may differ due to different time points (after death vs. post-birth) and reporting mechanisms.
+
+- **Confounding:**
+  - Hospital stay length (`INF4infhospdays`) is a potential confounder that could influence sleeping arrangements both in SUID cases and the general population.
+
+### What the Design Cannot Establish
+
+The design cannot establish causation due to its observational nature. It can only identify associations between specific sleep environments and types of infant death within the case series, without controlling for all possible confounding factors or establishing temporal precedence.
+
+### Prior Art
+
+- The closest claims relate to bed-sharing and other risk factors associated with SUID incidence:
+  - `bedsharing_ms_v7.C8`: Bed sharing was recorded for 59.5% of SUID cases.
+  - `suid_literature_abstracts.C10`: Maternal smoking during pregnancy significantly increases the risk of SUID.
+
+However, these studies do not address differences in sleeping arrangements between SUID and non-SUID cases directly or consider hospital stay length as a variable.
+
+### Verdict
+
+**The data can answer a version of the question:**
+
+- **Design Feasibility:** The proposed design is feasible with the given datasets. `ncfrp_v51` provides detailed case information for both SUID and non-SUID deaths, while `prams_p8_arf/prams_p7_arf` provide population reference data on sleeping arrangements.
+
+- **Variables Availability:** Key variables such as infant hospital stay length (`INF4infhospdays`) and sleeping environment details are available in the datasets.
+
+However, **the design cannot establish causation** due to its observational nature. The comparison between SUID cases and non-SUID cases within `ncfrp_v51` can only identify associations. Additionally, there is a need for further exploration of confounding factors like hospital stay length that might influence sleep arrangements differently.
+
+### Recommendations
+- **Expand the Period:** Consider using data from 2016 to 2019 where both case and reference datasets overlap.
+- **Control Confounders:** Use statistical methods to adjust for potential confounders such as hospital stay length, maternal smoking status, etc., in analyses comparing SUID cases with non-SUID infant deaths.

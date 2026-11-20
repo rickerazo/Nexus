@@ -1,0 +1,35 @@
+{
+ "mappings": [
+  {
+   "concept": "microglia activation",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept 'microglia activation' assessed by Iba1 staining is a cellular process that cannot be directly or indirectly measured in the National Fatality Review Case Reporting System (NFR-CRS) data. The source does not contain any variables related to biological markers of microglial activity."
+  },
+  {
+   "concept": "cell death",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept 'cell death' assessed by cleaved caspase 3 (CC3) staining is a cellular process that cannot be directly or indirectly measured in the National Fatality Review Case Reporting System (NFR-CRS). The source does not contain any variables related to biological markers of cell death."
+  },
+  {
+   "concept": "glutamatergic transmission",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept 'glutamatergic transmission' assessed in the nucleus accumbens and amygdala is a neurochemical process that cannot be directly or indirectly measured in the National Fatality Review Case Reporting System (NFR-CRS). The source does not contain any variables related to neurotransmitter activity."
+  },
+  {
+   "concept": "hypoglossal motor nucleus (XIIn)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept 'hypoglossal motor nucleus' assessed by electrophysiological recordings from brainstem slices is a neurological process that cannot be directly or indirectly measured in the National Fatality Review Case Reporting System (NFR-CRS). The source does not contain any variables related to neural activity measurements."
+  }
+ ],
+ "source_summaries": {
+  "ncfrp_v51": "The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 primarily documents demographic, social, and medical history information about deceased children and their families. It includes data on prenatal care, birth outcomes, child maltreatment histories, and other factors related to the circumstances of death but does not contain biological or neurological measurements relevant to concepts such as microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus activity."
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "mappings": [
+  {
+   "concept": "microglia activation",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of microglia activation assessed by Iba1 staining is a biological process that cannot be directly or indirectly measured in the National Fatality Review Case Reporting System (NFR-CRS) data."
+  },
+  {
+   "concept": "cell death",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of cell death assessed by cleaved caspase 3 (CC3) staining is a biological process that cannot be directly or indirectly measured in the National Fatality Review Case Reporting System (NFR-CRS) data."
+  },
+  {
+   "concept": "glutamatergic transmission",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of glutamatergic transmission assessed in the nucleus accumbens and amygdala is a biological process that cannot be directly or indirectly measured in the National Fatality Review Case Reporting System (NFR-CRS) data."
+  },
+  {
+   "concept": "hypoglossal motor nucleus (XIIn)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of hypoglossal motor nucleus assessed by electrophysiological recordings from brainstem slices is a biological process that cannot be directly or indirectly measured in the National Fatality Review Case Reporting System (NFR-CRS) data."
+  }
+ ],
+ "source_summaries": {
+  "ncfrp_v51": "The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 does not contain any variables that can be used to assess biological processes such as microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus activity. The data focuses on factors related to the circumstances of child fatalities and includes information about incidents, injuries, environmental conditions, and substance use but does not cover cellular or molecular biology."
+ }
+}

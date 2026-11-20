@@ -1,0 +1,50 @@
+{
+ "ideas": [
+  {
+   "question": "What protective factors are associated with a lower incidence of SUID among full-term infants born to mothers without prepregnancy smoking history who have low maternal BMI?",
+   "why_open": "While studies highlight the risks of maternal smoking and high BMI, less is known about the protective factors that may prevent SUID in full-term infants from mothers without these risk factors.",
+   "sources": [
+    "cdc_linkco15",
+    "cdc_natl15",
+    "ncfrp_v51"
+   ],
+   "data": "Pregnancy weight gain (domain: cdc_natl15), Smoking During Pregnancy (domain: cdc_linkco15), maternal smoking during pregnancy (domain: ncfrp_v51), Birth Weight (domain: cdc_linkco15)"
+  },
+  {
+   "question": "What role does early postpartum home visits play in reducing SUID incidence among high-risk infants from mothers with preexisting health conditions?",
+   "why_open": "While prenatal care and maternal health are studied, the specific impact of postpartum care on preventing SUID has not been thoroughly investigated.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Postpartum Visits and Recommendations (domain: prams_p8_arf), Maternal Health Problems (domain: prams_p7_arf)"
+  },
+  {
+   "question": "How does breastfeeding initiation affect SUID rates in infants whose mothers did not smoke during pregnancy but had a history of prepregnancy health issues?",
+   "why_open": "Breastfeeding's impact on SUID is established, but its protective effect among infants from healthier smoking-free mothers with preexisting conditions is underexplored.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Breastfeeding Status (domain: prams_p8_arf), Smoking History (domain: prams_p7_arf)"
+  },
+  {
+   "question": "What influence does socioeconomic status have on SUID incidence in full-term infants born to mothers without risk factors for smoking and high BMI?",
+   "why_open": "The impact of socioeconomic disparities on SUID has been studied, but not among infants from families with no smoking history or high maternal weight.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Income and Dependent Information (domain: prams_p8_arf), Insurance Coverage (domain: ncfrp_v51)"
+  },
+  {
+   "question": "What is the incidence of SUID in full-term infants from mothers with prepregnancy obesity who have access to comprehensive prenatal care?",
+   "why_open": "Although maternal obesity and prenatal care are known risk factors, their combined influence on protecting against SUID remains understudied.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p7_arf"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI) (domain: cdc_linkco15), Pre-Pregnancy Health Care (domain: prams_p8_arf)"
+  }
+ ]
+}

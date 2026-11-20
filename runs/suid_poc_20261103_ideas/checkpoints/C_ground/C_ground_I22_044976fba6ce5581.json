@@ -1,0 +1,34 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases among prematurely-born infants is associated with maternal pre-pregnancy weight gain.",
+ "rationale": "This study aims to estimate the rates of Sudden Unexpected Infant Death (SUID) among prematurely-born infants based on maternal pre-pregnancy weight gain. The design uses exposure-specific rates, comparing proportions among cases from a case series and exposures from population reference sources.",
+ "prior_art": "The closest manuscript claim is C10 [limitation]: The analysis excludes some extremely and very preterm infants who died early in postnatal life. This limitation highlights that studies may not capture all premature births or SUID cases comprehensively, leaving the role of maternal weight gain among these infants unexplored.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_linkco15"
+ ],
+ "period_start": 2015,
+ "period_end": 2015,
+ "required_concepts": [
+  "maternal_prepregnancy_weight_gain",
+  "preterm_birth_status",
+  "suid_cases"
+ ],
+ "variables": [
+  "cdc_linkco15:RF_PPB",
+  "prams_p7_arf:P_PRTERM",
+  "ncfrp_v51:INF4momwtgnunk",
+  "prams_p7_arf:MAT_PRWT",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "Causation, absolute incidence rates due to selection bias from the case series."
+}

@@ -1,0 +1,54 @@
+### Design
+
+**Question:** Does the presence of multiple gestation influence the risk pattern of sudden unexpected infant death (SUID) throughout postconceptional age?
+
+This question can be addressed using a case-only study design, as it seeks to understand how the characteristics of SUID cases vary across different subgroups defined by multiple gestation status and developmental trajectory. The analysis will focus on comparing SUID cases with and without multiple gestation to identify any differences in their risk patterns over postconceptional age.
+
+### Sources by Role
+
+**Case Series:** ncfrp_v51  
+- **Reason:** This dataset contains detailed records of child deaths reviewed by fatality review teams, including information about SUID cases. It provides the necessary case details for analysis but lacks denominator data to estimate incidence rates.
+
+No population reference or denominator sources are used since this is a case-only study design focusing on comparing proportions among cases rather than estimating risks in the general population.
+
+### Period
+
+**Period:** 2008-2019  
+This period aligns with the coverage of ncfrp_v51 and ensures sufficient data to conduct meaningful comparisons within the SUID cases.
+
+### Variables
+
+#### Multiple Gestation Status
+- **ncfrp_v51:INFmultbirth:** Indicates if the case was part of a multiple birth (e.g., twins or triplets).
+  - Values: "Y" = Yes, "N" = No, "U" = Unknown.
+  
+#### Postconceptional Age 
+- **ncfrp_v51:ISSmotheightimp:** Imputed mother's height (not directly applicable but used for context).
+- **ncfrp_v51:INFageatdeath:** Infant age at death in days and months, can be converted to weeks.
+  - Values: Numeric values representing days or months.
+
+### Biases
+
+**Selection Bias:**
+- **Case Series Bias:** The ncfrp_v51 dataset only includes cases reviewed by fatality review teams. This means it does not capture all SUID cases in the population and may have specific biases depending on which states participate actively in reviewing these deaths.
+  
+**Information Bias:**
+- **Measurement Error:** There can be inconsistencies or inaccuracies in recording multiple gestation status, especially if information is incomplete or misreported.
+
+**Confounding:**
+- **Potential Confounders:** Other factors such as maternal health conditions (e.g., smoking, hypertension), prematurity, and birth weight could confound the relationship between multiple gestation and SUID risk. These variables are not directly addressed in the candidate study but should be considered for future analyses.
+
+### What the Design Cannot Establish
+
+- The design cannot establish causality or incidence rates due to its case-only nature.
+- It can only describe associations within the given cases and identify differences based on multiple gestation status and postconceptional age.
+  
+### Prior Art
+
+The manuscript claims related to SUID (e.g., C6, C7) have tested patterns of risk over time but do not directly address the influence of multiple gestation. Similarly, bedsharing_ms_v7.C3 has explored developmental windows for risk factors like bed sharing and maternal smoking but does not cover the impact of multiple gestation.
+
+### Verdict
+
+**Verdict:** These data can answer a version of the question by describing how SUID cases with multiple gestation differ in their risk patterns compared to those without multiple gestation across postconceptional age. However, they cannot estimate incidence rates or establish causality due to the case-only design and lack of denominator data.
+
+**Missing Data Element:** Denominator source for estimating population-based risks.

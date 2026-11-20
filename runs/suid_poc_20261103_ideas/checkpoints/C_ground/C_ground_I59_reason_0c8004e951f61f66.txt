@@ -1,0 +1,71 @@
+### Design
+
+**Design Restatement**: 
+The research question aims to examine trends in pregnancy complications among Sudden Unexpected Infant Death (SUID) cases from 2008 to 2019 and compare these trends with changes in maternal healthcare visit patterns during pregnancy, as reported by PRAMS surveys from 2016 to 2021. The design will focus on trends within the case series data.
+
+**Role of Sources**:
+- **Case Series**: NCFRP_V51 (SUID cases reviewed by fatality review teams)
+- **Population Reference**: PRAMS_P8_ARF (maternal health surveys conducted a few months after live births)
+
+### Period
+**Years Needed**:
+- Case Series: 2008 to 2019 (NCFRP_V51)
+- Population Reference: 2016 to 2021 (PRAMS_P8_ARF)
+
+### Variables
+
+**Concepts and Candidate Variables**:
+
+1. **Pregnancy Complications**:
+   - Case Series (NCFRP_V51):
+     - `INFmedical`: During pregnancy did mother have medical complications/infections
+     - `INF3prevmedical`: Did mother have medical complications in previous pregnancies
+     - `ISSprechronicdiseasedur`: Chronic disease control Education - during pregnancy
+     - `INF4medical`: During pregnancy did mother have medical complications/infections
+     - `INF3medical`: During pregnancy did mother have medical complications/infections
+   
+   - Population Reference (PRAMS_P8_ARF):
+     - `PG8_UTI`: Health prob during preg -- Kidney/bladder infection 
+     - `PG8_NAUS`: Health prob during preg -- Nausea/vomiting/dehydration
+     - `RF_GHYPE`: Gestational hypertension (only available starting with 2020 data)
+     - `RF_PHYPE`: Prepregnancy hypertension (only available starting with 2020 data)
+
+2. **Healthcare Visits During Pregnancy**:
+   - Case Series (NCFRP_V51):
+     - `INF4visnum`: If yes, antepartum encounters - number of primary care provider visits
+   
+   - Population Reference (PRAMS_P8_ARF):
+     - `PNC_VST`: Number of prenatal care visit
+     - `PNC_MTH`: Month of First Prenatal Care Visit
+
+### Biases
+
+**Selection Bias**:
+- **Case Series**: NCFRP_V51 covers child deaths reviewed by fatality review teams. Participation varies over time, leading to potential selection bias in the case series.
+- **Population Reference**: PRAMS_P8_ARF surveys are conducted among a weighted sample of mothers who had live births, potentially excluding those with infant deaths.
+
+**Information Bias**:
+- NCFRP_V51: Reporting is based on data collected by fatality review teams and may include subjective assessments or incomplete information.
+- PRAMS_P8_ARF: Variables such as `PG8_UTI`, `PG8_NAUS` are self-reported, which could introduce recall bias.
+
+**Confounding Bias**:
+- Both sources lack detailed socioeconomic status, urban/rural differences, and other potential confounders (e.g., maternal education level) that may influence healthcare access and pregnancy complications.
+
+### What the Design Cannot Establish
+The design can only establish trends within cases (SUID cases from 2008 to 2019) and compare these trends with changes in healthcare visit patterns observed among live births from 2016 to 2021. It cannot estimate incidence, rates, or risk due to the lack of a denominator source for SUID cases. The design can only provide group-level comparisons between case series and population reference data.
+
+### Prior Art
+The closest claims in the manuscripts are:
+- **SUID_manuscript_v9_clean.C8-C10**: These findings describe trends in incidence based on postconceptional age (PCA) but do not specifically address pregnancy complications or healthcare visit patterns.
+- **bedsharing_ms_v7.C3-C6**: These findings focus on developmental windows and associations with risk factors like bed sharing, maternal smoking, and prematurity but do not cover trends in pregnancy complications.
+
+### Verdict
+**Can these sources answer a version of the question?**
+
+Yes, the proposed design can be carried out using NCFRP_V51 for SUID cases and PRAMS_P8_ARF for population reference data. The study will focus on comparing trends in pregnancy complications among SUID cases from 2008 to 2019 with maternal healthcare visit patterns during pregnancy as reported by live birth surveys from 2016 to 2021.
+
+**Key Limitations**:
+- Selection bias due to varying participation rates in the case series.
+- Information bias due to self-reported data and subjective assessments.
+- Confounding factors not measured, such as socioeconomic status and urban/rural differences.
+- The design can only establish trends within cases and cannot estimate incidence or risk.

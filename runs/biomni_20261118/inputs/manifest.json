@@ -1,0 +1,46 @@
+{
+ "manuscripts/SUID_manuscript_v9_clean.txt": {
+  "from": "data/manuscripts/SUID_manuscript_v9_clean.docx",
+  "sha256": "92fd11fa182c9a7b5806abcd83a284408d96271920022a19179cbafdb62cd2bd"
+ },
+ "manuscripts/bedsharing_ms_v7.txt": {
+  "from": "data/manuscripts/bedsharing_ms_v7.docx",
+  "sha256": "1496e66e4e7b266719b29021ddc9041acf47f56cf92fdcd91113d826ffd4b79b"
+ },
+ "manuscripts/suid_literature_abstracts.txt": {
+  "from": "data/manuscripts/literature/suid_literature_abstracts.md",
+  "sha256": "687e8a02fa0c7d697b51a7d44224066beb34f0ea0281e14d163ef9f9f337ad41"
+ },
+ "dictionaries/cdc_linkco15.csv": {
+  "from": "data/codebooks/LinkCO15Guide.pdf",
+  "sha256": "1b6cd81b08596230344d665f77c88663ea8700731a054bd2f17989215289f7a8"
+ },
+ "dictionaries/cdc_natl15.csv": {
+  "from": "data/documentation/natl2015.pdf",
+  "sha256": "cefeaebb9d9fb574f1968037668273e4b6dd2b4f9d50a57e4a39e92830adb1dc"
+ },
+ "dictionaries/cdc_codenames.csv": {
+  "from": "data/documentation/CDC_database_codeNames.xlsx",
+  "sha256": "0ef67f25e365f4b25954e1d81c2e8c99c5d582dae7157adcafec971debe2f6d2"
+ },
+ "dictionaries/ncfrp_v51.csv": {
+  "from": "data/documentation/Codebook_Version5-1_031122.xlsx",
+  "sha256": "fb90580f2efa52988ad3c5a2530b908a0f89ad58337c781876baead2d62d0887"
+ },
+ "dictionaries/prams_p8_arf.csv": {
+  "from": "data/codebooks/PRAMS_Phase_8_ARF_Codebook.pdf",
+  "sha256": "9d5b3d4dd9092af205977978f66c2b071210b3eedac55950a494e72f031e0152"
+ },
+ "dictionaries/prams_p8_std2.csv": {
+  "from": "data/codebooks/PRAMS_Phase_8_Standard_Section_II_Codebook.pdf",
+  "sha256": "792402034db4bcfefa3f908a18b42c9438171f9b0e323624163c22066604eeee"
+ },
+ "dictionaries/prams_p7_arf.csv": {
+  "from": "data/codebooks/PRAMS_Phase_7_ARF_Codebook.pdf",
+  "sha256": "57957107866cc22bd4dec4d6a2ee6a5c2ecee5d8e702030f1a45de5c8afd1b97"
+ },
+ "source_roles.md": {
+  "from": "configs/suid.yaml",
+  "sha256": "d0424f40fcf3212846fb69116c4fcaa97dd94f32a16f7c3337e786bba178b56e"
+ }
+}

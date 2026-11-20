@@ -1,0 +1,76 @@
+### Design
+
+**Question Restated:** What is the difference in SUID rates between infants whose mothers experienced severe mental health issues during pregnancy versus those who did not, from 2016-2021?
+
+The design will estimate outcome rates by exposure group using a case series (numerator), population reference source for exposure prevalence, and denominator source for the population at risk.
+
+### Sources by Role
+
+**Case Series:**
+- **ncfrp_v51:** Records SUID cases with maternal mental health issues during pregnancy.
+  
+**Population Reference:**
+- **prams_p8_arf (2016-2021), prams_p7_arf (2012-2015):** Provides weighted survey data of mothers post-birth, capturing exposure to severe mental health issues.
+
+**Denominator Source:**
+- **cdc_natl15:** Supplies the overall live birth denominators for 2016-2021.
+- **cdc_linkco15:** Supplies linked births and infant deaths from 2015 but also provides a denominator source if needed (though cdc_natl15 is preferred).
+
+### Period
+
+**Years Needed:**
+- The proposed study needs data from 2016 to 2021, as it focuses on SUID cases during this period.
+- **ncfrp_v51:** Needs the years 2016-2021 for SUID cases.
+- **prams_p8_arf:** Provides necessary population reference data from 2016 to 2021.
+- **prams_p7_arf:** While not directly needed, can be used as a reference source if additional context or historical trends are required (e.g., for validating findings).
+- **cdc_natl15:** Supplies live birth denominators for the same years.
+
+### Variables
+
+**Maternal Mental Health Issues:**
+- **Case Series (ncfrp_v51):** 
+  - ISSmhpregdepres (Depression/anxiety/mental illness during pregnancy)
+  
+- **Population Reference (prams_p8_arf, prams_p7_arf):**
+  - MH_PGDX8 (Health problem during preg -- Depression)
+  - HTH_ANX (Health prob -- Anxiety)
+  - BPG_DEPRS8 (Health prob -- Depression)
+  - VAR: POST-PARTUM DEPRESSION
+  - PREV_LBW_RAW, PREV_LBW (History of low birth weight in previous live births can be indicative of mental health issues if associated with maternal stress and complications).
+
+**Other Relevant Variables:**
+- **cdc_natl15:** 
+  - BWTR4 (Birth Weight Recode 4)
+  
+### Biases
+
+#### Selection Bias:
+- The case series may not capture all SUID cases due to incomplete reporting or underreporting of mental health issues.
+- PRAMS survey captures only a subset of live births and may miss those who did not respond.
+
+#### Information Bias:
+- Reporting inconsistencies in maternal mental health during pregnancy can vary across different sources (e.g., self-report vs. medical record).
+- Missing data on key variables like depression/anxiety measures could be inconsistent between case series and reference populations.
+
+#### Confounding Variables:
+- Other risk factors such as smoking, prematurity, socioeconomic status, and urban/rural differences may confound the association between maternal mental health issues and SUID rates.
+  
+### What the Design Cannot Establish
+
+This design can estimate exposure-specific SUID rates but cannot establish causation. It also cannot account for potential temporal trends or changes in reporting practices over time.
+
+### Prior Art
+
+**Manuscripts' Claims:**
+- The closest claim is **bedsharing_ms_v7.C11**, which explores the association between bed-sharing and SUID incidence, including maternal smoking status.
+  - However, none of these claims specifically address the impact of severe mental health issues during pregnancy on SUID rates.
+
+### Verdict
+
+**Can These Sources Answer a Version of the Question?**
+
+Yes, the proposed design can estimate exposure-specific SUID rates using the case series (ncfrp_v51) for numerator and population reference sources (prams_p8_arf) to determine maternal mental health issues during pregnancy. The denominator source (cdc_natl15) provides the necessary live birth denominators.
+
+**Logical and Epistemological Considerations:**
+- Ensure consistency in measuring severe mental health issues across case series and population references.
+- Account for confounding variables that may influence SUID rates, such as smoking status and prematurity.

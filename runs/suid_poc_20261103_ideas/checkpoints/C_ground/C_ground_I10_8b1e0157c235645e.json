@@ -1,0 +1,28 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with smoking cessation before pregnancy differs from that among PRAMS mothers.",
+ "rationale": "This study aims to compare the prevalence of smoking cessation before pregnancy between SUID cases and a population reference. The case series (ncfrp_v51) provides detailed information on maternal smoking habits, while PRAMS data offers a weighted sample of live births to estimate smoking cessation behaviors in the general population.",
+ "prior_art": "The manuscript claims indicate that maternal smoking during pregnancy is a significant risk factor for SUID (bedsharing_ms_v7.C9). However, there is no specific mention of smoking cessation before pregnancy. This study would provide new insights into the effectiveness of pre-pregnancy smoking cessation programs.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C9"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "smoking cessation before pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:INFsmbefpregcig",
+  "prams_p8_arf:SMK63B_A",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or temporal relationships between smoking cessation before pregnancy and SUID risk. It only compares proportions between cases and a population reference."
+}

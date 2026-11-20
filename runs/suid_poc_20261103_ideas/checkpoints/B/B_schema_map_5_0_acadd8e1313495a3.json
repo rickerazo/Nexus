@@ -1,0 +1,357 @@
+{
+ "mappings": [
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that directly or indirectly captures SUID as defined by ICD-10 codes R95, R99, and W75."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures the biological sex of the infant."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures postconceptional age."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures maternal smoking status during pregnancy."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures preterm birth status."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures breastfeeding status at discharge."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures postconceptional age."
+  },
+  {
+   "concept": "sex",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures the biological sex of the infant."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures year of birth or death."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that directly or indirectly captures SUID as defined by ICD-10 codes R95, R99, and W75."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures bed-sharing status at the time of death."
+  },
+  {
+   "concept": "birthweight",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures birth weight."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures postconceptional age."
+  },
+  {
+   "concept": "chronological age",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures chronological age."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures the biological sex of the infant."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures birth weight categorized as low or non-low."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures maternal smoking status during pregnancy."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures maternal BMI."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures gestational age at birth."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures maternal infections during pregnancy."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures the age at which SUID occurred."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "ncfrp_v51",
+   "variable": "INCstate",
+   "compatibility": "proxy",
+   "rationale": "The data source contains variables capturing state and county of incident, which can be used as a proxy for geographic location."
+  },
+  {
+   "concept": "inner ear dysfunction",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to inner ear dysfunction or gentamicin injections."
+  },
+  {
+   "concept": "control condition",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures control conditions such as intra-tympanic saline or intra-peritoneal gentamicin."
+  },
+  {
+   "concept": "body movement arousal response to severe hypoxia-hypercarbia",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to body movement responses to hypoxia-hypercarbia."
+  },
+  {
+   "concept": "hypercapnic ventilatory response",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to hypercapnic ventilatory responses."
+  },
+  {
+   "concept": "age of mice",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures the age of experimental animals such as mice."
+  },
+  {
+   "concept": "baseline cSN activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to baseline sympathetic nerve activity following CIH exposure."
+  },
+  {
+   "concept": "breathing frequency",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures breathing frequency changes due to CIH exposure."
+  },
+  {
+   "concept": "expiratory time",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures expiratory times following CIH exposure."
+  },
+  {
+   "concept": "PiCo specific cholinergic-glutamatergic neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to optogenetic stimulation of PiCo-specific neurons."
+  },
+  {
+   "concept": "glutamatergic PiCo neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to optogenetic stimulation of glutamatergic PiCo neurons."
+  },
+  {
+   "concept": "ChAT containing neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to optogenetic stimulation of ChAT-containing neurons."
+  },
+  {
+   "concept": "Dbx1 and Vglut2 neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to optogenetic stimulation of Dbx1 and Vglut2 neurons."
+  },
+  {
+   "concept": "preBötzinger complex (preBötC)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to optogenetic stimulation of the preBötzinger complex."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (CIH)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to chronic intermittent hypoxia exposure."
+  },
+  {
+   "concept": "diaphragm activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures changes in diaphragm muscle activity."
+  },
+  {
+   "concept": "vagus nerve activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures changes in vagal nerve activity."
+  },
+  {
+   "concept": "cervical sympathetic nerve activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures changes in cervical sympathetic nerve activity."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (IH)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to chronic intermittent hypoxia exposure."
+  },
+  {
+   "concept": "adult neurogenesis",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to adult neurogenesis in the brain."
+  },
+  {
+   "concept": "synaptic plasticity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to synaptic plasticity."
+  },
+  {
+   "concept": "reactive oxygen species (ROS)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures reactive oxygen species levels or their effects."
+  },
+  {
+   "concept": "breathing patterns",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to breathing patterns in newborn mice."
+  },
+  {
+   "concept": "survival",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures survival rates of experimental animals."
+  },
+  {
+   "concept": "inhibition",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to inhibition in the pre-Bötzinger complex."
+  },
+  {
+   "concept": "excitation",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to excitation in the pre-Bötzinger complex."
+  },
+  {
+   "concept": "lipopolysaccharide (LPS)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to LPS administration."
+  },
+  {
+   "concept": "progesterone",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable that captures progesterone administration."
+  },
+  {
+   "concept": "neurogenesis",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to neurogenesis in the brain."
+  }
+ ],
+ "source_summaries": {
+  "ncfrp_v51": "This dataset primarily focuses on social and demographic factors of individuals involved in fatality cases, including biological parents, caregivers, supervisors, and incident details. It lacks specific medical or physiological data relevant to SUID, postconceptional age, birth weight, maternal smoking status, gestational age at birth, infections during pregnancy, inner ear dysfunction, neurogenesis, synaptic plasticity, reactive oxygen species levels, breathing patterns, survival rates of experimental animals, lipopolysaccharide (LPS) administration, and progesterone exposure. The dataset does provide information on geographic location through state and county variables."
+ }
+}

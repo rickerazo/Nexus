@@ -1,0 +1,28 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with documented maternal mental health issues is higher compared to non-SUID deaths within the case series.",
+ "rationale": "This study explores whether maternal mental health history affects the likelihood of SUID versus non-SUID outcomes within a case series. The design compares proportions among cases without requiring incidence or risk estimates, which would need a denominator source.",
+ "prior_art": "The closest tested work is C9 and C12 from bedsharing_ms_v7 and SUID_manuscript_v9_clean, focusing on maternal smoking during pregnancy but not directly addressing maternal mental health history. This question remains open as it explores a different aspect of risk factors for SUID.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C12",
+  "SUID_manuscript_v9_clean.C9"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2015,
+ "period_end": 2019,
+ "required_concepts": [
+  "maternal mental health history",
+  "SUID vs. non-SUID"
+ ],
+ "variables": [
+  "ncfrp_v51:BIO1recmh",
+  "ncfrp_v51:INF5acesmh",
+  "ncfrp_v51:BIO1disillmh"
+ ],
+ "cannot_establish": "This design cannot establish causation or incidence due to the lack of a denominator source. It can only compare proportions among cases."
+}

@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases that occurred within hospital overnight stays increased from 2016 to 2019.",
+ "rationale": "This study uses a case series (ncfrp_v51) and a population reference (prams_p8_arf) to analyze trends in the proportion of SUID cases with hospital overnight stays. The design can compare proportions among cases but cannot estimate incidence or rates due to lack of denominator data.",
+ "prior_art": "SUID_manuscript_v9_clean.C13 discusses postconceptional age and maternal smoking, which may influence hospital stays, but does not address trends in overnight hospital stays specifically. bedsharing_ms_v7.C8 reports that bed sharing is recorded for 59.5% of SUID cases and the association with maternal smoking, but it does not cover trends over time.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C13",
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "Hospital Overnight Stay"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn",
+  "prams_p8_arf:LTH_HOSP",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence or rates, only proportions among cases."
+}

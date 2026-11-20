@@ -1,0 +1,32 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with documented maternal mental health conditions differs from the proportion of live births reported through PRAMS surveys.",
+ "rationale": "This design compares how maternal mental health conditions are recorded between SUID cases and live births, focusing on discrepancies in documentation methods. The sources provide data on mental health conditions but do not allow for incidence rate estimation due to a lack of denominator data.",
+ "prior_art": "None in the inputs; the manuscript claims focus on risk factors like bed sharing and smoking rather than recording discrepancies in maternal mental health conditions.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2021,
+ "required_concepts": [
+  "Maternal Mental Health Conditions",
+  "Live Births"
+ ],
+ "variables": [
+  "ncfrp_v51:ISSmhpregdepres",
+  "ncfrp_v51:BIO1disillmhsp",
+  "prams_p8_arf:MH_PGDX8",
+  "prams_p8_arf:PG8_ANX",
+  "prams_p7_arf:PREV_LBW_RAW",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence rates or risk estimates due to the absence of a denominator source."
+}

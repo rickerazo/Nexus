@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "Infants whose mothers did not receive adequate prenatal care are more likely to be SUID cases compared to other infant deaths within ncfrp_v51.",
+ "rationale": "The design can establish an association between prenatal care adequacy and SUID cases versus other infant deaths within the case series. However, it cannot estimate incidence rates or risk ratios due to the lack of a denominator source that includes both live births and neonatal deaths for the same population during 2016-2019.",
+ "prior_art": "The closest tested work is SUID_manuscript_v9_clean.C9 and bedsharing_ms_v7.C8, which discuss prenatal care factors but do not specifically address adequacy. The question remains open as no prior study has directly compared prenatal care adequacy between SUID cases and other infant deaths.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C9",
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "prenatal care adequacy",
+  "SUID cases vs other infant deaths"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4visnum",
+  "ncfrp_v51:INFisscare",
+  "prams_p8_arf:PNC_VST",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence rates or risk ratios due to the lack of a denominator source that includes both live births and neonatal deaths for the same population during 2016-2019."
+}

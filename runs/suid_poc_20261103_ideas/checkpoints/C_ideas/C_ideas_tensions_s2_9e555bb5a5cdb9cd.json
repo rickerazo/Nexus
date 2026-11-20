@@ -1,0 +1,46 @@
+{
+ "ideas": [
+  {
+   "question": "How do socioeconomic factors captured by income levels and housing stability interact with maternal smoking during pregnancy to impact SUID incidence?",
+   "why_open": "The manuscripts highlight the importance of maternal smoking but do not explore how this effect is moderated or exacerbated by broader socio-economic conditions. The data sources can provide detailed information on socioeconomic factors.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal Characteristics, Household Income and Dependent Information"
+  },
+  {
+   "question": "Can the timing of postpartum contraception use relative to SUID incidence be identified in infants who were breastfed compared to those who were not?",
+   "why_open": "Postpartum contraception barriers are a factor in reproductive health but how they intersect with breastfeeding status and infant survival remains unexplored. The manuscripts did not delve into this potential timing aspect of postpartum practices.",
+   "sources": [
+    "prams_p8_arf"
+   ],
+   "data": "Postpartum Contraception Barriers, Breastfeeding Practices"
+  },
+  {
+   "question": "What is the relationship between the type of delivery (e.g., cesarean vs vaginal) and SUID incidence when adjusted for prenatal care quality?",
+   "why_open": "The manuscripts did not account for delivery method or its potential interaction with prenatal care in their analysis. This could provide insight into how different birthing experiences impact later infant health outcomes.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_linkco15"
+   ],
+   "data": "Delivery Method, Prenatal Care"
+  },
+  {
+   "question": "How do maternal stressors and pre-existing chronic conditions correlate with SUID incidence among infants who shared a sleeping surface?",
+   "why_open": "While the manuscripts explored maternal smoking, they did not investigate other maternal health or environmental factors that might interact with bed-sharing behavior to influence SUID risk.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Maternal Stressors, Child Care Arrangements"
+  },
+  {
+   "question": "Are there differences in infant mortality rates from SUID between infants born to mothers who lived in substandard housing versus those who did not?",
+   "why_open": "The manuscripts focused on maternal behaviors and environmental factors during pregnancy but not the broader living conditions of mothers. This could reveal how structural issues influence infant survival.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Environmental Factors, Housing Details"
+  }
+ ]
+}

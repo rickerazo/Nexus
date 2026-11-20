@@ -1,0 +1,1125 @@
+{
+ "mappings": [
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "cdc_linkco15",
+   "variable": "UCOD",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] ICD-10 underlying cause of death; permits the exact R95/R99/W75 definition."
+  },
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "cdc_linkco15",
+   "variable": "UCODR130",
+   "compatibility": "direct",
+   "rationale": "The variable UCODR130 is a 130 Infant Cause Recode which includes codes for Sudden infant death syndrome (R95), Accidental suffocation and strangulation in bed (W75), or Other ill-defined and unspecified causes of mortality (R99)."
+  },
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC natality public-use file does not contain specific variables for SUID outcomes."
+  },
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "ncfrp_v51",
+   "variable": "REGsuidcat",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] SUID Case Registry categorization of the death."
+  },
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "ncfrp_v51",
+   "variable": "CAUicdcode",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] ICD-10 cause-of-death code from vital records; permits R95/R99/W75."
+  },
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "ncfrp_v51",
+   "variable": "CAUdcimmcau",
+   "compatibility": "proxy",
+   "rationale": "[review 2026-11-11] Immediate cause of death from the death certificate; not coded to the SUID definition."
+  },
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS data does not contain specific variables for SUID outcomes."
+  },
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS data source does not contain information on cause of death."
+  },
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS data does not contain specific variables for SUID outcomes."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "cdc_linkco15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Sex of infant."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "cdc_natl15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Sex of infant."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "ncfrp_v51",
+   "variable": "INFsex",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Sex of the deceased child. RES1sex/RES2sex (caregivers), ACTcausex (person who caused the death) and INFgenderid (gender identity) removed."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "prams_p8_arf",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Gender of infant."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "[review 2026-11-11] No matching variable."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "prams_p7_arf",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Gender of infant."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "cdc_linkco15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] PCA (weeks) = COMBGEST + AGED/7."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "cdc_linkco15",
+   "variable": "AGED",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Age at death in days; PCA = COMBGEST + AGED/7."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "cdc_natl15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Births by gestational age, the person-time denominator by PCA; natality has no death age."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "ncfrp_v51",
+   "variable": "INFgestage",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] PCA (weeks) = INFgestage + INFdayslive/7."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "ncfrp_v51",
+   "variable": "INFdayslive",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Days lived; PCA = INFgestage + INFdayslive/7."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide a direct measure of postconceptional age."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide postconceptional age as a variable in the provided list."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide variables to calculate postconceptional age directly."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "cdc_linkco15",
+   "variable": "CIG_REC",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Any cigarette smoking in pregnancy (Y/N)."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "cdc_natl15",
+   "variable": "CIG_REC",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Any cigarette smoking in pregnancy (Y/N)."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "ncfrp_v51",
+   "variable": "INFsmanytime",
+   "compatibility": "direct",
+   "rationale": "The INFsmanytime variable in the NCFRP data source captures whether the mother smoked at any time during pregnancy."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "prams_p8_arf",
+   "variable": "MOMSMOKE",
+   "compatibility": "direct",
+   "rationale": "Variable 'MOMSMOKE' indicates whether the mother smoked during pregnancy."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide maternal smoking status as a specific variable in the provided list."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "prams_p7_arf",
+   "variable": "MOMSMOKE",
+   "compatibility": "direct",
+   "rationale": "The variable 'MOMSMOKE' indicates whether the mother smoked during any trimester of pregnancy."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "cdc_linkco15",
+   "variable": "GESTREC3",
+   "compatibility": "derived",
+   "rationale": "Derived from GESTREC3, which is a recode of gestational age. Preterm birth can be derived by comparing the value to 37 weeks."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "cdc_natl15",
+   "variable": "GESTREC3",
+   "compatibility": "direct",
+   "rationale": "The variable 'GESTREC3' categorizes gestational age into preterm and full-term categories."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "ncfrp_v51",
+   "variable": "INFgestage",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Preterm = INFgestage < 37."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "prams_p8_arf",
+   "variable": "GEST_WK_PU",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Preterm = GEST_WK_PU < 37."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide preterm birth information as a specific variable in the provided list."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "prams_p7_arf",
+   "variable": "GEST_WK_PU",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Preterm = GEST_WK_PU < 37."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "cdc_linkco15",
+   "variable": "BFED",
+   "compatibility": "direct",
+   "rationale": "The variable BFED indicates whether the infant was being breastfed at discharge."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "cdc_natl15",
+   "variable": "BFED",
+   "compatibility": "direct",
+   "rationale": "The variable 'BFED' indicates whether the infant was breastfed at hospital discharge."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "ncfrp_v51",
+   "variable": "INFbreast",
+   "compatibility": "proxy",
+   "rationale": "[review 2026-11-11] Ever breastfed, not status at discharge."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "prams_p8_arf",
+   "variable": "BF5EVER_RAW",
+   "compatibility": "proxy",
+   "rationale": "[review 2026-11-11] Ever breastfed, not status at discharge."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide breastfeeding status at discharge as a specific variable in the provided list."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "prams_p7_arf",
+   "variable": "BF5EVER_RAW",
+   "compatibility": "proxy",
+   "rationale": "[review 2026-11-11] Ever breastfed, not status at discharge."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "cdc_linkco15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] PCA (weeks) = COMBGEST + AGED/7."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "cdc_linkco15",
+   "variable": "AGED",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Age at death in days; PCA = COMBGEST + AGED/7."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "cdc_natl15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Births by gestational age, the person-time denominator by PCA; natality has no death age."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "ncfrp_v51",
+   "variable": "INFgestage",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] PCA (weeks) = INFgestage + INFdayslive/7."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "ncfrp_v51",
+   "variable": "INFdayslive",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Days lived; PCA = INFgestage + INFdayslive/7."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide a direct measure of postconceptional age."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide postconceptional age as a specific variable in the provided list."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide variables to calculate postconceptional age directly."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "cdc_linkco15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Sex of infant."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "cdc_natl15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Sex of infant."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "ncfrp_v51",
+   "variable": "INFsex",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Sex of the deceased child. RES1sex/RES2sex (caregivers), ACTcausex (person who caused the death) and INFgenderid (gender identity) removed."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "prams_p8_arf",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Gender of infant."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "[review 2026-11-11] No matching variable."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "prams_p7_arf",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Gender of infant."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "cdc_linkco15",
+   "variable": "DOB_YY",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Birth year. Death year (DOD_YY) is in the guide but not yet extracted."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "cdc_natl15",
+   "variable": "DOB_YY",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Birth year. Death year (DOD_YY) is in the guide but not yet extracted."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "ncfrp_v51",
+   "variable": "INFdobyear",
+   "compatibility": "direct",
+   "rationale": "The variables INFdobyear and INFdodyear directly correspond to the year of birth and death respectively."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "ncfrp_v51",
+   "variable": "INFdodyear",
+   "compatibility": "direct",
+   "rationale": "The variables INFdobyear and INFdodyear directly correspond to the year of birth and death respectively."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide a direct measure of year of birth or death."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide year of birth or death as a specific variable in the provided list."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide a direct variable for year of birth or death; it would need to be derived from other variables."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "cdc_linkco15",
+   "variable": "UCOD",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] ICD-10 underlying cause of death; permits the exact R95/R99/W75 definition."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "cdc_linkco15",
+   "variable": "UCODR130",
+   "compatibility": "direct",
+   "rationale": "The variable UCODR130 is a 130 Infant Cause Recode which includes codes for Sudden infant death syndrome (R95), Accidental suffocation and strangulation in bed (W75), or Other ill-defined and unspecified causes of mortality (R99)."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC natality public-use file does not contain specific variables for SUID outcomes."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "ncfrp_v51",
+   "variable": "REGsuidcat",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] SUID Case Registry categorization of the death."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "ncfrp_v51",
+   "variable": "CAUicdcode",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] ICD-10 cause-of-death code from vital records; permits R95/R99/W75."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "ncfrp_v51",
+   "variable": "CAUdcimmcau",
+   "compatibility": "proxy",
+   "rationale": "[review 2026-11-11] Immediate cause of death from the death certificate; not coded to the SUID definition."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS data does not contain specific variables for SUID outcomes."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain information on cause of death or SUID."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain specific variables for SUID outcomes."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for bed sharing."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable in the CDC natality public-use file that captures bed-sharing behavior."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "ncfrp_v51",
+   "variable": "CIRsamesurf",
+   "compatibility": "direct",
+   "rationale": "The variable CIRsamesurf indicates whether the child was sleeping on the same surface with another person or animal, which is a direct measure of bed sharing."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "ncfrp_v51",
+   "variable": "CIRwadult",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Same sleep surface with adult(s)."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "prams_p8_arf",
+   "variable": "SLEEPOWN_RAW",
+   "compatibility": "proxy",
+   "rationale": "[review 2026-11-11] How often baby sleeps alone; inverse proxy for bed sharing in live infants."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide bed-sharing status as a specific variable in the provided list."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "[review 2026-11-11] No matching variable."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "cdc_linkco15",
+   "variable": "BWTR4",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Low birthweight = levels 1-2 (<2,500 g)."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "cdc_natl15",
+   "variable": "BWTR4",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Low birthweight = levels 1-2 (<2,500 g)."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "ncfrp_v51",
+   "variable": "INFbirthwtcat",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Birth weight category."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "ncfrp_v51",
+   "variable": "INF3birthwtcat",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Birth weight category (second form section)."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "prams_p8_arf",
+   "variable": "GRAM_NAPHSIS",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] 250-g intervals; low = midpoint < 2,500 g."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "[review 2026-11-11] No matching variable."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "prams_p7_arf",
+   "variable": "GRAM_NAPHSIS",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] 250-g intervals; low = midpoint < 2,500 g."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "cdc_linkco15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] PCA (weeks) = COMBGEST + AGED/7."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "cdc_linkco15",
+   "variable": "AGED",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Age at death in days; PCA = COMBGEST + AGED/7."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "cdc_natl15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Births by gestational age, the person-time denominator by PCA; natality has no death age."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "ncfrp_v51",
+   "variable": "INFgestage",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] PCA (weeks) = INFgestage + INFdayslive/7."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "ncfrp_v51",
+   "variable": "INFdayslive",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Days lived; PCA = INFgestage + INFdayslive/7."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide a direct measure of postconceptional age."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide postconceptional age as a specific variable in the provided list."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide variables to calculate postconceptional age directly."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "cdc_linkco15",
+   "variable": "CIG_REC",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Any cigarette smoking in pregnancy (Y/N)."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "cdc_natl15",
+   "variable": "CIG_REC",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Any cigarette smoking in pregnancy (Y/N)."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "ncfrp_v51",
+   "variable": "INFsmanytime",
+   "compatibility": "direct",
+   "rationale": "The INFsmanytime variable captures whether the mother smoked at any time during pregnancy."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "prams_p8_arf",
+   "variable": "MOMSMOKE",
+   "compatibility": "direct",
+   "rationale": "Variable 'MOMSMOKE' indicates whether the mother smoked during pregnancy."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide maternal smoking status as a specific variable in the provided list."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "prams_p7_arf",
+   "variable": "MOMSMOKE",
+   "compatibility": "direct",
+   "rationale": "The variable 'MOMSMOKE' indicates whether the mother smoked during pregnancy."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "cdc_linkco15",
+   "variable": "BMI",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Prepregnancy BMI."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "cdc_linkco15",
+   "variable": "BMI_R",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Prepregnancy BMI recode."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "cdc_natl15",
+   "variable": "BMI",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Prepregnancy BMI."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "cdc_natl15",
+   "variable": "BMI_R",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Prepregnancy BMI recode."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "ncfrp_v51",
+   "variable": "INF4mombmi",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Mother's BMI, computed from height and weight."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "prams_p8_arf",
+   "variable": "MOM_BMI_BC",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Maternal BMI from the birth certificate."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "prams_p8_arf",
+   "variable": "MOM_BMI",
+   "compatibility": "proxy",
+   "rationale": "[review 2026-11-11] Maternal BMI from the questionnaire (self-report)."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide maternal BMI information as a specific variable in the provided list."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "prams_p7_arf",
+   "variable": "MOM_BMI_BC",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Maternal BMI from the birth certificate."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "prams_p7_arf",
+   "variable": "MOM_BMI",
+   "compatibility": "proxy",
+   "rationale": "[review 2026-11-11] Maternal BMI from the questionnaire (self-report)."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "cdc_linkco15",
+   "variable": "COMBGEST",
+   "compatibility": "direct",
+   "rationale": "The variable COMBGEST is a combined gestational age in weeks."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "cdc_natl15",
+   "variable": "COMBGEST",
+   "compatibility": "direct",
+   "rationale": "The variable 'COMBGEST' provides the combined gestational age in weeks."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "ncfrp_v51",
+   "variable": "INFgestage",
+   "compatibility": "direct",
+   "rationale": "The INFgestage variable captures gestational age in weeks, which is directly relevant to the concept."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "prams_p8_arf",
+   "variable": "GEST_WK_PU",
+   "compatibility": "proxy",
+   "rationale": "[review 2026-11-11] Clinical estimate in weeks, top/bottom coded at 27 and 43."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide gestational age information as a specific variable in the provided list."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "prams_p7_arf",
+   "variable": "GEST_WK_PU",
+   "compatibility": "proxy",
+   "rationale": "[review 2026-11-11] Clinical estimate in weeks, top/bottom coded at 27 and 43."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "cdc_linkco15",
+   "variable": "IP_CHLAM",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Chlamydia in pregnancy."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "cdc_linkco15",
+   "variable": "IP_GON",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Gonorrhea in pregnancy."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "cdc_linkco15",
+   "variable": "IP_HEPC",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Hepatitis C in pregnancy."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "cdc_natl15",
+   "variable": "IP_CHLAM",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Chlamydia in pregnancy."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "cdc_natl15",
+   "variable": "IP_GON",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Gonorrhea in pregnancy."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "cdc_natl15",
+   "variable": "IP_HEPC",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Hepatitis C in pregnancy."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "ncfrp_v51",
+   "variable": "INF3chlamydia",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Pregnancy complication: chlamydia."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "ncfrp_v51",
+   "variable": "INF3gonorrhea",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Pregnancy complication: gonorrhea. NCFRP has no hepatitis C item."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide specific variables for maternal infections during pregnancy."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide maternal infection status as a specific variable in the provided list."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide specific variables for maternal infections during pregnancy."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "cdc_linkco15",
+   "variable": "AGED",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Age at death in days."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures age at death for SUID cases."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "ncfrp_v51",
+   "variable": "INFdayslive",
+   "compatibility": "direct",
+   "rationale": "The variable INFdayslive directly corresponds to the number of days lived, which can be used to determine age at death."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS data does not contain specific variables for age at death in SUID cases."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide age at death information as a specific variable in the provided list."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain specific variables for age at death in SUID cases."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "cdc_linkco15",
+   "variable": "MRCNTYFIPS",
+   "compatibility": "proxy",
+   "rationale": "The variable MRCNTYFIPS is the FIPS County code for mother’s residence, which can be used to infer geographic location."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "cdc_natl15",
+   "variable": "OCNTYFIPS",
+   "compatibility": "proxy",
+   "rationale": "The variable 'OCNTYFIPS' provides the FIPS county code, which can be used to infer geographic location."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "ncfrp_v51",
+   "variable": "INFaddrst",
+   "compatibility": "direct",
+   "rationale": "The variables INFaddrst and INFdthstate directly correspond to the state of residence and death respectively."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "ncfrp_v51",
+   "variable": "INFdthstate",
+   "compatibility": "direct",
+   "rationale": "The variables INFaddrst and INFdthstate directly correspond to the state of residence and death respectively."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "ncfrp_v51",
+   "variable": "INCstate",
+   "compatibility": "proxy",
+   "rationale": "The data source contains variables capturing state and county of incident, which can be used as a proxy for geographic location."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "prams_p8_arf",
+   "variable": "STATE",
+   "compatibility": "proxy",
+   "rationale": "Variable 'STATE' provides the state of residence, which can be used as a proxy for geographic location."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide geographic location information as a specific variable in the provided list."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "prams_p7_arf",
+   "variable": "STATE",
+   "compatibility": "proxy",
+   "rationale": "The variable 'STATE' indicates the state of residence, which can be used as a proxy for geographic location."
+  },
+  {
+   "concept": "chronological age",
+   "source_id": "cdc_linkco15",
+   "variable": "AGED",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Age at death in days."
+  },
+  {
+   "concept": "chronological age",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that directly measures chronological age; it would need to be derived from birth date and current date."
+  },
+  {
+   "concept": "chronological age",
+   "source_id": "ncfrp_v51",
+   "variable": "INFdayslive",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Days lived (from DOB and DOD)."
+  },
+  {
+   "concept": "chronological age",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide a direct measure of chronological age."
+  },
+  {
+   "concept": "chronological age",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide chronological age information as a specific variable in the provided list."
+  },
+  {
+   "concept": "chronological age",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide a direct variable for chronological age; it would need to be derived from other variables."
+  },
+  {
+   "concept": "sex",
+   "source_id": "cdc_linkco15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Sex of infant."
+  },
+  {
+   "concept": "sex",
+   "source_id": "cdc_natl15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Sex of infant."
+  },
+  {
+   "concept": "sex",
+   "source_id": "ncfrp_v51",
+   "variable": "INFsex",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Sex of the deceased child. RES1sex/RES2sex (caregivers), ACTcausex (person who caused the death) and INFgenderid (gender identity) removed."
+  },
+  {
+   "concept": "sex",
+   "source_id": "prams_p8_arf",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Gender of infant."
+  },
+  {
+   "concept": "sex",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "[review 2026-11-11] No matching variable."
+  },
+  {
+   "concept": "sex",
+   "source_id": "prams_p7_arf",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Gender of infant."
+  },
+  {
+   "concept": "birthweight",
+   "source_id": "cdc_linkco15",
+   "variable": "BWTR4",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Low birthweight = levels 1-2 (<2,500 g)."
+  },
+  {
+   "concept": "birthweight",
+   "source_id": "cdc_natl15",
+   "variable": "BWTR4",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] Low birthweight = levels 1-2 (<2,500 g)."
+  },
+  {
+   "concept": "birthweight",
+   "source_id": "ncfrp_v51",
+   "variable": "INFbirthwtcat",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Birth weight category."
+  },
+  {
+   "concept": "birthweight",
+   "source_id": "ncfrp_v51",
+   "variable": "INF3birthwtcat",
+   "compatibility": "direct",
+   "rationale": "[review 2026-11-11] Birth weight category (second form section)."
+  },
+  {
+   "concept": "birthweight",
+   "source_id": "prams_p8_arf",
+   "variable": "GRAM_NAPHSIS",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] 250-g intervals; low = midpoint < 2,500 g."
+  },
+  {
+   "concept": "birthweight",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "[review 2026-11-11] No matching variable."
+  },
+  {
+   "concept": "birthweight",
+   "source_id": "prams_p7_arf",
+   "variable": "GRAM_NAPHSIS",
+   "compatibility": "derived",
+   "rationale": "[review 2026-11-11] 250-g intervals; low = midpoint < 2,500 g."
+  }
+ ],
+ "source_summaries": {
+  "cdc_linkco15": "This dataset provides detailed information on infant deaths and their causes, including SUID. It includes variables such as sex of the infant, gestational age at birth, maternal smoking status during pregnancy, preterm birth indicators, breastfeeding status, and geographic location. However, it lacks specific variables for experimental conditions like chronic intermittent hypoxia or neurogenesis. This data source contains information about births and infant deaths, including demographic details of mothers and infants, prenatal care, delivery characteristics, neonatal conditions, and causes of death. It does not include any variables related to cellular or molecular biology outcomes such as microglia activation, cell death, glutamatergic transmission, or electrophysiological recordings from specific brain regions.",
+  "cdc_natl15": "The CDC natality public-use file provides detailed information on births, including infant sex (SEX), gestational age at birth (COMBGEST), and maternal smoking during pregnancy (CIG_REC). However, it lacks specific variables for SUID outcomes, bed sharing behavior, and other physiological measures such as body movement arousal responses or neurogenesis. Variables like preterm birth (GESTREC3) and breastfeeding status at discharge (BFED) are available but may require additional interpretation to align with the manuscript's concepts. The CDC natality public-use file contains variables related to demographic, socioeconomic, and health-related factors of births. It does not include biological or neurological measures such as microglia activation, cell death, glutamatergic transmission, or electrophysiological assessments of the hypoglossal motor nucleus.",
+  "ncfrp_v51": "The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 provides detailed information on infant deaths, including demographic data and medical history. It includes variables such as sex, birth weight category, days lived, and prenatal care details but lacks specific measures for postconceptional age, maternal smoking during pregnancy, preterm birth status, breastfeeding at discharge, gestational age at birth, maternal infections in pregnancy, chronic intermittent hypoxia, and other physiological measurements relevant to the manuscript concepts. The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 primarily documents demographic, social, and medical history information about deceased children and their families. It includes data on prenatal care, birth outcomes, child maltreatment histories, and other factors related to the circumstances of death but does not contain biological or neurological measurements relevant to concepts such as microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus activity. The National Fatality Review Case Reporting System (NFR-CRS) codebook version 5.1 provides detailed information on infant deaths, including cause of death codes and maternal health factors. However, it lacks specific variables for postconceptional age, infant sex, maternal smoking status during pregnancy, preterm birth status, breastfeeding status at discharge, bed sharing, birth weight categorized as low or non-low, gestational age, maternal infections such as chlamydia, gonorrhea, and hepatitis C, age of death in SUID cases, geographic location, inner ear dysfunction, control conditions, body movement arousal response to severe hypoxia-hypercarbia, hypercapnic ventilatory response, age of mice, baseline cSN activity, breathing frequency, expiratory time, PiCo specific cholinergic-glutamatergic neurons, glutamatergic PiCo neurons, ChAT containing neurons, Dbx1 and Vglut2 neurons, preBötzinger complex (preBötC), chronic intermittent hypoxia (CIH/IH), diaphragm activity, vagus nerve activity, cervical sympathetic nerve activity, adult neurogenesis, synaptic plasticity, reactive oxygen species (ROS), breathing patterns, survival, inhibition, excitation, lipopolysaccharide (LPS), and progesterone. This data source focuses on maternal and infant health complications, prenatal care, delivery outcomes, and social determinants of health. It does not contain variables related to neurobiological processes such as microglia activation, cell death, glutamatergic transmission, or electrophysiological assessments of the hypoglossal motor nucleus. This dataset primarily focuses on social and demographic factors of individuals involved in fatality cases, including biological parents, caregivers, supervisors, and incident details. It lacks specific medical or physiological data relevant to SUID, postconceptional age, birth weight, maternal smoking status, gestational age at birth, infections during pregnancy, inner ear dysfunction, neurogenesis, synaptic plasticity, reactive oxygen species levels, breathing patterns, survival rates of experimental animals, lipopolysaccharide (LPS) administration, and progesterone exposure. The dataset does provide information on geographic location through state and county variables. This dataset focuses on social services, substance abuse history, criminal background, disability status, and other demographic information related to caregivers and biological parents involved in child fatalities. It does not contain any variables that directly or indirectly measure microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus activity. This dataset primarily focuses on the causes and circumstances of sudden unexpected infant deaths (SUID) as reported in death certificates. It includes variables such as immediate cause of death, scene recreation details, toxicology screens, and other relevant factors that may contribute to SUID cases. However, it lacks specific variables for postconceptional age, maternal smoking status during pregnancy, preterm birth status, breastfeeding at discharge, geographic location, and various physiological measures related to experimental studies on respiratory-sympathetic coupling or neurogenesis. The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 does not contain any variables that can be used to assess biological processes such as microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus activity. The data focuses on factors related to the circumstances of child fatalities and includes information about incidents, injuries, environmental conditions, and substance use but does not cover cellular or molecular biology. The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 primarily focuses on documenting the circumstances surrounding sudden unexpected infant deaths, including environmental factors, substance exposures, medical conditions, and potential acts of abuse or neglect. It does not provide detailed information on postconceptional age, maternal smoking during pregnancy, preterm birth status, breastfeeding at discharge, specific genetic or neurological assessments, nor variables related to experimental procedures in animal models. This dataset focuses on fatality review cases and includes information about substances involved, medical conditions, symptoms, diagnoses, treatments, and circumstances of death. It does not contain variables related to cellular or neurological processes such as microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus activity. This dataset primarily focuses on child fatality reviews and captures various aspects of the circumstances surrounding deaths, including risk factors, protective factors, and services provided. It includes variables related to substance abuse history, criminal background, disability or chronic illness status, and prior death records for individuals involved in cases. However, it lacks specific variables for postconceptional age, maternal smoking during pregnancy, preterm birth, breastfeeding status at discharge, gestational age at birth, inner ear dysfunction, body movement arousal responses to hypoxia-hypercarbia, hypercapnic ventilatory response, chronic intermittent hypoxia, diaphragm activity, vagus nerve activity, cervical sympathetic nerve activity, adult neurogenesis, synaptic plasticity, reactive oxygen species levels, breathing patterns in mice, survival rates of mice, inhibition and excitation in biophysical models or in vitro recordings, lipopolysaccharide administration, progesterone administration, and neurogenesis assessment. This dataset focuses on child fatality reviews and includes information about the circumstances of death, contributing factors, and actions taken by various agencies. It does not contain any variables related to neurological or cellular processes such as microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus activity. The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 provides detailed information on sudden unexpected infant deaths, including variables related to the infant's sex and birth weight, maternal smoking during pregnancy, gestational age at birth, and SUID cases as per CDC’s SUIDI Reporting Form. However, it lacks direct variables for postconceptional age, bed sharing, geographic location, specific physiological responses, and experimental conditions involving mice or neurogenesis. The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 does not contain variables that directly or indirectly measure cellular biology outcomes such as microglia activation, cell death, glutamatergic transmission, and electrophysiological assessments of the hypoglossal motor nucleus. The data sources are focused on social, medical, and environmental factors related to infant deaths. The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 provides detailed information on the circumstances surrounding sudden infant deaths, including demographic data and potential risk factors such as substance abuse history and child maltreatment. However, it lacks specific variables for postconceptional age, maternal smoking status during pregnancy, preterm birth status, breastfeeding at discharge, geographic location, and various physiological measures relevant to experimental studies. The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 does not contain variables that can be used to assess biological outcomes such as microglia activation, cell death, glutamatergic transmission, or electrophysiological measures of the hypoglossal motor nucleus. The data sources in this system are primarily focused on sociological and legal aspects related to child fatalities and do not include any biological measurements.",
+  "prams_p8_arf": "The PRAMS Phase 8 Analytic Research File (ARF) provides detailed information on maternal health behaviors and pregnancy outcomes. It includes variables such as smoking during pregnancy, preterm birth indicators, breastfeeding status, and infant sex but lacks specific measures for SUID, postconceptional age, bed sharing, geographic location beyond state-level data, and other biological or experimental parameters related to mice or neuronal activity. PRAMS Phase 8 Analytic Research File contains data on health behaviors and experiences of women during pregnancy and after childbirth. It includes variables related to maternal health, prenatal care, infant health, and socioeconomic factors but does not contain any information relevant to the concepts of microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus.",
+  "prams_p8_std2": "The PRAMS Phase 8 Standard Section II codebook provides variables related to maternal health and pregnancy outcomes but lacks specific data on infant death, postconceptional age, bed sharing, infections during pregnancy, neurophysiological measures, or experimental conditions involving mice. The dataset is primarily focused on maternal behaviors and risk factors for adverse birth outcomes. This data source, PRAMS Phase 8 Standard Section II codebook, contains information on pregnancy weight gain and its units. It does not contain any variables related to biological outcomes such as microglia activation, cell death, glutamatergic transmission, or electrophysiological recordings from the hypoglossal motor nucleus.",
+  "prams_p7_arf": "The PRAMS Phase 7 Analytic Research File provides detailed information on maternal health behaviors and pregnancy outcomes, but lacks specific variables for SUID outcomes, postconceptional age, gestational age at birth, and other physiological measures relevant to the concepts listed. Variables such as infant sex (SEX), maternal smoking during pregnancy (MOMSMOKE), and breastfeeding status at discharge (BF5EVER_RAW) are available but may require additional context or proxy variables for accurate interpretation. PRAMS Phase 7 Analytic Research File contains data primarily focused on maternal health, prenatal care, and infant outcomes. It includes variables related to insurance coverage, pre-pregnancy health conditions, behaviors during pregnancy (e.g., smoking, alcohol consumption), and postpartum health status but does not include any information relevant to the concepts of microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus electrophysiological recordings."
+ }
+}

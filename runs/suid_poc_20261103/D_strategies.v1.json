@@ -1,0 +1,164 @@
+{
+  "strategies": [
+    {
+      "id": "S1",
+      "gap_id": "G1",
+      "research_question": "Does maternal prepregnancy obesity modify SUID incidence differently across postconceptional age (PCA) windows?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc_linkco15",
+          "name": "UCOD"
+        },
+        "definition": "Sudden Unexpected Infant Death (SUID)",
+        "subtypes": []
+      },
+      "exposures": [
+        {
+          "source_id": "cdc_linkco15",
+          "name": "BMI_R"
+        }
+      ],
+      "covariates": [
+        {
+          "source_id": "cdc_linkco15",
+          "name": "COMBGEST"
+        },
+        {
+          "source_id": "cdc_linkco15",
+          "name": "AGED"
+        }
+      ],
+      "interactions": [
+        [
+          {
+            "source_id": "cdc_linkco15",
+            "name": "BMI_R"
+          },
+          {
+            "source_id": "cdc_linkco15",
+            "name": "COMBGEST"
+          }
+        ]
+      ],
+      "stratification": [],
+      "offset": null,
+      "denominator_source": "cdc_linkco15",
+      "time_scale": {
+        "source_id": "cdc_linkco15",
+        "name": "COMBGEST"
+      },
+      "design": "population_incidence",
+      "model_class": "negative_binomial",
+      "rationale": "This study design will examine whether maternal prepregnancy obesity modifies SUID incidence differently across postconceptional age (PCA) windows. The negative binomial model is chosen to account for overdispersion in the count data of SUID cases, stratified by PCA windows as defined in the manuscript context. This approach does not establish causality or power but provides a framework to test the developmental timing hypothesis.",
+      "expected_direction": "The expected direction would be that maternal prepregnancy obesity increases SUID risk more significantly in certain PCA windows compared to others."
+    },
+    {
+      "id": "S2",
+      "gap_id": "G2",
+      "research_question": "Estimate the joint effect of maternal smoking and preterm birth on SUID incidence across PCA windows.",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc_linkco15",
+          "name": "UCOD"
+        },
+        "definition": "Sudden Unexpected Infant Death (SUID)",
+        "subtypes": []
+      },
+      "exposures": [
+        {
+          "source_id": "cdc_linkco15",
+          "name": "CIG_REC"
+        },
+        {
+          "source_id": "cdc_linkco15",
+          "name": "GESTREC3"
+        }
+      ],
+      "covariates": [],
+      "interactions": [
+        [
+          {
+            "source_id": "cdc_linkco15",
+            "name": "CIG_REC"
+          },
+          {
+            "source_id": "cdc_linkco15",
+            "name": "GESTREC3"
+          }
+        ]
+      ],
+      "stratification": [
+        {
+          "source_id": "cdc_linkco15",
+          "name": "AGED"
+        }
+      ],
+      "offset": null,
+      "denominator_source": "cdc_linkco15",
+      "time_scale": {
+        "source_id": "cdc_linkco15",
+        "name": "AGED"
+      },
+      "design": "population_incidence",
+      "model_class": "negative_binomial",
+      "rationale": "This study design and model class will estimate the joint effect of maternal smoking (CIG_REC) and preterm birth (GESTREC3) on SUID incidence across PCA windows. The stratification by AGED allows for analysis within each PCA window, while the interaction term captures how the risk associated with smoking differs between preterm and full-term infants.",
+      "expected_direction": "The model is expected to show a higher rate of SUID in infants born to mothers who smoked during pregnancy and those born prematurely. The interaction term should reveal whether the effect of maternal smoking on SUID incidence varies significantly between preterm and full-term infants within each PCA window."
+    },
+    {
+      "id": "S3",
+      "gap_id": "G3",
+      "research_question": "Does the rise-peak-decline pattern of SUID incidence by PCA differ across cause-of-death subtypes (SIDS R95, accidental suffocation and strangulation in bed W75, ill-defined R99)?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc_linkco15",
+          "name": "UCOD"
+        },
+        "definition": "Sudden unexpected infant death (SUID) cases with cause-of-death codes R95, W75, and R99.",
+        "subtypes": [
+          "R95",
+          "W75",
+          "R99"
+        ]
+      },
+      "exposures": [
+        {
+          "source_id": "cdc_linkco15",
+          "name": "AGED"
+        }
+      ],
+      "covariates": [
+        {
+          "source_id": "cdc_linkco15",
+          "name": "COMBGEST"
+        },
+        {
+          "source_id": "cdc_linkco15",
+          "name": "SEX"
+        }
+      ],
+      "interactions": [
+        [
+          {
+            "source_id": "cdc_linkco15",
+            "name": "UCOD"
+          },
+          {
+            "source_id": "cdc_linkco15",
+            "name": "AGED"
+          }
+        ]
+      ],
+      "stratification": [],
+      "offset": null,
+      "denominator_source": "cdc_linkco15",
+      "time_scale": {
+        "source_id": "cdc_linkco15",
+        "name": "AGED"
+      },
+      "design": "population_incidence",
+      "model_class": "negative_binomial",
+      "rationale": "This study design will assess the incidence of SUID subtypes (R95, W75, R99) by postconceptional age (PCA). The negative binomial model accounts for overdispersion in count data and allows us to examine whether the rise-peak-decline pattern differs across cause-of-death subtypes. This approach does not establish causality or power but addresses the knowledge gap regarding subtype-specific PCA trajectories.",
+      "expected_direction": "The expected direction is that if different cause-of-death codes follow distinct patterns, their pooled trajectory will differ from a single unified curve observed in previous studies."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with documented pre-pregnancy health checks increased from 2012 to 2015.",
+ "rationale": "This study can compare changes in proportions among cases over time but cannot estimate incidence or risk due to lack of denominator data. It focuses on trends within the case series and uses population reference for comparison at a group level.",
+ "prior_art": "The closest claim is regarding maternal smoking (C11) but does not address pre-pregnancy health checks. This question remains open as no prior work has specifically examined the correlation between changes in pre-pregnancy health checks and trends in SUID incidence.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C11"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2015,
+ "required_concepts": [
+  "pre-pregnancy health checks",
+  "SUID incidence trends"
+ ],
+ "variables": [
+  "ncfrp_v51:ISSprechronicdiseasebef",
+  "ncfrp_v51:INFisscare",
+  "prams_p7_arf:BPG_HLTH",
+  "prams_p7_arf:PRE_CKBP",
+  "prams_p7_arf:PRE_DEPR",
+  "prams_p7_arf:PRE_CKD",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot estimate incidence or risk due to lack of denominator data. It also cannot establish causation as it is an observational study comparing two distinct sources with different measurement times and purposes."
+}

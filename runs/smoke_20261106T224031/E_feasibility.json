@@ -1,0 +1,161 @@
+{
+  "reports": [
+    {
+      "strategy_id": "S1",
+      "resolutions": [
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "UCOD"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "UCOD",
+            "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+            "type": "unknown",
+            "levels": [
+              "R95 = SIDS",
+              "R99 = UNSPECIFIED",
+              "W75 = ACCIDENTAL SUFFOCATION"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: ICDF (not explicitly stated, inferred from documentation format). Type: categorical"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "CIG_REC"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "CIG_REC",
+            "label": "Cigarette smoking during pregnancy",
+            "type": "unknown",
+            "levels": [
+              ".B=DK/BLANK",
+              "1=NO",
+              "2=YES"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "format=NYF"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "AGED"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "AGED",
+            "label": "Age at death in days NUMF 0-364=DAYS",
+            "type": "unknown",
+            "levels": [
+              "0-364 = DAYS"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: NUMF (not explicitly stated, inferred from documentation format). Type: continuous"
+          },
+          "note": ""
+        }
+      ],
+      "blockers": [],
+      "caveats": [
+        "The variable `UCOD` is documented as having levels 'R95=SIDS', 'R99=UNSPECIFIED', and 'W75=ACCIDENTAL SUFFOCATION'. However, the research strategy specifies that only ICD-10 codes R95 (SIDS), R99 (unspecified), and W75 (accidental suffocation) are used to define the outcome. The documentation does not explicitly confirm if these are the only categories included or if there could be other unspecified causes of death coded differently.",
+        "The variable `CIG_REC` is documented with levels '.B=DK/BLANK', '1=YES', and '2=NO'. This suggests that individuals who did not report smoking status (e.g., due to missing data) are categorized as 'DK/BLANK' which could introduce bias if these cases are numerous.",
+        "The variable `AGED` is documented as a continuous variable representing age at death in days. However, the research strategy does not specify how postconceptional age will be calculated or derived from pregnancy start date and birth date, which may require additional data linkage or assumptions."
+      ],
+      "cross_source_notes": [],
+      "not_assessed": [
+        "statistical power",
+        "causal validity / confounding adequacy",
+        "actual missingness rates (documentation only; no row-level data read)"
+      ]
+    },
+    {
+      "strategy_id": "S2",
+      "resolutions": [
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "UCOD"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "UCOD",
+            "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+            "type": "unknown",
+            "levels": [
+              "R95 = SIDS",
+              "R99 = UNSPECIFIED",
+              "W75 = ACCIDENTAL SUFFOCATION"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: ICDF (not explicitly stated, inferred from documentation format). Type: categorical"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "SEX"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "SEX",
+            "label": "Sex of infant",
+            "type": "unknown",
+            "levels": [
+              "1=MALE",
+              "2=FEMALE"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "format=SEXF"
+          },
+          "note": ""
+        },
+        {
+          "ref": {
+            "source_id": "cdc",
+            "name": "AGED"
+          },
+          "resolved": true,
+          "variable": {
+            "name": "AGED",
+            "label": "Age at death in days NUMF 0-364=DAYS",
+            "type": "unknown",
+            "levels": [
+              "0-364 = DAYS"
+            ],
+            "years": [],
+            "page": 1,
+            "notes": "Format: NUMF (not explicitly stated, inferred from documentation format). Type: continuous"
+          },
+          "note": ""
+        }
+      ],
+      "blockers": [
+        "The strategy mentions that sleep environment data is needed but not available in the dataset. This makes it impossible to assess how the sleep environment modifies the risk of SUID for male infants as stated."
+      ],
+      "caveats": [
+        "The variable `UCOD` is defined in terms of ICD-10 codes (R95, R99, W75) but does not specify if these are the only possible values or if other causes of death could be included. This may lead to potential misclassification if deaths classified under other ICD-10 codes are present.",
+        "The variable `SEX` is documented as a categorical variable with levels 1 (MALE) and 2 (FEMALE). However, the strategy focuses on male infants only, which means that female data will be excluded. This could introduce bias if there are differences in how SUID outcomes are recorded or classified for males versus females.",
+        "The variable `AGED` is documented as age at death in days but does not specify whether it captures all relevant time points from birth to the outcome of interest (44 weeks postconceptional age). If data collection starts after 44 weeks, this could introduce selection bias or missingness issues."
+      ],
+      "cross_source_notes": [],
+      "not_assessed": [
+        "statistical power",
+        "causal validity / confounding adequacy",
+        "actual missingness rates (documentation only; no row-level data read)"
+      ]
+    }
+  ]
+}

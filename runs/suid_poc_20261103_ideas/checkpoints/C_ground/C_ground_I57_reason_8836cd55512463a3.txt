@@ -1,0 +1,91 @@
+### Design
+
+**Design:** Trends within cases. Compare proportions among the cases across periods.
+
+**Restated Question:**
+How does the trend of SUID cases with previous child deaths compare over time to trends in infant care arrangements?
+
+**Comparison Periods:**
+- Case series (ncfrp_v51): 2008-2019
+- Population reference (prams_p7_arf): 2012-2015
+
+### Sources by Role
+
+**Case Series:** ncfrp_v51
+- **Role:** Records SUID cases and their history of previous child deaths.
+- **Coverage:** SUID cases reviewed by fatality review teams in participating states from 2008 to 2019.
+
+**Population Reference:** prams_p7_arf
+- **Role:** Provides survey data on infant care arrangements among live births.
+- **Coverage:** Weighted survey of mothers a few months after live births, sampled from birth certificates in participating states for the years 2012 through 2015. 
+
+**Denominator Source:**
+- Not explicitly needed since this study is comparing trends within case series (ncfrp_v51) and population reference (prams_p7_arf).
+
+### Period
+
+**Years Needed:**
+- **Case Series:** ncfrp_v51: 2008-2019
+- **Population Reference:** prams_p7_arf: 2012-2015
+
+The years held now are sufficient for both the case series and population reference.
+
+### Variables
+
+**Concepts to Measure:**
+1. **Previous Child Deaths (Case Series):**
+   - ncfrp_v51: 
+     - SUPdthneglct, GIV1dthneglct, BIO1dthneglct, GIV2dthneglct
+     - SUPdthabuse, BIO1dthabuse, BIO2dthneglct
+     - SUPdthsids, BIO1dthsids, GIV1dthsids
+     - RES1dthneglct, SUPdthother, GIV2priordeath, GIV1dthsuicide, GIV1dthaccid, GIV1dthundeter, GIV1dthunk
+
+   **Notes:** These variables capture different types of prior child deaths (e.g., neglect, abuse, SIDS). Each variable is coded as "yes" or "no."
+
+2. **Infant Care Arrangements (Population Reference):**
+   - prams_p7_arf:
+     - INFWMOM5: Infant living with mom (FORCED SKIP)
+     - VST_CARE_RAW: Health worker visit to help care for self/baby
+     - INF_ICU: Infant ICU -- at birth
+
+**Coding of Missing Answers:**
+- **Case Series:** 
+  - Unknown responses are documented per item.
+  
+- **Population Reference:** 
+  - Don't know or skipped items are coded separately (e.g., .B = don’t know or blank, .S = skipped).
+
+### Biases
+
+#### Selection Bias:
+- **Case Series (ncfrp_v51):** Cases are reviewed by fatality review teams in participating states. Participation varies over time, and the number of cases reflects changes in participation rather than true incidence.
+  
+- **Population Reference (prams_p7_arf):** Mothers surveyed after live births represent a sample from birth certificates; these surveys do not include infant deaths.
+
+#### Information Bias:
+- **Case Series:** Reporting flags indicate missing or unreported information. The data on previous child deaths may be incomplete due to reporting practices.
+  
+- **Population Reference:** Survey items are reported retrospectively, and missing values (don't know, skipped) need careful handling when calculating prevalence.
+
+#### Confounding:
+- Potential confounders include maternal smoking, prenatal care visits, socio-economic status, urban/rural setting, etc., which could affect both previous child deaths and infant care arrangements. These variables should be considered in analyses to mitigate confounding effects.
+
+### What the Design Cannot Establish
+
+1. **Incidence:** The study design does not provide denominators to estimate incidence or rates.
+2. **Causation:** Group-level comparisons cannot establish causality; only associations can be inferred.
+3. **Fine-Grained Mechanisms:** Detailed mechanisms underlying SUID cannot be explored through these data.
+
+### Prior Art
+
+**Closest Related Claims:**
+- The manuscript claims (e.g., C1, C8, C24) discuss trends and associations in SUID incidence but do not address the specific comparison between previous child deaths and infant care arrangements.
+  
+**Why Open:**
+- No prior study has explored the correlation between SUID cases with a history of previous child deaths and infant care arrangements. This gap remains unaddressed.
+
+### Verdict
+
+These sources can answer a version of the question regarding trends in proportions of SUID cases with previous child deaths compared to trends in infant care arrangements within the specified periods (2008-2019 for case series; 2012-2015 for population reference). The study design supports group-level comparisons but cannot estimate incidence or establish causation.
+
+**Conclusion:** Yes, these sources can answer a version of the question.

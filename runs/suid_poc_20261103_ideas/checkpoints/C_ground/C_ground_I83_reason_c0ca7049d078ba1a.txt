@@ -1,0 +1,67 @@
+### Design and Question Restatement
+
+**Design:** Measurement comparison. Compare how the same concept is recorded in two or more sources (wording, timing, who reports it, how missing answers are coded) to identify biases that might affect a comparison between them.
+
+**Question:** How do maternal health problems during pregnancy differ in their recording methods and prevalence between the National Fatality Review Case Reporting System (NCFRP) case series and PRAMS population reference datasets?
+
+### Sources by Role
+
+- **Case Series: ncfrp_v51**
+  - This source records SUID cases reviewed by fatality review teams, including maternal health conditions.
+  
+- **Population Reference: prams_p8_arf, prams_p7_arf**
+  - These sources provide weighted survey data from mothers who gave birth, covering maternal health during pregnancy.
+
+### Period
+
+**Years Needed:**
+- NCFRP (ncfrp_v51): Cases reviewed in the years between 2008 and 2019.
+- PRAMS Phase 7 (prams_p7_arf): Survey data from mothers of live births in 2012 to 2015.
+- PRAMS Phase 8 (prams_p8_arf): Survey data from mothers of live births in 2016 to 2021.
+
+### Variables
+
+**Maternal Health Problems:**
+- **NCFRP (ncfrp_v51)**
+  - `ISSprechronicdiseasebef`: Chronic disease control Education - before pregnancy
+  - `INF3prevmedical`: Did mother have medical complications in previous pregnancies
+  - `INF4heducrisk`: If yes, health education - Risk factors identified by prenatal history
+  - `INFissmultprov`: If yes, prenatal issues - Multiple providers, not coordinated
+  - `INFexpipv`: During pregnancy did mother experience intimate partner violence
+
+- **PRAMS (prams_p8_arf)**
+  - `PG_GDB8`: Health prob during preg -- Diabetes [.B=DK/BLANK; 1=NO; 2=YES]
+  - `RF_PHYPE`: Prepregnancy hypertension Note: This variable is only available starting with 2020 data
+  - `RF_PDIAB`: Prepregnancy diabetes Note: This variable is only available starting with 2020 data
+  - `MM_HBP`: BC: hypertension? Note: Coded as "yes" if either prepregnancy or gestational hypertension coded “Y”
+  - `PG8_UTI`: Health prob during preg -- Kidney/bladder infection [.B=DK/BLANK; 1=NO; 2=YES]
+  
+- **PRAMS (prams_p7_arf)**
+  - `MM_HBP`: BC: hypertension? Note: Coded as "yes" if either prepregnancy or gestational hypertension coded “Y”
+  - `MM_FEVER`: BC: mom had fever? Note: This variable is from the "Characteristics of Labor and Delivery (45)" section
+
+### Biases
+- **Selection Bias:** PRAMS samples mothers of live births who are not necessarily representative of SUID cases.
+- **Information Bias:** Differences in how maternal health problems are coded or reported between NCFRP and PRAMS could introduce inconsistencies.
+  - NCFRP records data from fatality review teams, which may differ in detail and completeness compared to self-reported data by mothers in PRAMS surveys.
+- **Confounding Bias:** Other factors such as socio-economic status, urban/rural differences, and geographic variation not accounted for in the comparison.
+
+### What the Design Cannot Establish
+The design can only establish how maternal health problems are recorded differently between NCFRP case series and PRAMS population reference datasets. It cannot estimate incidence or risk of SUID based on these disparities because it lacks a denominator source to calculate rates or risks.
+
+### Prior Art
+- **Manuscript Claims:**
+  - C13: Post-hypoxic recovery of respiration is gender-dependent.
+  - C20: Inner ear dysfunction suppresses the movement response to hypoxia and hypercarbia in mice, potentially playing a role in SIDS.
+  
+These claims address physiological aspects but do not compare how maternal health conditions are recorded differently between case series and population references.
+
+### Verdict
+**Can these sources answer a version of the question?**
+
+Yes, these data can be used to conduct a measurement comparison study on how maternal health problems during pregnancy are recorded in NCFRP (case series) versus PRAMS Phase 7 & 8 (population reference). This would help identify potential biases and inconsistencies that could affect risk factor analysis for SUID. However, the design cannot establish incidence or risk due to lack of a denominator source.
+
+### Recommendations
+- **Expand on Variables:** Include more variables in both NCFRP and PRAMS datasets to cover other maternal health conditions.
+- **Enhance Reporting Details:** Ensure detailed documentation of how missing data is handled in each dataset.
+- **Consider Additional Sources:** If possible, incorporate additional sources that provide a denominator for SUID cases or live births to estimate incidence.

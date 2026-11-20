@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers who experienced substance abuse during pregnancy is higher among SUID cases compared to the weighted prevalence in a representative sample of live births.",
+ "rationale": "This design compares the proportion of substance abuse among mothers with SUID cases (from ncfrp_v51) against the weighted prevalence from PRAMS surveys (prams_p8_arf and prams_p7_arf).",
+ "prior_art": "SUID_manuscript_v9_clean.C10 discusses maternal smoking as an associated factor but does not address substance abuse. The question remains open because no prior work has specifically examined the association between substance abuse during pregnancy and SUID incidence.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2015,
+ "period_end": 2015,
+ "required_concepts": [
+  "substance abuse during pregnancy",
+  "SUID incidence"
+ ],
+ "variables": [
+  "ncfrp_v51:INFuseddrug",
+  "prams_p7_arf:MOMCIG",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or account for postnatal exposures that may influence risk."
+}

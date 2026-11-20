@@ -1,0 +1,95 @@
+{
+  "strategies": [
+    {
+      "id": "S1",
+      "gap_id": "G1",
+      "research_question": "Does the effect of prenatal smoking on the timing of sudden unexpected infant death (SUID) risk differ based on maternal age?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc",
+          "name": "UCOD"
+        },
+        "definition": "Underlying cause of death as Sudden Unexpected Infant Death (ICD-10 codes R95, R99, W75)"
+      },
+      "exposures": [
+        {
+          "source_id": "cdc",
+          "name": "CIG_REC"
+        }
+      ],
+      "covariates": [],
+      "interactions": [
+        [
+          {
+            "source_id": "cdc",
+            "name": "CIG_REC"
+          },
+          {
+            "source_id": "cdc",
+            "name": "MAGER9"
+          }
+        ]
+      ],
+      "stratification": [],
+      "offset": null,
+      "time_scale": {
+        "source_id": "cdc",
+        "name": "AGED"
+      },
+      "design": "cohort",
+      "model_class": "cox_proportional_hazards",
+      "rationale": "The study design is a cohort because it follows individuals forward in time from pregnancy to the occurrence of SUID. The model class chosen is cox proportional hazards, which allows for the analysis of time-to-event data and can incorporate interaction terms to assess effect modification by maternal age.",
+      "expected_direction": "The strategy aims to determine if the timing of SUID risk due to prenatal smoking differs across maternal age groups. It does not establish causality or power for detecting effect modification by maternal age, which would require additional analyses and sample size calculations."
+    },
+    {
+      "id": "S2",
+      "gap_id": "G2",
+      "research_question": "Does the interaction between sex of the infant and gestational age at birth on sudden unexpected infant death risk vary based on prenatal smoking status?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc",
+          "name": "UCOD"
+        },
+        "definition": "Sudden Unexpected Infant Death (SUID) as defined by underlying cause of death codes."
+      },
+      "exposures": [
+        {
+          "source_id": "cdc",
+          "name": "SEX"
+        },
+        {
+          "source_id": "cdc",
+          "name": "COMBGEST"
+        },
+        {
+          "source_id": "cdc",
+          "name": "CIG_REC"
+        }
+      ],
+      "covariates": [],
+      "interactions": [
+        [
+          {
+            "source_id": "cdc",
+            "name": "SEX"
+          },
+          {
+            "source_id": "cdc",
+            "name": "COMBGEST"
+          },
+          {
+            "source_id": "cdc",
+            "name": "CIG_REC"
+          }
+        ]
+      ],
+      "stratification": [],
+      "offset": null,
+      "time_scale": null,
+      "design": "cohort",
+      "model_class": "logistic_regression",
+      "rationale": "A cohort study design is appropriate to follow infants from birth through the outcome of interest (SUID). Logistic regression allows for the estimation of odds ratios and interaction terms between sex, gestational age at birth, and prenatal smoking status. This model class can handle binary outcomes and interactions.",
+      "expected_direction": "The interaction term between sex, gestational age at birth, and prenatal smoking status is expected to show a significant effect if the risk patterns differ based on these factors. For example, male infants may have an increased risk of SUID after 44 weeks postconceptional age only in the absence of prenatal smoking, while this risk might be present earlier or modified by smoking status."
+    }
+  ]
+}

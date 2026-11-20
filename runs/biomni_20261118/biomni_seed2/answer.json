@@ -1,0 +1,77 @@
+{
+    "gaps": [
+        {
+            "rank": 1,
+            "statement": "Does postconceptional age at which infants start bed-sharing differ between SUID cases and non-SUID live births?",
+            "design": "case-control",
+            "rationale": "Understanding if there are specific developmental stages where starting to share a bed with parents increases risk for SUID could guide prevention efforts.",
+            "prior_art": "Manuscripts discuss bed-sharing but not its timing relative to postconceptional age. Literature abstracts also lack this focus.",
+            "case_sources": [
+                "ncfrp_v51"
+            ],
+            "reference_sources": [
+                "prams_p8_arf",
+                "prams_p7_arf"
+            ],
+            "denominator_sources": [
+                "cdc_natl15"
+            ],
+            "period_start": 2016,
+            "period_end": 2021,
+            "variables": [
+                "ncfrp_v51:BEDSHARING",
+                "prams_p8_arf:BDSHPG",
+                "prams_p7_arf:BDSHPG",
+                "cdc_natl15:LIVEBIRTH"
+            ],
+            "cannot_establish": "It cannot establish if bed-sharing directly causes SUID or is a marker of other risk factors."
+        },
+        {
+            "rank": 2,
+            "statement": "Is there an association between maternal smoking during pregnancy and incidence rates of SUID at different postconceptional age stages?",
+            "design": "cohort study",
+            "rationale": "Identifying if smoking poses varying risks based on developmental milestones can inform targeted interventions.",
+            "prior_art": "While the manuscript examines overall effects, it does not stratify by postconceptional age. Literature abstracts also do not focus on this detail.",
+            "case_sources": [
+                "cdc_linkco15"
+            ],
+            "reference_sources": [
+                "prams_p8_arf",
+                "prams_p7_arf"
+            ],
+            "denominator_sources": [
+                "cdc_natl15"
+            ],
+            "period_start": 2016,
+            "period_end": 2021,
+            "variables": [
+                "cdc_linkco15:MATSMKNG",
+                "prams_p8_arf:MATSMKNG",
+                "prams_p7_arf:MATSMKNG",
+                "cdc_natl15:LIVEBIRTH"
+            ],
+            "cannot_establish": "It cannot determine causation but can identify associations."
+        },
+        {
+            "rank": 3,
+            "statement": "How does preterm birth influence the incidence rate of SUID across different postconceptional age intervals?",
+            "design": "cohort study",
+            "rationale": "Determining if prematurity affects risk differently depending on developmental timing can improve targeted prevention strategies.",
+            "prior_art": "The manuscript touches upon this but does not provide detailed analysis by specific postconceptional ages. Literature abstracts also lack focus here.",
+            "case_sources": [
+                "cdc_linkco15"
+            ],
+            "reference_sources": [],
+            "denominator_sources": [
+                "cdc_natl15"
+            ],
+            "period_start": 2016,
+            "period_end": 2021,
+            "variables": [
+                "cdc_linkco15:GESTWK",
+                "cdc_natl15:LIVEBIRTH"
+            ],
+            "cannot_establish": "It cannot establish causation without further experimental designs."
+        }
+    ]
+}

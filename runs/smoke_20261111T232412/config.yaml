@@ -1,0 +1,26 @@
+manuscripts:
+- tests/fixtures/mini_manuscript.md
+codebooks:
+- id: cdc
+  path: tests/fixtures/mini_codebook.txt
+  title: Mini codebook (fixture)
+  llm_extract: true
+  population: null
+backend: ollama
+model: qwen2.5:14b
+allow_cloud: false
+seed: 0
+temperature: 0.0
+num_ctx: 8192
+chunk_tokens: 4000
+max_output_tokens: 8192
+max_retries: 3
+n_gaps: 2
+b_max_vars_per_call: 600
+b_max_mappings_per_call: 50
+b_crosscheck: true
+embed_model: mxbai-embed-large
+b_check_top_k: 10
+b_check_miss_threshold: 0.65
+out_dir: runs
+cache_dir: .cache/documents

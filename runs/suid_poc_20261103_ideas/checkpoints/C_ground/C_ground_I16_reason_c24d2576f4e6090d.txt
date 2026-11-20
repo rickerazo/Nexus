@@ -1,0 +1,59 @@
+### Design
+
+**Question Restated:** Is the prevalence of hospital overnight stays among infants associated with a higher risk of Sudden Unexpected Infant Death (SUID) compared to those who did not require an overnight stay?
+
+This study will estimate SUID rates by exposure group, comparing infants requiring an overnight hospital stay to those without such a requirement. The design uses a case series for the numerator and population reference data for exposure prevalence, while employing a denominator source to calculate incidence.
+
+### Sources by Role
+
+- **Case Series (Numerator):** ncfrp_v51 - This dataset provides detailed information on child deaths reviewed by fatality review teams, including hospitalization details.
+- **Population Reference:** prams_p8_arf - Contains data from mothers surveyed a few months after live births, suitable for estimating the prevalence of hospital overnight stays.
+- **Denominator Source:** cdc_linkco15 - Provides a complete count of US live births in 2015 linked to infant deaths in the first year.
+
+### Period
+
+**Period:** The study period is 2015, as it is the most recent common coverage for all three sources used (ncfrp_v51, prams_p8_arf, and cdc_linkco15).
+
+### Variables
+
+- **Outcome (SUID):**
+  - ncfrp_v51:INF4hosprtn: Infant return to hospital overnight after delivery
+  - The numerator is the number of SUID cases recorded in ncfrp_v51 that had an infant hospital stay.
+
+- **Exposure (Hospital Overnight Stay):**
+  - prams_p8_arf:LTH_HOSP: Hosp baby stay -- length of time
+  - Prevalence estimate from prams_p8_arf for infants who required overnight stays.
+  
+### Biases
+
+**Selection Bias:** 
+- ncfrp_v51 includes only reviewed child deaths and is not a random sample of all SUID cases, while prams_p8_arf surveys are weighted to represent live births in participating states.
+
+**Information Bias:**
+- The variable measuring hospital overnight stays may be documented differently between the case series (ncfrp_v51) and population reference (prams_p8_arf), leading to potential misclassification of exposure status.
+  
+**Confounding:**
+- Confounders such as maternal smoking, previous preterm births, NICU admissions, etc., need adjustment. For example:
+  - prams_p8_arf:P_PRTERM: Previous preterm births
+  - ncfrp_v51:INF3nicu: Infant have a NICU stay > 1 day
+
+### What the Design Cannot Establish
+
+- The design cannot establish causation between hospital overnight stays and SUID.
+- It also cannot control for all potential confounders, particularly those not measured in either source.
+
+### Prior Art
+
+The manuscript claims suggest that several factors are associated with SUID incidence but do not directly address the role of hospital overnight stays:
+- bedsharing_ms_v7.C3 - Bed sharing is more strongly associated with early developmental window.
+- suid_literature_abstracts.C10 - Maternal smoking significantly increases risk, but does not mention hospital stays.
+
+### Verdict
+
+**Verdict:** The data can be used to estimate the association between hospital overnight stays and SUID incidence for infants born in 2015. However, it cannot establish causation or control for all potential confounders due to differences in measurement methods and population coverage between sources. To improve this study, a more detailed comparison of hospitalization variables is needed, along with additional adjustment for confounding factors.
+
+**Missing Data Element:** 
+- Detailed linkage information on NICU stays and other relevant exposures that are consistent across the case series and reference populations would help control for confounders better.
+
+**Design Element Missing:**
+- The design lacks a direct link between prams_p8_arf and ncfrp_v51 to ensure comparability of hospitalization variables.

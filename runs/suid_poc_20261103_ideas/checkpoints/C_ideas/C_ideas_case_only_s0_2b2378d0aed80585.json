@@ -1,0 +1,59 @@
+{
+ "ideas": [
+  {
+   "question": "Does inner ear dysfunction in SUID cases differ by postconceptional age?",
+   "comparison": "SUID cases by postconceptional age (PCA)",
+   "why_open": "Previous studies have linked inner ear dysfunction to a heightened risk of sudden infant death syndrome but have not examined how this association varies with developmental stage.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "inner ear dysfunction, postconceptional age (PCA)"
+  },
+  {
+   "question": "Is there an interaction between maternal stressors and socioeconomic status in SUID cases?",
+   "comparison": "SUID cases by maternal stressors and socioeconomic status",
+   "why_open": "Maternal stress can contribute to adverse health outcomes for infants. Exploring how these risks intersect with social determinants of health is critical for targeting interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "maternal stressors, socioeconomic status (proxy)"
+  },
+  {
+   "question": "How does the presence of multiple risk factors impact SUID incidence rates across developmental stages?",
+   "comparison": "SUID cases with different combinations of multiple risk factors by postconceptional age",
+   "why_open": "The cumulative effect of risk factors on infant mortality is not well understood, particularly in relation to how this changes over time.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "multiple risk factors, postconceptional age (PCA)"
+  },
+  {
+   "question": "Do SUID cases with a history of hospitalization show different patterns in medical care before death?",
+   "comparison": "SUID cases by history of hospitalization and type of medical care received",
+   "why_open": "Assessing the quality and continuity of healthcare prior to sudden deaths could reveal critical gaps in preventive measures.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "hospitalization history, medical care received"
+  },
+  {
+   "question": "How does the age at which an infant's room is shared with parents correlate with SUID incidence?",
+   "comparison": "SUID cases by PCA and sleeping arrangements",
+   "why_open": "While bed sharing has been extensively studied in relation to SIDS/SUID risk, little is known about how sleep environments evolve and change over time.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "sleeping arrangements (PCA), postconceptional age (PCA)"
+  }
+ ]
+}

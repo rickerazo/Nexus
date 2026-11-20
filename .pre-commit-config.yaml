@@ -2,9 +2,12 @@ repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.6.9
     hooks:
+      # Archived run scripts under runs/ and the legacy prototype stay as they were run.
       - id: ruff
         args: [--fix]
+        exclude: ^(data|runs|legacy)/
       - id: ruff-format
+        exclude: ^(data|runs|legacy)/
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
     hooks:

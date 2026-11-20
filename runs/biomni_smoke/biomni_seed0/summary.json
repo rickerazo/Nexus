@@ -1,0 +1,9 @@
+{
+ "seed": 0,
+ "model": "qwen2.5:14b",
+ "num_ctx": 32768,
+ "status": "budget exhausted",
+ "steps": 1,
+ "minutes": 10.9,
+ "answer_file": false
+}

@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of infants who died from SUID and were sharing a sleeping surface with another person is higher compared to those who died from non-SUID causes within the case series.",
+ "rationale": "This study will describe how sleep environments vary among infants who died from Sudden Unexpected Infant Death (SUID) compared to those in non-SUID deaths, focusing on shared sleeping surfaces within the case series. The design is a case-only analysis using NCFRP_V51 data.",
+ "prior_art": "The manuscript claims C8 and C11 provide context on bed sharing as a risk factor for SUID but do not directly address the comparison between SUID and non-SUID deaths within the case series, leaving this specific question open.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C11",
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "sleep environment",
+  "cause of death"
+ ],
+ "variables": [
+  "ncfrp_v51:CIRwadultobs",
+  "ncfrp_v51:CIRroomshare",
+  "ncfrp_v51:INF4inftopsuid",
+  "ncfrp_v51:CIRdeathsleepenv"
+ ],
+ "cannot_establish": "This design cannot establish causation or incidence rates due to the lack of a denominator source."
+}

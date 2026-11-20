@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "CIR2diagunk",
+   "name": "Unknown Diagnosis",
+   "summary": "Indicates if the child's diagnosis is unknown."
+  },
+  {
+   "start": "CIR2dthlovedone",
+   "name": "Peer/Family Death History",
+   "summary": "Records whether a peer, friend, or family member died and related details such as relationship type, suicide status, and time since death."
+  },
+  {
+   "start": "CIR2eating",
+   "name": "Eating Disorders",
+   "summary": "Indicates if the child had an eating disorder diagnosis."
+  },
+  {
+   "start": "CIR2emotneglct",
+   "name": "Emotional Neglect",
+   "summary": "Details emotional neglect and specifies any additional information about it."
+  },
+  {
+   "start": "CIR2failprofood",
+   "name": "Failure to Provide Necessities",
+   "summary": "Records instances of failure to provide food, shelter, other necessities, and specifies other types of failures."
+  },
+  {
+   "start": "CIR2failtrtmnt",
+   "name": "Treatment Seeking Issues",
+   "summary": "Indicates if the child's caregivers failed to seek or follow medical treatment."
+  },
+  {
+   "start": "CIR2fearful",
+   "name": "Fearfulness and Withdrawal",
+   "summary": "Records whether the child exhibited fearfulness or withdrawal behavior."
+  },
+  {
+   "start": "CIR2hazardtype",
+   "name": "Exposure to Hazards",
+   "summary": "Details types of hazards the child was exposed to, including specific hazard types and descriptions."
+  }
+ ]
+}

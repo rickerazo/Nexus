@@ -1,0 +1,61 @@
+### Design
+
+**Question:**
+Does hospital overnight stay impact the risk of sudden unexpected infant death (SUID) in infants with different gestational ages?
+
+**Design:**
+The study will compare SUID cases based on whether the infant spent time in the hospital and their gestational age at birth. Since this is a case-only analysis, it will not estimate incidence or rates but rather assess differences among subgroups of cases.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System) - This source records SUID cases and includes data on hospital stays and gestational age at birth.
+  
+- **Denominator Source:** Not needed in this case-only analysis. However, a denominator would be required if incidence or risk were to be estimated.
+
+### Period
+
+**Period:**
+2008-2019 (The manuscript using ncfrp_v51 covers 2008-2019.)
+
+### Variables
+
+**Hospital Overnight Stay Status:**
+- **ncfrp_v51:** INF4hosprtn - Infant return to hospital overnight after delivery
+- **cdc_linkco15 and cdc_natl15:** Not available (not case series data)
+  
+**Gestational Age at Birth:**
+- **ncfrp_v51:** GESTREC3 or COMBGEST (combined gestation detail in weeks) - This variable measures the gestational age at birth.
+- **cdc_linkco15 and cdc_natl15:** Not needed for this case-only design.
+
+### Biases
+
+**Selection Bias:**
+- The cases are selected from participating fatality review teams, which may not be representative of all SUID deaths in the US. Different states have varying levels of participation, leading to potential regional biases.
+  
+**Information Bias:**
+- Hospital overnight stay status and gestational age at birth may vary in how they are recorded across jurisdictions due to differences in data collection practices. Missing or unknown values could lead to measurement error.
+
+**Confounding:**
+- Other factors that influence SUID risk (e.g., maternal smoking, prematurity) need to be considered. These variables are not available in the case series and thus cannot be controlled for directly.
+
+### What the Design Cannot Establish
+
+This design can compare proportions of hospital overnight stays among different gestational age groups within SUID cases but cannot establish causation or risk estimates due to the lack of a denominator source. It also does not account for potential confounders that may influence both hospital stay status and SUID incidence.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C1 [hypothesis]:** This claim focuses on male excess risk from birth vs specific developmental stages.
+  
+- **bedsharing_ms_v7.C3-C6:** These claims analyze the association between SUID incidence and bed sharing, maternal smoking, and prematurity across different developmental windows but do not address hospital stays or gestational age at birth.
+
+### Verdict
+
+**Verdict:**
+The proposed data can be used to conduct a case-only analysis comparing hospital overnight stay status among infants with different gestational ages. However, it cannot establish risk estimates or causation due to the absence of a denominator source and uncontrolled confounding factors. Additional variables from other sources (e.g., PRAMS) would be needed to address these limitations.
+
+### Data Element/Missing Design Element
+
+**Missing Elements:**
+- A denominator source for estimating incidence.
+- Variables from population reference data to control for confounders like maternal smoking, prematurity, and hospitalization status among live births.

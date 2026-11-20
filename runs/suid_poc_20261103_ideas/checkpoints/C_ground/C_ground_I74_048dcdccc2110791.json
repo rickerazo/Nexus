@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of cases with issues related to prenatal care coordination differs between NCFRP_v51 and PRAMS_P7_ARF.",
+ "rationale": "This study compares how specific prenatal care issues are recorded in NCFRP_v51 (case series) versus broader health check-ups tracked by PRAMS_P7_ARF (population reference).",
+ "prior_art": "None in the inputs. The closest claims highlight data quality and ascertainment issues but do not address differences in recording methods between datasets.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2015,
+ "required_concepts": [
+  "prenatal care issues",
+  "pre-pregnancy health checks",
+  "dental visits during pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:INFissmultprov",
+  "prams_p7_arf:PNC_VST",
+  "prams_p7_arf:PRE_DDS",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot establish causality or incidence rates, as it only compares recording methods among cases and does not include a denominator source."
+}

@@ -1,0 +1,59 @@
+### Design
+
+**Question Restated:** Does the risk profile of Sudden Unexpected Infant Death (SUID) cases differ from other neonatal deaths in relation to pregnancy health indicators such as weight gain and hospital stay length within the same case series?
+
+#### Sources by Role:
+- **Case Series:** ncfrp_v51
+  - Reason: It provides detailed information on child deaths, including SUID cases.
+  
+- **Population Reference (Not Used Here):** prams_p8_arf was proposed but is not suitable for this design as it does not include neonatal death records.
+
+#### Period:
+- The common period covered by both ncfrp_v51 and cdc_natl15 must be considered. Given the periods mentioned, we can use 2014-2019 from ncfrp_v51 and 2015 for cdc_linkco15. However, since prams_p8_arf is not suitable as a denominator or reference source, the period will focus on the data available in ncfrp_v51.
+
+### Variables
+
+**Pregnancy Weight Gain:**
+- **ncfrp_v51:** No direct variable for pregnancy weight gain.
+- **prams_p8_arf:** MOMLBS (Maternal weight -- before pregnancy), PGWTGN8 (Pregnancy weight gain), and PGWTGNU8 (Unit of preg weight gain).
+
+**Hospital Stay Length:**
+- **ncfrp_v51:** INF4infhospdays (Total number of days infant hospitalized).
+- **prams_p8_arf:** LTH_HOSP (Hosp baby stay -- length of time).
+
+### Biases
+
+#### Selection Bias:
+- The ncfrp_v51 captures deaths reviewed by participating fatality review teams, which does not represent all neonatal deaths in the US. Participation is ramping up over time and varies across states.
+- No denominator source is available to accurately estimate incidence or risk among neonatal deaths.
+
+#### Information Bias:
+- Variables like pregnancy weight gain are more likely to be reported accurately in birth records (cdc_natl15) than death reviews (ncfrp_v51).
+- Hospital stay lengths may differ in how they are recorded and interpreted between the two sources, with ncfrp_v51 focusing on the context of a child's death rather than routine hospital stays.
+
+#### Confounding:
+- Variables such as maternal smoking, socioeconomic status, urban/rural differences, and other prenatal health factors not directly measured or consistently reported across these datasets may confound the comparison between SUID cases and other neonatal deaths.
+  
+### What the Design Cannot Establish
+- This design cannot establish incidence rates due to lack of a denominator source.
+- It does not allow for causal inference as it is an observational study.
+
+### Prior Art
+
+The closest claim from the manuscripts is:
+- **suid_literature_abstracts.C10 [finding]:** Maternal obesity is a risk factor for Sudden Unexpected Infant Death (SUID), with an increased risk associated with higher maternal BMI.
+  - This claim does not address pregnancy weight gain specifically or compare it to other neonatal deaths.
+
+### Verdict
+
+These data cannot fully answer the research question as originally proposed due to several limitations:
+
+1. **Missing Denominator Source:** The ncfrp_v51 provides only case series information, lacking a denominator source for neonatal deaths.
+2. **Inconsistent Variables Across Sources:** While pregnancy weight gain and hospital stay length are measured differently in death reviews versus birth records, there is no clear way to harmonize these variables across different datasets.
+3. **Selection Bias from ncfrp_v51:** The sample of reviewed cases may not be representative of all neonatal deaths.
+
+To proceed with a meaningful analysis:
+- A denominator source for neonatal deaths would be necessary to estimate incidence and establish risk profiles accurately.
+- Additional variables that measure pregnancy weight gain and hospital stay length consistently across different datasets are needed.
+
+Thus, the proposed data sources do not meet the requirements to fully answer the research question as stated. The design needs further refinement or additional data elements to address these gaps effectively.

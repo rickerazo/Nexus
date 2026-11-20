@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "BFACIL",
+   "name": "Birth Location and Time",
+   "summary": "Place, month, time of day, day of week, year of birth."
+  },
+  {
+   "start": "MAGER",
+   "name": "Mother's Demographics",
+   "summary": "Age, age recodes, residence status, race, bridged race, imputed race flag, marital status, paternity acknowledged, Hispanic origin, and combined race/Hispanic origin."
+  },
+  {
+   "start": "F_MAR_P",
+   "name": "Father's Demographics",
+   "summary": "Combined age, age recodes, reported age used, race, bridged race, imputed marital status, education, Hispanic origin, and combined race/Hispanic origin."
+  },
+  {
+   "start": "ILLB_R",
+   "name": "Birth History",
+   "summary": "Interval since last live birth, live birth order, prior births now living or dead, total birth order, interval since last other pregnancy, and interval since last pregnancy."
+  },
+  {
+   "start": "F_MPCB",
+   "name": "Prenatal Care",
+   "summary": "Month prenatal care began, month recode, number of visits, number of visits recode, WIC participation, reporting flags for these variables."
+  },
+  {
+   "start": "CIG0_R",
+   "name": "Smoking and Weight",
+   "summary": "Cigarette use before pregnancy and during each trimester, BMI, body mass index recode, cigarette recode, tobacco use flag, delivery weight, pre-pregnancy weight, weight gain, weight gain recode."
+  },
+  {
+   "start": "F_RF_ECLAMP",
+   "name": "Medical Conditions",
+   "summary": "Gestational diabetes, pre-pregnancy diabetes, hypertension eclampsia, gestational hypertension, pre-pregnancy hypertension, previous preterm birth, fertility enhancing drugs, assisted reproductive technology."
+  },
+  {
+   "start": "IP_CHLAM",
+   "name": "Infections and Treatments",
+   "summary": "Chlamydia, gonorrhea, syphilis, hepatitis B, hepatitis C, failed or successful external cephalic version, induction of labor, augmentation of labor, steroids."
+  }
+ ]
+}

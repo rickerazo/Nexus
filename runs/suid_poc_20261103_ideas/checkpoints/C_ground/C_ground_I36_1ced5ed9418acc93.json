@@ -1,0 +1,33 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers with pregnancy weight gain above a certain threshold is higher among SUID cases compared to other infant deaths.",
+ "rationale": "This study uses case-case comparison to identify differences in pregnancy weight gain between infants who died from SUID and those who died from other causes. The design compares proportions within the same case series source, allowing for valid comparisons without requiring incidence rates or denominators.",
+ "prior_art": "None in the inputs; while prior studies have examined factors like maternal smoking and postconceptional age, pregnancy weight gain as a risk factor for SUID remains understudied.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p8_std2"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "Pregnancy weight gain",
+  "Pre-pregnancy weight",
+  "Previous pregnancy outcomes"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4momwtgnunk",
+  "ncfrp_v51:INF4momwtgn",
+  "prams_p8_arf:MOMLBS",
+  "prams_p8_std2:PGWTGN8",
+  "prams_p8_std2:PGWTGNU8_DK",
+  "prams_p8_std2:PGWTGNU8",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or estimate incidence rates due to its case-case nature. It can only compare proportions or odds ratios between groups, identifying factors that are more prevalent among SUID cases compared to other causes of infant death."
+}

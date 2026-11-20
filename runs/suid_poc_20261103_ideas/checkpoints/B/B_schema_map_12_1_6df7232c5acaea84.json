@@ -1,0 +1,35 @@
+{
+ "mappings": [
+  {
+   "concept": "microglia activation",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 8 Standard Section II codebook does not contain any variables related to microglia activation or Iba1 staining."
+  },
+  {
+   "concept": "cell death",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 8 Standard Section II codebook does not contain any variables related to cell death or cleaved caspase 3 (CC3) staining."
+  },
+  {
+   "concept": "glutamatergic transmission",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 8 Standard Section II codebook does not contain any variables related to glutamatergic transmission in the nucleus accumbens or amygdala."
+  },
+  {
+   "concept": "hypoglossal motor nucleus (XIIn)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 8 Standard Section II codebook does not contain any variables related to the hypoglossal motor nucleus or electrophysiological recordings from brainstem slices."
+  }
+ ],
+ "source_summaries": {
+  "prams_p8_std2": "This data source, PRAMS Phase 8 Standard Section II codebook, contains information on pregnancy weight gain and its units. It does not contain any variables related to biological outcomes such as microglia activation, cell death, glutamatergic transmission, or electrophysiological recordings from the hypoglossal motor nucleus."
+ }
+}

@@ -1,0 +1,4 @@
+{
+ "reason": "The gap addresses the consistency of pregnancy weight gain reporting between two different sections of PRAMS Phase 8 data (ARF and Standard Section II). This is important for understanding potential discrepancies in how this variable is recorded, which could affect the reliability of risk factor assessments related to SUID.",
+ "importance": 3
+}

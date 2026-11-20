@@ -1,0 +1,120 @@
+INFO mmf.pipeline: ingest_cdc_linkco15: cache hit
+INFO mmf.pipeline: ingest_cdc_natl15: cache hit
+INFO mmf.pipeline: ingest_cdc_codenames: cache hit
+INFO mmf.pipeline: ingest_ncfrp_v51: cache hit
+INFO mmf.pipeline: ingest_prams_p8_arf: cache hit
+INFO mmf.pipeline: ingest_prams_p8_std2: cache hit
+INFO mmf.pipeline: ingest_prams_p7_arf: cache hit
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_SUID_manuscript_v9_clean_0_profile attempt 1 rejected: ['variable \'Breastfeeding status at discharge\': not verbatim in the document: "However, we repeated the full analysis separately among infants breastfed and not breastfed at discharge.". Closest text (p.1): "ectories, we repeated the full analysis separately among infants breastfed and not breastfed at discharge"']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_SUID_manuscript_v9_clean_1_profile attempt 1 rejected: ['variable \'preterm birth\': not verbatim in the document: "Gestational age at birth | \xa0 | \xa0 | \xa0\ncase counts\nPreterm, <37 weeks | 5,463 (23.1) | 2,187 (22.2) | 3,276 (23.7)\nTerm, >". Closest text (p.1): ",636 (69.7) gestational age at birth | | | preterm, <37 weeks | 5,463 (23.1) | 2,187 (22.2) | 3,276 (23.7) term, >=37 weeks | 18,223 (76.9) | 7,675 (77.8) | 10,548 (76.3)"', 'variable \'year of birth or death\': not verbatim in the document: "Year of birth or death | \xa0 | \xa0 | \xa0\ncase counts\n2014-2015 | 6,055 (25.6) | 2,458 (24.9) | 3,597 (26.0)\n2016-2017 | 5,953 ". Closest text (p.1): ",682 (26.6) no | 17,399 (73.5) | 7,257 (73.6) | 10,142 (73.4) year of birth or death | | | 2014-2015 | 6,055 (25.6) | 2,458 (24.9) | 3,597 (26.0) 2016-2017 | 5,953 (25.1) | 2,526 (25.6) | 3,427 (24.8) 2018-2019 | 5,655 ("']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_suid_literature_abstracts_0_claims attempt 1 rejected: ['claim C2: not verbatim in the document: "rates among full-term infants reversed their prepandemic declines, rates among full-term infants reversed their prepande". Closest text (p.1): " rates among preterm infants continued their prepandemic declines, rates among full-term infants reversed their prepandemic declines."', 'claim C6: not verbatim in the document: "Variants were identified in 88 genes, in 64.6% of our cohort.". Closest text (p.1): "interest were identified in 88 genes, in 64.6% of our cohort."', 'claim C16: not verbatim in the document: "Lesioning the preBötzinger complex abolishes respiration, while when isolated in vitro, the preBötzinger complex continu". Closest text (p.1): " generation of breathing. lesioning the prebötc abolishes respiration, while when isolated in vitro, the prebötc continues to generate respiratory rhythmic activity"']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_suid_literature_abstracts_0_claims attempt 2 rejected: ['claim C5: not verbatim in the document: "Variants were also found in eight genes are implicated in the response to hypoxia and the regulation of reactive oxygen ". Closest text (p.1): "gical function. variants in eight genes are implicated in the response to hypoxia and the regulation of reactive oxygen species (ros)"']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_suid_literature_abstracts_0_claims attempt 3 rejected: ['claim C16: not verbatim in the document: "post-hypoxic recovery of respiratory rhythm generation is gender dependent, which is, in part, centrally manifested at t". Closest text (p.1): " we conclude that post-hypoxic recovery of respiration is gender dependent, which is, in part, centrally manifested at the level of the prebötc."', 'claim C19: not verbatim in the document: "exposure to acute intermittent hypoxia (aih) leads to fundamental changes in the neuromodulatory response of the respira". Closest text (p.1): "exposure to acute intermittent hypoxia (aih) leads to fundamental changes in the neuromodulatory response of the respiratory network located within the prebötzinger complex (prebötc), an area "']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_suid_literature_abstracts_0_claims attempt 4 accepted after dropping 4 item(s): ['claim C9: Variants in 22 genes were associated with neurologic functions.', 'claim C12: Approximately 5.4% of SUID cases are attributable to maternal obesity.', 'claim C13: Maternal infections in pregnancy, particularly chlamydia and gonorrhea, are associated with an increased risk of SUID in offspring.', 'claim C16: Exposure to acute intermittent hypoxia (AIH) leads to fundamental changes in the neuromodulatory response of the respiratory network located within the preBötzinger complex (preBötC).']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_suid_literature_abstracts_1_profile attempt 1 rejected: ['variable \'body movement arousal response to severe hypoxia-hypercarbia\': not verbatim in the document: "The body movement arousal responses to severe hypoxia-hypercarbia were suppressed in IT-Gent-treated animals compared to". Closest text (p.1): "s the arousal movements in response to severe hypoxia-hypercarbia were suppressed in it-gent-treated animals compared to control animals (p<0.05)."', 'variable \'hypercapnic ventilatory response (HCVR)\': not verbatim in the document: "Thus the HCVR was significantly decreased in the bilateral and unilateral IT-Gent-treated mice compared to bilateral and". Closest text (p.1): "thus the hcvr was significantly decreased in the bilateral (n=9) and unilateral it-gent-treated mice (n=19) compared to bilateral (n=7) and unilateral it-saline (n=9)"', "variable 'age of mice': quote too short to verify (need >= 15 characters): ''"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_suid_literature_abstracts_1_profile attempt 2 rejected: ["variable 'age of mice': quote too short to verify (need >= 15 characters): ''"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: A_suid_literature_abstracts_1_claims attempt 1 rejected: ['claim C9: not verbatim in the document: "Swallow-related submental complex duration and amplitude were significantly decreased in both Mecp2-/y and Mecp2+/- comp". Closest text (p.1): "swallow-related submental complex duration and amplitude were significantly decreased in both mecp2-/y and mecp2+/- mice compared to wild-type, likely due to reduced motor unit a"']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_0_0 attempt 1 rejected: ["mapping for 'Infant sex': 'SEX' is not a documented variable in cdc_linkco15", "mapping for 'Sex as stratifier': 'SEX' is not a documented variable in cdc_linkco15", "mapping for 'Sex (male, female) as stratifier': 'SEX' is not a documented variable in cdc_linkco15"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_0_0 attempt 2 rejected: ["mapping for 'Bed sharing as exposure': null variable requires compatibility 'none'"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_0_0 attempt 3 rejected: ["mapping for 'Infant sex': 'SEX' is not a documented variable in cdc_linkco15", "mapping for 'Sex as stratifier': 'SEX' is not a documented variable in cdc_linkco15", "mapping for 'Sex (male, female) as stratifier': 'SEX' is not a documented variable in cdc_linkco15"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: B_schema_map_0_0 attempt 4 rejected: ["mapping for 'Bed sharing as exposure': null variable requires compatibility 'none'"]
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/rerazo/Projects/nexus/src/mmf/cli.py:59 in run                        │
+│                                                                              │
+│   56 │   cfg = RunConfig.from_yaml(config)                                   │
+│   57 │   r = Run(cfg, run_dir=run_dir)                                       │
+│   58 │   try:                                                                │
+│ ❱ 59 │   │   report = r.run()                                                │
+│   60 │   except ReviewPending as e:                                          │
+│   61 │   │   typer.echo(str(e))                                              │
+│   62 │   │   typer.echo(f"Resume with: mmf run {config} --run-dir            │
+│      {r.run_dir}")                                                           │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:257 in run                  │
+│                                                                              │
+│   254 │                                                                      │
+│   255 │   def run(self) -> Path:                                             │
+│   256 │   │   try:                                                           │
+│ ❱ 257 │   │   │   return self._run()                                         │
+│   258 │   │   except GenerationFailedError as e:                             │
+│   259 │   │   │   if e.record is not None:                                   │
+│   260 │   │   │   │   self._record([e.record])  # failed calls count toward  │
+│       grounding-rate metrics                                                 │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:266 in _run                 │
+│                                                                              │
+│   263 │   def _run(self) -> Path:                                            │
+│   264 │   │   sources = self.ingest_sources()                                │
+│   265 │   │   decs = self.stage_a()                                          │
+│ ❱ 266 │   │   smap = self.stage_b(decs, sources)                             │
+│   267 │   │   gaps = self.stage_c(decs, smap, sources)                       │
+│   268 │   │   strategies = self.stage_d(gaps, decs, sources, smap)           │
+│   269 │   │   feas = self.stage_e(strategies, sources)                       │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:206 in stage_b              │
+│                                                                              │
+│   203 │   │   )                                                              │
+│   204 │   │   cached = self._cached("B", key, SchemaMap, "B_schema.json")    │
+│   205 │   │   if cached is None:                                             │
+│ ❱ 206 │   │   │   cached, recs = b_schema_map.map_schema(                    │
+│   207 │   │   │   │   decs,                                                  │
+│   208 │   │   │   │   sources,                                               │
+│   209 │   │   │   │   self.client,                                           │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/components/b_schema_map.py:65 in        │
+│ map_schema                                                                   │
+│                                                                              │
+│   62 │   │   for bi in range(0, len(concepts), batch):                       │
+│   63 │   │   │   concept_text = "\n".join(f"- {k}: {v}" for k, v in          │
+│      concepts[bi : bi + batch])                                              │
+│   64 │   │   │   user = prompt.render(concepts=concept_text,                 │
+│      sources=sources_text(group))                                            │
+│ ❱ 65 │   │   │   obj, rec = generate(                                        │
+│   66 │   │   │   │   client,                                                 │
+│   67 │   │   │   │   prompt,                                                 │
+│   68 │   │   │   │   user,                                                   │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/llm/structured.py:131 in generate       │
+│                                                                              │
+│   128 │   │   )                                                              │
+│   129 │                                                                      │
+│   130 │   record = _record(stage, prompt, client, seed, temperature,         │
+│       max_retries + 1, False, log_path)                                      │
+│ ❱ 131 │   raise GenerationFailedError(stage, problems, max_retries + 1,      │
+│       record)                                                                │
+│   132                                                                        │
+│   133                                                                        │
+│   134 def _log_path(log_dir: Path | None, stage: str) -> Path | None:        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+GenerationFailedError: B_schema_map_0_0: no valid output after 4 attempts; last 
+problems: ["mapping for 'Bed sharing as exposure': null variable requires 
+compatibility 'none'"]

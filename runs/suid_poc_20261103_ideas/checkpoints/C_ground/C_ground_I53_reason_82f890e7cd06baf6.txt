@@ -1,0 +1,59 @@
+### Design
+
+**Question Restated:** How does the presence of health issues in the last 72 hours before death vary among SUID cases by preterm birth status?
+
+The design will be a case-only analysis, comparing subgroups within the SUID cases based on their preterm birth status and whether they experienced any health issues in the last 72 hours before death. This comparison is possible since we do not need to estimate incidence or rates; it relies solely on the variables recorded for the cases.
+
+### Sources by Role
+
+- **Case Series:** `ncfrp_v51`
+  - Covers child deaths reviewed by fatality review teams.
+  - Provides detailed information about health conditions in the last 72 hours before death and preterm birth status among SUID cases.
+
+- **Denominator Source:** Not Needed
+  - Since we are conducting a case-only analysis, there is no need for a denominator source to estimate incidence or rates. The comparison will be within the cases themselves.
+
+### Period
+
+**Years:**
+- The manuscript uses 2008-2019 from `ncfrp_v51`. We do not need additional years as the current dataset covers the necessary period for our analysis.
+
+### Variables
+
+#### Preterm Birth Status
+- **`ncfrp_v51:INFprevpreterm`:** Medical complications - Previous preterm/Small for Gestation Age Infant.
+  - This variable indicates whether a previous pregnancy resulted in a preterm birth or an infant small for gestational age.
+
+#### Health Issues in the Last 72 Hours
+- **`ncfrp_v51:INF372infinj`:** In 72 hours prior to death, infant injured.
+- **`ncfrp_v51:INF72medicatesp`:** If yes, in 72 hours prior to death, infant given any medications or remedies - name of medication and last dose given.
+- **`ncfrp_v51:INF372other`:** In 72 hours prior to death, other disorders.
+- **`ncfrp_v51:INF72infinjsp`:** If yes, in 72 hours prior to death, infant injured - specify.
+
+### Biases
+
+#### Selection Bias
+- `ncfrp_v51`: Cases are reviewed by fatality review teams and may not be a random sample of all SUID cases. The extent of bias depends on the extent of team participation across jurisdictions.
+  
+#### Information Bias
+- Health conditions recorded in the last 72 hours before death may be incomplete or inaccurately reported, leading to misclassification.
+
+#### Confounding
+- Potential confounders such as maternal smoking, socioeconomic status, and urban/rural differences are not directly measured within this dataset. These factors could influence both preterm birth status and health issues in the last 72 hours.
+
+### What the Design Cannot Establish
+
+The design can only establish associations among SUID cases based on recorded variables. It cannot:
+- Estimate incidence or rates without a denominator.
+- Determine causality due to its observational nature.
+- Account for unmeasured confounders that might affect both preterm birth status and health issues.
+
+### Prior Art
+
+None of the manuscript claims directly addresses the specific question about health issues in the last 72 hours before death among SUID cases by preterm birth status. Therefore, this analysis can provide new insights into potential critical periods for intervention.
+
+### Verdict
+**Yes**, these sources can answer a version of the candidate research idea. The design will allow us to explore differences in health issues within 72 hours prior to death among SUID cases stratified by preterm birth status using `ncfrp_v51`. However, we must acknowledge limitations related to selection and information biases inherent in case series data.
+
+### Conclusion
+The candidate research idea can be carried out with the provided sources. The study will focus on comparing health issues within 72 hours before death among SUID cases based on preterm birth status using `ncfrp_v51`.

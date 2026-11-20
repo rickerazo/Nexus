@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with postpartum depression differs among groups identified by child neglect and abuse.",
+ "rationale": "A case-only analysis can compare proportions or odds within the case series to identify associations between postpartum mental health status and characteristics recorded in the ncfrp_v51 dataset.",
+ "prior_art": "SUID_manuscript_v9_clean.C13 suggests future research on understanding long-term consequences of separation from the mother, but does not address maternal mental health directly. bedsharing_ms_v7.C17 discusses observational data limitations without addressing postpartum mental health status.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C13",
+  "bedsharing_ms_v7.C17"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Postpartum Mental Health",
+  "Child Neglect and Abuse"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3postpartdep",
+  "ncfrp_v51:ISSmhpostdepres",
+  "ncfrp_v51:ACTemotneglct",
+  "ncfrp_v51:ACTphysabuse"
+ ],
+ "cannot_establish": "The design cannot establish causation or estimate incidence rates due to the lack of a denominator source."
+}

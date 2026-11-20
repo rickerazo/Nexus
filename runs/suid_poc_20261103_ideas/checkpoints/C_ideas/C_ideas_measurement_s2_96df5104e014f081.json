@@ -1,0 +1,80 @@
+{
+ "ideas": [
+  {
+   "question": "How does maternal smoking during pregnancy differ in reporting and coding across CDC linked birth/infant death public-use file (cdc_linkco15), natality public-use file (cdc_natl15), and PRAMS Phase 8 Analytic Research File (prams_p8_arf)?",
+   "comparison": "Maternal smoking during pregnancy is reported differently in cdc_linkco15, cdc_natl10, prams_p8_arf.",
+   "why_open": "This study aims to understand if differences in how maternal smoking data are collected and coded across these sources affect comparisons between them. This could influence the interpretation of trends or disparities in SUID risks associated with maternal smoking.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Maternal smoking during pregnancy (variable domains: Smoking During Pregnancy, Prenatal Care) is collected in different ways and reported with varied precision across sources. Understanding these differences helps clarify how potential misclassification might affect observed SUID incidence trends."
+  },
+  {
+   "question": "How does gestational age at birth differ in reporting and coding between CDC linked birth/infant death public-use file (cdc_linkco15) and PRAMS Phase 8 Analytic Research File (prams_p8_arf)?",
+   "comparison": "Gestational age at birth is reported differently in cdc_linkco15 and prams_p8_arf.",
+   "why_open": "This study aims to identify how differences in reporting gestational age could affect comparisons of prematurity rates associated with SUID risk factors. Understanding these discrepancies can help refine the validity of SUID research findings based on different data sources.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Gestational age at birth (variable domains: Birth History, Prenatal Care) is collected and coded differently between cdc_linkco15, which records gestational age from birth certificates or death records, and prams_p8_arf, which gathers self-reported maternal data. This study will evaluate the impact of these differences on prematurity rates."
+  },
+  {
+   "question": "How does breastfeeding status at discharge differ in reporting and coding between CDC linked birth/infant death public-use file (cdc_linkco15) and PRAMS Phase 8 Analytic Research File (prams_p8_arf)?",
+   "comparison": "Breastfeeding status at discharge is reported differently in cdc_linkco15 and prams_p8_arf.",
+   "why_open": "Understanding differences between these datasets can help identify potential biases when comparing SUID risks associated with early breastfeeding cessation. This insight could inform future research on infant feeding practices and their long-term health impacts.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Breastfeeding status at discharge (variable domains: Breastfeeding Information, Birth Location and Time) is recorded in both cdc_linkco15 as a birth certificate item and prams_p8_arf as self-reported survey data. This study will examine how these differences affect reported breastfeeding rates."
+  },
+  {
+   "question": "How does maternal prepregnancy body mass index (BMI) differ in reporting and coding between CDC linked birth/infant death public-use file (cdc_linkco15), natality public-use file (cdc_natl15), and PRAMS Phase 8 Analytic Research File (prams_p8_arf)?",
+   "comparison": "Maternal prepregnancy BMI is reported differently in cdc_linkco15, cdc_natl15, prams_p8_arf.",
+   "why_open": "Understanding differences in how maternal BMI data are collected and coded can help determine if these disparities impact comparisons of SUID risks associated with obesity. This information could be crucial for refining public health strategies aimed at reducing infant mortality.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Maternal prepregnancy BMI (variable domains: Maternal Health Conditions, Smoking and Weight) is reported in multiple ways across datasets. Understanding these differences helps clarify how potential misclassification might affect observed trends or disparities in SUID risks."
+  },
+  {
+   "question": "How does infant sex differ in reporting and coding between CDC linked birth/infant death public-use file (cdc_linkco15), natality public-use file (cdc_natl15), National Fatality Review Case Reporting System (ncfrp_v51) and PRAMS Phase 8 Analytic Research File (prams_p8_arf)?",
+   "comparison": "Infant sex is reported differently in cdc_linkco15, cdc_natl15, ncfrp_v51, prams_p8_arf.",
+   "why_open": "This study aims to understand if discrepancies in how infant gender data are collected and coded affect comparisons between these sources. This insight can improve the accuracy of SUID research findings related to sex-specific risk factors.",
+   "case_sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Infant sex (variable domains: Birth History, Demographics) is recorded in diverse formats across datasets. This study will evaluate how these differences impact reported male and female SUID rates."
+  }
+ ]
+}

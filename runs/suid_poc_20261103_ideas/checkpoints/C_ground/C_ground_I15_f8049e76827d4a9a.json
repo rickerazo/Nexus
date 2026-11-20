@@ -1,0 +1,35 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The incidence rate of SUID among infants born to mothers who experienced significant medical complications during pregnancy is higher compared to those with uncomplicated pregnancies from 2016-2021.",
+ "rationale": "This design can estimate exposure-specific rates by combining cases from a case series, the exposure prevalence from population reference sources, and the population at risk from denominator sources. However, it cannot establish causation or temporal relationships due to its observational nature.",
+ "prior_art": "The closest prior work is suid_literature_abstracts.C10 [finding], which addresses maternal obesity as a risk factor for SUID but does not address medical complications during pregnancy. This question remains open because the impact of significant medical complications on SUID incidence has not been thoroughly investigated.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15",
+  "cdc_linkco15"
+ ],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "SUID cases",
+  "Maternal medical complications during pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:INFmedical",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL",
+  "cdc_natl15:BWTR4",
+  "cdc_linkco15:NO_MMORB"
+ ],
+ "cannot_establish": "Causation or temporal relationships due to observational nature."
+}

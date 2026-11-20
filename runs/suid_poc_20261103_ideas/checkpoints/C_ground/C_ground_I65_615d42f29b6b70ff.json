@@ -1,0 +1,36 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with prenatal complications such as low birth weight has changed over different time periods (2008-2019 vs. 2016-2021).",
+ "rationale": "This design is a trend analysis among case series, comparing proportions across different time periods without estimating incidence or rates.",
+ "prior_art": "The closest tested work includes SUID_manuscript_v9_clean.C6 and C7, which discuss temporal trends in SUID cases but do not focus on prenatal complications. The question remains open as these studies did not examine changes in prenatal factors over time.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C6",
+  "SUID_manuscript_v9_clean.C7"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2021,
+ "required_concepts": [
+  "prenatal complications",
+  "time periods"
+ ],
+ "variables": [
+  "ncfrp_v51:INFprevpreterm",
+  "ncfrp_v51:INF3lbwt",
+  "prams_p8_arf:P_PRTERM",
+  "prams_p7_arf:P_PRTERM",
+  "prams_p8_arf:PRE_LB_NAPHSIS",
+  "prams_p7_arf:PREV_LBW_RAW",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "This design can only establish trends in proportions of SUID cases with prenatal complications over time. It cannot estimate incidence or risk because it lacks a denominator source to calculate rates."
+}

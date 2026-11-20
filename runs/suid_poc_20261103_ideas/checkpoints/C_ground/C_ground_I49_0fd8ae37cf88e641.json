@@ -1,0 +1,30 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "Among infants who died from SUID, there is variation in medication use during pregnancy.",
+ "rationale": "The available data from ncfrp_v51 can provide insights into patterns of medication use during pregnancy among infants who later die from Sudden Unexpected Infant Death Syndrome (SUID). The case-only design focuses on within-case variation without requiring a denominator source or population reference.",
+ "prior_art": "None in the inputs. While prior work has examined factors like maternal smoking and prematurity, there is no direct comparison of medication use during pregnancy among infants who die from SUID.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Medication Use During Pregnancy",
+  "SUID Cases"
+ ],
+ "variables": [
+  "ncfrp_v51:INFmisotcrx",
+  "ncfrp_v51:INF3meds",
+  "ncfrp_v51:IEMmedsop",
+  "ncfrp_v51:IEMmedspsych",
+  "ncfrp_v51:IEMmedsarthritis",
+  "ncfrp_v51:IEMmedspod",
+  "ncfrp_v51:INF372medicate",
+  "ncfrp_v51:INF372medicatesp"
+ ],
+ "cannot_establish": "incidence rates, prevalence comparisons with a general population, or causal relationships between medication use and SUID."
+}

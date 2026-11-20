@@ -1,0 +1,64 @@
+### Design and Analysis
+
+#### Restated Question:
+What are the differences in how pregnancy weight gain (domain D88) and postpartum smoking status (domain D306) are recorded between NCFRP_v51 case series source and PRAMS_P8_ARF population reference source?
+
+#### Sources by Role
+- **Case Series**: ncfrp_v51 
+  - Reason: Records child deaths reviewed by fatality review teams, providing detailed information on SUID cases.
+  
+- **Population Reference**: prams_p8_arf
+  - Reason: Weighted survey of mothers a few months after live births, capturing general population exposure measures.
+
+#### Period:
+- The overlapping period between the two sources is from 2016 to 2019 (since PRAMS P8 covers 2016-2021 and NCFRP_v51 includes cases up until 2019).
+
+#### Variables:
+
+**Pregnancy Weight Gain:**
+- **ncfrp_v51**: `INF4momwtgn` - Mother's pregnancy weight gain or loss in pounds.
+- **prams_p8_arf**: 
+  - `PGWTGN8`: Preg weight gain (value is in pounds)
+  - `PGWTGNU8`: Unit of preg weight gain
+  - Missing answers: `.B=DK/BLANK`, `.D=DONT KNOW`
+
+**Postpartum Smoking Status:**
+- **ncfrp_v51**: 
+  - `INFsmbefpreg` - Smoke 3 months before pregnancy (yes/no)
+  - `INFfirsttricig`, `INFsecondtricig`, `INFthirdtricig` - Cigarettes smoked during each trimester.
+  
+- **prams_p8_arf**:
+  - `CIG_PRIOR`: No. of cigarettes smoked daily - prior to preg
+  - `MOMCIG`: Number of Cigarettes Smoked Daily During Pregnancy (average across trimesters)
+  - Missing answers: `.U=UNKNOWN`, `.B=DK/BLANK`
+
+#### Biases:
+
+**Selection Bias:**
+- **ncfrp_v51**: Only records child deaths reviewed by fatality review teams, which is not representative of all infant deaths or live births.
+  
+- **prams_p8_arf**: Weighted survey of mothers post-live birth; does not account for infant deaths.
+
+**Information Bias:**
+- **ncfrp_v51**: Detailed information on smoking behaviors during pregnancy but no longitudinal data after the first year.
+- **prams_p8_arf**: Captures pre-pregnancy and pregnancy smoking behavior with a survey conducted a few months postpartum, focusing on changes in smoking habits from pre-pregnancy to postpartum.
+
+**Confounding:**
+- Both sources do not account for confounders such as socioeconomic status, access to healthcare, or environmental factors that could influence weight gain and smoking behaviors. 
+
+#### What the Design Cannot Establish:
+This study design can only compare how variables are recorded differently between case series and population reference data sources; it cannot establish a causal relationship or incidence rates due to lack of denominator data.
+
+#### Prior Art:
+
+- **SUID_manuscript_v9_clean.C10**: The manuscript highlights limitations in vital-record data, including exposure misclassification.
+  
+- **bedsharing_ms_v7.C18**: This study acknowledges sleep-environment classification may be subject to ascertainment and reporting heterogeneity.
+
+These claims highlight the importance of addressing discrepancies between different sources of health data. However, no prior studies have directly compared how pregnancy weight gain and postpartum smoking status are recorded in these specific datasets.
+
+#### Verdict:
+**Yes**, these data can answer a version of the question by comparing the recording methods for pregnancy weight gain and postpartum smoking status between NCFRP_v51 (case series) and PRAMS_P8_ARF (population reference). The study will focus on understanding discrepancies in how these variables are measured, reported, and coded across different data sources.
+
+### Conclusion:
+The proposed research idea can be carried out using the provided datasets. However, it is important to acknowledge that this comparison cannot establish causality or incidence rates due to limitations inherent in the design and data elements available.

@@ -1,0 +1,486 @@
+name,label,type,levels,years,notes
+BPG_DEPRS8,Health prob -- Depression,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+BPG_DIAB8,Health prob -- Diabetes,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+BPG_HBP8,Health prob -- HBP,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+HTH_ALRGI,Health prob -- Allergies,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+HTH_ANX,Health prob -- Anxiety,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+HTH_ASMA,Health prob -- Asthma,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+HTH_HRT,Health prob -- Heart,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+HTH_IRON,Health prob -- Anemia,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+HTH_PCOS,Health prob -- PCOS,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+HTH_SC,Health prob -- Sickle Cell,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+HTH_SEIZ,Health prob -- Epilepsy,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+HTH_THYR,Health prob -- Thyroid,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+MOMLBKGU,Moms weight -- lbs or kilos,unknown,.B=BLANK | 1=POUNDS | 2=KILOGRAMS,,format=LBKGUF
+MOM_CM,Moms height -- centimeters,unknown,.B=DK/BLANK,,format=NUMF
+MOM_FEET,Moms height -- feet,unknown,.B=DK/BLANK,,format=NUMF
+MOM_HTU,Moms height -- feet-inch/cm,unknown,".B=BLANK/DK | 1=FEET, INCHES | 2=CENTIMETERS",,format=HTUF
+MOM_INCH,Moms height -- inches,unknown,.B=DK/BLANK,,format=NUMF
+MOM_LBKG,Moms weight -- bef preg,unknown,.B=DK/BLANK,,format=NUMF
+PRE_VIST,Pre preg--health care visit,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PRE_VIT_RAW,Pre-preg -- folic acid,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_WT_RAW,Pre-preg -- weight,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+TYP_BC_RAW,Health care type--visit for family planning/birth control,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_DDS_RAW,Health care type--visit with dentist,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_DOCT_RAW,Health care type--checkup with dr,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_ILLN_RAW,Health care type--visit for illness,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_INJR_RAW,Health care type--visit for injury,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_MH_RAW,Health care type--visit for depression or anxiety,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_OBGN_RAW,Health care type--checkup with my OB/GYN,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_OTHR_RAW,Health care type--other,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_WHAT_RAW,Health care type--other specified,unknown,,,
+VITAMIN,Multivitamin -- # of times /wk,unknown,.B=BLANK/DK | 1=DIDNT TAKE VITAMIN | 2=1-3 TIMES/WEEK | 3=4-6 TIMES/WEEK | 4=EVERY DAY/WEEK,,format=VITAMIN
+PRE_ABUS_RAW,Pre-preg --hurt emotional/physical,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_BDEF_RAW,Pre-preg -- birth Defect or deseases,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_HEPB_RAW,Pre-preg -- tested for Hepatitis B,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_HIVT_RAW,Pre-preg -- tested for HIV,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_HLTH_RAW,Pre-preg--improve health before preg,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_KIDS_RAW,Pre-preg -- want to have kids,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_MHDP_RAW,Pre-preg --feeling down/depressed,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_MORB_RAW,Pre-preg-- control med conditions,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_PRBC_RAW,Pre-preg -- birth control tp prevent preg,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_SMK_RAW,Pre-preg --smk during preg,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_STI_RAW,Pre-preg -- talk about STIs,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_WORK_RAW,Pre-preg -- kind of work,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+INSCHIP,Insurance paid by -- <state specific SCHIP/CHIP>,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+INSGOV,Insurance paid by -- <state specific other state plan>,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+INSGOV2,Insurance paid by -- <state specific other state plan>,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+INSHCEX,Insurance paid by -- Health Care Exchange,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+INSIHS,Insurance paid by -- <state specific IHS/Tribal>,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+INSMED,Insurance paid by -- Medicaid,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+INSMIL,Insurance paid by -- <state specific TRICARE or military>,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+INSNONE,Insurance paid by -- No insurance,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+INSOTH,Insurance paid by -- other,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+INSPAR,Insurance paid by -- parent,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+INSTYPE,Insurance paid by -- Other specified,unknown,,,
+INSWORK8,Insurance paid by -- job,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+PP8_HCEX_RAW,Insurance paid by -- Health Care Exchange,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP8_NOPNC,Insurance paid by - didn’t have any PNC,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+PP8_PAR_RAW,Insurance paid by -- parent,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP8_WORK_RAW,Insurance paid by -- job,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+HI_CHIP,Insurance paid by -- <state specific SCHIP/CHIP>,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+HI_HCEX,Insurance paid by -- Health Care Exchange,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+HI_MEDIC,Insurance paid by -- Medicaid,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+HI_PAR,Insurance paid by -- parent,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+HI_WORK8,Insurance paid by -- job,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+PP_CHIP_RAW,Insurance paid by -- <state specific SCHIP/CHIP>,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_GOV2_RAW,Insurance paid by -- <state specific other state plan>,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_GOV_RAW,Insurance paid by -- <state specific other state plan>,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_IHS_RAW,Insurance paid by -- <state specific IHS/Tribal>,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_MEDIC_RAW,Insurance paid by -- Medicaid,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_MILIT_RAW,Insurance paid by -- <state specific TRICARE or military>,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_NONE_RAW,Insurance paid by -- No insurance,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_OTH_RAW,Insurance paid by -- other,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_TYPE_RAW,Insurance paid by -- Other specified,unknown,,,
+ASK_MEDS_RAW,HCW ask -- prescript meds,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+HI_GOV,Insurance paid by -- <state specific other government>,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+HI_GOV2,Insurance paid by -- <state specific other government>,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+HI_IHS,Insurance paid by -- <state specific IHS/Tribal>,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+HI_MILIT,Insurance paid by -- <state specific TRICARE or military>,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+HI_NONE,Insurance paid by -- No insurance,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+HI_OTH,Insurance paid by -- other,unknown,.B=DK/BLANK | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+HI_TYPE,Insurance paid by -- Other specified,unknown,,,
+PGINTENT,Preg -- intention PGINTEN T,unknown,.B=BLANK | 1=LATER | 2=SOONER | 3=THEN | 4=DID NOT WANT THEN OR ANY TIME | 5=WAS NOT SURE,,
+PNC_1ST,1st PNC visit -- number,unknown,.B=DK/BLANK | .S=SKIP,,format=NUMSF
+PNC_1STU,1st PNC visit -- wks/mnths PNC_1ST U,unknown,.B=DK/BLANK | 1=WEEKS | 2=MONTHS | 3=DID NOT GO,,
+TLK_CIGS_RAW,HCW ask -- if smoking cigs,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+TLK_ETOH_RAW,HCW ask -- if drinking alcohol,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+TLK_WT_RAW,HCW ask -- amt weight gain,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_2HSM_RAW,HCW ask -- about second hand smoke exposure,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_ABUS_RAW,HCW ask -- hurt emotional/physical,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_BDEF_RAW,HCW ask -- Birth defects or deseases/family,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_BF_RAW,HCW ask -- plan to breastfeed,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_DPRS_RAW,HCW ask -- if down/depressed,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_DRUG_RAW,HCW ask -- using drugs,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_HIVT_RAW,HCW ask -- want HIV test,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_LABR_RAW,HCW ask -- Early labor start,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_LEAD_RAW,HCW ask -- about my risk for lead poisoning,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_MERC_RAW,HCW ask -- high levels of mercury/fish,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_PPBC_RAW,HCW ask -- plan to use PP BC,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+FLUSHOT,Flu vacc -- info from care workers,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+DDS_CLN,DDS -- teeth cleaned,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+FLUPREG,Flu vacc -- before delivery,unknown,".B=BLANK/DK | 1=NO | 2=YES,BEFORE | 3=YES,DURING",,format=FL12GETF
+MH_PGDX8,Health prob during preg -- Depression,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+MORB_BP8,Health prob during preg -- HBP,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_ANX,Health prob during preg -- Anxiety,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_ASMA,Health prob during preg -- Asthma,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_GUM,Healthprobduringpreg--Gumdisease,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_HRT,Health prob during preg -- Heart,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_IRON,Health prob during preg -- Anemia,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_NAUS,Health prob during preg -- Nausea/vomiting/dehydration,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_PCOS,Health prob during preg – PCOS Note: This variable is only used by Connecticut and will only be available through a separate request to Connecticut,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_SEIZ,Health prob during preg -- Epilepsy,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_THYR,Health prob during preg -- Thyroid,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_UTI,Health prob during preg -- Kidney/bladder infection,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG_GDB8,Health prob during preg -- Diabetes,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_ALRGI,Health prob during preg -- Allergies,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_LYME,Health prob during preg -- Lymedisease,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_PRET,Health prob during preg -- Labor pains,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PG8_SC,Health prob during preg -- Sickle Cell,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK2YRS,SMK --  >=1 cigs last 2 yrs,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK6_3B_RAW,"SMK -- 3 mnths bef, # cigs/day",unknown,.B=DK/BLANK | .S=SKIP | 1=41 CIGARETTES OR | 2=21 TO 40 CIGARETTES | 3=11 TO 20 CIGARETTES | 4=6 TO 10 CIGARETTES | 5=1 TO 5 CIGARETTES | 6=LESS THAN 1 | 7=NONE (0 CIGARETTES),,format=SMOKE5F
+SMK6_3L_RAW,"SMK -- last 3 mnths, # cigs/day",unknown,.B=DK/BLANK | .S=SKIP | 1=41 CIGARETTES OR | 2=21 TO 40 CIGARETTES | 3=11 TO 20 CIGARETTES | 4=6 TO 10 CIGARETTES | 5=1 TO 5 CIGARETTES | 6=LESS THAN 1 | 7=NONE (0 CIGARETTES),,format=SMOKE5F
+SMK6_3N_RAW,"SMK -- now, # cigs/day",unknown,.B=DK/BLANK | .S=SKIP | 1=41 CIGARETTES OR | 2=21 TO 40 CIGARETTES | 3=11 TO 20 CIGARETTES | 4=6 TO 10 CIGARETTES | 5=1 TO 5 CIGARETTES | 6=LESS THAN 1 | 7=NONE (0 CIGARETTES),,format=SMOKE5F
+SMK_ECIG,SMK --used ecigs in last 2 yrs,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+DRK_2YRS,DRK -- last 2 years,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+ECIG_3B_RAW,"ECIG -- 3 mnths bef, how often ECIG_FRE Q",unknown,.B=BLANK/DK | .S=SKIP | 1=MORE THAN ONCE A | 2=ONCE A DAY | 3=2-6 DAYS A WEEK | 4=1 DAY A WEEK OR | 5=NOT USE ELECTRONIC VAPOR PRODUCTS,,
+ECIG_3L_RAW,"ECIG -- last 3 mnths, how often ECIG_FRE Q",unknown,.B=BLANK/DK | .S=SKIP | 1=MORE THAN ONCE A | 2=ONCE A DAY | 3=2-6 DAYS A WEEK | 4=1 DAY A WEEK OR | 5=NOT USE ELECTRONIC VAPOR PRODUCTS,,
+SMK_BETEL,SMK -- Betel nut or betel quid,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK_BETELNOCT,SMK -- Betel nut without chewing tobacco,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK_BETELWITH,CT SMK -- Betel nut with chewing tobacco,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK_CGRLO,"SMK -- cigarillos or flavored little cigars(Black and Milds, Swisher Sweets, etc)",unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK_CHEW,"SMK -- chewing tobacco, snuff, snus, dip",unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK_CHEWCIGS,"SMK -- chew, snus, cigars, cigarillos, etc.",unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK_CIGS,"SMK -- cigars, cigarillos, filtered cigars",unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK_HOOK,SMK --used hookah in last 2 yrs,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK_NICTN,"SMK -- nicotine patch, nicotine gum, nicotine lozenge Note: This variable is only used by Texas and will only be available through a separate request to Texas",unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+DRK8_3B_RAW,"DRK -- 3 mnths bef, drinks/wk",unknown,.B=DK/BLANK | .S=SKIP | 1=14 DRINKS OR MORE A | 2=8 TO 13 DRINKS A | 3=4 TO 7 DRINKS A | 4=1 TO 3 DRINKS A | 5=LESS THAN 1 DRINK A | 6=I DIDNT DRINK THEN,,format=DRINK8F
+IDOB_MTH,Infant birth -- month,unknown,.B=DK/BLANK,,format=NUMF
+IDOB_YR4,Infant birth -- year,unknown,.B=DK/BLANK,,format=NUMF
+PAB6HUS,"Abuse -- 12 mnths b4 preg, h/p",unknown,.T=TEEN MOM - NOT | 1=NO | 2=YES,,
+PAB_FAM,"Abuse -- 12 mnths b4 preg, another family member",unknown,.B=DK/BLANK | .T=TEEN MOM - NOT | 1=NO | 2=YES,,
+PAB_OTH,"Abuse -- 12 mnths b4 preg, someone else",unknown,.T=TEEN MOM - NOT | 1=NO | 2=YES,,
+PAB_XHUS,"Abuse -- 12 mnths b4 preg, ex-h/p",unknown,.T=TEEN MOM - NOT | 1=NO | 2=YES,,
+PAD6HUS,"Abuse --during preg, h/p",unknown,.T=TEEN MOM - NOT | 1=NO | 2=YES,,
+PAD_FAM,"Abuse -- during preg, another family member",unknown,.T=TEEN MOM - NOT | 1=NO | 2=YES,,
+PAD_OTH,"Abuse -- during preg, someone else",unknown,.B=DK/BLANK | .T=TEEN MOM - NOT | 1=NO | 2=YES,,
+PAD_XHUS,"Abuse -- during preg, ex-h/p",unknown,.B=DK/BLANK | .T=TEEN MOM - NOT | 1=NO | 2=YES,,
+BFINF_BDR_RAW,BF info--baby doc,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_DR_RAW,BF info--from my doctor,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_FAM_RAW,BF info--from family/friends,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_GRP_RAW,BF info--breasfeed support grp,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_HOT_RAW,BF info--breasfeed hotline,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_NUR_RAW,BF info--from nurse/midwide/doula,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_OTH_RAW,BF info--other,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_SPC_RAW,BF info--breasfeeding/lactation spec,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_TYPE_RAW,BF info--other specified,unknown,,,
+INFLIVE5_RAW,Infant alive -- now,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+INFWMOM5_RAW,Infant living -- with mom,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+LTH_HOSP,Hosp baby stay -- length of time LTH_HOS P,unknown,.B=BLANK | 1=< 1 DAY | 2=1-2 DAYS | 3=3-5 DAYS | 4=6-14 DAYS | 5=MORE THAN 14 DAYS | 6=NOT BORN IN | 7=STILL IN HOSPITAL,,
+BF5EVER_RAW,Breastfeed -- ever,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BF5LNGTH_RAW,BF duration -- length of time,unknown,.B=BLANK | .S=SKIP | 41=LESS THAN 1 WEEK,,format=BFDUR4F
+BF5LNGTU_RAW,BF duration -- wks/mnths,unknown,.B=BLANK | .S=SKIP | 1=WEEKS | 2=MONTHS | 5=LESS THAN 1 WEEK,,format=BFUNIT4F
+BF5STILL_RAW,Breastfeed -- still,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLEEPOWN_RAW,Sleep -- baby alone,unknown,.B=BLANK/DK | .S=SKIP | 1=ALWAYS | 2=OFTEN/ALMOST | 3=SOMETIMES | 4=RARELY | 5=NEVER,,format=FREQ5F
+SLEEPPOS_RAW,Sleeping position -- baby SLEEPPO S,unknown,.B=DK/BLANK | .S=SKIP | 1=SIDE | 2=BACK | 3=STOMACH | 4=SIDE/BACK | 5=SIDE/STOMACH | 6=BACK/STOMACH | 7=ALL 3 POSITIONS,,
+SLP_CHR_RAW,Baby slept -- on couch/futon/chair,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_CRB8_RAW,Baby slept -- in crib/bassinette/play yard,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_MAT8_RAW,Baby slept -- on mattress/bed,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_ROOM_RAW,Sleep -- baby in room with mom,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BCB_PREG_RAW,PP BC barrs -- want preg,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BC_NOW4,Postpartum BC -- using now,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SLP2ALON_RAW,Recommend sleep--place baby alone to sleep,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP2BACK_RAW,Recommend sleep--place on back,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP2CRB_RAW,Recommend sleep--place in crib/bassinet/play yard,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP2MYRM_RAW,Recommend sleep--place baby crib/bed in my room,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP2NTBD_RAW,Recommend sleep--can or cannot go in baby bed,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_NBLK_RAW,Baby slept -- with blanket,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_NPAD_RAW,Baby slept -- with bumper pads,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_SAK_RAW,Baby slept --  in sleep sack or wearable blanket,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_SWG_RAW,Baby slept -- in car seat/swing,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_TOYPIL_RAW,"Baby slept -- with toys, cushions or pillows",unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BCB_HUSB_RAW,PP BC barrs -- husb/part didnt want,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_NSEX_RAW,PP BC barrs -- abstinence,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_OTH_RAW,PP BC barrs -- other,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_PAY_RAW,PP BC barrs -- cant pay,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_PNOW_RAW,PP BC barrs -- preg now,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_SIDE_RAW,PP BC barrs -- side effect,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_TUBE_RAW,PP BC barrs -- tubes tied/blocked,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_WANT_RAW,PP BC barrs -- didnt want to use,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_WHAT_RAW,PP BC barrs -- other specified,unknown,,,
+BCP_COND_RAW,BC postpart -- condoms,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_PILL_RAW,BC postpart -- pill,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_TUBE_RAW,BC postpart -- tubes tied,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_VASE_RAW,BC postpart -- vasectomy,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_IMPL_RAW,BC postpart -- contraceptive implant,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_IUD_RAW,BC postpart -- IUD,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_NSEX_RAW,BC postpart -- abstinence,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_OTH_RAW,BC postpart -- other,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_PTRG_RAW,BC postpart -- contraceptive patch/ring,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_PULL_RAW,BC postpart -- withdrawal,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_RHYT_RAW,BC postpart -- rhythm,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_SHT3_RAW,BC postpart -- shots every 3 mnths,unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_WHAT_RAW,BC postpart -- other specified,unknown,,,
+PPV_CHK,PPV -- checkup for self,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+VPP_EAT_RAW,PP talk -- eating and exercise,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_VIT_RAW,PPV -- folic acid,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_WAIT_RAW,PPV -- wait before preg,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_ABUS_RAW,PPV--HCW ask about abuse,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_BCM_RAW,PPV -- BC methods,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_DEPR_RAW,PPV -- ask about depression,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_DIAB_RAW,PPV--test for diabetes,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_DRNK_RAW,PPV -- ask about drinking alcohol,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_GOING_RAW,PPV -- breastfeeding status,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_NSRT_RAW,PPV -- insert IUD or implant,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_PRESBC_RA,W PPV -- prescribe birth control,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_RXOTH_RAW,PPV -- ask about taking other prescrip meds,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_RXPAIN_RA,W PPV -- ask about taking prescrip pain relievers,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_SMOK_RAW,PPV --HCW ask about smoking cigs,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+INCOME8,"Income -- 12 mnths bef, total income INCOME8 F",unknown,".B=DK/BLANK | 1=$     0 TO $16,000 | 2=$16,001 TO $20,000 | 3=$20,001 TO $24,000 | 4=$24,001 TO $28,000 | 5=$28,001 TO $32,000 | 6=$32,001 TO $40,000 | 7=$40,001 TO $48,000 | 8=$48,001 TO $57,000 | 9=$57,001 TO $60,000 | 10=$60,001 TO $73,000 | 11=$73,001 TO $85,000 | 12=$85,001 OR MORE | 13=$    0 TO $10,000 | 14=$10,001 TO $16,000 | 15=$85,001 TO $99,999 | 16=$100,000 OR MORE | 17=$85,001 TO $99,000 | 18=$99,001 TO $109,000 | 19=$109,001 OR MORE | 20=$ 85,001 TO $100,000 | 21=$100,001 TO $120,000 | 22=$120,001 OR MORE | 101=$   0 TO $ 20,000 | 102=$20,001 TO $ 25,000 | 103=$ 25,001 TO $ 30,000 | 104=$ 30,001 TO $ 36,000 | 105=$ 36,001 TO $ 40,000 | 106=$ 40,001 TO $ 50,000 | 107=$ 50,001 TO $ 60,000 | 108=$ 60,001 TO $ 71,000 | 109=$ 71,001 TO $ 75,000 | 110=$ 75,001 TO $ 91,000 | 111=$ 91,001 TO $107,000 | 112=$107,001 OR MORE | 201=$     0 TO $ 18,000 | 202=$18,001 TO $ 23,000 | 203=$23,001 TO $ 28,000 | 204=$28,001 TO $ 33,000 | 205=$33,001 TO $ 37,000 | 206=$37,001 TO $ 46,000",,
+MH_PPDPR,MH -- depress since birth,unknown,.B=BLANK/DK | 1=ALWAYS | 2=OFTEN/ALMOST | 3=SOMETIMES | 4=RARELY | 5=NEVER,,format=FREQ5F
+MH_PPINT,MH -- no interest since birth,unknown,.B=BLANK/DK | 1=ALWAYS | 2=OFTEN/ALMOST | 3=SOMETIMES | 4=RARELY | 5=NEVER,,format=FREQ5F
+INC_NDEP,Income -- dependents (+self),unknown,.B=DK/BLANK,,format=NUMF
+TOD_MTH,Today -- month,unknown,.B=DK/BLANK,,format=NUMF
+TOD_YR4,Today -- year,unknown,.B=DK/BLANK,,format=NUMF
+AB_NICU,Admission to NICU Note: This variable is only available starting with 2020 data,unknown,,,
+ATTEND_PU,Attendant at birth Note: This variable is only available starting with 2020 data,unknown,.U=UNKNOWN | 1=Physician (MD) | 2=Osteopath (DO) | 3=Cert. Nurse Midwife/CM | 4=Other midwife | 5=Other | 9=Unknown,,format=FD_ATTEND
+BRSTFED,Infant being breast-fed?,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+B_ORDER,Birth order,unknown,.U=UNKNOWN,,format=BCF
+CIG_1TRI,No. of cigarettes smoked daily -1st trimester,unknown,.U=UNKNOWN,,format=BCF
+CIG_2TRI,No. of cigarettes smoked daily -2nd trimester,unknown,.U=UNKNOWN,,format=BCF
+CIG_3TRI,No. of cigarettes smoked daily -3rd trimester,unknown,.U=UNKNOWN,,format=BCF
+CIG_PRIOR,No. of cigarettes smoked daily - prior to preg,unknown,.U=UNKNOWN,,format=BCF
+DEFECT,Was the baby born with a birth defect?,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+DEL_1CS,"C-sect, 1st",unknown,.N=NOT RECORDED | .U=UNKNOWN | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+DEL_FORC,Forceps delivery,unknown,.N=NOT RECORDED | .U=UNKNOWN | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+DEL_RCS,Repeated C-secton,unknown,.N=NOT RECORDED | .U=UNKNOWN | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+DEL_VACM,Vacuum delivery,unknown,.N=NOT RECORDED | .U=UNKNOWN | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+DEL_VAG,Vaginal delivery,unknown,.N=NOT RECORDED | .U=UNKNOWN | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+DEL_VCS,Vaginal delivery after C-section,unknown,.N=NOT RECORDED | .U=UNKNOWN | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYF
+FAGECOMB,Paternal age grouped Note: This variable is only available starting with 2020 data,unknown,.U=UNKNOWN | 17=17 OR YOUNGER | 45=45 OR OLDER,,format=PU_MAGE
+FAGECOMB_AK,Alaska Collapsed Paternal Age Note: This variable is only available starting with 2020 data,unknown,.U=UNKNOWN | 3=20 – 24 | 4=25 – 29 | 5=30 – 34 | 6=35 – 39 | 7=40+ | 8= <=19,,format=NP_MAGE
+FAGECOMB_VT,Vermont Collapsed Paternal Age Note: This variable is only available starting with 2020 data,unknown,.U=UNKNOWN | 3=20 – 24 | 4=25 – 29 | 5=30 – 34 | 6=35 – 39 | 7=40+ | 8= <=19,,format=NP_MAGE
+FHISP_BC,Fathers Hispanic ethnicity,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+FRACE_AMI,Paternal race - American Indian/Alaska native,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+FRACE_ASIAN_PU,Paternal Race Asian grouped,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+FRACE_BLK,Paternal race - Black,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+FRACE_MULTO_PU,Paternal Race Multiple/Other,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+FRACE_NHOPI_PU,Paternal Race Native Hawaiian Other Pacific Islander grouped,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+FRACE_WHT,Paternal race - White,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+GEST_WK_PU,Clinical estimate of gestational age grouped,unknown,.U=Unknown | 27=27 or less weeks | 43=43 or more weeks,,format=PU_GSTWK
+GRAM_NAPHSIS,Birth weight grouped into 250-gram intervals,unknown,.U=UNKNOWN | 125=0227-0249 | 375=0250-0499 | 625=0500-0749 | 875=0750-0999 | 1125=1000-1249 | 1375=1250-1499 | 1625=1500-1749 | 1875=1750-1999 | 2125=2000-2249 | 2375=2250-2499 | 2625=2500-2749 | 2875=2750-2999 | 3125=3000-3249 | 3375=3250-3499 | 3625=3500-3749 | 3875=3750-3999 | 4125=4000-4249 | 4375=4250-4499 | 4625=4500-4749 | 4875=4750-4999 | 5125=5000-5249 | 5375=5250-5499 | 5625=5500-5749 | 5875=5750-5999 | 6125=6000-6249 | 6375=6250-6499 | 6625=6500-6749 | 6875=6750-6999 | 7125=7000-7249 | 7375=7250-7499 | 7625=7500-7749 | 7875=7750-7999 | 8125=8000-8165,,format=NP_GRAM
+HISP_BC,Mother Hispanic?,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+ILLB_MO,Interval Since Last Live Birth (Months),unknown,.A=Not applicable - 1st live birth | .U=Unknown,,format=ILLB_R
+INFER_TR,Infertility treatment,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+KESSNER,Kessner Index,unknown,1=ADEQUATE PNC | 2=INTERMEDIATE PNC | 3=INADEQUATE PNC | 4=UNKNOWN PNC,,format=KESSNERF
+KOTELCHUCK,Kotelchuck Index,unknown,.U=UNKNOWN | 1=INADEQUATE | 2=INTERMEDIATE | 3=ADEQUATE | 4=ADEQUATE PLUS,,format=KOTELCHUCK
+LGA,Large for Gestational Age Based on 90th Percentile,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MACROSOMIA,Macrosomia:  >= 4500 gram birth weight,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MARRIED,Marital status,unknown,.U=UNKNOWN | 1=MARRIED | 2=OTHER,,format=MARRIEDF
+MAT_AGE_NAPHSIS_AK,Alaska Collapsed Maternal Age,unknown,.U=UNKNOWN | 3=20 – 24 | 4=25 – 29 | 5=30 – 34 | 6=35 – 39 | 7=40+ | 8= <=19,,format=NP_MAGE
+MAT_AGE_NAPHSIS_VT,Vermont Collapsed Maternal Age,unknown,.U=UNKNOWN | 3=20 – 24 | 4=25 – 29 | 5=30 – 34 | 6=35 – 39 | 7=40+ | 8= <=19,,format=NP_MAGE
+MAT_AGE_PU,Maternal age grouped,unknown,.U=Unknown | 17=17 or younger | 45=45 or older,,format=PU_MAGE
+MAT_DEG,Maternal highest degree received,unknown,".U=UNKNOWN | 1=<= 8TH GRADE | 2=9-12 GRD,NO DIPLOMA | 3=HIGH SCHL GRAD/GED | 4=SOME COLLEGE,NO DEG | 5=ASSOCIATE DEGREE | 6=BACHELORS DEGREE | 7=MASTERS DEGREE | 8=DOCTORATE/PROF DEG",,format=DEGREEF
+MAT_ED,Maternal years of education,unknown,".U=UNKNOWN | 1=<= 8TH GRADE | 2=9-12 GRADE,NO DIPLOMA | 3=HIGH SCHOOL GRAD/GED | 4=SOME COLLEGE,NO DEG/ASSOCIATE DEG | 5=BACHELORS/MASTERS/D OCTORATE/PROF",,format=EDUCF
+MAT_HTFT,Maternal height - Feet,unknown,.U=UNKNOWN,,format=BCF
+MAT_HTIN,Maternal height - Inches,unknown,.U=UNKNOWN,,format=BCF
+MAT_PRWT,Maternal weight - Prepregnancy,unknown,.U=UNKNOWN,,format=BCF
+MAT_RACE_PU,Maternal Race grouped,unknown,.U=UNKNOWN | 2=WHITE | 3=BLACK | 4=AM INDIAN | 10=AK NATIVE | 21=ASIAN | 22=HAWAIIAN/OTH PAC ISLNDR | 23=OTHER/MULTIPLE RACE,,format=PU_RACE
+MAT_RACE_PU_AK,Maternal Race grouped – Alaska Only,unknown,.U=UNKNOWN | 1=WHITE | 2=AK NATIVE | 3=OTHER/MULTIPLE RACE,,format=RACEAKF
+MAT_TRAN,Mother transferred?,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MAT_WIC,Mother get WIC food during pregnancy?,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MM_DIAB,BC: Gestational diabetes?,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MM_DOB,Month of birth,unknown,.U=UNKNOWN,,format=BCF
+MM_FEVER,"BC: mom had fever Note: This variable is from the ""Characteristics of Labor and Delivery (45)"" section of the U.S. standard birth certificate. This variable is coded as ""yes"" if chorioamnionitis is coded “Y”, it is coded as “no” if chorioamnionitis is  “N” , else it is coded “unknown”.",unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MM_HBP,"BC: hypertension? Note: This variable is from the ""Risk factors in this pregnancy (41)"" section of the U.S. standard birth certificate. This variable is coded as ""yes"" if either prepregnancy hypertension or gestational hypertension is coded “Y”, it is coded as “no” if both are “N”, else it is coded “unknown”.",unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MM_LMP,Month of last menstrual period,unknown,.U=UNKNOWN,,format=BCF
+MM_NOMD,"BC: No medical risk factors? Note: This variable is coded as ""yes"" if prepregnancy diabetes, gestational diabetes, prepregnancy hypertension, gestational hypertension, previous preterm births, poor pregnancy outcome, and vaginal bleeding are all coded “N”, it is coded as “no” if any are “Y”, else it is coded as “unknown”. (If a site did not collect poor pregnancy outcome and/or vaginal bleeding, then",unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MOMCIG,"No. of cigarettes smoked daily during pregnancy Note: This variable is calculated by finding the average of the No. of Cigs in 1st Trimester, No. of Cigs in 2nd Trimester, and No. of Cigs in 3rd Trimester.  If any of these 3 values is unknown then variable is coded “unknown”.",unknown,.U=UNKNOWN | 0=NO SMOKE | 97=97 OR MORE,,format=BCSMOKEF
+MOMLBS,Maternal weight gain (LBS),unknown,.U=UNKNOWN | 0=NO GAIN/OR LOSS | 97=97 OR MORE,,format=BCLBSF
+MOMSMOKE,Did mom smoke? Note: This variable is coded “yes” if Mom smoked in any of the three trimesters.,unknown,.N=NOT RECORDED | .U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MOM_BMIG_BC,VAR: MOM BMI GROUPED FROM,unknown,.B=DK / BLANK | .U=UNKNOWN | 1=UNDERWT (   < 18.5) | 2=NORMAL  (18.5-24.9) | 3=OVERWT  (25.0-29.9) | 4=OBESE   (30.0 +   ),,format=BC
+MOM_BMI_BC,VAR: MOM BODY MASS INDEX FROM BC,unknown,.U=UNKNOWN,,format=NUMF
+MRACE_AMI,Maternal race - American Indian/Alaska native,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MRACE_ASIAN_PU,Maternal Race Asian grouped,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MRACE_BLK,Maternal race - Black,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MRACE_MULTO_PU,Maternal Race Multiple/Other,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MRACE_NHOPI_PU,Maternal Race Native Hawaiian Other Pacific Islander grouped,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+MRACE_WHT,Maternal race - White,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+NATIVITY,Mother US born? Note: This variable is only available starting with 2020 data,unknown,.U=UNKNOWN | 1=YES | 2=NO,,
+NCHS_URB_RUR2,Urban/rural coding from NCHS - 2 levels,unknown,.U=UNKNOWN | 1=URBAN | 2=RURAL,,format=URB_RUR
+OTH_TERM,"No. of Previous Other Pregnancy Outcomes Note: This variable is from the "" NUMBER OF OTHER PREGNANCY OUTCOMES (36)"" section of the U.S. standard birth certificate. This item includes spontaneous or induced losses or ectopic pregnancies.",unknown,.U=UNKNOWN | 0=NONE | 7=7 OR MORE,,format=O_TERMF
+PAT_ACK,Acknowledgment of paternity,unknown,.N=NOT RECORDED | .U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+PAT_DEG,Paternal highest degree received,unknown,".U=UNKNOWN | 1=<= 8TH GRADE | 2=9-12 GRD,NO DIPLOMA | 3=HIGH SCHL GRAD/GED | 4=SOME COLLEGE,NO DEG | 5=ASSOCIATE DEGREE | 6=BACHELORS DEGREE | 7=MASTERS DEGREE | 8=DOCTORATE/PROF DEG | 9=UNKNOWN",,format=DEGREEF
+PAT_ED,Paternal years of education,unknown,".U=UNKNOWN | 1=<= 8TH GRADE | 2=9-12 GRADE,NO DIPLOMA | 3=HIGH SCHOOL GRAD/GED | 4=SOME COLLEGE,NO DEG/ASSOCIATE DEG | 5=BACHELORS/MASTERS/D OCTORATE/PROF",,format=EDUCF
+PAT_RACE_PU,Paternal Race grouped,unknown,.U=UNKNOWN | 2=WHITE | 3=BLACK | 4=AM INDIAN | 10=AK NATIVE | 21=ASIAN | 22=HAWAIIAN/OTH PAC ISLNDR | 23=OTHER/MULTIPLE RACE,,format=PU_RACE
+PAT_RACE_PU_AK,Paternal Race grouped – Alaska Only,unknown,.U=UNKNOWN | 1=WHITE | 2=AK NATIVE | 3=OTHER/MULTIPLE RACE,,format=RACEAKF
+PAT_RACE_VT,Vermont Collapsed Paternal Race/Ethnicity: Non-Hispanic White?,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+PAY,Method of payment,unknown,.U=UNKNOWN | 1=MEDICAID | 2=PRIVATE INS | 3=SELF-PAY | 4=INDIAN H.S. | 5=CHAMPUS/TRICARE | 6=OTHER GOV | 8=OTHER | 9=UNKNOWN,,format=PAY_DELF
+PLURAL,Plurality,unknown,.U=UNKNOWN | 1=SINGLE | 2=TWIN | 3=OTH MULT,,format=PLURALF
+PNC_MTH,Month of first prenatal care visit Note: This variable is calculated using the Date of Last Menstrual Period and the Date of First Prenatal Care Visit. If either of these values are unknown then variable is coded “unknown”.,unknown,.U=UNKNOWN | 88=NO PNC,,format=PNC_MTHF
+PNC_VST,Number of prenatal care visit,unknown,.U=UNKNOWN,,format=BCF
+POB,Place of birth,unknown,.U=UNKNOWN | 1=HOSPITAL | 2=BIRTHING CENTER | 3=MD OFFICE/CLINIC | 4=RESIDENCE | 5=OTHER,,format=POBF
+PRE_LB_NAPHSIS,Number of previous live births grouped,unknown,.U=UNKNOWN | 0=0 | 1=1 | 2=2 | 3=3-5 | 4=6+,,format=NP_PRELB
+P_PRTERM,Previous preterm births,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+RF_EHYPE,Hypertension eclampsia Note: This variable is only available starting with 2020 data,unknown,.U=UNKNOWN | 1=YES | 2=NO,,
+RF_GDIAB,Gestational diabetes Note: This variable is only available starting with 2020 data,unknown,.U=UNKNOWN | 1=YES | 2=NO,,
+RF_GHYPE,Gestational hypertension Note: This variable is only available starting with 2020 data,unknown,.U=UNKNOWN | 1=YES | 2=NO,,
+RF_PDIAB,Prepregnancy diabetes Note: This variable is only available starting with 2020 data,unknown,.U=UNKNOWN | 1=YES | 2=NO,,
+RF_PHYPE,Prepregnancy hypertension Note: This variable is only available starting with 2020 data,unknown,.U=UNKNOWN | 1=YES | 2=NO,,
+SEX,Gender of infant,unknown,.U=UNKNOWN | 1=MALE | 2=FEMALE,,format=SEXF
+SGA_10,Small for Gestational Age Based on 10th Percentile,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+SGA_2SD,Small for Gestational Age Based on 2SD from Mean,unknown,.U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+TRANS,Infant transferred,unknown,.U=UNKNOWN | 1=YES | 2=NO VT_NONHISPANIC_WHIT E Vermont Collapsed Maternal Race/Ethnicity: Non-Hispanic White? YNF | .U=UNKNOWN | 1=YES | 2=NO,,format=YNF
+YY4_DOB,Year of birth,unknown,.U=UNKNOWN,,format=BCF
+YY4_LMP,Year of last menstrual period,unknown,.U=UNKNOWN,,format=BCF
+BC_FLAG,Birth Certificate Layout,unknown,1=PRE-2003 | 2=2003,,format=BCFLAGF
+HISPANIC,HISPANIC ETHNIC GROUP,unknown,.U=UNKNOWN | 1=NO | 2=YES,,format=NY1F
+INQX,In Combined Questionnaire,unknown,0=NO | 1=YES,,format=NY1F
+LANGUAGE,Language -- English/Spanish/Chinese,unknown,1=ENGLISH | 2=SPANISH | 3=CHINESE ID MOTHERS ID NUMBER,,format=LANGUAGE
+MODECONT,MODE OF CONTACT,unknown,"0=NEITHER | 1=MAIL | 2=PHONE | 3=BOTH(MAIL/PHONE) | 7=WEB | 8=WEB AND MAIL | 9=WEB AND PHONE | 10=MAIL, WEB, AND PHONE",,format=MODEF
+MODE_PRT,MODE OF PARTICIPATION,unknown,"0=NEITHER | 1=MAIL | 2=PHONE | 3=BOTH(MAIL/PHONE) | 7=WEB | 8=WEB AND MAIL | 9=WEB AND PHONE | 10=MAIL, WEB, AND PHONE",,format=MODEF
+NEST_YR,BC WT: YEAR (SUDAAN NEST VARIABLE),unknown,,,
+PARTICIP,DID MOM EVER PARTICIPATE?,unknown,0=CONTACTED/NOT PARTICIPATE | 1=CONTACTED/PARTICIPATED | 9=NOT CONTACTED,,format=PARTICIP
+QX_PHASE,QUESTIONNAIRE PHASE NUMBER,unknown,,,
+SAMCNT,BC WT: SAMPLE COUNT,unknown,,,
+STATE,STATE NAME,unknown,,,
+STRATUMC,BC WT: STRATA STATE'S COMBINED,unknown,,,format=STRATCF
+SUD_NEST,SUDAAN Nest Variable,unknown,,,
+TOTCNT,BC WT: TOTAL COUNT,unknown,,,
+TYPE,Type of survey response,unknown,1=MAIL SURVEY | 2=PHONE SURVEY | 3=WEB SURVEY,,format=QX_TYPE
+WTANAL,BC WT: ANALYSIS WT,unknown,,,
+WTONE,BC WT: SAMPLE WEIGHT,unknown,,,
+WTTHREE,BC WT: NONCOVERAGE WT,unknown,,,
+WTTWO,BC WT: NONRESPONSE WT,unknown,,,
+ASK_2HSM,HCW ask -- second-hand smoke (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_ABUS,HCW ask -- hurt emotional / physical (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_BDEF,HCW ask -- birth defects (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_BF,HCW ask -- plan to breastfeed (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_DPRS,HCW ask -- if down / depressed (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_DRUG,HCW ask -- using drugs (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_HIVT,HCW ask -- want HIV test (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_LABR,HCW ask -- labor starts early (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_LEAD,HCW ask -- lead poisoning (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_MEDS,HCW ask -- prescript meds (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_MERC,HCW ask -- fish with mercury (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+ASK_PPBC,HCW ask -- plan to use PP BC (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BCB_HUSB,PP BC barrs -- husb/part didnt want (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_NSEX,PP BC barrs -- abstinence (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_OTH,PP BC barrs -- other (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_PAY,PP BC barrs -- cant pay (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_PNOW,PP BC barrs -- preg now (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_PREG,PP BC barrs -- want preg (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_SIDE,PP BC barrs -- side effect (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_TUBE,PP BC barrs -- tubes tied/blocked (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_WANT,PP BC barrs -- didnt want to use (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCB_WHAT,PP BC barrs -- other specified (FORCED SKIP),unknown,,,
+BCP_COND,BC postpart -- condoms (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_IMPL,BC postpart -- contraceptive implant (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_IUD,BC postpart -- IUD (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_NSEX,BC postpart -- abstinence (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_OTH,BC postpart -- other (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_PILL,BC postpart -- pill (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_PTRG,BC postpart -- contraceptive patch/ring (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_PULL,BC postpart -- withdrawal (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_RHYT,BC postpart -- rhythm (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_SHT3,BC postpart -- shots every 3 mnths (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_TUBE,BC postpart -- tubes tied (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_VASE,BC postpart -- vasectomy (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+BCP_WHAT,BC postpart -- other specified (FORCED SKIP),unknown,,,
+BF5EVER,Breastfeed -- ever (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BF5LNGTH,BF duration -- length of time (FORCED SKIP),unknown,.B=BLANK | .S=SKIP | 41=LESS THAN 1 WEEK,,format=BFDUR4F
+BF5LNGTU,BF duration -- wks/mnths (FORCED SKIP),unknown,.B=BLANK | .S=SKIP | 1=WEEKS | 2=MONTHS | 5=LESS THAN 1 WEEK,,format=BFUNIT4F
+BF5STILL,Breastfeed -- still (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BF5WEEKS,VAR: # WEEKS BREASTFED BABY,unknown,.B=DK/BLANK | .S=SKIP | 84=DIDNT BREASTFEED | 85=BREASTFED<1 WEEK | 86=BREASTFEDING NOW,,format=BF_DURF
+BFINF_BDR,BF info -- from baby doctor (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_DR,BF info -- from my doctor (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_FAM,BF info -- from family / friends (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_GRP,BF info -- from support group (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_HOT,BF info -- from hotline (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_NUR,BF info -- from nurse / midwife / doula (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_OTH,BF info -- other (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_SPC,BF info -- from breastfeeding or lactation specialist (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+BFINF_TYPE,BF info -- other specified (FORCED SKIP),unknown,,,
+DRK83B_A,VAR: YES/NO DRINK 3 BEF PREG,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+DRK8_3B,"DRK -- 3 mnths bef, drinks/wk (FORCED SKIP)",unknown,.B=DK/BLANK | .S=SKIP | 1=14 DRINKS OR MORE A WEEK | 2=8 TO 13 DRINKS A WEEK | 3=4 TO 7 DRINKS A WEEK | 4=1 TO 3 DRINKS A WEEK | 5=LESS THAN 1 DRINK A WEEK | 6=I DIDNT DRINK THEN,,format=DRINK8F
+ECIG_3B,"ECIG -- 3 months before, how often (FORCED SKIP)",unknown,.B=BLANK/DK | .S=SKIP | 1=MORE THAN ONCE A DAY | 2=ONCE A DAY | 3=2-6 DAYS A WEEK | 4=1 DAY A WEEK OR LESS | 5=NOT USE ELECTRONIC VAPOR PRODUCTS,,format=ECIG_FREQ
+ECIG_3B_A,"ECIG -- 3 months before, how often, all moms",unknown,.B=BLANK/DK | 1=MORE THAN ONCE A DAY | 2=ONCE A DAY | 3=2-6 DAYS A WEEK | 4=1 DAY A WEEK OR LESS | 5=NOT USE ELECTRONIC VAPOR PRODUCTS,,format=ECIG_FREQ
+ECIG_3L,"ECIG -- last 3 months, how often (FORCED SKIP)",unknown,.B=BLANK/DK | .S=SKIP | 1=MORE THAN ONCE A DAY | 2=ONCE A DAY | 3=2-6 DAYS A WEEK | 4=1 DAY A WEEK OR LESS | 5=NOT USE ELECTRONIC VAPOR PRODUCTS,,format=ECIG_FREQ
+ECIG_3L_A,"ECIG -- last 3 months, how often, all moms",unknown,.B=BLANK/DK | 1=MORE THAN ONCE A DAY | 2=ONCE A DAY | 3=2-6 DAYS A WEEK | 4=1 DAY A WEEK OR LESS | 5=NOT USE ELECTRONIC VAPOR PRODUCTS,,format=ECIG_FREQ
+HI_NUMB,VAR: # SOURCES PAYMENT FOR PRESENT HEALTH INSURANCE,unknown,.B=DK/BLANK,,format=NUMF
+INFLIVE5,Infant alive -- now (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+INFQ_AGE,VAR: INF AGE (DAYS) QUEST COMPLETED,unknown,.B=DK/BLANK,,format=NUMSF
+INFQ_AGE_MOD,VAR: INF AGE (DAYS) QUEST COMPLETED (CLEANED),unknown,.B=DK/BLANK,,format=NUMSF
+INFWMOM5,Infant living -- with mom (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+INF_LIVE,VAR: INFANT ALIVE NOW,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+INF_WMOM,VAR: INFANT WITH MOM,unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+INS_NUMB,VAR: # PRE-PREGNANCY HEALTH INSURANCE PLANS,unknown,.B=DK/BLANK,,format=NUMF
+MOM_BMI,VAR: MOM BODY MASS INDEX FROM QX,unknown,.B=DK/BLANK,,format=NUMF
+MOM_BMIG,VAR: MOM BMI GROUPED FROM QX,unknown,.B=DK / BLANK | 1=UNDERWT (< 19.8) | 2=NORMAL (19.8-26) | 3=OVERWT (> 26-29) | 4=OBESE (> 29),,format=BMIG4F
+MOM_BMIG_QX_REV,VAR: MOM BMI GROUPED FROM QX REVISED,unknown,.B=DK / BLANK | 1=UNDERWT (   < 18.5) | 2=NORMAL  (18.5-24.9) | 3=OVERWT  (25.0-29.9) | 4=OBESE   (30.0 +   ),,format=BMIG4REV
+MOM_MTRS,Mom Height in Meters from Questionnaire,unknown,.B=DK/BLANK,,format=NUMF
+MOM_WT,VAR: MOM WT BEFORE PREGNANCY,unknown,.B=BLANK,,format=MOM_WT
+NOHOSP_B,VAR: BABY STAY IN HOSP?,unknown,.B=DK/BLANK | 1=NO | 2=YES | 3=STILL HOSP,,format=NOHOSP_B
+PNCNO,VAR: NO PNC VISITS,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+PNC_1TRM,VAR: START PNC 1ST TRIMESTER?,unknown,.B=DK/BLANK | 1=YES | 2=NO | 3=NO PNC,,format=PNC_1TRM
+PNC_WKS,VAR: WEEKS 1ST PNC VISIT,unknown,.B=DK/BLANK | 99=NO PNC,,format=PNC_WKS
+PP8_HCEX,Insurance paid by -- Health Care Exchange (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP8_PAR,Insurance paid by -- parent (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP8_WORK,Insurance paid by -- job (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_CHIP,Insurance paid by -- SCHIP/CHIP (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_DEPRESS,VAR:  POST-PARTUM DEPRESSION,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=INDICATOR
+PP_GOV,Insurance paid by -- other government (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_GOV2,Insurance paid by -- other government (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_IHS,Insurance paid by -- IHS/Tribal (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_MEDIC,Insurance paid by -- Medicaid (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_MILIT,Insurance paid by -- TRICARE or military (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_NONE,Insurance paid by -- No insurance (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_NUMB,VAR: # SOURCES PAYMENT FOR PNC,unknown,.B=DK/BLANK | .S=SKIP,,format=NUMSF
+VAR,POST-PARTUM DEPRESSION,unknown,,,
+PP_OTH,Insurance paid by -- other (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+PP_TYPE,Insurance paid by -- Other specified (FORCED SKIP),unknown,,,
+PRE_ABUS,Pre-preg -- hurt emotional / physical (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_BDEF,Pre-preg -- birth defects (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_HEPB,Pre-preg -- tested for Hep B (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_HIVT,Pre-preg -- tested for HIV (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_HLTH,Pre-preg -- improve health before preg (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_KIDS,Pre-preg -- want to have kids (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_MHDP,Pre-preg -- feeling down / depressed (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_MORB,Pre-preg -- control med conditions (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_PRBC,Pre-preg -- birth control to prevent preg (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_SMK,Pre-preg -- smoke during preg (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_STI,Pre-preg -- talk about STIs (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_VIT,Pre-preg -- folic acid (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_WORK,Pre-preg -- kind of work (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+PRE_WT,Pre-preg -- weight (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLEEPOWN,Sleep -- baby alone (FORCED SKIP),unknown,.B=BLANK/DK | .S=SKIP | 1=ALWAYS | 2=OFTEN/ALMOST ALWAYS | 3=SOMETIMES | 4=RARELY | 5=NEVER,,format=FREQ5F
+SLEEPPOS,Sleeping position -- baby (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=SIDE | 2=BACK | 3=STOMACH | 4=SIDE/BACK | 5=SIDE/STOMACH | 6=BACK/STOMACH | 7=ALL 3 POSITIONS,,format=SLEEPPOS
+SLP2ALON,Recommend sleep -- place baby alone to sleep (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP2BACK,Recommend sleep -- place on back (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP2CRB,Recommend sleep -- place in crib / bassinet / play yard (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP2MYRM,Recommend sleep -- place baby crib / bed in my room (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP2NTBD,Recommend sleep -- can or cannot go in baby bed (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_CHR,Baby slept -- on couch / sofa / chair (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_CRB8,Baby slept -- in crib / bassinet / play yard (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_MAT8,Baby slept -- on mattress / bed (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_NBLK,Baby slept -- with blanket (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_NPAD,Baby slept -- with bumper pads (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_ROOM,Sleep -- baby in room with mom (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_SAK,Baby slept -- in sleep sack or wearable blanket (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_SWG,Baby slept -- in car seat / swing (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SLP_TOYPIL,"Baby slept -- with toys, cushions, or pillows (FORCED SKIP)",unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+SMK63B_A,VAR: YES/NO SMOKE 3 BEF PREG,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK63L_A,VAR: YES/NO SMOKE LAST 3 MTH PREG,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK6C_NW,VAR: CHANGE SMOKING LAST 3 & NOW,unknown,.B=DK/BLANK | 1=NONSMOKER | 2=SMOKER WHO QUIT | 3=#CIGS REDUCED | 4=#CIGS SAME/MORE | 5=NONSMOKR RESUMED,,format=SMK_CHNG
+SMK6C_PG,VAR: CHANGE SMOKING DURING PREG,unknown,.B=DK/BLANK | 1=NONSMOKER | 2=SMOKER WHO QUIT | 3=#CIGS REDUCED | 4=#CIGS SAME/MORE | 5=NONSMOKR RESUMED,,format=SMK_CHNG
+SMK6C_PP,VAR: CHANGE SMOKING 3 BEFORE & NOW,unknown,.B=DK/BLANK | 1=NONSMOKER | 2=SMOKER WHO QUIT | 3=#CIGS REDUCED | 4=#CIGS SAME/MORE | 5=NONSMOKR RESUMED,,format=SMK_CHNG
+SMK6NW_A,VAR: YES/NO SMOKE NOW,unknown,.B=DK/BLANK | 1=NO | 2=YES,,format=NY1F
+SMK6_3B,"SMK -- 3 mnths bef, #cigs/day (FORCED SKIP)",unknown,.B=DK/BLANK | .S=SKIP | 1=41 CIGARETTES OR MORE | 2=21 TO 40 CIGARETTES | 3=11 TO 20 CIGARETTES | 4=6 TO 10 CIGARETTES | 5=1 TO 5 CIGARETTES | 6=LESS THAN 1 CIGARETTE | 7=NONE (0 CIGARETTES),,format=SMOKE5F
+SMK6_3L,"SMK -- last 3 mnths, #cigs/day (FORCED SKIP)",unknown,.B=DK/BLANK | .S=SKIP | 1=41 CIGARETTES OR MORE | 2=21 TO 40 CIGARETTES | 3=11 TO 20 CIGARETTES | 4=6 TO 10 CIGARETTES | 5=1 TO 5 CIGARETTES | 6=LESS THAN 1 CIGARETTE | 7=NONE (0 CIGARETTES),,format=SMOKE5F
+SMK6_3N,"SMK -- now, #cigs/day (FORCED SKIP)",unknown,.B=DK/BLANK | .S=SKIP | 1=41 CIGARETTES OR MORE | 2=21 TO 40 CIGARETTES | 3=11 TO 20 CIGARETTES | 4=6 TO 10 CIGARETTES | 5=1 TO 5 CIGARETTES | 6=LESS THAN 1 CIGARETTE | 7=NONE (0 CIGARETTES),,format=SMOKE5F
+TLK_CIGS,HCW ask -- if smoking cigs (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+TLK_ETOH,HCW ask -- if drinking alcohol (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+TLK_WT,HCW ask -- amt weight gain (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+TYP_BC,Health care type -- visit for family planning / birth control (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_DDS,Health care type -- visit with dentist (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_DOCT,Health care type -- checkup with dr (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_ILLN,Health care type -- visit for illness (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_INJR,Health care type -- visit for injury (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_MH,Health care type -- visit for depression or anxiety (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_OBGN,Health care type -- checkup with my OB/GYN (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_OTHR,Health care type -- other (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO (UNCHECKED) | 2=YES (CHECKED),,format=NYSF
+TYP_WHAT,Health care type -- other specified (FORCED SKIP),unknown,,,
+VPP_ABUS,PPV -- HCW ask about abuse (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_BCM,PPV -- BC methods (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_DEPR,PPV -- ask about depression (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_DIAB,PPV -- test for diabetes (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_DRNK,PPV -- drinking alcohol (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_EAT,PPV -- eating and exercise (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_GOING,PPV -- breastfeeding (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_NSRT,PPV -- insert IUD or implant (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_PRESBC,PPV -- prescribe birth control (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_RXOTH,PPV -- other prescription (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_RXPAIN,PPV -- prescription pain (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_SMOK,PPV -- HCW ask about smoking cigs (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_VIT,PPV -- folic acid (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F
+VPP_WAIT,PPV -- wait before preg (FORCED SKIP),unknown,.B=DK/BLANK | .S=SKIP | 1=NO | 2=YES,,format=NYS1F

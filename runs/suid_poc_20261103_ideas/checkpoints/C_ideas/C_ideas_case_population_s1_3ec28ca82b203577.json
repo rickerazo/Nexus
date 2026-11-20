@@ -1,0 +1,76 @@
+{
+ "ideas": [
+  {
+   "question": "What proportion of SUID cases involve infants whose mothers smoked during pregnancy, compared to the weighted prevalence of maternal smoking among live births?",
+   "comparison": "cfrp_v51 (cases) vs prams_p8_arf and prams_p7_arf (population reference)",
+   "why_open": "Previous research established that maternal smoking is a risk factor for SUID. However, it remains unclear how prevalent this exposure is among actual cases compared to the general population of live births.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal smoking during pregnancy (exposure) from ncfrp_v51, cdc_linkco15; weighted prevalence of maternal smoking among live births (population reference)"
+  },
+  {
+   "question": "How does the incidence of SUID cases where infants were exposed to second-hand smoke compare with the weighted proportion of exposure to second-hand smoke in a general population of newborns?",
+   "comparison": "cfrp_v51 (cases) vs prams_p8_arf and prams_p7_arf (population reference)",
+   "why_open": "Second-hand smoke has been identified as an environmental risk factor for SUID. However, it is unknown how common this exposure is among cases compared to the general population of newborns.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Second-hand smoke exposure (exposure) from ncfrp_v51, cdc_linkco15; weighted prevalence of second-hand smoke exposure among live births (population reference)"
+  },
+  {
+   "question": "Is the proportion of SUID cases involving preterm birth higher than the weighted proportion of preterm births in a general population of newborns?",
+   "comparison": "cfrp_v51 (cases) vs cdc_natl15 and prams_p7_arf, prams_p8_arf (population reference)",
+   "why_open": "Preterm birth is known to be associated with an increased risk of SUID. However, it remains unclear if the proportion of preterm births among SUID cases is indeed higher compared to general newborn populations.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Preterm birth (exposure) from ncfrp_v51, cdc_linkco15; weighted prevalence of preterm births among live births (population reference)"
+  },
+  {
+   "question": "How does the proportion of SUID cases with low birth weight compare to the weighted prevalence of low birth weight in a general population of newborns?",
+   "comparison": "cfrp_v51 (cases) vs prams_p8_arf and prams_p7_arf (population reference)",
+   "why_open": "Low birth weight is associated with an increased risk of SUID. It remains unknown if the proportion of low birth weight cases among SUID cases exceeds that of general newborn populations.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Low birth weight (exposure) from ncfrp_v51, cdc_linkco15; weighted prevalence of low birth weight among live births (population reference)"
+  },
+  {
+   "question": "What proportion of SUID cases involve infants whose mothers experienced significant stress during pregnancy compared to the weighted prevalence of maternal stress in a general population of newborns?",
+   "comparison": "cfrp_v51 (cases) vs prams_p8_arf and prams_p7_arf (population reference)",
+   "why_open": "Pregnancy-related stress is thought to contribute to SUID risk. It remains unclear whether the proportion of cases involving stressed mothers exceeds that seen in a general population of newborns.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal stress during pregnancy (exposure) from ncfrp_v51, cdc_linkco15; weighted prevalence of maternal stress among live births (population reference)"
+  }
+ ]
+}

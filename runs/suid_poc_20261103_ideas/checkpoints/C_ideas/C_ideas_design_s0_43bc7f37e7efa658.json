@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "How does the incidence of Sudden Unexpected Infant Death (SUID) vary between rural and urban areas, considering demographic factors and access to healthcare?",
+   "why_open": "The current research primarily focuses on developmental windows and risk factors without exploring geographical disparities. Understanding regional differences can highlight unique environmental or societal factors influencing infant mortality rates.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Geographic location, Maternal Complications, Mother's Demographics"
+  },
+  {
+   "question": "What is the trend in SUID incidence before and after public health interventions targeting maternal smoking during pregnancy?",
+   "why_open": "The current manuscripts do not explore temporal trends following intervention implementation. This question addresses a critical gap by assessing if recent policy changes have had a significant impact on reducing SUID rates.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "Maternal smoking during pregnancy, Year of birth or death"
+  },
+  {
+   "question": "How does the prevalence of sleep-related risk factors in infant deaths differ between infants born before and after implementation of Safe Sleep Campaigns?",
+   "why_open": "Current studies do not investigate the impact of public health campaigns specifically. This question aims to evaluate changes in infant mortality patterns related to sleep environment safety.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Incident Location, Infant Sleep Environment, Maternal smoking during pregnancy"
+  },
+  {
+   "question": "What is the differential impact of socioeconomic status on SUID incidence in infants born to mothers with and without pre-existing chronic health conditions?",
+   "why_open": "The research currently lacks a comprehensive analysis of how chronic maternal health conditions interact with socioeconomics. This question seeks to identify protective or exacerbating factors within different demographic strata.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_linkco15"
+   ],
+   "data": "Income and Dependent Information, Maternal Health Problems"
+  },
+  {
+   "question": "How does SUID incidence vary among infants with siblings compared to only children, considering factors such as maternal stressors and healthcare access?",
+   "why_open": "This question focuses on the family dynamics that could influence infant mortality risks, an area not explored in current research. It aims to understand if having siblings impacts a child's survival rate.",
+   "sources": [
+    "prams_p8_arf",
+    "ncfrp_v51"
+   ],
+   "data": "Family Referrals, Mother Service Discrimination"
+  }
+ ]
+}

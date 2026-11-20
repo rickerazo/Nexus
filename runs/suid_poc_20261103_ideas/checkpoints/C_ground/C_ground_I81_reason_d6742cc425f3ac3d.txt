@@ -1,0 +1,78 @@
+### Design
+
+**Restated Question:**
+What are the differences in how pregnancy weight gain is recorded between NCFRP and PRAMS, and how might these discrepancies affect comparisons of risk factors for SUID?
+
+**Design Type:**
+Measurement comparison. This design compares how the same concept (pregnancy weight gain) is measured differently across two distinct sources (NCFRP case series vs. PRAMS population reference).
+
+### Sources by Role
+
+- **Case Series:** NCFR-P v5.1
+  - Covers: Child deaths reviewed by fatality review teams, with a focus on SUID cases.
+  - Reason: Provides detailed information on risk factors for child deaths, including pregnancy weight gain.
+
+- **Population Reference:** PRAMS Phase 8 ARF and PRAMS Phase 8 Standard Section II
+  - Covers: Weighted survey of mothers a few months after live births in participating states.
+  - Reasons:
+    - Provides general population data to estimate prevalence of risk factors for SUID, including pregnancy weight gain.
+    - Enables comparison between general population and case series.
+
+### Period
+
+- **NCFR-P v5.1:** Uses deaths from 2008-2019 (as per the manuscript focus).
+- **PRAMS Phase 8 ARF and PRAMS Standard Section II:** Uses data from 2016-2021 (given in the candidate idea).
+
+### Variables
+
+**Pregnancy Weight Gain:**
+- **NCFR-P v5.1:**
+  - `INF4momwtgn`: Mother's pregnancy weight gain or loss in pounds.
+  - `INF4mompregwt`: Mother's pre-pregnancy weight - Pounds.
+
+- **PRAMS Phase 8 ARF and PRAMS Standard Section II:**
+  - `MAT_PRWT`: Maternal weight - Prepregnancy.
+  - `MOMLBS`: Maternal Weight Gain (Pounds).
+  - `PGWTGN8`: Pregnancy weight gain in pounds/kilograms.
+
+**Pre-pregnancy Weight Reporting Flags and Values:**
+
+- **NCFR-P v5.1:**
+  - `INF4mompregwtunk`: Pre-pregnancy weight unknown.
+  
+- **PRAMS Phase 8 ARF:**
+  - `MAT_PRWT`: Maternal pre-pregnancy weight with missing values coded as `.U`.
+  - Reporting flags like `F_PWGT`, `RF_PHYPE` (prepregnancy hypertension), and other relevant variables may also be useful for understanding data completeness.
+
+### Biases
+
+**Selection Bias:**
+- **NCFR-P v5.1:** Only includes deaths reviewed by fatality review teams, which might not represent all SUID cases.
+- **PRAMS Phase 8 ARF:** Includes live births from a weighted survey of participating states, potentially missing some non-participating regions.
+
+**Information Bias:**
+- **NCFR-P v5.1:** Information on pregnancy weight gain is reviewed by fatality review teams and may include discrepancies or inaccuracies.
+- **PRAMS Phase 8 ARF:** Self-reported data from mothers surveyed post-birth, which can introduce recall bias.
+
+**Confounding:**
+- Differences in the timing of data collection (e.g., pre-pregnancy vs. during pregnancy), missing data patterns, and different reporting mechanisms between NCFR-P v5.1 and PRAMS Phase 8 ARF may confound comparisons.
+
+### What the Design Cannot Establish
+
+The design can only compare how pregnancy weight gain is recorded differently in case series versus population reference datasets. It cannot establish causality or incidence rates for SUID, nor can it directly assess risk factors' impact on SUID without additional analyses linking these measurements to outcomes.
+
+### Prior Art
+
+- **Manuscripts:** The manuscript claims (e.g., C10, C28) address limitations in data collection and ascertainment but do not specifically compare pregnancy weight gain recording between case series and population references.
+  
+  - No existing claim closely matches the proposed comparison of measurement discrepancies for pregnancy weight gain.
+
+### Verdict
+
+**The sources can answer a version of the question.**
+- The design is feasible given the available datasets, allowing a detailed examination of how pregnancy weight gain is recorded differently in NCFR-P v5.1 and PRAMS Phase 8 ARF.
+- However, the limitations (selection and information biases) must be acknowledged when interpreting findings.
+
+**Logistical Reason:**
+- Data from additional years for PRAMS may need to be acquired if comparing to a longer period of data from NCFR-P v5.1.
+- Ensuring comparability in definitions and coding is crucial before making meaningful comparisons between the datasets.

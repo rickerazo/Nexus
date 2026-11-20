@@ -1,0 +1,57 @@
+### Design
+
+**Restated Question:** How has the proportion of SUID cases among infants sleeping on shared surfaces with adults changed from 2004 to 2019?
+
+This study will compare proportions within a case series over time without estimating rates or incidence, as no denominator source is available that covers both periods and provides population at risk.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (covers SUID cases in 2004-2019)
+- **Population Reference:** prams_p8_arf (Phase 8, 2016-2021; not applicable for this specific trend analysis but mentioned as proposed reference)
+  
+The ncfrp_v51 serves as the sole source of SUID cases and is critical for observing trends. PRAMS data are irrelevant to calculating rates or proportions within a case series.
+
+### Period
+
+**Period:** 2004-2019 (common coverage period between ncfrp_v51 and cdc_linkco15, though only the former's data will be used)
+
+### Variables
+
+#### Case Series: ncfrp_v51
+- **Sleeping on Shared Surface with Adults:** CIRwadultnum / CIRwadultobs
+  - If yes, child sleeping on same surface with adult(s)
+  - Missing answers are documented.
+
+#### Population Reference: prams_p8_arf (not used for the trend analysis but proposed)
+- **Sleep Arrangements in PRAMS:** SLP_NPAD_RAW, SLP_SAK_RAW, etc.
+  - These variables measure sleep arrangements among a sample of live births and do not provide denominators for cases.
+
+### Biases
+
+1. **Selection Bias:**
+   - Case series covers only reviewed child deaths by fatality review teams; thus, it may miss cases where no review was conducted or if reviews are inconsistent across years.
+   
+2. **Information Bias:**
+   - Measurement differences:
+     - ncfrp_v51 records sleep arrangements at the time of death.
+     - PRAMS measures typical sleeping arrangements a few months post-birth.
+   - Timing discrepancies between case and reference data can introduce inconsistencies.
+
+3. **Confounding:**
+   - Trends in SUID cases may be influenced by changes in reporting practices, public health interventions, or other temporal factors unrelated to actual sleep behaviors.
+
+### What the Design Cannot Establish
+
+- The design cannot estimate incidence rates or population-level trends due to the absence of a denominator.
+- It can only describe proportions within the case series over time.
+
+### Prior Art
+
+The manuscript claims related to SUID and bed sharing focus on associations between bed sharing, maternal smoking, and prematurity with SUID incidence. However, none directly address temporal trends in sleep arrangements among cases:
+- **Closest claim:** bedsharing_ms_v7.C8 (59.5% of SUID cases involved bed sharing), but it does not track trends over time.
+  
+### Verdict
+
+**These data can answer a version of the question about proportions within the case series from 2004 to 2019, but cannot establish incidence or population-level prevalence due to the absence of a denominator source.**
+
+The critical missing element is a consistent denominator for infant births across both periods (2004-2019). The proposed PRAMS data (Phase 8, 2016-2021) do not cover the earlier period needed and are thus irrelevant to this specific trend analysis.

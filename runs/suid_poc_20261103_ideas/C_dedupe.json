@@ -1,0 +1,600 @@
+{
+ "groups": [
+  {
+   "representative": "I1",
+   "members": [
+    "I1"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I2",
+   "members": [
+    "I2"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I3",
+   "members": [
+    "I3"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I4",
+   "members": [
+    "I4"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I5",
+   "members": [
+    "I5"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I6",
+   "members": [
+    "I6"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I7",
+   "members": [
+    "I7"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I8",
+   "members": [
+    "I8"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I9",
+   "members": [
+    "I9"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I10",
+   "members": [
+    "I10"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I11",
+   "members": [
+    "I11"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I12",
+   "members": [
+    "I12"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I13",
+   "members": [
+    "I13"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I14",
+   "members": [
+    "I14"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I15",
+   "members": [
+    "I15"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I16",
+   "members": [
+    "I16"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I17",
+   "members": [
+    "I17"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I18",
+   "members": [
+    "I18"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I19",
+   "members": [
+    "I19"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I20",
+   "members": [
+    "I20"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I21",
+   "members": [
+    "I21"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I22",
+   "members": [
+    "I22"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I23",
+   "members": [
+    "I23"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I24",
+   "members": [
+    "I24"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I25",
+   "members": [
+    "I25"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I26",
+   "members": [
+    "I26"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I27",
+   "members": [
+    "I27"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I28",
+   "members": [
+    "I28"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I29",
+   "members": [
+    "I29"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I30",
+   "members": [
+    "I30"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I31",
+   "members": [
+    "I31"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I32",
+   "members": [
+    "I32"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I33",
+   "members": [
+    "I33"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I34",
+   "members": [
+    "I34"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I35",
+   "members": [
+    "I35"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I36",
+   "members": [
+    "I36"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I37",
+   "members": [
+    "I37"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I38",
+   "members": [
+    "I38"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I39",
+   "members": [
+    "I39"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I40",
+   "members": [
+    "I40"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I41",
+   "members": [
+    "I41"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I42",
+   "members": [
+    "I42"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I43",
+   "members": [
+    "I43"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I44",
+   "members": [
+    "I44"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I45",
+   "members": [
+    "I45"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I46",
+   "members": [
+    "I46"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I47",
+   "members": [
+    "I47"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I48",
+   "members": [
+    "I48"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I49",
+   "members": [
+    "I49"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I50",
+   "members": [
+    "I50"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I51",
+   "members": [
+    "I51"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I52",
+   "members": [
+    "I52"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I53",
+   "members": [
+    "I53"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I54",
+   "members": [
+    "I54"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I55",
+   "members": [
+    "I55"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I56",
+   "members": [
+    "I56"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I57",
+   "members": [
+    "I57"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I58",
+   "members": [
+    "I58"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I59",
+   "members": [
+    "I59"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I60",
+   "members": [
+    "I60"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I61",
+   "members": [
+    "I61"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I62",
+   "members": [
+    "I62"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I63",
+   "members": [
+    "I63"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I64",
+   "members": [
+    "I64"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I65",
+   "members": [
+    "I65"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I66",
+   "members": [
+    "I66"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I67",
+   "members": [
+    "I67"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I68",
+   "members": [
+    "I68"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I69",
+   "members": [
+    "I69"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I70",
+   "members": [
+    "I70"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I71",
+   "members": [
+    "I71"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I72",
+   "members": [
+    "I72"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I73",
+   "members": [
+    "I73"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I74",
+   "members": [
+    "I74"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I75",
+   "members": [
+    "I75"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I76",
+   "members": [
+    "I76"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I77",
+   "members": [
+    "I77"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I78",
+   "members": [
+    "I78"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I79",
+   "members": [
+    "I79"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I80",
+   "members": [
+    "I80"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I81",
+   "members": [
+    "I81"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I82",
+   "members": [
+    "I82"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I83",
+   "members": [
+    "I83"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I84",
+   "members": [
+    "I84"
+   ],
+   "max_similarity": 0.0
+  },
+  {
+   "representative": "I85",
+   "members": [
+    "I85"
+   ],
+   "max_similarity": 0.0
+  }
+ ],
+ "threshold": 0.93
+}

@@ -1,0 +1,36 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers reporting smoking during pregnancy differs between the NCFRP case series and PRAMS population reference datasets.",
+ "rationale": "This design compares how smoking behavior is recorded differently in case versus population datasets, which can help identify potential biases affecting SUID risk factor assessments.",
+ "prior_art": "suid_literature_abstracts.C11 establishes that maternal smoking increases SUID risk but does not address recording discrepancies between case and reference datasets. This question remains open to explore comparability issues.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C11"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "smoking behavior during pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:INFsmbefpreg",
+  "ncfrp_v51:INFsectricig",
+  "ncfrp_v51:INFfirsttricig",
+  "ncfrp_v51:INFthirdtricig",
+  "prams_p8_arf:MOMSMOKE",
+  "prams_p8_arf:CIG_PRIOR",
+  "prams_p8_arf:CIG_2TRI",
+  "prams_p8_arf:CIG_3TRI",
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot establish causality or incidence. It can only compare how smoking behavior is recorded differently across datasets, which could introduce biases in risk factor assessments for SUID."
+}

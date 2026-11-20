@@ -1,0 +1,28 @@
+{
+ "groundable": false,
+ "why_not": "The case series (NCFRP_V51) does not have a direct measure of pre-pregnancy healthcare visits, and PRAMS Phase 8 is biased towards high-risk areas.",
+ "statement": "",
+ "rationale": "This design cannot establish the rate difference due to missing data on pre-pregnancy health care visits in NCFRP_V51 and potential bias in PRAMS Phase 8.",
+ "prior_art": "The closest tested work includes limitations related to exposure misclassification (SUID_manuscript_v9_clean.C12) and indirect denominator sources (bedsharing_ms_v7.C19), but these do not address pre-pregnancy healthcare visits directly. Therefore, the question remains open due to data gaps.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C12",
+  "bedsharing_ms_v7.C19"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "pre-pregnancy healthcare visits"
+ ],
+ "variables": [
+  "prams_p8_arf:PRE_VIST",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "Causation; the design only compares proportions of pre-pregnancy health care visits among SUID cases versus live births."
+}

@@ -1,0 +1,69 @@
+{
+ "ideas": [
+  {
+   "question": "How does inner ear dysfunction (IED) affect SUID risk as measured by PCA-aligned incidence among infants with maternal smoking?",
+   "comparison": "ncfrp_v51:INFieardysfunc (exposure), ncfrp_v51:CIG_REC (covariate); cdc_linkco15:PCA (exposure), cdc_linkco15:UCODR130 (outcome)",
+   "why_open": "While studies suggest inner ear dysfunction may influence breathing and arousal responses, its interaction with maternal smoking in SUID incidence remains unexplored. Understanding this could identify a subgroup at higher risk due to combined exposures.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "data": "Postconceptional age (PCA), Sudden unexpected infant death (SUID), Maternal smoking during pregnancy, Inner ear dysfunction"
+  },
+  {
+   "question": "How does postneonatal mortality due to external causes vary by geographic location within the case series?",
+   "comparison": "ncfrp_v51:INFaddrst (exposure); cdc_linkco15:AGEP (offset), cdc_linkco15:UCODR130 (outcome)",
+   "why_open": "Postneonatal deaths due to external causes have shown pandemic-era fluctuations. Investigating geographic variation could reveal local risk factors or protective measures that influence these trends.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "data": "Age at death, Geographic location, Sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "Does the incidence of SUID differ between infants with low birth weight and those who did not undergo a pre-pregnancy ultrasound?",
+   "comparison": "ncfrp_v51:INFbirthwtcat (exposure), ncfrp_v51:ULTRASONO (covariate); cdc_linkco15:UCODR130 (outcome)",
+   "why_open": "Low birth weight is a known risk factor for SUID. However, the role of prenatal ultrasound in identifying and mitigating this risk has not been thoroughly examined. This study aims to fill that gap.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "data": "Birthweight (low, non-low), Prenatal ultrasound, Sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "What is the association between maternal obesity and SUID incidence as measured by postconceptional age?",
+   "comparison": "ncfrp_v51:INF4mombmi (exposure); cdc_linkco15:BMI_R (covariate), cdc_linkco15:UCODR130 (outcome)",
+   "why_open": "Maternal obesity has been linked to SUID but its impact when adjusted for other risk factors is less clear. Postconceptional age can clarify timing of this association.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI), Sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "Does maternal prepregnancy smoking influence the timing of peak SUID incidence in postconceptional age among preterm infants?",
+   "comparison": "ncfrp_v51:INFsmanytime (exposure); cdc_linkco15:GESTREC3 (covariate), cdc_linkco15:UCODR130 (outcome)",
+   "why_open": "Preterm birth and maternal smoking are both risk factors for SUID, but their combined effect on the developmental timing of peak incidence is not well understood.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [
+    "cdc_linkco15"
+   ],
+   "data": "Maternal smoking during pregnancy, Preterm birth, Sudden unexpected infant death (SUID)"
+  }
+ ]
+}

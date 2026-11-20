@@ -1,0 +1,61 @@
+### Design
+
+**Design**: Trends within cases. Compare proportions among the cases across periods. When a case series' coverage changes over time, changes in case counts are not changes in incidence.
+
+**Rephrased Question**: What trends exist in the proportion of Sudden Unexpected Infant Death (SUID) cases that occurred within hospital overnight stays between 2004 and 2019?
+
+### Sources by Role
+
+- **Case Series: ncfrp_v51**
+  - **Reason for role**: The National Fatality Review Case Reporting System (NFR-CRS) provides detailed information on SUID cases, including whether the infant was hospitalized overnight.
+
+- **Population Reference: prams_p8_arf**
+  - **Reason for role**: PRAMS Phase 8 is a survey of mothers who had live births and does not capture data on infant deaths. It includes variables related to hospital stays during pregnancy and after birth but cannot provide incidence denominators.
+
+### Period
+
+**Period**: The common period lies within the coverage of both sources:
+- **ncfrp_v51 (2004-2019)**
+- **prams_p8_arf (2016-2021)**: Since PRAMS data only goes back to 2016, the analysis period is constrained to 2016-2019.
+
+### Variables
+
+**Concept**: Hospital Overnight Stay
+- **Case Series Variable**: 
+  - ncfrp_v51:INF4hosprtn (Infant return to hospital overnight after delivery)
+- **Population Reference Variable**:
+  - prams_p8_arf:LTH_HOSP (Hosp baby stay -- length of time)
+
+### Biases
+
+#### Selection Bias
+- The case series includes only SUID cases, which may not be representative of all live births. The PRAMS data is a survey sample of mothers who had live births, but it does not capture infant deaths.
+
+#### Information Bias
+- ncfrp_v51 records hospital stays for SUID cases after birth.
+- prams_p8_arf reports on hospital stays during pregnancy and post-birth from the mother's perspective. The timing and reporting can differ between sources due to recall bias in surveys.
+
+#### Confounding
+- Maternal factors like smoking, prenatal care, and health conditions might influence both hospital stays and SUID risk.
+- Variability in healthcare practices across states and over time may confound trends in overnight hospital stays for infants.
+
+### What the Design Cannot Establish
+
+This design can only compare proportions of cases with hospital overnight stays among SUID cases. It cannot estimate incidence or rates because it lacks a denominator source to determine population at risk. The analysis will provide insights into trends within cases but not broader population-level changes.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C13**: Discusses postconceptional age (PCA) and maternal smoking, which may influence hospital stays.
+- **bedsharing_ms_v7.C8**: Reports that bed sharing is recorded for 59.5% of SUID cases and the association with maternal smoking.
+
+These claims do not directly address trends in overnight hospital stays specifically but suggest related factors like maternal smoking and sleep practices could influence hospitalization rates among SUID cases.
+
+### Verdict
+
+**Can these data answer a version of the question?**
+
+Yes, the data can be used to analyze trends within SUID cases regarding hospital overnight stays from 2016 to 2019. However, the analysis is limited to proportions among cases and cannot establish population-level incidence or rates.
+
+**Missing Data Element/Design Element:**
+- A denominator source covering live births for the same period (2016-2019) would be needed to estimate incidence and rates.
+- For broader trends over 2004-2019, a consistent case series with comparable data coverage is required.

@@ -1,0 +1,64 @@
+### Design
+
+**Question Restated:** How does maternal prepregnancy body mass index (BMI) relate to sudden unexpected infant death (SUID) compared to other causes of infant death?
+
+This is a case-case comparison. The design compares the cases of SUID with cases of other causes of infant death recorded in the same case series, to find what is specific to SUID rather than to every event in the series.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System) – This dataset records both SUID and other types of infant deaths.
+- **Population Reference:** prams_p8_arf, prams_p7_arf (PRAMS Phase 8 and PRAMS Phase 7 Analytic Research Files) – These datasets are weighted surveys of mothers a few months after live births and can provide population-level prevalence estimates for maternal prepregnancy BMI.
+  
+### Period
+
+The years needed: **2008-2019**.
+
+### Variables
+
+#### Maternal Prepregnancy Body Mass Index (BMI)
+
+- **ncfrp_v51:** The source does not directly measure maternal prepregnancy BMI. It includes variables such as `INF4mompregwt` (Mother's pre-pregnancy weight in pounds) and `ISSprewgthmgmtbef`, but these need to be calculated or derived.
+  
+- **prams_p8_arf, prams_p7_arf:** 
+  - `MOM_BMI`: Maternal Body Mass Index from questionnaire.
+  - `MAT_PRWT`: Maternal weight - Prepregnancy.
+  - `MOM_LBKGU`: Moms weight -- lbs or kilos.
+  
+For the population reference (PRAMS), maternal prepregnancy BMI is measured via self-report and can be derived using `MAT_PRWT`, `MOM_BMI`, and `MOM_LBKG`.
+
+### Biases
+
+1. **Selection Bias:**
+   - The case series (ncfrp_v51) includes only deaths reviewed by fatality review teams, which may not represent all SUID cases in the US.
+   - PRAMS sources are weighted surveys of mothers after live births, excluding those who had an infant death. This can lead to a selection bias where the population reference does not fully capture the demographic distribution of women with infants who die from SUID.
+
+2. **Information Bias:**
+   - Maternal prepregnancy BMI is measured differently between case series and PRAMS. The case series might lack direct measurement, requiring derivation based on weight data.
+   - Timing differences exist; PRAMS collects information a few months after birth while the case series reviews happen later with potential recall bias.
+
+3. **Confounding:**
+   - Confounders like socioeconomic status, smoking habits, and other medical conditions could affect both SUID rates and maternal prepregnancy BMI. These need to be controlled for in any analysis.
+  
+### What the Design Cannot Establish
+
+- The design cannot establish causality due to its observational nature.
+- Incidence or risk estimates are not possible without a denominator source (population at risk).
+- Direct comparisons between SUID cases and other infant deaths can only be made on proportions, not rates.
+
+### Prior Art
+
+The closest manuscript claims include:
+
+- **C10:** The study excludes some extremely preterm infants, which may affect the generalizability of findings.
+- **C25:** Diagnostic ascertainment patterns could influence case counts for SUID versus other causes of infant death.
+- **SUID literature abstracts (C10):** Maternal obesity is already known to be a risk factor for SUID. However, this study aims to compare its role in SUID specifically against other types of infant deaths.
+
+### Verdict
+
+These sources can answer the question by comparing proportions of maternal prepregnancy BMI among cases of SUID and other causes of infant death recorded within the same case series (ncfrp_v51). However, they cannot provide incidence or risk estimates due to a lack of denominator data. The design can establish associations but not causation.
+
+**Epistemological Reason:** 
+- Data on maternal prepregnancy BMI is measured differently between sources and lacks direct measurement in the case series.
+- The comparison relies solely on proportions rather than rates, limiting its scope.
+
+Therefore, while the question can be addressed by comparing cases, it cannot establish incidence or risk estimates necessary for broader epidemiological claims.

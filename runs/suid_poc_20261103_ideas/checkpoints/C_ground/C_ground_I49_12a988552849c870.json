@@ -1,0 +1,26 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with maternal health complications during pregnancy differs between those who experienced medical issues and those who did not.",
+ "rationale": "This design uses a case-only approach to explore the association between maternal health problems during pregnancy and SUID risk. It does not estimate incidence or odds but compares proportions within the case series.",
+ "prior_art": "The closest tested work is C9 in the SUID manuscript, which examines maternal smoking during pregnancy but does not cover other maternal health conditions. This leaves open questions about how various maternal health issues might impact SUID risk independently or interactively.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C9"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Maternal Health Conditions"
+ ],
+ "variables": [
+  "ncfrp_v51:INFmedical",
+  "ncfrp_v51:INF3prevmedical",
+  "ncfrp_v51:INF4medical"
+ ],
+ "cannot_establish": "This design cannot establish causal relationships or incidence rates. It only allows for an exploratory analysis of associations within a case-only framework."
+}

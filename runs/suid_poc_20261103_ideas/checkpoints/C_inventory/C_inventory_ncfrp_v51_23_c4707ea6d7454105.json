@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "PRVprevented",
+   "name": "Prevention Assessment",
+   "summary": "Whether the death could have been prevented, notable positive elements in the case, recommendations for future prevention, and significant challenges faced by the child or family."
+  },
+  {
+   "start": "SRVbereaveref",
+   "name": "Services Provided",
+   "summary": "Various services implemented as a result of the review, including bereavement counseling, debriefing for professionals, economic support, foster care, funeral arrangements, genetic counseling, health services, home visiting, legal services, mental health services, and other specified services."
+  },
+  {
+   "start": "memo",
+   "name": "Miscellaneous Notes",
+   "summary": "Default blank memo field and various completion details such as form completion by agency, date of data entry, quality assurance checks, and narrative descriptions."
+  },
+  {
+   "start": "DATEDIFFcdriddod",
+   "name": "Date Differences",
+   "summary": "Number of days between different dates related to the case review process, including CDRiddate and date of death, CMPdate and date of death, CMPdate and review meeting date, and other relevant intervals."
+  },
+  {
+   "start": "NARnarrative",
+   "name": "Narrative Details",
+   "summary": "Detailed narrative providing a full picture of the circumstances surrounding the case and the team’s review process."
+  },
+  {
+   "start": "REGadvmtgdate",
+   "name": "Advanced Review Information",
+   "summary": "Details about advanced review meetings, including dates, professional attendees, notes from meetings, and categorizations for funded SDY Registry cases."
+  },
+  {
+   "start": "REGcase",
+   "name": "Case Classification",
+   "summary": "Classification of the case as an SDY or SUID case, family consent to DNA preservation, specimen handling, and other related details."
+  },
+  {
+   "start": "REVagchadv",
+   "name": "Review Meeting Participants",
+   "summary": "Agencies and individuals participating in review meetings, including child advocates, courts, CPS, death investigators, domestic violence professionals, education representatives, EMS personnel, faith-based organizations, fire departments, HMOs/managed care providers, hospitals, Healthy Start programs, home visiting services, law enforcement agencies, medical examiners/coroners/pathologists, mental health professionals, military representatives, nurses, other health care providers, physicians, prosecutors/district attorneys, public health officials, social service agencies, substance abuse services, and tribal health organizations."
+  }
+ ]
+}

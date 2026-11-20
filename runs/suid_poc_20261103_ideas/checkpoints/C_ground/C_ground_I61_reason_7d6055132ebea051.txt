@@ -1,0 +1,85 @@
+### Design
+
+**Design:** Trends within cases. Compare proportions among the cases across periods.
+
+**Restated Question:** How has the proportion of SUID cases with hospital overnight stays changed over different time periods (2008-2019 vs. PRAMS data)?
+
+### Sources by Role
+
+- **Case Series:**
+  - **ncfrp_v51**: This dataset records child deaths reviewed by fatality review teams, including SUID cases. It provides the necessary case details to track hospital overnight stays among SUID cases.
+
+- **Population Reference:**
+  - **prams_p8_arf** and **prams_p7_arf**: These datasets are survey-based population references that provide demographic information about live births, including hospital stay lengths and demographic data from mothers. They do not have a denominator role since they do not cover infant deaths.
+
+- **Denominator:**
+  - Not applicable for this study as we are comparing proportions among cases rather than estimating incidence rates.
+
+### Period
+
+**Years Needed:** 
+- Case Series (ncfrp_v51): 2008-2019
+- Population Reference (prams_p8_arf, prams_p7_arf): All years held for these datasets (Phase 8: 2016-2021; Phase 7: 2012-2015)
+
+### Variables
+
+**Concept:** Hospital Overnight Stay
+- **ncfrp_v51**: 
+  - Variable: `INF4hosprtn`
+  - Label: Infant return to hospital overnight after delivery (Yes/No)
+  - Value: 1 = Yes, 9 = Unknown or Not Stated
+  
+**Concept:** Demographic Information
+- **prams_p8_arf and prams_p7_arf**: 
+  - Variable: `LTH_HOSP`
+  - Label: Length of time hospital stay (number of days)
+  - Values:
+    - 1 = < 1 DAY
+    - 2 = 1-2 DAYS
+    - 3 = 3-5 DAYS
+    - 4 = 6-9 DAYS
+    - 5 = 10+ DAYS
+
+**Concept:** Survey Weight for Prevalence Estimation (prams_p8_arf and prams_p7_arf)
+- **Variable**: `WTANAL`
+  - Label: BC WT: ANALYSIS WT
+  - Required to estimate prevalence from PRAMS data.
+
+### Biases
+
+1. **Selection Bias**
+   - **Case Series (ncfrp_v51)**: Participation in fatality review teams varies over time, which could affect case counts and trends.
+   - **Population Reference (PRAMS)**: Sampling bias as it is a survey of mothers post-live birth and may not represent all live births.
+
+2. **Information Bias**
+   - Reporting differences between case series and population reference sources can lead to discrepancies in hospital stay measures. 
+   - For example, `INF4hosprtn` in ncfrp_v51 vs. `LTH_HOSP` in PRAMS does not directly align as one is a binary measure while the other measures length.
+
+3. **Confounding**
+   - Differences in maternal and infant characteristics over time could confound trends observed in hospital stays.
+   - Maternal factors such as socioeconomic status, health conditions, and access to healthcare might influence hospital stay lengths.
+
+### What the Design Cannot Establish
+
+- The design can only compare proportions among SUID cases with hospital overnight stays across different periods. It cannot establish causality or incidence rates due to the lack of a denominator source.
+- Differences in case ascertainment over time may affect observed trends but are not directly accounted for by this comparison.
+
+### Prior Art
+
+The closest related claims do not address hospital overnight stay trends among SUID cases:
+- **SUID_manuscript_v9_clean.C6**: Focuses on PCA-aligned incidence and risk factors.
+- **bedsharing_ms_v7.C3-C15**: Examines the relationship between bed sharing, maternal smoking, prematurity, and SUID incidence across developmental windows.
+- None of these claims directly explore hospital overnight stays or trends over time.
+
+### Verdict
+
+**Can this study be carried out with the given data sources?**
+
+Yes, but with limitations:
+- The design can compare proportions of SUID cases with hospital overnight stays across different periods using `ncfrp_v51` and demographic information from PRAMS datasets.
+- However, caution is needed due to potential selection bias in case ascertainment over time and differences in measurement between case series and population reference data.
+
+**Next Steps:**
+- Acquire the necessary years for ncfrp_v51 (2008-2019).
+- Ensure comparability of hospital stay measures by focusing on binary `INF4hosprtn` from ncfrp_v51.
+- Account for potential confounding factors through robust statistical methods.

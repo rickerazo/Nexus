@@ -1,0 +1,27 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with unsafe sleep environments is higher compared to accidental deaths or homicides among infants in the NFR-CRS dataset from 2014-2019.",
+ "rationale": "This study uses a case-case comparison design, comparing sleep environment data between SUID and other types of infant deaths within the same case series source. It can provide insights into differences but cannot establish incidence or risk due to lack of denominator data.",
+ "prior_art": "The manuscript claims `bedsharing_ms_v7.C15` and `suid_literature_abstracts.C10` have investigated bed-sharing and maternal smoking in relation to SUID, but the question remains open regarding whether these factors uniquely influence SUID compared to other causes of infant death.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C15",
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2014,
+ "period_end": 2019,
+ "required_concepts": [
+  "sleep environment",
+  "cause of death"
+ ],
+ "variables": [
+  "ncfrp_v51:CIRdeathsleepenv",
+  "ncfrp_v51:INF4inftopsuid"
+ ],
+ "cannot_establish": "incidence rates or risk due to lack of denominator source."
+}

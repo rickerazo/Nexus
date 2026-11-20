@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "CIR2trigargue",
+   "name": "Abuse Triggers",
+   "summary": "Events triggering physical abuse such as domestic arguments, crying, disobedience, feeding problems, toilet training mishaps."
+  },
+  {
+   "start": "CIR2wschangebeh",
+   "name": "Warning Signs",
+   "summary": "Signs of potential risk including changes in behavior, severe emotional pain, hopelessness, perceived burden on others, and talk about suicide."
+  },
+  {
+   "start": "CIRreligcultur",
+   "name": "Neglect Due to Practices",
+   "summary": "Indicates if child neglect is due to religious or cultural practices."
+  },
+  {
+   "start": "CIR3changechildwelsvs",
+   "name": "Service Disruptions",
+   "summary": "Disruptions or significant changes in various services such as child welfare, daycare, employment, home-based services, legal services, living environment, medical care, mental health/substance use care, school, social services."
+  },
+  {
+   "start": "CIR3exposed",
+   "name": "COVID Exposure and Impact",
+   "summary": "Whether the child was exposed to COVID-19 within 14 days of death, impact of stay-at-home orders on the family, and if the review process was impacted by the pandemic."
+  },
+  {
+   "start": "RES1abalc",
+   "name": "Person 1 Substance Abuse History",
+   "summary": "History of substance abuse for Person 1 including alcohol, cocaine, marijuana, methamphetamine, opioids, over-the-counter drugs, prescription drugs, and other substances."
+  },
+  {
+   "start": "RES1act",
+   "name": "Person 1 Act Contributing to Death",
+   "summary": "The act that caused or contributed to the child's death by Person 1 including specification of other acts."
+  },
+  {
+   "start": "RES1age",
+   "name": "Person 1 Age and Legal Outcomes",
+   "summary": "Age of Person 1, legal outcomes such as charges filed, pending, dismissed, confession, conviction, guilty verdict, not guilty verdict, and plea details."
+  }
+ ]
+}

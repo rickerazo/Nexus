@@ -1,0 +1,75 @@
+### Design and Study Plan
+
+#### 1. Restated Question:
+How do infant sleep environment details differ in the recording between case series and population reference sources, specifically focusing on variables related to sleeping arrangements?
+
+#### 2. Sources by Role:
+- **Case Series Source**: ncfrp_v51 (NCFRP)
+  - **Role**: Case series records of child deaths reviewed by fatality review teams.
+  - **Reason for role**: Provides detailed information about the sleep environment at the time of death.
+
+- **Population Reference Sources**: prams_p8_arf, prams_p7_arf
+  - **Role**: Population reference surveys of mothers after live births (not designed to count infant deaths).
+  - **Reason for role**: Offers prevalence data on infant sleeping arrangements from a larger population sample.
+
+#### 3. Period:
+- **Period Needed**: Comparison between 2016-2021 (PRAMS Phase 8) and the relevant years of NCFRP (2008-2019).
+
+#### 4. Variables:
+
+**Sleep Environment Details:**
+
+- **Case Series Source (NCFRP)**:
+  - **CIRwadultobs**: If yes, child sleeping on same surface with adult(s)
+  - **INF5havecrib**: Infant have crib, Pack 'n Play, bassinet, bedside sleeper, or baby box
+  - **INF5havecriboften**: If yes, infant have crib - how often sleep in it
+
+- **Population Reference Sources (PRAMS Phase 8 and PRAMS Phase 7)**:
+  - **SLP_ROOM_RAW**: Sleep -- baby in room with mom
+  - **SLP2CRB_RAW**: Recommend sleep--place in crib/bassinet/play yard
+  - **SLP_CRB8_RAW**: Baby slept -- in crib/bassinette/play yard
+  - **INFWMOM5**: Infant living -- with mom (FORCED SKIP)
+
+**Comparison of Variables:**
+
+- **Timing of Reporting**:
+  - NCFRP reports on the sleep environment at the time of death.
+  - PRAMS Phase 8 and PRAMS Phase 7 report on sleeping arrangements a few months post-birth.
+
+- **Who Reports It**:
+  - NCFRP data is reviewed by fatality review teams based on various sources including medical records, interviews with families, etc.
+  - PRAMS data comes directly from mothers surveyed after the birth.
+
+- **Coding of Missing Answers**:
+  - PRAMS variables use .B for "Don't Know" and .S for "Skipped".
+  - NCFRP does not specify a dedicated code for missing or unknown answers but uses U (unknown) and other codes as per documentation.
+  
+#### 5. Biases:
+
+- **Selection Bias**:
+  - PRAMS Phase 8 covers live births in participating states, whereas NCFRP includes child deaths reviewed by fatality review teams.
+
+- **Information Bias**:
+  - PRAMS data is self-reported by mothers and may be subject to recall bias.
+  - NCFRP data is based on multiple sources including medical records and interviews; it might have inconsistencies or inaccuracies due to different reporting methods.
+
+- **Confounding Factors**:
+  - PRAMS does not account for infant deaths, making direct comparison difficult without considering the context of risk factors that may differ between surviving infants and those who died.
+
+#### 6. What the Design Cannot Establish:
+
+The design cannot establish a causal relationship between sleep environment details and SUID incidence due to its observational nature. It can only highlight differences in how these variables are recorded across different data sources, which may influence our understanding of risk factors.
+
+#### 7. Prior Art:
+- **Manuscripts**:
+  - The bedsharing_ms_v7 manuscript notes a limitation that sleep-environment classification in case-report systems may be subject to heterogeneity in ascertainment and reporting (C18).
+  - No prior work has directly compared the recording of infant sleep environment details between NCFRP and PRAMS.
+
+#### 8. Verdict:
+**Can these sources answer a version of the question?**
+
+Yes, these data can answer the proposed research question. The study design will focus on comparing how infant sleep environment variables are documented in case series (NCFRP) versus population reference surveys (PRAMS). This comparison is feasible given the available variables and the roles of each source.
+
+**Reasons for Feasibility:**
+- Both sources provide relevant information about infant sleep environments.
+- The design allows for a detailed examination of how these variables are recorded differently across datasets, which can help identify biases and inconsistencies in reporting practices.

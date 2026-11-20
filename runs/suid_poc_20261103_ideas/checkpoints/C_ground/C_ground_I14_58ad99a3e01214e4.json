@@ -1,0 +1,33 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The prevalence of medical complications during pregnancy differs between SUID cases and live births in the general population.",
+ "rationale": "This design uses detailed case records for SUID cases (ncfrp_v51) and survey-based estimates from PRAMS Phase 7 (prams_p7_arf) to compare the frequency of specific health conditions during pregnancy. The period chosen is within the coverage of both sources, ensuring that the data can be compared effectively.",
+ "prior_art": "The SUID manuscript claims an association between maternal smoking and higher SUID incidence (C9), but does not examine differences in medical complications between cases and live births. This study aims to fill this gap by comparing specific health conditions during pregnancy.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C9"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2015,
+ "required_concepts": [
+  "Medical Complications During Pregnancy",
+  "Live Births in the General Population"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4medical",
+  "ncfrp_v51:INF3pretermlab",
+  "ncfrp_v51:INF4preeclampsia",
+  "prams_p7_arf:WTANAL",
+  "prams_p7_arf:MM_NOMD",
+  "prams_p7_arf:P_PRTERM",
+  "prams_p7_arf:PRE_CKBP"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates due to its observational nature and lack of a denominator source."
+}

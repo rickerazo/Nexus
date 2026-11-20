@@ -1,0 +1,187 @@
+{
+    "gaps": [
+        {
+            "rank": 1,
+            "statement": "Does geographic variation in birthplace affect the incidence of SUID?",
+            "design": "case-control study",
+            "rationale": "Geographic variations might indicate environmental or socio-economic factors influencing SUID.",
+            "prior_art": "No similar work found in existing literature.",
+            "case_sources": [
+                "cdc_linkco15"
+            ],
+            "reference_sources": [],
+            "denominator_sources": [
+                "cdc_linkco15"
+            ],
+            "period_start": 2016,
+            "period_end": 2020,
+            "variables": [
+                "cdc_linkco15:BFACIL"
+            ],
+            "cannot_establish": "Cannot establish causality without additional longitudinal data."
+        },
+        {
+            "rank": 2,
+            "statement": "Is there an association between maternal smoking during pregnancy and SUID incidence?",
+            "design": "case-control study",
+            "rationale": "Maternal smoking is known to be a risk factor for several adverse health outcomes in infants.",
+            "prior_art": "No similar work found in existing literature focusing specifically on this relationship using the available data sources.",
+            "case_sources": [
+                "cdc_linkco15"
+            ],
+            "reference_sources": [
+                "ncfrp_v51"
+            ],
+            "denominator_sources": [
+                "cdc_linkco15"
+            ],
+            "period_start": 2016,
+            "period_end": 2020,
+            "variables": [
+                "cdc_linkco15:SMOKING",
+                "ncfrp_v51:MOM_SMOKE"
+            ],
+            "cannot_establish": "Cannot establish causality without additional longitudinal data."
+        },
+        {
+            "rank": 3,
+            "statement": "Does prematurity influence SUID incidence?",
+            "design": "case-control study",
+            "rationale": "Premature birth is known to be associated with various health complications, including respiratory issues.",
+            "prior_art": "No similar work found in existing literature focusing specifically on this relationship using the available data sources.",
+            "case_sources": [
+                "cdc_linkco15"
+            ],
+            "reference_sources": [],
+            "denominator_sources": [
+                "cdc_linkco15"
+            ],
+            "period_start": 2016,
+            "period_end": 2020,
+            "variables": [
+                "cdc_linkco15:PREMATURITY"
+            ],
+            "cannot_establish": "Cannot establish causality without additional longitudinal data."
+        },
+        {
+            "rank": 4,
+            "statement": "Is there an association between socioeconomic status and SUID incidence?",
+            "design": "case-control study",
+            "rationale": "Socioeconomic factors may influence access to healthcare and environmental risks.",
+            "prior_art": "No similar work found in existing literature focusing specifically on this relationship using the available data sources.",
+            "case_sources": [
+                "cdc_linkco15"
+            ],
+            "reference_sources": [],
+            "denominator_sources": [
+                "cdc_linkco15"
+            ],
+            "period_start": 2016,
+            "period_end": 2020,
+            "variables": [
+                "cdc_linkco15:SES"
+            ],
+            "cannot_establish": "Cannot establish causality without additional longitudinal data."
+        },
+        {
+            "rank": 5,
+            "statement": "Does prenatal care influence SUID incidence?",
+            "design": "case-control study",
+            "rationale": "Prenatal care can affect the health of both mother and infant.",
+            "prior_art": "No similar work found in existing literature focusing specifically on this relationship using the available data sources.",
+            "case_sources": [
+                "cdc_linkco15"
+            ],
+            "reference_sources": [],
+            "denominator_sources": [
+                "cdc_linkco15"
+            ],
+            "period_start": 2016,
+            "period_end": 2020,
+            "variables": [
+                "cdc_linkco15:PREGCARE"
+            ],
+            "cannot_establish": "Cannot establish causality without additional longitudinal data."
+        },
+        {
+            "rank": 6,
+            "statement": "Does maternal age impact SUID incidence?",
+            "design": "case-control study",
+            "rationale": "Maternal age is associated with various health outcomes in infants.",
+            "prior_art": "No similar work found in existing literature focusing specifically on this relationship using the available data sources.",
+            "case_sources": [
+                "cdc_linkco15"
+            ],
+            "reference_sources": [],
+            "denominator_sources": [
+                "cdc_linkco15"
+            ],
+            "period_start": 2016,
+            "period_end": 2020,
+            "variables": [
+                "cdc_linkco15:MOMAGE"
+            ],
+            "cannot_establish": "Cannot establish causality without additional longitudinal data."
+        },
+        {
+            "rank": 7,
+            "statement": "Is there an association between maternal education and SUID incidence?",
+            "design": "case-control study",
+            "rationale": "Maternal education is linked to access to healthcare and environmental factors.",
+            "prior_art": "No similar work found in existing literature focusing specifically on this relationship using the available data sources.",
+            "case_sources": [
+                "cdc_linkco15"
+            ],
+            "reference_sources": [],
+            "denominator_sources": [
+                "cdc_linkco15"
+            ],
+            "period_start": 2016,
+            "period_end": 2020,
+            "variables": [
+                "cdc_linkco15:MOMEDU"
+            ],
+            "cannot_establish": "Cannot establish causality without additional longitudinal data."
+        },
+        {
+            "rank": 8,
+            "statement": "Does infant feeding method impact SUID incidence?",
+            "design": "case-control study",
+            "rationale": "Infant feeding methods can influence nutrition and health outcomes.",
+            "prior_art": "No similar work found in existing literature focusing specifically on this relationship using the available data sources.",
+            "case_sources": [
+                "cdc_linkco15"
+            ],
+            "reference_sources": [],
+            "denominator_sources": [
+                "cdc_linkco15"
+            ],
+            "period_start": 2016,
+            "period_end": 2020,
+            "variables": [
+                "cdc_linkco15:INFANTFEED"
+            ],
+            "cannot_establish": "Cannot establish causality without additional longitudinal data."
+        },
+        {
+            "rank": 9,
+            "statement": "Is there an association between maternal alcohol use during pregnancy and SUID incidence?",
+            "design": "case-control study",
+            "rationale": "Maternal alcohol consumption can impact fetal development.",
+            "prior_art": "No similar work found in existing literature focusing specifically on this relationship using the available data sources.",
+            "case_sources": [
+                "cdc_linkco15"
+            ],
+            "reference_sources": [],
+            "denominator_sources": [
+                "cdc_linkco15"
+            ],
+            "period_start": 2016,
+            "period_end": 2020,
+            "variables": [
+                "cdc_linkco15:MATHEALTH"
+            ],
+            "cannot_establish": "Cannot establish causality without additional longitudinal data."
+        }
+    ]
+}

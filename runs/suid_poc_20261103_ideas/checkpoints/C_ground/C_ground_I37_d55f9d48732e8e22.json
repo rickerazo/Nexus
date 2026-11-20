@@ -1,0 +1,26 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with hospital overnight stays before discharge is different from that of other infant deaths.",
+ "rationale": "This study uses a case-case comparison to identify differences in the proportion of hospital overnight stays between SUID cases and non-SUID infant deaths. The design does not require a denominator source for incidence or risk estimation, focusing solely on comparing proportions among cases.",
+ "prior_art": "The manuscript claims (SUID_manuscript_v9_clean.C10) exclude extremely preterm infants, which affects comparability with the proposed study. Additionally, bedsharing_ms_v7.C8-C24 focus on other variables like bed sharing and maternal smoking but do not address hospital overnight stays.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C8",
+  "bedsharing_ms_v7.C24"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "hospital overnight stays before discharge"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn"
+ ],
+ "cannot_establish": "The design cannot establish causation, estimate incidence or risk, and lacks generalizability due to potential selection and information biases."
+}

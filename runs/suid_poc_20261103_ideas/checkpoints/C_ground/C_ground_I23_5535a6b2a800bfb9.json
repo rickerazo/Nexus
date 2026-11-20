@@ -1,0 +1,34 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The risk of SUID among infants born to mothers who experienced significant barriers to healthcare access during pregnancy is higher compared to those without such obstacles.",
+ "rationale": "This design uses a case series (numerator) and population reference (exposure prevalence) to estimate exposure-specific rates, comparing proportions or odds among cases. The sources provide the necessary data to address the research question on SUID risk associated with healthcare access barriers during pregnancy.",
+ "prior_art": "The closest tested work is claims C9 from the SUID manuscript which discusses maternal smoking and its association with SUID incidence. However, none of these claims directly address barriers to healthcare access, leaving this specific aspect still open for investigation.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C9"
+ ],
+ "case_sources": [
+  "cdc_linkco15"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2015,
+ "period_end": 2021,
+ "required_concepts": [
+  "SUID cases",
+  "Healthcare access barriers during pregnancy"
+ ],
+ "variables": [
+  "prams_p8_arf:PNC_MTH",
+  "prams_p8_arf:PG8_UTI",
+  "cdc_linkco15:NO_ABNORM",
+  "cdc_linkco15:NO_MMORB",
+  "cdc_natl15:F_RF_PPB",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation due to its observational nature and may not capture all relevant exposures, such as postnatal factors. Additionally, the randomized state codes in ncfrp_v51 prevent geographic comparisons."
+}

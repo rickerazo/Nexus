@@ -1,0 +1,41 @@
+│   269 │   │   feas = self.stage_e(strategies, sources)                       │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:206 in stage_b              │
+│                                                                              │
+│   203 │   │   )                                                              │
+│   204 │   │   cached = self._cached("B", key, SchemaMap, "B_schema.json")    │
+│   205 │   │   if cached is None:                                             │
+│ ❱ 206 │   │   │   cached, recs = b_schema_map.map_schema(                    │
+│   207 │   │   │   │   decs,                                                  │
+│   208 │   │   │   │   sources,                                               │
+│   209 │   │   │   │   self.client,                                           │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/components/b_schema_map.py:65 in        │
+│ map_schema                                                                   │
+│                                                                              │
+│   62 │   │   for bi in range(0, len(concepts), batch):                       │
+│   63 │   │   │   concept_text = "\n".join(f"- {k}: {v}" for k, v in          │
+│      concepts[bi : bi + batch])                                              │
+│   64 │   │   │   user = prompt.render(concepts=concept_text,                 │
+│      sources=sources_text(group))                                            │
+│ ❱ 65 │   │   │   obj, rec = generate(                                        │
+│   66 │   │   │   │   client,                                                 │
+│   67 │   │   │   │   prompt,                                                 │
+│   68 │   │   │   │   user,                                                   │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/llm/structured.py:131 in generate       │
+│                                                                              │
+│   128 │   │   )                                                              │
+│   129 │                                                                      │
+│   130 │   record = _record(stage, prompt, client, seed, temperature,         │
+│       max_retries + 1, False, log_path)                                      │
+│ ❱ 131 │   raise GenerationFailedError(stage, problems, max_retries + 1,      │
+│       record)                                                                │
+│   132                                                                        │
+│   133                                                                        │
+│   134 def _log_path(log_dir: Path | None, stage: str) -> Path | None:        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+GenerationFailedError: B_schema_map_0_0: no valid output after 4 attempts; last 
+problems: ["mapping for 'Bed sharing as exposure': null variable requires 
+compatibility 'none'"]
+run failed before review B (rc=1); see runs/suid_poc_20261103.log

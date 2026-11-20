@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "INF4refershelter",
+   "name": "Family Referrals",
+   "summary": "Whether the family was referred to various social services and assistance programs."
+  },
+  {
+   "start": "INF4resusc",
+   "name": "Neonatal Resuscitation",
+   "summary": "Measures taken during neonatal resuscitation, including intubation, medications, oxygen, physical stimulation, and other interventions."
+  },
+  {
+   "start": "INF4rhneg",
+   "name": "Maternal Blood Type",
+   "summary": "Whether the mother was Rh negative."
+  },
+  {
+   "start": "INF4routine",
+   "name": "Delivery Type",
+   "summary": "Type of delivery, including routine deliveries and specific procedures like vacuum extraction or vaginal delivery."
+  },
+  {
+   "start": "INF4rubella",
+   "name": "Pregnancy Tests",
+   "summary": "Whether tests for rubella titer were performed during pregnancy and the results."
+  },
+  {
+   "start": "INF4seizure",
+   "name": "Medical Complications",
+   "summary": "Presence of medical complications such as seizure disorder, sickle cell disease, group B strep, syphilis, thyroid issues, uterine bleeding, UTI, and others."
+  },
+  {
+   "start": "INF4stress",
+   "name": "Maternal Stressors",
+   "summary": "Whether the mother experienced various stressors during pregnancy such as death of a close person, divorce, financial problems, physical abuse, job loss, etc."
+  },
+  {
+   "start": "INF4tdap",
+   "name": "Pregnancy Interventions",
+   "summary": "Details about maternal Tdap vaccination and infant technological dependence at discharge."
+  }
+ ]
+}

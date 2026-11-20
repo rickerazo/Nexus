@@ -1,0 +1,71 @@
+### Design
+
+**Question:** Do infants with previous hospitalizations for medical complications have a higher risk of Sudden Unexpected Infant Death (SUID) compared to other causes of infant death?
+
+**Design Explanation:**
+- **Type:** Case-case comparison. This design compares cases of the outcome (SUID) against cases of other outcomes recorded in the same case series, to identify factors specific to SUID.
+- **Objective:** To determine if prior medical complications are more prevalent among infants who die from SUID compared to those dying from other causes.
+
+### Sources by Role
+
+1. **Case Series:**
+   - **Source:** ncfrp_v51
+   - **Role:** Supplies cases of infant deaths reviewed for SUID and non-SUID causes.
+   - **Justification:** This source includes detailed medical history, allowing differentiation between infants with prior hospitalizations due to medical complications and those without.
+
+2. **Population Reference:**
+   - **Source:** None applicable (population reference sources like PRAMS are not suitable as they do not record deaths).
+   - **Role:** Not used; the case-case design does not require a population reference source since it compares proportions among cases only.
+   
+3. **Denominator Source:**
+   - **Source:** None needed for this comparison (the denominator is implicitly defined by all infant deaths in ncfrp_v51).
+
+### Period
+
+**Period:** 2008-2019
+- This period includes the most recent and consistent data available from the ncfrp_v51 source, which covers child deaths reviewed between these years.
+
+### Variables
+
+**Concepts:**
+1. **Previous Medical Complications:**
+   - **ncfrp_v51:INF3prevmedical:** During previous pregnancies, mother had medical complications (0 = No; 1 = Yes)
+   - **ncfrp_v51:INF4medical:** Mother had medical complications during this pregnancy (0 = No; 1 = Yes)
+
+2. **Cause of Death Classification:**
+   - **ncfrp_v51:UCODR130:** Cause Recode for the death (this is a broad category that includes SUID, other causes, and unknown/unspecified).
+   
+**Measurement Differences Between Sources:**
+- The ncfrp_v51 captures detailed medical history and cause of death, while PRAMS does not capture deaths at all. Therefore, only ncfrp_v51 can be used for this comparison.
+
+### Biases
+
+1. **Selection Bias:** 
+   - Variability in participation rates across different states may introduce bias if some states have higher reporting or review frequencies.
+   
+2. **Information Bias:**
+   - Case series data might over-report medical complications due to thorough investigations, while population surveys like PRAMS would underreport such complications as they focus on live births and do not include death cases.
+
+3. **Confounding:**
+   - Other risk factors (e.g., socioeconomic status, maternal smoking) may confound the relationship between previous hospitalizations and SUID.
+   
+### What the Design Cannot Establish
+
+- The design cannot establish causation or incidence rates; it can only compare proportions of infants with prior medical complications between SUID cases and other causes of death.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C10 [limitation]:** The analysis excludes a small number of deaths at the extremes of the PCA distribution, including some extremely and very preterm infants who died early in postnatal life.
+  - This claim does not address the specific question regarding previous hospitalizations for medical complications.
+
+- **bedsharing_ms_v7.C21 [finding]:** Bed sharing was independently associated with higher incidence of SUID across both rising and declining phases of the developmental curve.
+  - This finding is related to risk factors but does not pertain to prior medical complications.
+
+### Verdict
+
+The data can answer a version of the question, specifically comparing proportions of infants with previous hospitalizations due to medical complications between SUID cases and other causes of infant death using ncfrp_v51. However, it cannot establish causation or estimate incidence rates without additional information on denominators from live births.
+
+### Conclusion
+
+**Verdict:** Yes, these data can answer a version of the question by comparing proportions among cases, but they cannot provide causal inference or incidence estimates due to the absence of denominator sources for live births.

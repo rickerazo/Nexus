@@ -1,0 +1,84 @@
+{
+ "ideas": [
+  {
+   "question": "Has there been a change in maternal smoking rates among SUID cases from 2015 to 2019?",
+   "comparison": "SUID cases in the NCFRP dataset from 2015 to 2019, compared with PRAMS population reference data for the same years.",
+   "why_open": "While maternal smoking is a well-known risk factor for Sudden Unexpected Infant Death (SUID), trends over time may reflect changes in societal attitudes or intervention effectiveness. Understanding if smoking rates are declining can inform public health strategies to prevent SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Maternal smoking during pregnancy, year of death or birth"
+  },
+  {
+   "question": "Is there a trend in bed sharing practices among SUID cases between 2008 and 2019?",
+   "comparison": "SUID cases from NCFRP dataset over the years 2008 to 2019, compared with PRAMS reference data for the same period.",
+   "why_open": "Despite established links between bed sharing and SUID risk, trends in this practice can reflect changes due to public awareness campaigns or other social influences. Investigating these trends is crucial to evaluate if current interventions are effective.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Bed sharing practices, year of death or birth"
+  },
+  {
+   "question": "How has the incidence rate of SUID cases changed among preterm infants from 2012 to 2019?",
+   "comparison": "SUID cases in NCFRP dataset focusing on preterm infants between 2012 and 2019, compared with PRAMS reference data for full-term infants over the same years.",
+   "why_open": "Preterm birth is known to increase SUID risk. Trends in incidence among this high-risk group could indicate whether public health initiatives are successful or if new risks are emerging.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Preterm birth, year of death or birth"
+  },
+  {
+   "question": "Is there a shift in SUID cases attributable to maternal obesity over the period 2016-2021?",
+   "comparison": "SUID cases from NCFRP dataset from 2016 to 2021, compared with PRAMS reference data for the same time frame.",
+   "why_open": "Maternal obesity is increasingly recognized as a risk factor for SUID. Tracking trends over multiple years can highlight whether maternal weight management programs are effective or if new factors contribute to this issue.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Maternal obesity, year of death or birth"
+  },
+  {
+   "question": "How has the proportion of SUID cases associated with decreased fetal movement changed between 2008 and 2019?",
+   "comparison": "SUID cases in NCFRP dataset from 2008 to 2019, compared with PRAMS reference data for these years.",
+   "why_open": "Decreased fetal movement is a warning sign that may precede SUID. Monitoring trends can indicate if awareness and intervention strategies have improved over time or if new challenges are emerging.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "data": "Decreased fetal movement, year of death or birth"
+  }
+ ]
+}

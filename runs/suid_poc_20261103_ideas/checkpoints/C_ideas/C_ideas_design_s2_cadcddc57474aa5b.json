@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "How has the incidence of Sudden Unexpected Infant Death (SUID) changed over time and is it associated with changes in documentation practices for maternal smoking during pregnancy?",
+   "why_open": "This question explores temporal trends and potential biases due to changing reporting standards. The current literature does not fully address how the accuracy or consistency of maternal smoking documentation has influenced SUID rates.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "maternal smoking during pregnancy (exposure); Sudden Unexpected Infant Death (SUID) (outcome)"
+  },
+  {
+   "question": "Can we identify subpopulations within the cohort where breastfeeding status modifies the risk of SUID, and how do these associations differ geographically?",
+   "why_open": "Breastfeeding's protective effect may vary across geographic regions due to differing healthcare practices or environmental exposures. This question explores regional variations in SUID incidence among different breastfeeding patterns not thoroughly examined previously.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_linkco15"
+   ],
+   "data": "breastfeeding status (exposure); geographic location (stratifier); Sudden Unexpected Infant Death (SUID) (outcome)"
+  },
+  {
+   "question": "Is there a difference in the incidence of SUID between infants whose mothers had preconception care versus those who did not, and how does this association vary by maternal age?",
+   "why_open": "The role of preconception care is understudied despite its potential impact on pregnancy outcomes. This question aims to understand if early intervention could potentially reduce the risk of SUID.",
+   "sources": [
+    "prams_p7_arf",
+    "cdc_natl15"
+   ],
+   "data": "preconception care (exposure); maternal age (stratifier); Sudden Unexpected Infant Death (SUID) (outcome)"
+  },
+  {
+   "question": "How does housing instability affect the incidence of SUID and is there a correlation with other environmental risk factors?",
+   "why_open": "Environmental factors such as housing stability are often overlooked in research on SUID. This question explores the intersection between social determinants of health and infant mortality.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p7_arf"
+   ],
+   "data": "housing instability (exposure); environmental risk factors (covariate); Sudden Unexpected Infant Death (SUID) (outcome)"
+  },
+  {
+   "question": "What are the differences in incidence rates of SUID among different racial/ethnic groups, and how do these disparities correlate with access to prenatal care?",
+   "why_open": "Disparities by race/ethnicity may be driven by systemic factors affecting healthcare access. This question investigates potential health inequities in SUID risk that have not been comprehensively addressed.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p8_arf"
+   ],
+   "data": "race/ethnicity (stratifier); prenatal care (covariate); Sudden Unexpected Infant Death (SUID) (outcome)"
+  }
+ ]
+}

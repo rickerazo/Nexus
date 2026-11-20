@@ -1,0 +1,54 @@
+### Study Design and Evaluation
+
+#### 1. The Design
+**Restated Question**: Does prenatal weight gain differ by pregnancy stage in SUID cases as recorded by the NFR-CRS (National Fatality Review Case Reporting System)?
+
+The design is a case-only analysis, which compares variations within the case series without estimating incidence or risk. It aims to assess how maternal weight gain changes across different stages of pregnancy among infants who experienced sudden unexpected infant death.
+
+#### 2. Sources by Role
+- **Case Series**: ncfrp_v51 (NFR-CRS) - This source records detailed circumstances around SUID cases, including factors related to prenatal care and maternal health.
+- **Denominator Source**: Not needed for this case-only design.
+- **Population Reference**: Not needed for this case-only design.
+
+#### 3. Period
+**Period Covered by All Sources**: The manuscript uses data from 2008-2019, which is within the coverage period of ncfrp_v51 (2004-2019). Since no denominator or reference source is used, we focus on this period.
+
+#### 4. Variables
+**Concepts and Candidate Variables:**
+- **Pregnancy Stage**: 
+  - Not directly recorded in ncfrp_v51 but can be derived from gestational age at death.
+- **Maternal Weight Gain (IEMweightchange)**:
+  - Variable `IEMweightchange`: Maternal gestational weight gain or loss as reported by the NFR-CRS.
+
+**Measurement Differences:**
+- **ncfrp_v51**: 
+  - IEMweightchange is recorded in pounds.
+  - Missing answers are documented (e.g., unk = unknown).
+
+#### 5. Biases
+- **Selection Bias**:
+  - The case series includes only cases reviewed by fatality review teams, which may not be a representative sample of all SUID cases or reflect changes over time accurately.
+
+- **Information Bias**:
+  - Data on prenatal weight gain and other exposures are based on retrospective reporting from the NFR-CRS. These reports might be subject to recall bias or incomplete records.
+  
+- **Confounding**:
+  - Confounders such as maternal smoking, pre-pregnancy BMI, socioeconomic status, and medical conditions (e.g., hypertension) need to be accounted for in analyses but are not directly measured consistently across all cases.
+
+#### 6. What the Design Cannot Establish
+This design cannot establish causality or incidence rates because it is a case-only study without a denominator source or comparison group. The findings will provide insights into variations within SUID cases but do not allow for external validity to estimate population-level risk factors.
+
+#### 7. Prior Art
+**Manuscripts' Claims:**
+- **SUID_manuscript_v9_clean.C10**: Excludes extreme preterm infants, which is relevant as the candidate question focuses on prenatal weight gain.
+- **bedsharing_ms_v7.C13**: Discusses developmental timing of SUID incidence and suggests that associations with risk factors may vary by stage. This manuscript does not address maternal weight gain but highlights the importance of considering gestational age in studying SUID.
+
+**Relevance:**
+The prior art focuses on developmental timing and associations with other risk factors, such as smoking and prematurity. There is no specific evidence regarding prenatal weight gain patterns across pregnancy stages in SUID cases. Thus, this question remains open for investigation.
+
+#### 8. Verdict
+These data can answer a version of the candidate research idea by analyzing how maternal gestational weight gain varies among recorded SUID cases within ncfrp_v51. However, it is important to acknowledge that:
+- The findings will be descriptive and limited in their ability to draw causal conclusions.
+- Confounders need careful consideration, but they are not fully accounted for due to the retrospective nature of the data.
+
+**Conclusion**: The data can carry out a case-only analysis on prenatal weight gain patterns among SUID cases using ncfrp_v51. However, external validity and causality cannot be established without additional sources or comparisons.

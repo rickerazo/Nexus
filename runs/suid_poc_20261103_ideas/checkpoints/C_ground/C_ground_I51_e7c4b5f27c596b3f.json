@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The prevalence of maternal health problems varies among SUID cases based on postconceptional age.",
+ "rationale": "This study uses a case-only analysis to explore how maternal health conditions differ across subgroups defined by postconceptional age within the ncfrp_v51 dataset. The design does not require incidence rates or population comparisons, focusing solely on associations among cases.",
+ "prior_art": "The manuscript claims (e.g., C6, C7) and literature abstracts (e.g., suid_literature_abstracts.C10, C11) discuss maternal health risks such as smoking and obesity in relation to SUID. However, these studies do not specifically explore the variation of maternal health problems by postconceptional age.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C6",
+  "SUID_manuscript_v9_clean.C7",
+  "suid_literature_abstracts.C10",
+  "suid_literature_abstracts.C11"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Maternal Health Problems",
+  "Postconceptional Age (PCA)"
+ ],
+ "variables": [
+  "ncfrp_v51:ISSprechronicdiseaseaft",
+  "ncfrp_v51:ISSprechronicdiseasedur",
+  "ncfrp_v51:ISSprechronicdiseasebef",
+  "ncfrp_v51:IEMagefirstpreg"
+ ],
+ "cannot_establish": "Incidence rates or risk ratios, causation."
+}

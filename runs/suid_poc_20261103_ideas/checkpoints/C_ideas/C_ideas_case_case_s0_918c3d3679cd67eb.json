@@ -1,0 +1,85 @@
+{
+ "ideas": [
+  {
+   "question": "What unique factors differentiate SUID cases from non-SUID infant deaths among fatality review cases?",
+   "comparison": "Cases of sudden unexpected infant death (SUID) will be compared with other recorded infant deaths in the NCFRP case series. The study period is 2008-2019.",
+   "why_open": "While SUID has been extensively studied, less research focuses on what sets it apart from non-SUID infant deaths within the same population and time frame. Identifying unique risk factors can refine prevention strategies and target interventions more effectively.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D50",
+    "D53",
+    "D67",
+    "D79",
+    "D82"
+   ],
+   "data": "Cases in the NCFRP dataset classified as SUID will be compared with cases of other infant deaths. Variables like pregnancy history, hospital stay length, and medical complications from domains D50, D53, D67, D79, and D82 will be used to analyze unique factors."
+  },
+  {
+   "question": "How does maternal weight gain during pregnancy correlate with SUID incidence compared to non-SUID infant deaths?",
+   "comparison": "Cases of sudden unexpected infant death (SUID) are compared to other recorded infant deaths in the PRAMS Phase 8 dataset. The study period is 2016-2021.",
+   "why_open": "Existing studies have explored maternal weight gain during pregnancy, but few have specifically analyzed its correlation with SUID incidence relative to non-SUID infant deaths. This research could provide insights into how weight management can contribute to reducing the risk of unexpected infant death.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_std2"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D88",
+    "D299"
+   ],
+   "data": "PRAMS Phase 8 dataset will provide maternal weight gain during pregnancy data, which will be compared between SUID cases (from NCFRP) and other infant deaths. Domains D88 from NCFRP and D299 from PRAMS P8 Std2 will serve as the basis for this comparison."
+  },
+  {
+   "question": "What role do family circumstances play in distinguishing SUID cases from other infant mortality causes?",
+   "comparison": "SUID cases are compared with non-SUID infant deaths recorded in the NCFRP case series. The study period is 2008-2019.",
+   "why_open": "Understanding the unique influence of family circumstances on SUID risk could help identify high-risk families and tailor preventive measures to specific needs. This comparison can reveal if there are distinct family-related factors that increase vulnerability to sudden unexpected infant death versus other causes of infant mortality.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D237"
+   ],
+   "data": "Family circumstances data from domain D237, which includes information about family transitions and living situations during pregnancy, will be compared between SUID cases and other infant deaths within the NCFRP dataset."
+  },
+  {
+   "question": "Does sleep environment differ between infants who die of SUID versus those dying from other causes?",
+   "comparison": "Cases of sudden unexpected infant death (SUID) are compared with non-SUID infant deaths in the NCFRP case series. The study period is 2008-2019.",
+   "why_open": "Current research often focuses on sleep-related factors but rarely compares them between SUID and other causes of infant mortality. Understanding these differences can lead to more targeted safe-sleep recommendations that address specific risk factors associated with unexpected infant death.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D102"
+   ],
+   "data": "Sleep environment data from domain D102, which includes information on infant sleeping arrangements and practices, will be compared between SUID cases and non-SUID infant deaths within the NCFRP dataset."
+  },
+  {
+   "question": "What differences in prenatal care access exist between SUID cases and other causes of infant death?",
+   "comparison": "Cases of sudden unexpected infant death (SUID) are compared with non-SUID infant deaths recorded in the PRAMS Phase 8 dataset. The study period is 2016-2021.",
+   "why_open": "Although prenatal care access has been linked to various health outcomes, its role in distinguishing between SUID and other causes of infant death remains understudied. This research can highlight gaps in prenatal care that may contribute specifically to increased risk for sudden unexpected infant death.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D243",
+    "D269"
+   ],
+   "data": "Prenatal care access and health conditions data from domains D243 (from NCFRP) and D269 (PRAMS P7 ARF, PRAMS P8 ARF) will be compared between SUID cases and other infant deaths within the datasets. This includes variables related to prenatal visits, healthcare issues during pregnancy."
+  }
+ ]
+}

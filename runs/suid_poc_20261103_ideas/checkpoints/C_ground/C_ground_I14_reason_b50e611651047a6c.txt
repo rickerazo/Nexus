@@ -1,0 +1,74 @@
+### Design
+
+**Question Restated:** What is the rate of Sudden Unexpected Infant Death (SUID) among infants born to mothers who experienced preterm labor compared to those who did not, from 2016-2021?
+
+**Design Type:** Exposure-specific rates. Estimate outcome rates by exposure group using cases from a case series (numerator), the exposure prevalence from a population reference source, and the population at risk from a denominator source.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - Reason: Provides SUID cases with detailed medical history information.
+  
+- **Population Reference:** prams_p8_arf (2016-2021), prams_p7_arf (2012-2015)
+  - Reasons: Surveys of mothers a few months after live births, providing prevalence of maternal preterm labor experiences.
+
+- **Denominator Source:** cdc_natl15, cdc_linkco15
+  - Reason: Provides the total number of live births (population at risk) and linked infant death data for denominators.
+
+### Period
+
+**Years Required:** 2016-2021
+**Current Years Held:** 
+  - Case Series (ncfrp_v51): 2008-2019
+  - Population Reference (prams_p8_arf): 2016-2021
+  - Denominator Sources: cdc_natl15 and cdc_linkco15 have data for 2015, but additional years need to be acquired.
+
+**Additional Years Needed:** 
+  - Case Series: None needed since it covers up to 2019.
+  - Population Reference (prams_p7_arf): Additional years from 2016-2021 are required for exposure prevalence.
+  - Denominator Sources: Full coverage of live births and infant deaths for the period 2016-2021.
+
+### Variables
+
+**Maternal Preterm Labor Exposure:**
+- **ncfrp_v51:** INFpretermlab (Medical complications - Preterm labor)
+- **prams_p7_arf & prams_p8_arf:** TLK_PRET_RAW, TLK_PRET (HCW talk -- preterm labor signs)
+
+**Denominator Sources for Live Births:**
+- **cdc_natl15 and cdc_linkco15:** RF_PPTERM (Previous Preterm Birth), PRE_LB_NAPHSIS (Number of previous live births grouped).
+
+### Biases
+
+#### Selection Bias
+- **Case Series (ncfrp_v51):** The review is limited to participating states, so the sample may not be nationally representative.
+- **Population Reference:** PRAMS surveys a subset of mothers who participated in live birth reporting; it may exclude high-risk groups or those less likely to respond to surveys.
+
+#### Information Bias
+- **Case Series (ncfrp_v51):** Review teams might classify preterm labor differently from clinical definitions, and data on maternal conditions are retrospectively collected.
+- **Population Reference:** PRAMS collects self-reported information which may be subject to recall bias or misclassification.
+
+#### Confounding
+- **Confounding Factors:** Other pregnancy complications (e.g., gestational diabetes), socioeconomic status, geographic differences in prenatal care availability, and other environmental factors that could impact SUID rates are not controlled for directly. 
+
+### What the Design Cannot Establish
+
+The design cannot establish causality between preterm labor and SUID risk; it can only estimate associations through exposure-specific rates.
+
+### Prior Art
+
+- **SUID Manuscript (C10):** The analysis excludes extremely preterm infants, which may affect comparisons with this study focusing on maternal preterm labor.
+- **Bedsharing Manuscript:** Focuses on postconceptional age and developmental windows but does not address the specific exposure of preterm labor.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, these data can carry out an analysis to estimate SUID rates by maternal preterm labor status. The necessary period (2016-2021) is covered adequately once additional years from PRAMS are acquired. However, there are biases and confounding factors that limit causal inference. The design should clearly state the associative nature of findings due to observational study limitations.
+
+### Recommendations
+
+1. **Data Acquisition:** Acquire PRAMS data for 2016-2021 to ensure full coverage.
+2. **Bias Adjustment:** Consider potential biases in both case series and population reference data, especially selection bias in non-representative review states.
+3. **Confounding Control:** Use multivariable models to control for confounders such as gestational age, socioeconomic status, and other pregnancy complications.
+
+This study can provide valuable insights into SUID rates by preterm labor exposure but should be interpreted carefully due to its observational nature.

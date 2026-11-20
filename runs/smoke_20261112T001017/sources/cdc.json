@@ -1,0 +1,81 @@
+{
+  "id": "cdc",
+  "title": "Mini codebook (fixture)",
+  "document_path": "tests/fixtures/mini_codebook.txt",
+  "document_sha256": "77ba5a0e65da84752750102224a2ae149d83e27809150e9b56fa8cde31c48240",
+  "variables": [
+    {
+      "name": "AGED",
+      "label": "Age at death in days NUMF 0-364=DAYS",
+      "type": "unknown",
+      "levels": [
+        "0-364 = DAYS"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "Format: NUMF (not explicitly stated, inferred from documentation format). Type: continuous"
+    },
+    {
+      "name": "CIG_REC",
+      "label": "Cigarette smoking during pregnancy",
+      "type": "unknown",
+      "levels": [
+        ".B=DK/BLANK",
+        "1=NO",
+        "2=YES"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=NYF"
+    },
+    {
+      "name": "COMBGEST",
+      "label": "Combined gestation in weeks GESTF 17-47=WEEKS",
+      "type": "unknown",
+      "levels": [
+        "99=UNKNOWN"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "Format: GESTF (not explicitly stated, inferred from documentation format). Type: ordinal"
+    },
+    {
+      "name": "MAGER9",
+      "label": "Mother's age recode 9",
+      "type": "unknown",
+      "levels": [
+        "1=UNDER 15",
+        "2=15-19",
+        "3=20-24"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=AGE9F"
+    },
+    {
+      "name": "SEX",
+      "label": "Sex of infant",
+      "type": "unknown",
+      "levels": [
+        "1=MALE",
+        "2=FEMALE"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "format=SEXF"
+    },
+    {
+      "name": "UCOD",
+      "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+      "type": "unknown",
+      "levels": [
+        "R95 = SIDS",
+        "R99 = UNSPECIFIED",
+        "W75 = ACCIDENTAL SUFFOCATION"
+      ],
+      "years": [],
+      "page": 1,
+      "notes": "Format: ICDF (not explicitly stated, inferred from documentation format). Type: categorical"
+    }
+  ]
+}

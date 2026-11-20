@@ -1,0 +1,35 @@
+{
+ "mappings": [
+  {
+   "concept": "microglia activation",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NCFR-CRS codebook v5.1 does not contain any variables related to microglia activation or Iba1 staining."
+  },
+  {
+   "concept": "cell death",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NCFR-CRS codebook v5.1 does not contain any variables related to cell death or cleaved caspase 3 (CC3) staining."
+  },
+  {
+   "concept": "glutamatergic transmission",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NCFR-CRS codebook v5.1 does not contain any variables related to glutamatergic transmission in the nucleus accumbens or amygdala."
+  },
+  {
+   "concept": "hypoglossal motor nucleus (XIIn)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NCFR-CRS codebook v5.1 does not contain any variables related to electrophysiological recordings from the hypoglossal motor nucleus (XIIn)."
+  }
+ ],
+ "source_summaries": {
+  "ncfrp_v51": "This data source focuses on maternal and infant health complications, prenatal care, delivery outcomes, and social determinants of health. It does not contain variables related to neurobiological processes such as microglia activation, cell death, glutamatergic transmission, or electrophysiological assessments of the hypoglossal motor nucleus."
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "POB",
+   "name": "Birth Location",
+   "summary": "Place of birth and related demographic information."
+  },
+  {
+   "start": "PRE_LB_NAPHSIS",
+   "name": "Previous Births",
+   "summary": "Number of previous live births and history of preterm births."
+  },
+  {
+   "start": "RF_EHYPE",
+   "name": "Medical Conditions",
+   "summary": "History of hypertension, diabetes, and other medical conditions during pregnancy."
+  },
+  {
+   "start": "SEX",
+   "name": "Infant Characteristics",
+   "summary": "Gender, small for gestational age status, and transfer information."
+  },
+  {
+   "start": "YY4_DOB",
+   "name": "Date Information",
+   "summary": "Year of birth and last menstrual period."
+  },
+  {
+   "start": "BC_FLAG",
+   "name": "Survey Metadata",
+   "summary": "Birth certificate layout, questionnaire phase number, and participation status."
+  },
+  {
+   "start": "HISPANIC",
+   "name": "Demographic Information",
+   "summary": "Ethnicity, language preference, mode of contact, and other demographic details."
+  },
+  {
+   "start": "ASK_2HSM",
+   "name": "Healthcare Provider Interactions",
+   "summary": "Questions asked by healthcare providers regarding various health topics."
+  }
+ ]
+}

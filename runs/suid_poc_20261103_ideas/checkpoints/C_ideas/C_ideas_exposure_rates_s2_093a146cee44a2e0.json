@@ -1,0 +1,100 @@
+{
+ "ideas": [
+  {
+   "question": "Is there an association between pregnancy weight gain and the incidence of SUID among infants born to mothers who experienced high stress during pregnancy?",
+   "comparison": "Infants whose mothers gained different amounts of weight during pregnancy (low, moderate, high) compared with those who had average weight gain during pregnancy. Infants will be stratified based on whether their mother experienced high stress during pregnancy.",
+   "why_open": "While the effects of maternal obesity and smoking have been extensively studied in SUID research, there is limited understanding about how pregnancy weight gain might interact with maternal psychological stress to influence risk. An answer could provide new insights into modifiable factors that affect SUID incidence.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p8_std2"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D299"
+   ],
+   "data": "Use D299 from prams_p8_std2 to measure pregnancy weight gain among mothers who reported experiencing high levels of stress during their pregnancy. Use SUID cases from cdc_linkco15 and ncfrp_v51 for the numerator, and use birth denominators from cdc_natl15."
+  },
+  {
+   "question": "Do infants born to mothers with a history of mental health issues have higher rates of SUID compared to those whose mothers did not report such histories?",
+   "comparison": "Infants born to mothers reporting prior mental health conditions (e.g., depression, anxiety) versus those without reported mental health challenges.",
+   "why_open": "The link between maternal mental health and SUID has been understudied. Understanding this association could inform interventions targeting maternal well-being during pregnancy and postpartum periods to reduce infant mortality rates.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D269"
+   ],
+   "data": "Use D269 from prams_p8_arf to measure whether mothers reported having a history of mental health issues. Use SUID cases from cdc_linkco15 and ncfrp_v51 for the numerator, and use birth denominators from cdc_natl15."
+  },
+  {
+   "question": "Is there an increased risk of SUID among infants born to women who experienced significant barriers to healthcare access during pregnancy?",
+   "comparison": "Infants born to mothers with notable healthcare barriers (e.g., lack of insurance, transportation issues) compared to those without these obstacles.",
+   "why_open": "Access to adequate prenatal care is a critical factor in infant health outcomes. Investigating this question could highlight areas where interventions are needed to improve SUID prevention strategies by enhancing maternal healthcare access and support.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D272"
+   ],
+   "data": "Use D272 from prams_p8_arf to measure reported barriers to healthcare access during pregnancy. Use SUID cases from cdc_linkco15 and ncfrp_v51 for the numerator, and use birth denominators from cdc_natl15."
+  },
+  {
+   "question": "Does infant sleep environment quality influence the incidence of SUID among infants born prematurely?",
+   "comparison": "Infants born prematurely who slept in different environments (e.g., crib vs. bed-sharing) compared to full-term infants.",
+   "why_open": "Premature infants have unique health vulnerabilities that may be exacerbated by certain sleeping conditions. Understanding this relationship could guide targeted recommendations for safe sleep practices for preterm babies.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D279",
+    "D281"
+   ],
+   "data": "Use D281 from prams_p8_arf to assess sleeping arrangements and D279 for hospital stay length. Use SUID cases from cdc_linkco15 and ncfrp_v51 for the numerator, and use birth denominators from cdc_natl15."
+  },
+  {
+   "question": "Are there differences in SUID rates between infants born to mothers who received mental health support versus those who did not?",
+   "comparison": "Infants born to mothers who reported receiving mental health services during pregnancy compared with those who did not.",
+   "why_open": "Maternal mental health is increasingly recognized as a critical factor in infant health. Investigating this could provide evidence for the importance of integrating mental health care into prenatal care plans to reduce SUID incidence.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15"
+   ],
+   "domains": [
+    "D276"
+   ],
+   "data": "Use D276 from prams_p8_arf to assess whether mothers received mental health support during pregnancy. Use SUID cases from cdc_linkco15 and ncfrp_v51 for the numerator, and use birth denominators from cdc_natl15."
+  }
+ ]
+}

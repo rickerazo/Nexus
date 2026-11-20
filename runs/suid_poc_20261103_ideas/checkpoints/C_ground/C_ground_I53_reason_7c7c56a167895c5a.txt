@@ -1,0 +1,58 @@
+### Design
+
+**Question Restated:** Does the history of previous live births and maternal health conditions modify the risk of sudden unexpected infant death (SUID) among infants born to mothers with pre-existing medical conditions?
+
+The design will be a case-only analysis using data from the NFR-CRS (ncfrp_v51). This study aims to explore how prior pregnancy history and maternal health status may influence SUID rates within the cases, without estimating incidence or comparing against a control group.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - The only source that provides detailed case-level information on child deaths reviewed by fatality review teams, including previous pregnancy history and maternal health conditions.
+  
+No population reference or denominator sources are needed for this case-only analysis since we aim to explore the distribution of variables within cases rather than estimating incidence rates.
+
+### Period
+
+The period should be restricted to 2008-2019, which is the time frame covered by ncfrp_v51. This ensures that all data used in the study are from a consistent and overlapping timeframe.
+
+### Variables
+
+#### Prior Live Birth History
+- **ncfrp_v51:INF3livebirthunk:** Number of live births - unknown (if applicable)
+- **ncfrp_v51:INF3living:** Number living among previous live births
+- **ncfrp_v51:INF3prevmedical:** Did mother have medical complications in previous pregnancies
+- **ncfrp_v51:BIO1dthsids:** If yes, prior child deaths - Female - SIDS
+
+#### Maternal Health Conditions During Pregnancy
+- **ncfrp_v51:INFmedical:** During pregnancy did mother have medical complications/infections
+- **ncfrp_v51:INF4heducrisk:** If yes, health education - Risk factors identified by prenatal history
+- **ncfrp_v51:SUPdthneglct:** If yes, prior child deaths - Child neglect (if applicable)
+- **ncfrp_v51:BIO1dthneglct:** If yes, prior child deaths - Female - Child neglect (if applicable)
+
+### Biases
+
+**Selection Bias:**
+- NFR-CRS is a voluntary reporting system and may be biased towards more severe or reported cases.
+  
+**Information Bias:**
+- Maternal health conditions and previous live birth history are retrospectively recorded in case reports, which can introduce recall bias.
+
+**Confounding:**
+- Potential confounders such as socioeconomic status, urban/rural location (not available), maternal age, smoking habits, and prenatal care quality need to be considered. However, these variables may not be uniformly measured across all cases or consistently reported.
+
+### What the Design Cannot Establish
+
+This design can only identify associations within the case series data; it cannot establish causality or incidence rates due to the lack of a denominator source for the general population at risk.
+
+### Prior Art
+
+The manuscript claims do not closely address this specific hypothesis. The closest related findings are:
+- **C10 [finding]:** Maternal smoking is associated with higher SUID incidence across both windows.
+  
+However, none of these studies directly examine how prior pregnancy history and maternal health conditions modify the risk of SUID.
+
+### Verdict
+
+These data can answer a version of the question regarding associations within cases. The study can explore whether previous live birth history and maternal health conditions are associated with SUID incidence among reviewed cases, but it cannot estimate rates or establish causality due to the lack of a denominator source for the general population at risk.
+
+The primary limitation is that we do not have exposure data from a control group, which would be necessary to assess relative risks. Therefore, while we can describe associations within the case series, causal inferences are beyond the scope of this design.

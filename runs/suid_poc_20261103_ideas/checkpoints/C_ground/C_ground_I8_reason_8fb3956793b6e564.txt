@@ -1,0 +1,53 @@
+### Design
+
+**Question:** How does the use of pre-pregnancy health checks compare between SUID cases and a population reference?
+
+**Design:** Case-population comparison. Compare how common an exposure is among the cases (from a case series) with its weighted prevalence in the general population (from a population reference source).
+
+### Sources by Role
+- **Case Series:** ncfrp_v51 (SUID cases)
+  - **Reason for role:** This dataset includes detailed information on child deaths reviewed by fatality review teams, providing a comprehensive set of variables that can be used to assess pre-pregnancy health checks.
+  
+- **Population Reference:** prams_p7_arf (PRAMS mothers from 2012-2015)
+  - **Reason for role:** This dataset includes weighted survey data on live births and the conditions leading up to pregnancy, making it suitable for assessing general population prevalence.
+
+### Period
+**Period Needed:**
+- Case series source: ncfrp_v51 covers deaths reviewed from 2004-2019. We will use 2012-2015.
+- Population reference source: prams_p7_arf covers Phase 7 (2012-2015).
+
+### Variables
+**Concept:** Use of pre-pregnancy health checks
+
+**Measurements:**
+- **Case Series (ncfrp_v51):**
+  - ISSprechronicdiseasebef (Chronic disease control Education - before pregnancy)
+  - ISSprechronicdiseasedur (Chronic disease control Education - during pregnancy)
+
+- **Population Reference (prams_p7_arf):**
+  - PRE_CKBP (Pre-pregnancy check for high blood pressure)
+  - PRE_CKD (Pre-pregnancy check for diabetes)
+  - PRE_DEPR (Pre-pregnancy check for depression/anxiety)
+  
+**Differences in Measurement:**
+- ncfrp_v51 measures pre-pregnancy health checks as education and awareness of chronic disease management.
+- prams_p7_arf measures specific medical checks for conditions like high blood pressure, diabetes, and mental health.
+
+### Biases
+- **Selection Bias:** The case series (ncfrp_v51) includes child deaths reviewed by fatality review teams, which may not be representative of all SUID cases. PRAMS data is a weighted survey that represents live births in participating states.
+  
+- **Information Bias:** Measurement differences between ncfrp_v51 and prams_p7_arf can introduce discrepancies due to different reporting methods (chronic disease management vs. specific medical checks). Missing values need careful handling, especially as PRAMS uses .B for don't know or blank responses.
+
+- **Confounding:** Confounders like maternal age, socioeconomic status, smoking during pregnancy, and other pre-pregnancy conditions should be accounted for to ensure a fair comparison.
+
+### What the Design Cannot Establish
+- The design cannot establish causality. It can only compare proportions of pre-pregnancy health checks between SUID cases and the general population.
+  
+### Prior Art
+The manuscript claims do not closely address comparisons between SUID cases and a general population reference regarding pre-pregnancy health checks. Most findings are related to developmental windows, bed sharing, smoking during pregnancy, prematurity, and mechanistic pathways rather than pre-pregnancy health practices.
+
+### Verdict
+Yes, these sources can answer the research question. The design allows for comparing how common specific pre-pregnancy health checks are between SUID cases (ncfrp_v51) and a population reference (prams_p7_arf). However, careful attention is needed to handle measurement differences and potential confounding factors.
+
+### Conclusion
+The proposed study can be carried out using the given datasets. The analysis will compare pre-pregnancy health checks between SUID cases and PRAMS mothers from 2012-2015, providing insights into preventive care practices in high-risk groups versus the general population.

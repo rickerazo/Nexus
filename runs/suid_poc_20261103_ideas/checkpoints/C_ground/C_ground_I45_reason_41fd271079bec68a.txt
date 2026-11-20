@@ -1,0 +1,65 @@
+### Design
+
+**Question Restated:** How does the history of maternal mental health problems relate to the likelihood of a child experiencing Sudden Unexpected Infant Death Syndrome (SUID) compared to non-SUID deaths within the case series?
+
+**Design:**
+- This is a **case-only analysis**, comparing proportions or odds among cases. It cannot estimate incidence, rates, or risk because it does not have a denominator source.
+- The question aims to explore whether maternal mental health history affects the likelihood of SUID versus non-SUID outcomes within a case series.
+
+### Sources by Role
+
+**Case Series:**
+- **ncfrp_v51:** This source records child deaths reviewed by fatality review teams and is suitable for capturing both SUID cases and non-SUID deaths (if categorized).
+
+No **Population Reference or Denominator Source** can be used here because the design only compares within cases.
+
+### Period
+
+The manuscript claims suggest that a comprehensive analysis of recent data would be valuable. Since the proposed study focuses on maternal mental health history, ideally we need more recent years to capture current trends and practices in maternal care and reporting.
+
+- **Years:** 2015-2019 (already held) + additional years as needed: 2020-2023 (to be acquired).
+
+### Variables
+
+#### Maternal Mental Health History
+- **ncfrp_v51:BIO1recmh:** If yes, disability or chronic illness - Female - Mental - Was Female receiving mental health services? [Yes/No]
+- **ncfrp_v51:INF5acesmh:** If yes, mother ACES as a child - Mental health problems [Yes/No]
+- **ncfrp_v51:BIO1disillmh:** If yes, disability or chronic illness - Female - Mental health/substance abuse [Yes/No]
+- **ncfrp_v51:GIV1recmh:** If yes, disability or chronic illness - Mental - Was caregiver receiving mental health services? [Yes/No]
+
+#### Outcome
+- SUID vs. non-SUID death is recorded within ncfrp_v51 (although the manuscript claims do not specify how non-SUID deaths are categorized).
+
+### Biases
+
+**Selection Bias:**
+- The fatality review teams' participation varies over time, and case counts reflect changes in participation rather than true incidence.
+- Non-participating states or jurisdictions might have different reporting practices.
+
+**Information Bias:**
+- Differences in mental health history documentation between SUID cases and non-SUID deaths may introduce variability.
+- Reporting of maternal mental health issues can be subjective and incomplete.
+
+**Confounding:**
+- Confounders such as socioeconomic status, prenatal care quality, smoking during pregnancy, substance abuse, and other medical complications are not directly accounted for in this design but could influence the relationship between maternal mental health history and infant mortality risk.
+
+### What the Design Cannot Establish
+
+This case-only analysis can only identify associations within cases; it cannot establish causation or incidence. It lacks a denominator source to provide population context necessary for calculating rates or risks, so any findings are limited to comparisons among the cases themselves.
+
+### Prior Art
+
+**Relevant Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C10:** Analysis excludes some extreme preterm infants, which may introduce selection bias.
+- **bedsharing_ms_v7.C18:** Sleep-environment classification in case-report systems can be subject to heterogeneity in ascertainment and reporting.
+
+**No Direct Relevance:**
+- The closest claim is the focus on maternal smoking during pregnancy (SUID_manuscript_v9_clean.C9, bedsharing_ms_v7.C12) but does not directly address maternal mental health history.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, **these sources can be used to explore whether maternal mental health history is associated with SUID compared to non-SUID outcomes within the case series. However, this study will only provide a comparison among cases and cannot establish incidence or causation due to the lack of a denominator source.** The findings should be interpreted cautiously given potential biases related to selection, information, and confounding.
+
+The design can describe patterns within the data but requires careful interpretation in light of limitations such as incomplete case reporting across jurisdictions and variable documentation practices for mental health history.

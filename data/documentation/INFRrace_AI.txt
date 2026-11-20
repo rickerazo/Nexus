@@ -1,0 +1,24 @@
+* Value is set to 1 to alphabethize AI/AN.
+
+* Set Asian to 2 so it alphabetizes.
+
+* Set Black to 3 so it alphabetizes.
+
+
+* Set Pacific Islander or Native Hawaiian to 4 so it alphabetizes.
+
+
+* Set White to 5 so it alphabeizes.
+
+* Set unknown to 9.
+
+* Set missing to 9.
+* Set multirace to 6 
+
+
+1=AIAN, 	0
+2=Asian,	1
+3=Black,	2
+4=NHPI,		3
+5=white,	4
+6=multirace	5

@@ -1,0 +1,30 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with hospital overnight stays after birth is higher compared to the weighted prevalence among live births in the general population.",
+ "rationale": "This study uses a case-population comparison design to assess whether infants who had an overnight stay in the hospital after birth are more likely to experience sudden unexpected infant death (SUID).",
+ "prior_art": "None in the inputs. The closest claims do not address postnatal hospital stays and their association with SUID incidence.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "Hospital Overnight Stay After Birth",
+  "SUID Incidence"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn",
+  "prams_p8_arf:NOHOSP_B",
+  "prams_p8_arf:LTH_HOSP",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "Causation, as the design only allows for association due to potential confounding factors such as prematurity and maternal smoking."
+}

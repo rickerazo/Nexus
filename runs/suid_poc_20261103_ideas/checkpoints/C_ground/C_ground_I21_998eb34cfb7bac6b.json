@@ -1,0 +1,35 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The incidence of Sudden Unexpected Infant Death (SUID) among infants born to mothers who experienced high stress during pregnancy is estimated by stratifying maternal pregnancy weight gain.",
+ "rationale": "This study uses a case series for numerator cases, population reference data to measure prevalence of the exposures, and denominator data to provide the incidence denominators. The design can estimate exposure-specific rates but cannot establish causation due to potential biases in measurement differences and selection bias from non-representative case series data.",
+ "prior_art": "The closest claim is SUID_manuscript_v9_clean.C10 [limitation], which highlights exclusion criteria impacting results, but does not address the specific interaction between pregnancy weight gain and high stress. This question remains open as it explores new modifiable factors affecting SUID incidence.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "pregnancy weight gain",
+  "high stress during pregnancy",
+  "SUID cases"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4momwtgn",
+  "prams_p8_arf:MOMLBS",
+  "prams_p7_arf:MOMLBS",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation, account for postnatal exposures that may change during infancy, or fully address confounding factors such as maternal age, smoking status, socioeconomic status (SES), and birth weight."
+}

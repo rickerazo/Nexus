@@ -1,0 +1,58 @@
+### Design
+
+**Question:** Does the presence of medical complications during pregnancy differ based on maternal prepregnancy BMI in the case series?
+
+**Design Type:** Case-only analysis. This study will examine how medical complications during pregnancy vary across subgroups defined by maternal prepregnancy body mass index (BMI) levels within the case series.
+
+### Sources by Role
+
+- **Case Series:**
+  - **ncfrp_v51**: The National Fatality Review Case Reporting System (NFR-CRS) is used as a case series, providing details on child deaths reviewed by fatality review teams. It includes information on medical complications during pregnancy but does not provide denominators for incidence or prevalence.
+- **Population Reference:**
+  - None needed since the study is a case-only analysis and does not require population-level comparisons.
+- **Denominator Source:**
+  - Not required as this is a case-only comparison.
+
+### Period
+
+The candidate idea requires data on medical complications during pregnancy and maternal prepregnancy BMI. The available years for ncfrp_v51 are from 2008 to 2019, which should be sufficient given the design of the study.
+
+### Variables
+
+#### Medical Complications During Pregnancy
+- **ncfrp_v51:INFmedical**: During pregnancy did mother have medical complications/infections.
+- **ncfrp_v51:INF3prevmedical**: Did mother have medical complications in previous pregnancies (if relevant).
+- **ncfrp_v51:INF4medical**: Medical complications during pregnancy.
+
+#### Maternal Prepregnancy BMI
+- **prams_p8_arf:MOM_BMIG_QX_REV** or **prams_p7_arf:MOM_BMIG_QX_REV**: Var: MOM BMI GROUPED FROM QX REVISED (Revised grouped maternal BMI).
+
+### Biases
+
+#### Selection Bias:
+- The ncfrp_v51 dataset includes only reviewed child deaths, which may not be representative of all SUID cases.
+
+#### Information Bias:
+- Reporting and measurement differences between the case series (ncfrp_v51) and reference populations are a concern. For instance, detailed medical records from fatality reviews might differ in completeness or accuracy compared to standard survey data.
+  
+#### Confounding Factors:
+- The analysis must control for potential confounders such as maternal smoking during pregnancy, number of prenatal visits, and other factors known to influence SUID risk.
+
+### What the Design Cannot Establish
+
+The case-only design cannot establish incidence rates or causal relationships. It can only show associations among cases based on recorded medical complications and prepregnancy BMI levels within the ncfrp_v51 dataset.
+
+### Prior Art
+
+- **suid_literature_abstracts.C10**: Maternal obesity is a risk factor for Sudden Unexpected Infant Death (SUID), with an increased risk associated with higher maternal BMI.
+- **bedsharing_ms_v7.C9**: The incidence of SUID was highest in the first several months of life and then declined when analyzed on a postnatal age scale.
+
+These findings suggest that prior work has identified obesity as a significant risk factor for SUID, but none directly compare medical complications during pregnancy to prepregnancy BMI within case data. Hence, this study aims to fill an existing gap by focusing on the relationship between maternal BMI and medical complications in the context of SUID cases specifically.
+
+### Verdict
+
+The proposed idea can be carried out using the given sources (ncfrp_v51). The ncfrp_v51 dataset provides detailed information on medical complications during pregnancy, which can be compared across prepregnancy BMI categories. However, it is crucial to acknowledge that this study will only establish associations within the case series and cannot provide population-level incidence rates or causal conclusions.
+
+### Conclusion
+
+The sources provided are sufficient for conducting a case-only analysis to examine whether medical complications during pregnancy differ based on maternal prepregnancy BMI levels in SUID cases. The design focuses on comparing recorded medical complications within the ncfrp_v51 dataset, acknowledging limitations regarding selection and information biases inherent in case series data.

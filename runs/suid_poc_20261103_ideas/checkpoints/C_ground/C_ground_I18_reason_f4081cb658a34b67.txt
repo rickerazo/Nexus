@@ -1,0 +1,85 @@
+### Design
+
+**Question Restated:** Does the incidence rate of SUID differ among infants born to mothers who experienced prenatal care issues compared to those without such issues?
+
+This design involves estimating outcome rates by exposure group using a case series (numerator), population reference source for exposure prevalence, and denominator source for the population at risk.
+
+### Sources by Role
+
+**Case Series:** 
+- **Source:** `ncfrp_v51`
+- **Reason:** It records SUID cases, including information on prenatal care issues from reviewing teams.
+
+**Population Reference:**
+- **Sources:** `prams_p7_arf`, `prams_p8_arf`
+- **Reason:** These sources provide maternal reports of prenatal care quality and adequacy to estimate the prevalence of prenatal care issues in the general population.
+
+**Denominator Source:**
+- **Source:** `cdc_natl15`
+- **Reason:** This source provides the total number of live births, allowing for the calculation of incidence rates based on SUID cases.
+
+### Period
+
+The years needed are 2016 to 2021 (for population reference) and at least 2015 to cover both case series and denominator data. The manuscript uses 2016-2021 for PRAMS, so we need:
+- **Case Series:** `ncfrp_v51` — 2008-2019
+- **Population Reference:** `prams_p7_arf`, `prams_p8_arf` — Phase 7 (2012-2015) and Phase 8 (2016-2021)
+- **Denominator Source:** `cdc_natl15` — 2015
+
+### Variables
+
+**Exposure: Prenatal Care Issues**
+- **Case Series (`ncfrp_v51`):**
+  - `INFisschcare`: Lack of child care
+  - `ISSprechronicdiseasedur`: Chronic disease control education during pregnancy
+  - `INFisssupport`: Lack of family/social support
+  - `INFissmultprov`: Multiple providers, not coordinated
+  - `INFexpipv`: Intimate partner violence experienced during pregnancy
+  - `INFisscultr`: Cultural differences
+
+- **Population Reference (`prams_p7_arf`, `prams_p8_arf`):**
+  - Variables for prenatal care issues (e.g., lack of prenatal care, late entry to care)
+  - `PNC_VST`: Number of prenatal visits
+  - `ISSpncreferrals`: Lack of referrals
+  - `ISSpncdenatal`: Lack of dental care
+  - `ISSpncdentalassess`: Lack of dental assessment
+  - `ISSpncstandard`: Standard of care not met
+
+**Outcome: SUID Incidence**
+- **Case Series (`ncfrp_v51`):**
+  - Records SUID cases within the specified period (2008-2019).
+
+### Biases
+
+#### Selection Bias
+- The case series (`ncfrp_v51`) captures only reviewed child deaths and may not be a representative sample of all SUID cases in the US.
+- Population reference sources (`prams_p7_arf`, `prams_p8_arf`) are weighted surveys from participating states, which may introduce selection bias.
+
+#### Information Bias
+- Reporting on prenatal care issues can vary between case series and population references due to different contexts (e.g., detailed reviews vs. self-reported surveys).
+- Timing of reports: Prenatal care issues are assessed retrospectively for PRAMS but prospectively in the case series.
+  
+#### Confounding Bias
+- Potential confounders such as maternal age, smoking status, socioeconomic factors, and other medical conditions need to be controlled.
+
+### What the Design Cannot Establish
+
+This design can estimate differences in SUID incidence rates among infants born to mothers with prenatal care issues compared to those without. However, it cannot establish causation due to observational nature of the data. It also cannot control for all potential confounders and does not account for time-varying exposures after birth.
+
+### Prior Art
+
+The manuscript claims `SUID_manuscript_v9_clean.C10` mentions exclusion criteria that do not align with this study's focus on prenatal care issues, while claim `bedsharing_ms_v7.C23` discusses bed sharing and its association with SUID but does not address prenatal care quality. 
+
+Claim `suid_literature_abstracts.C10` highlights maternal smoking as a risk factor for SUID, but there is no specific focus on prenatal care issues.
+
+### Verdict
+
+**Can the Sources Answer the Question?**
+
+Yes, these sources can answer a version of the question: "Does the incidence rate of SUID differ among infants born to mothers who experienced prenatal care issues compared to those without such issues?" 
+
+However, the comparison will be limited by selection bias from non-representative case series and information bias due to differing measurement contexts. Confounding variables must be carefully controlled in analyses.
+
+To improve this design:
+- Ensure comprehensive adjustment for potential confounders.
+- Consider expanding the case series to include more representative national data if available.
+- Standardize prenatal care issue definitions across sources as much as possible.

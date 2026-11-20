@@ -1,0 +1,60 @@
+### Design
+
+**Question Restated:** Is the prevalence of prenatal complications higher among infants who experienced SUID compared to those with other fetal or neonatal conditions, as recorded in the NFR-CRS (ncfrp_v51)?
+
+**Design:** Case-case comparison. Compare cases of SUID from ncfrp_v51 against cases categorized as congenital anomalies, birth injuries, respiratory distress syndrome, or prematurity within the same case series.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (2014-2019)
+  - Cases of SUID and other fetal/neonatal conditions are recorded here.
+  - No denominator source; this design can only compare proportions or odds among cases, not incidence or risk.
+
+### Period
+
+**Years Needed:**
+- ncfrp_v51 covers 2014-2019. More years of case data could be acquired if necessary to increase statistical power but are currently available and sufficient for the analysis period.
+
+### Variables
+
+#### Prenatal Complications
+- **ncfrp_v51:** 
+  - INF3medical: During pregnancy did mother have medical complications/infections (Yes/No)
+  - INF4pretermlabref: Medical complications - Preterm labor - Referral
+  - INF4moveref: Medical complications - Decreased fetal movement - Referral
+
+#### Other Conditions
+- **ncfrp_v51:**
+  - ISSinfconganom: Congenital anomaly (Yes/No)
+  - ISSinfbirthinjury: Birth injury (Yes/No)
+  - ISSinfprematurity: Prematurity (Yes/No)
+
+### Biases
+
+#### Selection Bias
+- **ncfrp_v51:** Participation by reviewing states may introduce selection bias, but the manuscript uses a subset of years with stable participation levels (2008-2019).
+
+#### Information Bias
+- Different case series record prenatal complications and other conditions differently. ncfrp_v51 captures these through various detailed medical history items, while PRAMS surveys focus on self-reported maternal health during pregnancy.
+
+#### Confounding
+- No denominator source means the comparison does not account for population-level confounders such as socioeconomic status or environmental exposures that could influence prenatal complications and outcomes.
+
+### What the Design Cannot Establish
+
+- The design cannot establish incidence or risk of SUID because it lacks a denominator. It can only compare proportions of cases with prenatal complications.
+- No causal inference can be made due to observational nature.
+
+### Prior Art
+
+None of the manuscript claims directly address the specific comparison between SUID and other fetal/neonatal conditions regarding prenatal complications. The closest claim is:
+- **SUID_manuscript_v9_clean.C10 [limitation]:** The analysis excludes a small number of deaths at the extremes of the PCA distribution, including some extremely and very preterm infants who died early in postnatal life.
+  - This limitation highlights that while case data includes various conditions, it does not directly compare SUID to other conditions regarding prenatal complications.
+
+### Verdict
+
+These sources can answer whether the prevalence of prenatal complications differs between SUID cases and those with congenital anomalies, birth injuries, respiratory distress syndrome, or prematurity within ncfrp_v51. The design is feasible but limited in scope due to the absence of a denominator source for calculating incidence or risk.
+
+### Conclusion
+
+Yes, these sources can be used to conduct a case-case comparison to determine if prenatal complications are more prevalent among infants who experienced SUID compared to those with other fetal/neonatal conditions as recorded in ncfrp_v51. However, due to the absence of a denominator source, this design only allows for comparing proportions and cannot establish incidence or risk directly.

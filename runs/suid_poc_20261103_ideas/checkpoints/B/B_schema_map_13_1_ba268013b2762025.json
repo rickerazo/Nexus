@@ -1,0 +1,35 @@
+{
+ "mappings": [
+  {
+   "concept": "microglia activation",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 7 Analytic Research File does not contain any variables related to microglia activation or Iba1 staining."
+  },
+  {
+   "concept": "cell death",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 7 Analytic Research File does not contain any variables related to cell death or cleaved caspase 3 (CC3) staining."
+  },
+  {
+   "concept": "glutamatergic transmission",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 7 Analytic Research File does not contain any variables related to glutamatergic transmission in the nucleus accumbens or amygdala."
+  },
+  {
+   "concept": "hypoglossal motor nucleus (XIIn)",
+   "source_id": "prams_p7_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 7 Analytic Research File does not contain any variables related to electrophysiological recordings from the hypoglossal motor nucleus (XIIn)."
+  }
+ ],
+ "source_summaries": {
+  "prams_p7_arf": "PRAMS Phase 7 Analytic Research File contains data primarily focused on maternal health, prenatal care, and infant outcomes. It includes variables related to insurance coverage, pre-pregnancy health conditions, behaviors during pregnancy (e.g., smoking, alcohol consumption), and postpartum health status but does not include any information relevant to the concepts of microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus electrophysiological recordings."
+ }
+}

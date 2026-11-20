@@ -1,0 +1,70 @@
+### Design
+
+**Question:** Does the presence of multiple gestation in SUID cases correlate with different patterns of prenatal care issues?
+
+**Design Type:** Case-only analysis.
+
+This design will compare the circumstances recorded for SUID cases (from case series sources) that involved multiple births versus singleton births. The study does not aim to estimate incidence or rates but focuses on comparing proportions or odds of prenatal care issues between these subgroups within the case series.
+
+### Sources by Role
+
+- **Case Series:** 
+  - ncfrp_v51: This source records child deaths reviewed by fatality review teams, which includes SUID cases. It is ideal for studying SUID cases and their associated circumstances.
+  - cdc_linkco15: While it primarily covers live births linked to infant deaths within the first year, some SUID cases may be included in its case series component.
+
+- **Population Reference:** 
+  - Not applicable for this design as we are conducting a case-only analysis without a population comparison source.
+
+- **Denominator Source:** 
+  - Not needed because the study is not estimating incidence or rates; it only compares characteristics within the SUID cases.
+
+### Period
+
+**Common period:** The manuscript's claims and data sources suggest using a period that overlaps with the most recent available data, which would be from 2015 onwards for the cdc_linkco15 dataset and 2008-2019 for ncfrp_v51. Given the case-only nature of this study, we can focus on the period covered by both datasets to ensure comparability.
+
+### Variables
+
+**Concept:** Multiple Gestation
+- **Variables:**
+  - `ncfrp_v51:INFmultbirth` (Multiple birth)
+  - `ncfrp_v51:ISSmothmultigest` (Multiple gestation)
+
+**Concept:** Prenatal Care Issues
+- **Variables:**
+  - `ncfrp_v51:INFisscoord` (Lack of coordination among multiple health insurance providers)
+  - `ncfrp_v51:INF3isscoord` (Lack of coordination among multiple health insurance providers for the third child, if applicable)
+  - `ncfrp_v51:INFmultbirth` (Multiple birth)
+  - `ncfrp_v51:ISSprechronicdiseasedur` (Chronic disease control during pregnancy)
+
+### Biases
+
+**Selection Bias:** 
+- **Case Series Selection:** ncfrp_v51 and cdc_linkco15 may include SUID cases that are systematically different from non-SUID cases, potentially introducing bias if the review process or reporting varies by state.
+  
+**Information Bias:**
+- **Measurement Differences:** The prenatal care issue variables (e.g., multiple health insurance providers) might be reported differently across sources, leading to inconsistencies in measurement.
+
+**Confounding:**
+- Confounders like socioeconomic status, urban/rural location, and other demographic factors are not captured uniformly by these case series datasets. These could influence both the presence of multiple gestation and prenatal care issues.
+
+### What the Design Cannot Establish
+
+This design cannot establish causality or incidence rates. It can only compare proportions or odds of prenatal care issues between SUID cases with multiple births versus singleton births within the available case series data.
+
+### Prior Art
+
+**Closest Claims:**
+- **SUID_manuscript_v9_clean.C10 [limitation]:** This study acknowledges that it excludes extremely and very preterm infants, which may affect the comparability of prenatal care issues across subgroups.
+- **bedsharing_ms_v7.C8 [finding]:** Maternal smoking was more common in SUID cases where bed sharing occurred. However, this does not address multiple gestation or prenatal care issues specifically.
+
+### Verdict
+
+**Can these data answer a version of the question?**
+
+Yes, but with limitations:
+- The design can assess whether there are differences in prenatal care issues between SUID cases involving multiple births and singleton births using the ncfrp_v51 case series.
+- However, without a denominator source or population reference for comparison, it cannot establish incidence rates or odds ratios. Additionally, potential selection biases and measurement inconsistencies must be considered.
+
+**Data Element Missing:**
+- A population reference to compare with SUID cases would enhance the study by providing context on the general prevalence of prenatal care issues in multiple gestation pregnancies versus singletons.
+- Geographical detail (urban/rural location) could provide additional stratification, but this is not available in the current case series datasets.

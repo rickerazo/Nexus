@@ -1,0 +1,85 @@
+### Design
+
+**Question Restated:** What differences in prenatal care access exist between Sudden Unexpected Infant Death (SUID) cases and non-SUID infant deaths recorded in the same case series?
+
+- **Design Type**: Case-case comparison.
+- **Objective**: To compare the prenatal care access among infants who died from SUID versus those who died from other causes, using data from the National Fatality Review Case Reporting System (NFR-CRS).
+
+### Sources by Role
+
+**Case Series:**
+- **ncfrp_v51 (National Fatality Review Case Reporting System)**:
+  - Covers all child deaths reviewed by participating fatality review teams from 2008 to 2019.
+  - Provides detailed information on both SUID cases and other infant deaths.
+
+**Population Reference:**
+- **prams_p8_arf (PRAMS Phase 8 Analytic Research File)**:
+  - Covers weighted survey data of mothers a few months after live birth from participating states for years 2016-2021.
+  - Provides information on prenatal care access and related health conditions.
+
+### Period
+
+**Period Needed:**
+- **Case Series (ncfrp_v51)**: 2008-2019
+- **Population Reference (prams_p8_arf)**: 2016-2021
+
+The period for the case series source needs to cover the entire study period of interest (2016-2021) and extend back further to ensure sufficient sample size.
+
+### Variables
+
+**Concepts and Candidate Variables:**
+
+**Prenatal Care Access:**
+- **ncfrp_v51**: 
+  - **INFisscare**: Access or compliance issues related to prenatal care.
+  - **ISSpnclate**: Late entry to prenatal care.
+  - **ISSpncnone**: No prenatal care.
+  
+- **prams_p8_arf**:
+  - **PNC_MTH**: Month of first prenatal care visit.
+  - **PNC_VST**: Number of prenatal care visits.
+
+**Health Conditions During Pregnancy:**
+- **ncfrp_v51**:
+  - **ISSprechronicdiseaseaft**: Chronic disease control Education - after pregnancy.
+  
+- **prams_p8_arf**:
+  - **PG8_SEIZ**: Health problem during pregnancy -- Epilepsy.
+  - **PG8_ASMA**: Health problem during pregnancy -- Asthma.
+  - **PG8_SC**: Health problem during pregnancy -- Sickle Cell.
+
+### Biases
+
+1. **Selection Bias:**
+   - The NFR-CRS covers only participating states and may not capture all infant deaths nationally, introducing potential selection bias.
+   
+2. **Information Bias:**
+   - Prenatal care access may be underreported in the case series (NFR-CRS) compared to population reference data (PRAMS), as PRAMS relies on detailed surveys while NFR-CRS reports are based on retrospective reviews.
+
+3. **Confounding:**
+   - Other factors such as socioeconomic status, urban/rural residence, and maternal smoking may confound the association between prenatal care access and infant death outcomes.
+
+### What the Design Cannot Establish
+
+- The design cannot establish causality or incidence rates because it is a case-case comparison without a denominator source.
+- It can only compare proportions of prenatal care access among SUID cases versus non-SUID deaths within the same case series.
+
+### Prior Art
+
+The manuscript claims do not closely align with this specific research idea. While there are findings about prenatal risk factors like smoking and prematurity, none directly address differences in prenatal care access specifically between SUID and other infant deaths.
+
+- **Closest Relevant Claims:**
+  - C10 (SUID_manuscript_v9_clean): Maternal smoking is associated with higher SUID incidence.
+  - C8 (bedsharing_ms_v7): Bed sharing was more strongly associated with SUID in an early developmental window, and maternal smoking showed a consistent association.
+
+### Verdict
+
+**Can these sources answer the question?**
+
+Yes, these data sources can be used to conduct a case-case comparison of prenatal care access between SUID cases and other infant deaths. However, due to selection bias and potential differences in measurement quality between the case series and population reference, findings should be interpreted with caution.
+
+### Additional Considerations
+
+- **Data Quality:** Ensure that prenatal care variables are coded consistently across both sources.
+- **Missing Data:** Address missing data through imputation or exclusion strategies carefully to avoid biasing results.
+- **Sample Size:** The sample size may need validation to ensure sufficient power for the comparison.

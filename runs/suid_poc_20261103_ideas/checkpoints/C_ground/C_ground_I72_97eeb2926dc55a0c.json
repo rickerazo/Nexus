@@ -1,0 +1,34 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The recording of medical complications during pregnancy differs between the NCFRP_v51 case series and PRAMS_P7_ARF population reference, with more detailed records in NCFRP_v51 compared to broader categories in PRAMS_P7_ARF.",
+ "rationale": "This design compares how different sources measure the same concept of medical complications during pregnancy. It uses detailed records from NCFRP_v51 and broader categories from PRAMS_P7_ARF, focusing on variables such as pre-eclampsia, gestational hypertension, and diabetes.",
+ "prior_art": "The closest relevant claims address methodological concerns with the sources used but do not directly compare how medical complications are recorded between different datasets. Specifically, SUID_manuscript_v9_clean.C10 acknowledges limitations in using vital record data for exposure misclassification issues, while bedsharing_ms_v7.C18 notes heterogeneity in sleep-environment classification.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C18"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2015,
+ "required_concepts": [
+  "Medical complications during pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4preeclampsiaref",
+  "ncfrp_v51:INF4preghyperref",
+  "ncfrp_v51:INF4pretermlabref",
+  "ncfrp_v51:INF3prevmedical",
+  "prams_p7_arf:MM_HBP",
+  "prams_p7_arf:PG_GDB",
+  "prams_p7_arf:P_PRTERM",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence rates or causal relationships due to the absence of a denominator source."
+}

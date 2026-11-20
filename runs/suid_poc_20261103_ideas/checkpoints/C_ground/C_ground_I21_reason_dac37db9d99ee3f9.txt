@@ -1,0 +1,86 @@
+### Design
+
+**Question Restated:** Estimate the incidence of Sudden Unexpected Infant Death (SUID) among infants born to mothers who experienced high stress during pregnancy, stratified by maternal pregnancy weight gain.
+
+**Design:**
+- **Exposure-specific rates.** The study will estimate outcome rates by exposure group using a case series for numerator cases, population reference data to measure prevalence of the exposures, and denominator data to provide the incidence denominators.
+  
+### Sources by Role
+
+1. **Case Series:** 
+   - **Source:** NCFRP_V51 (National Fatality Review Case Reporting System)
+   - **Why:** This source provides detailed information on infant deaths reviewed by fatality review teams, which is necessary for identifying SUID cases.
+
+2. **Population Reference:**
+   - **Sources:**
+     - PRAMS_P8_ARF
+     - PRAMS_P7_ARF
+   - **Why:** These sources provide survey data from mothers of live births, which can be used to measure pregnancy weight gain and high stress levels during pregnancy among the general population.
+
+3. **Denominator Source:**
+   - **Source:** CDC_Natl15 (CDC Natality Public-Use File)
+   - **Why:** This source provides detailed information on all US live births in 2015, which is necessary for calculating denominators to estimate incidence rates.
+
+### Period
+
+**Years Needed:**
+
+- **Case Series (NCFRP_V51):** The manuscript uses data from 2008-2019. Additional years of data would be needed if the study period extends beyond 2019.
+  
+- **Population Reference (PRAMS_P8_ARF, PRAMS_P7_ARF):** 
+   - PRAMS Phase 8: 2016-2021
+   - PRAMS Phase 7: 2012-2015
+
+- **Denominator Source (CDC_Natl15):** Births in 2015 are needed, as the study uses CDC_LINKCO15 for both cases and denominators.
+
+### Variables
+
+1. **Pregnancy Weight Gain:**
+   - **Case Series:** ncfrp_v51:INF4momwtgn (Mother's pregnancy weight gain or loss in pounds)
+     - **Measurement Differences:** This variable directly measures the weight change during pregnancy.
+   - **Population Reference:** prams_p8_arf:MOMLBS (Maternal weight gain (LBS))
+     - **Measurement Differences:** This variable is recorded a few months after birth, but it reflects pre- and post-pregnancy weights to estimate weight gain.
+
+2. **High Stress During Pregnancy:**
+   - **Case Series:** ncfrp_v51:CIR2socpregnancy (Life Stressors - Social/economic - Pregnancy)
+     - **Measurement Differences:** This variable captures social stress during pregnancy.
+   - **Population Reference:** prams_p8_arf:MOM_BMIG_QX_REV, prams_p7_arf:MOM_BMIG_QX_REV (MAT_PRWT: Maternal weight - Prepregnancy)
+     - **Measurement Differences:** PRAMS variables are self-reported and include broader life stressors, but we need to code for high pregnancy-related stress.
+
+3. **SUID Cases:**
+   - **Case Series:** ncfrp_v51
+   - **Denominator Source:** cdc_linkco15 (CDC linked birth/infant death public-use file)
+
+### Biases
+
+1. **Selection Bias:**
+   - **NCFRP_V51:** The cases reviewed by fatality review teams may not be representative of all SUID cases, and participation varies over time.
+   - **PRAMS_P8_ARF & PRAMS_P7_ARF:** Mothers surveyed through PRAMS are sampled from birth certificates and may differ in socioeconomic status or other factors.
+
+2. **Information Bias:**
+   - **Weight Gain:** Case series (ncfrp_v51) measures weight gain directly, while PRAMS (prams_p8_arf) estimates it based on pre- and post-pregnancy weights.
+   - **Stress Levels:** NCFRP captures specific pregnancy-related stressors, whereas PRAMS includes broader life stressors that need to be coded for high stress during pregnancy.
+
+3. **Confounding:**
+   - Factors such as maternal age, smoking status, socioeconomic status (SES), and birth weight could confound the association between pregnancy weight gain and SUID incidence.
+
+### What the Design Cannot Establish
+
+- The design can estimate rates but cannot establish causation.
+- It cannot account for postnatal exposures that may change during infancy.
+- Post-hoc coding of high stress levels from broader life stressors in PRAMS data introduces potential misclassification bias.
+
+### Prior Art
+
+The closest claim to this study is:
+- **SUID_manuscript_v9_clean.C10 [limitation]:** The analysis excludes a small number of deaths at the extremes of the PCA distribution, including some extremely and very preterm infants who died early in postnatal life.
+- This limitation highlights that exclusion criteria can impact results, but it does not address the specific interaction between pregnancy weight gain and high stress.
+
+### Verdict
+
+These sources can answer a version of the question by estimating exposure-specific rates of SUID among infants born to mothers with different levels of pregnancy weight gain and high stress. However, due to potential biases in measurement differences and selection bias from non-representative case series data, the study should carefully address these limitations in its analysis.
+
+**Reasons for Caution:**
+- The design cannot establish causation.
+- Measurement differences between sources may introduce misclassification bias.
+- Post-hoc coding of stress levels introduces additional uncertainty.

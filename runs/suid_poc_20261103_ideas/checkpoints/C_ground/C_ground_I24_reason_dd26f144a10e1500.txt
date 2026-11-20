@@ -1,0 +1,76 @@
+### Design
+
+**Question:** What is the incidence of Sudden Unexpected Infant Death (SUID) among infants born via cesarean delivery compared to vaginal delivery?
+
+**Design Type:** Exposure-specific rates. Estimate outcome rates by exposure group using cases from a case series, exposure prevalence from a population reference source, and population at risk from a denominator source.
+
+### Sources by Role
+
+- **Case Series:**
+  - ncfrp_v51 (NFR-CRS): This source provides the SUID cases.
+  
+- **Population Reference:**
+  - prams_p7_arf, prams_p8_arf: These sources provide exposure prevalence from a survey of mothers of live births.
+
+- **Denominator:**
+  - cdc_linkco15, cdc_natl15: These sources provide the population at risk (all US live births).
+
+### Period
+
+**Common Period:** The manuscript claims and data cover various years. To ensure comparability, we need a common period that lies within all source coverage:
+- ncfrp_v51: 2008-2019
+- prams_p7_arf: 2012-2015
+- cdc_linkco15, cdc_natl15: 2015
+
+**Common Period Chosen:** 2015 (the most recent year covered by all sources).
+
+### Variables
+
+#### Outcome (SUID)
+- **Case Series Source:**
+  - ncfrp_v51: N/A (cases only, no denominator information)
+
+#### Exposure (Delivery Method)
+- **Population Reference Sources:**
+  - prams_p7_arf: DEL_VAG (Vaginal Delivery? [U=UNKNOWN; 1=NO (UNCHECKED); 2=YES (CHECKED)])
+  - prams_p8_arf: DEL_VAG (Vaginal Delivery [.N=NOT RECORDED; .U=UNKNOWN; 1=NO (UNCHECKED); 2=YES (CHECKED)])
+
+- **Denominator Sources:**
+  - cdc_linkco15, cdc_natl15:
+    - RDMETH_REC (Delivery Method Recode [1=Vaginal (excludes vaginal after previous C-section); 2=Vaginal after previous c-section; 3=Primary C-section; 4=Repeat C-section …])
+    - DMETH_REC (Delivery Method Recode Combined [1=Vaginal; 2=C-Section; 9=Unknown])
+
+### Biases
+
+#### Selection Bias
+- **Case Series:** The ncfrp_v51 captures only reviewed SUID cases, which may not be representative of all SUIDs. Participation in fatality review teams varies by state.
+- **Population Reference:** PRAMS samples mothers from live births, excluding those who experienced stillbirth or infant death.
+
+#### Information Bias
+- **Case Series:** Ascertainment and reporting practices vary among jurisdictions, potentially affecting consistency.
+- **Denominator Source:** The CDC files use vital records that may have misclassification issues for exposure variables (e.g., smoking status).
+
+#### Confounding
+- Factors like maternal age, education level, socioeconomic status, and preterm birth are likely confounders. These factors differ between vaginal and cesarean deliveries.
+
+### What the Design Cannot Establish
+
+The design can estimate relative risk but not establish causation due to its observational nature. It cannot account for time-varying exposures after delivery or other unmeasured confounders.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID Manuscripts:** No claim directly compares cesarean and vaginal deliveries.
+- **Bedsharing Manuscripts (bedsharing_ms_v7):** Examines associations with bed sharing, maternal smoking, and prematurity across developmental windows but does not address mode of delivery.
+
+The question remains open as no previous work has specifically compared SUID incidence between cesarean and vaginal deliveries using the proposed data sources.
+
+### Verdict
+
+These data can be used to estimate the relative risk of SUID among infants born via cesarean versus vaginal delivery in 2015. However, they cannot establish causation or address time-varying exposures post-delivery. The design is feasible with the given data but requires careful consideration of biases and confounding factors.
+
+### Additional Considerations
+
+- **Missing Data:** Handle missing values appropriately (e.g., unknowns and skips).
+- **Survey Weights:** Use PRAMS survey weights for accurate population-level estimates.
+- **Comparability:** Ensure comparability in how delivery methods are coded across sources.

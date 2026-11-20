@@ -1,0 +1,92 @@
+### Design
+
+**Exposure-Specific Rates**
+
+**Restated Question:** Is there a difference in maternal physical health problems between mothers whose infants experienced Sudden Unexpected Infant Death (SUID) compared to those who did not, as measured by the presence of any medical complications during pregnancy?
+
+### Sources by Role
+
+- **Case Series:**
+  - **Source:** ncfrp_v51
+  - **Role:** Provides cases where infant deaths due to SUID occurred. This source captures maternal health conditions associated with SUID cases.
+  
+- **Population Reference:**
+  - **Source:** prams_p7_arf (Phase 7 Analytic Research File)
+  - **Role:** Provides a weighted survey of mothers of live births, which can be used as the reference population to estimate exposure prevalence in the general population.
+
+- **Denominator:**
+  - **Source:** cdc_linkco15
+  - **Role:** Supplies the total number of live births (population at risk) for the year 2015. This source provides a denominator to calculate rates or proportions.
+
+### Period
+
+**Period Range:** The study will cover the period from January 1, 2015, through December 31, 2015.
+
+- **ncfrp_v51:** Covers child deaths reviewed by participating fatality review teams in the years 2004-2019. We use cases from this source that occurred within our period of interest (2015).
+- **prams_p7_arf:** Covers Phase 7 (2012-2015), which includes surveys conducted a few months after live births in 2012-2015.
+- **cdc_linkco15:** Covers US live births and infant deaths for the year 2015.
+
+### Variables
+
+**Maternal Physical Health Problems:**
+
+- **Case Series (ncfrp_v51):**
+  - Variable: `INFmedical`, `INF3prevmedical`, `INF4inftopmsign`, `ISSprechronicdiseasedur`, `INFmisotcrx`
+  - These variables capture maternal medical conditions and complications during pregnancy.
+
+- **Population Reference (prams_p7_arf):**
+  - Variable: `INFmedical` from prams_p8_std2, which is the same concept as `INFmedical` in ncfrp_v51 but for live births.
+  - Weight: `WTANAL`
+  
+**Exposure Prevalence Estimation:**
+
+- **Population Reference (prams_p7_arf):**
+  - Variables: `INFmedical`, `INF3prevmedical`, `INF4inftopmsign`, `ISSprechronicdiseasedur`, `INFmisotcrx`
+  - Weight: `WTANAL` to adjust for sampling and survey design.
+
+**Population at Risk (Denominator):**
+
+- **Denominator Source (cdc_linkco15):**
+  - Variable: No specific variable needed, as the denominator is simply the number of live births in 2015.
+
+### Biases
+
+#### Selection Bias:
+
+- **Case Series (ncfrp_v51) Selection:** Limited to cases reviewed by participating fatality review teams. The extent and coverage of these reviews vary over time.
+  
+- **Population Reference (prams_p7_arf):** Samples live births, excluding those who experience infant mortality; this could underrepresent mothers with high-risk pregnancies.
+
+#### Information Bias:
+
+- **Case Series (ncfrp_v51) Reporting:** Detailed review captures maternal health issues but may be subject to recall bias.
+  
+- **Population Reference (prams_p7_arf):** Surveys conducted a few months after birth, which might capture current conditions but could miss pre-existing or early pregnancy complications.
+
+#### Confounding:
+
+- **Confounders Not Measured:** Socioeconomic status, environmental factors, and lifestyle behaviors that may influence both maternal health and SUID risk.
+  
+### What the Design Cannot Establish
+
+1. **Causation:** This study design cannot establish causality between maternal physical health problems and SUID incidence due to its observational nature.
+
+2. **Temporal Relationships:** The timing of maternal health issues relative to specific periods during pregnancy or postpartum is not captured in these data sources.
+
+### Prior Art
+
+**Manuscript Claims:**
+
+- **SUID_manuscript_v9_clean.C10 [Limitation]:** The study excludes a small number of extremely and very preterm infants who died early in postnatal life.
+  
+- **bedsharing_ms_v7.C26 [Limitation]:** Sleep-environment classification in case-report systems may be subject to heterogeneity in ascertainment and reporting.
+
+### Verdict
+
+The proposed research idea can be carried out using the provided data sources, but it has limitations. The design allows for estimating exposure-specific rates of maternal physical health problems between mothers whose infants experienced SUID versus those who did not. However, it cannot establish causality or temporal relationships due to its observational nature.
+
+**Recommendations:**
+- Ensure that variables measuring maternal health issues are consistent across case and reference sources.
+- Use appropriate survey weights for population prevalence estimates from PRAMS.
+- Consider additional confounders in the analysis plan to mitigate bias.
+- Interpret findings with caution, recognizing limitations related to selection, information, and temporal biases.

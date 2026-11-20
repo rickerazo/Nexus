@@ -1,0 +1,85 @@
+### Design
+
+**Question Restated:** How does maternal pre-pregnancy health care utilization relate to the incidence of Sudden Unexpected Infant Death (SUID) in infants? This study aims to estimate outcome rates by exposure group using a case-specific rate design. The numerator will be SUID cases from a case series, and the denominator will come from live births stratified by level of pre-pregnancy healthcare utilization.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System)
+  - Why: This source is specifically designed to capture child deaths reviewed by fatality review teams, including SUID cases.
+  
+- **Population Reference:** prams_p7_arf and prams_p8_arf
+  - Why: These sources provide survey-based information on mothers' pre-pregnancy health care utilization through weighted samples of live births. The surveys include items about healthcare visits before pregnancy.
+
+- **Denominator Source:** cdc_natl15 (CDC natality public-use file)
+  - Why: This source provides the total number of live births in the United States, which is necessary for calculating population-at-risk denominators stratified by pre-pregnancy healthcare utilization levels.
+
+### Period
+
+**Years Needed:**
+- The manuscript claims indicate a need to cover trends over multiple years. For consistency and comparability across sources, we aim to use data from 2015 onward.
+- **Case Series (ncfrp_v51):** 2014-2019
+- **Population Reference (prams_p7_arf & prams_p8_arf):** Phase 7: 2012-2015, Phase 8: 2016-2021 
+- **Denominator Source (cdc_natl15):** 2015
+
+### Variables
+
+#### Pre-pregnancy Health Care Utilization
+- **Case Series (ncfrp_v51):**
+  - ISSprechronicdiseasebef: Chronic disease control Education - before pregnancy
+  
+- **Population Reference (prams_p7_arf, prams_p8_arf):**
+  - PRE_CKBP: Pre-pregnancy check for high blood pressure
+  - PRE_CKD: Pre-pregnancy check for diabetes
+  - PRE_RX: Pre-pregnancy prescription medications
+  - PRE_EXER: Pre-pregnancy exercise 3+ days/wk
+
+#### Incidence of SUID
+- **Case Series (ncfrp_v51):**
+  - ISSprechronicdiseasebef: Chronic disease control Education - before pregnancy (as an indirect measure)
+  
+- **Denominator Source (cdc_natl15 & prams_p7_arf, prams_p8_arf):**
+  - Live births stratified by pre-pregnancy healthcare utilization levels.
+
+### Biases
+
+#### Selection Bias
+- **Case Series (ncfrp_v51):** The cases are reviewed by participating fatality review teams and may not be nationally representative.
+  
+#### Information Bias
+- **Case Series (ncfrp_v51):** Reporting on pre-pregnancy health care utilization might differ from self-reported data in PRAMS surveys.
+- **Population Reference (prams_p7_arf, prams_p8_arf):** The survey responses may not accurately reflect actual behaviors and practices.
+
+#### Confounding
+- **Maternal Characteristics:** Other factors like smoking during pregnancy, socioeconomic status, and other health conditions are likely to be confounders. These need to be controlled for in the analysis.
+  
+### What the Design Cannot Establish
+
+1. **Causation:** The design can only establish associations due to its observational nature.
+2. **Detailed Mechanisms:** It cannot provide detailed mechanisms linking pre-pregnancy healthcare utilization and SUID incidence.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C10:** Discusses limitations of vital-record data, which applies here as well.
+- **bedsharing_ms_v7.C17-C24:** Highlight various limitations related to observational studies and indirect denominators, similar issues apply here.
+  
+The closest claims focus on maternal smoking and other risk factors but do not directly address pre-pregnancy healthcare utilization.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes. The proposed study design can utilize the available data to estimate associations between maternal pre-pregnancy health care utilization and SUID incidence using an exposure-specific rate approach. However, it is important to acknowledge that this design cannot establish causation or detailed mechanisms.
+
+### Limitations
+
+- **Representativeness:** The case series may not be fully representative of all US cases.
+- **Measurement Differences:** Differences in how pre-pregnancy healthcare utilization is measured across sources need careful harmonization.
+- **Temporal Alignment:** Ensure that the exposure data from PRAMS surveys aligns temporally with SUID events.
+
+### Next Steps
+
+1. **Data Harmonization:** Standardize measurements of pre-pregnancy health care utilization across PRAMS phases and case series.
+2. **Statistical Analysis Plan:** Develop a plan to control for confounding factors such as smoking, socioeconomic status, etc.
+3. **Acquisition of Additional Years:** Acquire data from 2015 onwards consistently across all sources if needed.
+
+This study design addresses the research question but requires careful handling of biases and limitations inherent in observational epidemiology.

@@ -1,0 +1,28 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers with pregnancy weight gain differs between SUID cases and live births.",
+ "rationale": "This study aims to compare the prevalence of pregnancy weight gain among mothers whose infants experienced Sudden Unexpected Infant Death (SUID) versus those who had live births. The design uses case-population comparison, comparing proportions within a common period covered by all sources.",
+ "prior_art": "The closest tested work is `suid_literature_abstracts.C10`, which identifies maternal obesity as a risk factor for SUID but does not directly compare pregnancy weight gain between these groups. This question remains open because previous studies have not specifically addressed the relationship between pregnancy weight gain and SUID.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "pregnancy weight gain"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4momwtgn",
+  "prams_p8_arf:MOMLBS",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates due to the lack of a denominator source that links directly to both case series and population reference groups."
+}

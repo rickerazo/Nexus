@@ -1,0 +1,25 @@
+{
+ "groundable": false,
+ "why_not": "The data lack a denominator source to estimate incidence or risk, and the case series alone does not provide sufficient information for population-level comparisons.",
+ "statement": "",
+ "rationale": "This study aims to explore if there are specific postconceptional age windows during which infants with maternal obesity have an increased risk for SUID. However, without a denominator source, it cannot establish incidence rates or comparative risk estimates in a broader context.",
+ "prior_art": "The closest prior work is suid_literature_abstracts.C10, which states that maternal obesity increases the risk of SUID but does not specify developmental periods where this effect may be more pronounced. This question remains open as no study has explored specific critical periods for maternal obesity and SUID risk.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Postconceptional age",
+  "Maternal obesity (BMI)"
+ ],
+ "variables": [
+  "ncfrp_v51:IEMprenatalBMI"
+ ],
+ "cannot_establish": "incidence rates, population-level prevalence or risk estimates due to lack of denominator data."
+}

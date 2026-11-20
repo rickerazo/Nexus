@@ -1,0 +1,78 @@
+### Design
+
+**Question Restated:** 
+What are the prenatal care issues and their distribution among infants who later die from Sudden Unexpected Infant Death Syndrome (SUID) compared to those that survive beyond infancy? The analysis will focus on within-case variation during pregnancy and the first year of life.
+
+**Design:**
+- **Case-only Analysis:** This design allows us to compare subgroups or variations in prenatal care issues among infants who died due to SUID.
+- **Source Roles:**
+  - **Case Series:** ncfrp_v51 (NFR-CRS) — It captures detailed information on reviewed child deaths, including those from SUID.
+  - **No Population Reference Needed:** This analysis is purely descriptive of the case series and does not require a population reference for comparison since we are focusing solely on cases.
+
+### Period
+
+**Years Required:**
+- The proposed period covers 2015-2019 (as specified in the candidate idea). Data from these years would need to be acquired if they are currently unavailable.
+
+### Variables
+
+**Concepts and Candidate Variables:**
+
+1. **Prenatal Care Issues:**
+   - ncfrp_v51:
+     - `INFisscare`: Access or compliance issues related to prenatal care
+     - `ISSprechronicdiseasebef`, `ISSprechronicdiseasedur`, `ISSprechronicdiseaseaft`: Chronic disease control education before, during, and after pregnancy
+     - `INF3prevmedical`: Did mother have medical complications in previous pregnancies
+     - `INFissunwill`: Unwilling to obtain care
+     - `ISSpnclate`: Late entry to prenatal care
+     - `ISSpncnone`: No prenatal care
+     - `ISSpncstandard`: Standard of care not met
+
+2. **Prenatal Care Access and Utilization:**
+   - ncfrp_v51:
+     - `INFissmultprov`: Multiple providers, not coordinated
+     - `INF3isscare`: Access or compliance issues related to prenatal care (similar to INFisscare)
+     - `INF4precare`: Prenatal care most frequently provided
+     - `INFprevmedical`: During pregnancy did mother have medical complications/infections
+
+### Biases
+
+**Selection Bias:**
+- **Case Series:** The NFR-CRS captures cases reviewed by participating fatality review teams. This may introduce selection bias if certain types of SUID cases are more likely to be reviewed than others.
+
+**Information Bias:**
+- **Case Source Reporting:** ncfrp_v51 relies on detailed case reports which might differ from routine health records due to the nature of review and reporting processes.
+- **Missing Data:** Missing values in prenatal care variables could introduce bias if they correlate with specific outcomes (e.g., missing data more common among certain demographic groups).
+
+**Confounding:**
+- **Prenatal Care Issues vs. Other Risk Factors:** Without a denominator source, it's challenging to adjust for confounders such as socioeconomic status or other known risk factors for SUID.
+
+### What the Design Cannot Establish
+
+- The design cannot establish incidence or rates of prenatal care issues among live-born infants who later die from SUID.
+- It also cannot provide population-level associations or causation due to lack of a denominator source and comparison group.
+- The analysis is purely descriptive within cases, focusing on patterns and variations in prenatal care issues.
+
+### Prior Art
+
+**Manuscript Claims Related:**
+- **SUID Manuscirpt:** 
+  - C10: The study excludes some extreme cases (premature infants), which may impact the generalizability.
+  - C11: Postnatal exposures are not accounted for, similar to how prenatal issues might be isolated without postnatal data.
+
+**Bedsharing Manuscript:**
+- **C8:** Bed sharing was recorded for a significant proportion of SUID cases and associated with maternal smoking. This highlights that detailed case-based information can reveal important associations but does not establish causation or incidence rates.
+
+### Verdict
+
+Yes, the sources can answer this version of the question, focusing on descriptive patterns within cases reviewed by NFR-CRS for prenatal care issues among infants who later die from SUID compared to those that survive beyond infancy. However, it cannot provide population-level associations or estimate rates due to the lack of a denominator source and comparison group.
+
+### Logical Reasoning
+
+- The case series (ncfrp_v51) provides detailed records on reviewed infant deaths.
+- No need for a population reference since this is purely descriptive within cases.
+- Acquiring data from 2015 to 2019 would allow the study period as specified.
+- Candidate variables exist to measure prenatal care issues and access/utilization, though some may have missing values that require careful handling.
+- Biases noted (selection, information, confounding) are inherent limitations but do not prevent addressing the stated research question within the given data constraints.
+
+Thus, the design can proceed with the available sources while acknowledging these limitations.

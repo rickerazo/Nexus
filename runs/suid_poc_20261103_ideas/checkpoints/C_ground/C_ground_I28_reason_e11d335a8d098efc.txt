@@ -1,0 +1,78 @@
+### Design
+
+**Question Restated:** What role do family circumstances play in distinguishing Sudden Unexpected Infant Death (SUID) cases from other infant mortality causes within the National Fatality Review Case Reporting System (NCFRP)?
+
+- **Design Type**: Case-case comparison. This design compares cases of SUID with non-SUID infant deaths recorded in the same case series to identify factors specific to SUID.
+  
+### Sources by Role
+
+**Case Series Source:**
+- ncfrp_v51
+  - **Role:** To provide detailed information about both SUID and non-SUID infant deaths, including family circumstances data.
+
+**No Denominator or Population Reference Needed for this Design:**
+- This design does not require denominator sources to estimate rates since it compares proportions among cases of different types (SUID vs. other infant deaths).
+
+### Period
+
+**Years Covered by the Question:** 2008-2019
+- **Years Required from Each Source:**
+  - ncfrp_v51: The years held for this source are sufficient (deaths 2004-2019). Specifically, we need data from 2008 to 2019.
+
+### Variables
+
+**Family Circumstances and Other Relevant Concepts:**
+
+1. **SUID vs Non-SUID Classification**
+   - `ncfrp_v51:UCODR130`: 130 Infant Cause Recode (Identifies SUID cases)
+     - Value for SUID: Codes specifically indicating SUID
+     - Value for non-SUID: Codes for other causes of infant mortality
+
+2. **Family Referrals**
+   - `ncfrp_v51:INF4referinfch`: If yes, family referred - Infant/child health
+   - `ncfrp_v51:INF4referinfmh`: If yes, family referred - Infant mental health program
+
+3. **Previous Health Issues in the Family**
+   - `ncfrp_v51:RES1dthneglct`: If yes, Person 1 - prior deaths - Child neglect
+   - `ncfrp_v51:SUPdthneglct`: If yes, prior child deaths - Child neglect
+
+4. **Caregiver Prior Experience**
+   - `ncfrp_v51:GIV1priordeath`: Caregiver has prior child deaths
+
+5. **Family Stress and Transitions**
+   - `ncfrp_v51:ISSfamtransillness`: Major illness/death in family
+   - `ncfrp_v51:ISSunwantedpregnancy`: Unwanted pregnancy
+   - `ncfrp_v51:ISSintendedpregnancy`: Intended pregnancy
+   - `ncfrp_v51:ISSfamtransdivorce`: Divorce/separation
+   - `ncfrp_v51:ISSfamtransmomprison`: Mom: prison/parole/probation
+   - `ncfrp_v51:ISShomevisit`: Lack of home visiting (eligible)
+
+### Biases
+
+**Selection Bias:**
+- **Case Series Selection**: The NCFRP case series only includes deaths reviewed by participating fatality review teams. This selection may introduce bias if the probability of review differs systematically between SUID and non-SUID cases.
+  
+**Information Bias:**
+- **Measurement Differences Between Sources**: Family circumstances data in the NCFRP are collected through detailed reviews, while other potential sources like PRAMS survey responses may differ in timing or completeness.
+
+**Confounding:**
+- Potential confounders such as socioeconomic status (e.g., income level from PRAMS) and maternal health conditions (e.g., previous pregnancy outcomes) should be considered to ensure that family circumstances are not merely markers of these underlying factors.
+
+### What the Design Cannot Establish
+
+The design can compare proportions or odds between SUID cases and non-SUID infant deaths but cannot establish incidence rates, risks, or causal relationships due to the lack of a denominator source. Additionally, it does not account for temporal dynamics (e.g., pre- and post-pandemic changes) without additional data.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID Manuscripts**: The prior work in these manuscripts focuses on developmental patterns and risk factors like bed sharing, maternal smoking, and prematurity. While they provide context about SUID trends and risk factors, none directly addresses family circumstances distinguishing SUID from other infant deaths.
+  
+### Verdict
+
+**Can the Sources Answer a Version of the Question?**
+
+Yes, the sources can answer this question using a case-case design to compare family circumstances between SUID cases and non-SUID infant deaths. The NCFRP dataset provides detailed information on both types of outcomes, allowing for meaningful comparisons despite potential selection biases in case inclusion.
+
+**Reasons Supporting the Verdict:**
+- **Data Availability**: The necessary data are available within ncfrp_v51.
+- **Design Feasibility**: A case-case comparison design is suitable to explore differences between SUID and non-SUID cases without needing incidence rates or denominators.

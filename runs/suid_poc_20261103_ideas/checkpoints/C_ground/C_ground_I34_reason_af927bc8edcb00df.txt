@@ -1,0 +1,74 @@
+### Design
+
+**Question Restated:** How do prenatal care issues relate specifically to sudden unexpected infant death (SUID) compared to other causes of infant death? This study aims to compare the prevalence of prenatal care issues in SUID cases versus other causes of infant deaths using a case-case comparison design.
+
+### Sources by Role
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System)
+  - **Reasoning:** The ncfrp_v51 contains detailed records of child deaths reviewed by fatality review teams, including SUID cases. This source provides comprehensive information on the circumstances surrounding infant deaths.
+  
+- **Population Reference:** prams_p8_arf and prams_p7_arf (PRAMS Phase 8 and 7 Analytic Research Files)
+  - **Reasoning:** These surveys provide detailed data on prenatal care practices among mothers of live births. The PRAMS datasets offer a reference for the general population, enabling us to compare the prevalence of prenatal care issues in SUID cases with other infant deaths.
+
+- **Denominator Source:** Not used in this case-case comparison
+  - **Reasoning:** Since we are comparing proportions between two groups within the same dataset (SUID and other causes), a denominator source is not necessary for calculating rates or incidence. The focus is on relative differences, not absolute measures.
+
+### Period
+
+- **Years Needed:**
+  - SUID cases from ncfrp_v51: 2016-2021
+  - PRAMS data (population reference): 2012-2021 (Phase 7 and Phase 8)
+
+- **Data Acquisition:** 
+  - The years 2012-2021 are already held for the relevant sources. No additional data acquisition is required.
+
+### Variables
+
+- **Prenatal Care Issues:**
+  - ncfrp_v51:
+    - **INFisscare**: Access or compliance issues related to prenatal care
+    - **ISSpnclate**: Late entry to prenatal care
+    - **ISSpncnone**: No prenatal care
+  - prams_p8_arf and prams_p7_arf:
+    - **PNC_MTH**: Month of first prenatal care visit
+    - **PNC_VST**: Number of prenatal care visits
+    - **MM_NOMD**: BC: No medical risk factors? (includes previous preterm births, poor pregnancy outcome, etc.)
+  
+- **Measurement Differences:**
+  - ncfrp_v51 measures specific issues related to prenatal care compliance and access.
+  - prams_p8_arf and prams_p7_arf measure the timing and frequency of prenatal care visits as well as medical risk factors.
+
+### Biases
+
+#### Selection Bias:
+- **Case Series (ncfrp_v51):** Only includes cases reviewed by fatality review teams, which may not be representative of all infant deaths.
+- **Population Reference (PRAMS):** PRAMS surveys are weighted to represent the general population but exclude infants who died shortly after birth.
+
+#### Information Bias:
+- **Case Series:** Detailed case reviews may lead to more comprehensive documentation of prenatal care issues compared to less detailed records for live births.
+- **Population Reference:** Survey respondents may underreport or misreport prenatal care issues due to social desirability bias.
+
+#### Confounding:
+- Potential confounders such as maternal age, socioeconomic status, and health behaviors (smoking, substance use) should be accounted for in the analysis. These factors can influence both prenatal care quality and risk of SUID.
+
+### What the Design Cannot Establish
+
+- **Causality:** The case-case comparison design cannot establish causation; it only identifies differences between groups.
+- **Absolute Prevalence Rates:** Without a denominator source, we cannot calculate absolute rates or incidence. We can only compare relative proportions.
+
+### Prior Art
+
+- **Closest Claims:**
+  - Manuscript claims from the bedsharing study (bedsharing_ms_v7) discuss associations with SUID but do not specifically address prenatal care issues.
+  - The literature review abstracts suggest that maternal smoking, preterm birth, and other factors are associated with SUID but do not provide a detailed comparison of prenatal care issues between SUID cases and other causes.
+
+### Verdict
+
+**These sources can answer the version of the question:**
+
+The proposed study design using ncfrp_v51 (case series) and PRAMS data from prams_p8_arf and prams_p7_arf (population reference) is feasible. It will allow for a case-case comparison to assess how prenatal care issues are specifically related to SUID compared to other causes of infant death.
+
+**Reasons Supporting Feasibility:**
+- The necessary variables exist in both sources.
+- The years required are available.
+- Potential biases can be acknowledged and accounted for in the analysis.
+- While causation cannot be established, relative differences between groups can be identified.

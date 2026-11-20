@@ -1,0 +1,27 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with multiple gestation differs across postconceptional age.",
+ "rationale": "This study uses a case-only design to compare proportions among SUID cases based on their multiple gestation status and developmental trajectory. It does not estimate incidence rates or establish causality due to the lack of denominator data.",
+ "prior_art": "The manuscript claims C6, C7 from SUID_manuscript_v9_clean explore risk patterns over time but do not address the influence of multiple gestation. Similarly, bedsharing_ms_v7.C3 examines developmental windows for risk factors like bed sharing and maternal smoking without considering multiple gestation.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C6",
+  "SUID_manuscript_v9_clean.C7",
+  "bedsharing_ms_v7.C3"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "multiple gestation",
+  "postconceptional age"
+ ],
+ "variables": [
+  "ncfrp_v51:INFmultbirth"
+ ],
+ "cannot_establish": "The design cannot establish causality or incidence rates due to its case-only nature."
+}

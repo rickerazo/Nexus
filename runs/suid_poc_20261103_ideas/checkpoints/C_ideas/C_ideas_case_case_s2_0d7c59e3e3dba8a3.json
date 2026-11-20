@@ -1,0 +1,84 @@
+{
+ "ideas": [
+  {
+   "question": "What are the differences in pregnancy weight gain between SUID cases and non-SUID infant deaths?",
+   "comparison": "SUID cases vs other cause of death cases from ncfrp_v51",
+   "why_open": "Pregnancy weight gain is an understudied factor that may influence infant health. It could provide new insights into the risk factors contributing to SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_std2"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D88",
+    "D299"
+   ],
+   "data": "Compare D88 pregnancy weight gain (case) from ncfrp_v51 against D299 pregnancy weight gain (reference) from prams_p8_std2."
+  },
+  {
+   "question": "Are hospital overnight stays before discharge associated with a different risk of SUID compared to other infant deaths?",
+   "comparison": "SUID cases vs non-SUID cases from ncfrp_v51",
+   "why_open": "Hospital overnight stay information can reveal potential complications during the initial postnatal period, which may influence an infant's vulnerability to sudden death.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82",
+    "D279"
+   ],
+   "data": "Compare D82 hospital overnight stay (case) from ncfrp_v51 against D279 hospital stay length (reference) from prams_p8_arf."
+  },
+  {
+   "question": "Do preconception and chronic disease care measures predict lower incidence of SUID compared to other infant deaths?",
+   "comparison": "SUID cases vs non-SUID cases from ncfrp_v51",
+   "why_open": "Preconception and chronic disease care may play a role in reducing the risk factors for sudden unexpected infant death, but their impact has not been extensively studied.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D244"
+   ],
+   "data": "Analyze D244 preconception and chronic disease care (case) from ncfrp_v51."
+  },
+  {
+   "question": "Does maternal health problem prevalence differ between SUID cases and non-SUID infant deaths?",
+   "comparison": "SUID cases vs other cause of death cases from ncfrp_v51",
+   "why_open": "Maternal health problems could influence neonatal outcomes, yet their association with specific causes like SUID remains unclear.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D239",
+    "D269"
+   ],
+   "data": "Compare D239 maternal health conditions (case) from ncfrp_v51 against D269 maternal health problems (reference) from prams_p8_arf."
+  },
+  {
+   "question": "Do infants with previous hospitalizations for medical complications have a higher risk of SUID compared to other causes of death?",
+   "comparison": "SUID cases vs non-SUID cases from ncfrp_v51",
+   "why_open": "Infants with prior medical issues may face increased vulnerability, but specific links between these conditions and SUID are not well understood.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D66",
+    "D246"
+   ],
+   "data": "Analyze D66 medical complications (case) from ncfrp_v51 and compare it against general hospitalization measures in the same source."
+  }
+ ]
+}

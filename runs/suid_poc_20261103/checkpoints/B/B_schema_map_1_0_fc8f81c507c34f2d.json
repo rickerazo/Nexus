@@ -1,0 +1,357 @@
+{
+ "mappings": [
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC natality public-use file does not contain specific variables for SUID outcomes."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "cdc_natl15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "The variable 'SEX' directly corresponds to the infant's biological sex."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "cdc_natl15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "Derived from 'COMBGEST' which provides the combined gestational age in weeks, and postnatal age can be calculated by subtracting this value from total PCA."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "cdc_natl15",
+   "variable": "CIG_REC",
+   "compatibility": "proxy",
+   "rationale": "The variable 'CIG_REC' provides a recode of maternal cigarette use, which can be used as a proxy for smoking status."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "cdc_natl15",
+   "variable": "GESTREC3",
+   "compatibility": "direct",
+   "rationale": "The variable 'GESTREC3' categorizes gestational age into preterm and full-term categories."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "cdc_natl15",
+   "variable": "BFED",
+   "compatibility": "direct",
+   "rationale": "The variable 'BFED' indicates whether the infant was breastfed at hospital discharge."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "cdc_natl15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "Derived from 'COMBGEST' which provides the combined gestational and postnatal age in weeks."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "cdc_natl15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "The variable 'SEX' directly corresponds to the infant's biological sex."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "cdc_natl15",
+   "variable": "DOB_YY",
+   "compatibility": "proxy",
+   "rationale": "The variable 'DOB_YY' provides the year of birth, which can be used to stratify by year."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The CDC natality public-use file does not contain specific variables for SUID outcomes."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable in the CDC natality public-use file that captures bed-sharing behavior."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "cdc_natl15",
+   "variable": "BWTR4",
+   "compatibility": "proxy",
+   "rationale": "The variable 'BWTR4' categorizes birth weight into low and normal categories."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "cdc_natl15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "Derived from 'COMBGEST' which provides the combined gestational and postnatal age in weeks."
+  },
+  {
+   "concept": "chronological age",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that directly measures chronological age; it would need to be derived from birth date and current date."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "cdc_natl15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "The variable 'SEX' directly corresponds to the infant's biological sex."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "cdc_natl15",
+   "variable": "BWTR4",
+   "compatibility": "proxy",
+   "rationale": "The variable 'BWTR4' categorizes birth weight into low and normal categories."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "cdc_natl15",
+   "variable": "CIG_REC",
+   "compatibility": "proxy",
+   "rationale": "The variable 'CIG_REC' provides a recode of maternal cigarette use, which can be used as a proxy for smoking status."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures maternal prepregnancy BMI directly."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "cdc_natl15",
+   "variable": "COMBGEST",
+   "compatibility": "direct",
+   "rationale": "The variable 'COMBGEST' provides the combined gestational age in weeks."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "cdc_natl15",
+   "variable": "IP_HEPC",
+   "compatibility": "direct",
+   "rationale": "The variable 'IP_HEPC' indicates whether the mother had hepatitis C during pregnancy."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures age at death for SUID cases."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "cdc_natl15",
+   "variable": "OCNTYFIPS",
+   "compatibility": "proxy",
+   "rationale": "The variable 'OCNTYFIPS' provides the FIPS county code, which can be used to infer geographic location."
+  },
+  {
+   "concept": "inner ear dysfunction",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures inner ear dysfunction in the CDC natality public-use file."
+  },
+  {
+   "concept": "control condition",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of a control condition is not applicable to this data source."
+  },
+  {
+   "concept": "body movement arousal response to severe hypoxia-hypercarbia",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures body movement arousal responses in the CDC natality public-use file."
+  },
+  {
+   "concept": "hypercapnic ventilatory response",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures hypercapnic ventilatory responses in the CDC natality public-use file."
+  },
+  {
+   "concept": "age of mice",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "baseline cSN activity",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures baseline sympathetic nerve activity in the CDC natality public-use file."
+  },
+  {
+   "concept": "breathing frequency",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "expiratory time",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures expiratory time in the CDC natality public-use file."
+  },
+  {
+   "concept": "PiCo specific cholinergic-glutamatergic neurons",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "glutamatergic PiCo neurons",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "ChAT containing neurons",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "Dbx1 and Vglut2 neurons",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "preBötzinger complex (preBötC)",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (CIH)",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures chronic intermittent hypoxia in the CDC natality public-use file."
+  },
+  {
+   "concept": "diaphragm activity",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "vagus nerve activity",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures vagus nerve activity in the CDC natality public-use file."
+  },
+  {
+   "concept": "cervical sympathetic nerve activity",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures cervical sympathetic nerve activity in the CDC natality public-use file."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (IH)",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures chronic intermittent hypoxia in the CDC natality public-use file."
+  },
+  {
+   "concept": "adult neurogenesis",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "synaptic plasticity",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures synaptic plasticity in the CDC natality public-use file."
+  },
+  {
+   "concept": "reactive oxygen species (ROS)",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures reactive oxygen species in the CDC natality public-use file."
+  },
+  {
+   "concept": "breathing patterns",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "survival",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures survival rates in the CDC natality public-use file."
+  },
+  {
+   "concept": "inhibition",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "excitation",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  },
+  {
+   "concept": "lipopolysaccharide (LPS)",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures lipopolysaccharide exposure in the CDC natality public-use file."
+  },
+  {
+   "concept": "progesterone",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no variable that captures progesterone administration in the CDC natality public-use file."
+  },
+  {
+   "concept": "neurogenesis",
+   "source_id": "cdc_natl15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept is not applicable to human birth data."
+  }
+ ],
+ "source_summaries": {
+  "cdc_natl15": "The CDC natality public-use file provides detailed information on births, including infant sex (SEX), gestational age at birth (COMBGEST), and maternal smoking during pregnancy (CIG_REC). However, it lacks specific variables for SUID outcomes, bed sharing behavior, and other physiological measures such as body movement arousal responses or neurogenesis. Variables like preterm birth (GESTREC3) and breastfeeding status at discharge (BFED) are available but may require additional interpretation to align with the manuscript's concepts."
+ }
+}

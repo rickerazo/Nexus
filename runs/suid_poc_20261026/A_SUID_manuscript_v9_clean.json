@@ -1,0 +1,89 @@
+{
+  "manuscript_id": "SUID_manuscript_v9_clean",
+  "title": "SUID_manuscript_v9_clean",
+  "document_sha256": "92fd11fa182c9a7b5806abcd83a284408d96271920022a19179cbafdb62cd2bd",
+  "research_questions": [],
+  "designs": [],
+  "model_classes": [],
+  "data_sources_used": [],
+  "variables": [],
+  "claims": [
+    {
+      "id": "SUID_manuscript_v9_clean.C1",
+      "kind": "method",
+      "statement": "Population-based analysis of US CDC linked birth–infant death records from 2014 to 2021.",
+      "quote": "We conducted a retrospective, population-based incidence study using the US CDC linked birth–infant death records from 2014 to 2021, encompassing live births and infant deaths across the United States and US territories [8].",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C2",
+      "kind": "method",
+      "statement": "SUID was defined using ICD-10 codes R95, R99, and W75, excluding deaths in the first postnatal week.",
+      "quote": "SUID cases were identified by underlying cause-of-death ICD-10 codes R95 (Sudden Infant Death Syndrome [SIDS]), W75 (Accidental suffocation and strangulation in bed), and R99 (Other ill-defined and unspecified causes of mortality). Deaths occurring during the first seven postnatal days were excluded to focus on postperinatal vulnerability beyond the first postnatal week.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C3",
+      "kind": "method",
+      "statement": "Postconceptional age (PCA) was defined in weeks as gestational age at birth plus postnatal age at death and served as the primary developmental time scale.",
+      "quote": "PCA was defined in weeks as gestational age at birth plus postnatal age at death and served as the primary developmental time scale.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C4",
+      "kind": "method",
+      "statement": "Weekly SUID counts across PCA weeks 36 to 90 were modelled using a negative binomial generalised additive model with spline smooths and an offset based on national live-birth proportions.",
+      "quote": "Weekly SUID counts across PCA weeks 36 to 90 were modelled using a negative binomial generalised additive model with spline smooths and an offset based on national live-birth proportions.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C5",
+      "kind": "method",
+      "statement": "Prespecified negative binomial models compared an early rising window (36–42 PCA weeks) and a late declining window (≥47 PCA weeks).",
+      "quote": "prespecified negative binomial models compared an early rising window (36–42 PCA weeks) and a late declining window (≥47 PCA weeks).",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C6",
+      "kind": "method",
+      "statement": "Among 23,686 eligible SUID cases, PCA-aligned incidence revealed a clear rise, peak, and decline pattern.",
+      "quote": "Among 23,686 eligible SUID cases, PCA-aligned incidence revealed a clear rise, peak, and decline pattern.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C7",
+      "kind": "method",
+      "statement": "Male and female trajectories overlapped during the rising phase and peak. Sex divergence emerged only after the peak, with persistently higher male incidence during the declining phase.",
+      "quote": "Male and female rates overlapped early but diverged after the peak, with higher male incidence throughout the declining phase (Figure 2B).",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C8",
+      "kind": "method",
+      "statement": "Confirmatory models showed similar male and female incidence in the early window and higher male incidence in the late window.",
+      "quote": "In the early window, male incidence was similar to female incidence (incidence rate ratio [IRR] 1.14, 95% CI 0.85–1.53; Figure 4A; Supplemental Table 1). In the late window, male incidence exceeded female incidence (IRR 1.36, 95% CI 1.29–1.42; Figure 4B; Supplemental Table 4).",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C9",
+      "kind": "method",
+      "statement": "Negative binomial models quantified this transition (figure 4).",
+      "quote": "negative binomial models quantified this transition (figure 4).",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C10",
+      "kind": "method",
+      "statement": "Incidence rate ratios from negative binomial models were fitted separately in early (36–42 PCA weeks) and late (≥47 PCA weeks) developmental windows.",
+      "quote": "Incidence rate ratios from negative binomial models across developmental windows. Models include PCA (per week), sex, maternal smoking, preterm birth, and prespecified interaction terms.",
+      "page": null
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C11",
+      "kind": "method",
+      "statement": "The study used a population incidence design to estimate the risk of sudden unexpected infant death syndrome (SUID) across different developmental windows.",
+      "quote": "Incidence rate ratios from negative binomial models across developmental windows. Models include PCA (per week), sex, maternal smoking, preterm birth, and prespecified interaction terms.",
+      "page": null
+    }
+  ]
+}

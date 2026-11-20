@@ -1,0 +1,47 @@
+{
+ "ideas": [
+  {
+   "question": "Does prenatal exposure to maternal stress, measured through self-reported stressful life events during pregnancy, predict an increased risk for Sudden Unexpected Infant Death (SUID)?",
+   "why_open": "Maternal stress is a potential risk factor proposed in the literature but has not been extensively quantified using detailed measurements of stressful life events.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "maternal stressors, daily overwhelming feelings, insurance coverage"
+  },
+  {
+   "question": "How does postpartum depression (PPD), assessed by self-reported symptoms following birth, correlate with the incidence of SUID in the first year?",
+   "why_open": "The impact of postpartum depression on infant mortality has been hypothesized but needs more specific measurement of depressive symptoms to establish a direct link.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "postpartum mental health, daily overwhelming feelings"
+  },
+  {
+   "question": "Can changes in maternal diet and nutrition, documented through pre-pregnancy and pregnancy dietary habits, influence the risk of SUID?",
+   "why_open": "Nutritional factors are proposed to affect infant health but have not been evaluated using detailed dietary data.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "dieting before pregnancy, pre-pregnancy dental checkups"
+  },
+  {
+   "question": "Does sleep duration of the mother during late pregnancy correlate with SUID incidence in infants?",
+   "why_open": "Maternal sleep patterns may influence infant well-being but have not been directly measured for this specific period.",
+   "sources": [
+    "prams_p8_arf"
+   ],
+   "data": "sleep patterns, smoking during pregnancy"
+  },
+  {
+   "question": "How does the presence of household pollutants, measured through indoor air quality assessments, correlate with SUID risk?",
+   "why_open": "Exposure to environmental toxins is a suggested risk factor for infant mortality but needs quantification using specific pollutant measurements.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "environmental factors (e.g., second-hand smoke exposure)"
+  }
+ ]
+}

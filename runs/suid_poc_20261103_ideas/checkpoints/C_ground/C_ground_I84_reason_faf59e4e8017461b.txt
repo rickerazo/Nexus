@@ -1,0 +1,68 @@
+### Design and Study Plan
+
+#### 1. The Design
+**Restated Question:** How do NCFRP (National Fatality Review Case Reporting System) and PRAMS (Pregnancy Risk Assessment Monitoring System) differ in their recording of healthcare visits during pregnancy, specifically prenatal care visits? What are the implications for assessing SUID risk factors?
+
+**Design Type:** Measurement comparison. This design compares how the same concept is recorded across two sources: NCFRP (case series) and PRAMS (population reference).
+
+#### 2. Sources by Role
+- **Case Series Source:** ncfrp_v51 (National Fatality Review Case Reporting System, v5.1). 
+  - **Role:** Records child deaths reviewed by fatality review teams.
+- **Population Reference Source:** prams_p8_arf (PRAMS Phase 8 Analytic Research File).
+  - **Role:** Provides a weighted survey of mothers who were surveyed after live births.
+
+#### 3. Period
+**Years Required:**
+- NCFRP (ncfrp_v51): Uses cases from 2015 for this analysis.
+- PRAMS (prams_p8_arf): Requires data from 2016 to 2021, as proposed in the candidate idea.
+
+#### 4. Variables
+**Concept:** Healthcare visits during pregnancy
+
+- **NCFRP Variables:**
+  - `INFprenatal`: Number of prenatal visits.
+  - `ISSpnclate`: Late entry into prenatal care.
+  - `REVinfrec`: Availability of child's medical records for review.
+
+- **PRAMS Variables:**
+  - `PNC_VST`: Number of prenatal care visits.
+  - `PNC_MTH`: Month of first prenatal care visit.
+  - `MM_NOMD`: Indicator for no medical risk factors (includes history of preterm births, poor pregnancy outcomes).
+
+**Measurement Differences:**
+- **Timing and Reporting:** PRAMS records timing and number of prenatal care visits based on surveys conducted a few months after birth. NCFRP reviews child death cases with access to medical records.
+- **Definition Variations:** 
+  - `INFprenatal` is recorded retrospectively by fatality review teams (NCFRP).
+  - `PNC_VST` and `PNC_MTH` are self-reported via PRAMS surveys.
+
+**Handling of Missing Data:**
+- NCFRP uses detailed case reviews to capture prenatal care information; missing data can be due to lack of records.
+- PRAMS relies on survey responses, with `.B = don't know or blank`, `.S = skipped`, and `88=NO PNC`.
+
+#### 5. Biases
+**Selection Bias:**
+- **NCFRP:** Reviews only child deaths; excludes surviving infants.
+- **PRAMS:** Surveys a random sample of mothers after live births, excluding stillbirths.
+
+**Information Bias:**
+- **Timing and Reporting Differences:** PRAMS captures prenatal visits retrospectively via surveys conducted months postpartum. NCFRP records are based on medical reviews at the time of death.
+
+**Confounding Variables:**
+- Factors such as socio-economic status, geographic location, and healthcare access can affect both sources differently.
+
+#### 6. What the Design Cannot Establish
+The design cannot establish causation between prenatal care and SUID risk factors due to its observational nature. It can only compare how two different data collection methods (case reviews vs. postpartum surveys) capture similar concepts.
+
+#### 7. Prior Art
+**Manuscripts' Claims:**
+- **SUID_manuscript_v9_clean.C12 [limitation]**: Vital-record data may have exposure and cause-of-death misclassification issues.
+- **bedsharing_ms_v7.C18 [limitation]**: Sleep-environment classification in case-report systems may be subject to heterogeneity in ascertainment and reporting.
+
+These limitations highlight the need for a detailed comparison of how different datasets measure prenatal care, which is relevant to assessing SUID risk factors. No manuscript directly compares NCFRP and PRAMS on prenatal care recording.
+
+#### 8. Verdict
+**Can these sources answer the question?**
+Yes, but with specific caveats:
+- The design can compare how NCFRP (case series) and PRAMS (population reference) measure healthcare visits during pregnancy.
+- It cannot establish causation or rates due to its observational nature.
+- Additional data years may be necessary for a more comprehensive analysis.

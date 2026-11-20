@@ -1,0 +1,79 @@
+{
+ "ideas": [
+  {
+   "question": "Does the incidence of SUID differ from other infant deaths recorded in the NCFRP dataset among infants with a history of decreased fetal movement?",
+   "comparison": "SUID cases compared to non-SUID infant deaths with similar prenatal histories and demographic characteristics, focusing on those experiencing decreased fetal movement.",
+   "why_open": "This question aims to uncover if decreased fetal movement specifically increases risk for SUID rather than other types of early infant mortality. The NCFRP includes both SUID and broader categories of infant fatalities which allows comparison to identify unique risk factors.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "ncfrp_v51 / Fetal Movement",
+    "ncfrp_v51 / Medical Complications"
+   ],
+   "data": "The domain 'Fetal Movement' will be used to identify infants with a history of decreased fetal movement. The domain 'Medical Complications' will provide details on the specific cause or diagnosis of infant death in both SUID and non-SUID cases for comparison."
+  },
+  {
+   "question": "Do infants who died from causes related to sleep environment have different characteristics compared to those dying from other causes as recorded in NCFRP?",
+   "comparison": "Infants who died due to issues with sleep environments (e.g., suffocation) are compared against those who perished from non-environmental causes.",
+   "why_open": "This study seeks to determine if the demographic and medical characteristics associated with SUID linked to sleeping arrangements differ from other infant mortality categories. Understanding specific risk factors unique to sleep environment can inform targeted prevention strategies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "ncfrp_v51 / Infant Sleep Environment",
+    "ncfrp_v51 / Medical Causes of Death"
+   ],
+   "data": "The domain 'Infant Sleep Environment' will be used to identify cases where the infant's sleeping arrangement contributed directly to their death. The domain 'Medical Causes of Death' specifies the cause and manner of death for each case, distinguishing between SUID related to sleep environment and other causes."
+  },
+  {
+   "question": "Is there a difference in pregnancy complications associated with SUID compared to stillbirths among infants recorded in NCFRP?",
+   "comparison": "Infants who died from SUID are contrasted against those that were stillborn, focusing on their pregnancy history.",
+   "why_open": "This question aims to explore whether specific pregnancy-related issues disproportionately affect the risk of SUID versus stillbirth. Identifying these differences can help in understanding unique risks and potential preventative measures.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "ncfrp_v51 / Prenatal Issues",
+    "ncfrp_v51 / Medical Causes of Death"
+   ],
+   "data": "The domain 'Prenatal Issues' captures pregnancy-related complications and conditions. The domain 'Medical Causes of Death' identifies the specific cause of death, enabling differentiation between SUID cases and stillbirths."
+  },
+  {
+   "question": "To what extent do environmental factors in home safety differ between SUID deaths recorded in NCFRP compared to accidental infant fatalities?",
+   "comparison": "Infants who died due to SUID are compared with those that suffered accidental non-environmentally related injuries at home.",
+   "why_open": "By comparing these two groups, researchers can identify whether specific environmental risks contribute uniquely to the risk of SUID over other causes. This could lead to targeted safety interventions and educational programs focused on preventing such risks.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "ncfrp_v51 / Environmental Factors",
+    "ncfrp_v51 / Incident Causes"
+   ],
+   "data": "The domain 'Environmental Factors' examines environmental conditions and hazards present in the home. The domain 'Incident Causes' specifies the cause of the incident leading to death, enabling differentiation between SUID incidents related to environment vs other accidental causes."
+  },
+  {
+   "question": "Is there a distinctive pattern of medical complications before birth that predicts higher risk for SUID as opposed to stillbirth in NCFRP cases?",
+   "comparison": "Infants with prenatal complications who died from SUID are compared against those that were stillborn.",
+   "why_open": "This study aims to uncover whether specific pre-birth conditions and complications uniquely predict the occurrence of SUID over stillbirth. Identifying these unique risk factors could lead to earlier interventions or preventative measures.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "ncfrp_v51 / Prenatal Issues",
+    "ncfrp_v51 / Medical Causes of Death"
+   ],
+   "data": "The domain 'Prenatal Issues' will be used to assess various pregnancy-related issues and complications. The domain 'Medical Causes of Death' will differentiate between SUID cases and stillbirths."
+  }
+ ]
+}

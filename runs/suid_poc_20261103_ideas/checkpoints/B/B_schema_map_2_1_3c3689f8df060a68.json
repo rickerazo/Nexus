@@ -1,0 +1,35 @@
+{
+ "mappings": [
+  {
+   "concept": "microglia activation",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of microglia activation assessed by Iba1 staining is a biological measurement that does not have an equivalent variable in the CDC birth/death file."
+  },
+  {
+   "concept": "cell death",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of cell death assessed by cleaved caspase 3 (CC3) staining is a biological measurement that does not have an equivalent variable in the CDC birth/death file."
+  },
+  {
+   "concept": "glutamatergic transmission",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of glutamatergic transmission assessed in the nucleus accumbens and amygdala is a biological measurement that does not have an equivalent variable in the CDC birth/death file."
+  },
+  {
+   "concept": "hypoglossal motor nucleus (XIIn)",
+   "source_id": "cdc_codenames",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The concept of hypoglossal motor nucleus assessed by electrophysiological recordings from brainstem slices is a biological measurement that does not have an equivalent variable in the CDC birth/death file."
+  }
+ ],
+ "source_summaries": {
+  "cdc_codenames": "This data source contains variables related to newborn health, maternal and paternal characteristics, prenatal care, delivery methods, and other demographic factors. It lacks any variables pertaining to biological measurements such as microglia activation, cell death, glutamatergic transmission, or electrophysiological recordings from brainstem slices."
+ }
+}

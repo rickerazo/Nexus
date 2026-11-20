@@ -1,0 +1,64 @@
+### Design
+
+**Question Restated:** Do changes in pre-pregnancy health checks correlate with SUID incidence trends?
+
+**Design Type:** Trends within cases (case series comparison over time).
+
+**Role of Sources:**
+- **Case Series:** ncfrp_v51, which records child deaths reviewed by fatality review teams.
+- **Population Reference:** prams_p7_arf, a weighted survey of mothers after live births.
+
+### Period
+
+The common period is 2012-2015 for both the case series (ncfrp_v51) and the population reference (prams_p7_arf).
+
+### Variables
+
+**Concept:** Pre-pregnancy health checks
+- **Case Series (ncfrp_v51):**
+  - ISSprechronicdiseasebef: Chronic disease control Education before pregnancy (0=No, 2=Yes)
+  - INFisscare: Access or compliance issues related to prenatal care (0=No Issues, 1=Issues)
+
+**Population Reference (prams_p7_arf)**
+- **Variables:** 
+  - BPG_HLTH: Before pregnancy: advise about improving health (1=NO, 2=YES)
+  - PRE_CKBP: Pre-pregnancy check for high blood pressure (1=No, 2=Yes)
+  - PRE_DEPR: Pre-pregnancy check for depression/anxiety (1=No, 2=Yes)
+  - PRE_CKD: Pre-pregnancy check for diabetes (1=No, 2=Yes)
+
+**Concept:** Incidence of SUID
+- **Case Series (ncfrp_v51):**
+  - Case records of child deaths as reviewed by fatality review teams.
+
+### Biases
+
+**Selection Bias:**
+- **Case Series:** The ncfrp_v51 case series covers only the cases that were reported and reviewed, which may not represent all SUID cases.
+- **Population Reference:** The prams_p7_arf population reference is a weighted survey of mothers post-live birth, missing information on infant deaths.
+
+**Information Bias:**
+- **Case Series:** Reviews by fatality review teams might have varying levels of detail and completeness in recording pre-pregnancy health checks.
+- **Population Reference:** PRAMS data captures pre-pregnancy behaviors at the time of live births only, without knowledge of infant outcomes.
+
+**Confounding:**
+- Socioeconomic status, healthcare access, maternal age, smoking during pregnancy, other prenatal care variables might confound the relationship between pre-pregnancy health checks and SUID incidence trends.
+
+### What the Design Cannot Establish
+
+This design can compare changes in proportions among cases over time but cannot estimate incidence or risk due to lack of denominator data. It also cannot establish causation as it is an observational study comparing two distinct sources with different measurement times and purposes.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C10:** The manuscript highlights the exclusion of cases at extremes, including extremely premature infants.
+- **bedsharing_ms_v7.C23:** Discusses limitations due to exposure classification and data exclusions.
+- **suid_literature_abstracts.C11:** Maternal smoking significantly increases SUID risk.
+
+**Why Open:**
+The closest claim is regarding maternal smoking (C11) but does not address pre-pregnancy health checks. This question remains open as no prior work has specifically examined the correlation between changes in pre-pregnancy health checks and trends in SUID incidence.
+
+### Verdict
+
+These data can carry out a version of the study by comparing proportions among cases over time to see if there are temporal changes in pre-pregnancy health check behaviors. However, they cannot estimate incidence or establish causation due to missing denominator data and observational design limitations.
+
+**Missing Element:** A denominator source (such as CDC natality files) would be required to estimate SUID rates and provide a more robust basis for studying trends over time.

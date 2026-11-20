@@ -1,0 +1,25 @@
+{
+ "groundable": false,
+ "why_not": "The data lack a consistent denominator for infant births across both periods (2004-2019), preventing estimation of incidence or population-level prevalence.",
+ "statement": "",
+ "rationale": "This study can describe proportions within the case series over time but cannot estimate incidence rates or population-level trends due to the absence of a consistent denominator source covering both periods.",
+ "prior_art": "The closest tested work is bedsharing_ms_v7.C8, which reports that 59.5% of SUID cases involved bed sharing, but it does not track temporal trends over time. The question remains open as no prior study has examined the trend in sleep arrangements among SUID cases from 2004 to 2019.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2004,
+ "period_end": 2019,
+ "required_concepts": [
+  "sleeping on shared surface with adults"
+ ],
+ "variables": [
+  "ncfrp_v51:CIRwadultnum",
+  "ncfrp_v51:CIRwadultobs"
+ ],
+ "cannot_establish": "The design cannot estimate incidence rates or population-level trends due to the absence of a consistent denominator source."
+}

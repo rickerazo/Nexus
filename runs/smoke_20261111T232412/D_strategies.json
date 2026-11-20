@@ -1,0 +1,104 @@
+{
+  "strategies": [
+    {
+      "id": "S1",
+      "gap_id": "G1",
+      "research_question": "How does the impact of prenatal smoking on sudden unexpected infant death risk vary across different postconceptional ages?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc",
+          "name": "UCOD"
+        },
+        "definition": "Underlying cause of death (SIDS, unspecified, accidental suffocation)"
+      },
+      "exposures": [
+        {
+          "source_id": "cdc",
+          "name": "CIG_REC"
+        }
+      ],
+      "covariates": [
+        {
+          "source_id": "cdc",
+          "name": "COMBGEST"
+        },
+        {
+          "source_id": "cdc",
+          "name": "AGED"
+        },
+        {
+          "source_id": "cdc",
+          "name": "SEX"
+        }
+      ],
+      "interactions": [
+        [
+          {
+            "source_id": "cdc",
+            "name": "CIG_REC"
+          },
+          {
+            "source_id": "cdc",
+            "name": "COMBGEST"
+          }
+        ]
+      ],
+      "stratification": [],
+      "offset": null,
+      "time_scale": {
+        "source_id": "cdc",
+        "name": "AGED"
+      },
+      "design": "cohort",
+      "model_class": "cox_proportional_hazards",
+      "rationale": "A cohort study design with a Cox proportional hazards model is appropriate to assess the timing of sudden unexpected infant death risk in relation to prenatal smoking, stratified by postconceptional age. This approach allows for the examination of how the hazard ratio associated with prenatal smoking changes over time (postconceptional age). The interaction term between prenatal smoking and postconceptional age will help determine if the effect of prenatal smoking varies across different developmental stages.",
+      "expected_direction": "The model should show a significant interaction term indicating that the risk associated with prenatal smoking is higher at certain postconceptional ages compared to others, supporting or refuting the hypothesis that the impact of prenatal smoking on sudden unexpected infant death risk changes over time."
+    },
+    {
+      "id": "S2",
+      "gap_id": "G2",
+      "research_question": "How does the risk of sudden unexpected infant death (SUID) for male infants change with postconceptional age, particularly before and after 44 weeks?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc",
+          "name": "UCOD"
+        },
+        "definition": "Underlying cause of death classified as Sudden Infant Death Syndrome (ICD-10: R95), Unspecified (R99), or Accidental Suffocation and Strangulation in Bed (W75)"
+      },
+      "exposures": [
+        {
+          "source_id": "cdc",
+          "name": "SEX"
+        }
+      ],
+      "covariates": [
+        {
+          "source_id": "cdc",
+          "name": "COMBGEST"
+        }
+      ],
+      "interactions": [
+        [
+          {
+            "source_id": "cdc",
+            "name": "SEX"
+          },
+          {
+            "source_id": "cdc",
+            "name": "COMBGEST"
+          }
+        ]
+      ],
+      "stratification": [],
+      "offset": null,
+      "time_scale": {
+        "source_id": "cdc",
+        "name": "COMBGEST"
+      },
+      "design": "cohort",
+      "model_class": "cox_proportional_hazards",
+      "rationale": "A cohort study design with Cox proportional hazards modeling is appropriate to assess the timing of male excess risk for SUID in relation to postconceptional age. This model allows us to examine how the hazard ratio for males changes over time, specifically before and after 44 weeks postconceptional age. The interaction term between sex and postconceptional age will help determine if there is a significant change in risk at different developmental stages.",
+      "expected_direction": "The analysis should reveal an increasing or decreasing trend in the hazard ratio for males as they progress through different postconceptional age intervals, particularly highlighting any changes around 44 weeks. This would support or refute the hypothesis that male excess risk emerges after reaching this milestone and how it evolves before and after this point in development."
+    }
+  ]
+}

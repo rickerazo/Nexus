@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "AB_ANTI",
+   "name": "Newborn Care Interventions",
+   "summary": "Indicators of medical interventions for newborns such as antibiotics, ventilation support, NICU admission, seizures, and surfactant use."
+  },
+  {
+   "start": "APGAR10",
+   "name": "Apgar Scores",
+   "summary": "Ten-minute and five-minute Apgar scores and their recoded versions for assessing newborn health at birth."
+  },
+  {
+   "start": "ATTEND",
+   "name": "Birth Details",
+   "summary": "Attendant at birth, place of birth, facility type, breastfeeding status, BMI, body mass index, birth weight recodes, congenital anomalies, and smoking history during pregnancy."
+  },
+  {
+   "start": "CIG0_R",
+   "name": "Smoking History",
+   "summary": "Recode variables for cigarette use before and during each trimester of pregnancy."
+  },
+  {
+   "start": "COMBGEST",
+   "name": "Pregnancy Duration",
+   "summary": "Combined gestational age in weeks, imputation flag, detailed birth weight, last menstrual period month and year."
+  },
+  {
+   "start": "DBWT",
+   "name": "Birth Details 2",
+   "summary": "Detailed birth weight in grams, delivery method recode, birth date components (month, day of week, time, year), plurality recode, delivery weight recode."
+  },
+  {
+   "start": "DMAR",
+   "name": "Demographics and Marital Status",
+   "summary": "Marital status, father's combined age, race/ethnicity recodes, education level, Hispanic origin, reporting flags for various demographic variables."
+  },
+  {
+   "start": "F_AB_ANTIBIO",
+   "name": "Reporting Flags",
+   "summary": "Flags indicating whether data on medical interventions and conditions were reported or imputed."
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+### Design
+
+**Question Restated:** Does the sleep environment differ between infants who die of Sudden Unexpected Infant Death (SUID) and those dying from other causes?
+
+This question can be answered using a case-case design, comparing cases of SUID with non-SUID infant deaths recorded in the same dataset. The study will focus on sleep-related factors as risk indicators specific to SUID.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (NFR-CRS)
+  - This dataset contains detailed information about child deaths reviewed by fatality review teams, including both SUID and non-SUID cases. It captures comprehensive data on the circumstances surrounding each death, making it suitable for a case-case comparison.
+
+### Period
+
+The study period is **2008-2019**, as proposed in the candidate idea. No additional years are needed beyond those already held by ncfrp_v51.
+
+### Variables
+
+#### Sleep Environment
+- **ncfrp_v51:CIRroomshare** (Child sleeping in the same room as caregiver/supervisor at time of death)
+  - This variable measures if the infant was sharing a room with an adult at the time of death.
+  
+#### Other Relevant Factors
+- **ncfrp_v51:INF5havecrib** (Infant have crib, Pack 'n Play, bassinet, bedside sleeper, or baby box)
+  - This variable captures whether the infant had access to safe sleeping environments.
+
+### Biases
+
+#### Selection Bias:
+- The NCFRP dataset is not a census but rather reflects participating states and jurisdictions. While it covers a broad range of cases over time, selection bias could arise if certain types of deaths are underreported or unreported in some regions due to varying review practices across the country.
+  
+#### Information Bias:
+- Sleep environment data may be influenced by how accurately reviewers capture and document sleep arrangements. There can also be inconsistencies in reporting methods over time as case reviews evolve.
+
+#### Confounding:
+- Other factors such as socioeconomic status, maternal health behaviors (e.g., smoking), prematurity, and environmental conditions might confound the relationship between sleep environment and SUID/non-SUID deaths. These variables need to be accounted for in analyses.
+
+### What the Design Cannot Establish
+
+This design can only establish associations but cannot infer causation due to its observational nature. It also cannot address temporal relationships or longitudinal trends because it does not track individual cases over time, nor does it provide denominators necessary to estimate rates or risk.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C10**: This manuscript notes limitations in vital-record data and the exclusion of postnatal exposures. However, it does not address comparisons between SUID and other infant deaths.
+  
+- **bedsharing_ms_v7.C8**: This study highlights differences in sleep environment variables (e.g., bed sharing) but does not compare these factors directly between SUID cases and non-SUID deaths.
+
+### Verdict
+
+**Can Answer the Question:**
+
+Yes, this design can answer a version of the question using the ncfrp_v51 dataset. The data allow for comparisons between sleep environments in SUID versus other infant deaths within the same case series. However, limitations such as selection bias and potential confounding must be addressed in analysis to strengthen conclusions.
+
+### Logical Reasoning
+- **Data Availability:** The NCFRP dataset includes detailed information on both SUID and non-SUID cases.
+- **Comparability:** Since sleep environment data are collected similarly for all cases within the same source, they can be compared directly between SUID and other infant deaths.
+- **Period Consistency:** All necessary years (2008-2019) are available in the ncfrp_v51 dataset.
+
+### Potential Limitations
+- **Selection Bias:** Ensuring that participating states provide consistent data over time is crucial for reliable comparisons.
+- **Information Bias:** Standardizing how sleep environment variables are documented across all reviewed cases will improve comparability.
+  
+By carefully addressing these biases, this study can effectively assess whether differences in sleep environments contribute to disparities between SUID and other infant deaths.

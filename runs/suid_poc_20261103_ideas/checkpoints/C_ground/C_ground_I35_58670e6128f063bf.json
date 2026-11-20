@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with specific sleeping arrangements differs from non-SUID infant deaths within the same case series.",
+ "rationale": "This design uses a case-case comparison to identify differences in sleeping arrangements between SUID and non-SUID infant deaths, leveraging detailed data from the NCFRP dataset. The PRAMS datasets provide population reference information on sleep environments for live births.",
+ "prior_art": "The closest tested work is bedsharing_ms_v7.C8, which identifies that bed sharing was recorded for 59.5% of SUID cases. However, this study does not compare sleeping arrangements between SUID and non-SUID infant deaths directly or consider hospital stay length as a variable.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "sleeping arrangements",
+  "hospital stay length"
+ ],
+ "variables": [
+  "ncfrp_v51:CIRdeathsleepenv",
+  "ncfrp_v51:INF4infhospdays",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation due to its observational nature. It can only identify associations between specific sleep environments and types of infant death within the case series, without controlling for all possible confounding factors or establishing temporal precedence."
+}

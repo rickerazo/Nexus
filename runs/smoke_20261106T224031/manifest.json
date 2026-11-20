@@ -1,0 +1,151 @@
+{
+  "run_id": "smoke_20261106T224031",
+  "created_at": "2026-11-06T22:40:32.067652Z",
+  "mmf_version": "0.1.0.dev0",
+  "config_sha256": "159c8025abb77a8564dc8a298f7161642404852f7a8cc131dd8ae59db2e76c68",
+  "backend": "ollama",
+  "allow_cloud": false,
+  "model": "qwen2.5:14b",
+  "seed": 0,
+  "temperature": 0.0,
+  "inputs": [
+    {
+      "path": "tests/fixtures/mini_codebook.txt",
+      "sha256": "77ba5a0e65da84752750102224a2ae149d83e27809150e9b56fa8cde31c48240",
+      "role": "codebook"
+    },
+    {
+      "path": "tests/fixtures/mini_manuscript.md",
+      "sha256": "93c9a343932cf03801e9525c9166aa7901616ae2c723a043c285121dd66b70ce",
+      "role": "manuscript"
+    }
+  ],
+  "calls": [
+    {
+      "stage": "codebook_extract_0",
+      "prompt_name": "codebook_extract",
+      "prompt_sha256": "ddf8850e46e42b7f8ca555ab687b42e5a2898251b11d0b282c9a53db3a8b3793",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261106T224031/llm_log/20261106T224032072916_codebook_extract_0.json",
+      "dropped": []
+    },
+    {
+      "stage": "A_mini_manuscript_0_profile",
+      "prompt_name": "a_profile",
+      "prompt_sha256": "2605ca0b1de5e69b26571c6d0a52431761add5605b813ebfa42398198682e4dc",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261106T224031/llm_log/20261106T224215262441_A_mini_manuscript_0_profile.json",
+      "dropped": []
+    },
+    {
+      "stage": "A_mini_manuscript_0_claims",
+      "prompt_name": "a_claims",
+      "prompt_sha256": "e65f45a86294af48313cab12eb2b747c7913b83960aa875aed057f0314430a9e",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261106T224031/llm_log/20261106T224318369742_A_mini_manuscript_0_claims.json",
+      "dropped": []
+    },
+    {
+      "stage": "B_schema_map_0_0",
+      "prompt_name": "b_schema_map",
+      "prompt_sha256": "6712b7265876f5b16514287009b18ce7c3b66ec5529b0d997283d7601f0fed22",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261106T224031/llm_log/20261106T224400048667_B_schema_map_0_0.json",
+      "dropped": []
+    },
+    {
+      "stage": "C_gaps",
+      "prompt_name": "c_gaps",
+      "prompt_sha256": "b38907e3343e54455851337ab9c5b677426a3b351517841aa35c9e38e601a5d0",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261106T224031/llm_log/20261106T224519308475_C_gaps.json",
+      "dropped": []
+    },
+    {
+      "stage": "D_strategy_G1",
+      "prompt_name": "d_strategy",
+      "prompt_sha256": "91d36820f2512fbd8d3e5ccc86ad5c96114322d96ebdc912399b5da5d46ebdbc",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261106T224031/llm_log/20261106T224642613150_D_strategy_G1.json",
+      "dropped": []
+    },
+    {
+      "stage": "D_strategy_G2",
+      "prompt_name": "d_strategy",
+      "prompt_sha256": "91d36820f2512fbd8d3e5ccc86ad5c96114322d96ebdc912399b5da5d46ebdbc",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261106T224031/llm_log/20261106T224737345258_D_strategy_G2.json",
+      "dropped": []
+    },
+    {
+      "stage": "E_caveats_S1",
+      "prompt_name": "e_caveats",
+      "prompt_sha256": "d5eb71e169de859d10bd231e1fc5373d179d5a5c30820555e3dd8ae64dd53e53",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261106T224031/llm_log/20261106T224831073855_E_caveats_S1.json",
+      "dropped": []
+    },
+    {
+      "stage": "E_caveats_S2",
+      "prompt_name": "e_caveats",
+      "prompt_sha256": "d5eb71e169de859d10bd231e1fc5373d179d5a5c30820555e3dd8ae64dd53e53",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261106T224031/llm_log/20261106T224916349962_E_caveats_S2.json",
+      "dropped": []
+    }
+  ],
+  "stage_hashes": {
+    "ingest_cdc": "3d204ede3a795581d6c250e034a5027e1f4763ad161ef2750cc8f429a2c15382",
+    "A_mini_manuscript": "39acb1996df80cdc2b8f371e207f0e7e642aa4764eb247a23e8da84587d98d9d",
+    "B": "ae65c066acde769e6a926dabe935ecc06a087642436b65ae2188c6eda4124355",
+    "C": "709df208200b914349aa261dab7fc26272639f2c9c7d816a3f90cc181185dc09",
+    "D": "d2f8ec73cef8252054ef1b9373f7147936f479f4b1c7396d72aaee1204ad89c9",
+    "E": "d2ab315c17241db67589c2dcd84dde410291aaa8c97205f26208270a5c10788b"
+  },
+  "warnings": []
+}

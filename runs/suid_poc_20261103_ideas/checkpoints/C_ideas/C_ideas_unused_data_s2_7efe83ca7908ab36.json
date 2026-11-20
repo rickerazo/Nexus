@@ -1,0 +1,47 @@
+{
+ "ideas": [
+  {
+   "question": "How does prenatal care timing and number of visits correlate with SUID risk, adjusted for maternal smoking during pregnancy?",
+   "why_open": "The current literature has not explored the nuances of prenatal care in relation to Sudden Unexpected Infant Death (SUID). This could provide insights into early interventions that could reduce SUID incidence.",
+   "sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "data": "Prenatal Care and Reporting Flags, Prenatal Care"
+  },
+  {
+   "question": "Can we identify a relationship between maternal age recodes and SUID risk among live births?",
+   "why_open": "Maternal age is a potential predictor of infant health outcomes not yet thoroughly explored in the context of Sudden Unexpected Infant Death (SUID). Understanding this link can inform targeted interventions.",
+   "sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "data": "Mother's Demographics, Mother’s Age and Imputation"
+  },
+  {
+   "question": "Is there a difference in SUID incidence based on the birth weight recodes among live births?",
+   "why_open": "While birth weight has been considered a factor, this question delves deeper into how specific categories of birth weights impact Sudden Unexpected Infant Death (SUID) risk.",
+   "sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "data": "Birth Weight"
+  },
+  {
+   "question": "Does maternal prepregnancy body mass index (BMI) and its recode have an independent association with Sudden Unexpected Infant Death (SUID)?",
+   "why_open": "The manuscripts have not examined the specific associations of different BMI categories on SUID risk, which could provide more precise intervention targets.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI)"
+  },
+  {
+   "question": "How does maternal history of mental health/substance use services and recent emotional neglect influence SUID risk?",
+   "why_open": "The literature has not extensively covered the role of maternal mental health or substance use on infant death risk. This could provide new insights into potential protective factors.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "Mental Health Medication, Mental Health Barriers, Failure to Provide Necessities"
+  }
+ ]
+}

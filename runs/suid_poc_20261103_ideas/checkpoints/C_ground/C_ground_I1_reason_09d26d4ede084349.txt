@@ -1,0 +1,70 @@
+### Design
+
+**Restated Question**: Does hospital overnight stay after birth correlate with Sudden Unexpected Infant Death (SUID) incidence?
+
+This study will use a case-population comparison design to assess the association between an infant's hospital overnight stay and SUID incidence. The cases will be sourced from either cdc_linkco15 or ncfrp_v51, while prams_p8_arf will provide the population reference for mothers with live births who report on hospital stays.
+
+### Sources by Role
+
+- **Case Series**: 
+  - **cdc_linkco15 (2015 Births and Deaths)**: This source provides records of both live births and infant deaths in 2015. It will be used to identify SUID cases among the live births linked with infant deaths within the first year.
+  - **ncfrp_v51 (Child Death Review, 2008-2019)**: This source provides detailed reviews of child deaths by fatality review teams. It will also serve as a case series for SUID cases from 2008 to 2019.
+  
+- **Population Reference**: 
+  - **prams_p8_arf (Phase 8, 2016-2021)**: This source provides weighted survey data on mothers after live births. It will be used to estimate the prevalence of hospital overnight stays among a representative sample of mothers with live births.
+
+### Period
+
+**Period Needed**: 2016-2021 (for prams_p8_arf); 2015 (for cdc_linkco15) and 2008-2019 (for ncfrp_v51).
+
+More years of the sources could be acquired if needed, as they are available for these periods.
+
+### Variables
+
+#### Concept: Hospital Overnight Stay After Birth
+- **Case Series**:
+  - **ncfrp_v51**: 
+    - **INF4hosprtn (Hospital overnight stay)**: Measures whether an infant was admitted to the hospital overnight after birth.
+    - **INF4infhospdays (Total number of days infant hospitalized)**: Provides details on total hospitalization days if applicable.
+  - **cdc_linkco15**: 
+    - No specific variable for hospital overnight stay is available, but we can infer it from admission to NICU or ICU stays (AB_NICU) and discharge status.
+
+- **Population Reference**:
+  - **prams_p8_arf**: 
+    - **NOHOSP_B (Baby stay in hospital)**: Indicates whether the baby stayed in the hospital after birth.
+    - **LTH_HOSP (Length of time baby spent in hospital)**: Provides details on length of hospital stay.
+
+### Biases
+
+#### Selection Bias
+- Case series sources may include deaths reviewed by fatality review teams or linked births and deaths, potentially missing unreviewed cases.
+  
+#### Information Bias
+- The measurement of hospital overnight stays differs between case and reference populations. NCFRP captures detailed reviews, while PRAMS is a self-reported survey with potential recall bias.
+
+#### Confounding
+- Variables such as prematurity, maternal smoking, socioeconomic status, and prenatal care may confound the relationship between hospital stay and SUID incidence.
+
+### What the Design Cannot Establish
+
+This design can establish an association but not causation. It cannot address whether hospital overnight stays after birth cause higher SUID incidence or if other factors associated with both hospital stays and SUID (e.g., prematurity, low birth weight) are responsible for any observed correlation.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C10**: Excludes extremely preterm infants.
+- **SUID_manuscript_v9_clean.C12**: Uses vital records with potential misclassification issues.
+- **bedsharing_ms_v7.C8**: Focuses on bed sharing and maternal smoking, not hospital stays.
+
+These claims do not directly address the proposed study's focus on postnatal hospital stays. Therefore, there is no direct prior art that tests this specific hypothesis, making it a novel investigation.
+
+### Verdict
+
+The sources can answer a version of the research question by comparing SUID cases (from cdc_linkco15 or ncfrp_v51) with mothers reporting hospital overnight stays in prams_p8_arf. The design is feasible and aligns with available data, although it cannot establish causation due to potential confounding factors.
+
+### Recommendations for Improvement
+
+- **Expand Data Sources**: If possible, include NICU admission variables from cdc_linkco15 as a proxy measure.
+- **Enhance Case Definition**: Include more detailed hospitalization records to better match case and reference definitions.
+- **Adjust for Confounders**: Incorporate covariates such as prematurity, maternal smoking, and socioeconomic status in the analysis.
+
+By addressing these points, the study can provide a robust association between postnatal hospital stays and SUID incidence.

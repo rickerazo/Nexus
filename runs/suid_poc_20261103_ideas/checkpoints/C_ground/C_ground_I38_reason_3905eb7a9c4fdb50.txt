@@ -1,0 +1,80 @@
+### Design
+
+**Design:** Case-case comparison. Compare SUID cases with non-SUID cases from the same case series to find what is specific to SUID compared to other infant deaths.
+
+**Restated Question:**
+Do preconception and chronic disease care measures predict a lower likelihood of Sudden Unexpected Infant Death (SUID) compared to other causes of infant death, as recorded in the National Fatality Review Case Reporting System (NFR-CRS)?
+
+### Sources by Role
+
+- **Case Series:** `ncfrp_v51` - Records child deaths reviewed by participating fatality review teams.
+  - **Why:** It provides detailed case information on all types of infant deaths including SUID and non-SUID cases.
+
+**No Denominator Source:**
+There is no denominator source available to estimate incidence or prevalence rates. Therefore, the analysis will compare proportions between SUID and other causes of infant death within the same case series.
+
+### Period
+
+- **Period:** 2008-2019
+  - This period lies within the coverage of `ncfrp_v51` (2004-2019), but does not include any denominator data from other sources such as live births or population surveys.
+
+### Variables
+
+**Preconception and Chronic Disease Care Measures:**
+- **SUID Cases vs Non-SUID Cases:** 
+  - `ncfrp_v51:ISSprechronicdiseasebef` - Chronic disease control Education before pregnancy
+  - `ncfrp_v51:ISSprechronicdiseasedur` - Chronic disease control Education during pregnancy
+  - `ncfrp_v51:ISSprechronicdiseaseaft` - Chronic disease control Education after pregnancy
+
+**Prenatal Care Measures:**
+- **SUID Cases vs Non-SUID Cases:**
+  - `ncfrp_v51:INFprenatalcare` - Prenatal care provided
+  - `ncfrp_v51:INF4precare` - Prenatal care most frequently provided
+
+### Biases
+
+**Selection Bias:**
+- **Case Series:** The fatality review teams may have different criteria for selecting cases and reporting them, leading to potential selection bias.
+- **Non-SUID Cases:** Non-SUID deaths that are reviewed might differ in terms of the likelihood of being reported by the fatality review system compared to SUID.
+
+**Information Bias:**
+- Different sources report on preconception and chronic disease care measures differently. For example:
+  - `ncfrp_v51` uses items like `ISSprechronicdiseasebef`, `ISSprechronicdiseasedur`, etc., which may differ in detail or context from the prenatal care variables used by other sources.
+
+**Confounding:**
+- **Preconception Care:** The quality of preconception care can be confounded with socioeconomic status, education level, and access to healthcare.
+- **Prenatal Care:** Prenatal care might not fully capture all aspects of health care received during pregnancy or prior to it. 
+
+### What the Design Cannot Establish
+
+The design does not establish:
+1. Incidence rates or risk ratios due to lack of denominator data (no live birth counts).
+2. Causal relationships between preconception and chronic disease care measures and SUID.
+
+### Prior Art
+
+- **Manuscript Claims:**
+  - `SUID_manuscript_v9_clean.C10`: The analysis excludes a small number of deaths at the extremes of the PCA distribution, including some extremely and very preterm infants who died early in postnatal life.
+  - `bedsharing_ms_v7.C12`: Maternal smoking during pregnancy showed the largest and most consistent association with SUID incidence in both windows.
+
+These claims do not directly address preconception or chronic disease care measures but focus on prenatal factors like maternal smoking. The question of whether preconception and chronic disease care predict lower incidence of SUID remains open as these specific exposures have not been extensively studied within the context of SUID.
+
+### Verdict
+
+**Can These Data Answer a Version of the Question?**
+
+- **Yes, to Some Extent:** 
+  - These data can compare SUID cases with non-SUID cases in terms of preconception and chronic disease care measures as well as prenatal care.
+  
+- **Limitations:**
+  - The design cannot establish incidence or risk ratios due to lack of denominator data.
+  - The case series may suffer from selection bias, making it difficult to generalize the findings beyond the reviewed cases.
+
+### Recommendations
+
+To strengthen this study:
+1. Include a population reference source (e.g., `prams_p8_arf`) for context on preconception and chronic disease care measures among live births.
+2. Use multiple years of data from both case series and denominator sources to ensure stable estimates.
+3. Address potential confounders through stratification or statistical adjustment.
+
+In summary, while the current data can provide insights into differences in preconception and chronic disease care between SUID cases and other infant deaths, further validation with additional data is needed for broader generalization and causal inference.

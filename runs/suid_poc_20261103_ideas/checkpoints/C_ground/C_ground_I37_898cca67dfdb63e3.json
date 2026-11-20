@@ -1,0 +1,26 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The prevalence of prenatal complications is higher among infants who experienced SUID compared to those with congenital anomalies, birth injuries, respiratory distress syndrome, or prematurity as recorded in ncfrp_v51.",
+ "rationale": "This design uses a case-case comparison within the NFR-CRS (ncfrp_v51) to compare the prevalence of prenatal complications between SUID cases and other fetal/neonatal conditions. The absence of a denominator source limits the analysis to proportions among cases only.",
+ "prior_art": "None in the inputs; while existing claims discuss various risk factors for SUID, none directly address whether prenatal complications are more prevalent specifically among SUID cases compared to other adverse outcomes.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2014,
+ "period_end": 2019,
+ "required_concepts": [
+  "Prenatal complications",
+  "Congenital anomalies, birth injuries, respiratory distress syndrome, or prematurity"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3medical",
+  "ncfrp_v51:ISSinfconganom",
+  "ncfrp_v51:ISSinfbirthinjury",
+  "ncfrp_v51:ISSinfprematurity"
+ ],
+ "cannot_establish": "incidence or risk of SUID, causal inference due to observational nature."
+}

@@ -1,0 +1,51 @@
+### Design
+
+**Question Restated:** Does the infant sleep environment differ between Sudden Unexpected Infant Death Syndrome (SUID) cases and other types of infant deaths, such as accidental deaths or homicides?
+
+This is a case-case comparison design. It compares cases categorized as SUID with cases categorized as accidental deaths or homicide within the same case series source to identify specific risk factors associated with each type of death.
+
+### Sources by Role
+- **Case Series:** ncfrp_v51 (NFR-CRS)
+  - This dataset includes reviewed child deaths and is used to identify both SUID cases and other types of infant deaths.
+  
+**Period:**
+The years required for the analysis are 2014-2019. If these data are not currently held, they can be acquired.
+
+### Variables
+#### Sleep Environment:
+- **ncfrp_v51:** 
+  - `CIRdeathsleepenv`: Was the death related to sleeping or the sleep environment? (only asked if child is less than 5 years old)
+  - `INF4inftopsuid`: If yes, infant safety topic - SUID/safe sleep education
+  - `INF372infinj`, `INF72infinj`, `INF372infinjsp`, `INF72infinjsp`: In the 72 hours prior to death, if the infant was injured and details of injury.
+  
+#### Demographic and Risk Factors:
+- **ncfrp_v51:** 
+  - `ACTcausids`: If yes, prior deaths caused by SIDS
+  - `INF3nicudrug`: If yes, NICU drug/alcohol exposure
+
+### Biases
+**Selection Bias:**
+- The cases in ncfrp_v51 are subject to selection bias due to the participation of reviewing states over time. Participation increases from 2004 to 2019, so findings may not be generalizable across all US regions.
+
+**Information Bias:**
+- Different ascertainment practices across jurisdictions can lead to variability in reporting and categorization of sleep environments and cause-of-death determinations.
+  
+**Confounding:**
+- Potential confounders include socioeconomic status, access to healthcare, maternal education levels, and other environmental factors that are not captured by the data sources.
+
+### What the Design Cannot Establish
+The design can only compare proportions or odds among cases (SUID vs. accidental/homicide deaths). It cannot estimate incidence rates or risks because there is no denominator source providing population at risk information.
+
+### Prior Art
+- **Manuscript Claims:**
+  - `bedsharing_ms_v7.C15`: Bed sharing was more strongly associated with SUID incidence in an early developmental window (PCA <43 weeks) compared to a later one (PCA ≥47 weeks).
+  - `suid_literature_abstracts.C10`: Maternal smoking during pregnancy significantly increases the risk of SUID.
+  
+These studies have investigated the impact of bed-sharing and maternal smoking on SUID incidence but do not address whether these factors uniquely influence SUID compared to other causes of infant death.
+
+### Verdict
+**Can These Sources Answer a Version of the Question?**
+Yes, the proposed sources can answer the question regarding differences in sleep environment between SUID cases and other types of infant deaths. However, due to the limitations of case-case comparisons (no denominator source), it is important to acknowledge that this study will provide proportions or odds among cases but cannot establish incidence rates or risk.
+
+### Conclusion
+The ncfrp_v51 dataset can be used to compare sleep environments between SUID and other causes of infant death within a case-case design. However, the findings should be interpreted with caution due to selection bias from varying state participation over time, information bias from different ascertainment practices, and confounding by unmeasured factors. The study will provide insights into differences in sleep environment but cannot establish incidence or risk without additional denominator data.

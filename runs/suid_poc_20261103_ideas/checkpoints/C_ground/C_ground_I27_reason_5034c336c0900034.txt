@@ -1,0 +1,71 @@
+### Design
+
+**Design:** Case-case comparison. Compare SUID cases with non-SUID infant deaths recorded in the same case series (ncfrp_v51) to identify factors specific to SUID, rather than those common across all infant deaths.
+
+**Rephrased Question:**
+Does hospitalization for newborn complications before the first birthday correlate specifically with an increased risk of Sudden Unexpected Infant Death (SUID), compared to other causes of infant death?
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - *Reason:* The case series records all reviewed child deaths, including both SUID and non-SUID cases.
+
+- **Population Reference:** prams_p8_arf
+  - *Reason:* While not ideal for a denominator, PRAMS provides a reference population to assess exposure prevalence among live births. It is used to measure hospitalization status of infants within the first year.
+  
+### Period
+
+**Period:** The common period covered by both sources is from 2016-2019.
+
+- **ncfrp_v51:** Covers deaths reviewed from 2008-2019, so we use 2016-2019 for the comparison.
+  
+- **prams_p8_arf:** Covers live births in Phase 8 (2016-2021), aligning with ncfrp_v51.
+
+### Variables
+
+**Concepts and Candidate Variables:**
+
+1. **Outcome (SUID vs Non-SUID):**
+   - NCFRP_V51: `RES1dthsids` (prior SIDS deaths in the family) — This variable is more relevant for identifying SUID cases.
+   - Other variables like `INF4infhospdays`, `INF4prevhosp`, etc., can help stratify non-SUID causes.
+
+2. **Hospitalization before First Birthday:**
+   - PRAMS_P8_ARF: `LTH_HOSP` (length of time baby stayed in hospital) — Measures infant hospital stay duration.
+   
+3. **Demographic and Risk Factors:**
+   - NCFRP_V51: Variables such as `INF4infhospdays`, `INFprevpreterm`, etc., for SUID cases.
+   - PRAMS_P8_ARF: Demographics and risk factors, e.g., `PREV_PRE` (previous preterm birth), `MM_FEVER` (maternal fever/chorioamnionitis).
+
+### Biases
+
+**Selection Bias:**
+- **NCFRP_V51:** Only includes deaths reviewed by participating fatality review teams; the number of cases may not be a true representation of national incidence.
+  
+**Information Bias:**
+- **NCFRP_V51:** Data on SUID and other causes might vary in completeness, as it relies on detailed case reviews.
+- **PRAMS_P8_ARF:** Exposures are self-reported by mothers, which can introduce recall bias or social desirability biases.
+
+**Confounding Bias:**
+- Socioeconomic status, prenatal care quality, urban vs. rural differences may confound the relationship between hospitalization and SUID risk.
+
+### What the Design Cannot Establish
+
+The design cannot establish:
+1. **Incidence Rates:** No denominator source provides population at risk.
+2. **Risk Factors with Unmeasured Confounding:** The study can only identify associations within reviewed cases, not causal relationships or unobserved confounders like socioeconomic status.
+3. **Prevalence of Hospitalization in the General Population:** PRAMS data is a sample survey and does not represent the entire birth cohort.
+
+### Prior Art
+
+**Prior Research:**
+- The manuscript claims (e.g., C8, C9) discuss associations between SUID incidence and various risk factors but do not specifically address hospitalization before death as a predictor.
+  
+The proposed study aims to fill this gap by focusing on hospitalization history, which has not been thoroughly investigated in existing literature.
+
+### Verdict
+
+**Verdict:** These data can be used to conduct a case-case comparison between SUID and non-SUID cases within the same source (ncfrp_v51) and use PRAMS as a reference for exposure prevalence. However, it cannot establish incidence rates or fully account for unmeasured confounders.
+
+**Missing Data Element:** A denominator source that tracks live births and includes hospitalization data would be required to estimate risks accurately.
+
+In summary, while the proposed design can provide insights into factors associated with SUID compared to other infant deaths using existing sources, it is limited in establishing causality or incidence rates due to lack of a proper denominator.

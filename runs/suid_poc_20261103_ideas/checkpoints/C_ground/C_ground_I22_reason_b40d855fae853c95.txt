@@ -1,0 +1,72 @@
+### Design
+
+**Exposure-Specific Rates**
+
+The study aims to estimate the rates of Sudden Unexpected Infant Death (SUID) among prematurely-born infants based on maternal pre-pregnancy weight gain. Specifically, it seeks to compare the risk of experiencing SUID in infants born prematurely according to varying levels of maternal pre-pregnancy weight gain.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - **Reason for role:** The NCFRP dataset records child deaths reviewed by fatality review teams, which includes cases of SUID. It can provide the numerator (cases) needed to estimate exposure-specific rates.
+  
+- **Population Reference:** prams_p7_arf and prams_p8_arf
+  - **Reason for role:** PRAMS provides survey data from mothers a few months after live births, making it suitable for estimating exposure prevalence among the general population. It covers both preterm birth status (denominator) and maternal pre-pregnancy weight gain.
+  
+- **Denominator Source:** cdc_linkco15
+  - **Reason for role:** CDC Linked Birth/Infant Death Public Use File provides a denominator source that includes live births in the 2015 cohort. It is used to determine the population at risk and stratify by preterm birth status.
+
+### Period
+
+**Period: 2015**
+
+- The PRAMS Phase 8 (2016-2021) data extend beyond 2015, but for consistency and overlap with other sources, we focus on a common period of 2015. 
+
+### Variables
+
+#### Maternal Pre-Pregnancy Weight Gain
+- **Case Series:** ncfrp_v51:INF4momwtgnunk (Maternal pre-pregnancy weight gain or loss in pounds - Unknown)
+- **Population Reference:** prams_p8_arf:MAT_PRWT, prams_p7_arf:MAT_PRWT (Maternal weight - Prepregnancy)
+
+#### Maternal Pre-Pregnancy Weight
+- **Case Series:** ncfrp_v51:INF4mompregwtunk (Mother's pre-pregnancy weight - Pounds - Unknown)
+- **Population Reference:** prams_p8_arf:MOMLBS, prams_p7_arf:MOMLBS (Maternal Weight Gain in LBS)
+
+#### Preterm Birth Status
+- **Case Series and Denominator Source:** cdc_linkco15:RF_PPB, INFprevpreterm (Medical complications - Previous Preterm/Small for Gestation Age Infant)
+- **Population Reference:** prams_p8_arf:P_PRTERM, prams_p7_arf:P_PRTERM (Previous preterm births)
+
+### Biases
+
+#### Selection Bias
+- The NCFRP data only includes reviewed cases of child deaths and does not capture all infant deaths or live births. This may introduce selection bias.
+
+#### Information Bias
+- Differences in measurement timing and reporting between case series, population reference, and denominator sources can lead to inconsistencies:
+  - Maternal weight gain is self-reported in PRAMS but recorded differently in NCFRP.
+  
+#### Confounding
+- Potential confounders such as maternal smoking, socioeconomic status, birth order, and prenatal care utilization need to be controlled. These variables are not consistently measured across all sources.
+
+### What the Design Cannot Establish
+
+- Causation: The design can only establish associations and cannot determine causality due to its observational nature.
+- Incidence in absolute terms: Due to selection bias from the case series, true incidence rates may be underestimated or overestimated.
+  
+### Prior Art
+
+The closest manuscript claim is:
+
+**SUID_manuscript_v9_clean.C10 [limitation]: The analysis excludes a small number of deaths at the extremes of the PCA distribution, including some extremely and very preterm infants who died early in postnatal life.**
+
+This limitation highlights that studies may not capture all premature births or SUID cases comprehensively.
+
+The manuscript claims related to maternal smoking (C9, C12) and prematurity (C3-C6) provide context but do not directly address the role of maternal pre-pregnancy weight gain in SUID among premature infants. Therefore, this study remains necessary to fill that gap.
+
+### Verdict
+
+**Yes, these data can answer a version of the question.**
+
+- **Data Element:** The candidate variables for maternal pre-pregnancy weight and preterm birth status are available across sources.
+- **Design Element:** Using exposure-specific rates with consistent denominators from 2015 allows estimating SUID risk in premature infants based on maternal pre-pregnancy weight gain.
+
+However, the design must address confounding factors such as maternal smoking and socioeconomic status to improve validity. Additionally, limitations due to selection bias and information bias should be acknowledged when interpreting results.

@@ -1,0 +1,25 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "There is a significant difference in breastfeeding mode between SUID cases who were exclusively breastfed and those with mixed feeding methods.",
+ "rationale": "The study uses ncfrp_v51 to compare the breastfeeding practices of infants who experienced sudden unexpected infant death (SUID) based on whether they were exclusively breastfed or had mixed feeding methods. This design can only establish a comparison among cases but cannot estimate incidence rates due to the lack of denominator data.",
+ "prior_art": "The manuscript claims C10 and C11 acknowledge limitations regarding postnatal exposures such as breastfeeding, indicating that while these factors are recognized as important, their specific relationship with SUID risk remains untested. This highlights the need for further investigation into how different feeding practices influence SUID incidence.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C10",
+  "bedsharing_ms_v7.C11"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Breastfeeding mode"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3breast6moexc"
+ ],
+ "cannot_establish": "incidence rates, relative risks, or causation due to the absence of a denominator source."
+}

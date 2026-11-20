@@ -1,0 +1,86 @@
+### Design
+
+**Question:** Does the mother's prepregnancy physical health condition influence SUID incidence?
+
+**Design Restated:** Compare the prevalence of maternal pre-pregnancy conditions among cases (from a case series) with their weighted prevalence in the general population (from a population reference source).
+
+### Sources by Role
+
+- **Case Series:**
+  - cdc_linkco15 and ncfrp_v51
+    - Reason: Both provide detailed information on child deaths, allowing for identification of SUID cases. The data from these sources are used to define the outcome events (cases) and can include variables related to maternal health conditions.
+
+- **Population Reference:**
+  - prams_p7_arf and prams_p8_arf
+    - Reason: PRAMS provides detailed information on mothers' prepregnancy health status, making it suitable for comparing prevalence rates with those from the case series. The data are weighted survey responses that can be used to estimate population-level exposure.
+
+- **Denominator Source:**
+  - cdc_linkco15 (for SUID cases)
+    - Reason: cdc_linkco15 provides both numerator and denominator data, essential for calculating incidence rates among live births in the cohort. However, since we are focusing on a case-population comparison, the denominator is not strictly necessary for prevalence comparisons.
+
+### Period
+
+**Years Needed:** 2012-2021
+
+**Years Held:**
+- cdc_linkco15 (births and infant deaths): 2015
+- ncfrp_v51: 2004-2019
+- prams_p7_arf: 2012-2015
+- prams_p8_arf: 2016-2021
+
+**Years to Acquire:**
+- cdc_linkco15 for the period 2012-2021 (additional years)
+- ncfrp_v51 covers the needed range but more detailed data on maternal health conditions for 2012-2021 would be beneficial.
+
+### Variables
+
+#### Maternal Pre-pregnancy Health Conditions
+- **Case Series:**
+  - cdc_linkco15: RF_PHYPE (Pre-pregnancy Hypertension), RF_PDIAB (Pre-pregnancy Diabetes)
+  - ncfrp_v51: ISSprechronicdiseasebef, INF3prevmedical
+
+- **Population Reference:**
+  - prams_p7_arf: PRE_CKBP (Pre-pregnancy check for high blood pressure), PR_PHYPE (Pre-pregnancy hypertension since 2020)
+  - prams_p8_arf: RF_PHYPE (Prepregnancy hypertension since 2020)
+
+### Biases
+
+**Selection Bias:** 
+- **Case Series:** Cases from ncfrp_v51 and cdc_linkco15 may be biased towards more severe cases, as they are reviewed by fatality review teams.
+- **Population Reference:** PRAMS data may be biased due to the sampling design (e.g., oversampling of high-risk populations).
+
+**Information Bias:**
+- Different sources have varying levels of detail on maternal health conditions:
+  - cdc_linkco15 and ncfrp_v51 provide detailed information but are retrospective and rely on medical records.
+  - PRAMS data is prospective, self-reported, and can be subject to recall bias.
+
+**Confounding Bias:**
+- **Case Series:** Potential confounders like socioeconomic status, smoking during pregnancy, and prenatal care quality may differ between cases and the general population.
+- **Population Reference:** The same confounders are present but measured differently (e.g., different questions for smoking history).
+
+### What the Design Cannot Establish
+
+The design can establish whether there is a difference in the prevalence of maternal pre-pregnancy health conditions between SUID cases and the general population. However, it cannot establish causality or provide incidence rates without a denominator source.
+
+### Prior Art
+
+- **Manuscript Claims:**
+  - suid_literature_abstracts.C10 suggests that maternal obesity is associated with increased risk of SUID.
+  - suid_literature_abstracts.C11 indicates maternal smoking during pregnancy significantly increases the risk of SUID.
+  - suid_literature_abstracts.C24, C36, and C53 discuss chronic intermittent hypoxia's impact on respiratory function and neural development.
+
+These claims do not directly address prepregnancy health conditions influencing SUID incidence. The proposed study aims to fill this gap by focusing specifically on pre-pregnancy maternal health conditions.
+
+### Verdict
+
+**Yes, these sources can answer a version of the question.**
+
+- **Design Feasibility:** The case-population comparison design is suitable for comparing the prevalence of prepregnancy maternal health conditions between SUID cases and the general population.
+- **Variables Measured:** Both case series and population reference sources measure maternal pre-pregnancy health conditions, albeit with different levels of detail and timing.
+- **Data Availability:** Data from cdc_linkco15, ncfrp_v51, prams_p7_arf, and prams_p8_arf can be acquired for the 2012-2021 period.
+
+**However:**
+- The design cannot estimate incidence or risk; it can only compare proportions between cases and a population reference.
+- Potential biases should be acknowledged (selection bias in case series, information bias due to measurement differences).
+
+Given these considerations, the study can provide valuable insights into whether prepregnancy maternal health conditions are associated with SUID incidence.

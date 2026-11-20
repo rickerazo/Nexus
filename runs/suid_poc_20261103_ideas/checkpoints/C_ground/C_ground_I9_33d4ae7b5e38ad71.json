@@ -1,0 +1,26 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with multivitamin use during pregnancy is lower compared to PRAMS mothers in 2012-2015.",
+ "rationale": "This design compares the frequency of multivitamin use between SUID cases and a population reference, using available data from NCFRP_v51 and PRAMS_p7_arf. The comparison will be limited to proportions due to lack of a denominator source for incidence rates or risk ratios.",
+ "prior_art": "None in the inputs; existing studies focus on other risk factors like smoking during pregnancy but do not address multivitamin use among SUID cases compared with a general population reference.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2015,
+ "required_concepts": [
+  "multivitamin use"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4facid",
+  "prams_p7_arf:VITAMIN",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "This design can only establish an association between multivitamin use and SUID cases compared with a population reference. It cannot establish causation or estimate incidence rates due to the lack of a denominator source."
+}

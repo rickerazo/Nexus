@@ -1,0 +1,70 @@
+### Design
+
+**Question Restated:** How do the reported health conditions of SUID mothers vary between infants who shared a sleep surface with an adult and those who did not?
+
+**Design Type:** Case-only analysis comparing circumstances recorded for cases.
+
+### Sources by Role
+
+- **Case Series:**
+  - **ncfrp_v51**: Provides detailed information on child deaths reviewed by fatality review teams, including SUID cases. It records if the infant was sharing a sleep surface with an adult and various maternal health conditions.
+  
+- **Population Reference (not used for this design):** Not applicable since we are only comparing within case data.
+
+- **Denominator Source:**
+  - **cdc_linkco15**: Provides denominator data on live births linked to infant deaths in the first year. However, it is not required as we are conducting a case-only analysis without estimating incidence or rates.
+
+### Period
+
+**Period:** The manuscript claims and the sources provide overlapping periods but for this specific case-only design, the period is constrained by the availability of ncfrp_v51 data (2008-2019) since it includes detailed information on sleep surface sharing and health conditions.
+
+### Variables
+
+#### Sleep Surface Sharing
+- **ncfrp_v51**: 
+  - Variable: `CIRwadultobs` – If yes, child sleeping on same surface with - Adult(s)
+  - Values: Yes/No
+  
+#### Maternal Health Conditions
+- **ncfrp_v51**:
+  - Variable: `INFexpipv`: During pregnancy did mother experience intimate partner violence
+  - Values: Yes/No
+
+  - Variable: `INF5acescurrel`: If yes, mother ACES currently - Disturbed infant/mother relationship
+  - Values: Yes/No
+  
+  - Variable: `MM_FEVER` (from PRAMS):
+    - Variable: `PRAMS_p8_arf.MM_FEVER` or `PRAMS_p7_arf.MM_FEVER`
+    - Values: Yes/No
+
+### Biases
+
+**Selection Bias:** The ncfrp_v51 data is based on voluntary fatality review teams and does not capture all SUID cases. Participation varies over time, which may introduce bias.
+
+**Information Bias:** Reporting of maternal health conditions and sleep surface sharing in the case series might be influenced by reporting practices, recall bias, or underreporting.
+
+**Confounding:** Other unmeasured factors such as socioeconomic status, environmental exposures, and other behavioral risk factors could confound the relationship between sleep surface sharing and maternal health conditions. These variables are not available in the current data sources.
+
+### What the Design Cannot Establish
+
+This design can only establish associations within the case series. It cannot determine causality or estimate population-level risks as there is no denominator or control group to compare against.
+
+### Prior Art
+
+- **SUID Manuscript:** The manuscript claims (C8-C10, C24) suggest that SUID incidence varies by postconceptional age and maternal smoking but does not address the specific association with sleep surface sharing and maternal health conditions.
+  
+- **Bedsharing Manuscript:** This manuscript (bedsharing_ms_v7.C8, C39) provides evidence on the relationship between bed-sharing and SUID incidence but does not explore associations with maternal health conditions.
+
+### Verdict
+
+**Can these data answer a version of the question?**
+
+Yes, the data can provide insights into how reported health conditions of mothers vary among infants who shared a sleep surface with an adult compared to those who did not. However, due to selection and information biases as well as confounding factors, it cannot establish causality or population-level risks.
+
+**Missing Elements:**
+- **Denominator Data:** A denominator source is needed if the goal is to estimate incidence rates.
+- **Population Reference:** For a more comprehensive analysis, a population reference (like PRAMS) would be necessary to compare cases against a control group and adjust for confounding variables. 
+
+### Conclusion
+
+The ncfrp_v51 data can support an exploratory case-only analysis comparing reported health conditions of SUID mothers based on whether their infants shared a sleep surface with adults, but the design cannot establish causality or estimate population-level risks due to limitations in the available sources and biases inherent in the fatality review process.

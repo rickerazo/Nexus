@@ -1,0 +1,67 @@
+### Design
+
+**Design:** Measurement comparison. Compare how the same concept is recorded in two or more sources (wording, timing, who reports it, coding of missing answers) and ask how the difference would bias a comparison between them.
+
+**Restated Question:**
+Is there a difference in previous live births between mothers of SUID cases and those of live births? This design will compare proportions rather than incidence rates due to the lack of a denominator source for SUID cases from ncfrp_v51 (case series).
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - **Reason:** Records detailed information on SUID cases, including prior births.
+  
+- **Population Reference:** prams_p8_arf, prams_p7_arf 
+  - **Reason:** Provides a population-based survey of live birth mothers, capturing their pregnancy histories.
+
+### Period
+
+**Period:**
+The overlapping period between ncfrp_v51 (2004-2019) and both PRAMS phases is essential. However, the manuscript uses data from 2008 to 2019 for SUID cases and Phase 8 (2016-2021) for live birth mothers.
+
+### Variables
+
+**Previous Live Births:**
+
+- **ncfrp_v51:** 
+  - `INF3livebirth`: Number of live births.
+  - `INF3living`: Number living.
+  
+- **prams_p8_arf, prams_p7_arf:** 
+  - `PRE_LB_NAPHSIS`: Number of previous live births grouped.
+
+**Missing Answers:**
+- ncfrp_v51 uses "9" or "unknown."
+- PRAMS phases use ".U", ".B", and ".S".
+
+### Biases
+
+#### Selection Bias:
+- **Case Series:** ncfrp_v51 includes only reviewed child deaths, not a representative sample of all SUID cases.
+- **Population Reference:** PRAMS surveys mothers from live births but may not be fully generalizable to the broader population due to survey design and response rates.
+
+#### Information Bias:
+- **ncfrp_v51:** Reports on prior births after investigation into child death.
+- **PRAMS:** Surveys mothers shortly after live birth, capturing immediate recollections.
+
+#### Confounding:
+- Differences in reporting time and context (e.g., emotional state post-loss) may influence the consistency of responses between sources.
+
+### What the Design Cannot Establish
+
+The design can only establish a difference in proportions or odds between groups but cannot estimate incidence rates due to missing denominator data for SUID cases from ncfrp_v51. Additionally, it cannot ascertain causation due to its observational nature.
+
+### Prior Art
+
+- **Manuscript Claims:**
+  - **SUID Manuscripts:** Investigate factors associated with SUID incidence and patterns but do not address previous birth history.
+  - **Bedsharing Manuscripts:** Focus on associations between risk factors like bed sharing, maternal smoking, and prematurity across developmental windows. These manuscripts also do not cover previous live births.
+
+### Verdict
+
+**Verdict:**
+These data can partially answer the research question by comparing proportions of mothers with prior live births between SUID cases (ncfrp_v51) and live birth groups (PRAMS). However, due to the lack of a denominator for SUID cases in ncfrp_v51, it cannot estimate incidence rates or establish causation. The study is limited by selection bias and information biases from different reporting contexts.
+
+### Missing Data Element
+- A denominator source for SUID cases would allow for estimating incidence rates and conducting more robust comparisons.
+  
+Thus, the design can measure differences in previous live births but lacks sufficient data to draw broader conclusions about population-level risks.

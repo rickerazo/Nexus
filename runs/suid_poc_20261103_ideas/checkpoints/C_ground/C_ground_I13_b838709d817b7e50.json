@@ -1,0 +1,36 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The SUID rate is higher among infants whose mothers experienced severe mental health issues during pregnancy compared to those who did not.",
+ "rationale": "This design uses the case series (ncfrp_v51) for numerator and population reference sources (prams_p8_arf, prams_p7_arf) to determine maternal mental health issues during pregnancy. The denominator source (cdc_natl15) provides necessary live birth denominators.",
+ "prior_art": "The closest tested work is bedsharing_ms_v7.C11, which explores the association between bed-sharing and SUID incidence but does not address severe mental health issues during pregnancy.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C11"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "severe mental health issues during pregnancy",
+  "SUID rate"
+ ],
+ "variables": [
+  "ncfrp_v51:ISSmhpregdepres",
+  "prams_p8_arf:MH_PGDX8",
+  "prams_p8_arf:HTH_ANX",
+  "prams_p8_arf:BPG_DEPRS8",
+  "prams_p7_arf:PRE_DEPR",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot establish causation or account for potential temporal trends and changes in reporting practices over time."
+}

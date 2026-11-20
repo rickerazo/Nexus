@@ -1,0 +1,218 @@
+{
+  "embed_model": "mxbai-embed-large",
+  "embed_digest": "468836162de7f81e041c43663fedbbba921dcea9b9fefea135685a39b2d83dd8",
+  "top_k": 10,
+  "miss_threshold": 0.65,
+  "records": [
+    {
+      "concept": "outcome",
+      "role": "outcome",
+      "source_id": "cdc",
+      "llm_variables": [
+        "UCOD"
+      ],
+      "verdict": "agree",
+      "outside": [],
+      "top": [
+        {
+          "name": "UCOD",
+          "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+          "score": 0.7537
+        },
+        {
+          "name": "CIG_REC",
+          "label": "Cigarette smoking during pregnancy",
+          "score": 0.5325
+        },
+        {
+          "name": "AGED",
+          "label": "Age at death in days NUMF 0-364=DAYS",
+          "score": 0.5128
+        },
+        {
+          "name": "COMBGEST",
+          "label": "Combined gestation in weeks GESTF 17-47=WEEKS",
+          "score": 0.467
+        },
+        {
+          "name": "MAGER9",
+          "label": "Mother's age recode 9",
+          "score": 0.4624
+        },
+        {
+          "name": "SEX",
+          "label": "Sex of infant",
+          "score": 0.423
+        }
+      ]
+    },
+    {
+      "concept": "age at outcome",
+      "role": "outcome",
+      "source_id": "cdc",
+      "llm_variables": [
+        "AGED"
+      ],
+      "verdict": "agree",
+      "outside": [],
+      "top": [
+        {
+          "name": "AGED",
+          "label": "Age at death in days NUMF 0-364=DAYS",
+          "score": 0.7347
+        },
+        {
+          "name": "MAGER9",
+          "label": "Mother's age recode 9",
+          "score": 0.5847
+        },
+        {
+          "name": "UCOD",
+          "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+          "score": 0.5698
+        },
+        {
+          "name": "COMBGEST",
+          "label": "Combined gestation in weeks GESTF 17-47=WEEKS",
+          "score": 0.5169
+        },
+        {
+          "name": "SEX",
+          "label": "Sex of infant",
+          "score": 0.5049
+        },
+        {
+          "name": "CIG_REC",
+          "label": "Cigarette smoking during pregnancy",
+          "score": 0.4861
+        }
+      ]
+    },
+    {
+      "concept": "postconceptional age",
+      "role": "exposure",
+      "source_id": "cdc",
+      "llm_variables": [
+        "COMBGEST"
+      ],
+      "verdict": "agree",
+      "outside": [],
+      "top": [
+        {
+          "name": "MAGER9",
+          "label": "Mother's age recode 9",
+          "score": 0.6232
+        },
+        {
+          "name": "COMBGEST",
+          "label": "Combined gestation in weeks GESTF 17-47=WEEKS",
+          "score": 0.6145
+        },
+        {
+          "name": "CIG_REC",
+          "label": "Cigarette smoking during pregnancy",
+          "score": 0.6092
+        },
+        {
+          "name": "SEX",
+          "label": "Sex of infant",
+          "score": 0.5843
+        },
+        {
+          "name": "AGED",
+          "label": "Age at death in days NUMF 0-364=DAYS",
+          "score": 0.5255
+        },
+        {
+          "name": "UCOD",
+          "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+          "score": 0.4987
+        }
+      ]
+    },
+    {
+      "concept": "male sex",
+      "role": "stratifier",
+      "source_id": "cdc",
+      "llm_variables": [
+        "SEX"
+      ],
+      "verdict": "agree",
+      "outside": [],
+      "top": [
+        {
+          "name": "SEX",
+          "label": "Sex of infant",
+          "score": 0.6134
+        },
+        {
+          "name": "CIG_REC",
+          "label": "Cigarette smoking during pregnancy",
+          "score": 0.5521
+        },
+        {
+          "name": "UCOD",
+          "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+          "score": 0.4974
+        },
+        {
+          "name": "COMBGEST",
+          "label": "Combined gestation in weeks GESTF 17-47=WEEKS",
+          "score": 0.4958
+        },
+        {
+          "name": "MAGER9",
+          "label": "Mother's age recode 9",
+          "score": 0.481
+        },
+        {
+          "name": "AGED",
+          "label": "Age at death in days NUMF 0-364=DAYS",
+          "score": 0.4656
+        }
+      ]
+    },
+    {
+      "concept": "prenatal smoking",
+      "role": "exposure",
+      "source_id": "cdc",
+      "llm_variables": [
+        "CIG_REC"
+      ],
+      "verdict": "agree",
+      "outside": [],
+      "top": [
+        {
+          "name": "CIG_REC",
+          "label": "Cigarette smoking during pregnancy",
+          "score": 0.7492
+        },
+        {
+          "name": "COMBGEST",
+          "label": "Combined gestation in weeks GESTF 17-47=WEEKS",
+          "score": 0.5247
+        },
+        {
+          "name": "UCOD",
+          "label": "Underlying cause of death ICD-10 ICDF R95=SIDS R99=UNSPECIFIED W75=ACCIDENTAL SUFFOCATION",
+          "score": 0.4946
+        },
+        {
+          "name": "MAGER9",
+          "label": "Mother's age recode 9",
+          "score": 0.4899
+        },
+        {
+          "name": "SEX",
+          "label": "Sex of infant",
+          "score": 0.4859
+        },
+        {
+          "name": "AGED",
+          "label": "Age at death in days NUMF 0-364=DAYS",
+          "score": 0.3732
+        }
+      ]
+    }
+  ]
+}

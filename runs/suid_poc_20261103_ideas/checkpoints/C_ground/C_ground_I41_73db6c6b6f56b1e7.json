@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "There is an association between higher maternal prepregnancy BMI and earlier postconceptional age at death among SUID cases.",
+ "rationale": "This study will compare the characteristics of SUID cases across different maternal BMI categories to examine if higher maternal BMIs are associated with earlier ages at death. The design fits within the constraints of available sources, focusing on the characteristics of reviewed SUID cases without requiring population-level denominators.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and bedsharing_ms_v7.C24 focus on developmental timing but do not examine the role of maternal prepregnancy BMI in SUID cases. Therefore, this question remains open as it aims to explore a unique aspect (maternal prepregnancy BMI) and its relation to postconceptional age at death.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C24"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Maternal prepregnancy BMI",
+  "Postconceptional age at death"
+ ],
+ "variables": [
+  "ncfrp_v51:IEMprenatalBMI",
+  "ncfrp_v51:INF4mompregwt",
+  "ncfrp_v51:INF4momwtgnunk",
+  "ncfrp_v51:BIO1priordeath"
+ ],
+ "cannot_establish": "This design can only establish associations among cases; it cannot estimate incidence or risk relative to a population denominator."
+}

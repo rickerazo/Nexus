@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers reporting postpartum birth control use differs between PRAMS Phase 7 and Phase 8.",
+ "rationale": "This study aims to evaluate inconsistencies in recording postpartum birth control usage between PRAMS Phase 7 and Phase 8 data collection methods, focusing on how these discrepancies may influence perceptions of SUID risk factors. The design compares measurement methodologies rather than direct risk factor assessment.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 addresses limitations in excluding certain cases but does not focus on birth control recording inconsistencies; bedsharing_ms_v7.C18 discusses ascertainment issues but not postpartum birth control usage. Thus, the question remains open.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C18"
+ ],
+ "case_sources": [],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2021,
+ "required_concepts": [
+  "postpartum birth control usage"
+ ],
+ "variables": [
+  "prams_p7_arf:BC_WHEN4",
+  "prams_p8_arf:TYP_BC",
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates for SUID risk factors due to its focus on comparing measurement methodologies rather than direct risk factor assessment."
+}

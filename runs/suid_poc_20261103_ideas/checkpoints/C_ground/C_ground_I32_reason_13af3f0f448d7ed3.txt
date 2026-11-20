@@ -1,0 +1,62 @@
+### Design
+
+**Restated Question:** Are there distinct patterns of maternal physical measurements and pre-pregnancy health behaviors in Sudden Unexpected Infant Death (SUID) cases compared to other causes of infant mortality within the same case series?
+
+**Design Type:** Case-case comparison. This design compares cases of different outcomes recorded in the same case series, focusing on unique factors specific to each outcome rather than common risk factors.
+
+### Sources by Role
+
+- **Case Series:**
+  - **ncfrp_v51 (National Fatality Review Case Reporting System)**: Records all child deaths reviewed by participating fatality review teams. This source will provide the cases of both SUID and other infant mortality causes for comparison.
+  
+- **Population Reference:**
+  - **prams_p8_arf, prams_p7_arf (PRAMS Phase 8 & 7 Analytic Research Files)**: These are weighted surveys of mothers a few months after live birth, providing data on maternal health behaviors and physical measurements. We will use these to assess the prevalence of factors in a reference population.
+
+### Period
+
+**Period:** The study period should be limited to the years covered by both ncfrp_v51 (2008-2019) and prams_p7_arf & prams_p8_arf (Phase 7: 2012-2015; Phase 8: 2016-2021). To ensure data consistency, we can use the overlapping period of 2012-2019.
+
+### Variables
+
+**Maternal Physical Measurements and Pre-pregnancy Health Behaviors:**
+
+#### Case Series (ncfrp_v51)
+- **INF3medical**: During pregnancy did mother have medical complications/infections
+- **INF4heducsign**: If yes, health education - Maternal signs warrant medical attn
+- **BIO1dthaccid**: If yes, prior child deaths - Female - Accident (Indicative of maternal history)
+
+#### Population Reference (prams_p8_arf & prams_p7_arf)
+- **MAT_PRWT**: Maternal weight - Prepregnancy
+- **MOM_BMIG**: VAR: MOM BMI GROUPED FROM QX
+- **PRE_HLTH_RAW**: Pre-preg--improve health before preg
+- **PRE_MHDP_RAW**: Pre-preg -- feeling down/depressed
+
+### Biases
+
+**Selection Bias:** ncfrp_v51 includes cases from fatality review teams whose participation may vary over time, leading to potential temporal changes in case ascertainment. This may affect the representativeness of the sample.
+
+**Information Bias:** Differences in how information is collected and reported between ncfrp_v51 (case series) and prams_p8_arf/prams_p7_arf (population reference) could introduce inconsistencies, particularly in maternal health behaviors and physical measurements.
+
+**Confounding Bias:** Factors such as socioeconomic status, geographic location, and healthcare access may confound the relationship between maternal factors and infant mortality outcomes. These variables are not consistently measured across all sources.
+
+### What the Design Cannot Establish
+
+- **Causality:** The case-case comparison design can only identify associations; it cannot establish causation.
+- **Incidence Rates:** Without a denominator source, the study cannot calculate incidence rates or risk ratios for SUID versus other infant mortality cases.
+- **Temporal Relationships:** The design does not allow for analysis of temporal trends over time due to varying ascertainment practices and data availability.
+
+### Prior Art
+
+The existing literature (e.g., bedsharing_ms_v7.C8) has examined the relationship between maternal smoking, prematurity, and SUID incidence. However, no prior work specifically compares patterns in maternal health behaviors and physical measurements for SUID cases versus other causes of infant mortality within the same case series.
+
+### Verdict
+
+**Can these data answer a version of the question?**
+
+Yes, but with limitations:
+- The study can identify distinct patterns of maternal factors (e.g., BMI, pre-pregnancy health behaviors) in SUID cases compared to other infant mortality cases.
+- However, due to selection and information biases inherent in using case series and population reference data from different sources, the results must be interpreted cautiously.
+
+**Missing Data Element or Design Element:**
+
+To strengthen the study, a denominator source (e.g., cdc_linkco15) would allow for incidence rate comparisons. Additionally, incorporating detailed maternal health records that are consistent across all time periods would help mitigate information bias.

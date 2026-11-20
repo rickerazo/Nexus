@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "VEHlocsidewlk",
+   "name": "Incident Location",
+   "summary": "Location of the incident (e.g., sidewalk, railroad tracks)."
+  },
+  {
+   "start": "VEHmechfail",
+   "name": "Incident Causes",
+   "summary": "Causes of the incident (e.g., mechanical failure, medical event)."
+  },
+  {
+   "start": "VEHnumoth",
+   "name": "Vehicle Details",
+   "summary": "Total number of vehicles involved and details about other drivers."
+  },
+  {
+   "start": "VEHotdthpass",
+   "name": "Death Counts",
+   "summary": "Number of deaths in the vehicle, including teen deaths."
+  },
+  {
+   "start": "VEHothprotect",
+   "name": "Protective Measures",
+   "summary": "Types and specifications of protective measures used (e.g., shoulder belt)."
+  },
+  {
+   "start": "VEHpedpos",
+   "name": "Child Position",
+   "summary": "Position of the child in relation to vehicles or as a pedestrian."
+  },
+  {
+   "start": "FIRadnumdet",
+   "name": "Fire Alarms",
+   "summary": "Presence and functionality of smoke alarms during fire incidents."
+  },
+  {
+   "start": "FIRelectroc",
+   "name": "Electrocution Details",
+   "summary": "Cause of electrocution and other relevant details."
+  }
+ ]
+}

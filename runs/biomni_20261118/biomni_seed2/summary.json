@@ -1,0 +1,9 @@
+{
+ "seed": 2,
+ "model": "qwen2.5:14b",
+ "num_ctx": 32768,
+ "status": "finished",
+ "steps": 26,
+ "minutes": 9.8,
+ "answer_file": true
+}

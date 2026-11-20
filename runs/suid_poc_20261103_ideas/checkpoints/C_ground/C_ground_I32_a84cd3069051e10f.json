@@ -1,0 +1,34 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with maternal pre-pregnancy health behaviors and physical measurements differs from other infant mortality cases within the same case series.",
+ "rationale": "This design uses a case-case comparison to identify distinct patterns in maternal factors between SUID cases and other causes of infant mortality. The study can compare proportions among cases but cannot establish incidence rates or causation due to the lack of a denominator source.",
+ "prior_art": "The existing literature, such as bedsharing_ms_v7.C8, has examined associations between maternal smoking and prematurity with SUID incidence. However, no prior work specifically compares patterns in maternal health behaviors and physical measurements for SUID cases versus other infant mortality causes within the same case series.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "maternal_health_behaviors",
+  "physical_measurements"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3medical",
+  "ncfrp_v51:INF4heducsign",
+  "ncfrp_v51:BIO1dthaccid",
+  "prams_p8_arf:MAT_PRWT",
+  "prams_p8_arf:MOM_BMIG",
+  "prams_p8_arf:PRE_HLTH_RAW",
+  "prams_p8_arf:PRE_MHDP_RAW",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causality or incidence rates due to the lack of a denominator source."
+}

@@ -1,0 +1,79 @@
+### Design
+
+**Question:**
+Are maternal stressors during pregnancy more common among SUID cases where the infant was preterm compared to full-term infants?
+
+**Design:**
+A case-only analysis comparing proportions of maternal stressors in two subgroups within the SUID case series: premature vs. full-term infants.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (NFR-CRS)
+  - Reason: It records child deaths, including SUID cases with detailed reviews.
+  
+- **Denominator Source:** cdc_linkco15
+  - Reason: Provides information on birth characteristics and links to infant deaths for context.
+
+### Period
+
+**Period:** The analysis will focus on the overlapping coverage period of both sources:
+- NFR-CRS (ncfrp_v51) covers cases from 2008 to 2019.
+- CDC linked birth/infant death public-use file (cdc_linkco15) provides data for births and infant deaths in 2015.
+
+Given the overlap, we will use data from 2015 to ensure that both sources provide relevant information.
+
+### Variables
+
+**Maternal Stressors:**
+- **ncfrp_v51:** `INF4stress`: Mother experienced stressor during pregnancy.
+- **cdc_linkco15:** No direct variable for maternal stress, but we can use proxies:
+  - `INFprevpreterm`: Medical complications—Previous preterm/Small for Gestation Age Infant
+  - `INFexpipv`: During pregnancy did mother experience intimate partner violence
+
+**Prematurity:**
+- **ncfrp_v51:** No direct variable, use cdc_linkco15 instead.
+- **cdc_linkco15:**
+  - `GESTREC10`: Combined Gestation Recode 10 (to identify preterm and full-term infants)
+  - `COMBGEST`: Combined Gestation – Detail in Weeks (more detailed information)
+
+### Biases
+
+**Selection Bias:**
+- NFR-CRS has varying participation levels across jurisdictions, which may not be representative of national trends.
+- CDC data also have limitations; the linkage to infant deaths is within the file but does not link externally.
+
+**Information Bias:**
+- Reporting and measurement differences between NC-FRP and CDC files. For instance, different ways of recording stressors and prematurity.
+  
+**Confounding:**
+- Socioeconomic status, geographic location (urban vs. rural), healthcare access, etc., may confound the relationship between maternal stressors and preterm SUID cases.
+
+### What the Design Cannot Establish
+
+The design can only establish associations within the case series data. It cannot estimate incidence or risk ratios due to the lack of a population denominator. Also, it cannot distinguish causation from association.
+
+### Prior Art
+
+- **SUID manuscript:** C10 notes that some extremely and very preterm infants were excluded. This implies that the current dataset might have similar limitations.
+  
+- **Bedsharing Manuscript:** 
+  - C8 mentions bed sharing was more common among SUID cases, but does not specifically address maternal stressors or prematurity.
+
+### Verdict
+
+The data can support a case-only analysis to compare proportions of maternal stressors between preterm and full-term infants within the SUID case series. However, it cannot establish incidence rates or risk estimates due to the lack of population denominators. The design also cannot confirm causation; associations are all that can be established.
+
+### Additional Considerations
+
+- **Maternal Stress Proxy:** Variables like `INFprevpreterm` and `INFexpipv` from ncfrp_v51 might serve as proxies for maternal stress but should be interpreted with caution.
+  
+- **Prematurity Identification:** Use of `GESTREC10` and `COMBGEST` from cdc_linkco15 can categorize infants into preterm vs. full-term groups accurately.
+
+### Conclusion
+
+The proposed study design using the ncfrp_v51 (NFR-CRS) case series with relevant variables to proxy maternal stressors, along with gestational age data from cdc_linkco15, can be used to analyze whether maternal stressors during pregnancy are more common among SUID cases of preterm infants compared to full-term infants. However, it is limited in its ability to establish causation or incidence rates due to the case-only nature and lack of a population denominator.
+
+### Data Element Missing
+- **Denominator Source:** A denominator source for estimating denominators (live births) would be necessary if we need to calculate risk or incidence.
+  
+- **Detailed Maternal Stress Variables:** More detailed variables on maternal stressors from both sources would improve the analysis.

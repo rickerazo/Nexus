@@ -1,0 +1,18 @@
+{
+  "stage": "C_inventory_prams_p8_std2_0",
+  "prompt": "c_inventory",
+  "system": "You summarize one block of variables from a data dictionary into topic domains, so that a researcher can see at a glance what the data measure.\nRules:\n- Split the block into 1 to 8 domains. Each domain is a contiguous run of variables in the order given; do not reorder or skip.\n- `start` is the exact name of a domain's first variable, copied from the list. The first domain starts at the block's first variable. A domain runs until the next domain's start.\n- `name`: 2 to 6 words naming the topic.\n- `summary`: one sentence naming concretely what the domain's variables record (for example \"vehicle type, seat position and restraint use at the time of a crash\"), not why they might matter.\n- Describe only what the labels and levels say. Do not judge relevance or suggest analyses.",
+  "transcript": [
+    {
+      "attempt": 1,
+      "user": "Source: prams_p8_std2 (PRAMS Phase 8 Standard Section II codebook)\nPopulation: weighted survey of mothers a few months after a live birth, sampled from birth certificates in participating states; not designed to count infant deaths\n\nVariables (name: label [levels]), in document order:\nPGWTGN8: Preg weight gain [.B=BLANK; .D=DK; .S=SKIP; 77=DK]\nPGWTGN8_DK: Preg weight gain (DONT KNOW = 7777) [.B=BLANK; .S=SKIP; 77=DK; 7777=DK]\nPGWTGNU8: Unit of preg weight gain [.B=BLANK; .D=DONT KNOW; 1=POUNDS; 2=KILOGRAMS \u2026]\nPGWTGNU8_DK: Unit of preg weight gain (DONT KNOW = 7) [.B=BLANK; 1=POUNDS; 2=KILOGRAMS; 3=DIDNT GAIN WEIGHT \u2026]",
+      "response": "{\n  \"domains\": [\n    {\n      \"start\": \"PGWTGN8\",\n      \"name\": \"Pregnancy Weight Gain\",\n      \"summary\": \"Self-reported weight gain during pregnancy, including missing or unsure responses.\"\n    },\n    {\n      \"start\": \"PGWTGNU8\",\n      \"name\": \"Weight Gain Unit\",\n      \"summary\": \"Unit of measurement (pounds, kilograms) for reported pregnancy weight gain, including option for no weight gain.\"\n    }\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 416,
+        "completion_tokens": 103,
+        "total_duration_ns": 10348134917
+      },
+      "problems": []
+    }
+  ]
+}

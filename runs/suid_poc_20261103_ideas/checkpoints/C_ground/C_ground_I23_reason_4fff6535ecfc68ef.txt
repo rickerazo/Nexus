@@ -1,0 +1,64 @@
+### Design
+
+**Question Restated:** Estimate the risk of SUID among infants born to women who experienced significant barriers to healthcare access during pregnancy compared to those without such obstacles. This will be done by calculating exposure-specific rates using a case series (numerator), population reference (exposure prevalence), and denominator source.
+
+### Sources by Role
+
+- **Case Series:** `ncfrp_v51` (child deaths reviewed by participating fatality review teams) and `cdc_linkco15` (live births linked to infant deaths in the first year).
+  - *Role:* The SUID cases from these sources will serve as the numerator for calculating exposure-specific rates.
+
+- **Population Reference:** `prams_p8_arf` (weighted survey of mothers a few months after live birth, sampling birth certificates from participating states).
+  - *Role:* This source provides information on reported barriers to healthcare access during pregnancy and serves as a basis for estimating the exposure prevalence among births at risk.
+
+- **Denominator Source:** `cdc_natl15` (all US live births in 2015).
+  - *Role:* The denominator source will provide the total number of live births, which is necessary to estimate the overall incidence and relative risks of SUID by healthcare access barriers among exposed versus unexposed groups.
+
+### Period
+
+- **Question Needs:** Data on live births linked to infant deaths (case series) and data from PRAMS surveys conducted a few months post-birth.
+  - *Years Needed:* 2015 (for `cdc_linkco15` case series and `cdc_natl15`) and 2016-2021 for the PRAMS Phase 8 ARF dataset (`prams_p8_arf`).
+
+### Variables
+
+**Exposure: Significant Barriers to Healthcare Access**
+
+- **PRAMS (Population Reference):**
+  - `PNC_MTH`: Month of first prenatal care visit (indicative of healthcare access barriers, with a value of "88" representing no prenatal care).
+  - `PG8_UTI`: Health problem during pregnancy -- Kidney/bladder infection (indicates medical complications during pregnancy which may indicate healthcare barriers).
+
+**Outcome: SUID Cases**
+
+- **Case Series Sources (`ncfrp_v51` and `cdc_linkco15`):**
+  - Variables indicating the presence of SUID cases.
+
+### Biases
+
+#### Selection Bias
+- **PRAMS:** The survey only includes mothers who had live births and are sampled from participating states, potentially excluding those with extreme barriers to healthcare access.
+- **Case Series:** Fatality review systems may not capture all SUID cases, leading to underreporting. Also, the geographical distribution of reviewed cases (randomized codes in `ncfrp_v51`) means that comparisons cannot be made at a geographic level.
+
+#### Information Bias
+- **PRAMS:** Survey responses are self-reported and may be subject to recall bias or misclassification.
+- **Case Series:** Data on SUID causes and circumstances may vary by reporting practices across jurisdictions, leading to inconsistencies in the ascertainment of cause-of-death information.
+
+#### Confounding
+- Variables like maternal smoking (`prams_p8_arf:MOMCIG`), prematurity, and birth defects could confound the relationship between healthcare access barriers and SUID risk. Adjusting for these variables will be necessary to isolate the effect of healthcare access barriers.
+
+### What the Design Cannot Establish
+
+The design can estimate exposure-specific rates but cannot establish causation due to its observational nature. It also may not capture all relevant exposures, such as postnatal factors, leading to residual confounding. The randomized state codes in `ncfrp_v51` prevent geographic comparisons.
+
+### Prior Art
+
+- **SUID Manuscript:** Claims C8 and C9 discuss the association between maternal smoking during pregnancy and SUID incidence (C9). However, none of these claims directly address barriers to healthcare access.
+  
+- **Bedsharing Manuscript:** Claims C3 through C5 explore associations between bed sharing, maternal smoking, and prematurity with SUID risk. These findings do not pertain to healthcare access barriers.
+
+### Verdict
+
+**Can the sources answer a version of the question?**
+
+Yes, these data can be used to estimate exposure-specific rates for SUID among infants born to mothers who experienced significant barriers to healthcare access during pregnancy compared to those without such obstacles. However, due to potential biases and lack of geographic detail, the findings should be interpreted with caution, focusing on patterns rather than causal relationships.
+
+**Epistemological Reason:**
+The design allows for exposure-specific rate estimation but cannot definitively establish causation or address all confounding factors due to its observational nature and limitations in data collection.

@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "How does the incidence of SUID differ between infants born to mothers with prepregnancy obesity and those without, when controlling for maternal smoking and preterm birth?",
+   "why_open": "This question addresses a critical but underexplored risk factor in existing studies. A comparison across groups defined by maternal obesity status could reveal new insights into the interplay of prenatal conditions.",
+   "sources": [
+    "cdc_linkco15",
+    "cdc_natl15"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI), maternal smoking during pregnancy, preterm birth, Sudden Unexpected Infant Death (SUID)"
+  },
+  {
+   "question": "Does the impact of bed sharing on SUID vary across different socio-economic locations and urban/rural settings?",
+   "why_open": "This study would extend previous findings by considering environmental factors that could moderate the relationship between bed sharing and SUID incidence.",
+   "sources": [
+    "ncfrp_v51",
+    "cdc_natl15"
+   ],
+   "data": "Residence Information, Ethnicity and Race, socioeconomic status indicators, urban/rural classification"
+  },
+  {
+   "question": "What are the longitudinal changes in neonatal SUID risk over consecutive decades (e.g., comparing 1980s to 2010s) when stratified by maternal smoking history?",
+   "why_open": "This study would provide insights into how public health interventions aimed at reducing maternal smoking have impacted SUID trends over time.",
+   "sources": [
+    "cdc_linkco15",
+    "prams_p7_arf"
+   ],
+   "data": "Smoking During Pregnancy, maternal smoking status (smoking, non-smoking), year of birth or death"
+  },
+  {
+   "question": "How does the risk of SUID evolve for infants exposed to chronic intermittent hypoxia during critical developmental periods compared to those not exposed?",
+   "why_open": "This study would provide novel evidence on a potential environmental factor that influences infant mortality through physiological stress mechanisms.",
+   "sources": [
+    "cdc_natl15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal infections in pregnancy, neonatal respiratory conditions, gestational age at birth"
+  },
+  {
+   "question": "To what extent do regional differences in healthcare access and quality influence SUID rates when controlling for known risk factors like maternal smoking?",
+   "why_open": "This research question would elucidate the geographical disparities in infant mortality that are not fully explained by individual-level risks.",
+   "sources": [
+    "prams_p8_arf",
+    "cdc_natl15"
+   ],
+   "data": "Healthcare Provider Interactions, Insurance Coverage, gestational age at birth"
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "Does maternal obesity during pregnancy alter postconceptional age (PCA)-specific SUID incidence, particularly after accounting for smoking behaviors?",
+   "why_open": "While the Ramirez lab and Lavista Ferres group have identified maternal obesity as a risk factor for SUID, there is no current understanding of how this risk changes through different developmental windows aligned by PCA. A study examining if maternal obesity modifies PCA-specific trajectories can provide insights into critical periods.",
+   "sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI) (exposure), Smoking during pregnancy (covariate), Postconceptional age (PCA) (offset), Sudden unexpected infant death (SUID) (outcome)"
+  },
+  {
+   "question": "Does the protective effect of progesterone on cortical neurogenesis extend to postnatal brain regions in SUID risk?",
+   "why_open": "The potential role of oxidative stress and neurogenic mechanisms influenced by progesterone remains unexplored in the context of SUID. Investigating whether similar neuroprotective pathways influence neural progenitor cells and neuronal survival in postnatal brain structures could shed light on new preventive strategies.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p7_arf"
+   ],
+   "data": "Maternal infections in pregnancy (exposure), Progesterone (exposure), Maternal prepregnancy body mass index (BMI) (effect_modifier), Cervical sympathetic nerve activity (outcome)"
+  },
+  {
+   "question": "How does maternal tobacco exposure during pregnancy correlate with postconceptional age (PCA)-specific incidence of SUID in relation to inner ear dysfunction?",
+   "why_open": "Maternal smoking has been shown to increase SUID risk, and IED can weaken the hypercapnic response. This question seeks to explore whether tobacco smoke affects inner ear development or function, which could interact with other risk factors like PCA.",
+   "sources": [
+    "cdc_natl15",
+    "prams_p8_std2"
+   ],
+   "data": "Smoking during pregnancy (exposure), Inner ear dysfunction (effect_modifier), Postconceptional age (PCA) (offset), Sudden unexpected infant death (SUID) (outcome)"
+  },
+  {
+   "question": "Is there a differential impact of maternal smoking and prematurity on PCA-specific SUID incidence across varying socioeconomic status strata?",
+   "why_open": "Although PCA has been shown to clarify the relationship between bed sharing, maternal smoking, and prematurity with SUID incidence, its interaction with socioeconomic variables remains understudied. This could provide insights into why some populations are more vulnerable.",
+   "sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "data": "Maternal smoking during pregnancy (exposure), Prematurity (effect_modifier), Postconceptional age (PCA) (offset), Sudden unexpected infant death (SUID) (outcome)"
+  },
+  {
+   "question": "Does the combination of maternal obesity and smoking behavior exacerbate PCA-specific risks for SUID beyond what is observed individually?",
+   "why_open": "The synergistic effects of multiple risk factors like maternal obesity and smoking on SUID incidence, especially when considering developmentally timed phenomena such as PCA, have not been fully elucidated. This study would help understand cumulative risks better.",
+   "sources": [
+    "cdc_natl15",
+    "prams_p8_arf"
+   ],
+   "data": "Maternal prepregnancy body mass index (BMI) (exposure), Smoking during pregnancy (covariate), Postconceptional age (PCA) (offset), Sudden unexpected infant death (SUID) (outcome)"
+  }
+ ]
+}

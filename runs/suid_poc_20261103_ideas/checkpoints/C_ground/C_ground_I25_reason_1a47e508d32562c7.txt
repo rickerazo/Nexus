@@ -1,0 +1,83 @@
+### Design
+
+**Question Restated:** Estimate the rates of sudden unexpected infant death (SUID) among infants born to mothers who received mental health support during pregnancy compared with those who did not.
+
+**Design**: Exposure-specific rates. The design compares SUID incidence between two groups: infants whose mothers reported receiving mental health services and those who did not, using a case series for numerator cases, population reference data on maternal mental health service receipt, and denominator data from births.
+
+### Sources by Role
+
+1. **Case Series**:
+   - **Source**: `ncfrp_v51` (National Fatality Review Case Reporting System)
+     - **Role**: Provides SUID cases.
+     - **Reason**: It documents child deaths reviewed by fatality review teams, suitable for numerator data on SUID events.
+
+2. **Population Reference**:
+   - **Sources**: 
+     - `prams_p8_arf` (PRAMS Phase 8 Analytic Research File)
+       - **Role**: Provides exposure prevalence of maternal mental health service receipt.
+       - **Reason**: It includes survey responses from mothers postpartum regarding mental health services, suitable for denominator data on the proportion of exposed births.
+
+3. **Denominator**:
+   - **Source**: `cdc_natl15` (CDC natality public-use file)
+     - **Role**: Provides total live births to estimate population at risk.
+     - **Reason**: It covers all US live births, suitable for denominator data on the number of births regardless of exposure status.
+
+### Period
+
+**Years Needed**: 2016-2021 (to align with PRAMS Phase 8)
+**Years Held Now**: `prams_p8_arf` has years from 2016 to 2021. More can be acquired if needed.
+**Additional Years Acquired**: None necessary since the period is covered.
+
+### Variables
+
+**Concepts and Candidate Variables**:
+- **SUID Cases (Numerator)**: Use `ncfrp_v51` for SUID cases as defined by death records.
+  - **Variable**: No specific variable listed but SUID cases are recorded in this source.
+
+- **Exposure: Maternal Mental Health Services During Pregnancy**:
+  - From `prams_p8_arf`: 
+    - **Variable**: `MH_PGDX8` (Health problem during pregnancy -- Depression)
+      - **Label**: "Did you have a health problem during your pregnancy?"
+      - **Values**: `.B=DK/BLANK; 1=NO; 2=YES`
+    - Additional survey items can be used to capture other mental health issues if needed.
+
+- **Population At Risk (Denominator)**:
+  - From `cdc_natl15` for live births in 2016-2021.
+  - **Variable**: No specific variable listed but total birth counts are available.
+
+### Biases
+
+**Selection Bias**:
+- The PRAMS data is based on a sample of mothers, not the entire population. It may miss some mothers who did not receive mental health services or who were not sampled.
+- Fatality review teams in `ncfrp_v51` might have different levels of participation across states.
+
+**Information Bias**:
+- Mental health service receipt is self-reported by mothers postpartum and may be subject to recall bias.
+- SUID cases are recorded through death records, which could include ascertainment biases or reporting inconsistencies.
+
+**Confounding**:
+- Confounders like maternal smoking, previous preterm births, etc., need to be accounted for. Maternal smoking is available in PRAMS data (`MOMSMOKE`).
+
+### What the Design Cannot Establish
+
+- **Causation**: The design can only establish associations and cannot infer causation due to its observational nature.
+- **Incidence Changes Over Time**: Without linking cases across years, this design cannot assess temporal trends.
+
+### Prior Art
+
+**Closest Claim:**
+- `bedsharing_ms_v7.C10`: This claim investigates the association between bed sharing and SUID incidence across different developmental windows. However, it does not focus on maternal mental health services as an exposure.
+  
+**Why Still Open:**
+- The current research focuses specifically on the impact of maternal mental health support during pregnancy on SUID rates, which has not been extensively studied.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, this design can be carried out using the provided data. It is feasible to estimate SUID rates among infants born to mothers who received mental health services compared with those who did not. The design uses an appropriate case series for numerator cases (SUID deaths), population reference data from PRAMS for exposure prevalence, and birth denominators from CDC natality records.
+
+**Reasons Supporting the Feasibility:**
+- Data sources cover the necessary years.
+- Variables measure the key concepts appropriately.
+- The study can compare proportions within a feasible design given the limitations noted.

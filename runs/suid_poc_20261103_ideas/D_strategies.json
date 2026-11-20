@@ -1,0 +1,184 @@
+{
+  "strategies": [
+    {
+      "id": "S1",
+      "gap_id": "G1",
+      "research_question": "Does maternal prepregnancy obesity modify SUID incidence differently across postconceptional age (PCA) windows?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc_linkco15",
+          "name": "UCOD"
+        },
+        "definition": "Sudden Unexpected Infant Death (SUID)",
+        "subtypes": []
+      },
+      "exposures": [
+        {
+          "source_id": "cdc_linkco15",
+          "name": "BMI_R"
+        }
+      ],
+      "covariates": [
+        {
+          "source_id": "cdc_linkco15",
+          "name": "COMBGEST"
+        },
+        {
+          "source_id": "derived",
+          "name": "PCA"
+        }
+      ],
+      "interactions": [
+        [
+          {
+            "source_id": "cdc_linkco15",
+            "name": "BMI_R"
+          },
+          {
+            "source_id": "derived",
+            "name": "PCA"
+          }
+        ]
+      ],
+      "stratification": [],
+      "offset": null,
+      "denominator_source": "cdc_linkco15",
+      "time_scale": {
+        "source_id": "derived",
+        "name": "PCA"
+      },
+      "derived": [
+        {
+          "name": "PCA",
+          "formula": "COMBGEST + AGED / 7",
+          "inputs": [
+            {
+              "source_id": "cdc_linkco15",
+              "name": "COMBGEST"
+            },
+            {
+              "source_id": "cdc_linkco15",
+              "name": "AGED"
+            }
+          ],
+          "description": "Postconceptional age in weeks, calculated as the sum of gestational age at birth and postnatal age (in days) divided by 7."
+        }
+      ],
+      "design": "population_incidence",
+      "model_class": "negative_binomial",
+      "rationale": "This study design examines whether maternal prepregnancy obesity modifies SUID incidence differently across specified PCA windows. The negative binomial model is chosen to account for overdispersion in the count data of SUID events, and the denominator source provides the population at risk.",
+      "expected_direction": "The expected direction would be that higher BMI_R values are associated with increased SUID rates, particularly in the early rising (36-42 weeks) PCA window compared to the late declining (≥47 weeks) PCA window."
+    },
+    {
+      "id": "S2",
+      "gap_id": "G2",
+      "research_question": "Estimate the joint effect of maternal smoking and preterm birth on SUID incidence across PCA windows.",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc_linkco15",
+          "name": "UCOD"
+        },
+        "definition": "Sudden Unexpected Infant Death (SUID)",
+        "subtypes": []
+      },
+      "exposures": [
+        {
+          "source_id": "cdc_linkco15",
+          "name": "CIG_REC"
+        },
+        {
+          "source_id": "cdc_linkco15",
+          "name": "GESTREC3"
+        }
+      ],
+      "covariates": [],
+      "interactions": [
+        [
+          {
+            "source_id": "cdc_linkco15",
+            "name": "CIG_REC"
+          },
+          {
+            "source_id": "cdc_linkco15",
+            "name": "GESTREC3"
+          }
+        ]
+      ],
+      "stratification": [
+        {
+          "source_id": "cdc_linkco15",
+          "name": "AGED"
+        }
+      ],
+      "offset": null,
+      "denominator_source": "cdc_linkco15",
+      "time_scale": {
+        "source_id": "cdc_linkco15",
+        "name": "AGED"
+      },
+      "derived": [],
+      "design": "population_incidence",
+      "model_class": "negative_binomial",
+      "rationale": "This study design and model class are chosen to estimate the joint effect of maternal smoking (CIG_REC) and preterm birth (GESTREC3) on SUID incidence across PCA windows. The negative binomial regression accounts for overdispersion in count data, which is common when modeling rare events like SUID. Stratification by AGED allows us to examine how these effects vary within different age groups of infants.",
+      "expected_direction": "The model should reveal whether the risk associated with maternal smoking differs between preterm and term infants across PCA windows."
+    },
+    {
+      "id": "S3",
+      "gap_id": "G3",
+      "research_question": "Does the rise-peak-decline pattern of SUID incidence by PCA differ across cause-of-death subtypes (SIDS R95, accidental suffocation and strangulation in bed W75, ill-defined R99)?",
+      "outcome": {
+        "variable": {
+          "source_id": "cdc_linkco15",
+          "name": "UCOD"
+        },
+        "definition": "Sudden unexpected infant death (SUID) cases classified as SIDS (R95), accidental suffocation and strangulation in bed (W75), or ill-defined causes of death (R99).",
+        "subtypes": [
+          "R95",
+          "W75",
+          "R99"
+        ]
+      },
+      "exposures": [
+        {
+          "source_id": "derived",
+          "name": "PCA"
+        }
+      ],
+      "covariates": [],
+      "interactions": [],
+      "stratification": [
+        {
+          "source_id": "cdc_linkco15",
+          "name": "UCOD"
+        }
+      ],
+      "offset": null,
+      "denominator_source": "cdc_linkco15",
+      "time_scale": {
+        "source_id": "derived",
+        "name": "PCA"
+      },
+      "derived": [
+        {
+          "name": "PCA",
+          "formula": "(COMBGEST + AGED / 7)",
+          "inputs": [
+            {
+              "source_id": "cdc_linkco15",
+              "name": "COMBGEST"
+            },
+            {
+              "source_id": "cdc_linkco15",
+              "name": "AGED"
+            }
+          ],
+          "description": "Postconceptional age in weeks, calculated as the sum of gestational age at birth (in weeks) and postnatal age at death (in days divided by 7)."
+        }
+      ],
+      "design": "population_incidence",
+      "model_class": "poisson_regression",
+      "rationale": "This study design uses a population incidence approach to examine the rate of SUID cases over different cause-of-death subtypes as a function of postconceptional age (PCA). The stratification by UCOD allows us to compare the rise-peak-decline patterns for each subtype. Poisson regression is chosen because it models count data with an offset, which in this case represents the denominator population from cdc_linkco15.",
+      "expected_direction": "The expected pattern would be a rise, peak, and decline of SUID incidence by PCA for at least one cause-of-death subtype (R95, W75, R99), potentially differing across subtypes. This strategy does not establish causality or power."
+    }
+  ]
+}

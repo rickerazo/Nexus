@@ -1,0 +1,89 @@
+{
+ "ideas": [
+  {
+   "question": "How has the proportion of SUID cases with hospital overnight stays changed over different time periods?",
+   "comparison": "ncfrp_v51 (2008-2019) vs prams_p8_arf and prams_p7_arf (combined)",
+   "why_open": "The incidence and factors contributing to sudden unexpected infant death have been extensively studied, but the role of hospital stays in SUID cases has not been thoroughly explored. Understanding trends over time could provide insights into preventive measures and healthcare practices.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82"
+   ],
+   "data": "For ncfrp_v51, use D82: Hospital Overnight Stay to identify whether the infant was returned to hospital overnight after delivery. For prams_p8_arf and prams_p7_arf, aggregate demographic information from D291 (Demographic Information) and hospital stay length from D279 (Hospital Stay Length). Analyze trends in proportions over time periods."
+  },
+  {
+   "question": "What changes have occurred in the proportion of SUID cases where infants had a crib or similar sleeping arrangement?",
+   "comparison": "ncfrp_v51 (2008-2019) vs prams_p8_arf and prams_p7_arf (combined)",
+   "why_open": "The importance of proper sleep environments for infant safety is widely recognized, but the prevalence of safe sleeping arrangements in SUID cases has not been studied longitudinally. This could help evaluate the impact of public health interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D102"
+   ],
+   "data": "For ncfrp_v51, use D102: Infant Sleep Environment to identify whether the infant had a crib or similar sleeping arrangement. For prams_p8_arf and prams_p7_arf, aggregate demographic information from D291 (Demographic Information) and sleep arrangements from D281 (Sleeping Arrangements). Analyze trends in proportions over time periods."
+  },
+  {
+   "question": "How has the proportion of SUID cases where the infant was exposed to postnatal environmental risks changed over different time periods?",
+   "comparison": "ncfrp_v51 (2008-2019) vs prams_p8_arf and prams_p7_arf (combined)",
+   "why_open": "The role of postnatal environmental factors in SUID has not been thoroughly investigated over time, despite their potential significance. This could highlight areas where further intervention might be needed.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D236"
+   ],
+   "data": "For ncfrp_v51, use D236: Family Circumstances to identify environmental risks such as substandard housing or overcrowding. For prams_p8_arf and prams_p7_arf, aggregate demographic information from D291 (Demographic Information) and relevant variables from D246 (Infant Health in Last 72 Hours). Analyze trends in proportions over time periods."
+  },
+  {
+   "question": "What changes have occurred in the proportion of SUID cases with maternal health conditions during pregnancy?",
+   "comparison": "ncfrp_v51 (2008-2019) vs prams_p8_arf and prams_p7_arf (combined)",
+   "why_open": "The relationship between maternal health during pregnancy and the incidence of SUID has not been extensively studied longitudinally. This could provide insights into preventive measures targeting prenatal care.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D239"
+   ],
+   "data": "For ncfrp_v51, use D239: Maternal Health Conditions to identify various health conditions during pregnancy. For prams_p8_arf and prams_p7_arf, aggregate demographic information from D291 (Demographic Information) and relevant variables from D269 (Maternal Health Problems). Analyze trends in proportions over time periods."
+  },
+  {
+   "question": "How has the proportion of SUID cases with prenatal complications such as low birth weight changed over different time periods?",
+   "comparison": "ncfrp_v51 (2008-2019) vs prams_p8_arf and prams_p7_arf (combined)",
+   "why_open": "Understanding trends in prenatal complications associated with SUID could help identify critical periods for intervention. This study aims to fill a gap in understanding long-term effects of prenatal health.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D239"
+   ],
+   "data": "For ncfrp_v51, use D239: Maternal Health Conditions to identify prenatal complications such as low birth weight. For prams_p8_arf and prams_p7_arf, aggregate demographic information from D291 (Demographic Information) and relevant variables from D269 (Maternal Health Problems). Analyze trends in proportions over time periods."
+  }
+ ]
+}

@@ -1,0 +1,350 @@
+{
+ "mappings": [
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "cdc_linkco15",
+   "variable": "UCODR130",
+   "compatibility": "direct",
+   "rationale": "The variable UCODR130 is a 130 Infant Cause Recode which includes codes for Sudden infant death syndrome (R95), Accidental suffocation and strangulation in bed (W75), or Other ill-defined and unspecified causes of mortality (R99)."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "cdc_linkco15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "The variable SEX directly represents the biological sex of the infant."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "cdc_linkco15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "Derived from COMBGEST, which is a combined gestational age in weeks. PCA can be computed by adding postnatal age to this value."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "cdc_linkco15",
+   "variable": "CIG_REC",
+   "compatibility": "proxy",
+   "rationale": "The variable CIG_REC is a recode of cigarette use during pregnancy, which can be used as an indicator for maternal smoking."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "cdc_linkco15",
+   "variable": "GESTREC3",
+   "compatibility": "derived",
+   "rationale": "Derived from GESTREC3, which is a recode of gestational age. Preterm birth can be derived by comparing the value to 37 weeks."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "cdc_linkco15",
+   "variable": "BFED",
+   "compatibility": "direct",
+   "rationale": "The variable BFED indicates whether the infant was being breastfed at discharge."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "cdc_linkco15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "Derived from COMBGEST, which is a combined gestational age in weeks. PCA can be computed by adding postnatal age to this value."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "cdc_linkco15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "The variable SEX directly represents the biological sex of the infant."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "cdc_linkco15",
+   "variable": "DOB_YY",
+   "compatibility": "derived",
+   "rationale": "Derived from DOB_YY, which is the year of birth. The year of death can be derived by combining this with other variables."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "cdc_linkco15",
+   "variable": "UCODR130",
+   "compatibility": "direct",
+   "rationale": "The variable UCODR130 is a 130 Infant Cause Recode which includes codes for Sudden infant death syndrome (R95), Accidental suffocation and strangulation in bed (W75), or Other ill-defined and unspecified causes of mortality (R99)."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for bed sharing."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "cdc_linkco15",
+   "variable": "BWTR4",
+   "compatibility": "derived",
+   "rationale": "Derived from BWTR4, which is a birth weight recode. Low birthweight can be derived by comparing the value to 2,500 grams."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "cdc_linkco15",
+   "variable": "COMBGEST",
+   "compatibility": "derived",
+   "rationale": "Derived from COMBGEST, which is a combined gestational age in weeks. PCA can be computed by adding postnatal age to this value."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "cdc_linkco15",
+   "variable": "SEX",
+   "compatibility": "direct",
+   "rationale": "The variable SEX directly represents the biological sex of the infant."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "cdc_linkco15",
+   "variable": "BWTR4",
+   "compatibility": "derived",
+   "rationale": "Derived from BWTR4, which is a birth weight recode. Low birthweight can be derived by comparing the value to 2,500 grams."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "cdc_linkco15",
+   "variable": "CIG_REC",
+   "compatibility": "proxy",
+   "rationale": "The variable CIG_REC is a recode of cigarette use during pregnancy, which can be used as an indicator for maternal smoking."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "cdc_linkco15",
+   "variable": "BMI_R",
+   "compatibility": "direct",
+   "rationale": "The variable BMI_R is a recode of the mother’s Body Mass Index."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "cdc_linkco15",
+   "variable": "COMBGEST",
+   "compatibility": "direct",
+   "rationale": "The variable COMBGEST is a combined gestational age in weeks."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "cdc_linkco15",
+   "variable": "IP_HEPC",
+   "compatibility": "proxy",
+   "rationale": "The variable IP_HEPC indicates whether the mother had Hepatitis C during pregnancy, which is one of the maternal infections."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for age at death specifically for SUID cases."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "cdc_linkco15",
+   "variable": "MRCNTYFIPS",
+   "compatibility": "proxy",
+   "rationale": "The variable MRCNTYFIPS is the FIPS County code for mother’s residence, which can be used to infer geographic location."
+  },
+  {
+   "concept": "inner ear dysfunction",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for inner ear dysfunction."
+  },
+  {
+   "concept": "control condition",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for control conditions in the context of experimental studies."
+  },
+  {
+   "concept": "body movement arousal response to severe hypoxia-hypercarbia",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for body movement arousal responses."
+  },
+  {
+   "concept": "hypercapnic ventilatory response",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for hypercapnic ventilatory response."
+  },
+  {
+   "concept": "age of mice",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain variables related to age of experimental animals like mice."
+  },
+  {
+   "concept": "baseline cSN activity",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for baseline sympathetic nerve activity."
+  },
+  {
+   "concept": "breathing frequency",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for breathing frequency."
+  },
+  {
+   "concept": "expiratory time",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for expiratory time."
+  },
+  {
+   "concept": "PiCo specific cholinergic-glutamatergic neurons",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for PiCo-specific cholinergic-glutamatergic neurons."
+  },
+  {
+   "concept": "glutamatergic PiCo neurons",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for glutamatergic PiCo neurons."
+  },
+  {
+   "concept": "ChAT containing neurons",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for ChAT-containing neurons."
+  },
+  {
+   "concept": "Dbx1 and Vglut2 neurons",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for Dbx1 and Vglut2 neurons."
+  },
+  {
+   "concept": "preBötzinger complex (preBötC)",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for the preBötzinger complex."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (CIH)",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for chronic intermittent hypoxia."
+  },
+  {
+   "concept": "diaphragm activity",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for diaphragm activity."
+  },
+  {
+   "concept": "vagus nerve activity",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for vagus nerve activity."
+  },
+  {
+   "concept": "cervical sympathetic nerve activity",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for cervical sympathetic nerve activity."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (IH)",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for chronic intermittent hypoxia."
+  },
+  {
+   "concept": "adult neurogenesis",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for adult neurogenesis."
+  },
+  {
+   "concept": "synaptic plasticity",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for synaptic plasticity."
+  },
+  {
+   "concept": "reactive oxygen species (ROS)",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for reactive oxygen species."
+  },
+  {
+   "concept": "breathing patterns",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for breathing patterns."
+  },
+  {
+   "concept": "survival",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for survival rates in mice."
+  },
+  {
+   "concept": "inhibition",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for inhibition."
+  },
+  {
+   "concept": "excitation",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for excitation."
+  },
+  {
+   "concept": "lipopolysaccharide (LPS)",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for lipopolysaccharide."
+  },
+  {
+   "concept": "progesterone",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for progesterone."
+  },
+  {
+   "concept": "neurogenesis",
+   "source_id": "cdc_linkco15",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The data source does not contain a variable for neurogenesis."
+  }
+ ],
+ "source_summaries": {
+  "cdc_linkco15": "This dataset provides detailed information on infant deaths and their causes, including SUID. It includes variables such as sex of the infant, gestational age at birth, maternal smoking status during pregnancy, preterm birth indicators, breastfeeding status, and geographic location. However, it lacks specific variables for experimental conditions like chronic intermittent hypoxia or neurogenesis."
+ }
+}

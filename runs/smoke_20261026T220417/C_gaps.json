@@ -1,0 +1,56 @@
+{
+  "gaps": [
+    {
+      "id": "G1",
+      "statement": "The effect of prenatal smoking on the timing of sudden unexpected infant death risk may differ based on maternal age.",
+      "rationale": "While the manuscript establishes that prenatal smoking is associated with an earlier onset of SUID risk, it does not explore how this association might vary by maternal age. This gap extends the framework set forth in the manuscript to consider potential effect modification by a demographic variable (maternal age).",
+      "prior_art": "The manuscript tested and found that prenatal smoking was associated with earlier onset of risk (mini_manuscript.C2), but it did not investigate how this association might vary based on maternal age. This gap seeks to understand if the timing of SUID risk due to prenatal smoking differs across different maternal age groups.",
+      "supporting_claim_ids": [
+        "mini_manuscript.C2"
+      ],
+      "required_concepts": [
+        "Cigarette smoking during pregnancy",
+        "Mother's age at birth"
+      ],
+      "required_variables": [
+        {
+          "source_id": "cdc",
+          "name": "CIG_REC"
+        },
+        {
+          "source_id": "cdc",
+          "name": "MAGER9"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "statement": "The interaction between sex of the infant and gestational age at birth on sudden unexpected infant death risk may vary based on prenatal smoking status.",
+      "rationale": "This gap extends the manuscript's findings by exploring an interaction effect that was not tested. The manuscript found a male excess risk emerging after 44 weeks postconceptional age (mini_manuscript.C1) and an earlier onset of risk associated with prenatal smoking (mini_manuscript.C2). This gap seeks to understand if these effects interact in the presence or absence of prenatal smoking.",
+      "prior_art": "The manuscript tested that male excess risk emerged only after 44 weeks postconceptional age (mini_manuscript.C1) and that prenatal smoking was associated with earlier onset of risk (mini_manuscript.C2). However, it did not test the interaction between these factors. This gap aims to explore whether the timing and magnitude of SUID risk differ based on both sex and gestational age in relation to prenatal smoking status.",
+      "supporting_claim_ids": [
+        "mini_manuscript.C1",
+        "mini_manuscript.C2"
+      ],
+      "required_concepts": [
+        "Sex of infant",
+        "Gestational age at birth",
+        "Cigarette smoking during pregnancy"
+      ],
+      "required_variables": [
+        {
+          "source_id": "cdc",
+          "name": "SEX"
+        },
+        {
+          "source_id": "cdc",
+          "name": "COMBGEST"
+        },
+        {
+          "source_id": "cdc",
+          "name": "CIG_REC"
+        }
+      ]
+    }
+  ]
+}

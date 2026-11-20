@@ -1,0 +1,68 @@
+### Design
+
+**Exposure-specific rates.**
+Estimate the difference in pregnancy weight gain between mothers whose infants experienced Sudden Unexpected Infant Death (SUID) and those who did not, using data from different sources.
+
+#### Restated Question:
+Does pregnancy weight gain differ significantly between mothers of infants who experienced SUID compared to a general population of new mothers?
+
+### Sources by Role
+
+- **Case Series:** `ncfrp_v51` - Contains detailed records of child deaths reviewed by fatality review teams, focusing on SUID cases.
+- **Population Reference:** `prams_p8_arf` - Surveys of mothers from live births, providing exposure prevalence in the general population.
+- **Denominator Source:** `cdc_linkco15` - Supplies both SUID cases and their incidence denominators.
+
+### Period
+
+**Period: 2015**
+
+This period lies within the coverage of all three sources:
+- `ncfrp_v51`: Case series covers deaths from 2008 to 2019.
+- `prams_p8_arf`: Population reference surveys mothers in 2016-2021.
+- `cdc_linkco15`: Denominator source includes live births and infant deaths for 2015.
+
+### Variables
+
+**Pregnancy Weight Gain**
+
+- **Case Series (`ncfrp_v51`):**
+  - Variable: `INF4momwtgnunk` (Mother's pregnancy weight gain or loss in pounds - Unknown)
+  - Variable: `INF4momwtgn` (Mother's pregnancy weight gain or loss in pounds)
+
+- **Population Reference (`prams_p8_arf`):**
+  - Variable: `MOMLBS` (Maternal weight gain (LBS))
+  - Weighting variable: `WTANAL`
+
+- **Denominator Source (`cdc_linkco15`):**
+  - Not directly measuring pregnancy weight gain, but provides population at risk.
+
+### Biases
+
+**Selection Bias:** 
+- The case series captures only infants who experienced SUID and does not include non-SUID cases.
+- The denominator source includes all live births linked to infant deaths in the first year of life, providing a general birth cohort but missing those without linked death records (non-SUID).
+
+**Information Bias:**
+- `ncfrp_v51` captures detailed information on pregnancy weight gain for SUID cases through case review.
+- `prams_p8_arf` measures pregnancy weight gain through surveys conducted a few months after the live birth, potentially leading to recall bias.
+
+**Confounding:**
+- Other factors such as maternal smoking, preterm births, and socioeconomic status can confound the relationship between pregnancy weight gain and SUID incidence. These variables need to be controlled for in the analysis.
+
+### What the Design Cannot Establish
+
+The design cannot establish causation or temporal sequence due to its observational nature. It also cannot account for unmeasured confounding factors that may influence both maternal weight gain and SUID risk.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C10**: The manuscript notes that vital-record data may have exposure and cause-of-death misclassification issues.
+- **bedsharing_ms_v7.C8**: This finding indicates that bed sharing was recorded for a significant proportion of SUID cases, highlighting the importance of accurate case ascertainment in studies involving SUID.
+
+### Verdict
+
+**Yes**, these data can answer a version of the question: whether pregnancy weight gain differs between mothers whose infants experienced SUID compared to those who did not. However, several limitations need addressing:
+- The comparison is group-level only due to lack of individual linkage.
+- Potential recall bias and misclassification issues should be acknowledged.
+- Confounding variables must be controlled for in statistical analyses.
+
+To strengthen the study, consider including additional covariates such as maternal smoking status and preterm birth history from both case series and population reference sources.

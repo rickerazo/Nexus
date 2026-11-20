@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "INF5havecrib",
+   "name": "Infant Sleep Environment",
+   "summary": "Whether the infant has a crib or similar sleeping arrangement and how often they use it."
+  },
+  {
+   "start": "INF5help",
+   "name": "Home Assistance",
+   "summary": "Assistance received at home, including who provides such assistance."
+  },
+  {
+   "start": "INF5inftreat",
+   "name": "Infant Service Discrimination",
+   "summary": "Whether the infant was treated differently or unfairly in accessing services and reasons for discrimination."
+  },
+  {
+   "start": "INF5int",
+   "name": "Home Interview Conducted",
+   "summary": "Indicates whether a home interview was conducted."
+  },
+  {
+   "start": "INF5issavserv",
+   "name": "Service Limitations",
+   "summary": "Limitations or barriers in accessing services for the infant, including specific reasons such as cultural differences and lack of transportation."
+  },
+  {
+   "start": "INF5momtreat",
+   "name": "Mother Service Discrimination",
+   "summary": "Whether the mother was treated differently or unfairly in getting services and reasons for discrimination."
+  },
+  {
+   "start": "INF5morekid",
+   "name": "Future Pregnancy Plans",
+   "summary": "Expectation of more children, including timing and number of additional expected children."
+  },
+  {
+   "start": "INF5overwhelm",
+   "name": "Daily Overwhelming Feelings",
+   "summary": "Frequency with which the mother feels daily activities are overwhelming."
+  }
+ ]
+}

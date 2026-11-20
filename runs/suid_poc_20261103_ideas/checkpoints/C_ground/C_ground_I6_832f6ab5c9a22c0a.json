@@ -1,0 +1,33 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases involving infants who slept with an adult was higher compared to the general population of live-born infants in 2015.",
+ "rationale": "This design compares the prevalence of infant sleep-sharing with adults among SUID cases (from ncfrp_v51) and a general population sample of live-born infants (from prams_p7_arf), using cdc_linkco15 as the denominator source for both groups in 2015.",
+ "prior_art": "The closest tested work is bedsharing_ms_v7.C8, which notes that bed sharing was recorded for 59.5% of SUID cases but does not provide a direct comparison with the general population. This question remains open as it seeks to quantify this difference relative to live-born infants.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [
+  "cdc_linkco15"
+ ],
+ "period_start": 2015,
+ "period_end": 2015,
+ "required_concepts": [
+  "sleeping with an adult",
+  "general population of live-born infants"
+ ],
+ "variables": [
+  "ncfrp_v51:CIRwadultnum",
+  "prams_p7_arf:WTANAL",
+  "prams_p7_arf:SLEEPPOS_RAW",
+  "prams_p7_arf:SLEEPPOS",
+  "cdc_linkco15:ILIVE"
+ ],
+ "cannot_establish": "The design cannot establish causality; it can only compare proportions or odds of exposure among cases versus the general population."
+}

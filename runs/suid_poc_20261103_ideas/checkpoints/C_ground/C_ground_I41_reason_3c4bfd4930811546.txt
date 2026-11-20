@@ -1,0 +1,67 @@
+### Design
+
+**Question Restated:**
+How does the prevalence of hospital overnight stays among infants differ between low birthweight and non-low birthweight cases in the case series?
+
+**Design:**
+Case-only analysis. The design compares proportions or odds of hospital overnight stays among low birthweight (LBW) versus non-LBW infant deaths within the case series.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - *Reason:* This dataset records all child deaths reviewed by fatality review teams, including SUID cases. It contains detailed information about each death and related circumstances.
+  
+- **Population Reference:**
+  - None needed for this comparison (since it is a case-only analysis comparing proportions within the case series).
+  
+- **Denominator Source:** 
+  - None necessary as this design does not estimate incidence or rates; it compares proportions among cases.
+
+### Period
+
+**Years Needed:**
+The manuscript uses data from 2008 to 2019. However, since we need only a case-only analysis and ncfrp_v51 covers the years 2004-2019, acquiring additional years is not necessary for this specific question.
+
+### Variables
+
+**Concept:** Birthweight Status
+- **ncfrp_v51:INF3birthwtcat**
+  - *Label:* Birth weight - Category
+  - *Values:* Coded to distinguish between low birthweight (LBW) and non-LBW infants.
+  
+**Concept:** Hospital Overnight Stays
+- **ncfrp_v51:INF4hosprtn**
+  - *Label:* Infant return to hospital overnight after delivery
+  - *Values:* Binary variable indicating whether the infant returned to the hospital for an overnight stay.
+
+### Biases
+
+#### Selection Bias:
+- The case series is based on deaths reviewed by fatality review teams, which may introduce selection bias if not all cases of interest are included. Additionally, the participation ramp-up over time (2004-2007) could affect representativeness in early years.
+
+#### Information Bias:
+- Differences in how hospital overnight stays and birthweight status are recorded between case series and population references might lead to misclassification if not aligned properly.
+  
+#### Confounding:
+- Factors such as maternal health, prenatal care quality, socioeconomic status, and environmental conditions can confound the relationship between low birthweight and hospital overnight stays. These variables may differ systematically between LBW and non-LBW cases.
+
+### What the Design Cannot Establish
+
+- The design cannot establish causation or incidence rates.
+- It only compares proportions of hospital overnight stays among infants based on their birth weight status, without a population reference to estimate prevalence in a broader context.
+
+### Prior Art
+
+The manuscript claims do not directly address comparisons between low and non-low birthweight cases regarding hospital overnight stays. However:
+
+- **SUID_manuscript_v9_clean.C10** excludes extremely preterm infants, which might indirectly relate to the sample of interest.
+  
+- **bedsharing_ms_v7.C13** discusses how bed sharing correlates with SUID incidence across developmental windows but does not address birthweight status or hospital overnight stays.
+
+### Verdict
+
+These sources can answer a version of the question: they provide sufficient data on both low and non-low birthweight cases as well as hospital overnight stays. The design is feasible since it compares proportions within the case series, without needing a denominator source to estimate incidence rates or prevalence in the general population. However, any findings would be limited by selection bias inherent to the case series nature of ncfrp_v51 and should not claim causation.
+
+### Conclusion
+
+**Yes**, these sources can answer the proposed research question within the limitations of a case-only design comparing proportions among cases.

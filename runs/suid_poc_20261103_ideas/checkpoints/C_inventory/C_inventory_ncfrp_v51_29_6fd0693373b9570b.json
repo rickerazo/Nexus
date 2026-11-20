@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "ACTfailproothr",
+   "name": "Child neglect necessities",
+   "summary": "Indicators and specifics of child neglect related to failure to provide basic necessities."
+  },
+  {
+   "start": "ACTheadimpact",
+   "name": "Abusive head trauma details",
+   "summary": "Details about abusive head trauma, including shaking and impact."
+  },
+  {
+   "start": "ACThxargbfgf",
+   "name": "Suicide personal crisis",
+   "summary": "Recent history of personal crises related to suicide, such as arguments or breakups."
+  },
+  {
+   "start": "ACTmunbyprox",
+   "name": "Physical abuse types",
+   "summary": "Types and specifics of physical child abuse, including Munchausen Syndrome by Proxy."
+  },
+  {
+   "start": "ACTrethemm",
+   "name": "Abusive head trauma signs",
+   "summary": "Signs of abusive head trauma such as retinal hemorrhages."
+  },
+  {
+   "start": "ACTsexabuse",
+   "name": "Sexual abuse details",
+   "summary": "Indicators and specifics of child sexual abuse."
+  },
+  {
+   "start": "ACTsuicattmpts",
+   "name": "Suicide history",
+   "summary": "History of suicide attempts, threats, and related factors such as family history."
+  },
+  {
+   "start": "ACTtrigargue",
+   "name": "Abuse triggers",
+   "summary": "Events triggering physical abuse, including domestic arguments and crying."
+  }
+ ]
+}

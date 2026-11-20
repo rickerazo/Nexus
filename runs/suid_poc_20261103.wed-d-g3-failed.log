@@ -1,0 +1,109 @@
+INFO mmf.pipeline: ingest_cdc_linkco15: cache hit
+WARNING mmf.pipeline: ingest_cdc_linkco15: 14 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/cdc_linkco15.audit.json
+INFO mmf.pipeline: ingest_cdc_natl15: cache hit
+WARNING mmf.pipeline: ingest_cdc_natl15: 10 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/cdc_natl15.audit.json
+INFO mmf.pipeline: ingest_cdc_codenames: cache hit
+INFO mmf.pipeline: ingest_ncfrp_v51: cache hit
+WARNING mmf.pipeline: ingest_ncfrp_v51: 16 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/ncfrp_v51.audit.json
+INFO mmf.pipeline: ingest_prams_p8_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_arf: 64 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p8_arf.audit.json
+INFO mmf.pipeline: ingest_prams_p8_std2: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_std2: 2 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p8_std2.audit.json
+INFO mmf.pipeline: ingest_prams_p7_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p7_arf: 55 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103/sources/prams_p7_arf.audit.json
+INFO mmf.pipeline: A_SUID_manuscript_v9_clean: cache hit
+INFO mmf.pipeline: A_bedsharing_ms_v7: cache hit
+INFO mmf.pipeline: A_suid_literature_abstracts: cache hit
+INFO mmf.pipeline: B: cache hit
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO mmf.pipeline: B_check: cache hit
+WARNING mmf.pipeline: B_check: 63 (concept, source) pair(s) where embeddings and the LLM disagree; {'llm_outside_topk': 34, 'agree': 51, 'both_none': 264, 'possible_miss': 29}
+INFO mmf.pipeline: C: cache hit
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: D_strategy_G1 attempt 1 rejected: ["negative_binomial requires an offset (denominator) variable or a denominator_source (one of ['cdc_linkco15', 'cdc_natl15'])"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: D_strategy_G2 attempt 1 rejected: ["negative_binomial requires an offset (denominator) variable or a denominator_source (one of ['cdc_linkco15', 'cdc_natl15'])"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: D_strategy_G3 attempt 1 rejected: ["poisson_regression requires an offset (denominator) variable or a denominator_source (one of ['cdc_linkco15', 'cdc_natl15'])", 'outcome UCOD also appears as exposure/covariate/interaction; the outcome must be a distinct event variable']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: D_strategy_G3 attempt 2 rejected: ['outcome UCOD also appears as exposure/covariate/interaction; the outcome must be a distinct event variable']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: D_strategy_G3 attempt 3 rejected: ["poisson_regression requires an offset (denominator) variable or a denominator_source (one of ['cdc_linkco15', 'cdc_natl15'])", 'outcome UCOD also appears as exposure/covariate/interaction; the outcome must be a distinct event variable']
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: D_strategy_G3 attempt 4 rejected: ['outcome UCOD also appears as exposure/covariate/interaction; the outcome must be a distinct event variable']
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/rerazo/Projects/nexus/src/mmf/cli.py:59 in run                        │
+│                                                                              │
+│   56 │   cfg = RunConfig.from_yaml(config)                                   │
+│   57 │   r = Run(cfg, run_dir=run_dir)                                       │
+│   58 │   try:                                                                │
+│ ❱ 59 │   │   report = r.run()                                                │
+│   60 │   except ReviewPending as e:                                          │
+│   61 │   │   typer.echo(str(e))                                              │
+│   62 │   │   typer.echo(f"Resume with: mmf run {config} --run-dir            │
+│      {r.run_dir}")                                                           │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:378 in run                  │
+│                                                                              │
+│   375 │                                                                      │
+│   376 │   def run(self) -> Path:                                             │
+│   377 │   │   try:                                                           │
+│ ❱ 378 │   │   │   return self._run()                                         │
+│   379 │   │   except GenerationFailedError as e:                             │
+│   380 │   │   │   if e.record is not None:                                   │
+│   381 │   │   │   │   self._record([e.record])  # failed calls count toward  │
+│       grounding-rate metrics                                                 │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:389 in _run                 │
+│                                                                              │
+│   386 │   │   decs = self.stage_a()                                          │
+│   387 │   │   smap = self.stage_b(decs, sources)                             │
+│   388 │   │   gaps = self.stage_c(decs, smap, sources)                       │
+│ ❱ 389 │   │   strategies = self.stage_d(gaps, decs, sources, smap)           │
+│   390 │   │   feas = self.stage_e(strategies, sources)                       │
+│   391 │   │   report = render_report(self.manifest, decs, sources, smap,     │
+│       gaps, strategies, feas)                                                │
+│   392 │   │   (self.run_dir / "report.md").write_text(report)                │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:355 in stage_d              │
+│                                                                              │
+│   352 │   │   )                                                              │
+│   353 │   │   cached = self._cached("D", key, StrategySet,                   │
+│       "D_strategies.json")                                                   │
+│   354 │   │   if cached is None:                                             │
+│ ❱ 355 │   │   │   cached, recs = d_strategy.generate_strategies(             │
+│   356 │   │   │   │   gaps.gaps, decs, sources, self.client, smap, denoms,   │
+│       **self._llm_kwargs()                                                   │
+│   357 │   │   │   )                                                          │
+│   358 │   │   │   self._record(recs)                                         │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/components/d_strategy.py:120 in         │
+│ generate_strategies                                                          │
+│                                                                              │
+│   117 │   │   │   vocab=vocab_text(),                                        │
+│   118 │   │   │   denominator_sources=", ".join(sorted(denominator_sources   │
+│       or ())) or "none",                                                     │
+│   119 │   │   )                                                              │
+│ ❱ 120 │   │   obj, rec = generate(                                           │
+│   121 │   │   │   client,                                                    │
+│   122 │   │   │   prompt,                                                    │
+│   123 │   │   │   user,                                                      │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/llm/structured.py:131 in generate       │
+│                                                                              │
+│   128 │   │   )                                                              │
+│   129 │                                                                      │
+│   130 │   record = _record(stage, prompt, client, seed, temperature,         │
+│       max_retries + 1, False, log_path)                                      │
+│ ❱ 131 │   raise GenerationFailedError(stage, problems, max_retries + 1,      │
+│       record)                                                                │
+│   132                                                                        │
+│   133                                                                        │
+│   134 def _log_path(log_dir: Path | None, stage: str) -> Path | None:        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+GenerationFailedError: D_strategy_G3: no valid output after 4 attempts; last 
+problems: ['outcome UCOD also appears as exposure/covariate/interaction; the 
+outcome must be a distinct event variable']

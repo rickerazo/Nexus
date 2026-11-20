@@ -1,0 +1,61 @@
+### Design
+
+**Question:** Is there an association between maternal prepregnancy body mass index (BMI) and postconceptional age at death in SUID cases?
+
+**Design Type:** Case-only analysis. This study will compare the characteristics of SUID cases across different maternal BMI categories to examine if higher maternal BMIs are associated with earlier ages at death.
+
+### Sources by Role
+
+- **Case Series:**
+  - **ncfrp_v51:** The National Fatality Review Case Reporting System (NFR-CRS) serves as a case series source for SUID cases. It includes detailed information on individual child deaths reviewed by fatality review teams but does not provide denominators or population-level data.
+- **Denominator:**
+  - None needed in this case-only design, since we are focusing solely on the characteristics of cases rather than incidence rates or proportions relative to a denominator.
+
+### Period
+
+**Period:** The manuscript will use SUID cases from 2008 to 2019 as per the ncfrp_v51 dataset coverage. No common period constraints apply beyond the case series data available.
+
+### Variables
+
+- **Maternal BMI (Concept):**
+  - **ncfrp_v51:** `IEMprenatalBMI` – Maternal prenatal BMI.
+  - **cdc_linkco15:** `BMI` – Body Mass Index of mother at birth record if linked to infant death in the first year, though this is not available for SUID cases directly from case series data.
+
+- **Postconceptional Age (Concept):**
+  - **ncfrp_v51:** Postconceptional age is implied through gestational age and postnatal age but would need calculation.
+  - **cdc_linkco15:** `OEGest_R10` – Obstetric Estimate Recode which provides weeks of gestation.
+
+**Measurement Differences:**
+- The BMI variable is more detailed in ncfrp_v51 (`IEMprenatalBMI`) and calculated automatically if height and weight were entered.
+- Postconceptional age requires combining gestational and postnatal ages, for which data are available in both sources but need harmonization.
+
+### Biases
+
+**Selection Bias:**
+- The case series is based on reviewed SUID cases from participating fatality review teams, which may not be representative of all SUID cases nationwide due to variable participation rates across states.
+  
+**Information Bias:**
+- Maternal BMI and other covariates might differ in how they are recorded between the case series and denominator sources. For example, BMI is more reliably captured as a direct measure from medical records in the case series than by self-report or imputation.
+
+**Confounding:**
+- Potential confounders such as socioeconomic status, smoking during pregnancy, substance use, and other maternal health conditions (e.g., gestational diabetes) may vary systematically across different levels of BMI. These variables are not consistently measured across all sources used here.
+  
+### What the Design Cannot Establish
+
+This design can only establish associations among cases; it cannot estimate incidence or risk relative to a population denominator. Thus, while we can examine if higher maternal BMIs correlate with earlier postconceptional ages at death within SUID cases, we cannot infer causation.
+
+### Prior Art
+
+**Prior Work:**
+- **SUID_manuscript_v9_clean.C10:** Excludes some extremely and very preterm infants.
+- **bedsharing_ms_v7.C24:** The study uses registry-based case data without linked denominator sources.
+
+These studies focus on developmental timing but do not examine the role of maternal BMI in SUID cases. Therefore, this candidate idea is still open as it aims to explore a unique aspect (maternal prepregnancy BMI) and its relation to postconceptional age at death.
+
+### Verdict
+
+**Verdict:** These data can be used to conduct a case-only analysis examining the association between maternal prepregnancy BMI and postconceptional age at death in SUID cases. The design fits within the constraints of available sources, focusing on the characteristics of reviewed SUID cases without requiring population-level denominators.
+
+However:
+- **Missing Data Element:** Direct measurement of postconceptional age from a single source is needed for harmonized analysis.
+- **Additional Consideration:** Potential confounding factors must be accounted for using proxies or imputed data if not directly available.

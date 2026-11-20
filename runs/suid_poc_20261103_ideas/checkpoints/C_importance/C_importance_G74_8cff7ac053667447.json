@@ -1,0 +1,4 @@
+{
+ "reason": "The gap addresses a critical issue of measurement comparability between two distinct data sources (NCFR-P case series vs. PRAMS population reference) regarding pregnancy weight gain. This is important because differences in recording practices can introduce bias into the analysis of risk factors for SUID, potentially leading to incorrect conclusions about the role of pregnancy weight gain in SUID incidence.",
+ "importance": 4
+}

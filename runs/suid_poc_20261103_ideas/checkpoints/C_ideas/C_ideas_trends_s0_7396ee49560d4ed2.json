@@ -1,0 +1,63 @@
+{
+ "ideas": [
+  {
+   "question": "Is there a trend in maternal obesity as a risk factor for SUID between 2015 and 2021?",
+   "comparison": "ncfrp_v51 (case series) to prams_p8_arf (population reference), comparing periods from 2015 to 2021",
+   "why_open": "Maternal obesity has been identified as a risk factor for SUID, but trends over time have not been thoroughly examined. An answer would provide insights into how maternal health and associated risks evolve.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal prepregnancy body mass index (BMI), Sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "Has the prevalence of maternal smoking during pregnancy as a risk factor for SUID changed over time from 2015 to 2021?",
+   "comparison": "ncfrp_v51 (case series) to prams_p8_arf (population reference), comparing periods from 2015 to 2021",
+   "why_open": "Maternal smoking is a known risk factor for SUID, but changes in prevalence and its impact over time remain underexplored. Understanding trends can inform targeted public health interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "data": "Maternal smoking during pregnancy, Sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "Is there a trend in the proportion of preterm births among SUID cases from 2015 to 2021?",
+   "comparison": "ncfrp_v51 (case series) comparing periods from 2015 to 2021",
+   "why_open": "Preterm birth is known to be a risk factor for SUID, but trends over time have not been extensively studied. This could help understand the impact of improved neonatal care and public health measures.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "Preterm birth, Sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "How has the proportion of infants born with low birth weight changed among SUID cases from 2015 to 2021?",
+   "comparison": "ncfrp_v51 (case series) comparing periods from 2015 to 2021",
+   "why_open": "Low birth weight is recognized as a risk factor for SUID, but trends in its prevalence over time are not well documented. Such information could guide prenatal care and public health strategies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "Low birth weight, Sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "Is there a trend in the proportion of SUID cases attributed to suffocation from 2015 to 2021?",
+   "comparison": "ncfrp_v51 (case series) comparing periods from 2015 to 2021",
+   "why_open": "Suffocation is a common cause of SUID, but temporal trends in its incidence are not well understood. Such data could provide insights into preventive measures and their effectiveness.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "Cause of death categorized as suffocation, Sudden unexpected infant death (SUID)"
+  }
+ ]
+}

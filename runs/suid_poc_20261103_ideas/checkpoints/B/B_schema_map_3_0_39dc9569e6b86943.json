@@ -1,0 +1,350 @@
+{
+ "mappings": [
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "ncfrp_v51",
+   "variable": "INF372infectunk, INF372vacsp, INF372medothsp",
+   "compatibility": "proxy",
+   "rationale": "The concept of Sudden Unexpected Infant Death (SUID) is not directly mapped to a single variable but can be inferred from the absence of infection or vaccination in the 72 hours prior to death and other medical conditions."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "ncfrp_v51",
+   "variable": "INFsex",
+   "compatibility": "direct",
+   "rationale": "The variable INFsex directly corresponds to the infant's biological sex, which is a primary exposure of interest."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no direct variable for postconceptional age in the dataset. It would need to be derived from gestational age and birth date, but these variables are not available."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures maternal smoking during pregnancy. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures preterm birth. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures breastfeeding status at discharge. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures postconceptional age. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "ncfrp_v51",
+   "variable": "INFsex",
+   "compatibility": "direct",
+   "rationale": "The variable INFsex directly corresponds to the infant's biological sex, which is a stratifier."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "ncfrp_v51",
+   "variable": "INFdobyear, INFdodyear",
+   "compatibility": "direct",
+   "rationale": "The variables INFdobyear and INFdodyear directly correspond to the year of birth and death respectively."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "ncfrp_v51",
+   "variable": "INF372infectunk, INF372vacsp, INF372medothsp",
+   "compatibility": "proxy",
+   "rationale": "The concept of Sudden Unexpected Infant Death (SUID) is not directly mapped to a single variable but can be inferred from the absence of infection or vaccination in the 72 hours prior to death and other medical conditions."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures bed sharing. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "ncfrp_v51",
+   "variable": "INF3birthwtcat",
+   "compatibility": "direct",
+   "rationale": "The variable INF3birthwtcat directly corresponds to the birth weight category."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures postconceptional age. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "ncfrp_v51",
+   "variable": "INFsex",
+   "compatibility": "direct",
+   "rationale": "The variable INFsex directly corresponds to the infant's biological sex, which is a stratifier."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "ncfrp_v51",
+   "variable": "INF3birthwtcat",
+   "compatibility": "direct",
+   "rationale": "The variable INF3birthwtcat directly corresponds to the birth weight category."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures maternal smoking status. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures maternal prepregnancy BMI. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures gestational age at birth. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures maternal infections during pregnancy. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "ncfrp_v51",
+   "variable": "INFdayslive",
+   "compatibility": "direct",
+   "rationale": "The variable INFdayslive directly corresponds to the number of days lived, which can be used to determine age at death."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "ncfrp_v51",
+   "variable": "INFaddrst, INFdthstate",
+   "compatibility": "direct",
+   "rationale": "The variables INFaddrst and INFdthstate directly correspond to the state of residence and death respectively."
+  },
+  {
+   "concept": "inner ear dysfunction",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures inner ear dysfunction. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "control condition",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures control conditions. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "body movement arousal response to severe hypoxia-hypercarbia",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures body movement arousal responses. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "hypercapnic ventilatory response",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures hypercapnic ventilatory responses. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "age of mice",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures age of mice. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "baseline cSN activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures baseline cSN activity. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "breathing frequency",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures breathing frequency. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "expiratory time",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures expiratory time. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "PiCo specific cholinergic-glutamatergic neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures PiCo specific cholinergic-glutamatergic neurons. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "glutamatergic PiCo neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures glutamatergic PiCo neurons. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "ChAT containing neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures ChAT containing neurons. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "Dbx1 and Vglut2 neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures Dbx1 and Vglut2 neurons. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "preBötzinger complex (preBötC)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures preBötzinger complex. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (CIH)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures chronic intermittent hypoxia. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "diaphragm activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures diaphragm activity. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "vagus nerve activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures vagus nerve activity. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "cervical sympathetic nerve activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures cervical sympathetic nerve activity. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (IH)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures chronic intermittent hypoxia. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "adult neurogenesis",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures adult neurogenesis. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "synaptic plasticity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures synaptic plasticity. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "reactive oxygen species (ROS)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures reactive oxygen species. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "breathing patterns",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures breathing patterns. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "survival",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures survival. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "inhibition",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures inhibition. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "excitation",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures excitation. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "lipopolysaccharide (LPS)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures lipopolysaccharide. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "progesterone",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures progesterone. The closest related variables do not provide a clear proxy."
+  },
+  {
+   "concept": "neurogenesis",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There is no documented variable in the dataset that directly measures neurogenesis. The closest related variables do not provide a clear proxy."
+  }
+ ],
+ "source_summaries": {
+  "ncfrp_v51": "The National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1 provides detailed information on infant deaths, including demographic data and medical history. It includes variables such as sex, birth weight category, days lived, and prenatal care details but lacks specific measures for postconceptional age, maternal smoking during pregnancy, preterm birth status, breastfeeding at discharge, gestational age at birth, maternal infections in pregnancy, chronic intermittent hypoxia, and other physiological measurements relevant to the manuscript concepts."
+ }
+}

@@ -1,0 +1,67 @@
+### Design and Question Restatement
+
+**Design:** Measurement comparison. Compare how the same concept is recorded in two or more sources (wording, timing, who reports it, how missing answers are coded) to understand how differences might bias a comparison between them.
+
+**Restated Question:**
+To investigate whether differences in smoking during pregnancy measurement methods between PRAMS Phase 7 and PRAMS Phase 8 impact comparisons regarding smoking's association with infant mortality risks. This involves comparing the recording of maternal smoking status during pregnancy across PRAMS Phase 7 and PRAMS Phase 8, considering potential biases due to different data collection methodologies.
+
+### Sources by Role
+
+- **Population Reference (PR):** 
+  - **Source:** prams_p7_arf (Phase 7), prams_p8_arf (Phase 8)
+  - **Role:** Provides baseline smoking patterns and a more recent comparison for understanding how changes in data collection methods may alter smoking's impact on SUID.
+  
+### Period
+
+- **Years Needed:**
+  - PRAMS Phase 7: 2012-2015
+  - PRAMS Phase 8: 2016-2021
+  - These are the years that would need to be acquired if they are not already available.
+
+### Variables
+
+**Concept:** Maternal smoking during pregnancy.
+
+- **PRAMS P7 ARF (Phase 7):**
+  - **CIG_PRIOR**: No. of cigarettes smoked daily prior to preg.
+  - **MOMSMOKE**: Did Mom Smoke? (Yes if any trimester).
+  - **PG8_ASMA, PG8_ALRGI, MORB_BP8, PG_GDB8** (Health problems during pregnancy that may affect smoking measurement).
+
+- **PRAMS P8 ARF (Phase 8):**
+  - **CIG_PRIOR**: No. of cigarettes smoked daily prior to preg.
+  - **MOMSMOKE**: Did Mom Smoke? (Yes if any trimester).
+  - **PG8_ASMA, PG8_ALRGI, MORB_BP8, PG_GDB8** (Health problems during pregnancy that may affect smoking measurement).
+
+### Biases
+
+- **Selection Bias:**
+  - PRAMS is a weighted survey and does not capture all births or deaths.
+  
+- **Information Bias:**
+  - Wording differences in questions about smoking status and trimester-specific smoking rates can introduce bias. Missing answers are coded differently, potentially leading to different interpretation of non-smokers versus unknowns.
+
+- **Confounding:**
+  - Confounders such as maternal health conditions (e.g., asthma, allergies) during pregnancy may influence smoking measurement and need to be controlled for in the analysis.
+
+### What the Design Cannot Establish
+
+The design cannot establish causality or incidence rates due to its observational nature. It can only compare how different survey phases measure smoking status and potential biases introduced by these differences.
+
+### Prior Art
+
+- **Manuscript Claims:**
+  - C10: Maternal smoking is associated with higher SUID incidence.
+  - C23: Missing or invalid maternal smoking status data were excluded rather than imputed, which may affect results.
+  
+While existing studies have assessed the impact of maternal smoking on SUID, they use only one phase of PRAMS data. The proposed study aims to address potential biases introduced by changes in measurement methods over different phases.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, these sources can carry out a comparison of how smoking during pregnancy is recorded and measured between PRAMS Phase 7 and Phase 8. This involves examining differences in wording, timing, who reports it, and missing data coding to understand potential biases affecting comparisons regarding infant mortality risks.
+
+**Reasons:**
+- The design fits the available sources and can compare measurement methods across phases.
+- Required variables are present in both PRAMS datasets for smoking status and health conditions during pregnancy.
+- Potential selection and information biases need careful consideration but do not prevent the study from proceeding.

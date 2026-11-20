@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "Maternal stressors during pregnancy are more common among SUID cases of preterm infants compared to full-term infants.",
+ "rationale": "The study uses a case-only analysis comparing proportions of maternal stressors in two subgroups within the SUID case series: premature vs. full-term infants.",
+ "prior_art": "SUID manuscript C10 notes that some extremely and very preterm infants were excluded, leaving open questions about maternal stressors among remaining cases. Bedsharing manuscript does not address maternal stressors or prematurity directly (citations: SUID_manuscript_v9_clean.C10, bedsharing_ms_v7.C8).",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [
+  "cdc_linkco15"
+ ],
+ "period_start": 2015,
+ "period_end": 2015,
+ "required_concepts": [
+  "maternal_stressors",
+  "preterm_infants"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4stress",
+  "cdc_linkco15:GESTREC10"
+ ],
+ "cannot_establish": "The design cannot establish incidence or risk ratios due to the lack of a population denominator. It also cannot confirm causation; associations are all that can be established."
+}

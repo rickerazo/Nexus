@@ -1,0 +1,64 @@
+### Design
+
+**Question Restated:**
+Is there an association between hospital overnight stays among SUID cases and gestational weight gain patterns, stratified by preterm birth status?
+
+This study design will use a case-only analysis to explore how the presence of hospital overnight stays correlates with gestational weight gain in SUID cases. The comparison is within subgroups based on hospital overnight stay (yes/no) and preterm birth status.
+
+### Sources by Role
+
+**Case Series:**
+- **ncfrp_v51:** This source records child deaths reviewed by fatality review teams, which includes SUID cases. It contains detailed information about the circumstances surrounding these deaths.
+  
+**Denominator Source:**
+- **cdc_linkco15 or cdc_natl15:** While not strictly necessary for a case-only comparison, having either of these denominator sources would provide additional context and incidence estimates if needed.
+
+### Period
+
+The candidate research idea does not specify a time period. Given that the ncfrp_v51 covers 2008-2019 (with peak participation around those years), we will use this period for the analysis. No additional data acquisition is required beyond what is currently held.
+
+### Variables
+
+**Hospital Overnight Stay:**
+- **ncfrp_v51:** Variable `INF4hosprtn` indicates if an infant was hospitalized overnight after delivery (`0=No; 1=Yes`).
+
+**Gestational Weight Gain (GWG):**
+- **ncfrp_v51:** Variables `IEMweightchange`, `ISSmothwghtgain`, and `INFabgrow`.
+- **cdc_linkco15/cdc_natl15:** Pre-pregnancy weight (`PWgt_R`), obstetric estimate of gestation used flag (`OBGEST_FLG`), pre-pregnancy weight reporting flag (`F_PWGT`).
+
+**Preterm Birth Status:**
+- **ncfrp_v51:** Variables `INFprevpreterm`, `INF4momwtgn`.
+- **cdc_linkco15/cdc_natl15:** Previous preterm birth (`RF_PPB`), obstetric estimate of gestation used flag (`OBGEST_FLG`).
+
+### Biases
+
+**Selection Bias:**
+- ncfrp_v51 includes cases reviewed by fatality review teams, which may not be representative of all SUID cases in the US.
+
+**Information Bias:**
+- The measurement and reporting of hospital overnight stays, gestational weight gain, and preterm birth status can vary between sources. Additionally, some variables are missing or unknown (coded as such).
+
+**Confounding:**
+- Confounders like maternal smoking, socioeconomic status, and other medical conditions may influence both hospital overnight stays and SUID risk but are not directly measured in the case series.
+
+### What the Design Cannot Establish
+
+The case-only design can only establish associations within the cases; it cannot provide causal evidence or estimate population incidence rates. Therefore, while the study can identify patterns among SUID cases, it does not allow for generalization to the broader population of infants or pregnant women.
+
+### Prior Art
+
+None of the manuscript claims directly address an association between hospital overnight stays and gestational weight gain in SUID cases stratified by preterm birth status. The closest claim is:
+- **SUID_manuscript_v9_clean.C10:** This limitation mentions excluding extremely and very preterm infants, which aligns with considering preterm birth status but does not cover the specific variables of hospital overnight stays or gestational weight gain.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, these data can be used to explore an association between hospital overnight stays among SUID cases and gestational weight gain patterns, stratified by preterm birth status. The ncfrp_v51 case series provides the necessary variables for this analysis within the 2008-2019 period. However, it is important to acknowledge that this is a case-only design with limitations in establishing causality or population-wide associations.
+
+**Logical Reasoning:**
+The candidate research idea can be addressed using the available data from ncfrp_v51 as it contains relevant variables for hospital overnight stays and gestational weight gain. The period of 2008-2019 is sufficient, and while additional denominator sources could provide context, they are not strictly necessary for this case-only comparison.
+
+**Potential Issues:**
+- Ensure that the measurements of GWG and preterm birth status from ncfrp_v51 are comparable to other studies.
+- Acknowledge limitations in generalizing findings beyond the reviewed cases.

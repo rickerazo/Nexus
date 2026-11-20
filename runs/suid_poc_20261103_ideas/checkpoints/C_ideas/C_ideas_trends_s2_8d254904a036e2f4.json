@@ -1,0 +1,97 @@
+{
+ "ideas": [
+  {
+   "question": "How does the proportion of SUID cases with maternal obesity differ over time between full-term and preterm infants?",
+   "comparison": "ncfrp_v51 (2008-2019): Full-term vs. Preterm SUID cases; prams_p7_arf, prams_p8_arf (2012-2021): Maternal obesity prevalence among live births",
+   "why_open": "The potential impact of maternal obesity on SUID risk has not been thoroughly explored across different gestational ages over time. This analysis could provide insights into whether changes in population-level trends or healthcare practices might influence the association.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82",
+    "D98",
+    "D49",
+    "D240"
+   ],
+   "data": "For ncfrp_v51 (case series), use D82 for pregnancy weight gain, D98 for maternal BMI, and D49 for birth details such as term vs preterm. For prams_p7_arf and prams_p8_arf (population reference), use D240 for maternal BMI to derive obesity status."
+  },
+  {
+   "question": "What is the trend in SUID incidence among infants with a history of hospital overnight stay compared to those without, across different years?",
+   "comparison": "ncfrp_v51 (2008-2019): Infants with vs. without hospital overnight stays; prams_p7_arf, prams_p8_arf (2012-2021): Proportion of infants with and without overnight hospital stays",
+   "why_open": "Hospital overnight stay is a potential risk factor for SUID but its long-term trends have not been systematically studied. This could help identify changes in healthcare practices or public health interventions.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82",
+    "D84",
+    "D290"
+   ],
+   "data": "For ncfrp_v51 (case series), use D82 for hospital overnight stay. For prams_p7_arf and prams_p8_arf (population reference), use D290 for hospital visit history."
+  },
+  {
+   "question": "How does the proportion of SUID cases involving substance abuse during pregnancy change over time compared to live births?",
+   "comparison": "ncfrp_v51 (2008-2019): Substance abuse vs. no substance abuse in SUID cases; prams_p7_arf, prams_p8_arf (2012-2021): Proportion of live births with substance abuse",
+   "why_open": "Understanding trends can inform public health interventions and policies aimed at reducing substance use during pregnancy.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D68",
+    "D308"
+   ],
+   "data": "For ncfrp_v51 (case series), use D68 for substance abuse. For prams_p7_arf and prams_p8_arf (population reference), use D308 for birth control usage to infer substance abuse."
+  },
+  {
+   "question": "How do trends in SUID cases with low birth weight compare to live births over time?",
+   "comparison": "ncfrp_v51 (2008-2019): Low birth weight vs. normal birth weight in SUID cases; prams_p7_arf, prams_p8_arf (2012-2021): Proportion of live births with low birth weight",
+   "why_open": "This could highlight changing patterns of preterm and low birth weight infants at risk for SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D67",
+    "D303"
+   ],
+   "data": "For ncfrp_v51 (case series), use D67 for pregnancy history including low birth weight. For prams_p7_arf and prams_p8_arf (population reference), use D303 for previous live births."
+  },
+  {
+   "question": "What is the trend in SUID incidence among infants whose mothers had pre-pregnancy health problems compared to those without?",
+   "comparison": "ncfrp_v51 (2008-2019): Infants with vs. without maternal pre-pregnancy health conditions; prams_p7_arf, prams_p8_arf (2012-2021): Proportion of live births with maternal health problems",
+   "why_open": "This could reveal if trends in managing chronic maternal health issues have an impact on SUID incidence.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D66",
+    "D269"
+   ],
+   "data": "For ncfrp_v51 (case series), use D66 for maternal health conditions. For prams_p7_arf and prams_p8_arf (population reference), use D269 for maternal health problems."
+  }
+ ]
+}

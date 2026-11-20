@@ -1,0 +1,76 @@
+### Design
+
+**Revised Question:** Estimate the prevalence of maternal health checks before pregnancy among mothers whose infants experienced SUID compared to those who did not, using data from ncfrp_v51 (case series), prams_p7_arf (population reference), and cdc_linkco15 (denominator).
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - Covers: Child deaths reviewed by participating fatality review teams, focusing on SUID cases.
+  - Period: 2008-2019.
+
+- **Population Reference:** prams_p7_arf
+  - Covers: Weighted survey of mothers a few months after live births in states with PRAMS participation (Phase 7).
+  - Period: 2012-2015.
+
+- **Denominator:** cdc_linkco15
+  - Covers: US live births linked to infant deaths within the first year.
+  - Period: 2015.
+
+### Period
+
+**Common period:** 2015 (the intersection of the denominator and population reference periods).
+
+### Variables
+
+#### Maternal Health Checks Before Pregnancy:
+
+- **Case Series (ncfrp_v51):**
+  - Variable: D341 ISSprechronicdiseasedur (Chronic disease control Education - during pregnancy)
+  - Note: This variable is not ideal as it pertains to chronic disease control during pregnancy, rather than before.
+
+- **Population Reference (prams_p7_arf):**
+  - Variables:
+    - PRE_CKBP (Pre-pregnancy check for high blood pressure)
+    - PRE_CKD (Pre-pregnancy check for diabetes)
+    - PRE_DDS (Pre-pregnancy teeth cleaned)
+    - PRE_HIST (Pre-pregnancy talk fam med hist)
+    - PRE_RX (Pre-pregnancy prescrip meds)
+    - PRE_EXER (Pre-pregnancy exercise 3+ days/wk)
+    - PRE_DIET (Pre-pregnancy dieting)
+
+- **Denominator (cdc_linkco15):**
+  - No direct variable for pre-pregnancy health checks.
+
+### Biases
+
+#### Selection Bias:
+- The case series may not be representative of all SUID cases due to limited geographic coverage and varying levels of participation over time.
+- PRAMS samples may not represent the general population of new mothers, especially given its state-specific nature.
+
+#### Information Bias:
+- ncfrp_v51 data may underreport or misclassify pre-pregnancy health checks since it focuses on death reviews rather than comprehensive maternal histories.
+- Variables in prams_p7_arf might be influenced by recall bias and social desirability bias, leading to inaccuracies in self-reported behaviors.
+
+#### Confounding:
+- PRAMS captures a wide range of demographic and socioeconomic factors that could confound the relationship between pre-pregnancy health checks and SUID incidence. However, these data are not available in ncfrp_v51.
+
+### What the Design Cannot Establish
+
+This design can compare proportions but cannot establish causal relationships or estimate rates due to missing denominator-specific variables for pre-pregnancy health checks. It also lacks longitudinal data on maternal behaviors before pregnancy from the case series source (ncfrp_v51).
+
+### Prior Art
+
+- **SUID Manuscript:** Claims such as C8 and C9 discuss risk factors like smoking, but do not address pre-pregnancy health checks.
+- **Bedsharing Manuscript:** Similarly focuses on post-conceptional age and prenatal/postnatal exposures but does not cover the specific topic of pre-pregnancy maternal health.
+
+### Verdict
+
+**Cannot answer the exact question as posed:**
+
+The proposed design cannot establish a direct comparison between mothers with infants experiencing SUID and those who did not, due to missing variables in ncfrp_v51 that capture pre-pregnancy health checks. Additionally, prams_p7_arf does not fully cover 2015, limiting the common period for analysis.
+
+**Missing Data Element:**
+- A variable measuring pre-pregnancy health checks directly in the case series (ncfrp_v51) is required.
+- Expanding PRAMS coverage to include more recent data and a broader geographic range could also improve comparability.
+
+Alternatively, expanding the scope of ncfrp_v51 to capture more comprehensive maternal histories before pregnancy would be necessary for this study.

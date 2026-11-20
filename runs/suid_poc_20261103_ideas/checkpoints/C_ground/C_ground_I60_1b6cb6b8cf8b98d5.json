@@ -1,0 +1,27 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases involving mothers who received pre-pregnancy health checks increased from 2008 to 2019.",
+ "rationale": "This study aims to compare trends in the proportion of SUID cases involving mothers who received pre-pregnancy health checks over time. The design is limited to comparing proportions within case series data and reference populations separately due to a lack of denominator data for incidence rates or risks.",
+ "prior_art": "None in the inputs; no prior work has directly addressed trends in pre-pregnancy health checks and previous births related to SUID cases, making this study novel.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "pre-pregnancy health checks",
+  "previous births"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4pregpreterm",
+  "prams_p7_arf:PRE_CKBP",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot estimate incidence rates or risks due to a lack of denominator data for the population at risk. It can only compare proportions among SUID cases and reference populations separately."
+}

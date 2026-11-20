@@ -1,0 +1,208 @@
+{
+  "manuscript_id": "SUID_manuscript_v9_clean",
+  "title": "SUID_manuscript_v9_clean",
+  "document_sha256": "92fd11fa182c9a7b5806abcd83a284408d96271920022a19179cbafdb62cd2bd",
+  "research_questions": [
+    "To test whether male excess risk in sudden unexpected infant death (SUID) reflects a constant effect from birth or a developmentally timed phenomenon by applying a postconceptional age (PCA) alignment framework that accounts for differences in maturity at birth.",
+    "To determine the incidence rate ratios of sudden unexpected infant death (SUID) across different developmental windows."
+  ],
+  "designs": [
+    "population_incidence"
+  ],
+  "model_classes": [
+    "negative_binomial",
+    "generalized_additive",
+    "poisson_regression",
+    "time_stratified"
+  ],
+  "data_sources_used": [
+    "US CDC linked birth–infant death records from 2014 to 2021",
+    "N = 23,686"
+  ],
+  "variables": [
+    {
+      "concept": "Sudden unexpected infant death (SUID)",
+      "role": "outcome",
+      "operationalization": "ICD-10 codes R95, R99, and W75, excluding deaths in the first postnatal week",
+      "quote": "SUID cases were identified by underlying cause-of-death ICD-10 codes R95 (Sudden Infant Death Syndrome [SIDS]), W75 (Accidental suffocation and strangulation in bed), and R99 (Other ill-defined and unspecified causes of mortality). Deaths occurring during the first seven postnatal days were excluded to focus on postperinatal vulnerability beyond the first postnatal week.",
+      "page": 1
+    },
+    {
+      "concept": "Infant sex",
+      "role": "exposure",
+      "operationalization": "Primary exposure of interest, used to estimate sex-specific SUID incidence trajectories across early infancy",
+      "quote": "Infant sex was the primary exposure of interest, and PCA was the developmental time scale over which sex-specific SUID incidence trajectories were estimated.",
+      "page": 1
+    },
+    {
+      "concept": "Postconceptional age (PCA)",
+      "role": "covariate",
+      "operationalization": "Defined as gestational age at birth plus postnatal age and served as the primary developmental time scale",
+      "quote": "PCA was defined in weeks as gestational age at birth plus postnatal age at death and served as the primary developmental time scale.",
+      "page": 1
+    },
+    {
+      "concept": "Maternal smoking during pregnancy",
+      "role": "covariate",
+      "operationalization": "Any reported smoking was included as a covariate because it is an established risk factor for SUID and shifts the postnatal age at death",
+      "quote": "Preterm birth and maternal smoking during pregnancy (any reported smoking) were included as covariates because both are established risk factors for SUID, and preterm birth shifts the postnatal age at death.",
+      "page": 1
+    },
+    {
+      "concept": "Preterm birth",
+      "role": "covariate",
+      "operationalization": "Defined as a binary variable (<37 versus ≥37 completed gestational weeks)",
+      "quote": "Preterm birth was defined as a binary variable (<37 versus ≥37 completed gestational weeks); continuous gestational age was not additionally included as a covariate because gestational age at birth contributes directly to the calculation of PCA.",
+      "page": 1
+    },
+    {
+      "concept": "Breastfeeding status at discharge",
+      "role": "covariate",
+      "operationalization": "Included in sensitivity analysis to assess whether breastfeeding modified sex-specific trajectories",
+      "quote": "Because breastfeeding is a postnatal, time-varying exposure. To assess whether breastfeeding status modified the sex-specific trajectories, we repeated the full analysis separately among infants breastfed and not breastfed at discharge.",
+      "page": 1
+    },
+    {
+      "concept": "postconceptional age",
+      "role": "exposure",
+      "operationalization": "Postconceptional age window (36-42 weeks, early rising window; 43-46 weeks, peak/transition interval; >=47 weeks, late declining window)",
+      "quote": "Postconceptional age window |   |   |  \n36-42 weeks, early rising window | 2,946 (12.4) | 1,314 (13.3) | 1,632 (11.8)\n43-46 weeks, peak/transition interval | 4,438 (18.7) | 1,882 (19.1) | 2,556 (18.5)\n>=47 weeks, late declining window | 16,302 (68.8) | 6,666 (67.6) | 9,636 (69.7)",
+      "page": 1
+    },
+    {
+      "concept": "sex",
+      "role": "stratifier",
+      "operationalization": "Sex of the infant (Female; Male)",
+      "quote": "Characteristic | Overall N = 23,686 | Female N = 9,862 | Male N = 13,824\nCase counts |   |   | \nTotal SUID cases | 23,686 (100.0) | 9,862 (100.0) | 13,824 (100.0)",
+      "page": 1
+    },
+    {
+      "concept": "maternal smoking during pregnancy",
+      "role": "exposure",
+      "operationalization": "Maternal smoking during pregnancy (Yes; No)",
+      "quote": "Maternal smoking during pregnancy |   |   | \nYes | 6,287 (26.5) | 2,605 (26.4) | 3,682 (26.6)\nNo | 17,399 (73.5) | 7,257 (73.6) | 10,142 (73.4)",
+      "page": 1
+    },
+    {
+      "concept": "preterm birth",
+      "role": "stratifier",
+      "operationalization": "Gestational age at birth (Preterm, <37 weeks; Term, >=37 weeks)",
+      "quote": "Gestational age at birth |   |   | \nPreterm, <37 weeks | 5,463 (23.1) | 2,187 (22.2) | 3,276 (23.7)\nTerm, >=37 weeks | 18,223 (76.9) | 7,675 (77.8) | 10,548 (76.3)",
+      "page": 1
+    },
+    {
+      "concept": "year of birth or death",
+      "role": "stratifier",
+      "operationalization": "Year of birth or death (2014-2015; 2016-2017; 2018-2019; 2020-2021)",
+      "quote": "Year of birth or death |   |   | \n2014-2015 | 6,055 (25.6) | 2,458 (24.9) | 3,597 (26.0)\n2016-2017 | 5,953 (25.1) | 2,526 (25.6) | 3,427 (24.8)\n2018-2019 | 5,655 (23.9) | 2,327 (23.6) | 3,328 (24.1)\n2020-2021 | 6,023 (25.4) | 2,551 (25.9) | 3,472 (25.1)",
+      "page": 1
+    },
+    {
+      "concept": "SUID",
+      "role": "outcome",
+      "operationalization": "Cause of death categorized as Sudden infant death syndrome (R95), Accidental suffocation and strangulation in bed (W75), or Other ill-defined and unspecified causes of mortality (R99)",
+      "quote": "Characteristic | Overall N = 23,686 | Female N = 9,862 | Male N = 13,824\nCase counts |   |   | \nTotal SUID cases | 23,686 (100.0) | 9,862 (100.0) | 13,824 (100.0)\nCause of death, ICD-10 |   |   | \nR95, Sudden infant death syndrome | 9,632 (40.7) | 4,047 (41.0) | 5,585 (40.4)\nW75, Accidental suffocation and strangulation in bed | 6,432 (27.2) | 2,634 (26.7) | 3,798 (27.5)\nR99, Other ill-defined and unspecified causes of mortality | 7,622 (32.2) | 3,181 (32.3) | 4,441 (32.1)",
+      "page": 1
+    }
+  ],
+  "claims": [
+    {
+      "id": "SUID_manuscript_v9_clean.C1",
+      "kind": "hypothesis",
+      "statement": "The study tests whether male excess risk in sudden unexpected infant death (SUID) is present from birth or emerges at a specific developmental stage.",
+      "quote": "To test whether male excess risk in sudden unexpected infant death (SUID) reflects a constant effect from birth or a developmentally timed phenomenon by applying a postconceptional age (PCA) alignment framework that accounts for differences in maturity at birth.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C2",
+      "kind": "method",
+      "statement": "The study uses population-based analysis of US CDC linked birth–infant death records from 2014 to 2021, excluding deaths within the first postnatal week.",
+      "quote": "Population-based analysis of US CDC linked birth–infant death records from 2014 to 2021. SUID was defined using ICD-10 codes R95, R99, and W75, excluding deaths in the first postnatal week.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C3",
+      "kind": "method",
+      "statement": "Infant age is aligned using postconceptional age (PCA), which combines gestational age at birth with postnatal age.",
+      "quote": "Infant age was aligned using PCA (gestational age at birth plus postnatal age).",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C4",
+      "kind": "method",
+      "statement": "Weekly SUID counts across PCA weeks 36 to 90 were modelled using a negative binomial generalised additive model with spline smooths and an offset based on national live-birth proportions.",
+      "quote": "Weekly SUID counts across PCA weeks 36 to 90 were modelled using a negative binomial generalised additive model with spline smooths and an offset based on national live-birth proportions.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C5",
+      "kind": "method",
+      "statement": "The study includes prespecified negative binomial models comparing an early rising window (36–42 PCA weeks) and a late declining window (≥47 PCA weeks).",
+      "quote": "Prespecified negative binomial models compared an early rising window (36–42 PCA weeks) and a late declining window (≥47 PCA weeks).",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C6",
+      "kind": "finding",
+      "statement": "Among the eligible SUID cases, PCA-aligned incidence revealed a clear rise, peak, and decline pattern.",
+      "quote": "PCA-aligned incidence revealed a clear rise, peak, and decline pattern.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C7",
+      "kind": "finding",
+      "statement": "Male and female trajectories overlapped during the rising phase and peak but diverged after the peak with persistently higher male incidence during the declining phase.",
+      "quote": "Sex divergence emerged only after the peak, with persistently higher male incidence during the declining phase.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C8",
+      "kind": "finding",
+      "statement": "Confirmatory models showed similar male and female incidence in the early window (36–42 PCA weeks) but higher male incidence in the late window (≥47 PCA weeks).",
+      "quote": "Confirmatory models showed similar male and female incidence in the early window and higher male incidence in the late window (Incidence rate ratios 1.14 early vs 1.36 late).",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C9",
+      "kind": "finding",
+      "statement": "Maternal smoking was associated with higher SUID incidence across both windows.",
+      "quote": "Maternal smoking was associated with higher incidence across both windows.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C10",
+      "kind": "limitation",
+      "statement": "The analysis excludes a small number of deaths at the extremes of the PCA distribution, including some extremely and very preterm infants who died early in postnatal life.",
+      "quote": "This excludes a small number of deaths at the extremes of the PCA distribution, including some extremely and very preterm infants who died early in postnatal life",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C11",
+      "kind": "limitation",
+      "statement": "The models did not account for postnatal exposures that may change during infancy, such as breastfeeding.",
+      "quote": "Residual influence from breastfeeding and other unmeasured postnatal factors therefore cannot be excluded.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C12",
+      "kind": "limitation",
+      "statement": "The study uses vital-record data, which may have exposure and cause-of-death misclassification issues.",
+      "quote": "as with all analyses based on vital-record data, exposure and cause-of-death misclassification are possible.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C13",
+      "kind": "future_work",
+      "statement": "Future research will focus on understanding the long-term consequences of separation from the mother in human infants and how it may predispose males to increased vulnerability to SIDS.",
+      "quote": "Further research will be necessary to study the long-term consequences of separation from the mother in human infants.",
+      "page": 1
+    },
+    {
+      "id": "SUID_manuscript_v9_clean.C14",
+      "kind": "future_work",
+      "statement": "The study suggests that interventions targeting socioeconomic and environmental stressors may represent an important avenue for reducing risk in infants beyond the early peak period.",
+      "quote": "interventions targeting socioeconomic and environmental stressors may represent an important avenue for reducing risk in infants beyond the early peak period.",
+      "page": 1
+    }
+  ]
+}

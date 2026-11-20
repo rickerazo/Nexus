@@ -1,0 +1,79 @@
+{
+ "ideas": [
+  {
+   "question": "Is there a developmental period during the first year of life where infants with maternal obesity have an increased risk for SUID compared to those without maternal obesity?",
+   "comparison": "Cases from ncfrp_v51 (SUID cases) are compared within subgroups based on postconceptional age and whether the mother had obesity during pregnancy.",
+   "why_open": "This study aims to explore a potential critical period where maternal obesity could disproportionately affect SUID risk. Such knowledge would allow targeted interventions aimed at high-risk periods in vulnerable infants.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D240",
+    "D67"
+   ],
+   "data": "Postconceptional age and maternal prepregnancy body mass index (BMI) will be compared within SUID cases."
+  },
+  {
+   "question": "Does hospital overnight stay impact the risk of sudden unexpected infant death in infants with different gestational ages?",
+   "comparison": "Cases from ncfrp_v51 are grouped based on whether the infant spent time in the hospital and their gestational age at birth.",
+   "why_open": "This question examines if neonatal care practices, such as overnight stays post-delivery, influence SUID risk differently across gestational age groups. Understanding this could improve discharge policies and early home monitoring protocols.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D67",
+    "D82"
+   ],
+   "data": "Gestational age at birth (GESTREC3) and hospital overnight stay status will be compared within SUID cases."
+  },
+  {
+   "question": "Does prior pregnancy history modify the risk of sudden unexpected infant death among infants born to mothers with pre-existing medical conditions?",
+   "comparison": "Cases from ncfrp_v51 are stratified based on whether the mother had a previous live birth and her health condition status.",
+   "why_open": "Identifying if past pregnancies and maternal health impact SUID incidence can inform prenatal care strategies. This would help tailor interventions for women with complex obstetric histories.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D67",
+    "D239"
+   ],
+   "data": "Previous live birth history (GEST_WK_PU) and pre-existing medical conditions will be analyzed within SUID cases."
+  },
+  {
+   "question": "Does the presence of multiple gestation influence the risk pattern of sudden unexpected infant death throughout postconceptional age?",
+   "comparison": "Cases from ncfrp_v51 are grouped based on whether they were part of a multiple gestation and their developmental trajectory.",
+   "why_open": "This question aims to identify if being part of a twin or triplet set alters the risk of SUID over time. Such findings would be crucial for counseling families expecting multiples.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D67",
+    "D240"
+   ],
+   "data": "Multiple gestation status and postconceptional age will be analyzed within SUID cases."
+  },
+  {
+   "question": "Is there a significant difference in sudden unexpected infant death risk between infants who were breastfed exclusively versus those with mixed feeding methods?",
+   "comparison": "Cases from ncfrp_v51 are stratified by whether the infant was exclusively breastfed or had mixed feeding practices.",
+   "why_open": "Exploring if breastfeeding mode influences SUID could provide insights into early life nutrition's role in risk reduction. This would highlight important early intervention points for infant health.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D67",
+    "D240"
+   ],
+   "data": "Feeding method and postconceptional age will be analyzed within SUID cases."
+  }
+ ]
+}

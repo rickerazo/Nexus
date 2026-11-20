@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers reporting smoking during pregnancy differs between PRAMS Phase 7 and Phase 8.",
+ "rationale": "This design fits the available sources and can compare how maternal smoking is recorded differently in PRAMS Phase 7 versus Phase 8. The study aims to understand potential biases introduced by changes in measurement methods over different phases.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and bedsharing_ms_v7.C23 both mention the impact of missing maternal smoking data, but do not address differences between PRAMS phases, leaving this question open.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C23"
+ ],
+ "case_sources": [],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2021,
+ "required_concepts": [
+  "maternal smoking during pregnancy"
+ ],
+ "variables": [
+  "prams_p8_arf:CIG_PRIOR",
+  "prams_p8_arf:MOMSMOKE",
+  "prams_p7_arf:CIG_PRIOR",
+  "prams_p7_arf:MOMSMOKE",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence or risk, only proportions among cases."
+}

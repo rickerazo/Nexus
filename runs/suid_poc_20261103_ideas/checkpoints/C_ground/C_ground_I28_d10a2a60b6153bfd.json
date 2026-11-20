@@ -1,0 +1,27 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with family referrals for infant/child health services differs from that of non-SUID infant deaths within the NCFRP dataset.",
+ "rationale": "This design uses a case-case comparison to explore differences in family circumstances between SUID and other infant mortality causes. The NCFRP dataset provides detailed information on both types of outcomes, allowing for meaningful comparisons despite potential selection biases in case inclusion.",
+ "prior_art": "The prior work in these manuscripts focuses on developmental patterns and risk factors like bed sharing (bedsharing_ms_v7.C3) and maternal smoking (bedsharing_ms_v7.C12), but none directly addresses family circumstances distinguishing SUID from other infant deaths. This question remains open as it explores unique family-related factors specific to SUID.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C3",
+  "bedsharing_ms_v7.C12"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "family circumstances",
+  "SUID vs non-SUID classification"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4referinfch",
+  "ncfrp_v51:RES1dthneglct"
+ ],
+ "cannot_establish": "The design cannot establish incidence rates, risks, or causal relationships due to the lack of a denominator source."
+}

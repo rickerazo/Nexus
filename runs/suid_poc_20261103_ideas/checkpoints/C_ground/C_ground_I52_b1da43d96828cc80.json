@@ -1,0 +1,26 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "Among SUID cases from 2008 to 2019, there is an association between hospital overnight stays and gestational weight gain patterns, stratified by preterm birth status.",
+ "rationale": "The ncfrp_v51 case series provides the necessary variables for this analysis within the specified period. The design can establish associations among cases but cannot provide causal evidence or estimate population incidence rates.",
+ "prior_art": "None in the inputs; while prior work discusses various risk factors and patterns of SUID, none directly address an association between hospital overnight stays and gestational weight gain stratified by preterm birth status.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "hospital overnight stays",
+  "gestational weight gain patterns",
+  "preterm birth status"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn",
+  "ncfrp_v51:IEMweightchange",
+  "ncfrp_v51:INFprevpreterm"
+ ],
+ "cannot_establish": "The design cannot establish causality or estimate population incidence rates; it can only identify associations within the cases."
+}

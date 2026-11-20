@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The rate of sudden unexpected infant death (SUID) is different between infants born to mothers who received mental health services during pregnancy and those who did not.",
+ "rationale": "This design uses a case series for numerator cases, population reference data from PRAMS for exposure prevalence, and birth denominators from CDC natality records. The variables measure the key concepts appropriately, and the study can compare proportions within a feasible design given the limitations noted.",
+ "prior_art": "The closest tested work is bedsharing_ms_v7.C10, which investigates the association between bed sharing and SUID incidence across different developmental windows. However, it does not focus on maternal mental health services as an exposure, leaving this question still open.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "SUID cases",
+  "Maternal mental health services during pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:RES1recmh",
+  "prams_p8_arf:MH_PGDX8",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "Causation, incidence changes over time without linking cases across years."
+}

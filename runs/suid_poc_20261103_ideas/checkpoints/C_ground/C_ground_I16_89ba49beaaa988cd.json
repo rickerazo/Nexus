@@ -1,0 +1,29 @@
+{
+ "groundable": false,
+ "why_not": "The proposed study period of 2015 does not overlap with the PRAMS Phase 8 data (2016-2021).",
+ "statement": "",
+ "rationale": "The design aims to estimate SUID rates by exposure group, comparing infants requiring an overnight hospital stay to those without such a requirement. However, the period of interest (2015) is outside the coverage of PRAMS Phase 8 data (2016-2021).",
+ "prior_art": "None in the inputs; existing claims do not address the role of hospital overnight stays specifically.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_linkco15"
+ ],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "SUID",
+  "Hospital Overnight Stay"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn",
+  "prams_p8_arf:LTH_HOSP",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "Causation between hospital overnight stays and SUID incidence; control for all potential confounders due to differences in measurement methods and population coverage between sources."
+}

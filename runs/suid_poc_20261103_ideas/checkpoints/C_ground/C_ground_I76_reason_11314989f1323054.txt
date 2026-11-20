@@ -1,0 +1,60 @@
+### Design
+
+**Restated Question:** How does the measurement of pregnancy weight gain differ between SUID cases recorded in NCFRP_v51 and live births reported in PRAMS_P8_ARF?
+
+This study aims to compare how the concept of pregnancy weight gain is measured differently in two distinct data sources: the National Fatality Review Case Reporting System (NFR-CRS) for SUID deaths, and the Pregnancy Risk Assessment Monitoring System (PRAMS) for live births.
+
+### Sources by Role
+
+- **Case Series:** NCFRP_v51 (National Fatality Review Case Reporting System)
+  - **Role:** Records cases of child death reviewed by fatality review teams.
+  
+- **Population Reference:** PRAMS_P8_ARF and PRAMS_P8_STD2
+  - **Role:** Weighted survey of mothers a few months after live birth.
+
+### Period
+
+The study needs data for the years 2016 to 2021 from both NCFRP_v51 and PRAMS datasets, as these periods are required by the manuscript's claims on SUID incidence trends and bed-sharing practices. Additional years can be acquired if needed.
+
+### Variables
+
+- **Concept:** Pregnancy Weight Gain
+  - **NCFRP_v51:**
+    - INF4momwtgnunk (Mother’s pregnancy weight gain or loss in pounds – Unknown)
+    - INF4momwtgn (Mother’s pregnancy weight gain or loss in pounds)
+    
+  - **PRAMS_P8_ARF and PRAMS_P8_STD2:**
+    - MOMLBS (Maternal weight gain in pounds)
+    - PGWTGN8 (Pregnancy weight gain, with PGWTGNU8_DK for units)
+
+### Biases
+
+- **Selection Bias:** 
+  - NCFRP_v51 captures a subset of SUID cases reviewed by participating teams and may not be representative of all SUID deaths. PRAMS surveys are designed to sample live births but do not cover infant deaths.
+  
+- **Information Bias:**
+  - In NCFRP_v51, weight gain information might come from incomplete medical records or post-facto reports from family members.
+  - In PRAMS, the data is directly reported by mothers at a few months postpartum, potentially more accurate but may not fully capture all factors influencing pregnancy outcomes.
+
+- **Confounding:**
+  - Both datasets lack comprehensive linkage to account for confounders like socioeconomic status and access to healthcare. This limits the ability to adjust for these variables in comparative analyses.
+  
+### What the Design Cannot Establish
+
+The study can only compare how the concept of pregnancy weight gain is measured differently between case series and population reference data sources. It cannot establish causation or incidence rates due to lack of a denominator source for SUID cases.
+
+### Prior Art
+
+- **SUID Manuscript (C10):** The manuscript excludes extremely preterm infants, which might introduce selection bias but does not directly address measurement differences.
+  
+- **Bedsharing Manuscript:** Discusses ascertainment heterogeneity and indirect prevalence estimates but does not focus on pregnancy weight gain data.
+
+### Verdict
+
+The sources can answer a version of the question by comparing how pregnancy weight gain is recorded differently between SUID cases in NCFRP_v51 and live births reported in PRAMS_P8_ARF. The study cannot establish incidence rates or causation due to the lack of a denominator source for SUID cases.
+
+### Epistemological Considerations
+
+- **Conceptual Differences:** The measurement differences might reflect real disparities in data collection methods, but they do not provide causal insights.
+  
+- **Comparative Analysis:** While informative, the comparison highlights biases and limitations rather than establishing direct associations or incidence rates.

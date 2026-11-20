@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers reporting discussions about preventive practices differs between PRAMS Phase 7 and Phase 8.",
+ "rationale": "This design focuses on comparing how the same concept (preventive practice discussions) is recorded in two different phases of PRAMS data collection. It evaluates measurement consistency rather than incidence rates or causality.",
+ "prior_art": "None in the inputs; prior research does not address discrepancies in preventive practice reporting across different PRAMS data collection phases.",
+ "supporting_claim_ids": [],
+ "case_sources": [],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2021,
+ "required_concepts": [
+  "Maternal health issues",
+  "Prenatal care visits"
+ ],
+ "variables": [
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:P_PRTERM",
+  "prams_p8_arf:P_PRTERM",
+  "prams_p7_arf:MM_HBP",
+  "prams_p8_arf:MORB_BP8",
+  "prams_p7_arf:PNC_VST",
+  "prams_p8_arf:PNC_VST"
+ ],
+ "cannot_establish": "incidence rates or causal relationships, only measurement consistency."
+}

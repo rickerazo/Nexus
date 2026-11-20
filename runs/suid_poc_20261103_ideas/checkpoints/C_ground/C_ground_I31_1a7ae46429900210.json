@@ -1,0 +1,33 @@
+{
+ "groundable": false,
+ "why_not": "The case series does not directly measure maternal prepregnancy BMI, and the comparison relies solely on proportions rather than rates.",
+ "statement": "Maternal prepregnancy body mass index (BMI) differs between cases of sudden unexpected infant death (SUID) compared to other causes of infant death recorded in the same case series.",
+ "rationale": "The design can compare proportions but cannot establish incidence or risk estimates due to a lack of denominator data and direct measurement issues.",
+ "prior_art": "Maternal obesity is known to be a risk factor for SUID (suid_literature_abstracts.C10), but the role compared to other types of infant deaths remains unclear, necessitating further investigation.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Maternal prepregnancy BMI",
+  "Sudden unexpected infant death (SUID)",
+  "Other causes of infant death"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4mompregwt",
+  "prams_p8_arf:MOM_BMIG_QX_REV",
+  "prams_p7_arf:MOM_BMIG_QX_REV",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "Incidence or risk estimates, causality."
+}

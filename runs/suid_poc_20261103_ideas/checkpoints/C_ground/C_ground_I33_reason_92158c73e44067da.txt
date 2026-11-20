@@ -1,0 +1,63 @@
+### Design
+
+**Question:** How does the use of postpartum contraception differ between Sudden Unexpected Infant Death (SUID) cases and other infant mortality cases within the same case series?
+
+This design compares two groups of cases: those with SUID and those with other causes of infant death, using a case-case comparison. The goal is to identify unique factors related specifically to SUID rather than any form of infant mortality.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System)
+  - *Role:* Records outcomes (deaths only).
+  - *Reason:* This dataset provides detailed information on reviewed child deaths, including those classified as SUID and other causes.
+  
+- **Population Reference:** prams_p8_arf, prams_p7_arf
+  - *Roles:*
+    - prams_p8_arf and prams_p7_arf provide data on postpartum contraception use from a survey of mothers after live births. 
+    - These sources are used to compare the prevalence of contraceptive use in a population that did not experience infant mortality.
+  
+- **Denominator Source:** None needed for this case-case comparison.
+
+### Period
+
+**Period:** 2008-2019 (ncfrp_v51) and 2016-2021 (prams_p8_arf), overlapping with 2017-2021 when both sources have data available.
+
+### Variables
+
+- **SUID Cases:**
+  - ncfrp_v51:INF4heduchosppostfplan, INF372medicatesp: Postpartum family planning and medication use in the days leading up to death.
+  
+- **Postpartum Contraception Use (Population Reference):** 
+  - prams_p8_arf:BC_NOW4: Current postpartum contraceptive use at follow-up survey.
+    - This is a binary variable indicating whether the mother was using any form of contraception after giving birth.
+
+### Biases
+
+#### Selection Bias:
+- **Case Series:** The ncfrp_v51 data are subject to selection bias because it only includes deaths reviewed by fatality review teams, which may not be representative of all infant deaths. Additionally, participation rates vary over time.
+- **Population Reference:** PRAMS surveys are also subject to sampling and response biases since they represent a subset of live births in participating states.
+
+#### Information Bias:
+- The ncfrp_v51 dataset captures detailed information on SUID cases but may lack consistency or completeness due to the variability across jurisdictions. 
+- PRAMS data relies on self-reported behavior, which can be subject to recall bias and social desirability biases.
+
+#### Confounding:
+- Several potential confounders exist between the two groups (SUID vs. other infant mortality), such as maternal age, socioeconomic status, smoking history, prenatal care utilization, and urban/rural residence. These factors are not uniformly measured across both datasets.
+
+### What the Design Cannot Establish
+
+This design can only establish associations at a group level; it cannot infer causation or incidence rates due to the lack of denominators for population exposure.
+
+### Prior Art
+
+- The manuscript claims do not directly address differences in postpartum contraception use between SUID and other infant mortality cases. However, they discuss various risk factors such as maternal smoking, prematurity, and bed sharing that could influence both outcomes.
+  
+### Verdict
+
+**Can these data answer the research question?**
+
+Yes, but with limitations. The design can establish a comparison of postpartum contraception use between SUID cases (from ncfrp_v51) and other infant mortality cases by leveraging PRAMS survey data as a reference population. However, the study will be limited by potential biases in the case series and population reference datasets.
+
+**Missing Data Elements or Design Elements:**
+
+- A common denominator source would be ideal to establish incidence rates but is not necessary for this comparative analysis.
+- Additional variables controlling for confounders (e.g., socioeconomic status, prenatal care utilization) could enhance the study's robustness.

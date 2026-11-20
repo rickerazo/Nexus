@@ -1,0 +1,63 @@
+### Design
+
+**Design:** Trends within cases. Compare proportions among the SUID cases across periods using a case series and population reference to understand trends in substance abuse during pregnancy.
+
+**Restated Question:**
+How does the proportion of SUID cases involving substance abuse during pregnancy change over time compared to live births?
+
+### Sources by Role
+- **Case Series:** ncfrp_v51 (2008-2019)
+  - **Role:** To capture the numerator for SUID cases with substance abuse.
+  - **Justification:** This source provides detailed information on child deaths reviewed by fatality review teams and includes data specific to substance abuse during pregnancy.
+
+- **Population Reference:** prams_p7_arf (2012-2015), prams_p8_arf (2016-2021)
+  - **Role:** To capture the proportion of live births with substance abuse as a denominator.
+  - **Justification:** These sources are weighted surveys of mothers after live births and can provide prevalence estimates for substance use among pregnant women.
+
+### Period
+**Years Needed:**
+- Case Series (ncfrp_v51): 2008-2019
+- Population Reference (prams_p7_arf, prams_p8_arf): 2012-2021
+
+No years need to be acquired as these are already covered by the data sources.
+
+### Variables
+**Case Series: ncfrp_v51**
+- **Substance Abuse:** 
+  - Variable: `INF3nicudrug`, `INFuseddrug`, `RES1abrx`, `INFmisotcrx`, `RES1abopi`, `BIO1abopi`
+  - Coding differences: These variables are binary (Yes/No) and capture different types of substance abuse, including illicit drugs, prescription drug misuse, opioids, and other substances.
+
+**Population Reference: prams_p7_arf, prams_p8_arf**
+- **Substance Abuse:** 
+  - Variable: `PAD6HUS`, `PAB6HUS`
+  - Coding differences: These variables are binary (Yes/No) and capture substance abuse during pregnancy.
+  - Weighting: Use the survey weight variable (`WTANAL`).
+
+### Biases
+**Selection Bias:**
+- **Case Series:** Participation in fatality review teams varies by state, which may introduce selection bias as not all states participate equally over time. This can affect comparability across different periods and jurisdictions.
+- **Population Reference:** PRAMS surveys are conducted only in participating sites, leading to potential non-representativeness of the national population.
+
+**Information Bias:**
+- **Case Series:** Fatality review teams may have varying levels of detail on substance abuse records (`REVsubabrec`), affecting comparability across cases.
+- **Population Reference:** Survey responses for substance use are self-reported and can be subject to recall bias, especially for behaviors like drug use.
+
+**Confounding:**
+- Confounders not accounted for include socioeconomic status, geographic differences in access to prenatal care, and variations in reporting practices over time. These factors could influence both substance abuse rates and SUID incidence.
+
+### What the Design Cannot Establish
+The design can only establish trends within the case series (SUID cases) compared to a population reference of live births. It cannot provide incidence estimates or causal relationships between substance abuse during pregnancy and SUID due to lack of a denominator source for SUID cases.
+
+### Prior Art
+- **Manuscript Claims:**
+  - C10, C12: Exclude exposure misclassification issues in vital record data.
+  - C23: Large exclusions based on missing maternal smoking status.
+  
+- **Relevance:** The closest claims are those that discuss trends and risk factors like maternal smoking (C9), but none directly address substance abuse trends over time.
+
+### Verdict
+The sources can answer a version of the question focusing on trends in proportions among SUID cases compared to live births, but cannot establish incidence or causal relationships. This is because:
+- The case series does not provide denominators for estimating rates.
+- Information bias and selection biases are inherent due to varying participation and reporting practices.
+
+Thus, while trends can be observed within the available data, these sources do not allow robust conclusions about incidence changes over time or causation.

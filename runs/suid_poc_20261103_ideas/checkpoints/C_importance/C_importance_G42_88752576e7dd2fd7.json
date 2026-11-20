@@ -1,0 +1,4 @@
+{
+ "reason": "The gap aims to track trends in the proportion of SUID cases with substance/toxin exposure from 2004 to 2019 using ncfrp_v51 (case series). While this can provide descriptive information on changes over time within the case series, it cannot establish incidence or causal relationships due to lack of denominator data and inability to adjust for confounders effectively.",
+ "importance": 3
+}

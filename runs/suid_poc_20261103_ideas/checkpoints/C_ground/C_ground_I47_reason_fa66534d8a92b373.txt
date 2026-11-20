@@ -1,0 +1,59 @@
+### Design
+
+**Question Restated:**
+Does the presence of a hospital overnight stay impact SUID risk? This will be studied through a case-only analysis by comparing cases with and without hospital stays, examining potential differences in demographic and clinical characteristics.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System)
+  - Covers: Child deaths reviewed by fatality review teams.
+  - Includes information on SUID cases but does not provide incidence denominators for live births.
+  
+No denominator or population reference sources are needed since this is a case-only analysis focusing only on the characteristics of the cases with and without hospital stays.
+
+### Period
+
+**Period:** The manuscript focuses on data from 2008-2019. Given that ncfrp_v51 covers deaths from 2004 to 2019, we can use this period for our analysis.
+
+### Variables
+
+#### Hospital Overnight Stay
+- **ncfrp_v51:INF4hosprtn** (Infant return to hospital overnight after delivery)
+  - Value: 1 = Yes
+  - Missing: Unknown is a separate answer code.
+
+### Biases
+
+**Selection Bias:** 
+- The ncfrp_v51 source includes only cases reviewed by fatality review teams, which may not represent all SUID cases in the population.
+  
+**Information Bias:**
+- Data on hospital stays are reported by reviewers and may vary based on reporting practices and availability of information.
+
+**Confounding:**
+- Other factors such as socioeconomic status, maternal health conditions (e.g., smoking), and birth outcomes (e.g., prematurity) could confound the association between hospital stays and SUID risk.
+
+### What the Design Cannot Establish
+
+The design can only establish associations among cases and cannot estimate incidence or risk differences since it lacks a denominator source. It also does not account for potential biases due to selection, information, and confounding factors.
+
+### Prior Art
+
+- **Manuscript Claims:**
+  - bedsharing_ms_v7.C1 (hypothesis): Postconceptional age may clarify how various exposures relate to SUID incidence.
+  - bedsharing_ms_v7.C3 (finding): Bed sharing was more strongly associated with SUID in an early developmental window compared to a later one.
+  - bedsharing_ms_v7.C8 (finding): Bed sharing was recorded for 59.5% of SUID cases, and these cases were often associated with maternal smoking during pregnancy.
+
+These claims focus on the timing of exposure effects but do not address hospital stays or their impact on SUID risk specifically.
+
+### Verdict
+
+**Can these data answer a version of the question?**
+
+Yes, these data can be used to compare cases that experienced overnight hospital stays versus those who did not. However, due to the nature of the case-only design and lack of denominator data:
+- **Limitation:** The analysis will only provide an association among SUID cases but cannot establish causality or estimate incidence rates.
+- **Next Steps:** To further understand the impact of hospital stays on SUID risk, future studies should include a population reference to derive adjusted odds ratios and consider confounding factors.
+
+### Summary
+
+The ncfrp_v51 dataset can be used for a case-only analysis comparing cases with and without overnight hospital stays. However, additional data sources would be needed to estimate incidence rates or account for potential biases comprehensively.

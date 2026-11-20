@@ -1,0 +1,63 @@
+### Study Design and Feasibility Evaluation
+
+#### 1. The Design
+**Restated Question**: Is there a difference in the prevalence of prenatal care issues between mothers of SUID cases and the general population?
+- **Design Type**: Case-population comparison.
+- **Objective**: Compare how common an exposure (prenatal care issues) is among SUID case mothers with its weighted prevalence in the general population.
+
+#### 2. Sources by Role
+**Case Series Source:**
+- **ncfrp_v51 (National Fatality Review Case Reporting System)**: This dataset contains detailed information on child deaths reviewed by fatality review teams, including data related to prenatal care issues and SUID cases.
+  
+**Population Reference Source:**
+- **prams_p8_arf (PRAMS Phase 8 Analytic Research File)**: PRAMS is a weighted survey of mothers shortly after giving birth, providing detailed information about health behaviors during pregnancy.
+
+**Denominator Sources:**
+- Not directly used in this design since we are comparing case and population proportions rather than estimating rates. However, for context:
+  - **cdc_linkco15 (CDC linked birth/infant death public-use file)**: Provides incidence denominators.
+  - **cdc_natl15 (CDC natality public-use file)**: Also provides overall live births to establish general population reference.
+
+#### 3. Period
+**Common Period**: The manuscript claims and the proposed data sources need a common period. Given that PRAMS Phase 8 covers years 2016-2021, and ncfrp_v51 ranges from 2004-2019 (but we use only recent data for comparability), let's focus on:
+- **Common Period**: 2016-2019
+
+#### 4. Variables
+**Concept: Prenatal Care Issues**
+- **Case Series Source (ncfrp_v51)**
+  - Variable: `INFisscare` (Access or compliance issues related to prenatal care)
+  
+**General Population Reference (PRAMS p8_arf)**
+- Variable: `PRE_VIST`: Prepregnancy healthcare visit [2=YES]
+- Variable: `PNC_MTH`: Month of first prenatal care visit (coded as 88=NO PNC; other values represent month of initiation)
+  
+**How the Measurement Differs Between Sources:**
+- **Case Series**: Detailed issues related to access or compliance.
+- **Population Reference**: General healthcare visits before pregnancy and timing of initial prenatal care.
+
+#### 5. Biases
+**Selection Bias:**
+- Case series may include more severe cases due to fatality review processes.
+  
+**Information Bias:**
+- Reporting differences between case sources (detailed, specific issues) vs population surveys (general health behavior questions).
+
+**Confounding:**
+- Potential confounders like socioeconomic status, maternal age, smoking during pregnancy are not uniformly measured in both datasets.
+
+#### 6. What the Design Cannot Establish
+The design cannot establish causation or temporal relationships between prenatal care issues and SUID incidence rates due to its observational nature.
+  
+#### 7. Prior Art
+**Closest Relevant Claims:**
+- **SUID_manuscript_v9_clean.C10 [limitation]**: Discusses limitations in capturing all relevant exposures, including prenatal factors.
+- **bedsharing_ms_v7.C8 [finding]**: Notes associations between bed sharing and maternal smoking, which may be related to prenatal care access or quality.
+
+These claims do not directly address the specific question of prenatal care issues but highlight the importance of considering broader prenatal contexts in SUID research.
+
+#### 8. Verdict
+**Can These Data Answer a Version of the Question?**
+Yes, these data can answer a version of the candidate idea by comparing how common prenatal care issues are among mothers of SUID cases vs. the general population using the selected variables and sources. However, due to biases in reporting and selection, findings should be interpreted with caution.
+
+**Missing Data Element or Design Element:**
+- **Direct Linkage**: A linked dataset that directly matches cases from PRAMS would strengthen causal inference but is not available here.
+- **Comprehensive Measures**: More uniform measures across both datasets for prenatal care access and quality.

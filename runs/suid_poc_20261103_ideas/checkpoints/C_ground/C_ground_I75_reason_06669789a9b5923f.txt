@@ -1,0 +1,43 @@
+### Design and Analysis
+
+#### Restated Question:
+To investigate how differences in the documentation of insurance coverage between PRAMS Phase 7 and Phase 8 affect the assessment of disparities in SUID risk factors.
+
+#### Sources by Role:
+- **Population Reference:**
+  - **PRAMS P7 ARF (prams_p7_arf):** This source provides a weighted survey of mothers from live births in 2012-2015.
+  - **PRAMS P8 ARF (prams_p8_arf):** This source provides a weighted survey of mothers from live births in 2016-2021.
+
+#### Period:
+The question requires data from both phases, specifically Phase 7 (2012-2015) and Phase 8 (2016-2021).
+
+#### Variables:
+
+**Insurance Coverage:**
+- **PRAMS P7 ARF:** `INS_NUMB` (# PRE-PREGNANCY HEALTH INSURANCE PLANS), `INSMED`, `INSWORK`, `PP_MEDIC`, `PP_CHIP`, etc.
+- **PRAMS P8 ARF:** `PP_MEDIC_RAW`, `INSCHIP`, `INSMIL`, `PP_TYPE`, `PP8_HCEX_RAW`, `PP8_WORK_RAW`, `INSPAR`, `PG_GDB8`, `PG8_ASMA`, `PG8_SC`, etc.
+
+#### Biases:
+
+**Selection Bias:**
+- PRAMS P7 and P8 are both surveys of mothers post-live birth, but the participation rates can vary over time. The period between 2012-2015 (P7) and 2016-2021 (P8) may have seen changes in response rates or sampling methodology.
+
+**Information Bias:**
+- Differences in how insurance coverage is documented and classified across the two phases can lead to inconsistencies. The timing of when insurance status was recorded could also differ between the surveys.
+  
+**Confounding:**
+- Other factors such as maternal age, socioeconomic status, and geographic region can confound the assessment of disparities if they change over time or vary systematically between phases.
+
+#### What the Design Cannot Establish:
+This design cannot establish causation. It can only compare how insurance coverage is documented differently across PRAMS Phases 7 and 8 and identify potential biases that could affect SUID risk factor assessments. The design does not allow for estimating incidence rates, as it lacks a denominator source to calculate such metrics.
+
+#### Prior Art:
+- **SUID Manuscript:** Claims like C6 and C9 discuss the importance of maternal smoking in SUID but do not address variations in insurance coverage documentation across different phases of PRAMS.
+  
+  - **Bedsharing Manuscript:** Claims like C8-C12 discuss bed sharing, maternal smoking, and prematurity as risk factors for SUID. These claims also do not cover differences in how these variables are documented over time.
+
+#### Verdict:
+**Yes**, the data can answer a version of this question. The PRAMS P7 ARF and P8 ARF sources provide sufficient data to compare insurance coverage documentation across phases, allowing researchers to identify potential biases that may affect SUID risk factor assessments. However, the design is limited to comparing proportions or odds between cases and cannot establish causation or incidence rates without a denominator source.
+
+### Conclusion
+The proposed study can assess how changes in insurance coverage documentation over different PRAMS Phases impact SUID risk factor analysis by comparing variables related to health insurance across phases 7 and 8. This comparison will help identify potential inconsistencies that could influence the interpretation of SUID disparities.

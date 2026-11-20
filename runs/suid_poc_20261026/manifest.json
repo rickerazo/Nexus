@@ -1,0 +1,124 @@
+{
+  "run_id": "suid_poc_20261026",
+  "created_at": "2026-10-26T23:49:31.136956Z",
+  "mmf_version": "0.1.0.dev0",
+  "config_sha256": "0e4ba8dbf1efa9e509f610e0c96fb370d6c7345ccbbc8901fcdb4b9c2ceb5b82",
+  "backend": "ollama",
+  "allow_cloud": false,
+  "model": "qwen2.5:14b",
+  "seed": 0,
+  "temperature": 0.0,
+  "inputs": [
+    {
+      "path": "data/codebooks/LinkCO15Guide.pdf",
+      "sha256": "1b6cd81b08596230344d665f77c88663ea8700731a054bd2f17989215289f7a8",
+      "role": "codebook"
+    },
+    {
+      "path": "data/documentation/natl2015.pdf",
+      "sha256": "cefeaebb9d9fb574f1968037668273e4b6dd2b4f9d50a57e4a39e92830adb1dc",
+      "role": "codebook"
+    },
+    {
+      "path": "data/documentation/CDC_database_codeNames.xlsx",
+      "sha256": "0ef67f25e365f4b25954e1d81c2e8c99c5d582dae7157adcafec971debe2f6d2",
+      "role": "codebook"
+    },
+    {
+      "path": "data/documentation/Codebook_Version5-1_031122.xlsx",
+      "sha256": "fb90580f2efa52988ad3c5a2530b908a0f89ad58337c781876baead2d62d0887",
+      "role": "codebook"
+    },
+    {
+      "path": "data/codebooks/PRAMS_Phase_8_ARF_Codebook.pdf",
+      "sha256": "9d5b3d4dd9092af205977978f66c2b071210b3eedac55950a494e72f031e0152",
+      "role": "codebook"
+    },
+    {
+      "path": "data/codebooks/PRAMS_Phase_8_Standard_Section_II_Codebook.pdf",
+      "sha256": "792402034db4bcfefa3f908a18b42c9438171f9b0e323624163c22066604eeee",
+      "role": "codebook"
+    },
+    {
+      "path": "data/codebooks/PRAMS_Phase_7_ARF_Codebook.pdf",
+      "sha256": "57957107866cc22bd4dec4d6a2ee6a5c2ecee5d8e702030f1a45de5c8afd1b97",
+      "role": "codebook"
+    },
+    {
+      "path": "data/manuscripts/SUID_manuscript_v9_clean.docx",
+      "sha256": "92fd11fa182c9a7b5806abcd83a284408d96271920022a19179cbafdb62cd2bd",
+      "role": "manuscript"
+    },
+    {
+      "path": "data/manuscripts/bedsharing_ms_v7.docx",
+      "sha256": "1496e66e4e7b266719b29021ddc9041acf47f56cf92fdcd91113d826ffd4b79b",
+      "role": "manuscript"
+    },
+    {
+      "path": "data/manuscripts/literature/suid_literature_abstracts.md",
+      "sha256": "687e8a02fa0c7d697b51a7d44224066beb34f0ea0281e14d163ef9f9f337ad41",
+      "role": "manuscript"
+    }
+  ],
+  "calls": [
+    {
+      "stage": "A_SUID_manuscript_v9_clean_0",
+      "prompt_name": "a_decompose",
+      "prompt_sha256": "58809a01c0794024e470eb0b5fcc582ac000797169fd1b00121de0085c95f5e9",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 3,
+      "ok": true,
+      "log_file": "runs/suid_poc_20261026/llm_log/20261027T001332677127_A_SUID_manuscript_v9_clean_0.json"
+    },
+    {
+      "stage": "A_SUID_manuscript_v9_clean_1",
+      "prompt_name": "a_decompose",
+      "prompt_sha256": "58809a01c0794024e470eb0b5fcc582ac000797169fd1b00121de0085c95f5e9",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/suid_poc_20261026/llm_log/20261027T002512282219_A_SUID_manuscript_v9_clean_1.json"
+    },
+    {
+      "stage": "A_bedsharing_ms_v7_0",
+      "prompt_name": "a_decompose",
+      "prompt_sha256": "58809a01c0794024e470eb0b5fcc582ac000797169fd1b00121de0085c95f5e9",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/suid_poc_20261026/llm_log/20261027T002554094876_A_bedsharing_ms_v7_0.json"
+    },
+    {
+      "stage": "A_bedsharing_ms_v7_1",
+      "prompt_name": "a_decompose",
+      "prompt_sha256": "58809a01c0794024e470eb0b5fcc582ac000797169fd1b00121de0085c95f5e9",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/suid_poc_20261026/llm_log/20261027T002848657046_A_bedsharing_ms_v7_1.json"
+    }
+  ],
+  "stage_hashes": {
+    "ingest_cdc_linkco15": "64878cdfa90ee3151d5bab4c2a66a14038b88a253391fa3ea0b85e9cba1b23df",
+    "ingest_cdc_natl15": "831f334fa38dfaaf776c3a250ccc00ae534f2860567774ae0095918de2bb9273",
+    "ingest_cdc_codenames": "06a65676a67c0d503d99e94790f227b3930d291b0e91a47f6abd146a84c741ee",
+    "ingest_ncfrp_v51": "50906e58388d8e47625c6594c8234fd7b2ae918829308a5ce444af7c85a59327",
+    "ingest_prams_p8_arf": "905413e8f586083400fe0d2eff39d230328bbd92faa5f66cf1cb759978381355",
+    "ingest_prams_p8_std2": "11fcc17747f6e561fb239cb7f3bc818873611ac7acc33c361fcea1735297e4c6",
+    "ingest_prams_p7_arf": "d072f739cbb0f16e4ee83cb868db3230841fc7c3d9e16cd416761bd448268348",
+    "A_SUID_manuscript_v9_clean": "c0eb5cbc1c3f881648e81a01db06cda6680f3f74c43565fb5be15d1f84e3313c",
+    "A_bedsharing_ms_v7": "9cbc83d4dc6aa1c6fc21bc672453a97ba06ba66574363611fbd961b26048a028"
+  }
+}

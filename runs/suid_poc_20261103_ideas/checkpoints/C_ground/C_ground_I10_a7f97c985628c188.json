@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The prevalence of prenatal care issues among mothers of SUID cases is higher compared to the general population.",
+ "rationale": "This study compares the proportion of mothers with prenatal care issues in a case series (SUID cases) versus the weighted prevalence in a population reference source (PRAMS).",
+ "prior_art": "The closest tested work includes claims C10 and C8, which discuss limitations in capturing all relevant exposures but do not directly address prenatal care issues. This question remains open as it investigates specific prenatal factors that may influence SUID risk.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "prenatal care issues",
+  "general population prevalence"
+ ],
+ "variables": [
+  "ncfrp_v51:INFisscare",
+  "prams_p8_arf:PNC_MTH",
+  "prams_p8_arf:PRE_VIST",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causation or temporal relationships between prenatal care issues and SUID incidence rates due to its observational nature."
+}

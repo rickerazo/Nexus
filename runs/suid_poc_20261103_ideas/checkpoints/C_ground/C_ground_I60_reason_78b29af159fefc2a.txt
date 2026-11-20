@@ -1,0 +1,74 @@
+### Design
+
+**Question:** What trends exist in SUID cases involving infants who have been exposed to domestic violence or abuse between 2008 and 2019?
+
+**Design Type:** Trends within cases. Compare proportions among the cases across periods.
+
+When a case series' coverage changes over time, changes in case counts are not changes in incidence.
+
+### Sources by Role
+
+- **Case Series**: ncfrp_v51
+  - Covers: child deaths reviewed by participating fatality review teams; deaths only, no births or surviving infants.
+  - Period: 2008-2019 (the manuscript uses this period).
+  - Missing answers: documented per item; unknown is a separate answer.
+
+- **Population Reference**: prams_p8_arf
+  - Covers: weighted survey of mothers a few months after live births, sampled from birth certificates in participating states.
+  - Period: Phase 8 (2016-2021).
+  - Missing answers: documented per item; unknown is a separate answer.
+
+**Note:** The period for prams_p8_arf does not fully overlap with ncfrp_v51, but we can still compare trends within the available overlapping years between 2008 and 2019.
+
+### Period
+
+- **Case Series**: 2008-2019
+- **Population Reference**: 2016-2021 (using only data from 2016 to 2019 for comparison)
+
+### Variables
+
+**Domestic Violence or Abuse:**
+
+- **Case Series (ncfrp_v51)**
+  - Variable: INFipvvic, "Child have history of intimate partner violence - Yes, as victim"
+    - Values: 1 = yes; 2 = no; 9 = unknown
+  - Variable: GIV1malperpneg, "Caregiver has history of child maltreatment - Perpetrator - Yes, Neglect"
+    - Values: 1 = yes; 0 = no; 9 = unknown
+
+- **Population Reference (prams_p8_arf)**
+  - Variable: PAD6HUS, "Abuse --during preg, h/p"
+    - Values: .T (teen mom not asked), 1 = no; 2 = yes
+  - Variable: PAB_XHUS, "Abuse -- 12 mnths b4 preg, ex-h/p"
+    - Values: .T (teen mom not asked), 1 = no; 2 = yes
+
+**Comparison:** The variables measure the same concept but differ in wording and timing. Case series data is specific to child abuse history, while population reference surveys maternal exposure during pregnancy.
+
+### Biases
+
+- **Selection Bias:** 
+  - ncfrp_v51 captures cases reported by fatality review teams; participation varies over time.
+  - prams_p8_arf samples mothers of live births from birth certificates, not designed to count infant deaths.
+
+- **Information Bias:**
+  - ncfrp_v51 collects detailed information on child maltreatment and abuse during reviews.
+  - prams_p8_arf surveys maternal exposure during pregnancy, not necessarily the same timeframe or detail as case series data.
+
+- **Confounding:**
+  - Potential confounders include socioeconomic status, prenatal care quality, and environmental factors that are not uniformly measured across sources.
+
+### What the Design Cannot Establish
+
+- Incidence rates of SUID cases involving domestic violence or abuse cannot be estimated due to lack of denominator.
+- Causal relationships cannot be established; only trends in proportions among cases can be observed.
+
+### Prior Art
+
+The closest claim is:
+
+**suid_literature_abstracts.C10**: Maternal smoking during pregnancy significantly increases the risk of SUID. This study focuses on a different exposure (domestic violence or abuse) and does not address trends over time specifically for this population.
+
+### Verdict
+
+These data can be used to examine trends in proportions of SUID cases involving domestic violence or abuse within the case series from 2008-2019. However, they cannot establish incidence rates or causal relationships due to lack of a denominator source and differences in measurement timing between sources. Additionally, the period for prams_p8_arf only partially overlaps with ncfrp_v51, limiting direct comparisons.
+
+**Data Element Missing:** A denominator source covering 2008-2019 would be needed to estimate incidence rates or compare proportions relative to live births in that period.

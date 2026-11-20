@@ -1,0 +1,39 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases among infants born to mothers with different pre-pregnancy health behaviors and conditions varies.",
+ "rationale": "This study design uses the case series (ncfrp_v51) for numerator, population reference (prams_p7_arf, prams_p8_arf) for exposure prevalence, and denominator source (cdc_natl15) to estimate live births stratified by maternal pre-pregnancy health behaviors. The design can identify associations but cannot establish causation or fully control for confounding variables.",
+ "prior_art": "SUID_manuscript_v9_clean.C9 suggests an association between maternal smoking and higher SUID incidence, but does not address pre-pregnancy behaviors comprehensively.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C9"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15"
+ ],
+ "period_start": 2008,
+ "period_end": 2021,
+ "required_concepts": [
+  "SUID cases",
+  "Pre-pregnancy health behaviors and conditions",
+  "Live births stratified by maternal pre-pregnancy health behaviors"
+ ],
+ "variables": [
+  "ncfrp_v51:INFfirsttricig",
+  "prams_p8_arf:MOMCIG",
+  "prams_p7_arf:CIG_PRIOR",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:PRE_LB_NAPHSIS",
+  "prams_p7_arf:PRE_LB_NAPHSIS",
+  "prams_p8_arf:MM_NOMD",
+  "prams_p7_arf:MM_NOMD"
+ ],
+ "cannot_establish": "Causality, individual-level linkage between case series and population reference datasets."
+}

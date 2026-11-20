@@ -1,0 +1,35 @@
+{
+ "mappings": [
+  {
+   "concept": "microglia activation",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NCFRP v5.1 data source does not contain any variables related to microglia activation or Iba1 staining."
+  },
+  {
+   "concept": "cell death",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "There are no variables in the NCFRP v5.1 data source that relate to cell death as assessed by cleaved caspase 3 (CC3) staining."
+  },
+  {
+   "concept": "glutamatergic transmission",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NCFRP v5.1 data source does not contain any variables related to glutamatergic transmission in the nucleus accumbens and amygdala."
+  },
+  {
+   "concept": "hypoglossal motor nucleus (XIIn)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NCFRP v5.1 data source does not contain any variables related to the hypoglossal motor nucleus or electrophysiological recordings from brainstem slices."
+  }
+ ],
+ "source_summaries": {
+  "ncfrp_v51": "This dataset focuses on fatality review cases and includes information about substances involved, medical conditions, symptoms, diagnoses, treatments, and circumstances of death. It does not contain variables related to cellular or neurological processes such as microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus activity."
+ }
+}

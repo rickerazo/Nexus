@@ -1,0 +1,34 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with maternal obesity differs between full-term and preterm infants over time from 2008 to 2019.",
+ "rationale": "This design uses the ncfrp_v51 case series for SUID cases and prams_p7_arf, prams_p8_arf population references for live births. It can explore trends within cases but cannot estimate incidence or rates due to lack of denominator data.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 and suid_literature_abstracts.C10 discuss maternal obesity as a risk factor, but do not differentiate between full-term and preterm infants over time. This study aims to fill that gap by examining trends within SUID cases.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Maternal Obesity Status",
+  "Birth Term Status"
+ ],
+ "variables": [
+  "ncfrp_v51:IEMprenatalBMI",
+  "ncfrp_v51:INF4mompregwt",
+  "prams_p7_arf:MOM_BMIG_QX_REV",
+  "prams_p8_arf:MOM_BMI_BC",
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot estimate incidence, risk differences or associations because it lacks a denominator source to calculate rates or proportions over time. The comparison is limited to proportions among SUID cases."
+}

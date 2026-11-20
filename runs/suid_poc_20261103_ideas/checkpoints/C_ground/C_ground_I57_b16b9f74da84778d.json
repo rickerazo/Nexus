@@ -1,0 +1,33 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases among infants with previous medical complications or disabilities increased from 2012 to 2019.",
+ "rationale": "This design compares the proportions within SUID cases over time, focusing on a period that all sources cover. It uses case series data for SUID cases and population reference surveys for exposure prevalence in the general population.",
+ "prior_art": "Prior studies focus on factors like maternal smoking and prematurity but do not specifically address changes in the proportion of SUID cases among infants with prior medical complications or disabilities over time (SUID_manuscript_v9_clean.C10, bedsharing_ms_v7.C23).",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C23"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "previous medical complications or disabilities",
+  "infant health status"
+ ],
+ "variables": [
+  "ncfrp_v51:INFprevpreterm",
+  "ncfrp_v51:INF4referinfch",
+  "prams_p8_arf:P_PRTERM",
+  "prams_p8_arf:MM_FEVER",
+  "prams_p8_arf:OTH_TERM",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence rates, risk ratios, or causal relationships due to lack of denominator data."
+}

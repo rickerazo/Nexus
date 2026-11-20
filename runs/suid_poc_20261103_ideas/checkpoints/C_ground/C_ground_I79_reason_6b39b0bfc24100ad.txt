@@ -1,0 +1,64 @@
+### Design and Analysis
+
+**Design Restatement:**
+The design is a measurement comparison study. It aims to assess discrepancies in infant sleeping arrangement reports between SUID case series (NCFRP) and PRAMS surveys, focusing on how the same concept is recorded differently across these sources.
+
+**Sources by Role:**
+- **Case Series:** ncfrp_v51
+  - Reason: NCFRP captures detailed case reviews of SUID deaths, providing specific information about infant sleeping environments at the time of death.
+  
+- **Population Reference:** prams_p8_arf
+  - Reason: PRAMS provides data from live births and their mothers shortly after birth, offering a general population reference on infant sleeping practices.
+
+**Period:**
+The study requires recent years to capture current trends in infant care practices. The manuscript uses data from 2016-2021 for the PRAMS Phase 8 dataset (prams_p8_arf). For the NCFRP, the manuscript would need to use corresponding years of case series data (ncfrp_v51 covers deaths up to 2019).
+
+**Variables:**
+- **NCFRP:** 
+  - CIRdeathsleepenv: Was the death related to sleeping or sleep environment? (only asked if child is less than 5 years old)
+  - CIRwadultobs: If yes, child sleeping on same surface with - Adult(s) -
+  - CIRroomshare: Child sleeping in the same room as caregiver/supervisor at time of death
+  - REVbiomrec: Data source available for team to review - biological mother's obstetric and prenatal info
+
+- **PRAMS:** 
+  - SLP_ROOM_RAW: Sleep -- baby in room with mom [.B=DK/BLANK; .S=SKIP; 1=NO; 2=YES]
+  - SLP_CRB8_RAW: Baby slept -- in crib/bassinette/play yard [.B=DK/BLANK; .S=SKIP; 1=NO; 2=YES]
+  - INFWMOM5: Infant living -- with mom (FORCED SKIP) [.B=DK/BLANK; .S=SKIP; 1=NO; 2=YES]
+
+**Measurement Differences:**
+- **Timing and Who Reports It:** 
+  - NCFRP captures data through case reviews typically conducted post-event, often by medical professionals based on interviews with family members.
+  - PRAMS collects self-reported survey data from mothers a few months after the birth.
+
+- **Coding of Missing Answers:**
+  - NCFRP has specific codes for missing information and unknowns (e.g., randomized state codes).
+  - PRAMS uses standardized codes for "don’t know" or skipped items (e.g., .B = don't know or blank, .S = skipped).
+
+**Biases:**
+
+- **Selection Bias:** 
+  - NCFRP cases are limited to SUID deaths and may not be representative of all infant deaths. PRAMS surveys include live births but exclude those with later outcomes.
+  
+- **Information Bias:** 
+  - NCFRP reports may rely on family recall or medical records, which can introduce inconsistencies over time or due to memory lapse.
+  - PRAMS data is self-reported by mothers and captures current practices at the time of survey.
+
+- **Confounding:**
+  - Factors such as socioeconomic status, cultural norms, and education levels might influence both reporting and actual sleeping arrangements differently between live births and SUID cases.
+
+**What the Design Cannot Establish:**
+
+The design cannot establish causation or incidence rates. It can only compare how the same concept (infant sleep environment) is reported in two different sources, highlighting discrepancies but not establishing why these discrepancies exist beyond descriptive comparisons.
+
+**Prior Art:**
+- The closest claim from existing manuscripts suggests that NCFRP case reviews may have reporting issues due to heterogeneity and recall bias [bedsharing_ms_v7.C18]. However, no direct comparison has been made between PRAMS data and NCFRP reports on infant sleeping arrangements. 
+
+**Verdict:**
+
+Yes, these sources can answer a version of the question regarding discrepancies in reporting infant sleeping arrangements between SUID case series (NCFRP) and PRAMS surveys. The design allows for detailed comparisons of how similar concepts are reported differently by two distinct data collection methods, focusing on measurement differences rather than establishing causation or incidence rates.
+
+**Years to Acquire:**
+- NCFRP cases from 2016 to 2019.
+- PRAMS Phase 8 (2016-2021).
+
+This study design leverages the strengths of each data source while acknowledging their limitations, focusing on descriptive comparisons that can shed light on potential discrepancies in reporting practices.

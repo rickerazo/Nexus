@@ -1,0 +1,30 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of infants who experienced hospital overnight stays was higher among those with documented postnatal medical complications compared to those without such complications within the case series.",
+ "rationale": "This study will examine trends in hospital overnight stays among infants who experienced postnatal medical complications versus those without such complications using the National Fatality Review Case Reporting System (NFR-CRS) data. The design is a case-only analysis, focusing on descriptive comparisons and trends within cases.",
+ "prior_art": "The manuscript claims do not closely address this specific question. However, claim C10 notes that the analysis excludes a small number of deaths at the extremes of PCA distribution, including extremely and very preterm infants who died early in postnatal life. This highlights the need to investigate hospital stays and medical complications within SUID cases further.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "postnatal medical complications",
+  "hospital overnight stays"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4morbid",
+  "ncfrp_v51:INF4medical",
+  "ncfrp_v51:INF3prevmedical",
+  "ncfrp_v51:INF4hosprtn",
+  "ncfrp_v51:INF4infhospdays",
+  "ncfrp_v51:INF4hosprtnold"
+ ],
+ "cannot_establish": "The design cannot estimate incidence or risk; it only compares proportions within cases. It also cannot establish causal relationships between postnatal medical complications and hospital stays due to its observational nature."
+}

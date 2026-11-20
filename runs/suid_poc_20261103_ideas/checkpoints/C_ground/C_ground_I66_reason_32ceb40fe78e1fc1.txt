@@ -1,0 +1,70 @@
+### Design
+
+**Question Restated:** How does the proportion of SUID cases with maternal obesity differ over time between full-term and preterm infants?
+
+This design is a trends within cases comparison. The case series provides the numerator (SUID cases), while the population reference provides exposure prevalence among live births, which we will use to infer proportions in subgroups.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (2008-2019)
+  - *Why:* This is the only source that records SUID cases with maternal information.
+  
+- **Population Reference:** prams_p7_arf, prams_p8_arf (2012-2021) 
+  - *Why:* These sources provide population-level data on live births and maternal obesity status, which can be used to infer prevalence among full-term and preterm infants.
+
+### Period
+
+**Period Needed:** 2008-2019 for ncfrp_v51 (SUID cases), and 2012-2021 for prams_p7_arf, prams_p8_arf (live births).
+
+#### Years to Acquire:
+- **ncfrp_v51:** Data already covers the period from 2008-2019.
+- **prams_p7_arf:** Already holds data from 2012-2015.
+- **prams_p8_arf:** Needs years 2016-2021 to match case series coverage.
+
+### Variables
+
+**Maternal Obesity Status:**
+- **ncfrp_v51 (Case Series):**
+  - Maternal prenatal BMI (`IEMprenatalBMI`)
+  - Mother's pre-pregnancy weight (`INF4mompregwt`)
+
+- **prams_p7_arf and prams_p8_arf (Population Reference):**
+  - MOM_BMIG_QX_REV: VAR: MOM BMI GROUPED FROM QX REVISED
+  - MOM_BMI_BC: VAR: MOM BODY MASS INDEX FROM BC
+
+**Birth Term Status:**
+- **ncfrp_v51 (Case Series):**
+  - Obstetric Estimate Recode 3 (`OEGest_R3`)
+  
+- **prams_p7_arf and prams_p8_arf (Population Reference):**
+  - Birth Weight Recode 4 (`BWTR4`)
+
+### Biases
+
+#### Selection Bias:
+- **ncfrp_v51:** The cases come from fatality review teams, which may be more active in certain states or have varying coverage over time.
+  
+#### Information Bias:
+- Maternal obesity status is measured differently between case and reference sources. `IEMprenatalBMI` in ncfrp_v51 uses a prenatal BMI measurement, while prams_p7_arf and prams_p8_arf use self-reported pre-pregnancy weight and BMI.
+
+#### Confounding Bias:
+- Differences in reporting and ascertainment of maternal obesity status between the case series and population reference sources may introduce confounding if they are not comparable.
+
+### What the Design Cannot Establish
+
+The design can only establish trends within cases. It cannot estimate incidence, risk differences or associations because it lacks a denominator source to calculate rates or proportions over time. The comparison is limited to proportions among SUID cases, and any findings would need to be interpreted with caution due to potential biases.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C10:** Excludes extremely preterm infants from analysis.
+- **suid_literature_abstracts.C10:** Maternal obesity is a risk factor for SUID, but does not differentiate between full-term and preterm infants over time.
+
+The existing literature focuses on maternal obesity as a general risk factor without breaking down the analysis by gestational age or trends over time. Therefore, this study would provide novel insights into how maternal obesity impacts SUID differently in full-term versus preterm infants over the specified period.
+
+### Verdict
+
+**These sources can answer a version of the question**, but with several caveats:
+- **Biases:** Differences in ascertainment and measurement between case series and population reference may introduce bias.
+- **Trends within Cases Only:** The study will show trends among SUID cases, not rates or incidence over time due to lack of denominator data.
+
+Therefore, the study can explore temporal changes in proportions but should interpret results with caution regarding generalizability. Additional work would be needed to validate findings against population-level data if available.

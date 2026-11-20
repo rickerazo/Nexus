@@ -1,0 +1,14 @@
+{
+ "domains": [
+  {
+   "start": "PGWTGN8",
+   "name": "Pregnancy Weight Gain",
+   "summary": "Self-reported weight gain during pregnancy, including missing or unsure responses."
+  },
+  {
+   "start": "PGWTGNU8",
+   "name": "Weight Gain Unit",
+   "summary": "Unit of measurement (pounds, kilograms) for reported pregnancy weight gain, including option for no weight gain."
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The prevalence of maternal health problems differs between Sudden Unexpected Infant Death (SUID) cases and other cause-of-death infant cases.",
+ "rationale": "This study uses a case-case comparison to examine differences in the prevalence of maternal health problems between SUID cases and non-SUID infant deaths. The design is limited by selection bias due to incomplete case ascertainment, information bias from retrospective reporting, and confounding factors that are not adequately controlled.",
+ "prior_art": "The closest tested work includes claims C10 and C23 from the SUID manuscript and bedsharing manuscript respectively, which discuss limitations related to exposure misclassification and missing data. However, none directly address differences in maternal health problems between SUID cases and other cause-of-death infant deaths.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C23"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "Maternal Health Problems",
+  "SUID Cases",
+  "Other Cause-of-Death Infant Cases"
+ ],
+ "variables": [
+  "ncfrp_v51:INFmedical",
+  "ncfrp_v51:ISSprechronicdiseasebef",
+  "ncfrp_v51:ISSprechronicdiseaseaft",
+  "prams_p8_arf:PG8_SC",
+  "prams_p8_arf:PG8_NAUS",
+  "prams_p8_arf:HTH_ALRGI",
+  "prams_p8_arf:HTH_ASMA",
+  "prams_p8_arf:BPG_DIAB8",
+  "prams_p8_arf:HTH_ANX",
+  "prams_p8_arf:HTH_PCOS",
+  "prams_p8_arf:HTH_HRT",
+  "prams_p8_arf:BPG_HBP8",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causality or incidence rates due to a lack of denominator data for the population at risk."
+}

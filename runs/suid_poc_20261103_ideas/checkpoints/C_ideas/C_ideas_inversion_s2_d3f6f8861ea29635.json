@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "What protective factors are present among infants born to smoking mothers who do not experience sudden unexpected infant death (SUID)?",
+   "why_open": "While maternal smoking during pregnancy is a significant risk factor for SUID, there are instances where infants of smoking mothers do not suffer from SUID. Identifying these protective factors could lead to interventions that mitigate the impact of maternal smoking.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Smoking During Pregnancy"
+  },
+  {
+   "question": "What unique environmental or healthcare practices protect preterm infants in high-risk settings from sudden unexpected infant death (SUID)?",
+   "why_open": "Despite their increased vulnerability, some preterm infants manage to avoid SUID. Understanding these protective measures can help in developing targeted prevention strategies for this high-risk group.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Preterm Birth"
+  },
+  {
+   "question": "Among male infants, what are the protective factors against sudden unexpected infant death (SUID) that result in a lower incidence of SUID compared to predicted risk profiles?",
+   "why_open": "Given the higher overall risk for males, this question explores which environmental or genetic factors provide protection and could be leveraged as preventive measures.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Sex"
+  },
+  {
+   "question": "What are the protective health care interventions that prevent SUID among infants in households with multiple risk factors such as low socioeconomic status, smoking mothers, and bed sharing?",
+   "why_open": "Identifying protective healthcare interventions for high-risk groups can provide actionable insights into how to reduce overall SUID rates in these settings.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Socioeconomic Status, Smoking During Pregnancy, Bed Sharing"
+  },
+  {
+   "question": "What protective factors are present among infants who slept with adults but did not experience sudden unexpected infant death (SUID)?",
+   "why_open": "While bed sharing is a significant risk factor for SUID, some infants in this situation do survive. Uncovering the protective elements could inform guidelines on safe sleeping practices.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Bed Sharing"
+  }
+ ]
+}

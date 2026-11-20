@@ -1,0 +1,71 @@
+### Design
+
+**Question Restated:** Is there a difference in the proportion of infants experiencing prenatal maternal stress between SUID cases and other causes of infant death as recorded in the National Fatality Review Case Reporting System (NFR-CRS)?
+
+This is a case-case comparison design, which compares proportions or odds among cases rather than estimating incidence rates. Since we do not have denominator data to calculate incidence, this study will focus on comparing exposure prevalence between SUID and non-SUID infant deaths.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51 (SUID cases and other causes of infant death).
+- **Population Reference:** prams_p7_arf (to measure prenatal stress among live births).
+
+**Reasons for Roles:**
+- The NFR-CRS (ncfrp_v51) serves as the case series because it captures detailed information on both SUID cases and other causes of infant deaths.
+- PRAMS Phase 7 Analytic Research File (prams_p7_arf) is used to measure prenatal stress among live births, which serves as a proxy for exposure prevalence in a population reference.
+
+### Period
+
+**Period:** 2012-2015
+
+This period overlaps the coverage of both ncfrp_v51 and prams_p7_arf. The manuscripts using these data cover specific years within this range (e.g., SUID manuscript uses cases from 2008 to 2019, but we are focused on a common period).
+
+### Variables
+
+**Concept:** Maternal Stress
+- **ncfrp_v51:INF4stress**: Mother experienced stressor during pregnancy.
+  - Values: Yes/No (1 = Yes, 2 = No, Missing values documented).
+  
+**Concept:** Exposure to Other Risk Factors
+- **ncfrp_v51:INFexpipv**: During pregnancy did mother experience intimate partner violence.
+  - Values: Yes/No (1 = Yes, 2 = No, Missing values documented).
+
+**Concept:** SUID and Non-SUID Cases
+- **ncfrp_v51:BIO1dthsids**: If yes, prior child deaths - Female - SIDS.
+  - Values: Yes/No (1 = Yes, 2 = No, Missing values documented).
+  
+### Biases
+
+**Selection Bias:** 
+- ncfrp_v51 captures data from participating fatality review teams. Participation varies over time and may not be representative of all infant deaths in the U.S.
+- prams_p7_arf surveys mothers from live births in specific states that participate in PRAMS, which may not be fully representative of national trends.
+
+**Information Bias:** 
+- ncfrp_v51 relies on case review teams to document maternal stressors; these reviews are retrospective and subjective assessments. The accuracy and completeness of this information may vary.
+- prams_p7_arf collects data via telephone surveys a few months postpartum, which can lead to recall bias.
+
+**Confounding:** 
+- Other unmeasured factors such as socioeconomic status, education level, and environmental conditions could influence both maternal stress and SUID risk. These variables are not consistently measured across the datasets used.
+
+### What the Design Cannot Establish
+
+This design cannot establish causality or estimate incidence rates for SUID due to the absence of a denominator source. It can only compare proportions or odds between SUID cases and other causes of infant death regarding prenatal maternal stress exposure.
+
+### Prior Art
+
+**Relevant Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C10 [limitation]**: The analysis excludes a small number of deaths at the extremes of the PCA distribution, including some extremely and very preterm infants who died early in postnatal life.
+- **bedsharing_ms_v7.C24 [limitation]**: The case series should be understood as a large, growing multi-jurisdiction surveillance sample rather than a fixed national census.
+
+The closest existing research focuses on other risk factors for SUID, such as maternal smoking and prematurity. However, none of the claims directly address prenatal stress specifically in relation to SUID incidence.
+
+### Verdict
+
+**Can these data answer a version of the question?**
+
+Yes, but with limitations:
+- The data can compare the proportion of infants experiencing prenatal maternal stress between SUID cases and other causes of infant death.
+- However, it cannot estimate incidence rates or establish causation due to the lack of denominator data.
+
+### Missing Elements
+
+To better address the research idea, a denominator source that includes live births along with their outcomes (SUID vs. non-SUID) would be necessary. This would allow for calculating risk ratios and estimating incidence rates, which could provide stronger evidence regarding the association between maternal stress and SUID incidence.

@@ -1,0 +1,357 @@
+{
+ "mappings": [
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "ncfrp_v51",
+   "variable": "INF4outcome",
+   "compatibility": "direct",
+   "rationale": "The variable 'INF4outcome' in the NFR-CRS codebook v5.1 includes cause of death codes that align with ICD-10 codes R95, R99, and W75."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that directly captures the biological sex of the infant."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures postconceptional age."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures maternal smoking status during pregnancy."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures preterm birth status."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures breastfeeding status at discharge."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures postconceptional age."
+  },
+  {
+   "concept": "sex",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures the biological sex of the infant."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures the year of birth or death."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "ncfrp_v51",
+   "variable": "INF4outcome",
+   "compatibility": "direct",
+   "rationale": "The variable 'INF4outcome' in the NFR-CRS codebook v5.1 includes cause of death codes that align with ICD-10 codes R95, R99, and W75."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures bed-sharing status."
+  },
+  {
+   "concept": "birthweight",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures birth weight categorized as low or non-low."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures postconceptional age."
+  },
+  {
+   "concept": "chronological age",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures chronological age."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures the biological sex of the infant."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures birth weight categorized as low or non-low."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures maternal smoking status during pregnancy."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures maternal prepregnancy BMI."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures gestational age."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures maternal infections such as chlamydia, gonorrhea, and hepatitis C."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures the age at death for SUID cases."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures geographic location."
+  },
+  {
+   "concept": "inner ear dysfunction",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures inner ear dysfunction."
+  },
+  {
+   "concept": "control condition",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures control conditions."
+  },
+  {
+   "concept": "body movement arousal response to severe hypoxia-hypercarbia",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures body movement arousal response to severe hypoxia-hypercarbia."
+  },
+  {
+   "concept": "hypercapnic ventilatory response",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures hypercapnic ventilatory response."
+  },
+  {
+   "concept": "age of mice",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures the age of mice."
+  },
+  {
+   "concept": "baseline cSN activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures baseline cSN activity."
+  },
+  {
+   "concept": "breathing frequency",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures breathing frequency."
+  },
+  {
+   "concept": "expiratory time",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures expiratory time."
+  },
+  {
+   "concept": "PiCo specific cholinergic-glutamatergic neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures PiCo specific cholinergic-glutamatergic neurons."
+  },
+  {
+   "concept": "glutamatergic PiCo neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures glutamatergic PiCo neurons."
+  },
+  {
+   "concept": "ChAT containing neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures ChAT containing neurons."
+  },
+  {
+   "concept": "Dbx1 and Vglut2 neurons",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures Dbx1 and Vglut2 neurons."
+  },
+  {
+   "concept": "preBötzinger complex (preBötC)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures preBötzinger complex."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (CIH)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures chronic intermittent hypoxia."
+  },
+  {
+   "concept": "diaphragm activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures diaphragm activity."
+  },
+  {
+   "concept": "vagus nerve activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures vagus nerve activity."
+  },
+  {
+   "concept": "cervical sympathetic nerve activity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures cervical sympathetic nerve activity."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (IH)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures chronic intermittent hypoxia."
+  },
+  {
+   "concept": "adult neurogenesis",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures adult neurogenesis."
+  },
+  {
+   "concept": "synaptic plasticity",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures synaptic plasticity."
+  },
+  {
+   "concept": "reactive oxygen species (ROS)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures reactive oxygen species."
+  },
+  {
+   "concept": "breathing patterns",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures breathing patterns."
+  },
+  {
+   "concept": "survival",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures survival."
+  },
+  {
+   "concept": "inhibition",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures inhibition."
+  },
+  {
+   "concept": "excitation",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures excitation."
+  },
+  {
+   "concept": "lipopolysaccharide (LPS)",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures lipopolysaccharide."
+  },
+  {
+   "concept": "progesterone",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures progesterone."
+  },
+  {
+   "concept": "neurogenesis",
+   "source_id": "ncfrp_v51",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The NFR-CRS codebook v5.1 does not provide a variable that captures neurogenesis."
+  }
+ ],
+ "source_summaries": {
+  "ncfrp_v51": "The National Fatality Review Case Reporting System (NFR-CRS) codebook version 5.1 provides detailed information on infant deaths, including cause of death codes and maternal health factors. However, it lacks specific variables for postconceptional age, infant sex, maternal smoking status during pregnancy, preterm birth status, breastfeeding status at discharge, bed sharing, birth weight categorized as low or non-low, gestational age, maternal infections such as chlamydia, gonorrhea, and hepatitis C, age of death in SUID cases, geographic location, inner ear dysfunction, control conditions, body movement arousal response to severe hypoxia-hypercarbia, hypercapnic ventilatory response, age of mice, baseline cSN activity, breathing frequency, expiratory time, PiCo specific cholinergic-glutamatergic neurons, glutamatergic PiCo neurons, ChAT containing neurons, Dbx1 and Vglut2 neurons, preBötzinger complex (preBötC), chronic intermittent hypoxia (CIH/IH), diaphragm activity, vagus nerve activity, cervical sympathetic nerve activity, adult neurogenesis, synaptic plasticity, reactive oxygen species (ROS), breathing patterns, survival, inhibition, excitation, lipopolysaccharide (LPS), and progesterone."
+ }
+}

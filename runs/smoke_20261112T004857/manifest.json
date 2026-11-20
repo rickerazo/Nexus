@@ -1,0 +1,113 @@
+{
+  "run_id": "smoke_20261112T004857",
+  "created_at": "2026-11-12T00:48:58.014107Z",
+  "mmf_version": "0.1.0.dev0",
+  "config_sha256": "14dcbb1cfc025e16a6770e76ef1ad49a746b676184d1f708a40ad9094763b168",
+  "backend": "ollama",
+  "allow_cloud": false,
+  "model": "qwen2.5:14b",
+  "seed": 0,
+  "temperature": 0.0,
+  "inputs": [
+    {
+      "path": "tests/fixtures/mini_codebook.txt",
+      "sha256": "77ba5a0e65da84752750102224a2ae149d83e27809150e9b56fa8cde31c48240",
+      "role": "codebook"
+    },
+    {
+      "path": "tests/fixtures/mini_manuscript.md",
+      "sha256": "93c9a343932cf03801e9525c9166aa7901616ae2c723a043c285121dd66b70ce",
+      "role": "manuscript"
+    }
+  ],
+  "calls": [
+    {
+      "stage": "codebook_extract_0",
+      "prompt_name": "codebook_extract",
+      "prompt_sha256": "ddf8850e46e42b7f8ca555ab687b42e5a2898251b11d0b282c9a53db3a8b3793",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261112T004857/llm_log/20261112T004858017988_codebook_extract_0.json",
+      "dropped": []
+    },
+    {
+      "stage": "A_mini_manuscript_0_profile",
+      "prompt_name": "a_profile",
+      "prompt_sha256": "2605ca0b1de5e69b26571c6d0a52431761add5605b813ebfa42398198682e4dc",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261112T004857/llm_log/20261112T005005115211_A_mini_manuscript_0_profile.json",
+      "dropped": []
+    },
+    {
+      "stage": "A_mini_manuscript_0_claims",
+      "prompt_name": "a_claims",
+      "prompt_sha256": "e65f45a86294af48313cab12eb2b747c7913b83960aa875aed057f0314430a9e",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261112T004857/llm_log/20261112T005105401595_A_mini_manuscript_0_claims.json",
+      "dropped": []
+    },
+    {
+      "stage": "B_schema_map_0_0",
+      "prompt_name": "b_schema_map",
+      "prompt_sha256": "63da231d3758bacf148e4b370884e6bc73fad9cdc497d76c51a5e9863034b784",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 1,
+      "ok": true,
+      "log_file": "runs/smoke_20261112T004857/llm_log/20261112T005145315638_B_schema_map_0_0.json",
+      "dropped": []
+    },
+    {
+      "stage": "C_gaps",
+      "prompt_name": "c_gaps",
+      "prompt_sha256": "73a5fcd444cf9d3f02a126d56458325238407cda5350c67365d48a0f1728d84a",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 2,
+      "ok": true,
+      "log_file": "runs/smoke_20261112T004857/llm_log/20261112T005255969884_C_gaps.json",
+      "dropped": []
+    },
+    {
+      "stage": "D_strategy_G1",
+      "prompt_name": "d_strategy",
+      "prompt_sha256": "bdc0ae9b2f1270b8eb27ccd3f72761d26b53191bf83f3b897b4d855b7cdde721",
+      "model": "qwen2.5:14b",
+      "model_digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+      "seed": 0,
+      "temperature": 0.0,
+      "attempts": 4,
+      "ok": false,
+      "log_file": "runs/smoke_20261112T004857/llm_log/20261112T005523317590_D_strategy_G1.json",
+      "dropped": []
+    }
+  ],
+  "stage_hashes": {
+    "ingest_cdc": "a62bbe0d6543ae9ad93f154761213aaa46234e6a897d994d29ef05f7bc4cba09",
+    "A_mini_manuscript": "39acb1996df80cdc2b8f371e207f0e7e642aa4764eb247a23e8da84587d98d9d",
+    "B": "7b01008861bf19ad2330060da3c0dab71b12c80fcdfe4231212fa20af274e5cd",
+    "B_check": "b649b69ebca68808dcd9187ecb32dc6988b62cf4b12a5f0e42022f22d6fca1e8",
+    "C": "81a638ad8b5b0c31fb1becc41dda8adb36aa34696ef948dbcc777cd939c85310"
+  },
+  "warnings": [
+    "ingest_cdc: 6 identifier(s) in the codebook are not extracted variables; see runs/smoke_20261112T004857/sources/cdc.audit.json"
+  ]
+}

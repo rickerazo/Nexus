@@ -1,0 +1,35 @@
+{
+ "mappings": [
+  {
+   "concept": "microglia activation",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 8 Analytic Research File does not contain any variables related to microglia activation or Iba1 staining."
+  },
+  {
+   "concept": "cell death",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 8 Analytic Research File does not contain any variables related to cell death or cleaved caspase 3 staining."
+  },
+  {
+   "concept": "glutamatergic transmission",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 8 Analytic Research File does not contain any variables related to glutamatergic transmission in the nucleus accumbens or amygdala."
+  },
+  {
+   "concept": "hypoglossal motor nucleus (XIIn)",
+   "source_id": "prams_p8_arf",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS Phase 8 Analytic Research File does not contain any variables related to the hypoglossal motor nucleus or electrophysiological recordings from brainstem slices."
+  }
+ ],
+ "source_summaries": {
+  "prams_p8_arf": "PRAMS Phase 8 Analytic Research File contains data on health behaviors and experiences of women during pregnancy and after childbirth. It includes variables related to maternal health, prenatal care, infant health, and socioeconomic factors but does not contain any information relevant to the concepts of microglia activation, cell death, glutamatergic transmission, or hypoglossal motor nucleus."
+ }
+}

@@ -1,0 +1,62 @@
+### Design and Study Plan
+
+#### 1. Restated Question:
+To assess how differences in recording pregnancy weight gain between PRAMS Phase 8 Analytic Research File (ARF) and its Standard Section II might affect the comparison of SUID risk factors related to maternal health and pre-pregnancy conditions.
+
+#### 2. Sources by Role:
+- **Case Series**: NCFRP_V51
+  - Reason: It is a case series that records child deaths reviewed by fatality review teams, including SUID cases.
+- **Population Reference**:
+  - PRAMS_P8_ARF
+  - PRAMS_P8_STD2
+  - Reason: Both sources are population references providing maternal health and pregnancy-related data from surveys of mothers after live births. These sources will be compared for consistency in recording pregnancy weight gain.
+
+#### 3. Period:
+- **Case Series (NCFRP_V51)**: Uses cases reviewed from 2008 to 2019.
+- **Population Reference**:
+  - PRAMS_P8_ARF: From 2016 to 2021
+  - PRAMS_P8_STD2: From 2016 to 2021
+
+#### 4. Variables and Measurement Differences:
+
+##### Maternal Pre-pregnancy Weight (Pre-preg BMI):
+- **PRAMS_P8_ARF**:
+  - Variable: `MAT_PRWT`: Maternal weight before pregnancy.
+  - Missing answers coded as `.U` for unknown or not stated, `.B` for don't know.
+
+- **PRAMS_P8_STD2**:
+  - No direct variable; however, pre-pregnancy BMI can be derived using other variables if needed but is not directly available.
+
+##### Pregnancy Weight Gain:
+- **PRAMS_P8_ARF**:
+  - Variable: `PGWT_GN`: Preg weight gain/lost.
+  - Missing answers coded as `.B` for don't know, `.D` for DK.
+
+- **PRAMS_P8_STD2**:
+  - Variables: 
+    - `PGWTGN8`: Pregnancy weight gain (value of gain).
+    - `PGWTGNU8_DK`: Unit of preg weight gain (DK = 7777).
+    - Missing answers coded as `.B` for blank, `.D` for don't know.
+
+#### 5. Biases:
+- **Selection Bias**:
+  - NCFRP_V51 includes deaths reviewed by fatality review teams and does not include live births; PRAMS_P8_ARF and PRAMS_P8_STD2 include surveys of mothers after live births, which do not record infant deaths.
+  
+- **Information Bias**:
+  - Timing: PRAMS collects data a few months post-birth, while NCFRP_V51 is reviewed retrospectively for case details. 
+  - Who reports: PRAMS data are self-reported by mothers, whereas NCFRP_V51 may be based on review of medical records and interviews.
+  
+- **Confounding**:
+  - Differences in the way weight gain is recorded between PRAMS_P8_ARF and PRAMS_P8_STD2 might affect consistency and comparability.
+
+#### 6. What the Design Cannot Establish:
+- The design cannot establish incidence rates or risk ratios since it does not have a denominator source (it compares only proportions or odds among cases).
+- It can't assess causal relationships but rather focuses on measurement discrepancies.
+  
+#### 7. Prior Art:
+- There is no direct prior work comparing PRAMS P8 ARF and PRAMS P8 STD2 for pregnancy weight gain recording consistency specifically in the context of SUID risk factors.
+
+#### 8. Verdict:
+These data can be used to assess how differences in recording pregnancy weight gain between PRAMS Phase 8 Analytic Research File (ARF) and its Standard Section II might affect comparisons of SUID risk factors related to maternal health conditions. The sources allow for a measurement comparison study, but it is limited to identifying discrepancies rather than establishing incidence or causal relationships.
+
+**Conclusion**: This design can be carried out using the provided data sources as they enable a direct comparison between PRAMS_P8_ARF and PRAMS_P8_STD2 on recording pregnancy weight gain related to SUID risk factors.

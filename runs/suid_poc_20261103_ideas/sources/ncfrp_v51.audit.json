@@ -1,0 +1,104 @@
+{
+  "source_id": "ncfrp_v51",
+  "n_variables": 4422,
+  "anchors_checked": 0,
+  "unmatched_anchors": [],
+  "census": [
+    {
+      "token": "A86",
+      "page": 9,
+      "context": "A86 | id | autonum | Internal database ID | auto assigned | No | v5",
+      "count": 10
+    },
+    {
+      "token": "A125",
+      "page": 10,
+      "context": "A125 | id | autonum | Internal database ID | auto assigned | No | v5",
+      "count": 6
+    },
+    {
+      "token": "N10",
+      "page": 32,
+      "context": "N10 | REGsdycat | numeric | Categorization for funded SDY Registry cases | default to 0 | 1 = Excluded from SDY Registry | No | v4",
+      "count": 4
+    },
+    {
+      "token": "N11",
+      "page": 32,
+      "context": "N11 | REGsuidcat | numeric | SUID categorization | default to 0 | 1 = Excluded | No | v4",
+      "count": 9
+    },
+    {
+      "token": "BSS",
+      "page": 37,
+      "context": "BSS | 01",
+      "count": 1
+    },
+    {
+      "token": "CAN",
+      "page": 37,
+      "context": "CAN | 02",
+      "count": 1
+    },
+    {
+      "token": "CFNFRB",
+      "page": 37,
+      "context": "CFNFRB | 02",
+      "count": 1
+    },
+    {
+      "token": "HOM",
+      "page": 37,
+      "context": "HOM | 03",
+      "count": 1
+    },
+    {
+      "token": "MDH",
+      "page": 37,
+      "context": "MDH | 91",
+      "count": 1
+    },
+    {
+      "token": "NAT",
+      "page": 37,
+      "context": "NAT | 04",
+      "count": 1
+    },
+    {
+      "token": "NNE",
+      "page": 37,
+      "context": "NNE | 02",
+      "count": 1
+    },
+    {
+      "token": "SDY",
+      "page": 37,
+      "context": "SDY | 06",
+      "count": 1
+    },
+    {
+      "token": "SUI",
+      "page": 37,
+      "context": "SUI | 05",
+      "count": 1
+    },
+    {
+      "token": "SUID",
+      "page": 37,
+      "context": "SUID | 06",
+      "count": 2
+    },
+    {
+      "token": "TRANS",
+      "page": 37,
+      "context": "TRANS | 06",
+      "count": 1
+    },
+    {
+      "token": "UNINTENTIONAL",
+      "page": 37,
+      "context": "UNINTENTIONAL | 09",
+      "count": 1
+    }
+  ]
+}

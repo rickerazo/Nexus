@@ -1,0 +1,70 @@
+### Design
+
+**Question:** What unique factors differentiate SUID cases from non-SUID infant deaths among fatality review cases?
+
+**Design Type:** Case-case comparison. This design compares the characteristics of two distinct outcomes (SUID and other types of infant death) within the same case series to identify what is specific to each outcome.
+
+### Sources by Role
+
+- **Case Series:**
+  - **ncfrp_v51**: The National Fatality Review Case Reporting System (NFR-CRS) contains detailed records of child deaths reviewed by fatality review teams. This source will be used to obtain the cases classified as SUID and other types of infant deaths.
+
+### Period
+
+- **Years Needed:** 2008-2019
+- **Acquire Years:**
+  - No new data acquisition is required since the available years (2004-2019) already cover the study period.
+
+### Variables
+
+**SUID Cases vs. Non-SUID Infant Deaths**
+
+#### Candidate Variables and Their Measurement Differences Between Sources:
+
+1. **Previous Preterm Births (Pregnancy History):**
+   - **ncfrp_v51:** `INF4eclampsiatf`, `INF4heduchosp`
+   - These variables capture medical complications and health education related to previous pregnancies, which can be indicative of preterm births or other pregnancy outcomes.
+
+2. **Hospital Stay Length:**
+   - **ncfrp_v51:** `INF4hosprtnoldunk` (how old was infant when hospitalized), `INF4hosprtnnumunk` (number of nights in hospital)
+   - These variables provide information on the duration and frequency of hospital stays for the infant.
+
+3. **Medical Complications:**
+   - **ncfrp_v51:** `INF4fetdistress`, `INF4edvisits`
+   - Variables like signs of fetal distress, number of antepartum encounters, can indicate medical complications during pregnancy and delivery.
+
+### Biases
+
+- **Selection Bias:**
+  - The case series from NCFRP captures cases reviewed by fatality review teams. Participation rates may vary across jurisdictions over the years, potentially affecting representativeness.
+  
+- **Information Bias:**
+  - Variables like `INF4hosprtnoldunk`, `INF4hosprtnnumunk` are self-reported or documented at the time of death and might have inconsistencies due to incomplete reporting.
+
+- **Confounding Factors:**
+  - Confounding can arise from unmeasured factors such as socioeconomic status, environmental exposures, and maternal health behaviors that vary between SUID cases and other infant deaths. 
+
+### What the Design Cannot Establish
+
+- The case-case comparison design cannot establish causation or incidence rates since there is no denominator source to calculate these.
+- It also does not account for potential confounders like urban/rural status due to missing geographic data.
+
+### Prior Art
+
+**Manuscript Claims:**
+
+- **SUID Manuscirpt:** 
+  - C1, C6, C7, C8, C9 discuss male excess risk and patterns in SUID incidence.
+  - These claims focus on the temporal trends of SUID rather than distinguishing it from other infant deaths.
+
+- **Bedsharing Manuscript:**
+  - C3, C4, C5, C12 discuss associations with bed sharing, smoking, and prematurity.
+  - This manuscript examines risk factors but does not differentiate between SUID cases and non-SUID infant deaths within the same case series.
+
+**Open Question:**
+
+- The current literature focuses on specific risk factors for SUID or general trends in mortality rates, but there is a lack of detailed comparison distinguishing unique factors that set SUID apart from other types of infant deaths.
+
+### Verdict
+
+Yes, these sources can answer a version of the question. The design uses the NCFRP case series to compare SUID cases with non-SUID infant death cases within the same period (2008-2019). However, the limitations include potential selection and information biases, as well as inability to account for confounding factors without additional data.

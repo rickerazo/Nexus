@@ -1,0 +1,756 @@
+{
+  "manuscript_id": "suid_literature_abstracts",
+  "title": "SUID literature from the Ramirez lab and Lavista Ferres group: abstracts (PubMed, retrieved 2026-10-26)",
+  "document_sha256": "687e8a02fa0c7d697b51a7d44224066beb34f0ea0281e14d163ef9f9f337ad41",
+  "research_questions": [
+    "To determine whether maternal obesity is a risk factor for Sudden Unexpected Infant Death (SUID) and the proportion of SUID cases attributable to maternal obesity.",
+    "To examine pandemic-era changes in non-SUID infant mortality by gestational age, age at death and cause of death.",
+    "To investigate the effects of maternal prepregnancy smoking, reduction during pregnancy, and smoking during pregnancy on SUID rates.",
+    "To assess whether inner ear dysfunction not only weakens the hypercapnic response, but also plays a role in suppressing the arousal response to suffocating gas mixtures.",
+    "To investigate the role of PiCo and preBötC in respiratory-sympathetic coupling under control conditions and following exposure to chronic intermittent hypoxia (CIH).",
+    "To report results from an 11-step user-centered design development process for a quit smoking conversational chatbot called QuitBot.",
+    "To investigate whether mouse models of Leigh Syndrome exhibit dysfunctions in neuromuscular activity of swallow and breathing integration.",
+    "How does chronic intermittent hypoxia (IH) affect adult neurogenesis in the dentate gyrus?",
+    "What are the effects of IH on synaptic plasticity in the dentate gyrus?",
+    "Do reactive oxygen species (ROS)-dependent and ROS-independent mechanisms contribute to changes in adult neurogenesis and synaptic plasticity due to IH?",
+    "How do breathing patterns during the first hour after birth predict survival in mice born prematurely or at term?",
+    "What are the roles of inhibition within the pre-Bötzinger complex (preBötC) for rhythm generation?",
+    "Does chronic intermittent hypoxia differentially impact inspiratory activity states at the level of the preBötzinger Complex?",
+    "Can progesterone pretreatment ameliorate detrimental effects of lipopolysaccharide-induced inflammation on cortical neurogenesis in mice?"
+  ],
+  "designs": [
+    "cohort",
+    "nested_case_control",
+    "case_control",
+    "cross_sectional"
+  ],
+  "model_classes": [
+    "logistic_regression",
+    "cox_proportional_hazards",
+    "generalized_additive"
+  ],
+  "data_sources_used": [
+    "Centers for Disease Control and Prevention National Center for Health Statistics data",
+    "National Fatality Review Case Reporting System",
+    "Centers for Disease Control and Prevention Birth Cohort Linked Birth/Infant Death Data Set",
+    "Genetic mouse model of Ndufs4",
+    "Mouse model with chronic intermittent hypoxia (CIH)",
+    "Adult mice exposed to urethane anesthesia",
+    "Frontiers in physiology",
+    "Journal of neurophysiology",
+    "Reproductive sciences (Thousand Oaks, Calif.)",
+    "eNeuro",
+    "Current opinion in neurobiology"
+  ],
+  "variables": [
+    {
+      "concept": "Sudden Unexpected Infant Death (SUID)",
+      "role": "outcome",
+      "operationalization": "deaths occurring at 7 to 364 days after birth with International Statistical Classification of Diseases, Tenth Revision cause of death code R95 (sudden infant death syndrome), R99 (ill-defined and unknown causes), or W75 (accidental suffocation and strangulation in bed).",
+      "quote": "SUID was defined as deaths at <1 year of age with International Classification of Diseases, 10th Revision codes R95 (sudden infant death syndrome), R99 (ill-defined or unknown cause), or W75 (accidental suffocation or strangulation in bed).",
+      "page": 1
+    },
+    {
+      "concept": "Maternal prepregnancy body mass index (BMI)",
+      "role": "exposure",
+      "operationalization": "calculated as weight in kilograms divided by height in meters squared.",
+      "quote": "Maternal prepregnancy body mass index (BMI; calculated as weight in kilograms divided by height in meters squared).",
+      "page": 1
+    },
+    {
+      "concept": "Gestational age at birth",
+      "role": "covariate",
+      "operationalization": "measured in weeks.",
+      "quote": "All US live births for the study years occurring at 28 weeks' gestation or later from complete reporting areas were eligible;",
+      "page": 1
+    },
+    {
+      "concept": "Maternal smoking during pregnancy",
+      "role": "exposure",
+      "operationalization": "self-reported.",
+      "quote": "SUID risk more than doubled (adjusted odds ratio [aOR] = 2.44; 95% confidence interval [CI] 2.31-2.57) with any maternal smoking during pregnancy and increased twofold between no smoking and smoking 1 cigarette daily throughout pregnancy.",
+      "page": 1
+    },
+    {
+      "concept": "Maternal infections in pregnancy",
+      "role": "exposure",
+      "operationalization": "chlamydia, gonorrhea and hepatitis C.",
+      "quote": "Chlamydia was present in 3.8% of mothers whose infants subsequently died of SUID compared with 1.7% of controls (unadjusted OR = 2.35, 95% CI = 2.15, 2.56; adjusted OR = 1.08, 95% CI = 0.98, 1.19).",
+      "page": 1
+    },
+    {
+      "concept": "Age of death in SUID cases",
+      "role": "outcome",
+      "operationalization": "measured as days since birth.",
+      "quote": "The odds of death at different ages were compared to determine which variables significantly affect the SUID age of death.",
+      "page": 1
+    },
+    {
+      "concept": "Geographic location",
+      "role": "stratifier",
+      "operationalization": "state, latitude, and longitude.",
+      "quote": "Understanding why some states have lower SUID rates may enhance SUID prevention strategies.",
+      "page": 1
+    },
+    {
+      "concept": "inner ear dysfunction",
+      "role": "exposure",
+      "operationalization": "induced by intra-tympanic gentamicin (IT-Gent) injections bilaterally or unilaterally to precipitate inner ear hair cell dysfunction.",
+      "quote": "Wild-type mice (n=28) received intra-tympanic gentamicin (IT-Gent) injections bilaterally or unilaterally to precipitate inner ear hair cell dysfunction.",
+      "page": 1
+    },
+    {
+      "concept": "control condition",
+      "role": "exposure",
+      "operationalization": "received intra-tympanic saline (IT-Saline) bilaterally or unilaterally, or intra-peritoneal gentamicin (IP-Gent).",
+      "quote": "Three control groups (n=22) received intra-tympanic saline (IT-Saline) bilaterally or unilaterally (right or left), or intra-peritoneal gentamicin (IP-Gent).",
+      "page": 1
+    },
+    {
+      "concept": "body movement arousal response to severe hypoxia-hypercarbia",
+      "role": "outcome",
+      "operationalization": "measured under light anesthesia 8 days following the administration of gentamicin or saline.",
+      "quote": "The body movement arousal responses to severe hypoxia-hypercarbia combined (5% CO2 in nitrogen) were tested under light anesthesia 8 days following the administration of gentamicin or saline.",
+      "page": 1
+    },
+    {
+      "concept": "hypercapnic ventilatory response",
+      "role": "outcome",
+      "operationalization": "measured as part of assessing arousal responses to severe hypoxia-hypercarbia.",
+      "quote": "The HCVR was significantly decreased in the bilateral (n=9) and unilateral IT-Gent-treated mice (n=19) compared to bilateral (n=7) and unilateral IT-Saline (n=9) control groups (p<0.05).",
+      "page": 1
+    },
+    {
+      "concept": "age of mice",
+      "role": "covariate",
+      "operationalization": "not explicitly stated, but implied to be within a timeframe suitable for the experiment.",
+      "quote": "After injections, the bilateral and unilateral IT-Gent-treated animals behaved similarly to controls, however the HCVR as well as the arousal movements in response to severe hypoxia-hypercarbia were suppressed in IT-Gent-treated animals compared to control animals (P<0.05).",
+      "page": 1
+    },
+    {
+      "concept": "baseline cSN activity",
+      "role": "outcome",
+      "operationalization": "measured as increased baseline sympathetic nerve activity following CIH exposure.",
+      "quote": "Following CIH exposure, baseline cSN activity increased",
+      "page": 1
+    },
+    {
+      "concept": "breathing frequency",
+      "role": "outcome",
+      "operationalization": "measured as an increase in breathing rate after chronic intermittent hypoxia.",
+      "quote": "Following CIH exposure, baseline cSN activity increased, breathing frequency increased, and expiratory time decreased.",
+      "page": 1
+    },
+    {
+      "concept": "expiratory time",
+      "role": "outcome",
+      "operationalization": "measured as a decrease in the duration of expiration following CIH exposure.",
+      "quote": "Following CIH exposure, baseline cSN activity increased, breathing frequency increased, and expiratory time decreased.",
+      "page": 1
+    },
+    {
+      "concept": "PiCo specific cholinergic-glutamatergic neurons",
+      "role": "exposure",
+      "operationalization": "optogenetically stimulated to assess changes in respiratory-sympathetic coupling.",
+      "quote": "Stimulating PiCo specific cholinergic-glutamatergic neurons caused a sympathetic burst during all phases of the respiratory cycle, whereas optogenetic activation of cholinergic-glutamatergic PiCo neurons in CIH mice increased sympathetic activity only during postinspiration and late expiration.",
+      "page": 1
+    },
+    {
+      "concept": "glutamatergic PiCo neurons",
+      "role": "exposure",
+      "operationalization": "optogenetically stimulated to assess changes in respiratory-sympathetic coupling.",
+      "quote": "Stimulation of glutamatergic PiCo neurons increased cSN activity during the postinspiratory phase in control and CIH mice.",
+      "page": 1
+    },
+    {
+      "concept": "ChAT containing neurons",
+      "role": "exposure",
+      "operationalization": "optogenetically stimulated to assess changes in respiratory-sympathetic coupling.",
+      "quote": "Optogenetic stimulation of ChAT containing neurons in the PiCo area did not affect sympathetic activity under control or CIH conditions.",
+      "page": 1
+    },
+    {
+      "concept": "Dbx1 and Vglut2 neurons",
+      "role": "exposure",
+      "operationalization": "optogenetically stimulated to assess changes in respiratory-sympathetic coupling.",
+      "quote": "Stimulating Dbx1 or Vglut2 neurons in preBötC evoked an inspiration and a concomitant cSN burst under control and CIH conditions.",
+      "page": 1
+    },
+    {
+      "concept": "preBötzinger complex (preBötC)",
+      "role": "exposure",
+      "operationalization": "optogenetically stimulated to assess changes in respiratory-sympathetic coupling.",
+      "quote": "Stimulating Dbx1 or Vglut2 neurons in preBötC evoked an inspiration and a concomitant cSN burst under control and CIH conditions.",
+      "page": 1
+    },
+    {
+      "concept": "chronic intermittent hypoxia (CIH)",
+      "role": "exposure",
+      "operationalization": "mice exposed to chronic intermittent hypoxia for 21 days.",
+      "quote": "This study investigates the role of the postinspiratory complex (PiCo) and preBötzinger complex (preBötC) in respiratory-sympathetic coupling under control conditions and following exposure to chronic intermittent hypoxia (CIH) for 21 days (5% O2-80 bouts/day).",
+      "page": 1
+    },
+    {
+      "concept": "diaphragm activity",
+      "role": "outcome",
+      "operationalization": "measured as changes in diaphragm muscle activity.",
+      "quote": "The surface of the ventral brainstem was exposed in urethane (1.5 g/kg) anesthetized, spontaneously breathing adult mice. Cholinergic (ChAT), glutamatergic (Vglut2), and neurons that co-express ChAT and Vglut2 at PiCo, as well as Dbx1 and Vglut2 neurons at preBötC, were optogenetically stimulated while recording activity from the diaphragm (DIA), vagus nerve (cVN), and cervical sympathetic nerve (cSN).",
+      "page": 1
+    },
+    {
+      "concept": "vagus nerve activity",
+      "role": "outcome",
+      "operationalization": "measured as changes in vagal nerve activity.",
+      "quote": "The surface of the ventral brainstem was exposed in urethane (1.5 g/kg) anesthetized, spontaneously breathing adult mice. Cholinergic (ChAT), glutamatergic (Vglut2), and neurons that co-express ChAT and Vglut2 at PiCo, as well as Dbx1 and Vglut2 neurons at preBötC, were optogenetically stimulated while recording activity from the diaphragm (DIA), vagus nerve (cVN), and cervical sympathetic nerve (cSN).",
+      "page": 1
+    },
+    {
+      "concept": "cervical sympathetic nerve activity",
+      "role": "outcome",
+      "operationalization": "measured as changes in cervical sympathetic nerve activity.",
+      "quote": "The surface of the ventral brainstem was exposed in urethane (1.5 g/kg) anesthetized, spontaneously breathing adult mice. Cholinergic (ChAT), glutamatergic (Vglut2), and neurons that co-express ChAT and Vglut2 at PiCo, as well as Dbx1 and Vglut2 neurons at preBötC, were optogenetically stimulated while recording activity from the diaphragm (DIA), vagus nerve (cVN), and cervical sympathetic nerve (cSN).",
+      "page": 1
+    },
+    {
+      "concept": "chronic intermittent hypoxia (IH)",
+      "role": "exposure",
+      "operationalization": "30 days of IH exposure (IH30) in a murine model.",
+      "quote": "Using a murine model, we examined the impact of 30 d of IH (IH30) on adult neurogenesis and synaptic plasticity in the dentate gyrus.",
+      "page": 1
+    },
+    {
+      "concept": "adult neurogenesis",
+      "role": "outcome",
+      "operationalization": "Measured by immunohistochemical experiments assessing Sox2+ neural progenitor cells, doublecortin-positive neurons, and radial glial cells in the subgranular zone.",
+      "quote": "Immunohistochemical experiments also indicate that IH perturbs multiple aspects of adult neurogenesis.",
+      "page": 1
+    },
+    {
+      "concept": "synaptic plasticity",
+      "role": "outcome",
+      "operationalization": "Assessed by paired-pulse facilitation and long-term potentiation (LTP).",
+      "quote": "IH30 suppressed long-term potentiation (LTP).",
+      "page": 1
+    },
+    {
+      "concept": "reactive oxygen species (ROS)",
+      "role": "effect_modifier",
+      "operationalization": "Measured by lipid peroxidation and mitigated with antioxidant treatment.",
+      "quote": "Treatment with the antioxidant, 5,10,15,20-Tetrakis (1-methylpyridinium-4-yl)-21H,23H-porphyrin manganese(III) pentachloride (MnTMPyP), reduced CIH-mediated irregularities on the network rhythm and improved transmission of preBötC to the XIIn.",
+      "page": 1
+    },
+    {
+      "concept": "breathing patterns",
+      "role": "exposure",
+      "operationalization": "Measured using plethysmography during the first hour after birth in mice born at term, delivered prematurely with LPS, or via C-section.",
+      "quote": "Using plethysmography, we measured breathing patterns during the first hour after birth in mice born at term (Term 19.5), delivered prematurely on gestational day 18.5 following administration of low-dose lipopolysaccharide (LPS; 0.14 mg/kg) to pregnant dams (LPS 18.5), or delivered on gestational day 18.7 or 17.5 by caesarian section (C-S 18.5 and C-S 17.5, respectively).",
+      "page": 1
+    },
+    {
+      "concept": "survival",
+      "role": "outcome",
+      "operationalization": "Measured as mortality rates in mice born prematurely or at term.",
+      "quote": "C-S 17.5 mice did not survive, whereas mortality was not increased in C-S 18.5 mice. However, in premature pups born at the same gestational age (day 18.5) in response to maternal LPS injection, mortality was significantly increased.",
+      "page": 1
+    },
+    {
+      "concept": "inhibition",
+      "role": "exposure",
+      "operationalization": "Investigated using a biophysical model and in vitro recordings from mouse pre-Bötzinger complex.",
+      "quote": "We use a biophysical model to investigate the different roles of local and long-range inhibition in the respiratory network, a key component of which is the pre-Bötzinger complex inspiratory microcircuit.",
+      "page": 1
+    },
+    {
+      "concept": "excitation",
+      "role": "exposure",
+      "operationalization": "Investigated using partial excitation block and in vitro recordings from mouse pre-Bötzinger complex.",
+      "quote": "Partial excitation block leads to increased rhythmic variability, but this recovers after blockade of inhibition.",
+      "page": 1
+    },
+    {
+      "concept": "lipopolysaccharide (LPS)",
+      "role": "exposure",
+      "operationalization": "Administered intraperitoneally at 0.14 mg/kg to pregnant dams on gestational day 18.5.",
+      "quote": "Two hours later, mice were given intraperitoneal LPS (140 μg/kg) or vehicle.",
+      "page": 1
+    },
+    {
+      "concept": "progesterone",
+      "role": "exposure",
+      "operationalization": "Administered intraperitoneally at 42 mg/kg to pregnant dams on embryonic day 17.5.",
+      "quote": "Timed pregnant mouse dams (n = 8) were given intraperitoneal injections of progesterone (42 mg/kg) or vehicle on embryonic day 17.5.",
+      "page": 1
+    },
+    {
+      "concept": "neurogenesis",
+      "role": "outcome",
+      "operationalization": "Assessed by T-box transcription factor 2 (Tbr2) intermediate neural progenitor cell density and BrdU labeling.",
+      "quote": "Two-color immunofluorescence was performed with primary antibodies T-box transcription factor 2 (Tbr2), ionized calcium binding adapter molecule 1 (Iba1), cleaved caspase 3 (CC3), and 5-bromo-2'-deoxyuridine (BrdU).",
+      "page": 1
+    },
+    {
+      "concept": "microglia activation",
+      "role": "outcome",
+      "operationalization": "Assessed by Iba1 staining.",
+      "quote": "Microglia displayed an activated phenotype, and cell density was increased (P < .001).",
+      "page": 1
+    },
+    {
+      "concept": "cell death",
+      "role": "outcome",
+      "operationalization": "Assessed by cleaved caspase 3 (CC3) staining.",
+      "quote": "Cell death rates were low among study groups but was increased in LPS exposure groups compared to progesterone alone (P = .0015).",
+      "page": 1
+    },
+    {
+      "concept": "glutamatergic transmission",
+      "role": "outcome",
+      "operationalization": "Assessed in the nucleus accumbens and amygdala.",
+      "quote": "Moreover, although these mice displayed hyperactivity that became more pronounced over time, they showed impaired persistence of cocaine-induced locomotor sensitization. These behavioral effects were associated with alterations in glutamatergic transmission in the nucleus accumbens and amygdala.",
+      "page": 1
+    },
+    {
+      "concept": "hypoglossal motor nucleus (XIIn)",
+      "role": "outcome",
+      "operationalization": "Assessed by electrophysiological recordings from brainstem slices.",
+      "quote": "CIH increased the degree of lipid peroxidation in the preBötC and treatment with the antioxidant, 5,10,15,20-Tetrakis (1-methylpyridinium-4-yl)-21H,23H-porphyrin manganese(III) pentachloride (MnTMPyP), reduced CIH-mediated irregularities on the network rhythm and improved transmission of preBötC to the XIIn.",
+      "page": 1
+    }
+  ],
+  "claims": [
+    {
+      "id": "suid_literature_abstracts.C1",
+      "kind": "finding",
+      "statement": "The overall non-SUID infant mortality rates consistently trended downwards with no pandemic-associated change.",
+      "quote": "Overall non-SUID infant mortality rates consistently trended downwards with no pandemic-associated change.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C2",
+      "kind": "finding",
+      "statement": "Mortality rates among full-term infants reversed their prepandemic declines during the pandemic.",
+      "quote": "rates among full-term infants reversed their prepandemic declines.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C3",
+      "kind": "finding",
+      "statement": "Postneonatal deaths also reversed their prepandemic decline with statistically significant increases during the pandemic.",
+      "quote": "postneonatal deaths similarly reversed their prepandemic decline, with statistically significant increases during the pandemic.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C4",
+      "kind": "finding",
+      "statement": "The decline in early neonatal mortality rates became more pronounced during the pandemic.",
+      "quote": "the decline in early neonatal mortality rates became more pronounced during the pandemic, with a 7.2% reduction in observed versus expected monthly mortality rates.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C5",
+      "kind": "finding",
+      "statement": "Rates of mortality due to external causes increased during the pandemic.",
+      "quote": "rates of mortality due to external causes increased during the pandemic.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C6",
+      "kind": "finding",
+      "statement": "Variants in 88 genes were identified, with 64.6% of infants having variants of interest.",
+      "quote": "variants of interest were identified in 88 genes, in 64.6% of our cohort.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C7",
+      "kind": "finding",
+      "statement": "Seventy-three of the identified gene variants have been previously associated with SIDS/SUID/SUDP.",
+      "quote": "seventy-three of these have been previously associated with SIDS/SUID/SUDP.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C8",
+      "kind": "finding",
+      "statement": "Forty-three cardiac genes were identified, related to cardiomyopathies, arrhythmias, and other conditions.",
+      "quote": "forty-three can be characterized as cardiac genes and are related to cardiomyopathies, arrhythmias, and other conditions.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C9",
+      "kind": "finding",
+      "statement": "Eight gene variants are implicated in the response to hypoxia and regulation of reactive oxygen species (ROS).",
+      "quote": "eight genes are implicated in the response to hypoxia and the regulation of reactive oxygen species (ros) and have not been previously described in sids/suid/sudp.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C10",
+      "kind": "finding",
+      "statement": "Maternal obesity is a risk factor for Sudden Unexpected Infant Death (SUID), with an increased risk associated with higher maternal BMI.",
+      "quote": "infants born to mothers with obesity had a higher suid risk that increased with increasing obesity severity.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C11",
+      "kind": "finding",
+      "statement": "Maternal smoking during pregnancy significantly increases the risk of SUID.",
+      "quote": "maternal smoking during pregnancy is an established risk factor for sudden unexpected infant death (suid). here, we aim to investigate the effects of maternal prepregnancy smoking, reduction during pregnancy, and smoking during pregnancy on suid rates.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C12",
+      "kind": "finding",
+      "statement": "Post-hypoxic recovery of respiration is gender dependent, which is centrally manifested at the level of the preBötzinger complex (preBötC).",
+      "quote": "we conclude that post-hypoxic recovery of respiration is gender dependent, which is, in part, centrally manifested at the level of the prebötc.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C13",
+      "kind": "finding",
+      "statement": "Sighs monitor changes in brain states and induce arousal, playing a role in homeostatically regulating breathing stability under physiological and pathological conditions.",
+      "quote": "sighs monitor changes in brain states, induce arousal, and reset breathing variability. these behavioral roles homeostatically regulate breathing stability under physiological and pathological conditions.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C14",
+      "kind": "finding",
+      "statement": "Inner ear dysfunction (IED) can suppress the movement response to hypoxia-hypercarbia in mice, potentially playing a role in Sudden Infant Death Syndrome (SIDS).",
+      "quote": "hypercarbia did not stimulate vigorous movements in any animals under either sleep condition. hypoxia triggered vigorous movements in controls (p<0.05) and a decreased response in it-gent animals under light anesthesia.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C15",
+      "kind": "finding",
+      "statement": "The preBötzinger complex (preBötC) is critical for generating breathing rhythms, and its function can be influenced by gender.",
+      "quote": "the prebötcc is a critical neuronal network for the generation of breathing. lesioning the prebötcc abolishes respiration, while when isolated in vitro, the prebötcc continues to generate respiratory rhythmic activity.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C16",
+      "kind": "finding",
+      "statement": "A prior study identified an association between hearing suppression on the newborn hearing test and subsequent death from SIDS.",
+      "quote": "A prior study identified an association between hearing suppression on the newborn hearing test and subsequent death from SIDS.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C17",
+      "kind": "finding",
+      "statement": "Inner ear dysfunction precipitates a marked suppression of the hypercapnic ventilatory response (HCVR).",
+      "quote": "inner ear dysfunction precipitates a marked suppression of the hypercapnic ventilatory response (HCVR)",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C18",
+      "kind": "finding",
+      "statement": "Inner ear dysfunction weakens the hypercapnic response and suppresses the arousal response to suffocating gas mixtures.",
+      "quote": "the HCVR as well as the arousal movements in response to severe hypoxia-hypercarbia were suppressed in IT-Gent-treated animals compared to control animals (P<0.05)",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C19",
+      "kind": "finding",
+      "statement": "The HCVR was significantly decreased in bilateral and unilateral IT-Gent-treated mice compared to controls.",
+      "quote": "Thus the HCVR was significantly decreased in the bilateral (n=9) and unilateral IT-Gent-treated mice (n=19) compared to bilateral (n=7) and unilateral IT-Saline (n=9) control groups (p<0.05)",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C20",
+      "kind": "finding",
+      "statement": "Arousal movements were suppressed in bilateral and unilateral IT-Gent-treated mice compared to controls.",
+      "quote": "arousal movements were suppressed in the bilateral IT-Gent group (n=9) compared to bilateral IT-Saline controls (n=7, P<0.0001) and in the unilateral IT-Gent group (n=19) compared to unilateral IT-Saline controls (n=10, P<0.0001)",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C21",
+      "kind": "finding",
+      "statement": "Inner ear dysfunction could be relevant in the pathophysiology of SIDS.",
+      "quote": "The findings support the theory that inner ear dysfunction could be relevant in the pathophysiology of SIDS",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C22",
+      "kind": "finding",
+      "statement": "Inner ear dysfunction plays a key role in arousal from suffocating gas mixtures.",
+      "quote": "The inner ear appears to play a key role in arousal from suffocating gas mixtures that has not been previously identified",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C23",
+      "kind": "finding",
+      "statement": "Swallow-related submental complex duration and amplitude were significantly decreased in both Mecp2-/y and Mecp2+/- mice compared to wild-type.",
+      "quote": "swallow-related submental complex duration and amplitude were significantly decreased in both mecp2-/y and mecp2+/- mice compared to wild-type, likely due to reduced motor unit activation",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C24",
+      "kind": "finding",
+      "statement": "Cholinergic immunoreactivity in the hypoglossal, facial, and trigeminal motor nuclei was decreased in postsymptomatic Mecp2-deficient mice.",
+      "quote": "cholinergic staining in hypoglossal, facial, and trigeminal nuclei were decreased",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C25",
+      "kind": "finding",
+      "statement": "The transition time from inspiration to swallow was significantly increased in Mecp2-/y mice.",
+      "quote": "We also observed a significant increase in the transition time from inspiration to swallow, swallow to the subsequent inspiration, and impaired post swallow respiratory rhythm resumption in Mecp2-/y, but not Mecp2+/- mice",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C26",
+      "kind": "finding",
+      "statement": "The study investigates the role of PiCo and preBötC in respiratory-sympathetic coupling under control conditions and following exposure to chronic intermittent hypoxia (CIH).",
+      "quote": "This study investigates the role of the postinspiratory complex (PiCo) and preBötzinger complex (preBötC) in respiratory-sympathetic coupling under control conditions and following exposure to chronic intermittent hypoxia (CIH) for 21 days (5% O2-80 bouts/day).",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C27",
+      "kind": "finding",
+      "statement": "Baseline sympathetic nerve activity increased, breathing frequency increased, and expiratory time decreased following CIH exposure.",
+      "quote": "Following CIH exposure, baseline cSN activity increased, breathing frequency increased, and expiratory time decreased.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C28",
+      "kind": "finding",
+      "statement": "Stimulation of PiCo specific cholinergic-glutamatergic neurons caused a sympathetic burst during all phases of the respiratory cycle in control mice but only during postinspiration and late expiration in CIH mice.",
+      "quote": "In control mice, stimulating PiCo specific cholinergic-glutamatergic neurons caused a sympathetic burst during all phases of the respiratory cycle, whereas optogenetic activation of cholinergic-glutamatergic PiCo neurons in CIH mice increased sympathetic activity only during postinspiration and late expiration.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C29",
+      "kind": "finding",
+      "statement": "Stimulation of glutamatergic PiCo neurons increased cervical sympathetic nerve (cSN) activity during the postinspiratory phase in both control and CIH mice.",
+      "quote": "Stimulation of glutamatergic PiCo neurons increased cSN activity during the postinspiratory phase in control and CIH mice.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C30",
+      "kind": "finding",
+      "statement": "Optogenetic stimulation of ChAT containing neurons in the PiCo area did not affect sympathetic activity under either control or CIH conditions.",
+      "quote": "Optogenetic stimulation of ChAT containing neurons in the PiCo area did not affect sympathetic activity under control or CIH conditions.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C31",
+      "kind": "finding",
+      "statement": "Stimulation of Dbx1 or Vglut2 neurons in preBötC evoked an inspiration and a concomitant cSN burst under both control and CIH conditions.",
+      "quote": "Stimulating Dbx1 or Vglut2 neurons in preBötC evoked an inspiration and a concomitant cSN burst under control and CIH conditions.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C32",
+      "kind": "finding",
+      "statement": "PiCo and preBötC contribute to respiratory-sympathetic coupling, which is altered by chronic intermittent hypoxia (CIH).",
+      "quote": "Taken together, these results suggest that PiCo and preBötC contribute to respiratory-sympathetic coupling, which is altered by CIH, and may contribute to the hypertension observed in patients with OSA.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C33",
+      "kind": "hypothesis",
+      "statement": "It is hypothesized that adult neurogenesis in the dentate gyrus maintains normal hippocampal function.",
+      "quote": "It is hypothesized that adult neurogenesis in the dentate gyrus is an ongoing process that maintains normal hippocampal function in many mammalian species, including humans.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C34",
+      "kind": "method",
+      "statement": "The study used a murine model to examine the impact of chronic intermittent hypoxia (IH) on adult neurogenesis and synaptic plasticity in the dentate gyrus over 30 days.",
+      "quote": "Using a murine model, we examined the impact of 30 d of IH (IH30) on adult neurogenesis and synaptic plasticity in the dentate gyrus.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C35",
+      "kind": "finding",
+      "statement": "Chronic intermittent hypoxia did not affect paired-pulse facilitation but suppressed long-term potentiation (LTP).",
+      "quote": "Although IH30 did not affect paired-pulse facilitation, IH30 suppressed long-term potentiation (LTP).",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C36",
+      "kind": "finding",
+      "statement": "Chronic intermittent hypoxia increased the number of proliferating Sox2+ neural progenitor cells but reduced the number of doublecortin-positive neurons.",
+      "quote": "IH30 increased the number of proliferating Sox2+ neural progenitor cells in the subgranular zone yet reduced the number of doublecortin-positive neurons.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C37",
+      "kind": "finding",
+      "statement": "Chronic intermittent hypoxia increased radial glial cell proportion and decreased adult-born neuron proportion in the dentate gyrus.",
+      "quote": "cell lineage tracing revealed that IH30 increased the proportion of radial glial cells in the subgranular zone, yet decreased the proportion of adult-born neurons in the dentate gyrus",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C38",
+      "kind": "finding",
+      "statement": "Antioxidant treatment mitigated chronic intermittent hypoxia-dependent suppression of LTP and prevented loss of adult-born neurons.",
+      "quote": "While administration of a superoxide anion scavenger during IH did not prevent neural progenitor cell proliferation, it mitigated the IH-dependent suppression of LTP and prevented adult-born neuron loss",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C39",
+      "kind": "hypothesis",
+      "statement": "Breathing patterns in the first hour after birth predict survival in premature mice.",
+      "quote": "We hypothesized that breathing patterns during the first hour of life would be predictive of survival in an animal model of prematurity.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C40",
+      "kind": "method",
+      "statement": "The study used plethysmography to measure breathing patterns in mice born at term, delivered prematurely after low-dose lipopolysaccharide (LPS) injection, or via caesarian section.",
+      "quote": "Using plethysmography, we measured breathing patterns during the first hour after birth in mice born at term (Term 19.5), delivered prematurely on gestational day 18.5 following administration of low-dose lipopolysaccharide (LPS; 0.14 mg/kg) to pregnant dams (LPS 18.5), or delivered on gestational day 18.7 or 17.5 by caesarian section (C-S 18.5 and C-S 17.5, respectively).",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C41",
+      "kind": "finding",
+      "statement": "Mortality was significantly increased in premature pups born at gestational day 18.5 after maternal LPS injection.",
+      "quote": "However, in premature pups born at the same gestational age (day 18.5) in response to maternal LPS injection, mortality was significantly increased.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C42",
+      "kind": "finding",
+      "statement": "Mice that survived had higher birth weights and showed eupneic or gasping activity transitioning into normal breathing.",
+      "quote": "Overall, mice that survived had higher birth weights and showed eupneic or gasping activity that was able to transition to normal breathing.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C43",
+      "kind": "finding",
+      "statement": "Mice that did not survive exhibited distinct large amplitude breaths at low frequency, failing to transition into normal breathing.",
+      "quote": "In contrast, mice that did not survive showed distinct, large amplitude, long-lasting breaths that occurred at low frequency and did not transition into eupnea.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C44",
+      "kind": "hypothesis",
+      "statement": "Local inhibition destabilizes rhythmogenesis while long-range inhibition stabilizes it in the pre-Bötzinger complex inspiratory microcircuit.",
+      "quote": "Increasing inhibition within the microcircuit results in a limited number of out-of-phase neurons before rhythmicity and synchrony degenerate. Thus unstructured local inhibition is destabilizing and cannot support the generation of more than one rhythm.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C45",
+      "kind": "method",
+      "statement": "The study used a biophysical model to investigate the roles of local and long-range inhibition in the respiratory network, supported by in vitro recordings from mouse pre-Bötzinger complex.",
+      "quote": "We use a biophysical model to investigate the different roles of local and long-range inhibition in the respiratory network, a key component of which is the pre-Bötzinger complex inspiratory microcircuit.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C46",
+      "kind": "finding",
+      "statement": "Partial excitation block leads to increased rhythmic variability but recovers after blockade of inhibition in the pre-Bötzinger complex.",
+      "quote": "Partial excitation block leads to increased rhythmic variability, but this recovers after blockade of inhibition.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C47",
+      "kind": "hypothesis",
+      "statement": "Chronic intermittent hypoxia differentially impacts inspiratory activity states at the level of the pre-Bötzinger complex.",
+      "quote": "The preBötzinger complex (preBötC) is a medullary brainstem network crucially involved in the generation of different inspiratory rhythms. In the isolated brainstem slice, the preBötC reconfigures to produce different rhythms that we refer to as 'fictive eupnea' under baseline conditions (i.e., carbogen), and 'fictive gasping' in hypoxia.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C48",
+      "kind": "method",
+      "statement": "The study examined the impact of chronic intermittent hypoxia on various dynamic aspects of rhythmogenesis during baseline conditions, transition to hypoxia, and throughout hypoxia.",
+      "quote": "We recently demonstrated that fictive eupnea is irregular following exposure to chronic intermittent hypoxia (CIH). However, it is unknown how CIH impacts fictive gasping. To address this, brain slices containing the preBötC were prepared from control and CIH exposed mice. Electrophysiological recordings of rhythmogenesis were obtained during the perihypoxic interval.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C49",
+      "kind": "finding",
+      "statement": "Chronic intermittent hypoxia increased irregularity score (IrS) and fluctuation value (χ) but did not affect sample entropy (sENT) of amplitude in baseline conditions.",
+      "quote": "In baseline conditions, CIH increased IrS of amplitude (0.21 ± 0.2) and χ of amplitude (0.34 ± 0.02) but did not affect sENT of amplitude.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C50",
+      "kind": "finding",
+      "statement": "During hypoxia, all slices from CIH-exposed mice exhibited rhythms throughout the interval, while only a fraction of control rhythms maintained rhythmicity.",
+      "quote": "While 29% of control rhythms maintained rhythmicity throughout hypoxia, all slices from CIH exposed mice exhibited rhythms throughout the hypoxic interval.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C51",
+      "kind": "hypothesis",
+      "statement": "Progesterone pretreatment ameliorates detrimental effects of lipopolysaccharide (LPS)-induced inflammation on cortical neurogenesis in mice.",
+      "quote": "Our objective was to determine if progesterone pretreatment could ameliorate the detrimental effects of lipopolysaccharide (LPS)-induced inflammation on cortical neurogenesis.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C52",
+      "kind": "method",
+      "statement": "The study used two-color immunofluorescence with primary antibodies to assess Tbr2 intermediate neural progenitor cell density, microglia activation, and cell death rates after LPS exposure.",
+      "quote": "Two-color immunofluorescence was performed with primary antibodies T-box transcription factor 2 (Tbr2), ionized calcium binding adapter molecule 1 (Iba1), cleaved caspase 3 (CC3), and 5-bromo-2'-deoxyuridine (BrdU). Cells were counted, and statistical analysis was determined using analysis of variance and Tukey-Kramer method.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C53",
+      "kind": "finding",
+      "statement": "Lipopolysaccharide exposure reduced Tbr2 intermediate neural progenitor cell density but increased microglia activation and cell death rates.",
+      "quote": "The Tbr2 intermediate neural progenitor cell density decreased after LPS exposure (P = .0022). After LPS exposure, microglia displayed an activated phenotype, and cell density was increased (P < .001). Cell death rates were low among study groups but was increased in LPS exposure groups compared to progesterone alone (P = .0015).",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C54",
+      "kind": "finding",
+      "statement": "Pre-exposure with progesterone statistically increased Tbr2 intermediate neural progenitors and protected against cell death induced by LPS.",
+      "quote": "Pre-exposure to progesterone statistically increased Tbr2 intermediate neural progenitors compared to LPS treatment alone and was similar to controls (P = .0022). After LPS exposure, microglia displayed an activated phenotype, and cell density was increased (P < .001). Cell death rates were low among study groups but was increased in LPS exposure groups compared to progesterone alone (P = .0015).",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C55",
+      "kind": "hypothesis",
+      "statement": "Chronic intermittent hypoxia alters local respiratory circuit function at the level of the pre-Bötzinger complex.",
+      "quote": "The preBötzinger complex (preBötC) is a pre-motor respiratory network critical for inspiratory rhythm generation. Here, we test the hypothesis that CIH increases irregular output from the isolated preBötC, which can be mitigated by antioxidant treatment.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C56",
+      "kind": "method",
+      "statement": "The study used electrophysiological recordings to examine burst-to-burst irregularity in period and amplitude of rhythmogenesis following chronic intermittent hypoxia exposure.",
+      "quote": "Electrophysiological recordings from brainstem slices revealed that CIH enhanced burst-to-burst irregularity in period and/or amplitude.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C57",
+      "kind": "finding",
+      "statement": "Chronic intermittent hypoxia increased lipid peroxidation in the pre-Bötzinger complex, which was reduced by antioxidant treatment.",
+      "quote": "CIH increased the degree of lipid peroxidation in the preBötC and treatment with the antioxidant, 5,10,15,20-Tetrakis (1-methylpyridinium-4-yl)-21H,23H-porphyrin manganese(III) pentachloride (MnTMPyP), reduced CIH-mediated irregularities on the network rhythm and improved transmission of preBötC to the XIIn.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C58",
+      "kind": "hypothesis",
+      "statement": "Excessive sensory stimulation during development alters neural plasticity and vulnerability to cocaine in mice.",
+      "quote": "Early life experiences affect the formation of neuronal networks, which can have a profound impact on brain function and behavior later in life. Previous work has shown that mice exposed to excessive sensory stimulation during development are hyperactive and novelty seeking, and display impaired cognition compared with controls.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C59",
+      "kind": "method",
+      "statement": "The study assessed the reinforcing properties of cocaine and underlying circuitry in CD-1 mice exposed to excessive sensory stimulation during development.",
+      "quote": "In this study, we addressed the issue of whether excessive sensory stimulation during development could alter behaviors related to addiction and underlying circuitry in CD-1 mice.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C60",
+      "kind": "finding",
+      "statement": "Mice exposed to excessive sensory stimulation showed enhanced reinforcing properties of cocaine but impaired persistence of cocaine-induced locomotor sensitization.",
+      "quote": "We found that the reinforcing properties of cocaine were significantly enhanced in mice exposed to excessive sensory stimulation. Moreover, although these mice displayed hyperactivity that became more pronounced over time, they showed impaired persistence of cocaine-induced locomotor sensitization.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C61",
+      "kind": "finding",
+      "statement": "Excessive sensory stimulation altered glutamatergic transmission in the nucleus accumbens and amygdala, affecting behaviors related to addiction.",
+      "quote": "These behavioral effects were associated with alterations in glutamatergic transmission in the nucleus accumbens and amygdala.",
+      "page": 1
+    },
+    {
+      "id": "suid_literature_abstracts.C62",
+      "kind": "hypothesis",
+      "statement": "Microcircuits in respiratory rhythm generation share commonalities with other rhythm generating networks, including synaptic inhibition and excitation roles.",
+      "quote": "Rhythmicity is critical for the generation of rhythmic behaviors and higher brain functions. This review discusses common mechanisms of rhythm generation, including the role of synaptic inhibition and excitation, with a focus on the mammalian respiratory network.",
+      "page": 1
+    }
+  ]
+}

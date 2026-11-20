@@ -1,0 +1,34 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers with pre-pregnancy hypertension among SUID cases is higher compared to the weighted prevalence in the general population.",
+ "rationale": "This study aims to compare the prevalence of maternal pre-pregnancy health conditions between SUID cases and a representative sample of the general population. The design uses case-population comparison, which can establish whether there is an association but not causality or incidence rates.",
+ "prior_art": "suid_literature_abstracts.C10 suggests that maternal obesity increases SUID risk, but no research has systematically analyzed prepregnancy health conditions and their influence on SUID incidence. This study aims to fill this gap by focusing specifically on pre-pregnancy maternal health conditions.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "cdc_linkco15",
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p7_arf",
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2012,
+ "period_end": 2021,
+ "required_concepts": [
+  "Maternal Pre-pregnancy Health Conditions"
+ ],
+ "variables": [
+  "cdc_linkco15:RF_PHYPE",
+  "cdc_linkco15:RF_PDIAB",
+  "ncfrp_v51:ISSprechronicdiseasebef",
+  "prams_p7_arf:WTANAL",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:PRE_CKBP",
+  "prams_p8_arf:RF_PHYPE"
+ ],
+ "cannot_establish": "The design cannot establish causality or incidence rates; it can only compare proportions between cases and a population reference."
+}

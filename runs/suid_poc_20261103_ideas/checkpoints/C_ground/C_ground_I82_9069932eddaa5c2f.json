@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of infants sleeping with an adult differs between NCFRP case series and PRAMS population reference surveys.",
+ "rationale": "This study will compare how infant sleep environment details are recorded in the NCFRP case series versus PRAMS population reference surveys, focusing on variables related to sleeping arrangements. The design is feasible given the available data sources and roles of each source.",
+ "prior_art": "The bedsharing_ms_v7 manuscript notes a limitation that sleep-environment classification in case-report systems may be subject to heterogeneity in ascertainment and reporting (C18). No prior work has directly compared the recording of infant sleep environment details between NCFRP and PRAMS, leaving this question open.",
+ "supporting_claim_ids": [
+  "bedsharing_ms_v7.C18"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2021,
+ "required_concepts": [
+  "sleep environment details"
+ ],
+ "variables": [
+  "ncfrp_v51:CIRwadultobs",
+  "prams_p8_arf:SLP_ROOM_RAW",
+  "prams_p7_arf:INFWMOM5",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish a causal relationship between sleep environment details and SUID incidence due to its observational nature. It can only highlight differences in how these variables are recorded across different data sources."
+}

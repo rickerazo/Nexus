@@ -1,0 +1,87 @@
+{
+ "ideas": [
+  {
+   "question": "What are the differences in how pregnancy weight gain (domain D88) and postpartum smoking status (domain D306) are recorded between NCFRP_v51 case series source and PRAMS_P8_ARF population reference source?",
+   "comparison": "NCFRP_v51 records pregnancy weight gain as a single value, while PRAMS_P8_ARF records it in pounds or kilograms. For smoking status postpartum, NCFRP_v51 has detailed information on current smoking behaviors, whereas PRAMS_P8_ARF tracks smoking during and after pregnancy.",
+   "why_open": "This question is important because discrepancies between these sources can lead to inconsistent exposure assessments which could bias estimates of SUID risk factors. Understanding these differences would help in refining future studies or harmonizing data collection methods.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D88"
+   ],
+   "data": "The case series source (NCFRP_v51) records pregnancy weight gain as a single value, while the population reference source (PRAMS_P8_ARF) can provide more granular information on weight gain in pounds or kilograms. Additionally, NCFRP_v51 provides detailed current smoking status postpartum, whereas PRAMS_P8_ARF captures changes in smoking behavior from pre-pregnancy to postpartum."
+  },
+  {
+   "question": "How does the recording of medical complications during pregnancy (domain D66) differ between NCFRP_v51 case series and PRAMS_P7_ARF population reference?",
+   "comparison": "NCFRP_v51 records specific details about various medical complications, while PRAMS_P7_ARF includes broader categories like high blood pressure and diabetes.",
+   "why_open": "Understanding these differences is critical for accurately assessing the risk factors associated with SUID. Differences in how complications are recorded can affect the comparability of studies using different data sources.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D66",
+    "D305"
+   ],
+   "data": "The case series source (NCFRP_v51) records specific medical complications during pregnancy with detailed information, while the population reference source (PRAMS_P7_ARF) includes broader categories such as high blood pressure and diabetes before pregnancy."
+  },
+  {
+   "question": "In what ways do NCFRP_v51's recording of previous child deaths (domain D120) compare to PRAMS_P8_ARF's reporting on previous live births and preterm birth history (domains D286, D303)?",
+   "comparison": "NCFRP_v51 documents specific details about prior child deaths, while PRAMS_P8_ARF records the number of previous live births and if any were premature.",
+   "why_open": "This comparison is crucial for understanding how risk factors related to family history might be differently assessed in SUID studies depending on data source. Discrepancies could lead to inconsistent findings across different studies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D120",
+    "D286"
+   ],
+   "data": "The case series source (NCFRP_v51) documents specific details about previous child deaths, while the population reference source (PRAMS_P8_ARF) records whether there were any previous live births and if they were premature."
+  },
+  {
+   "question": "How do NCFRP_v51's recording of prenatal care issues (domain D243) differ from PRAMS_P7_ARF's tracking of pre-pregnancy health checks and dental visits during pregnancy (domains D304, D298)?",
+   "comparison": "NCFRP_v51 focuses on specific challenges with prenatal care, while PRAMS_P7_ARF tracks broader categories such as general health checks and dental visits.",
+   "why_open": "Understanding differences in how these aspects of healthcare are recorded can help elucidate potential biases when comparing SUID risks across studies using different datasets. It could also highlight areas for standardizing data collection methods.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D243",
+    "D304"
+   ],
+   "data": "The case series source (NCFRP_v51) focuses on specific issues related to prenatal care, while the population reference source (PRAMS_P7_ARF) tracks pre-pregnancy health checks and dental visits during pregnancy."
+  },
+  {
+   "question": "What discrepancies exist between NCFRP_v51's documentation of maternal stressors during pregnancy (domain D100) compared to PRAMS_P8_ARF’s recording of family medical history discussions before pregnancy (domain D304)?",
+   "comparison": "NCFRP_v51 captures various stressful events experienced by mothers, while PRAMS_P8_ARF focuses on whether families had discussions about potential genetic conditions and health issues.",
+   "why_open": "These differences highlight discrepancies in capturing key environmental and familial stressors that might influence SUID risk. Standardizing these measures could improve comparability of findings across studies.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D100"
+   ],
+   "data": "The case series source (NCFRP_v51) captures various maternal stressors during pregnancy, while the population reference source (PRAMS_P8_ARF) records whether there were discussions about family medical history before pregnancy."
+  }
+ ]
+}

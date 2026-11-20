@@ -1,0 +1,81 @@
+### Design
+
+**Question Restated:** How does maternal mental health history correlate specifically with sudden unexpected infant death (SUID) compared to other causes of infant death?
+
+The design is a case-case comparison. We will compare the cases of SUID with those of other causes of infant death recorded in the same case series, focusing on maternal mental health history as a key variable.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - Reason: This dataset records specific details about child deaths reviewed by fatality review teams and includes SUID cases. It does not provide incidence denominators or birth data.
+  
+- **Population Reference:** prams_p8_arf, prams_p7_arf
+  - Reason: These surveys collect detailed information on the health history of mothers after live births, including maternal mental health conditions.
+
+### Period
+
+**Years Needed:**
+- Case Series (ncfrp_v51): 2016-2021 (manuscript uses this period)
+- Population Reference (prams_p8_arf): 2016-2021
+- Population Reference (prams_p7_arf): 2012-2015
+
+### Variables
+
+**Maternal Mental Health History:**
+- **Case Series (ncfrp_v51)**
+  - `INFmedical`: During pregnancy did mother have medical complications/infections 
+  - `INF4referinfmh`: If yes, family referred - Infant mental health program
+  - `INFprevmedical`: Did mother have medical complications in previous pregnancies
+
+- **Population Reference (prams_p8_arf)**
+  - `PG8_ANX`: Health prob during preg -- Anxiety
+  - `PG8_NAUS`: Health prob during preg -- Nausea/vomiting/dehydration 
+  - `PREV_DEPR`: Pre-pregnancy check for depression/anxiety
+
+- **Population Reference (prams_p7_arf)**
+  - `PREV_DEPR`: Pre-pregnancy check for depression/anxiety
+  - `PG8_ANX`: Health prob during preg -- Anxiety
+
+### Biases
+
+**Selection Bias:**
+- The case series (ncfrp_v51) covers only child deaths reviewed by fatality review teams, not all infant deaths. This may introduce selection bias.
+  
+**Information Bias:**
+- Different sources measure maternal mental health history at different times and from different perspectives:
+  - Case Series measures conditions up to the time of death.
+  - Population Reference surveys mothers a few months after birth about their mental health during pregnancy.
+
+**Confounding:**
+- Social determinants (e.g., socioeconomic status) may confound the relationship between maternal mental health history and SUID/other causes of infant death. However, neither source directly measures these variables.
+
+### What the Design Cannot Establish
+
+The design cannot establish causation; it can only identify associations due to its observational nature. Additionally, without a denominator source, the study cannot estimate incidence rates or risk ratios, only proportions among cases.
+
+### Prior Art
+
+**Manuscript Claims:**
+- **SUID_manuscript_v9_clean.C10**: The analysis excludes some extremely and very preterm infants who died early in postnatal life.
+  - This claim highlights the importance of excluding certain subgroups (e.g., extremely preterm infants) to avoid confounding. However, it does not address maternal mental health history.
+
+- **SUID_manuscript_v9_clean.C12**: The study uses vital-record data which may have exposure and cause-of-death misclassification issues.
+  - This claim acknowledges the potential biases in using case series data but does not discuss maternal mental health.
+
+**Literature Abstracts:**
+- **suid_literature_abstracts.C10**: Maternal obesity is a risk factor for Sudden Unexpected Infant Death (SUID), with an increased risk associated with higher maternal BMI.
+  - This claim discusses another risk factor, maternal obesity, but does not cover maternal mental health.
+
+**Conclusion:** The manuscript claims and literature abstracts do not address the specific correlation between maternal mental health history and SUID compared to other causes of infant death. Therefore, this question remains open.
+
+### Verdict
+
+The proposed sources can answer a version of the candidate research idea. The design involves comparing cases of SUID with other causes of infant death using the ncfrp_v51 case series and prams_p8_arf/prams_p7_arf population reference surveys to identify differences in maternal mental health history. However, the study will be limited to identifying associations rather than establishing causation due to its observational nature.
+
+### Acquire Data Years
+- **ncfrp_v51**: Ensure 2016-2021 data are available.
+- **prams_p8_arf**: Ensure 2016-2021 data are available.
+- **prams_p7_arf**: Ensure 2012-2015 data are available.
+
+### Conclusion
+The sources can carry out the study as proposed, with limitations noted in terms of potential biases and inability to establish causation.

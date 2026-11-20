@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "WEAbodybite",
+   "name": "Body Part Actions",
+   "summary": "What the child's body part did, such as biting, burning, dropping, drowning, shaking, strangling/choking, throwing."
+  },
+  {
+   "start": "WEAchmbrind",
+   "name": "Firearm Safety Features",
+   "summary": "Features of firearms like loaded chamber indicator and drop safety."
+  },
+  {
+   "start": "WEAfamhx",
+   "name": "Family Weapon History",
+   "summary": "Whether the child's family has a history of weapon offenses or deaths from weapons."
+  },
+  {
+   "start": "WEAfatalsex",
+   "name": "Weapon Handler Sex",
+   "summary": "Sex of person(s) handling the fatal weapon."
+  },
+  {
+   "start": "WEAftlacquain",
+   "name": "Weapon Handler Relationships",
+   "summary": "Relationships between the handler and child, such as acquaintance or biological parent."
+  },
+  {
+   "start": "WEAguntype",
+   "name": "Firearm Type",
+   "summary": "Type of firearm involved in the incident."
+  },
+  {
+   "start": "WEAhandleothsp",
+   "name": "Other Weapon Handlers",
+   "summary": "Details about other individuals handling weapons, including their relationships to the child and specifying 'other' handlers."
+  },
+  {
+   "start": "WEAhxoffns",
+   "name": "Weapon Handler Offense History",
+   "summary": "Whether the person using the weapon had a history of weapon-related offenses."
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with recorded pregnancy weight gain differs between NCFR-P v5.1 and PRAMS Phase 8 ARF.",
+ "rationale": "This design compares how the same concept (pregnancy weight gain) is measured differently across two distinct sources (NCFR-P case series vs. PRAMS population reference).",
+ "prior_art": "The manuscripts have not addressed the comparability or differences in recording pregnancy weight gain between case series and population reference datasets, which could influence risk factor analysis for SUID.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p8_std2"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2021,
+ "required_concepts": [
+  "pregnancy weight gain"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4momwtgn",
+  "ncfrp_v51:INF4mompregwt",
+  "prams_p8_arf:MOMLBS",
+  "prams_p8_arf:MAT_PRWT",
+  "prams_p8_arf:PG8_NAUS",
+  "prams_p8_std2:PGWTGN8",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence or risk, only proportions among cases."
+}

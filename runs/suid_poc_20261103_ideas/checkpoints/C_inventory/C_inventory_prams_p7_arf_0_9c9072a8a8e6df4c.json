@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "INSWORK",
+   "name": "Insurance Coverage",
+   "summary": "Whether insurance is provided by the job and other types of insurance coverage."
+  },
+  {
+   "start": "MOMLBKGU",
+   "name": "Maternal Physical Attributes",
+   "summary": "Mother's weight, height measurements in different units, and pre-pregnancy weight."
+  },
+  {
+   "start": "PREV_LB",
+   "name": "Previous Birth History",
+   "summary": "Whether the mother had a previous live birth, low birth weight baby, or premature birth."
+  },
+  {
+   "start": "PRE_CKBP",
+   "name": "Pre-Pregnancy Health Checks",
+   "summary": "Checks for high blood pressure, diabetes, teeth cleaning, depression/anxiety, dieting, exercise, family medical history discussion, and prescription medications before pregnancy."
+  },
+  {
+   "start": "BPG_DEPRS",
+   "name": "Health Problems Before Pregnancy",
+   "summary": "Whether the mother had depression, diabetes, high blood pressure, or received advice to improve health before pregnancy."
+  },
+  {
+   "start": "INSCHIP",
+   "name": "Insurance Types",
+   "summary": "Various types of insurance coverage including state-specific SCHIP/CHIP, company-provided, government programs, and no insurance."
+  },
+  {
+   "start": "VITAMIN",
+   "name": "Multivitamin Use",
+   "summary": "Frequency of multivitamin use during pregnancy."
+  },
+  {
+   "start": "BC_WHEN4_RAW",
+   "name": "Birth Control Usage",
+   "summary": "Whether birth control was used when the mother got pregnant and reasons for not using it."
+  }
+ ]
+}

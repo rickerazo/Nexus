@@ -1,0 +1,33 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with access or compliance issues related to prenatal care is different from that of non-SUID infant deaths within the same case series.",
+ "rationale": "This design uses a case-case comparison to examine differences in prenatal care access between SUID and other infant deaths. The sources provide detailed information on both types of cases, allowing for a valid comparison despite potential biases.",
+ "prior_art": "The closest relevant claims are C10 (SUID_manuscript_v9_clean) and C8 (bedsharing_ms_v7), which discuss prenatal risk factors like smoking but do not address differences in prenatal care access specifically between SUID and other infant deaths. This question remains open as it focuses on a specific aspect of prenatal care that has not been thoroughly examined.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C8"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Prenatal Care Access",
+  "Health Conditions During Pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:INFisscare",
+  "ncfrp_v51:ISSpnclate",
+  "ncfrp_v51:ISSpncnone",
+  "prams_p8_arf:PNC_MTH",
+  "prams_p8_arf:PNC_VST",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causality or incidence rates because it is a case-case comparison without a denominator source. It can only compare proportions of prenatal care access among SUID cases versus non-SUID deaths within the same case series."
+}

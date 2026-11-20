@@ -1,0 +1,30 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with hospital overnight stays has changed over different time periods from 2008 to 2019 compared to PRAMS data.",
+ "rationale": "This study can compare proportions among SUID cases with hospital overnight stays across different periods using ncfrp_v51 and demographic information from PRAMS datasets. However, caution is needed due to potential selection bias in case ascertainment over time and differences in measurement between case series and population reference data.",
+ "prior_art": "None in the inputs; existing claims focus on risk factors like bed sharing and maternal smoking but do not address hospital overnight stay trends among SUID cases.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "Hospital Overnight Stay",
+  "Demographic Information"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn",
+  "prams_p8_arf:LTH_HOSP",
+  "prams_p7_arf:LTH_HOSP",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causality or incidence rates due to the lack of a denominator source. Differences in case ascertainment over time may affect observed trends but are not directly accounted for by this comparison."
+}

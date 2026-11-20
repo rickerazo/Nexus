@@ -1,0 +1,51 @@
+### Design
+
+**Question Restated:** Within the context of a case-only analysis, does the presence and type of maternal health conditions during pregnancy correlate with SUID mortality among infants? The design will focus on comparing cases of SUID to identify variations in maternal health conditions that may influence risk.
+
+### Sources by Role
+- **Case Series:** NCFRP_v51 (National Fatality Review Case Reporting System) – This source is suitable as a case series since it includes detailed information about child deaths reviewed by fatality review teams, with an emphasis on SUID cases.
+- **Population Reference:** Not Applicable – The design does not require comparing the cases to a general population; instead, it focuses on variations within the case group itself.
+- **Denominator Source:** Not Required – Since this is a case-only analysis, there's no need for a denominator source.
+
+### Period
+The candidate idea proposes analyzing data from 1983-2019. However, NCFRP_v51 holds data only from 2004 to 2019. Therefore, the design should focus on this period (2004-2019).
+
+### Variables
+**Maternal Health Conditions:**
+- **NCFRP_v51:INFmedical:** During pregnancy did mother have medical complications/infections [Yes/No]
+- **NCFRP_v51:ISSmothuti:** Urinary tract infections present during pregnancy? [Yes/No]
+- **NCFRP_v51:ISSmothprom:** Prolonged Rupture of Membrane [Yes/No]
+
+**Other Relevant Variables for Comparison:**
+- **NCFRP_v51:BIO1dthsids:** If yes, prior child deaths - Female - SIDS
+- **NCFRP_v51:INFprevpreterm:** Medical complications - Previous Preterm/Small for Gestation Age Infant [Yes/No]
+  
+### Biases
+
+**Selection Bias:**
+- The NCFRP dataset includes only cases reviewed by fatality review teams, which might not be representative of all SUID cases. There could also be geographic and jurisdictional biases since the data are de-identified at the state level.
+
+**Information Bias:**
+- Reporting and recording may vary between states or over time, affecting the consistency and completeness of maternal health condition records.
+  
+**Confounding:**
+- Other unmeasured factors like socioeconomic status, access to healthcare, and environmental exposures might confound associations observed within cases.
+
+### What the Design Cannot Establish
+This design cannot establish incidence rates or risk ratios due to the lack of a denominator source. It can only compare proportions or odds among cases regarding maternal health conditions during pregnancy.
+
+### Prior Art
+
+- **SUID Manuscripts:**
+  - Claims C9 and C10 suggest that maternal smoking is associated with higher SUID incidence, which provides context but does not directly address the influence of other maternal health conditions.
+  
+- **Bedsharing Study (bedsharing_ms_v7):** 
+  - Claims C8 to C13 discuss the association between bed sharing, maternal smoking, and prematurity. While these provide relevant background on risk factors for SUID, they do not cover maternal health conditions beyond smoking.
+
+### Verdict
+The sources can be used to conduct a case-only analysis focusing on whether specific maternal health conditions correlate with SUID mortality within cases from 2004-2019. The design is feasible given the data available in NCFRP_v51, but it cannot establish incidence rates or risk ratios without a denominator source. Selection and information biases must be acknowledged due to potential inconsistencies in reporting across jurisdictions.
+
+### Key Points
+- **Feasible Design:** Case-only analysis comparing maternal health conditions among SUID cases.
+- **Time Frame:** 2004-2019 (limited by NCFRP_v51 data availability).
+- **Limitations:** Cannot establish incidence or risk; selection and information biases present.

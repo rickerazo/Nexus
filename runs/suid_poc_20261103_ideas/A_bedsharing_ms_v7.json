@@ -1,0 +1,356 @@
+{
+  "manuscript_id": "bedsharing_ms_v7",
+  "title": "bedsharing_ms_v7",
+  "document_sha256": "1496e66e4e7b266719b29021ddc9041acf47f56cf92fdcd91113d826ffd4b79b",
+  "research_questions": [
+    "To examine whether postconceptional age (PCA), the sum of gestational and postnatal age, clarifies how bed sharing, maternal smoking, and prematurity relate to SUID incidence.",
+    "To determine the stability of the PCA window boundary diagnostics for at least 5 cases per week in each subgroup.",
+    "To compare incidence rate ratios between primary and sensitivity analyses restricting the PCA window to different durations."
+  ],
+  "designs": [
+    "population_incidence"
+  ],
+  "model_classes": [
+    "negative_binomial",
+    "time_stratified",
+    "generalized_additive"
+  ],
+  "data_sources_used": [
+    "NCFRP Case Reporting System",
+    "Centers for Disease Control and Prevention (CDC) National Vital Statistics System linked birth records",
+    "PRAMS"
+  ],
+  "variables": [
+    {
+      "concept": "postconceptional age",
+      "role": "exposure",
+      "operationalization": "PCA = gestational age at birth + postnatal age at death in completed weeks.",
+      "quote": "We analyzed 13,013 SUID cases (2008–2019) from the National Center for Fatality Review and Prevention Case Reporting System, modeling incidence across PCA with population-adjusted negative binomial regression.",
+      "page": 1
+    },
+    {
+      "concept": "bed sharing",
+      "role": "exposure",
+      "operationalization": "Case-level bed sharing was classified from NCFRP death-scene sleep-environment variables rather than from PRAMS. Direct evidence of same-surface sharing was retained as bed sharing.",
+      "quote": "Bed sharing and infant sex were treated as non-imputable ground-truth variables; cases missing either (20 for sex, 1,467 for bed-sharing status) were excluded rather than assigned an inferred value.",
+      "page": 1
+    },
+    {
+      "concept": "maternal smoking during pregnancy",
+      "role": "exposure",
+      "operationalization": "Maternal smoking during pregnancy was derived from multiple NCFRP pregnancy smoking fields, including smoking before pregnancy, smoking at any time during pregnancy, and trimester-specific cigarette-use variables.",
+      "quote": "Infants were classified as smoke-exposed if maternal smoking was recorded before pregnancy or during any trimester, unexposed if available smoking fields consistently indicated no exposure, and unknown otherwise.",
+      "page": 1
+    },
+    {
+      "concept": "preterm birth",
+      "role": "exposure",
+      "operationalization": "Preterm birth was defined as gestational age at birth less than 37 completed weeks.",
+      "quote": "Preterm birth was defined as gestational age at birth less than 37 completed weeks.",
+      "page": 1
+    },
+    {
+      "concept": "Sudden unexpected infant death (SUID)",
+      "role": "outcome",
+      "operationalization": "Cases were restricted to deaths classified as sudden infant death syndrome in the NCFRP database. Analyses were limited to infants who died within the first year of life.",
+      "quote": "Cases were restricted to deaths classified as sudden infant death syndrome in the NCFRP database.",
+      "page": 1
+    },
+    {
+      "concept": "sex",
+      "role": "stratifier",
+      "operationalization": "Infant sex was treated as non-imputable ground-truth variables; cases missing either (20 for sex) were excluded rather than assigned an inferred value.",
+      "quote": "Bed sharing and infant sex were treated as non-imputable ground-truth variables; cases missing either (20 for sex, 1,467 for bed-sharing status) were excluded rather than assigned an inferred value.",
+      "page": 1
+    },
+    {
+      "concept": "birthweight",
+      "role": "stratifier",
+      "operationalization": "Models were stratified by low birthweight (<2,500 g).",
+      "quote": "As a further sensitivity analysis, models were stratified by low birthweight (<2,500 g); bed sharing was independently associated with higher incidence in both strata where estimable.",
+      "page": 1
+    },
+    {
+      "concept": "maternal smoking during pregnancy",
+      "role": "effect_modifier",
+      "operationalization": "Maternal smoking during pregnancy was derived from multiple NCFRP pregnancy smoking fields, including smoking before pregnancy, smoking at any time during pregnancy, and trimester-specific cigarette-use variables.",
+      "quote": "Infants were classified as smoke-exposed if maternal smoking was recorded before pregnancy or during any trimester, unexposed if available smoking fields consistently indicated no exposure, and unknown otherwise.",
+      "page": 1
+    },
+    {
+      "concept": "preterm birth",
+      "role": "effect_modifier",
+      "operationalization": "Preterm birth was defined as gestational age at birth less than 37 completed weeks.",
+      "quote": "Preterm birth was defined as gestational age at birth less than 37 completed weeks.",
+      "page": 1
+    },
+    {
+      "concept": "bed sharing",
+      "role": "effect_modifier",
+      "operationalization": "Case-level bed sharing was classified from NCFRP death-scene sleep-environment variables rather than from PRAMS. Direct evidence of same-surface sharing was retained as bed sharing.",
+      "quote": "Bed sharing and infant sex were treated as non-imputable ground-truth variables; cases missing either (20 for sex, 1,467 for bed-sharing status) were excluded rather than assigned an inferred value.",
+      "page": 1
+    },
+    {
+      "concept": "PCA (postconceptional age)",
+      "role": "outcome",
+      "operationalization": "Postconceptional age is the time elapsed since conception, measured in weeks.",
+      "quote": "Prespecified PCA window (36-90 weeks) checked against a count-stability criterion of at least 5 cases per week in each of 4 tracked subgroups (bed sharing, non-bed sharing, male, female)",
+      "page": 1
+    },
+    {
+      "concept": "chronological age",
+      "role": "offset",
+      "operationalization": "Chronological age is the time elapsed since birth, measured in weeks.",
+      "quote": "Supplementary Table 7. PCA versus chronological-age GAM fit comparison",
+      "page": 1
+    },
+    {
+      "concept": "maternal smoking during pregnancy",
+      "role": "covariate",
+      "operationalization": "Maternal smoking is defined as any reported smoking by the mother during pregnancy.",
+      "quote": "Supplementary Table 3. Prespecified interaction terms from the windowed negative binomial models",
+      "page": 1
+    },
+    {
+      "concept": "preterm birth",
+      "role": "covariate",
+      "operationalization": "Preterm birth is defined as delivery before 37 weeks of gestation.",
+      "quote": "Supplementary Table 3. Prespecified interaction terms from the windowed negative binomial models",
+      "page": 1
+    },
+    {
+      "concept": "sex (male, female)",
+      "role": "stratifier",
+      "operationalization": "Sex is recorded as male or female.",
+      "quote": "Supplementary Table 4. Sex-stratified windowed incidence rate ratios",
+      "page": 1
+    },
+    {
+      "concept": "birthweight (low, non-low)",
+      "role": "stratifier",
+      "operationalization": "Birthweight is categorized as low or non-low.",
+      "quote": "Supplementary Table 5. Birthweight-stratified windowed incidence rate ratios",
+      "page": 1
+    },
+    {
+      "concept": "maternal smoking status (smoking, non-smoking)",
+      "role": "stratifier",
+      "operationalization": "Maternal smoking is categorized as smoking or non-smoking.",
+      "quote": "Supplementary Table 6. Smoking-stratified windowed incidence rate ratios",
+      "page": 1
+    }
+  ],
+  "claims": [
+    {
+      "id": "bedsharing_ms_v7.C1",
+      "kind": "hypothesis",
+      "statement": "Postconceptional age (PCA) may clarify how bed sharing, maternal smoking, and prematurity relate to Sudden Unexpected Infant Death (SUID) incidence.",
+      "quote": "We examined whether postconceptional age (PCA), the sum of gestational and postnatal age, clarifies how bed sharing, maternal smoking, and prematurity relate to SUID incidence.",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C2",
+      "kind": "method",
+      "statement": "The study analyzed 13,013 SUID cases from the National Center for Fatality Review and Prevention Case Reporting System using population-adjusted negative binomial regression.",
+      "quote": "We analyzed 13,013 SUID cases (2008–2019) from the National Center for Fatality Review and Prevention Case Reporting System, modeling incidence across PCA with population-adjusted negative binomial regression.",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C3",
+      "kind": "finding",
+      "statement": "Bed sharing was more strongly associated with SUID incidence in an early developmental window (PCA <43 weeks) compared to a later one (PCA ≥47 weeks).",
+      "quote": "Bed sharing was more strongly associated with incidence in an early developmental window (PCA <43 weeks; incidence rate ratio [IRR] 6.45, 95% CI 3.14–13.23) than a later one (PCA ≥47 weeks; IRR 2.10, 95% CI 1.70–2.58)",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C4",
+      "kind": "finding",
+      "statement": "Maternal smoking and prematurity showed a similar pattern of association with SUID incidence as bed sharing, remaining positively associated throughout.",
+      "quote": "maternal smoking and prematurity showed the same pattern while remaining positively associated throughout.",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C5",
+      "kind": "finding",
+      "statement": "The association between bed sharing and SUID incidence was further amplified by maternal smoking in a later developmental window (PCA ≥47 weeks).",
+      "quote": "Bed sharing’s association with incidence was further amplified by maternal smoking in the late window (interaction IRR 1.57, 95% CI 1.19–2.08)",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C6",
+      "kind": "finding",
+      "statement": "Associations between SUID incidence and bed sharing, maternal smoking, and prematurity were similar in males and females.",
+      "quote": "associations were similar in males and females, indicating these effects are sex-independent.",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C7",
+      "kind": "finding",
+      "statement": "The developmental timing of SUID incidence showed a clear rise-peak-decline pattern when aligned by postconceptional age (PCA).",
+      "quote": "PCA alignment produced a clear rise-peak-decline pattern.",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C8",
+      "kind": "finding",
+      "statement": "Bed sharing was recorded for 59.5% of SUID cases, and these cases were more often associated with maternal smoking during pregnancy (52.2%) compared to non-bed-sharing cases (40.8%).",
+      "quote": "Bed sharing was recorded for 7,739 cases (59.5%) and was absent for 5,274 (40.5%). Bed-sharing cases more often involved maternal smoking during pregnancy (52.2% versus 40.8%).",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C9",
+      "kind": "finding",
+      "statement": "The incidence of SUID was highest in the first several months of life and then declined when analyzed on a postnatal age scale.",
+      "quote": "weekly incidence was highest in the first several months of life and then declined (Figure 2A)",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C10",
+      "kind": "finding",
+      "statement": "When aligned by PCA, weekly SUID incidence followed a clearer developmental structure with a steep rise across early weeks, a peak in the mid-40-week range, and a gradual decline thereafter.",
+      "quote": "weekly incidence followed a clearer developmental structure, with a steep rise across the early weeks, a peak in the mid-40-week PCA range, and a gradual decline thereafter (Figure 2B)",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C11",
+      "kind": "finding",
+      "statement": "Bed sharing was independently associated with higher incidence of SUID across both rising and declining phases of the developmental curve.",
+      "quote": "bed sharing remained strongly associated with higher incidence, although its magnitude was smaller than that of maternal smoking.",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C12",
+      "kind": "finding",
+      "statement": "Maternal smoking during pregnancy showed the largest and most consistent association with SUID incidence in both windows.",
+      "quote": "maternal smoking during pregnancy showed the largest and most consistent association with SUID incidence in both windows",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C13",
+      "kind": "finding",
+      "statement": "Prematurity remained a positive and significant correlate of SUID incidence across the developmental window, though roughly twice as strong early as late.",
+      "quote": "prematurity remained a positive and significant correlate across the developmental window, though roughly twice as strong early as late",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C14",
+      "kind": "finding",
+      "statement": "The association between bed sharing and SUID incidence was larger among smokers (IRR 3.35) than non-smokers (IRR 2.07) in the later developmental window.",
+      "quote": "the late-window bed-sharing association among smokers (IRR 3.35) than non-smokers (IRR 2.07)",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C15",
+      "kind": "finding",
+      "statement": "The developmental structure of risk was similar in girls and boys once bed sharing, smoking, and prematurity were explicitly modeled.",
+      "quote": "the developmental structure of risk was similar in girls and boys.",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C16",
+      "kind": "finding",
+      "statement": "PCA alignment resolved heterogeneity and yielded a smooth rise-peak-decline incidence curve, consistent with a single underlying developmental process.",
+      "quote": "Aligning by PCA resolves this heterogeneity and yields a smooth, roughly symmetric rise-peak-decline incidence curve",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C17",
+      "kind": "limitation",
+      "statement": "The study is an observational analysis of registry-based case data, resulting in associative rather than causal estimates.",
+      "quote": "this was an observational analysis of registry-based case data, and the resulting estimates are associative rather than causal.",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C18",
+      "kind": "limitation",
+      "statement": "Sleep-environment classification in case-report systems may be subject to heterogeneity in ascertainment and reporting.",
+      "quote": "sleep-environment classification in case-report systems may be subject to heterogeneity in ascertainment and reporting.",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C19",
+      "kind": "limitation",
+      "statement": "The bed-sharing denominator was derived indirectly from external prevalence estimates rather than a source linked to the cases.",
+      "quote": "the bed-sharing denominator was derived indirectly from external prevalence estimates rather than a source linked to the cases",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C20",
+      "kind": "limitation",
+      "statement": "The analytic strategy excluded sparse strata and zero-count cells, meaning the fitted models describe observed high-information strata rather than a fully enumerated population lattice.",
+      "quote": "the analytic strategy intentionally excluded sparse strata and zero-count cells to stabilize estimation",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C21",
+      "kind": "limitation",
+      "statement": "The peak interval was treated descriptively rather than modeled directly in the windowed regressions due to week-to-week instability.",
+      "quote": "the peak interval was treated descriptively rather than modeled directly in the windowed regressions because of week-to-week instability",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C22",
+      "kind": "limitation",
+      "statement": "The exposure IRRs, particularly maternal smoking IRR, are not directly comparable in magnitude to case-control effect estimates.",
+      "quote": "the exposure IRRs, and the maternal smoking IRR in particular, are not directly comparable in magnitude to case-control effect estimates",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C23",
+      "kind": "limitation",
+      "statement": "The largest single exclusion was missing or invalid maternal smoking status (6,113 cases), which were excluded rather than imputed.",
+      "quote": "these cases were excluded rather than imputed, which assumes that smoking-status missingness is unrelated to the outcome within the observed cohort",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C24",
+      "kind": "limitation",
+      "statement": "The case series should be understood as a large, growing multi-jurisdiction surveillance sample rather than a fixed national census.",
+      "quote": "the case series should be understood as a large, growing multi-jurisdiction surveillance sample rather than a fixed national census",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C25",
+      "kind": "limitation",
+      "statement": "The absolute incidence scale shown in Figure 2 is a population proxy rather than a jurisdiction-matched rate.",
+      "quote": "the absolute incidence scale shown in Figure 2 is a population proxy rather than a jurisdiction-matched rate",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C26",
+      "kind": "limitation",
+      "statement": "The split between suffocation and undetermined codes reflects diagnostic-practice-dependent ascertainment patterns.",
+      "quote": "the split between suffocation and undetermined codes is diagnostic-practice-dependent and can vary by jurisdiction and year",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C27",
+      "kind": "limitation",
+      "statement": "The study does not provide fine-grained mechanistic claims about the pathway from bed sharing to death.",
+      "quote": "no fine-grained mechanistic claim about the pathway from bed sharing to death is made here",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C28",
+      "kind": "method",
+      "statement": "The manuscript specifies a PCA window of 36 to 90 weeks and checks it against a count-stability criterion.",
+      "quote": "Prespecified PCA window (36-90 weeks) checked against a count-stability criterion of at least 5 cases per week in each of 4 tracked subgroups",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C29",
+      "kind": "method",
+      "statement": "The manuscript includes a sensitivity analysis comparing the primary PCA window (36-90 weeks) with an upper-bound restriction to 79 weeks.",
+      "quote": "Late-window incidence rate ratios at the primary PCA window (36-90 weeks) versus an upper-bound sensitivity analysis restricting the window to PCA 36-79 weeks",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C30",
+      "kind": "method",
+      "statement": "The manuscript presents interaction terms from windowed negative binomial models for bed sharing by maternal smoking and preterm birth.",
+      "quote": "Prespecified interaction terms from the windowed negative binomial models",
+      "page": 1
+    }
+  ]
+}

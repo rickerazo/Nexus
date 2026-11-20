@@ -1,0 +1,117 @@
+INFO mmf.pipeline: ingest_cdc_linkco15: cache hit
+WARNING mmf.pipeline: ingest_cdc_linkco15: 14 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/cdc_linkco15.audit.json
+INFO mmf.pipeline: ingest_cdc_natl15: cache hit
+WARNING mmf.pipeline: ingest_cdc_natl15: 10 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/cdc_natl15.audit.json
+INFO mmf.pipeline: ingest_cdc_codenames: cache hit
+INFO mmf.pipeline: ingest_ncfrp_v51: cache hit
+WARNING mmf.pipeline: ingest_ncfrp_v51: 16 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/ncfrp_v51.audit.json
+INFO mmf.pipeline: ingest_prams_p8_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_arf: 64 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/prams_p8_arf.audit.json
+INFO mmf.pipeline: ingest_prams_p8_std2: cache hit
+WARNING mmf.pipeline: ingest_prams_p8_std2: 2 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/prams_p8_std2.audit.json
+INFO mmf.pipeline: ingest_prams_p7_arf: cache hit
+WARNING mmf.pipeline: ingest_prams_p7_arf: 55 identifier(s) in the codebook are not extracted variables; see runs/suid_poc_20261103_ideas/sources/prams_p7_arf.audit.json
+INFO mmf.pipeline: A_SUID_manuscript_v9_clean: cache hit
+INFO mmf.pipeline: A_bedsharing_ms_v7: cache hit
+INFO mmf.pipeline: A_suid_literature_abstracts: cache hit
+INFO mmf.pipeline: B: cache hit
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO mmf.pipeline: B_check: cache hit
+WARNING mmf.pipeline: B_check: 63 (concept, source) pair(s) where embeddings and the LLM disagree; {'llm_outside_topk': 34, 'agree': 51, 'both_none': 264, 'possible_miss': 29}
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://localhost:11434/api/tags "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_inventory_ncfrp_v51_5 attempt 1 rejected: ["domain 'Medical Complications Referrals': start 'INF4moveref' is not after the previous domain's start"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_inventory_ncfrp_v51_11 attempt 1 rejected: ["domain 'Incident Time and Substance Abuse': start 'INCTimeOFIncidentUnknown' is not after the previous domain's start"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_inventory_ncfrp_v51_11 attempt 2 rejected: ["domain 'Time Details': start 'INCTimeOfIncident' is not after the previous domain's start"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_inventory_ncfrp_v51_11 attempt 3 rejected: ["domain 'Time Qualifiers': start 'INCTimeOfIncident' is not after the previous domain's start"]
+INFO httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+WARNING mmf.llm.structured: C_inventory_ncfrp_v51_11 attempt 4 rejected: ["domain 'Time Qualifiers': start 'INCTimeOfIncident' is not after the previous domain's start"]
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/rerazo/Projects/nexus/src/mmf/cli.py:80 in ideate                     │
+│                                                                              │
+│    77 │                                                                      │
+│    78 │   r = Run(RunConfig.from_yaml(config), run_dir=run_dir)              │
+│    79 │   try:                                                               │
+│ ❱  80 │   │   out = r.ideate()                                               │
+│    81 │   except ReviewPending as e:                                         │
+│    82 │   │   typer.echo(str(e))                                             │
+│    83 │   │   raise typer.Exit(code=2) from None                             │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:433 in ideate               │
+│                                                                              │
+│   430 │   │   sources = self.ingest_sources()                                │
+│   431 │   │   decs = self.stage_a()                                          │
+│   432 │   │   smap = self.stage_b(decs, sources)                             │
+│ ❱ 433 │   │   inv = self.stage_c_inventory(sources, smap)                    │
+│   434 │   │   self.stage_c_ideas(decs, sources, inv)                         │
+│   435 │   │   return self.run_dir / "C_ideas.md"                             │
+│   436                                                                        │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/pipeline.py:361 in stage_c_inventory    │
+│                                                                              │
+│   358 │   │   )                                                              │
+│   359 │   │   inv = self._cached("C_inventory", key, DataInventory,          │
+│       "C_inventory.json")                                                    │
+│   360 │   │   if inv is None:                                                │
+│ ❱ 361 │   │   │   inv, recs = c_ideas.build_inventory(                       │
+│   362 │   │   │   │   sources,                                               │
+│   363 │   │   │   │   used,                                                  │
+│   364 │   │   │   │   self.client,                                           │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/components/c_ideas.py:167 in            │
+│ build_inventory                                                              │
+│                                                                              │
+│   164 │   │   │   │   population=populations.get(sid, "not stated"),         │
+│   165 │   │   │   │   variables="\n".join(variable_line(v) for v in block),  │
+│   166 │   │   │   )                                                          │
+│ ❱ 167 │   │   │   out, rec = _checkpointed(                                  │
+│   168 │   │   │   │   client,                                                │
+│   169 │   │   │   │   prompt,                                                │
+│   170 │   │   │   │   user,                                                  │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/components/c_ideas.py:342 in            │
+│ _checkpointed                                                                │
+│                                                                              │
+│   339 │   │   │   obj = model.model_validate_json(ckpt.read_text())          │
+│   340 │   │   │   if not validator(obj):                                     │
+│   341 │   │   │   │   return obj, None                                       │
+│ ❱ 342 │   obj, rec = generate(                                               │
+│   343 │   │   client,                                                        │
+│   344 │   │   prompt,                                                        │
+│   345 │   │   user,                                                          │
+│                                                                              │
+│ /Users/rerazo/Projects/nexus/src/mmf/llm/structured.py:138 in generate       │
+│                                                                              │
+│   135 │   │   │   )                                                          │
+│   136 │                                                                      │
+│   137 │   record = _record(stage, prompt, client, seed, temperature,         │
+│       max_retries + 1, False, log_path)                                      │
+│ ❱ 138 │   raise GenerationFailedError(stage, problems, max_retries + 1,      │
+│       record)                                                                │
+│   139                                                                        │
+│   140                                                                        │
+│   141 def _log_path(log_dir: Path | None, stage: str) -> Path | None:        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+GenerationFailedError: C_inventory_ncfrp_v51_11: no valid output after 4 
+attempts; last problems: ["domain 'Time Qualifiers': start 'INCTimeOfIncident' 
+is not after the previous domain's start"]

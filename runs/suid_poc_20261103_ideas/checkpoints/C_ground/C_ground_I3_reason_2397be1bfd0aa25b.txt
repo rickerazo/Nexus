@@ -1,0 +1,85 @@
+### Design
+
+**Question:** Is there an increased risk of SUID in infants with prior hospitalizations?
+
+**Design Restated:**
+A case-population comparison design is used to evaluate whether infants who experienced hospitalization before their death have a higher prevalence of such history compared to the general population of live births. This design compares the proportion of cases (infants who died from SUID) with prior hospitalizations against the weighted prevalence in a representative sample of the general population.
+
+### Sources by Role
+
+- **Case Series:** `cdc_linkco15` and `ncfrp_v51`
+  - Used because they record infant deaths, including SUID cases.
+  
+- **Population Reference:** `prams_p8_arf`
+  - Provides a weighted survey of live births which can be used to estimate the prevalence of hospitalization among infants in the general population.
+
+### Period
+
+**Years Needed:**
+- Case Series (`cdc_linkco15`, `ncfrp_v51`): To cover SUID cases for the years 2016-2021.
+- Population Reference (`prams_p8_arf`): To have a representative sample of live births for the same period (2016-2021).
+
+### Variables
+
+**Concept:** Prior Hospitalization
+- **Case Series:**
+  - `ncfrp_v51`: `INF4prevhosp`: Mother had hospitalizations greater than 24 hours prior to L&D.
+  
+- **Population Reference:**
+  - `prams_p8_arf`: `LTH_HOSP`: Length of time baby stayed in the hospital. This variable can be used to infer whether infants were hospitalized.
+
+**Measurement Differences:**
+
+1. **Timing and Reporting:**
+   - Case Series (`ncfrp_v51`): Records the mother's history of hospitalizations during pregnancy.
+   - Population Reference (`prams_p8_arf`): Focuses on infant hospital stay length after birth, which indirectly reflects if the infant was hospitalized.
+
+2. **Coding Differences:**
+   - Case Series (`ncfrp_v51`): Binary (yes/no) for maternal hospitalization history before L&D.
+   - Population Reference (`prams_p8_arf`): Categorical for length of stay in hospital, which indirectly indicates whether the infant was hospitalized.
+
+3. **Missing Values:**
+   - Case Series: Missing values are documented per item and treated as unknowns.
+   - Population Reference: Missing values are coded separately (e.g., .B = don't know or blank; .S = skipped) and should not be counted as exposed.
+
+### Biases
+
+1. **Selection Bias:**
+   - The case series includes only infants who died from SUID, potentially underrepresenting those with milder conditions.
+   - The population reference covers live births and may miss cases that were later admitted to the hospital due to severity of illness.
+
+2. **Information Bias:**
+   - Case Series (`ncfrp_v51`): Information on infant hospitalization is recorded through medical records review, potentially more comprehensive but subject to ascertainment biases.
+   - Population Reference (`prams_p8_arf`): Survey-based information may have recall bias and missing data issues.
+
+3. **Confounding:**
+   - Confounders such as prematurity, maternal health conditions (e.g., hypertension), and socioeconomic status can influence both hospitalization and SUID risk but are not measured consistently across sources.
+
+### What the Design Cannot Establish
+
+- The design cannot establish causality between prior hospitalizations and increased risk of SUID.
+- It also cannot account for other potential confounders like prematurity, maternal smoking, or environmental factors that might affect both hospitalization likelihood and SUID incidence.
+
+### Prior Art
+
+None of the manuscript claims listed directly address the impact of infant hospitalization history on subsequent SUID risk. The closest related finding is:
+
+- **suid_literature_abstracts.C10**: Maternal obesity increases the risk of SUID, but it does not discuss prior hospitalizations or their association with increased risk.
+
+### Verdict
+
+**Can these sources answer a version of the question?**
+
+Yes, these data can support a study to determine whether there is an increased prevalence of infant hospitalization among SUID cases compared to the general population of live births. The design relies on comparing case series data (SUID deaths) with survey-based population reference data for live births.
+
+**Reasons:**
+- Both sources have relevant variables measuring prior hospitalizations.
+- The period 2016-2021 is covered by both datasets, allowing a direct comparison within the same time frame.
+- While there are differences in measurement and reporting between the two sources, these can be addressed through consistent coding practices.
+
+**Limitations:**
+- Selection bias due to different source populations (cases vs. live births).
+- Information bias from recall and ascertainment issues.
+- Confounding factors not consistently measured across datasets.
+  
+By addressing these limitations, a valid comparison can still provide valuable insights into whether prior hospitalizations are associated with increased SUID risk in the target period.

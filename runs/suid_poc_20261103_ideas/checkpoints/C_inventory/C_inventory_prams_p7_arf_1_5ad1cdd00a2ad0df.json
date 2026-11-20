@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "BCP_WHAT_RAW",
+   "name": "Postpartum Birth Control",
+   "summary": "Other specified postpartum birth control methods."
+  },
+  {
+   "start": "HI_CHIP",
+   "name": "Health Insurance Coverage",
+   "summary": "Various types of health insurance coverage including state-specific programs, company-provided plans, government programs, and other sources."
+  },
+  {
+   "start": "MH_PPDPR",
+   "name": "Postpartum Mental Health",
+   "summary": "Depression symptoms since the birth of the infant."
+  },
+  {
+   "start": "PPV_CHK",
+   "name": "Prenatal Care",
+   "summary": "Whether the mother had a postpartum checkup after giving birth."
+  },
+  {
+   "start": "TOD_MTH",
+   "name": "Current Date",
+   "summary": "Month and year of the survey response."
+  },
+  {
+   "start": "BRSTFED",
+   "name": "Breastfeeding Status",
+   "summary": "Whether the infant is currently being breastfed."
+  },
+  {
+   "start": "CIG_1TRI",
+   "name": "Smoking During Pregnancy",
+   "summary": "Number of cigarettes smoked daily during each trimester and before pregnancy."
+  },
+  {
+   "start": "DEL_VAG",
+   "name": "Delivery Method",
+   "summary": "Type of delivery including vaginal, cesarean, forceps, vacuum, and other methods."
+  }
+ ]
+}

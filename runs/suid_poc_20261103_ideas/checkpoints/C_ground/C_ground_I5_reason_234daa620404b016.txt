@@ -1,0 +1,83 @@
+### Design
+
+**Design:** Case-population comparison. Compare how common substance abuse during pregnancy is among the cases (from a case series) with its weighted prevalence in the general population (from a population reference source).
+
+**Restated Question:** Is there an association between substance abuse during pregnancy and Sudden Unexpected Infant Death (SUID)? Specifically, does the proportion of mothers who experienced SUID due to substance abuse differ significantly from the weighted prevalence of substance abuse among all live births.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51: This source captures cases of child deaths reviewed by fatality review teams and includes detailed information on maternal drug use.
+  
+- **Population Reference:** prams_p8_arf, prams_p7_arf: These sources provide weighted survey data from mothers a few months after live births, capturing various health behaviors during pregnancy, including substance abuse.
+
+- **Denominator Source:** cdc_natl15: This source provides total live birth counts in the U.S., serving as the denominator for estimating SUID incidence rates.
+
+### Period
+
+**Period:** 2016-2021 (PRAMS Phase 8) and 2012-2015 (PRAMS Phase 7). The common period between all sources is **2016-2021**, as the NCFRP data covers cases from 2004 to 2019, overlapping with PRAMS Phase 8.
+
+### Variables
+
+**Substance Abuse During Pregnancy:**
+
+- **Case Series (ncfrp_v51):**
+  - INFuseddrug: Did mother use illicit drugs during pregnancy
+  - INFexpipv: Did mother experience intimate partner violence during pregnancy
+  
+- **Population Reference (prams_p8_arf, prams_p7_arf):**
+  - PAB6HUS: Abuse -- in the year before pregnancy
+  - PAD6HUS: Abuse -- during pregnancy
+  - DRK6_3B: Drinking frequency three months before pregnancy
+  - MOMCIG: Number of cigarettes smoked daily during pregnancy
+
+**Missing Answer Handling:**
+
+- **Case Series (ncfrp_v51):**
+  - Blank or unknown values are treated as missing and should be excluded from the analysis.
+
+- **Population Reference (prams_p8_arf, prams_p7_arf):**
+  - Missing answers marked with `.B` (don't know) or `.S` (skipped) should not be included in prevalence calculations.
+  
+**Weighting:**
+
+- Population reference sources require using the survey weight `WTANAL`.
+
+### Biases
+
+1. **Selection Bias:** 
+   - **Case Series (ncfrp_v51):** Participation is limited to states that review child deaths, potentially excluding certain populations. The randomization of state codes prevents accurate geographic comparisons.
+   - **Population Reference (PRAMS):** PRAMS surveys are conducted in selected sites and may not be representative of the entire U.S., leading to potential selection bias.
+
+2. **Information Bias:**
+   - **Case Series:** Data is collected through fatality review teams, which might influence reporting accuracy due to case-specific scrutiny.
+   - **Population Reference (PRAMS):** Information on substance use may underreport due to social desirability bias or recall issues from retrospective surveys.
+
+3. **Confounding Bias:**
+   - Factors such as socioeconomic status, education level, and access to healthcare can confound the relationship between substance abuse during pregnancy and SUID incidence.
+
+### What the Design Cannot Establish
+
+- The design cannot establish causation; it only compares proportions of exposure among cases versus a reference population.
+- It does not account for time-varying exposures or postnatal factors that may influence risk (e.g., environmental hazards, sleep practices).
+
+### Prior Art
+
+**Manuscript Claims:**
+
+- **SUID_manuscript_v9_clean.C10:** The manuscript discusses maternal smoking as an associated factor with SUID incidence but does not specifically address substance abuse.
+  
+- **bedsharing_ms_v7.C8:** This finding mentions a higher prevalence of maternal smoking in SUID cases compared to non-SUID cases, which is related but different from the candidate question.
+
+**Why Open:**
+
+- While prior work has examined other risk factors like maternal smoking, there is limited research on substance abuse during pregnancy and its association with SUID. The proposed study aims to fill this gap by specifically investigating substance use patterns among mothers who experienced SUID compared to a representative population sample.
+
+### Verdict
+
+**Verdict:** These data can answer the question regarding whether there is an association between substance abuse during pregnancy and the incidence of SUID, but only in terms of proportions. The study design cannot establish causation or account for postnatal exposures that may influence risk. Additionally, selection bias from PRAMS survey sites and geographic limitations in NCFRP data should be acknowledged.
+
+### Missing Element
+
+- To address confounding variables such as socioeconomic status, education level, and access to healthcare, additional covariates would need to be included if available within the dataset or through external linkage.
+
+This design can provide insights into whether substance abuse during pregnancy is more prevalent among mothers of SUID cases compared to a general population sample but should not claim causality without further experimental validation.

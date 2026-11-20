@@ -1,0 +1,27 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "SUID cases with prior child deaths are more likely to have reported sleep environment issues compared to those without prior child deaths.",
+ "rationale": "The design uses a case-only approach to compare SUID cases based on whether they had previous child deaths, focusing on sleep environment and prenatal care issues. The ncfrp_v51 dataset provides detailed information on these factors for reviewed cases.",
+ "prior_art": "None in the inputs; while there are studies on sleep environment and prenatal care issues, none specifically compare SUID cases based on prior child deaths.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "prior child deaths",
+  "sleep environment"
+ ],
+ "variables": [
+  "ncfrp_v51:CIRdeathsleepenv",
+  "ncfrp_v51:BIO1dthsids",
+  "ncfrp_v51:SUPdthneglct",
+  "ncfrp_v51:SUPdthabuse",
+  "ncfrp_v51:GIV2priordeath"
+ ],
+ "cannot_establish": "The design cannot establish causality or provide population-level estimates."
+}

@@ -1,0 +1,99 @@
+{
+ "ideas": [
+  {
+   "question": "Does hospital overnight stay after birth correlate with SUID incidence?",
+   "comparison": "Compare cases from cdc_linkco15 or ncfrp_v51 (cases) against prams_p8_arf for hospital stays and overall population. The study period is 2016-2021.",
+   "why_open": "The potential link between hospital stays after birth and sudden unexpected infant death has not been explored, despite the importance of postnatal health monitoring.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82",
+    "D279"
+   ],
+   "data": "Use ncfrp_v51: Hospital Overnight Stay to define cases and prams_p8_arf: Hospital Stay Length for reference population."
+  },
+  {
+   "question": "Is the incidence of SUID associated with the mother's mental health issues prior to pregnancy?",
+   "comparison": "Compare cdc_linkco15 or ncfrp_v51 (cases) against prams_p7_arf and prams_p8_arf for maternal pre-pregnancy mental health conditions. The study period is 2012-2021.",
+   "why_open": "Previous research has not extensively examined how a mother's pre-pregnancy psychological state affects SUID risk, despite significant potential impact on infant care and development.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D60",
+    "D243",
+    "D274"
+   ],
+   "data": "Utilize ncfrp_v51: Mental Health Medication and prams_p8_arf: Pre-Pregnancy Health Behaviors and Conditions to identify mental health concerns."
+  },
+  {
+   "question": "Is there an increased risk of SUID in infants with prior hospitalizations?",
+   "comparison": "Compare cases from cdc_linkco15 or ncfrp_v51 against prams_p8_arf for infant hospitalization history. The study period is 2016-2021.",
+   "why_open": "Little attention has been given to the effect of prior hospitalizations on a newborn's subsequent risk for SUID, despite potential implications for neonatal care and follow-up.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D84",
+    "D279"
+   ],
+   "data": "Define cases by ncfrp_v51: Infant Hospitalization and use prams_p8_arf: Hospital Stay Length for population reference."
+  },
+  {
+   "question": "Does the mother's prepregnancy physical health condition influence SUID incidence?",
+   "comparison": "Compare cases from cdc_linkco15 or ncfrp_v51 against prams_p7_arf and prams_p8_arf for maternal pre-pregnancy health. The study period is 2012-2021.",
+   "why_open": "No research has systematically analyzed the connection between a mother's health before pregnancy and her infant's risk of SUID, despite significant implications for prenatal care and overall maternal-fetal health.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D239",
+    "D240",
+    "D302"
+   ],
+   "data": "Cases are defined by ncfrp_v51: Maternal Health Conditions, while prams_p7_arf and prams_p8_arf provide data on maternal physical attributes before pregnancy."
+  },
+  {
+   "question": "Is SUID incidence linked to the use of medications during preconception and pregnancy?",
+   "comparison": "Compare cases from cdc_linkco15 or ncfrp_v51 against prams_p7_arf and prams_p8_arf for medication use. The study period is 2012-2021.",
+   "why_open": "The impact of preconception medications on SUID risk remains unexplored, despite potential risks related to drug effects during critical developmental stages.",
+   "case_sources": [
+    "ncfrp_v51",
+    "cdc_linkco15"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D251",
+    "D308"
+   ],
+   "data": "Cases are defined by ncfrp_v51: Medication Use During Pregnancy, while prams_p7_arf and prams_p8_arf provide data on birth control usage before pregnancy."
+  }
+ ]
+}

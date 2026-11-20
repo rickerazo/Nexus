@@ -1,0 +1,90 @@
+{
+ "ideas": [
+  {
+   "question": "What trends exist in the proportion of SUID cases that occurred within hospital overnight stays between 2004 and 2019?",
+   "comparison": "ncfrp_v51: 2004-2019; prams_p8_arf: Phase 8 (2016-2021)",
+   "why_open": "This question explores the changing dynamics of SUID cases occurring within hospital overnight stays, which might reflect broader changes in healthcare practices or newborn care policies over time.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D82",
+    "D279"
+   ],
+   "data": "Case series: D82 - Hospital Overnight Stay (ncfrp_v51). Population Reference: D279 - Hospital Stay Length (prams_p8_arf)."
+  },
+  {
+   "question": "How does the proportion of SUID cases among infants with previous medical complications or disabilities change from 2004 to 2019?",
+   "comparison": "ncfrp_v51: 2004-2019; prams_p7_arf and prams_p8_arf: Phase 7 (2012-2015) & Phase 8 (2016-2021)",
+   "why_open": "This question aims to understand whether the proportion of SUID cases among infants with prior medical complications or disabilities has changed over time, indicating shifts in neonatal health care.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p7_arf",
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D246",
+    "D290"
+   ],
+   "data": "Case series: D246 - Infant Health in Last 72 Hours (ncfrp_v51). Population Reference: D290 - Survey Metadata, including medical conditions before pregnancy."
+  },
+  {
+   "question": "What is the trend in SUID cases where the infant was exposed to substances or toxins between 2004 and 2019?",
+   "comparison": "ncfrp_v51: 2004-2019; prams_p8_arf: Phase 8 (2016-2021)",
+   "why_open": "Examining trends in SUID cases involving substance or toxin exposure can reveal environmental changes impacting infant health.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D247",
+    "D296"
+   ],
+   "data": "Case series: D247 - Infant Meal Details (ncfrp_v51). Population Reference: D296 - Healthcare Visits (prams_p8_arf) including substance exposure."
+  },
+  {
+   "question": "How has the proportion of SUID cases among infants sleeping on shared surfaces with adults changed from 2004 to 2019?",
+   "comparison": "ncfrp_v51: 71.3% of case records (2004-2019); prams_p8_arf: Phase 8 (2016-2021)",
+   "why_open": "Investigating trends in SUID cases involving shared sleeping surfaces could help understand shifts in safe sleep practices over time.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D198",
+    "D281"
+   ],
+   "data": "Case series: D198 - Shared sleeping surface (ncfrp_v51). Population Reference: D281 - Sleeping Arrangements (prams_p8_arf)"
+  },
+  {
+   "question": "What trends exist in SUID cases involving infants who have been exposed to domestic violence or abuse between 2004 and 2019?",
+   "comparison": "ncfrp_v51: 71.3% of case records (2004-2019); prams_p8_arf: Phase 8 (2016-2021)",
+   "why_open": "Understanding trends in SUID cases linked to domestic violence or abuse can inform preventive strategies and highlight the importance of family support systems.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf"
+   ],
+   "denominator_sources": [],
+   "domains": [
+    "D256",
+    "D290"
+   ],
+   "data": "Case series: D256 - Child Neglect and Abuse (ncfrp_v51). Population Reference: D290 - Survey Metadata, including emotional or physical abuse."
+  }
+ ]
+}

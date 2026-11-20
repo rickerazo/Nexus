@@ -1,0 +1,2853 @@
+{
+  "id": "cdc_linkco15",
+  "title": "CDC linked birth/infant death public-use file guide, 2015",
+  "document_path": "data/codebooks/LinkCO15Guide.pdf",
+  "document_sha256": "1b6cd81b08596230344d665f77c88663ea8700731a054bd2f17989215289f7a8",
+  "variables": [
+    {
+      "name": "BFACIL",
+      "label": "Birth Place (Revised)",
+      "type": "unknown",
+      "levels": [
+        "1=Hospital",
+        "2=Freestanding Birth Center",
+        "3=Home (intended)",
+        "4=Home (not intended)",
+        "5=Home (unknown if intended)",
+        "6=Clinic / Doctor’s Office",
+        "7=Other",
+        "9=Unknown"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "position=32; file=P,G"
+    },
+    {
+      "name": "DOB_MM",
+      "label": "Birth Month",
+      "type": "unknown",
+      "levels": [
+        "01=January",
+        "02=February",
+        "03=March",
+        "04=April",
+        "05=May",
+        "06=June",
+        "07=July",
+        "08=August",
+        "09=September",
+        "10=October",
+        "11=November",
+        "12=December",
+        "4=FILLER"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "position=13-14; file=P,G"
+    },
+    {
+      "name": "DOB_TT",
+      "label": "Time of Birth",
+      "type": "unknown",
+      "levels": [
+        "126=0000-2359 Time of Birth",
+        "9999=Not Stated"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "position=19-22; file=P,G"
+    },
+    {
+      "name": "DOB_WK",
+      "label": "Birth Day of Week",
+      "type": "unknown",
+      "levels": [
+        "1=Sunday",
+        "2=Monday",
+        "3=Tuesday",
+        "4=Wednesday",
+        "5=Thursday",
+        "6=Friday",
+        "7=Saturday",
+        "8=FILLER"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "position=23; file=P,G"
+    },
+    {
+      "name": "DOB_YY",
+      "label": "Birth Year",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 14,
+      "notes": "position=9-12; file=P,G"
+    },
+    {
+      "name": "F_BFACIL",
+      "label": "Reporting Flag for Birth Place",
+      "type": "unknown",
+      "levels": [
+        "0=Non-Reporting",
+        "1=Reporting"
+      ],
+      "years": [],
+      "page": 14,
+      "notes": "position=33; file=P,G"
+    },
+    {
+      "name": "BFACIL3",
+      "label": "Facility Recode",
+      "type": "unknown",
+      "levels": [
+        "1=In Hospital",
+        "2=Not in Hospital",
+        "3=Unknown or Not Stated",
+        "22=FILLER"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "position=50; file=P,G"
+    },
+    {
+      "name": "MAGEIMP",
+      "label": "Mother’s Age Imputed",
+      "type": "unknown",
+      "levels": [
+        "1=Age imputed"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "position=73; file=P,G"
+    },
+    {
+      "name": "MAGER",
+      "label": "Mother’s Age Recode 41",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 15,
+      "notes": "position=75-76; file=P,G"
+    },
+    {
+      "name": "MAGER14",
+      "label": "Mother’s Age Recode 14",
+      "type": "unknown",
+      "levels": [
+        "01=Under 15 Years",
+        "03=15 years",
+        "04=16 years",
+        "05=17 years",
+        "06=18 years",
+        "07=19 years",
+        "08=20-24 years",
+        "09=25-29 years",
+        "10=30-34 years",
+        "11=35-39 years",
+        "12=40-44 years",
+        "13=45-49 years",
+        "14=50-54 years"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "position=77-78; file=P,G"
+    },
+    {
+      "name": "MAGER9",
+      "label": "Mother’s Age Recode 9",
+      "type": "unknown",
+      "levels": [
+        "1=Under 15 years",
+        "2=15-19 years",
+        "3=20-24 years",
+        "4=25-29 years",
+        "5=30-34 years",
+        "6=35-39 years",
+        "7=40-44 years"
+      ],
+      "years": [],
+      "page": 15,
+      "notes": "position=79; file=P,G"
+    },
+    {
+      "name": "MAGEREP",
+      "label": "Reported Age of Mother Used Flag",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 15,
+      "notes": "position=74; file=P,G"
+    },
+    {
+      "name": "MRACE31",
+      "label": "Mother’s Race Recode 31",
+      "type": "unknown",
+      "levels": [
+        "02=Black (only)",
+        "03=AIAN (American Indian or Alaskan Native) (only)",
+        "04=Asian (only)",
+        "05=NHOPI (Native Hawaiian or Other Pacific Islander) (only)",
+        "06=Black and White",
+        "07=Black and AIAN",
+        "08=Black and Asian",
+        "09=Black and NHOPI",
+        "10=AIAN and White",
+        "11=AIAN and Asian",
+        "12=AIAN and NHOPI",
+        "13=Asian and White"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "position=105-106; file=P,G"
+    },
+    {
+      "name": "RESTATUS",
+      "label": "Residence Status",
+      "type": "unknown",
+      "levels": [
+        "1=RESIDENT: State and county of occurrence and residence",
+        "2=INTRASTATE NONRESIDENT: State of occurrence and",
+        "3=INTERSTATE NONRESIDENT: State of occurrence and",
+        "4=FOREIGN RESIDENT: The state of residence is not one of",
+        "1=RESIDENT: State and county of occurrence and residence",
+        "2=INTRATERRITORY NONRESIDENT: Territory of occurrence and",
+        "3=INTERTERRITORY RESIDENT: Territory of occurrence",
+        "4=FOREIGN RESIDENT: The residence is not a US"
+      ],
+      "years": [],
+      "page": 16,
+      "notes": "position=104; file=P,G"
+    },
+    {
+      "name": "MBRACE",
+      "label": "Bridged Race Mother",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 17,
+      "notes": "position=110; file=P,G"
+    },
+    {
+      "name": "MRACE15",
+      "label": "Mother’s Race Recode 15",
+      "type": "unknown",
+      "levels": [
+        "01=White (only)",
+        "02=Black (only)",
+        "03=AIAN (only)",
+        "04=Asian Indian (only)",
+        "05=Chinese (only)",
+        "06=Filipino (only)",
+        "07=Japanese (only)",
+        "08=Korean (only)",
+        "09=Vietnamese (only)",
+        "10=Other Asian (only)",
+        "11=Hawaiian (only)",
+        "12=Guamanian (only)",
+        "13=Samoan (only)",
+        "14=Other Pacific Islander (only)",
+        "15=More than one race"
+      ],
+      "years": [],
+      "page": 17,
+      "notes": "position=108-109; file=P,G"
+    },
+    {
+      "name": "MRACE6",
+      "label": "Mother’s Race Recode 6",
+      "type": "unknown",
+      "levels": [
+        "2=Black (only)",
+        "3=AIAN (only)",
+        "4=Asian (only)",
+        "5=NHOPI (only)",
+        "6=More than one race"
+      ],
+      "years": [],
+      "page": 17,
+      "notes": "position=107; file=P,G"
+    },
+    {
+      "name": "F_MHISP",
+      "label": "Reporting Flag for Mother’s Origin",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 18,
+      "notes": "position=116; file=P,G"
+    },
+    {
+      "name": "MHISP_R",
+      "label": "Mother’s Hispanic Origin Recode",
+      "type": "unknown",
+      "levels": [
+        "0=Non-Hispanic",
+        "1=Mexican",
+        "2=Puerto Rican",
+        "3=Cuban",
+        "4=Central and South American",
+        "5=Other and Unknown Hispanic origin",
+        "9=Hispanic origin not stated"
+      ],
+      "years": [],
+      "page": 18,
+      "notes": "position=115; file=P,G"
+    },
+    {
+      "name": "MRACEHISP",
+      "label": "Mother’s Race/Hispanic Origin",
+      "type": "unknown",
+      "levels": [
+        "1=Non-Hispanic White (only)",
+        "2=Non-Hispanic Black (only)",
+        "4=Non-Hispanic Asian (only)",
+        "5=Non-Hispanic NHOPI (only)",
+        "6=Non-Hispanic more than one race",
+        "7=Hispanic",
+        "8=Origin unknown or not stated"
+      ],
+      "years": [],
+      "page": 18,
+      "notes": "position=117; file=P,G"
+    },
+    {
+      "name": "MRACEIMP",
+      "label": "Mother’s Race Imputed",
+      "type": "unknown",
+      "levels": [
+        "1=Unknown race imputed",
+        "2=All other races, formerly coded 09, imputed.",
+        "3=FILLER"
+      ],
+      "years": [],
+      "page": 18,
+      "notes": "position=111; file=P,G"
+    },
+    {
+      "name": "DMAR",
+      "label": "Marital Status",
+      "type": "unknown",
+      "levels": [
+        "1=Married",
+        "2=Unmarried",
+        "1=Yes",
+        "2=Unmarried parents living together",
+        "3=Unmarried parents not living  together",
+        "9=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 19,
+      "notes": "position=120; file=P,G"
+    },
+    {
+      "name": "FAGECOMB",
+      "label": "Father’s Combined Age (Revised)",
+      "type": "unknown",
+      "levels": [
+        "09-98=Father’s combined age in years"
+      ],
+      "years": [],
+      "page": 19,
+      "notes": "position=147-148; file=P,G"
+    },
+    {
+      "name": "FAGERPT_FLG",
+      "label": "Father’s Reported Age Used",
+      "type": "unknown",
+      "levels": [
+        "1=Father’s reported age used",
+        "4=FILLER"
+      ],
+      "years": [],
+      "page": 19,
+      "notes": "position=142; file=P,G"
+    },
+    {
+      "name": "F_MAR_P",
+      "label": "Reporting Flag for Paternity Acknowledged",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 19,
+      "notes": "position=123; file=P,G"
+    },
+    {
+      "name": "F_MEDUC",
+      "label": "Reporting Flag for Education of Mother",
+      "type": "unknown",
+      "levels": [
+        "15=FILLER"
+      ],
+      "years": [],
+      "page": 19,
+      "notes": "position=126; file=P,G"
+    },
+    {
+      "name": "MAR_IMP",
+      "label": "Mother’s Marital Status Imputed",
+      "type": "unknown",
+      "levels": [
+        "1=Marital Status imputed",
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 19,
+      "notes": "position=121; file=P,G"
+    },
+    {
+      "name": "MAR_P",
+      "label": "Paternity Acknowledged",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes",
+        "N=No",
+        "U=Unknown",
+        "X=Not Applicable"
+      ],
+      "years": [],
+      "page": 19,
+      "notes": "position=119; file=P,G"
+    },
+    {
+      "name": "MEDUC",
+      "label": "Mother’s Education",
+      "type": "unknown",
+      "levels": [
+        "1=8th grade or less",
+        "2=9th through 12th grade with no diploma",
+        "3=High school graduate or GED completed",
+        "4=Some college credit, but not a degree.",
+        "5=Associate degree (AA,AS)",
+        "6=Bachelor’s degree (BA, AB, BS)",
+        "7=Master’s degree (MA, MS, MEng, MEd, MSW, MBA)",
+        "8=Doctorate (PhD, EdD) or Professional Degree (MD, DDS,",
+        "9=Unknown",
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 19,
+      "notes": "position=124; file=P,G"
+    },
+    {
+      "name": "FAGE11",
+      "label": "Father’s Age Recode 11",
+      "type": "unknown",
+      "levels": [
+        "01=Under 15 years",
+        "02=15-19 years",
+        "03=20-24 years",
+        "04=25-29 years",
+        "05=30-34 years",
+        "06=35-39 years",
+        "07=40-44 years",
+        "08=45-49 years",
+        "09=50-54 years",
+        "10=55-98 years",
+        "11=Not stated"
+      ],
+      "years": [],
+      "page": 20,
+      "notes": "position=149-150; file=P,G"
+    },
+    {
+      "name": "FRACE31",
+      "label": "Father’s Race Recode 31",
+      "type": "unknown",
+      "levels": [
+        "01=White (only) [only one race reported]",
+        "02=Black (only)",
+        "03=AIAN (American Indian or Alaskan Native) (only)",
+        "04=Asian (only)",
+        "05=NHOPI (Native Hawaiian or Other Pacific Islander) (only)",
+        "06=Black and White",
+        "07=Black and AIAN",
+        "08=Black and Asian",
+        "09=Black and NHOPI",
+        "10=AIAN and White",
+        "11=AIAN and Asian",
+        "12=AIAN and NHOPI",
+        "13=Asian and White",
+        "14=Asian and NHOPI",
+        "15=NHOPI and White",
+        "16=Black, AIAN, and White",
+        "17=Black, AIAN, and Asian",
+        "18=Black, AIAN, and NHOPI",
+        "19=Black, Asian, and White",
+        "20=Black, Asian, and NHOPI",
+        "21=Black, NHOPI, and White",
+        "22=AIAN, Asian, and White",
+        "23=AIAN, NHOPI, and White",
+        "24=AIAN, Asian, and NHOPI",
+        "25=Asian, NHOPI, and White",
+        "26=Black, AIAN, Asian, and White",
+        "27=Black, AIAN, Asian, and NHOPI",
+        "28=Black, AIAN, NHOPI, and White",
+        "29=Black, Asian, NHOPI, and White",
+        "30=AIAN, Asian, NHOPI, and White",
+        "31=Black, AIAN, Asian, NHOPI, and White",
+        "99=Unknown or Not Stated"
+      ],
+      "years": [],
+      "page": 20,
+      "notes": "position=151-152; file=P,G"
+    },
+    {
+      "name": "FBRACE",
+      "label": "Bridged Race Father",
+      "type": "unknown",
+      "levels": [
+        "1=White",
+        "2=Black",
+        "3=American Indian or Alaskan Native",
+        "4=Asian or Pacific Islander",
+        "1=White",
+        "2=Black",
+        "0=Other (not classified as White or Black)",
+        "3=FILLER"
+      ],
+      "years": [],
+      "page": 21,
+      "notes": "position=156; file=P,G"
+    },
+    {
+      "name": "FHISP_R",
+      "label": "Father’s Hispanic Origin Recode",
+      "type": "unknown",
+      "levels": [
+        "0=Non-Hispanic",
+        "1=Mexican",
+        "2=Puerto Rican",
+        "3=Cuban",
+        "4=Central and South American"
+      ],
+      "years": [],
+      "page": 21,
+      "notes": "position=160; file=P,G"
+    },
+    {
+      "name": "FRACE15",
+      "label": "Father’s Race Recode 15",
+      "type": "unknown",
+      "levels": [
+        "01=White (only)",
+        "02=Black (only)",
+        "03=AIAN (only)",
+        "04=Asian Indian (only)",
+        "05=Chinese (only)",
+        "06=Filipino (only)",
+        "07=Japanese (only)",
+        "08=Korean (only)",
+        "09=Vietnamese (only)",
+        "10=Other Asian (only)",
+        "11=Hawaiian (only)",
+        "12=Guamanian (only)",
+        "13=Samoan (only)",
+        "14=Other Pacific Islander (only)",
+        "15=More than one race",
+        "99=Unknown or Not Stated"
+      ],
+      "years": [],
+      "page": 21,
+      "notes": "position=154-155; file=P,G"
+    },
+    {
+      "name": "FRACE6",
+      "label": "Father’s Race Recode 6",
+      "type": "unknown",
+      "levels": [
+        "1=White (only)",
+        "2=Black (only)",
+        "3=AIAN (only)",
+        "4=Asian (only)",
+        "5=NHOPI (only)",
+        "6=More than one race",
+        "9=Unknown or Not Stated"
+      ],
+      "years": [],
+      "page": 21,
+      "notes": "position=153; file=P,G"
+    },
+    {
+      "name": "FEDUC",
+      "label": "Father’s Education",
+      "type": "unknown",
+      "levels": [
+        "1=8th grade or less",
+        "2=9th through 12th grade with no diploma",
+        "3=High school graduate or GED completed",
+        "4=Some college credit, but not a degree.",
+        "5=Associate degree (AA,AS)",
+        "6=Bachelor’s degree (BA, AB, BS)",
+        "7=Master’s degree (MA, MS, MEng, MEd, MSW, MBA)",
+        "8=Doctorate (PhD, EdD) or Professional Degree (MD, DDS,",
+        "9=Unknown",
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 22,
+      "notes": "position=163; file=P,G"
+    },
+    {
+      "name": "FRACEHISP",
+      "label": "Father’s Race/Hispanic Origin",
+      "type": "unknown",
+      "levels": [
+        "1=Non-Hispanic White (only)",
+        "2=Non-Hispanic Black (only)",
+        "4=Non-Hispanic Asian (only)",
+        "5=Non-Hispanic NHOPI (only)",
+        "6=Non-Hispanic more than one race",
+        "7=Hispanic",
+        "8=Origin unknown or not stated",
+        "9=Race unknown or not stated (Non-Hispanic)"
+      ],
+      "years": [],
+      "page": 22,
+      "notes": "position=162; file=P,G"
+    },
+    {
+      "name": "F_FEDUC",
+      "label": "Reporting Flag for Education of Father",
+      "type": "unknown",
+      "levels": [
+        "5=FILLER"
+      ],
+      "years": [],
+      "page": 22,
+      "notes": "position=165; file=P,G"
+    },
+    {
+      "name": "F_FHISP",
+      "label": "Reporting Flag for Father’s Origin",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 22,
+      "notes": "position=161; file=P,G"
+    },
+    {
+      "name": "LBO_REC",
+      "label": "Live Birth Order Recode",
+      "type": "unknown",
+      "levels": [
+        "1-7=Number of live birth order.",
+        "8=8 or more live births",
+        "9=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 22,
+      "notes": "position=179; file=P,G"
+    },
+    {
+      "name": "PRIORDEAD",
+      "label": "Prior Births Now Dead",
+      "type": "unknown",
+      "levels": [
+        "00-30=Number of children dead from previous live births.",
+        "99=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 22,
+      "notes": "position=173-174; file=P,G"
+    },
+    {
+      "name": "PRIORLIVE",
+      "label": "Prior Births Now Living",
+      "type": "unknown",
+      "levels": [
+        "00-30=Number of children still living from previous live births.",
+        "99=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 22,
+      "notes": "position=171-172; file=P,G"
+    },
+    {
+      "name": "PRIORTERM",
+      "label": "Prior Other Terminations",
+      "type": "unknown",
+      "levels": [
+        "00-30=Number other terminations",
+        "99=Unknown or not stated",
+        "2=FILLER"
+      ],
+      "years": [],
+      "page": 22,
+      "notes": "position=175-176; file=P,G"
+    },
+    {
+      "name": "ILLB_R",
+      "label": "Interval of Last Live Birth Recode",
+      "type": "unknown",
+      "levels": [
+        "126=004-300 Months since last live birth",
+        "888=Not applicable / 1st live birth",
+        "999=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 23,
+      "notes": "position=198-200; file=P,G"
+    },
+    {
+      "name": "ILLB_R11",
+      "label": "Interval of Last Live Birth Recode 11",
+      "type": "unknown",
+      "levels": [
+        "00=Zero to 3 months (plural delivery)",
+        "01=4 to 11 months",
+        "02=12 to 17 months",
+        "03=18 to 23 months",
+        "04=24 to 35 months",
+        "05=36 to 47 months",
+        "06=48 to 59 months",
+        "07=60 to 71 months",
+        "08=72 months and over",
+        "88=Not applicable (1st live birth)",
+        "99=Unknown or not stated",
+        "3=FILLER"
+      ],
+      "years": [],
+      "page": 23,
+      "notes": "position=201-202; file=P,G"
+    },
+    {
+      "name": "ILOP_R",
+      "label": "Interval of Last Other Pregnancy Recode",
+      "type": "unknown",
+      "levels": [
+        "126=004-300 Months since last live birth",
+        "888=Not applicable / 1st natality event",
+        "999=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 23,
+      "notes": "position=206-208; file=P,G"
+    },
+    {
+      "name": "ILOP_R11",
+      "label": "Interval of Last Other Pregnancy Recode 11",
+      "type": "unknown",
+      "levels": [
+        "00=Zero to 3 months (plural delivery)",
+        "01=4 to 11 months",
+        "02=12 to 17 months",
+        "03=18 to 23 months",
+        "04=24 to 35 months",
+        "05=36 to 47 months",
+        "06=48 to 59 months",
+        "07=60 to 71 months",
+        "08=72 months and over",
+        "88=Not applicable (1st natality event)",
+        "99=Unknown or not stated",
+        "3=FILLER"
+      ],
+      "years": [],
+      "page": 23,
+      "notes": "position=209-210; file=P,G"
+    },
+    {
+      "name": "TBO_REC",
+      "label": "Total Birth Order Recode",
+      "type": "unknown",
+      "levels": [
+        "1-7=Number of total birth order.",
+        "8=8 or more total births",
+        "9=Unknown or not stated",
+        "15=FILLER"
+      ],
+      "years": [],
+      "page": 23,
+      "notes": "position=182; file=P,G"
+    },
+    {
+      "name": "F_MPCB",
+      "label": "Reporting Flag for Month Prenatal Care Began",
+      "type": "unknown",
+      "levels": [
+        "0=Non-Reporting",
+        "1=Reporting"
+      ],
+      "years": [],
+      "page": 24,
+      "notes": "position=226; file=P,G"
+    },
+    {
+      "name": "ILP_R11",
+      "label": "Interval of Last Pregnancy Recode 11",
+      "type": "unknown",
+      "levels": [
+        "00=Zero to 3 months (plural delivery)",
+        "01=4 to 11 months",
+        "02=12 to 17 months",
+        "03=18 to 23 months",
+        "04=24 to 35 months",
+        "05=36 to 47 months",
+        "06=48 to 59 months",
+        "07=60 to 71 months",
+        "08=72 months and over",
+        "88=Not applicable (no previous pregnancy)",
+        "99=Unknown or not stated",
+        "5=FILLER"
+      ],
+      "years": [],
+      "page": 24,
+      "notes": "position=217-218; file=P,G"
+    },
+    {
+      "name": "PRECARE",
+      "label": "Month Prenatal Care",
+      "type": "unknown",
+      "levels": [
+        "00=No prenatal care",
+        "01-10=Month prenatal care began",
+        "99=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 24,
+      "notes": "position=224-225; file=P,G"
+    },
+    {
+      "name": "PRECARE5",
+      "label": "Month Prenatal Care Began Recode",
+      "type": "unknown",
+      "levels": [
+        "1=1st to 3rd month",
+        "2=4th to 6th month",
+        "3=7th to final month",
+        "4=No prenatal care",
+        "5=Unknown or not stated",
+        "10=FILLER"
+      ],
+      "years": [],
+      "page": 24,
+      "notes": "position=227; file=P,G"
+    },
+    {
+      "name": "PREVIS",
+      "label": "Number of Prenatal Visits (Revised)",
+      "type": "unknown",
+      "levels": [
+        "00-98=Number of prenatal visits",
+        "99=Unknown or not stated",
+        "2=FILLER"
+      ],
+      "years": [],
+      "page": 24,
+      "notes": "position=238-239; file=P,G"
+    },
+    {
+      "name": "PREVIS_REC",
+      "label": "Number of Prenatal Visits Recode",
+      "type": "unknown",
+      "levels": [
+        "01=No visits",
+        "02=1 to 2 visits",
+        "03=3 to 4 visits",
+        "04=5 to 6 visits"
+      ],
+      "years": [],
+      "page": 24,
+      "notes": "position=242-243; file=P,G"
+    },
+    {
+      "name": "CIG0_R",
+      "label": "Cigarettes Before Pregnancy Recode",
+      "type": "unknown",
+      "levels": [
+        "0=Nonsmoker",
+        "5=41 or more",
+        "6=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 25,
+      "notes": "position=261; file=P,G"
+    },
+    {
+      "name": "CIG1_R",
+      "label": "Cigarettes 1st Trimester Recode",
+      "type": "unknown",
+      "levels": [
+        "0=Nonsmoker"
+      ],
+      "years": [],
+      "page": 25,
+      "notes": "position=262; file=P,G"
+    },
+    {
+      "name": "F_TPCV",
+      "label": "Reporting Flag for Total Prenatal Care Visits",
+      "type": "unknown",
+      "levels": [
+        "6=FILLER"
+      ],
+      "years": [],
+      "page": 25,
+      "notes": "position=244; file=P,G"
+    },
+    {
+      "name": "F_WIC",
+      "label": "Reporting Flag for WIC",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 25,
+      "notes": "position=252; file=P,G"
+    },
+    {
+      "name": "BMI_R",
+      "label": "Body Mass Index Recode",
+      "type": "unknown",
+      "levels": [
+        "1=Underweight <18.5"
+      ],
+      "years": [],
+      "page": 26,
+      "notes": "position=287; file=P,G"
+    },
+    {
+      "name": "CIG2_R",
+      "label": "Cigarettes 2nd Trimester Recode",
+      "type": "unknown",
+      "levels": [
+        "0=Nonsmoker",
+        "5=41 or more",
+        "6=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 26,
+      "notes": "position=263; file=P,G"
+    },
+    {
+      "name": "CIG3_R",
+      "label": "Cigarettes 3rd Trimester Recode",
+      "type": "unknown",
+      "levels": [
+        "0=Nonsmoker",
+        "5=41 or more",
+        "6=Not stated / Not on certificate"
+      ],
+      "years": [],
+      "page": 26,
+      "notes": "position=264; file=P,G"
+    },
+    {
+      "name": "CIG_REC",
+      "label": "Cigarette Recode (Revised) 270",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes",
+        "N=No",
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 26,
+      "notes": "position=269; file=P,G"
+    },
+    {
+      "name": "F_CIGS_0",
+      "label": "Reporting Flag for Cigarettes before Pregnancy",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 26,
+      "notes": "position=265; file=P,G"
+    },
+    {
+      "name": "F_CIGS_1",
+      "label": "Reporting Flag for Cigarettes 1st Trimester",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 26,
+      "notes": "position=266; file=P,G"
+    },
+    {
+      "name": "F_CIGS_2",
+      "label": "Reporting Flag for Cigarettes 2nd Trimester",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 26,
+      "notes": "position=267; file=P,G"
+    },
+    {
+      "name": "F_CIGS_3",
+      "label": "Reporting Flag for Cigarettes 3rd Trimester",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 26,
+      "notes": "position=268; file=P,G"
+    },
+    {
+      "name": "F_M_HT",
+      "label": "Reporting Flag for Mother’s Height",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 26,
+      "notes": "position=282; file=P,G"
+    },
+    {
+      "name": "F_TOBACO",
+      "label": "Reporting Flag for Tobacco use",
+      "type": "unknown",
+      "levels": [
+        "9=FILLER"
+      ],
+      "years": [],
+      "page": 26,
+      "notes": "position=270; file=P,G"
+    },
+    {
+      "name": "F_DWGT",
+      "label": "Reporting Flag for Delivery Weight",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 27,
+      "notes": "position=303; file=P,G"
+    },
+    {
+      "name": "F_PWGT",
+      "label": "Reporting Flag for Pre-pregnancy Weight",
+      "type": "unknown",
+      "levels": [
+        "3=FILLER",
+        "3=P,G",
+        "303=100-400 Weight in pounds",
+        "999=Unknown or not stated",
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 27,
+      "notes": "position=295; file=P,G"
+    },
+    {
+      "name": "F_WTGAIN",
+      "label": "Reporting Flag for Weight Gain",
+      "type": "unknown",
+      "levels": [
+        "5=FILLER",
+        "30=Risk Factors"
+      ],
+      "years": [],
+      "page": 27,
+      "notes": "position=307; file=P,G"
+    },
+    {
+      "name": "RF_GDIAB",
+      "label": "Gestational Diabetes",
+      "type": "unknown",
+      "levels": [
+        "N=No"
+      ],
+      "years": [],
+      "page": 27,
+      "notes": "position=314; file=P,G"
+    },
+    {
+      "name": "RF_PDIAB",
+      "label": "Pre-pregnancy Diabetes",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes"
+      ],
+      "years": [],
+      "page": 27,
+      "notes": "position=313; file=P,G"
+    },
+    {
+      "name": "RF_PHYPE",
+      "label": "Pre-pregnancy Hypertension 321",
+      "type": "unknown",
+      "levels": [
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 27,
+      "notes": "position=315; file=P,G"
+    },
+    {
+      "name": "WTGAIN",
+      "label": "Weight Gain",
+      "type": "unknown",
+      "levels": [
+        "00-97=Weight gain in pounds",
+        "98=98 pounds and over",
+        "99=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 27,
+      "notes": "position=304-305; file=P,G"
+    },
+    {
+      "name": "WTGAIN_REC",
+      "label": "Weight Gain Recode",
+      "type": "unknown",
+      "levels": [
+        "1=Less than 11 pounds",
+        "2=11 to 20 pounds",
+        "3=21 to 30 pounds",
+        "4=31 to 40 pounds",
+        "5=41 to 98 pounds",
+        "9=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 27,
+      "notes": "position=306; file=P,G"
+    },
+    {
+      "name": "F_RF_ART",
+      "label": "Reporting Flag for Reproductive Technology",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=330; file=P,G"
+    },
+    {
+      "name": "F_RF_CESAR",
+      "label": "Reporting Flag for Previous Cesarean",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=335; file=P,G"
+    },
+    {
+      "name": "F_RF_DRG",
+      "label": "Reporting Flag for Fertility Enhance Drugs",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=329; file=P,G"
+    },
+    {
+      "name": "F_RF_EHYPE",
+      "label": "Reporting Flag for Hypertension Eclampsia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=323; file=P,G"
+    },
+    {
+      "name": "F_RF_GDIAB",
+      "label": "Reporting Flag for Gestational Diabetes",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=320; file=P,G"
+    },
+    {
+      "name": "F_RF_GHYPE",
+      "label": "Reporting Flag for Gestational Hypertension",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=322; file=P,G"
+    },
+    {
+      "name": "F_RF_NCESAR",
+      "label": "Reporting Flag for Number of Previous Cesareans",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=336; file=P,G"
+    },
+    {
+      "name": "F_RF_PDIAB",
+      "label": "Reporting Flag for Pre-pregnancy Diabetes",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=319; file=P,G"
+    },
+    {
+      "name": "F_RF_PHYPE",
+      "label": "Reporting Flag for Pre-pregnancy Hypertension",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=321; file=P,G"
+    },
+    {
+      "name": "F_RF_PPB",
+      "label": "Reporting Flag for Previous Preterm Birth",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=324; file=P,G"
+    },
+    {
+      "name": "NO_RISKS",
+      "label": "No Risk Factors Checked",
+      "type": "unknown",
+      "levels": [
+        "1=True"
+      ],
+      "years": [],
+      "page": 28,
+      "notes": "position=337; file=P,G"
+    },
+    {
+      "name": "RF_ART",
+      "label": "Asst. Reproductive Technology",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes",
+        "N=No",
+        "X=Not applicable",
+        "U=Unknown or not stated",
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 28,
+      "notes": "position=327; file=P,G"
+    },
+    {
+      "name": "RF_CESAR",
+      "label": "Previous Cesareans",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes",
+        "N=No",
+        "U=Unknown or not stated",
+        "00=None",
+        "01-30=Number of previous cesareans",
+        "99=Unknown or not stated",
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 28,
+      "notes": "position=331; file=P,G"
+    },
+    {
+      "name": "RF_DRG",
+      "label": "Fertility Enhancing Drugs 329",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes",
+        "N=No",
+        "X=Not applicable",
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 28,
+      "notes": "position=326; file=P,G"
+    },
+    {
+      "name": "RF_EHYPE",
+      "label": "Hypertension Eclampsia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=317; file=P,G"
+    },
+    {
+      "name": "RF_GHYPE",
+      "label": "Gestational Hypertension",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=316; file=P,G"
+    },
+    {
+      "name": "RF_INFT",
+      "label": "Infertility Treatment",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes",
+        "N=No",
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 28,
+      "notes": "position=325; file=P,G"
+    },
+    {
+      "name": "RF_PPB",
+      "label": "Previous Preterm Birth",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 28,
+      "notes": "position=318; file=P,G"
+    },
+    {
+      "name": "F_IP_CHLAM",
+      "label": "Reporting Flag for Chlamydia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 29,
+      "notes": "position=350; file=P,G"
+    },
+    {
+      "name": "F_IP_GON",
+      "label": "Reporting Flag for Gonorrhea",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 29,
+      "notes": "position=348; file=P,G"
+    },
+    {
+      "name": "F_IP_HEPB",
+      "label": "Reporting Flag for Hepatitis B",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 29,
+      "notes": "position=351; file=P,G"
+    },
+    {
+      "name": "F_IP_HEPC",
+      "label": "Reporting Flag for Hepatitis C",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 29,
+      "notes": "position=352; file=P,G"
+    },
+    {
+      "name": "F_IP_SYPH",
+      "label": "Reporting Flag for Syphilis",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 29,
+      "notes": "position=349; file=P,G"
+    },
+    {
+      "name": "F_OB_FAIL",
+      "label": "Reporting Flag for Failed External Cephalic Version",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 29,
+      "notes": "position=364; file=P,G"
+    },
+    {
+      "name": "F_OB_SUCC",
+      "label": "Reporting Flag for Successful External Cephalic Version",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 29,
+      "notes": "position=363; file=P,G"
+    },
+    {
+      "name": "IP_CHLAM",
+      "label": "Chlamydia",
+      "type": "unknown",
+      "levels": [
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 29,
+      "notes": "position=345; file=P,G"
+    },
+    {
+      "name": "IP_GON",
+      "label": "Gonorrhea",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes"
+      ],
+      "years": [],
+      "page": 29,
+      "notes": "position=343; file=P,G"
+    },
+    {
+      "name": "IP_HEPB",
+      "label": "Hepatitis B",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 29,
+      "notes": "position=346; file=P,G"
+    },
+    {
+      "name": "IP_HEPC",
+      "label": "Hepatitis C",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 29,
+      "notes": "position=347; file=P,G"
+    },
+    {
+      "name": "IP_SYPH",
+      "label": "Syphilis",
+      "type": "unknown",
+      "levels": [
+        "N=No"
+      ],
+      "years": [],
+      "page": 29,
+      "notes": "position=344; file=P,G"
+    },
+    {
+      "name": "NO_INFEC",
+      "label": "No Infections Checked",
+      "type": "unknown",
+      "levels": [
+        "1=True",
+        "0=False",
+        "9=Not Reported",
+        "12=Obstetric Procedures"
+      ],
+      "years": [],
+      "page": 29,
+      "notes": "position=353; file=P,G"
+    },
+    {
+      "name": "OB_FAIL",
+      "label": "Failed External Cephalic Version",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes",
+        "N=No",
+        "U=Unknown or not stated",
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 29,
+      "notes": "position=361; file=P,G"
+    },
+    {
+      "name": "OB_SUCC",
+      "label": "Successful External Cephalic Version",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes",
+        "N=No",
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 29,
+      "notes": "position=360; file=P,G"
+    },
+    {
+      "name": "SEQNUM_CO",
+      "label": "Cohort Sequence Number",
+      "type": "unknown",
+      "levels": [
+        "11=FILLER"
+      ],
+      "years": [],
+      "page": 29,
+      "notes": "position=365-371; file=P,G"
+    },
+    {
+      "name": "F_LD_ANES",
+      "label": "Reporting Flag for Anesthesia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=394; file=P,G"
+    },
+    {
+      "name": "F_LD_ANTB",
+      "label": "Reporting Flag for Antibiotics",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=392; file=P,G"
+    },
+    {
+      "name": "F_LD_AUGM",
+      "label": "Reporting Flag for Augmentation of Labor",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=390; file=P,G"
+    },
+    {
+      "name": "F_LD_CHOR",
+      "label": "Reporting Flag for Chorioamnionitis",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=393; file=P,G"
+    },
+    {
+      "name": "F_LD_INDL",
+      "label": "Reporting Flag for Induction of Labor",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=389; file=P,G"
+    },
+    {
+      "name": "F_LD_STER",
+      "label": "Reporting Flag for Steroids",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=391; file=P,G"
+    },
+    {
+      "name": "F_ME_PRES",
+      "label": "Reporting Flag for Fetal Presentation",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=404; file=P,G"
+    },
+    {
+      "name": "F_ME_ROUT",
+      "label": "Reporting Flag for Final Route and Method of Delivery See footnote",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=405; file=P,G"
+    },
+    {
+      "name": "F_ME_TRIAL",
+      "label": "Reporting Flag for Trial of Labor Attempted",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=406; file=P,G"
+    },
+    {
+      "name": "LD_ANES",
+      "label": "Anesthesia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=388; file=P,G"
+    },
+    {
+      "name": "LD_ANTB",
+      "label": "Antibiotics",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=386; file=P,G"
+    },
+    {
+      "name": "LD_AUGM",
+      "label": "Augmentation of Labor",
+      "type": "unknown",
+      "levels": [
+        "N=No"
+      ],
+      "years": [],
+      "page": 30,
+      "notes": "position=384; file=P,G"
+    },
+    {
+      "name": "LD_CHOR",
+      "label": "Chorioamnionitis",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 30,
+      "notes": "position=387; file=P,G"
+    },
+    {
+      "name": "LD_INDL",
+      "label": "Induction of Labor",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes"
+      ],
+      "years": [],
+      "page": 30,
+      "notes": "position=383; file=P,G"
+    },
+    {
+      "name": "LD_STER",
+      "label": "Steroids",
+      "type": "unknown",
+      "levels": [
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 30,
+      "notes": "position=385; file=P,G"
+    },
+    {
+      "name": "ME_PRES",
+      "label": "Fetal Presentation",
+      "type": "unknown",
+      "levels": [
+        "1=Cephalic",
+        "2=Breech",
+        "3=Other",
+        "9=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 30,
+      "notes": "position=401; file=P,G"
+    },
+    {
+      "name": "ME_ROUT",
+      "label": "Final Route & Method of Delivery",
+      "type": "unknown",
+      "levels": [
+        "1=Spontaneous",
+        "2=Forceps",
+        "3=Vacuum",
+        "4=Cesarean",
+        "9=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 30,
+      "notes": "position=402; file=P,G"
+    },
+    {
+      "name": "ME_TRIAL",
+      "label": "Trial of Labor Attempted 406",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes",
+        "N=No",
+        "X=Not applicable",
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 30,
+      "notes": "position=403; file=P,G"
+    },
+    {
+      "name": "NO_LBRDLV",
+      "label": "No Characteristics of Labor Checked",
+      "type": "unknown",
+      "levels": [
+        "1=True",
+        "0=False",
+        "9=Not Reported",
+        "14=Method of Delivery"
+      ],
+      "years": [],
+      "page": 30,
+      "notes": "position=395; file=P,G"
+    },
+    {
+      "name": "ATTEND",
+      "label": "Attendant",
+      "type": "unknown",
+      "levels": [
+        "1=Doctor of Medicine (MD)",
+        "2=Doctor of Osteopathy (DO)",
+        "3=Certified Nurse Midwife (CNM)",
+        "4=Other Midwife",
+        "5=Other"
+      ],
+      "years": [],
+      "page": 31,
+      "notes": "position=433; file=P,G"
+    },
+    {
+      "name": "DMETH_REC",
+      "label": "Delivery Method Recode Combined",
+      "type": "unknown",
+      "levels": [
+        "1=Vaginal",
+        "2=C-Section",
+        "9=Unknown",
+        "1=P,G",
+        "18=Maternal Morbidity"
+      ],
+      "years": [],
+      "page": 31,
+      "notes": "position=408; file=P,G"
+    },
+    {
+      "name": "F_MM_AICU",
+      "label": "Reporting Flag for Admission to Intensive Care",
+      "type": "unknown",
+      "levels": [
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 31,
+      "notes": "position=425; file=P,G"
+    },
+    {
+      "name": "F_MM_MTR",
+      "label": "Reporting Flag for Maternal Transfusion",
+      "type": "unknown",
+      "levels": [
+        "1=P,G"
+      ],
+      "years": [],
+      "page": 31,
+      "notes": "position=421; file=P,G"
+    },
+    {
+      "name": "F_MM_RUPT",
+      "label": "Reporting Flag for Ruptured Uterus",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 31,
+      "notes": "position=423; file=P,G"
+    },
+    {
+      "name": "F_MM_UHYST",
+      "label": "Reporting Flag for Unplanned Hysterectomy",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 31,
+      "notes": "position=424; file=P,G"
+    },
+    {
+      "name": "MM_AICU",
+      "label": "Admit to Intensive Care",
+      "type": "unknown",
+      "levels": [
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 31,
+      "notes": "position=419; file=P,G"
+    },
+    {
+      "name": "MM_MTR",
+      "label": "Maternal Transfusion",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes"
+      ],
+      "years": [],
+      "page": 31,
+      "notes": "position=415; file=P,G"
+    },
+    {
+      "name": "MM_PLAC",
+      "label": "Perineal Laceration",
+      "type": "unknown",
+      "levels": [
+        "N=No"
+      ],
+      "years": [],
+      "page": 31,
+      "notes": "position=416; file=P,G"
+    },
+    {
+      "name": "MM_RUPT",
+      "label": "Ruptured Uterus",
+      "type": "unknown",
+      "levels": [
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 31,
+      "notes": "position=417; file=P,G"
+    },
+    {
+      "name": "MM_UHYST",
+      "label": "Unplanned Hysterectomy",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 31,
+      "notes": "position=418; file=P,G"
+    },
+    {
+      "name": "NO_MMORB",
+      "label": "No Maternal Morbidity Checked",
+      "type": "unknown",
+      "levels": [
+        "1=True",
+        "0=False",
+        "9=Not Reported"
+      ],
+      "years": [],
+      "page": 31,
+      "notes": "position=427; file=P,G"
+    },
+    {
+      "name": "RDMETH_REC",
+      "label": "Delivery Method Recode",
+      "type": "unknown",
+      "levels": [
+        "1=Vaginal (excludes vaginal after previous C-section)",
+        "2=Vaginal after previous c-section",
+        "3=Primary C-section",
+        "4=Repeat C-section",
+        "5=Vaginal (unknown if previous c-section)",
+        "6=C-section (unknown if previous c-section)",
+        "9=Not stated"
+      ],
+      "years": [],
+      "page": 31,
+      "notes": "position=407; file=P,G"
+    },
+    {
+      "name": "APGAR10",
+      "label": "Ten Minute APGAR Score",
+      "type": "unknown",
+      "levels": [
+        "00-10=A score of 0-10",
+        "88=Not applicable",
+        "99=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 32,
+      "notes": "position=448-449; file=P,G"
+    },
+    {
+      "name": "APGAR10R",
+      "label": "Ten Minute APGAR Recode",
+      "type": "unknown",
+      "levels": [
+        "1=A score of 0-3",
+        "2=A score of 4-6",
+        "3=A score of 7-8",
+        "4=A score of 9-10"
+      ],
+      "years": [],
+      "page": 32,
+      "notes": "position=450; file=P,G"
+    },
+    {
+      "name": "APGAR5",
+      "label": "Five Minute APGAR Score 447",
+      "type": "unknown",
+      "levels": [
+        "00-10=A score of 0-10"
+      ],
+      "years": [],
+      "page": 32,
+      "notes": "position=444-445; file=P,G"
+    },
+    {
+      "name": "APGAR5R",
+      "label": "Five Minute APGAR Recode",
+      "type": "unknown",
+      "levels": [
+        "1=A score of 0-3",
+        "2=A score of 4-6",
+        "3=A score of 7-8",
+        "4=A score of 9-10",
+        "5=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 32,
+      "notes": "position=446; file=P,G"
+    },
+    {
+      "name": "F_APGAR5",
+      "label": "Reporting Flag for Five minute APGAR",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 32,
+      "notes": "position=447; file=P,G"
+    },
+    {
+      "name": "F_PAY",
+      "label": "Reporting Flag for Source of Payment",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 32,
+      "notes": "position=437; file=P,G"
+    },
+    {
+      "name": "F_PAY_REC",
+      "label": "Reporting Flag for Payment Recode",
+      "type": "unknown",
+      "levels": [
+        "5=FILLER"
+      ],
+      "years": [],
+      "page": 32,
+      "notes": "position=438; file=P,G"
+    },
+    {
+      "name": "MTRAN",
+      "label": "Mother Transferred",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes",
+        "N=No",
+        "U=Unknown"
+      ],
+      "years": [],
+      "page": 32,
+      "notes": "position=434; file=P,G"
+    },
+    {
+      "name": "PAY_REC",
+      "label": "Payment Recode",
+      "type": "unknown",
+      "levels": [
+        "1=Medicaid",
+        "2=Private Insurance",
+        "3=Self Pay",
+        "4=Other",
+        "9=Unknown"
+      ],
+      "years": [],
+      "page": 32,
+      "notes": "position=436; file=P,G"
+    },
+    {
+      "name": "DLMP_MM",
+      "label": "Last Normal Menses Month",
+      "type": "unknown",
+      "levels": [
+        "01=January",
+        "02=February",
+        "03=March",
+        "04=April",
+        "05=May",
+        "06=June",
+        "07=July",
+        "08=August",
+        "09=September",
+        "10=October",
+        "11=November",
+        "12=December",
+        "99=Unknown or not stated",
+        "2=FILLER"
+      ],
+      "years": [],
+      "page": 33,
+      "notes": "position=477-478; file=P,G"
+    },
+    {
+      "name": "DLMP_YY",
+      "label": "Last Normal Menses Year",
+      "type": "unknown",
+      "levels": [
+        "9999=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 33,
+      "notes": "position=481-484; file=P,G"
+    },
+    {
+      "name": "DPLURAL",
+      "label": "Plurality Recode",
+      "type": "unknown",
+      "levels": [
+        "1=Single",
+        "2=Twin",
+        "3=Triplet",
+        "4=Quadruplet",
+        "5=Quintuplet or higher",
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 33,
+      "notes": "position=454; file=P,G"
+    },
+    {
+      "name": "IMP_PLUR",
+      "label": "Plurality Imputed",
+      "type": "unknown",
+      "levels": [
+        "1=Plurality is not imputed",
+        "2=FILLER"
+      ],
+      "years": [],
+      "page": 33,
+      "notes": "position=456; file=P,G"
+    },
+    {
+      "name": "IMP_SEX",
+      "label": "Imputed Sex",
+      "type": "unknown",
+      "levels": [
+        "1=Infant Sex is Imputed"
+      ],
+      "years": [],
+      "page": 33,
+      "notes": "position=476; file=P,G"
+    },
+    {
+      "name": "SETORDER_R",
+      "label": "Set Order Recode",
+      "type": "unknown",
+      "levels": [
+        "126=1 1st , 2 2nd, 3 3rd, 4 4th, 5 5th to 16th",
+        "9=Unknown or not stated",
+        "15=FILLER"
+      ],
+      "years": [],
+      "page": 33,
+      "notes": "position=459; file=P,G"
+    },
+    {
+      "name": "COMBGEST",
+      "label": "Combined Gestation – Detail in Weeks",
+      "type": "unknown",
+      "levels": [
+        "17-47=17th through 47th week of Gestation",
+        "99=Unknown"
+      ],
+      "years": [],
+      "page": 34,
+      "notes": "position=490-491; file=P,G"
+    },
+    {
+      "name": "GESTREC10",
+      "label": "Combined Gestation Recode 10",
+      "type": "unknown",
+      "levels": [
+        "01=Under 20 weeks",
+        "02=20-27 weeks",
+        "03=28-31 weeks",
+        "04=32-33 weeks",
+        "05=34-36 weeks",
+        "06=37-38 weeks",
+        "07=39 weeks",
+        "08=40 weeks",
+        "09=41 weeks",
+        "10=42 weeks and over",
+        "99=Unknown"
+      ],
+      "years": [],
+      "page": 34,
+      "notes": "position=492-493; file=P,G"
+    },
+    {
+      "name": "GESTREC3",
+      "label": "Combined Gestation Recode 3",
+      "type": "unknown",
+      "levels": [
+        "1=Under 37 weeks",
+        "2=37 weeks and over",
+        "3=Not stated",
+        "3=FILLER"
+      ],
+      "years": [],
+      "page": 34,
+      "notes": "position=494; file=P,G"
+    },
+    {
+      "name": "LMPUSED",
+      "label": "Computed (LMP) Gestation Used Flag",
+      "type": "unknown",
+      "levels": [
+        "1=LMP used for gestation",
+        "2=P,G",
+        "17-47=Weeks of gestation",
+        "99=Not stated",
+        "2=P,G",
+        "01=Under 20 weeks",
+        "02=20-27 weeks",
+        "03=28-31 weeks",
+        "04=32-33 weeks",
+        "05=34-36 weeks",
+        "06=37-38 weeks",
+        "07=39 weeks",
+        "08=40 weeks",
+        "09=41 weeks",
+        "10=42 weeks and over"
+      ],
+      "years": [],
+      "page": 34,
+      "notes": "position=498; file=P,G"
+    },
+    {
+      "name": "OBGEST_FLG",
+      "label": "Obstetric Estimate of Gestation Used Flag",
+      "type": "unknown",
+      "levels": [
+        "1=Clinical Estimate is used"
+      ],
+      "years": [],
+      "page": 34,
+      "notes": "position=489; file=P,G"
+    },
+    {
+      "name": "AB_ANTI",
+      "label": "Antibiotics",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 35,
+      "notes": "position=521; file=P,G"
+    },
+    {
+      "name": "AB_AVEN1",
+      "label": "Assisted Ventilation",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes"
+      ],
+      "years": [],
+      "page": 35,
+      "notes": "position=517; file=P,G"
+    },
+    {
+      "name": "AB_AVEN6",
+      "label": "Assisted Ventilation > 6 hrs 525",
+      "type": "unknown",
+      "levels": [
+        "N=No"
+      ],
+      "years": [],
+      "page": 35,
+      "notes": "position=518; file=P,G"
+    },
+    {
+      "name": "AB_NICU",
+      "label": "Admission to NICU",
+      "type": "unknown",
+      "levels": [
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 35,
+      "notes": "position=519; file=P,G"
+    },
+    {
+      "name": "AB_SURF",
+      "label": "Surfactant",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 35,
+      "notes": "position=520; file=P,G"
+    },
+    {
+      "name": "BRTHWGT",
+      "label": "Imputed Birthwieght",
+      "type": "unknown",
+      "levels": [
+        "8165=Number of grams",
+        "9999=Not stated"
+      ],
+      "years": [],
+      "page": 35,
+      "notes": "position=512-515; file=P,G"
+    },
+    {
+      "name": "BWTIMP",
+      "label": "Birth Weight Imputed Flag",
+      "type": "unknown",
+      "levels": [
+        "1=Birth Weight is imputed",
+        "20=Abnormal Conditions of the Newborn"
+      ],
+      "years": [],
+      "page": 35,
+      "notes": "position=516; file=P,G"
+    },
+    {
+      "name": "BWTR14",
+      "label": "Birth Weight Recode 14",
+      "type": "unknown",
+      "levels": [
+        "01=227 - 499 grams",
+        "02=500 – 749 grams",
+        "03=750 – 999 grams",
+        "04=1000 - 1249 grams",
+        "05=1250 – 1499 grams",
+        "06=1500 – 1999 grams",
+        "07=2000 – 2499 grams",
+        "08=2500 – 2999 grams",
+        "09=3000 – 3499 grams",
+        "10=3500 – 3999 grams",
+        "11=4000 – 4499 grams",
+        "12=4500 – 4999 grams",
+        "13=5000 – 8165 grams",
+        "14=Not Stated"
+      ],
+      "years": [],
+      "page": 35,
+      "notes": "position=509-510; file=P,G"
+    },
+    {
+      "name": "BWTR4",
+      "label": "Birth Weight Recode 4",
+      "type": "unknown",
+      "levels": [
+        "1=227 - 1499 grams",
+        "2=1500 – 2499 grams",
+        "3=2500 - 8165 grams",
+        "4=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 35,
+      "notes": "position=511; file=P,G"
+    },
+    {
+      "name": "AB_SEIZ",
+      "label": "Seizures",
+      "type": "unknown",
+      "levels": [
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 36,
+      "notes": "position=522; file=P,G"
+    },
+    {
+      "name": "CA_ANEN",
+      "label": "Anencephaly",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes"
+      ],
+      "years": [],
+      "page": 36,
+      "notes": "position=537; file=P,G"
+    },
+    {
+      "name": "CA_CCHD",
+      "label": "Cyanotic Congenital Heart Disease 545",
+      "type": "unknown",
+      "levels": [
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 36,
+      "notes": "position=539; file=P,G"
+    },
+    {
+      "name": "CA_CDH",
+      "label": "Congenital Diaphragmatic Hernia  546",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=540; file=P,G"
+    },
+    {
+      "name": "CA_CLEFT",
+      "label": "Cleft Lip w/ or w/o Cleft Palate 556",
+      "type": "unknown",
+      "levels": [
+        "N=No"
+      ],
+      "years": [],
+      "page": 36,
+      "notes": "position=550; file=P,G"
+    },
+    {
+      "name": "CA_CLPAL",
+      "label": "Cleft Palate alone",
+      "type": "unknown",
+      "levels": [
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 36,
+      "notes": "position=551; file=P,G"
+    },
+    {
+      "name": "CA_DISOR",
+      "label": "Suspected Chromosomal Disorder",
+      "type": "unknown",
+      "levels": [
+        "C=Confirmed",
+        "P=Pending"
+      ],
+      "years": [],
+      "page": 36,
+      "notes": "position=553; file=P,G"
+    },
+    {
+      "name": "CA_DOWN",
+      "label": "Down Syndrome",
+      "type": "unknown",
+      "levels": [
+        "C=Confirmed",
+        "P=Pending",
+        "N=No",
+        "U=Unknown"
+      ],
+      "years": [],
+      "page": 36,
+      "notes": "position=552; file=P,G"
+    },
+    {
+      "name": "CA_GAST",
+      "label": "Gastroschisis",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=542; file=P,G"
+    },
+    {
+      "name": "CA_LIMB",
+      "label": "Limb Reduction Defect",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes"
+      ],
+      "years": [],
+      "page": 36,
+      "notes": "position=549; file=P,G"
+    },
+    {
+      "name": "CA_MNSB",
+      "label": "Meningomyelocele / Spina Bifida 544",
+      "type": "unknown",
+      "levels": [
+        "N=No"
+      ],
+      "years": [],
+      "page": 36,
+      "notes": "position=538; file=P,G"
+    },
+    {
+      "name": "CA_OMPH",
+      "label": "Omphalocele",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=541; file=P,G"
+    },
+    {
+      "name": "F_AB_ANTI",
+      "label": "Reporting Flag for Antibiotics",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=528; file=P,G"
+    },
+    {
+      "name": "F_AB_AVEN1",
+      "label": "Reporting Flag for Assisted Ventilation",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=524; file=P,G"
+    },
+    {
+      "name": "F_AB_AVEN6",
+      "label": "Reporting Flag for Assisted Ventilation >6 hrs 1",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=525; file=P,G"
+    },
+    {
+      "name": "F_AB_NICU",
+      "label": "Reporting Flag for Admission to NICU",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=526; file=P,G"
+    },
+    {
+      "name": "F_AB_SEIZ",
+      "label": "Reporting Flag for Seizures",
+      "type": "unknown",
+      "levels": [
+        "1=FILLER"
+      ],
+      "years": [],
+      "page": 36,
+      "notes": "position=529; file=P,G"
+    },
+    {
+      "name": "F_AB_SURF",
+      "label": "Reporting Flag for Surfactant",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=527; file=P,G"
+    },
+    {
+      "name": "F_CA_ANEN",
+      "label": "Reporting Flag for Anencephaly",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=543; file=P,G"
+    },
+    {
+      "name": "F_CA_CCHD",
+      "label": "Reporting Flag for Cyanotic Congenital Heart Disease",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=545; file=P,G"
+    },
+    {
+      "name": "F_CA_CDH",
+      "label": "Reporting Flag for Congenital Diaphragmatic Hernia",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=546; file=P,G"
+    },
+    {
+      "name": "F_CA_GAST",
+      "label": "Reporting Flag for Gastroschisis",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=548; file=P,G"
+    },
+    {
+      "name": "F_CA_MNSB",
+      "label": "Flag for Meningomyelocele/Spina Bifida",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=544; file=P,G"
+    },
+    {
+      "name": "F_CA_OMPH",
+      "label": "Reporting Flag for Omphalocele",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 36,
+      "notes": "position=547; file=P,G"
+    },
+    {
+      "name": "NO_ABNORM",
+      "label": "No Abnormal Conditions Checked",
+      "type": "unknown",
+      "levels": [
+        "1=True",
+        "0=False",
+        "9=Not Reported",
+        "30=Congenital Anomalies of the Newborn"
+      ],
+      "years": [],
+      "page": 36,
+      "notes": "position=531; file=P,G"
+    },
+    {
+      "name": "CA_HYPO",
+      "label": "Hypospadias",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes, anomaly reported",
+        "N=No, anomaly not reported",
+        "U=Unknown"
+      ],
+      "years": [],
+      "page": 37,
+      "notes": "position=554; file=P,G"
+    },
+    {
+      "name": "F_BFED",
+      "label": "Reporting Flag for Breastfed at Discharge",
+      "type": "unknown",
+      "levels": [
+        "759=FILLER",
+        "1=P,G",
+        "1=Hospital",
+        "2=Freestanding Birthing Center",
+        "3=Clinic / Doctor’s Office",
+        "4=Residence",
+        "5=Other",
+        "9=Unknown"
+      ],
+      "years": [],
+      "page": 37,
+      "notes": "position=570; file=P,G"
+    },
+    {
+      "name": "F_CA_CLEFT",
+      "label": "Flag for Cleft Lip with or without Cleft Palate",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 37,
+      "notes": "position=556; file=P,G"
+    },
+    {
+      "name": "F_CA_CLPAL",
+      "label": "Reporting Flag for Cleft Plate Alone",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 37,
+      "notes": "position=557; file=P,G"
+    },
+    {
+      "name": "F_CA_DISOR",
+      "label": "Reporting Flag for Suspected Chromosomal Disorder",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 37,
+      "notes": "position=559; file=P,G"
+    },
+    {
+      "name": "F_CA_DOWN",
+      "label": "Reporting Flag for Down Syndrome",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 37,
+      "notes": "position=558; file=P,G"
+    },
+    {
+      "name": "F_CA_HYPO",
+      "label": "Reporting Flag for Hypospadias",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 37,
+      "notes": "position=560; file=P,G"
+    },
+    {
+      "name": "F_CA_LIMB",
+      "label": "Reporting Flag for Limb Reduction Defect",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 37,
+      "notes": "position=555; file=P,G"
+    },
+    {
+      "name": "ITRAN",
+      "label": "Infant Transferred",
+      "type": "unknown",
+      "levels": [
+        "Y=Yes",
+        "N=No",
+        "U=Unknown or not stated"
+      ],
+      "years": [],
+      "page": 37,
+      "notes": "position=567; file=P,G"
+    },
+    {
+      "name": "NO_CONGEN",
+      "label": "No Congenital Anomalies Checked",
+      "type": "unknown",
+      "levels": [
+        "1=True",
+        "0=False",
+        "9=Not Reported"
+      ],
+      "years": [],
+      "page": 37,
+      "notes": "position=561; file=P,G"
+    },
+    {
+      "name": "FLGND",
+      "label": "Match Status",
+      "type": "unknown",
+      "levels": [
+        "1=Record in both files",
+        "1347-1355=9              FILLER"
+      ],
+      "years": [],
+      "page": 38,
+      "notes": "position=1346; file=P,G"
+    },
+    {
+      "name": "AGED",
+      "label": "AGED",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 39,
+      "notes": ""
+    },
+    {
+      "name": "AGER22",
+      "label": "Infant age recode 22",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 39,
+      "notes": ""
+    },
+    {
+      "name": "AGER5",
+      "label": "Infant age recode 5",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 39,
+      "notes": ""
+    },
+    {
+      "name": "DISPO",
+      "label": "DISPO",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 39,
+      "notes": ""
+    },
+    {
+      "name": "MANNER",
+      "label": "Manner of Death",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 39,
+      "notes": ""
+    },
+    {
+      "name": "AUTOPSY",
+      "label": "Autopsy",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 40,
+      "notes": ""
+    },
+    {
+      "name": "FILLER",
+      "label": "FILLER",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 40,
+      "notes": ""
+    },
+    {
+      "name": "PLACE",
+      "label": "Place of injury for causes W00-Y34, except Y06.-",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 40,
+      "notes": ""
+    },
+    {
+      "name": "RECWT",
+      "label": "Record Weight (no weights computed for possessions file)",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 40,
+      "notes": ""
+    },
+    {
+      "name": "UCOD",
+      "label": "UCOD",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 40,
+      "notes": ""
+    },
+    {
+      "name": "UCODR130",
+      "label": "130 Infant Cause Recode",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 40,
+      "notes": ""
+    },
+    {
+      "name": "EANUM",
+      "label": "Number of Entity-Axis Conditions",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 41,
+      "notes": ""
+    },
+    {
+      "name": "ENTITY",
+      "label": "Entity-Axis Conditions",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 41,
+      "notes": ""
+    },
+    {
+      "name": "RANUM",
+      "label": "Number of Record-Axis Conditions",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 41,
+      "notes": ""
+    },
+    {
+      "name": "RECORD",
+      "label": "Record-Axis Conditions",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 42,
+      "notes": ""
+    },
+    {
+      "name": "RESIDENTS",
+      "label": "Territory and County-equivalent of",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 42,
+      "notes": ""
+    },
+    {
+      "name": "MBCNTRY",
+      "label": "Mother’s Birth Country",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 44,
+      "notes": "position=80-81; file=T,G"
+    },
+    {
+      "name": "MRCNTRY",
+      "label": "Mother’s Residence Country",
+      "type": "unknown",
+      "levels": [
+        "2=T,G"
+      ],
+      "years": [],
+      "page": 44,
+      "notes": "position=85-86; file=G"
+    },
+    {
+      "name": "MRCNTYFIPS",
+      "label": "Mother’s FIPS County",
+      "type": "unknown",
+      "levels": [
+        "999=Foreign"
+      ],
+      "years": [],
+      "page": 44,
+      "notes": "position=91-93; file=T,G"
+    },
+    {
+      "name": "OCNTYFIPS",
+      "label": "Occurrence FIPS County",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 44,
+      "notes": "position=28-30; file=T,G"
+    },
+    {
+      "name": "OCNTYPOP",
+      "label": "Occurrence County Population",
+      "type": "unknown",
+      "levels": [
+        "0=County of 1,000,000 or more",
+        "1=County of   500,000 to 1,000,000",
+        "2=County of   250,000 to    500,000",
+        "3=County of   100,000 to    250,000",
+        "4=County of     50,000 to    100,000",
+        "5=County of     25,000 to      50,000",
+        "6=County of     10,000 to      25,000",
+        "9=County less than 10,000"
+      ],
+      "years": [],
+      "page": 44,
+      "notes": "position=31; file=T,G"
+    },
+    {
+      "name": "OSTATE",
+      "label": "Occurrence Postal State",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 44,
+      "notes": "position=24-25; file=T,G"
+    },
+    {
+      "name": "RCNTY_POP",
+      "label": "Population of Residence County",
+      "type": "unknown",
+      "levels": [
+        "0=County of 1,000,000 or more",
+        "1=County of 500,000 to 1,000,000",
+        "2=County of 250,000 to    500,000",
+        "3=County of 100,000 to    250,000",
+        "4=County of   50,000 to    100,000"
+      ],
+      "years": [],
+      "page": 44,
+      "notes": "position=99; file=T,G"
+    },
+    {
+      "name": "RCITY_POP",
+      "label": "Population of Residence City",
+      "type": "unknown",
+      "levels": [
+        "0=City of 1,000,000 or more",
+        "1=City of 500,000 to 1,000,000",
+        "2=City of 250,000 to    500,000",
+        "3=City of 100,000 to    250,000",
+        "4=City of   50,000 to    100,000",
+        "5=City of   25,000 to     50,000",
+        "6=City of   10,000 to      25,000",
+        "9=All other areas in the US",
+        "Z=Foreign resident"
+      ],
+      "years": [],
+      "page": 45,
+      "notes": "position=100; file=G"
+    },
+    {
+      "name": "RECTYPE",
+      "label": "Record Type",
+      "type": "unknown",
+      "levels": [
+        "1=RESIDENT: State and county of occurrence and residence",
+        "2=NONRESIDENT: State and county of occurrence and",
+        "PR=Puerto Rico",
+        "VI=Virgin Islands",
+        "GU=Guam",
+        "0=County of 1,000,000 or more",
+        "1=County of    500,000 to   999,999",
+        "2=County of    250,000 to   499,999",
+        "3=County of    100,000 to   249,999",
+        "4=County of      50,000 to     99,999",
+        "5=County of      25,000 to     49,999",
+        "6=County of 10,000 to 24,999",
+        "9=County of less than 10,000"
+      ],
+      "years": [],
+      "page": 45,
+      "notes": "position=103; file=T,G"
+    },
+    {
+      "name": "DRCNTYPOP",
+      "label": "DRCNTYPOP",
+      "type": "unknown",
+      "levels": [],
+      "years": [],
+      "page": 47,
+      "notes": ""
+    }
+  ]
+}

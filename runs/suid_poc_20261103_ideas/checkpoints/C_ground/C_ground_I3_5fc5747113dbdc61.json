@@ -1,0 +1,26 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers with fewer than five prenatal visits is higher among SUID cases compared to the general population.",
+ "rationale": "This design compares the prevalence of low prenatal healthcare utilization between SUID cases and a representative sample of live births, using data from overlapping periods covered by all sources.",
+ "prior_art": "None in the inputs. Previous studies have examined various risk factors for SUID but do not directly address healthcare utilization during pregnancy.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "Healthcare visits during pregnancy"
+ ],
+ "variables": [
+  "ncfrp_v51:INFprenatal",
+  "prams_p8_arf:PNC_VST",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish causality or estimate incidence rates directly. It can only compare the prevalence of prenatal healthcare visits between SUID cases and a representative sample of live births."
+}

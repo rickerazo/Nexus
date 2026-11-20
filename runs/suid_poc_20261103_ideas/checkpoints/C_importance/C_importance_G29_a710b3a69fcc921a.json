@@ -1,0 +1,4 @@
+{
+ "reason": "The case-only analysis compares maternal stressors between preterm and full-term SUID cases within the NCFRP dataset, but it does not provide incidence or risk ratios due to the absence of a population denominator. The design also cannot establish causation; only associations can be inferred.",
+ "importance": 3
+}

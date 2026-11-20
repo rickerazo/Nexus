@@ -1,0 +1,27 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with health issues in the last 72 hours before death is higher among infants born preterm compared to those not born preterm.",
+ "rationale": "This study will compare health issues within 72 hours prior to death among SUID cases based on preterm birth status using ncfrp_v51. The design allows for a case-only analysis without the need for a denominator source.",
+ "prior_art": "None in the inputs; existing claims do not address the specific question about health issues in the last 72 hours before death among SUID cases by preterm birth status.",
+ "supporting_claim_ids": [],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "preterm birth status",
+  "health issues in the last 72 hours before death"
+ ],
+ "variables": [
+  "ncfrp_v51:INFprevpreterm",
+  "ncfrp_v51:INF372infinj",
+  "ncfrp_v51:INF72medicatesp",
+  "ncfrp_v51:INF372other",
+  "ncfrp_v51:INF72infinjsp"
+ ],
+ "cannot_establish": "The design cannot estimate incidence or rates, determine causality, or account for unmeasured confounders."
+}

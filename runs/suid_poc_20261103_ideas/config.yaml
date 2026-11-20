@@ -1,0 +1,196 @@
+manuscripts:
+- data/manuscripts/SUID_manuscript_v9_clean.docx
+- data/manuscripts/bedsharing_ms_v7.docx
+- data/manuscripts/literature/suid_literature_abstracts.md
+codebooks:
+- id: cdc_linkco15
+  path: data/codebooks/LinkCO15Guide.pdf
+  title: CDC linked birth/infant death public-use file guide, 2015
+  llm_extract: false
+  denominator: true
+  population: US live births in the 2015 cohort linked to infant deaths in the first
+    year (births and deaths), so it supplies both SUID cases and births denominators
+  roles:
+  - case
+  - denominator
+  unit: one live birth in the 2015 cohort, with its linked infant death record if
+    the infant died in the first year
+  years: births in 2015 and their deaths in the first year
+  period:
+  - 2015
+  - 2016
+  geography: 'none: public-use files from 2005 on identify no US geographic detail'
+  linkage: births and infant deaths are linked within the file; no link to NCFRP or
+    PRAMS
+  weight_variable: null
+  missing: documented per item (e.g. 9 = unknown or not stated); blanks are unknowns
+- id: cdc_natl15
+  path: data/documentation/natl2015.pdf
+  title: CDC natality public-use file guide, 2015
+  llm_extract: false
+  denominator: true
+  population: all US live births in 2015; no deaths
+  roles:
+  - denominator
+  unit: one live birth
+  years: '2015'
+  period:
+  - 2015
+  - 2015
+  geography: 'none: public-use files from 2005 on identify no US geographic detail'
+  linkage: none
+  weight_variable: null
+  missing: documented per item (e.g. 9 = unknown or not stated); blanks are unknowns
+- id: cdc_codenames
+  path: data/documentation/CDC_database_codeNames.xlsx
+  title: CDC birth/death file variable names and labels (analysis extract)
+  llm_extract: false
+  denominator: false
+  population: variable names and labels for the CDC birth and death files; a reference
+    list, not a dataset
+  roles: []
+  unit: null
+  years: null
+  period: null
+  geography: null
+  linkage: null
+  weight_variable: null
+  missing: null
+- id: ncfrp_v51
+  path: data/documentation/Codebook_Version5-1_031122.xlsx
+  title: National Fatality Review Case Reporting System (NFR-CRS) codebook v5.1
+  llm_extract: false
+  denominator: false
+  population: child deaths reviewed by participating fatality review teams; deaths
+    only, no births or surviving infants, so it cannot supply incidence denominators
+  roles:
+  - case
+  unit: one child death reviewed by a fatality review team; this project uses the
+    SUID cases
+  years: deaths 2004-2019 in the export (24,314 cases); participation ramps up 2004-2007
+    (248 to 1,197 cases a year), about 1,250-1,670 a year 2008-2013 and 1,930-2,100
+    a year 2014-2019; the manuscript uses 2008-2019. Changes in case counts over time
+    reflect participation, not incidence
+  period:
+  - 2004
+  - 2019
+  geography: 'de-identified: state fields are randomized codes (42 reviewing-state
+    codes; death state blank for 51%); no state names, no county, no urban/rural.
+    The 22 jurisdictions in the codebook header are the CDC SUID Case Registry subset,
+    not all reviewing states'
+  linkage: 'none: no identifier shared with PRAMS or the CDC files, and randomized
+    state codes prevent even state-level joins'
+  weight_variable: null
+  missing: documented per item; unknown is a separate answer, never exposed
+- id: prams_p8_arf
+  path: data/codebooks/PRAMS_Phase_8_ARF_Codebook.pdf
+  title: PRAMS Phase 8 Analytic Research File codebook
+  llm_extract: false
+  denominator: false
+  population: weighted survey of mothers a few months after a live birth, sampled
+    from birth certificates in participating states; not designed to count infant
+    deaths
+  roles:
+  - reference
+  unit: one sampled mother of a live birth, surveyed a few months after the birth
+  years: Phase 8 (the bed-sharing manuscript uses 2016-2021, 43 sites)
+  period:
+  - 2016
+  - 2021
+  geography: participating sites only; NCHS urban/rural (2 levels) available; no case
+    source has urban/rural
+  linkage: 'none at the individual level: group-level comparisons with case series
+    only'
+  weight_variable: WTANAL
+  missing: .B = don't know or blank, .S = skipped; never count these as exposed
+- id: prams_p8_std2
+  path: data/codebooks/PRAMS_Phase_8_Standard_Section_II_Codebook.pdf
+  title: PRAMS Phase 8 Standard Section II codebook
+  llm_extract: false
+  denominator: false
+  population: weighted survey of mothers a few months after a live birth, sampled
+    from birth certificates in participating states; not designed to count infant
+    deaths
+  roles:
+  - reference
+  unit: one sampled mother of a live birth, surveyed a few months after the birth
+  years: Phase 8
+  period:
+  - 2016
+  - 2021
+  geography: participating sites only
+  linkage: 'none at the individual level: group-level comparisons with case series
+    only; its items are used with the Phase 8 ARF, whose WTANAL weight applies'
+  weight_variable: null
+  missing: don't know is coded separately (e.g. 7777); never count it as exposed
+- id: prams_p7_arf
+  path: data/codebooks/PRAMS_Phase_7_ARF_Codebook.pdf
+  title: PRAMS Phase 7 Analytic Research File codebook
+  llm_extract: false
+  denominator: false
+  population: weighted survey of mothers a few months after a live birth, sampled
+    from birth certificates in participating states; not designed to count infant
+    deaths
+  roles:
+  - reference
+  unit: one sampled mother of a live birth, surveyed a few months after the birth
+  years: Phase 7 (2012-2015)
+  period:
+  - 2012
+  - 2015
+  geography: participating sites only; NCHS urban/rural (2 levels) available; no case
+    source has urban/rural
+  linkage: 'none at the individual level: group-level comparisons with case series
+    only'
+  weight_variable: WTANAL
+  missing: .B = don't know or blank, .S = skipped; never count these as exposed
+backend: ollama
+model: qwen2.5:14b
+allow_cloud: false
+seed: 0
+temperature: 0.0
+num_ctx: 32768
+chunk_tokens: 12000
+max_output_tokens: 8192
+max_retries: 3
+n_gaps: 3
+b_max_vars_per_call: 600
+b_max_mappings_per_call: 50
+b_crosscheck: true
+embed_model: mxbai-embed-large
+b_check_top_k: 10
+b_check_miss_threshold: 0.65
+c_inventory_block_vars: 150
+c_ideation_model: null
+c_ideation_temperature: 0.9
+c_ideation_seeds:
+- 0
+- 1
+- 2
+c_ideas_per_call: 5
+c_min_new_ideas: 2
+c_domain_match_threshold: 0.7
+c_dedupe_threshold: 0.93
+c_ground_vars_per_source: 15
+c_ground_vars_per_domain: 8
+c_reason_temperature: 0.7
+c_shortlist: 10
+c_min_importance: 3
+c_shortlist_max_similarity: 0.85
+c_reference_ideas:
+- 'Case-case: does SUID have a different postconceptional age distribution from deaths
+  due to congenital anomalies or other causes? (I32, I39)'
+- 'Case-case: do sleep environments differ between SUID cases and accidental suffocation
+  or other infant deaths? (I34, I36)'
+- 'Case-case: is maternal use of sleep aids or sedatives specific to SUID compared
+  with other causes of infant death? (I43)'
+- 'Trends: is there a trend in bed sharing among SUID cases between 2008 and 2019?
+  (I72)'
+- 'Measurement: how do infant sleeping arrangements and maternal smoking differ in
+  recording between the case series (NCFRP) and the population reference (PRAMS),
+  and how would that bias case-population comparisons? (I81, I82)'
+- 'Measurement: how is maternal prepregnancy BMI recorded differently on the birth
+  certificate (linked file), in NCFRP and in PRAMS, and what does that imply for obesity
+  comparisons? (I80, I83)'
+out_dir: runs
+cache_dir: .cache/documents

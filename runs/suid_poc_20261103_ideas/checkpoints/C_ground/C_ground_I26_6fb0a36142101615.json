@@ -1,0 +1,28 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with previous preterm births is different from the proportion of non-SUID infant deaths with previous preterm births among fatality review cases.",
+ "rationale": "This design uses a case-case comparison to identify unique factors that differentiate SUID cases from other types of infant deaths within the same period (2008-2019).",
+ "prior_art": "The closest tested work is C9 in the SUID manuscript, which discusses maternal smoking as a risk factor for SUID. However, this study does not compare unique factors between SUID and other types of infant deaths within the same case series.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C9"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "previous preterm births",
+  "hospital stay length",
+  "medical complications"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4eclampsiatf",
+  "ncfrp_v51:INF4hosprtnoldunk",
+  "ncfrp_v51:INF4hosprtnnumunk"
+ ],
+ "cannot_establish": "The design cannot establish causation or incidence rates due to the lack of a denominator source. It also does not account for potential confounding factors like socioeconomic status and environmental exposures."
+}

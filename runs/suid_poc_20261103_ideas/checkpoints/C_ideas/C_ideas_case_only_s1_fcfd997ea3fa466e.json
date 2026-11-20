@@ -1,0 +1,76 @@
+{
+ "ideas": [
+  {
+   "question": "Does prenatal weight gain differ by pregnancy stage in SUID cases?",
+   "comparison": "ncfrp_v51 (case series) - D88 (Pregnancy Weight Gain)",
+   "why_open": "There is no evidence on whether the timing of maternal weight gain during pregnancy affects SUID risk.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D88"
+   ],
+   "data": "Use D88 from ncfrp_v51 to study changes in maternal weight gain over pregnancy stages."
+  },
+  {
+   "question": "Does the presence of a hospital overnight stay impact SUID risk?",
+   "comparison": "ncfrp_v51 (case series) - D82 (Hospital Overnight Stay)",
+   "why_open": "There is limited research on whether brief hospital stays affect infant mortality risks.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D82"
+   ],
+   "data": "Use D82 from ncfrp_v51 to investigate hospital stays and their impact on SUID outcomes."
+  },
+  {
+   "question": "How does maternal weight gain during pregnancy vary by maternal BMI in SUID cases?",
+   "comparison": "ncfrp_v51 (case series) - D88 (Pregnancy Weight Gain), D240 (Maternal Weight and Care)",
+   "why_open": "No research has explored how the relationship between pre-pregnancy BMI and weight gain during pregnancy affects SUID risk.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D88",
+    "D240"
+   ],
+   "data": "Use D88 and D240 from ncfrp_v51 to examine the interaction between pre-pregnancy BMI and weight gain."
+  },
+  {
+   "question": "Is there an association between maternal health problems during pregnancy and SUID risk?",
+   "comparison": "ncfrp_v51 (case series) - D239 (Maternal Health Conditions)",
+   "why_open": "Little is known about the relationship between specific maternal health issues and risks for SUID.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D239"
+   ],
+   "data": "Use D239 from ncfrp_v51 to explore various maternal health conditions and their impact on SUID."
+  },
+  {
+   "question": "Does postpartum mental health status differ among groups of SUID cases?",
+   "comparison": "ncfrp_v51 (case series) - D260 (Child Neglect and Abuse), D264 (Physical abuse types)",
+   "why_open": "Current research does not explore the relationship between postpartum mental health and SUID risk factors.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "domains": [
+    "D260",
+    "D264"
+   ],
+   "data": "Use D260 and D264 from ncfrp_v51 to study postpartum mental health in the context of SUID."
+  }
+ ]
+}

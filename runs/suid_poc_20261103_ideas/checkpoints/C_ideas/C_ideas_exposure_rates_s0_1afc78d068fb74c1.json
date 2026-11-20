@@ -1,0 +1,89 @@
+{
+ "ideas": [
+  {
+   "question": "Is there an association between maternal prepregnancy body mass index (BMI) and Sudden Unexpected Infant Death (SUID) incidence in different developmental windows of postconceptional age (PCA)?",
+   "comparison": "SUID cases from ncfrp_v51 compared to live births with known maternal BMI from cdc_natl15, using PRAMS data for exposure prevalence. PCA is aligned to determine if the association changes across developmental stages.",
+   "why_open": "Current studies indicate a potential link between maternal obesity and SUID but have not explored this relationship within the context of postconceptional age development windows as identified in previous research.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15",
+    "cdc_linkco15"
+   ],
+   "data": "Maternal BMI (cdc_linkco15, cdc_natl15), SUID (ncfrp_v51), postconceptional age (PCA) (cdc_linkco15, cdc_natl15)"
+  },
+  {
+   "question": "How does the incidence of Sudden Unexpected Infant Death (SUID) differ between preterm and full-term infants based on maternal smoking status during pregnancy?",
+   "comparison": "SUID cases from ncfrp_v51 are compared to live births with known gestational age and maternal smoking status, using PRAMS data for smoking prevalence. The analysis will account for prematurity.",
+   "why_open": "While the literature suggests that both preterm birth and maternal smoking increase SUID risk independently, it remains unclear how these factors interact in combination over different developmental stages (PCA).",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15",
+    "cdc_linkco15"
+   ],
+   "data": "Preterm birth (cdc_linkco15, cdc_natl15), maternal smoking during pregnancy (cdc_linkco15, cdc_natl15), SUID (ncfrp_v51)"
+  },
+  {
+   "question": "Does the presence of a crib or similar sleeping arrangement for infants influence Sudden Unexpected Infant Death (SUID) incidence when considering maternal prepregnancy BMI?",
+   "comparison": "Use ncfrp_v51 cases with SUID status to compare against PRAMS data on sleeping arrangements and maternal BMI from both denominator sources.",
+   "why_open": "Previous research has suggested that infant sleep environment plays a crucial role in reducing the risk of SUID. However, no study has explored how this interacts with maternal obesity as a risk factor during different developmental stages.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15",
+    "cdc_linkco15"
+   ],
+   "data": "SUID (ncfrp_v51), maternal BMI (cdc_linkco15, cdc_natl15), infant sleep environment (prams_p8_arf, prams_p7_arf)"
+  },
+  {
+   "question": "What is the impact of postpartum contraception use on Sudden Unexpected Infant Death (SUID) incidence in infants born to mothers with low socioeconomic status?",
+   "comparison": "Use ncfrp_v51 for case series and PRAMS data on contraceptive use, as well as CDC files for SES indicators and live birth denominator.",
+   "why_open": "Studies show that postpartum contraception can prevent unintended pregnancies but its impact on reducing SUID risk among mothers with low socioeconomic status is unclear.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15",
+    "cdc_linkco15"
+   ],
+   "data": "SUID (ncfrp_v51), postpartum contraceptive use (prams_p8_arf, prams_p7_arf), socioeconomic status (cdc_linkco15, cdc_natl15)"
+  },
+  {
+   "question": "Does maternal smoking during pregnancy modify the risk of Sudden Unexpected Infant Death (SUID) associated with bed sharing in different postconceptional age (PCA) windows?",
+   "comparison": "Utilize ncfrp_v51 for cases and PRAMS data on bed sharing and maternal smoking, combined with birth denominators from CDC.",
+   "why_open": "Current research indicates that both bed sharing and maternal smoking are risk factors for SUID. However, the interaction between these two risks across developmental windows has not been fully explored.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [
+    "prams_p8_arf",
+    "prams_p7_arf"
+   ],
+   "denominator_sources": [
+    "cdc_natl15",
+    "cdc_linkco15"
+   ],
+   "data": "SUID (ncfrp_v51), bed sharing (prams_p8_arf, prams_p7_arf), maternal smoking during pregnancy (cdc_linkco15, cdc_natl15)"
+  }
+ ]
+}

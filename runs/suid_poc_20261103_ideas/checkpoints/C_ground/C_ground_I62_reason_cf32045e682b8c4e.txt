@@ -1,0 +1,79 @@
+### Design
+
+**Design**: Trends within cases. Compare proportions among the SUID cases across periods (2016-2021 and earlier).
+
+**Restated question**: Has the proportion of Sudden Unexpected Infant Death (SUID) cases related to preterm birth remained stable between 2016-2021 compared to previous years?
+
+### Sources by Role
+
+**Case Series:**
+- **ncfrp_v51**: This source records child deaths reviewed by fatality review teams, providing the necessary SUID case data.
+  
+**Population Reference:**
+- **prams_p8_arf**: This survey of mothers post-live birth provides general population exposure prevalence.
+
+### Period
+
+**Period**: 2016-2021
+- The ncfrp_v51 covers 2004-2019, and prams_p8_arf covers Phase 8 (includes 2016-2021).
+
+### Variables
+
+**Preterm Birth History:**
+- **ncfrp_v51**: INFprevpreterm (Medical complications - Previous Preterm/Small for Gestation Age Infant) 
+- **prams_p8_arf**: P_PRTERM (Previous preterm births)
+
+The measurement differs between sources:
+- ncfrp_v51 records medical complications directly related to previous pregnancies.
+- prams_p8_arf asks mothers about their history of having had a previous preterm birth.
+
+**Maternal Smoking:**
+- **ncfrp_v51**: Not available in the provided list of candidate variables.
+- **prams_p8_arf**: RF_PHYPE (Prepregnancy hypertension) and MM_FEVER (BC: mom had fever), as well as other maternal health conditions, can provide context but not smoking history directly.
+
+**Income & Dependent Information:**
+- **ncfrp_v51**: Not available in the provided list of candidate variables.
+- **prams_p8_arf**: PNC_VST (Number of prenatal care visits) and RF_PHYPE (Prepregnancy hypertension) can provide indirect measures but not directly related to income or dependent status.
+
+### Biases
+
+**Selection Bias:**
+- ncfrp_v51 captures only cases reviewed by fatality review teams, which may not be representative of all SUID deaths.
+- prams_p8_arf covers a subset of live births in participating states and does not account for infant deaths specifically.
+
+**Information Bias:**
+- Reporting flags (e.g., F_RF_PPB) are inconsistent between sources. Missing answers differ significantly between ncfrp_v51 and prams_p8_arf, leading to potential discrepancies.
+- The timing and context of variable measurement differ; prenatal care measures in prams_p8_arf may not directly correlate with SUID cases.
+
+**Confounding:**
+- Confounders like maternal smoking history are not uniformly measured across both sources. Other variables such as pre-pregnancy health status (RF_PHYPE, MM_FEVER) might confound the relationship between preterm birth and SUID.
+  
+### What the Design Cannot Establish
+
+- **Causation**: The design cannot establish causation between preterm birth and SUID risk due to its observational nature.
+- **Population Incidence Rates**: Without a denominator source for live births, it is impossible to calculate incidence rates or prevalence in the general population.
+
+### Prior Art
+
+**Prior Work:**
+- **SUID_manuscript_v9_clean.C10 [limitation]** and other claims suggest that SUID studies often exclude extremely preterm infants. This study aims to explore trends over time but lacks a consistent measure of maternal smoking, which is crucial for understanding risk factors.
+  
+### Verdict
+
+The proposed data sources cannot fully address the research question due to several limitations:
+
+1. **Lack of Consistent Maternal Smoking Data**: The ncfrp_v51 does not have direct measures of maternal smoking history, a critical variable in SUID studies.
+2. **Selection Bias and Case Series Limitations**: Fatality review teams may not capture all cases, leading to potential selection bias.
+3. **No Denominator Source for Live Births**: Without live birth denominators, the study cannot establish incidence rates or risk ratios accurately.
+
+**Missing Data Element:**
+- A consistent measure of maternal smoking history across both sources is necessary to control for a major confounding variable.
+  
+Thus, these data cannot answer the proposed research question as stated. The design requires additional variables and possibly other data sources that consistently track maternal smoking history across live births and SUID cases.
+
+### Recommendation
+
+To improve this study:
+- Integrate maternal smoking measures from a consistent source (e.g., PRAMS).
+- Ensure a comprehensive denominator for live births to calculate incidence rates accurately.
+- Consider linking multiple datasets for more robust variable consistency.

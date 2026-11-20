@@ -1,0 +1,59 @@
+{
+ "ideas": [
+  {
+   "question": "What are the differences in maternal smoking patterns during pregnancy among SUID cases according to postconceptional age (PCA) categories?",
+   "comparison": "SUID cases compared with themselves, stratified by PCA categories.",
+   "why_open": "The current literature does not provide a detailed analysis of how maternal smoking behavior varies across different postconceptional age windows in SUID cases. Understanding these differences could help pinpoint critical developmental periods when prenatal smoke exposure may be particularly harmful.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "maternal smoking during pregnancy, postconceptional age (PCA)"
+  },
+  {
+   "question": "Do variations in socioeconomic status correlate with different PCA-aligned SUID incidence patterns among reviewed cases?",
+   "comparison": "SUID cases compared with themselves, stratified by socio-economic indicators.",
+   "why_open": "The impact of socioeconomic status on Sudden Unexpected Infant Death Syndrome (SUID) has been understudied when considering postconceptional age (PCA). This analysis could identify whether specific PCA periods have differing risks influenced by socioeconomics and guide targeted interventions for at-risk groups.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "socioeconomic status, postconceptional age (PCA)"
+  },
+  {
+   "question": "How do prematurity levels influence the risk of SUID across different PCA developmental windows among reviewed cases?",
+   "comparison": "SUID cases compared with themselves, stratified by preterm birth status.",
+   "why_open": "Premature infants face heightened risks for sudden unexpected infant death syndrome (SUID), but little is known about how these risks vary within different postconceptional age (PCA) intervals. This could clarify whether specific developmental stages are more vulnerable to prematurity-related SUID incidents.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "prematurity status, postconceptional age (PCA)"
+  },
+  {
+   "question": "Is there a relationship between infant sex and PCA-aligned incidence rates of SUID in reviewed cases?",
+   "comparison": "SUID cases compared with themselves, stratified by infant sex.",
+   "why_open": "There is limited research on how the developmental risk for sudden unexpected infant death syndrome (SUID) varies based on postconceptional age (PCA) between males and females. This could provide insights into biological or environmental factors that differentially impact each sex during various stages of development.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "infant sex, postconceptional age (PCA)"
+  },
+  {
+   "question": "How does the incidence rate of SUID vary in relation to maternal obesity levels across different PCA developmental windows among reviewed cases?",
+   "comparison": "SUID cases compared with themselves, stratified by maternal prepregnancy BMI.",
+   "why_open": "Maternal obesity has been identified as a risk factor for Sudden Unexpected Infant Death Syndrome (SUID), but its impact on SUID incidence may differ based on the postconceptional age (PCA) of the infant. Understanding these variations can help tailor preventive measures to specific developmental stages.",
+   "case_sources": [
+    "ncfrp_v51"
+   ],
+   "reference_sources": [],
+   "denominator_sources": [],
+   "data": "maternal prepregnancy body mass index (BMI), postconceptional age (PCA)"
+  }
+ ]
+}

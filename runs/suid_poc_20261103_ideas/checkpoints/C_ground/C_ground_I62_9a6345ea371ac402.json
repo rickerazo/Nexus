@@ -1,0 +1,29 @@
+{
+ "groundable": false,
+ "why_not": "The data sources lack consistent measures of maternal smoking history, and there is no denominator for live births to calculate incidence rates accurately.",
+ "statement": "",
+ "rationale": "The proposed research question requires a measure of maternal smoking history across both SUID cases and the general population. The ncfrp_v51 case series does not provide this information, while prams_p8_arf lacks consistent measures for SUID cases. Additionally, there is no denominator source to calculate incidence rates.",
+ "prior_art": "SUID_manuscript_v9_clean.C10 [limitation] and other claims suggest that SUID studies often exclude extremely preterm infants, but the question remains open due to inconsistent maternal smoking data across sources.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "preterm birth",
+  "maternal smoking"
+ ],
+ "variables": [
+  "ncfrp_v51:INFprevpreterm",
+  "prams_p8_arf:P_PRTERM",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "Causation, population incidence rates or prevalence due to lack of consistent maternal smoking data and denominator source."
+}

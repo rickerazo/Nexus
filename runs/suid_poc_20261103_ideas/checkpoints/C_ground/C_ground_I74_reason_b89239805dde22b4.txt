@@ -1,0 +1,74 @@
+### Design and Question Restatement
+
+**Design:** Measurement comparison. Compare how the same concept is recorded in two or more sources (wording, timing, who reports it, coding of missing answers) and ask how the difference would bias a comparison between them.
+
+**Restated question:**
+To evaluate inconsistencies in recording postpartum birth control usage between PRAMS Phase 7 and Phase 8 data collection methods, and assess how these discrepancies may influence perceptions of SUID risk factors.
+
+### Sources by Role
+
+- **Population Reference:** prams_p7_arf (Phase 7 Analytic Research File) and prams_p8_arf (Phase 8 Analytic Research File).
+- **Why each plays the role:**
+  - PRAMS data is used to measure postpartum birth control usage among mothers shortly after giving birth. The Phase 7 dataset serves as a baseline for comparison, while the Phase 8 dataset represents more recent practices and changes in recording methodologies.
+
+### Period
+
+The analysis requires data from both PRAMS Phase 7 (2012-2015) and PRAMS Phase 8 (2016-2021).
+
+### Variables
+
+**Postpartum Birth Control Usage:**
+- **PRAMS P7 ARF:** 
+  - BC_WHEN4: Use of birth control when got pregnant (FORCED SKIP)
+  
+- **PRAMS P8 ARF:**
+  - TYP_BC: Health care type -- visit for family planning / birth control (FORCED SKIP)
+
+**Comparison Points:**
+
+1. **Wording and Timing:** 
+   - PRAMS P7 ARF measures postpartum birth control use through BC_WHEN4, which captures the method used when getting pregnant.
+   - PRAMS P8 ARF uses TYP_BC, which specifically asks about family planning/birth control visits during pregnancy.
+
+2. **Who Reports It:**
+   - Both variables are self-reported by mothers sampled after live births.
+
+3. **Coding of Missing Answers:**
+   - PRAMS P7 ARF:
+     - `.B` = Don't know or blank
+     - `.S` = Skipped
+   - PRAMS P8 ARF:
+     - `.B` = Don't know/blank
+     - `.S` = Skip
+
+### Biases: Selection, Information and Confounding
+
+**Selection Bias:**
+- Both phases sample mothers from live births but not deaths. The selection is weighted to represent the general population of live births rather than SUID cases.
+
+**Information Bias:**
+- PRAMS P7 ARF focuses on use at conception, while PRAMS P8 ARF includes family planning visits during pregnancy.
+- The wording change may influence how mothers interpret and report their birth control practices, leading to potential inconsistencies in recording.
+
+**Confounding:**
+- Differences in the timing of data collection (when the mother was surveyed postpartum vs. during pregnancy) might confound comparisons between phases.
+- Changes in survey protocols or questions over time can introduce biases that are difficult to quantify and control for.
+
+### What the Design Cannot Establish
+
+The design cannot establish causation or incidence rates for SUID risk factors due to its focus on comparing measurement methodologies rather than direct risk factor assessment. It also does not account for potential confounding variables introduced by differences in survey timing and wording.
+
+### Prior Art
+
+- **SUID_manuscript_v9_clean.C10 [limitation]:** The analysis excludes a small number of deaths at the extremes of the PCA distribution, including some extremely and very preterm infants who died early in postnatal life.
+  - This limitation does not address discrepancies in birth control usage recording between PRAMS phases.
+
+- **bedsharing_ms_v7.C18 [limitation]:** Sleep-environment classification in case-report systems may be subject to heterogeneity in ascertainment and reporting.
+  - This addresses potential inconsistencies but does not focus on the specific variable of interest (birth control).
+
+### Verdict
+
+The proposed study can use PRAMS Phase 7 and Phase 8 data to evaluate how inconsistencies in recording postpartum birth control usage might influence perceptions of SUID risk factors. However, it cannot establish direct associations or incidence rates for these risk factors due to the nature of its design. The focus on measurement comparison is feasible given the available datasets but requires careful consideration of potential biases and confounding variables introduced by changes over time.
+
+**Conclusion:**
+These data sources can answer a version of the proposed research question, focusing specifically on comparing how birth control usage is recorded between PRAMS Phase 7 and Phase 8.

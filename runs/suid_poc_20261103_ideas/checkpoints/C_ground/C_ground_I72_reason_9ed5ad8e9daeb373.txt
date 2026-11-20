@@ -1,0 +1,58 @@
+### Design
+
+**Question**: How does the recording of medical complications during pregnancy differ between NCFRP_v51 case series and PRAMS_P7_ARF population reference?
+
+This is a measurement comparison design, which aims to compare how different sources measure the same concept. Specifically, it compares detailed medical complication records in the NCFRP_v51 case series with broader categories of medical complications from the PRAMS_P7_ARF population reference.
+
+### Sources by Role
+- **Case Series**: ncfrp_v51
+  - Covers: Detailed records of child deaths reviewed by fatality review teams.
+- **Population Reference**: prams_p7_arf
+  - Covers: Weighted survey data from mothers a few months after live births, not designed to count infant deaths.
+
+### Period
+**Period Range**: 2012-2015
+
+This range covers the period of PRAMS_P7_ARF (Phase 7) and overlaps with the time frame used for NCFRP_v51 data provided in the manuscript context (although exact years are not specified, it is implied to be relevant).
+
+### Variables
+#### Medical Complications during Pregnancy:
+- **NCFRP_v51**: Detailed records of medical complications such as pre-eclampsia (INF4preeclampsiaref), gestational hypertension (INF4preghyperref), preterm labor (INF4pretermlabref), eclampsia (INF4eclampsiarf), diabetes, gestational (INF4diabgestref), chronic lung disease (INFchronlung), seizure disorder (INF4seizureref), bacterial vaginosis (INF4bvref), Group B strep (INF4strepref), sickle cell disease (INF4sickleref).
+  - **Coding**: Detailed medical conditions, with specific referral and timeframe variables.
+- **PRAMS_P7_ARF**:
+  - Pre-pregnancy hypertension: RF_PHYPE
+  - Gestational diabetes: PG_GDB8
+  - Previous preterm births: P_PRTERM
+  - Hypertension eclampsia: RF_EHYPE (not available before 2020)
+  - Prepregnancy diabetes: RF_PDIAB (not available before 2020)
+
+#### Missing Answers and Coding:
+- **NCFRP_v51**: Specific documentation of missing answers, unknowns.
+- **PRAMS_P7_ARF**:
+  - Missing answers are coded as "B" for don't know or blank, "S" for skipped, and "U" for unknown.
+
+### Biases
+#### Selection Bias
+- NCFRP_v51: Only includes cases reviewed by fatality review teams, which may not be representative of all child deaths.
+- PRAMS_P7_ARF: Surveys mothers post-live birth; does not capture information on infant deaths and is biased towards live births.
+
+#### Information Bias
+- **Timing**: NCFRP_v51 records complications as part of a detailed review process after the death, while PRAMS_P7_ARF collects information from surveys conducted a few months postpartum.
+- **Reporting**: Medical details in NCFRP_v51 are likely more thorough and detailed than self-reported data by mothers.
+
+#### Confounding
+- Differences in how complications are recorded (e.g., pre-pregnancy vs. gestational hypertension) may confound comparisons between the two sources.
+  
+### What the Design Cannot Establish
+The design can compare how different variables are recorded but cannot establish causality or incidence rates due to lack of a denominator source.
+
+### Prior Art
+- **SUID_manuscript_v9_clean.C10**: The study acknowledges limitations in using vital record data, which may have exposure and cause-of-death misclassification issues.
+- **bedsharing_ms_v7.C18**: Sleep-environment classification in case-report systems is noted to be subject to heterogeneity in ascertainment and reporting.
+
+The closest relevant claims address methodological concerns with the sources used but do not directly compare how medical complications are recorded between different datasets.
+
+### Verdict
+**Yes**, these data can answer a version of the candidate research idea. The study will compare how detailed medical complication records differ between NCFRP_v51 (case series) and PRAMS_P7_ARF (population reference). However, it cannot establish incidence rates or causal relationships due to the absence of a denominator source.
+
+**Data Element Needed for Incidence Rate Estimation**: A common denominator source that includes both live births and infant deaths during 2012-2015.

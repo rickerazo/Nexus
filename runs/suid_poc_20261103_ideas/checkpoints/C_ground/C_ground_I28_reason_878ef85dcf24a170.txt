@@ -1,0 +1,60 @@
+### Design
+
+**Revised Question:** Do infants from families with preconception health issues exhibit different characteristics compared to those without such issues among SUID cases?
+
+A case-case comparison design is used here. The study compares characteristics of SUID cases based on the presence or absence of preconception health issues within the same dataset, rather than comparing them against non-SUID cases.
+
+### Sources by Role
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System)
+  - This source is chosen because it provides comprehensive information about SUID cases.
+  
+- **Population Reference:** prams_p8_arf (PRAMS Phase 8 Analytic Research File)
+  - PRAMS P8 ARF serves as a population reference for mothers who have had live births, providing valuable data on preconception health issues and other risk factors.
+
+### Period
+The period that lies within the coverage of both sources is **2008-2019**. This range ensures that we can compare cases from ncfrp_v51 with reference data from prams_p8_arf, given PRAMS Phase 8 (2016-2021) and ncfrp_v51 (2004-2019).
+
+### Variables
+
+**Concept:** Preconception Health Issues
+- **ncfrp_v51:**
+  - ISSprechronicdiseasebef: Chronic disease control Education - before pregnancy (yes/no)
+  - INF4referinfchtype, INF4referinfmh, INF4referinfmhtype: Types of referrals for infant/child health and mental health programs.
+- **prams_p8_arf:**
+  - PRE_HLTH: Pre-preg -- improve health before preg (FORCED SKIP)
+  - RF_PHYPE: Prepregnancy hypertension
+  - PG8_SC, PG8_ALRGI, PG8_NAUS: Health problems during pregnancy (e.g., sickle cell disease, allergies, nausea/vomiting/dehydration)
+
+**Concept:** SUID Cases
+- **ncfrp_v51:**
+  - CaseType: Type of case (SUID)
+  - CAUothperisp: Perinatal conditions leading to SUID
+
+### Biases
+#### Selection Bias:
+- **Case Series (ncfrp_v51):** The source covers only cases reviewed by participating fatality review teams and does not represent all infant deaths in the U.S.
+- **Population Reference (prams_p8_arf):** PRAMS is a voluntary survey, which can lead to selection bias if participants differ systematically from non-participants.
+
+#### Information Bias:
+- **ncfrp_v51:** The information on preconception health issues may be incomplete due to the nature of fatality reviews.
+- **prams_p8_arf:** Data on preconception health issues are collected retrospectively through surveys, which can introduce recall bias.
+
+#### Confounding:
+- Potential confounders include socioeconomic status, maternal age, and other pregnancy-related factors not explicitly measured in both datasets.
+
+### What the Design Cannot Establish
+This design cannot establish causation between preconception health issues and SUID incidence. It can only provide evidence of association and differences in characteristics among cases with and without such issues. Additionally, it does not account for postnatal exposures that may influence risk independently or interactively.
+
+### Prior Art
+The manuscript claims do not directly address the relationship between preconception health issues and SUID incidence:
+- **SUID_manuscript_v9_clean.C10:** Excludes some cases based on gestational age, which is relevant but does not cover preconception factors.
+- **bedsharing_ms_v7.C24-C32:** Focuses on developmental timing of risk factors like bed sharing and maternal smoking but does not address preconception health issues.
+
+### Verdict
+**The data can answer a version of the question, but with limitations:**
+1. The design uses ncfrp_v51 for SUID cases and prams_p8_arf to assess preconception health conditions.
+2. It compares characteristics of SUID cases based on the presence or absence of preconception health issues within the same dataset (ncfrp_v51) using PRAMS as a reference.
+3. The study can provide insights into differences in case characteristics but cannot establish causation due to observational nature and potential confounding.
+
+### Missing Data Element
+- **Detailed preconception data:** More detailed records of preconception health status from both the case series and population reference would enhance the analysis, though this information is not currently available in the proposed datasets.

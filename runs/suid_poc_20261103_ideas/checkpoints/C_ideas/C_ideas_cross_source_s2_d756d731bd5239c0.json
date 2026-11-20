@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "How does maternal prepregnancy body mass index (BMI) influence SUID incidence in relation to postconceptional age (PCA)?",
+   "why_open": "This question addresses the interaction between maternal obesity and developmental timing, which has not been explored comprehensively. Understanding this relationship could provide insights into targeted interventions at specific developmental stages.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal prepregnancy BMI (from ncfrp_v51), SUID (from cdc_linkco15 and ncfrp_v51), PCA (from cdc_linkco15)"
+  },
+  {
+   "question": "What is the impact of postneonatal infant mortality rates on maternal smoking behavior and birth weight?",
+   "why_open": "The interplay between infant mortality patterns, smoking habits, and birth weights has not been thoroughly examined. This question aims to uncover potential pathways for risk reduction through maternal health behaviors.",
+   "sources": [
+    "cdc_natl15",
+    "prams_p8_arf"
+   ],
+   "data": "Postneonatal mortality rates (from cdc_natl15), smoking during pregnancy (from prams_p8_arf and cdc_natl15), birth weight (from cdc_natl15 and prams_p7_arf)"
+  },
+  {
+   "question": "Does the geographic distribution of SUID cases correlate with maternal obesity rates?",
+   "why_open": "This question explores whether regional variations in maternal health conditions could explain differences in SUID incidence. Identifying such correlations can guide local public health strategies.",
+   "sources": [
+    "cdc_natl15",
+    "ncfrp_v51"
+   ],
+   "data": "SUID cases (from cdc_natl15 and ncfrp_v51), maternal obesity rates by geographic location (from prams_p8_arf)"
+  },
+  {
+   "question": "How does socioeconomic status, as determined by household income and insurance coverage, impact the incidence of SUID among preterm infants?",
+   "why_open": "This question aims to explore how economic factors might influence outcomes in a vulnerable population. Understanding these dynamics could lead to more equitable public health policies.",
+   "sources": [
+    "cdc_natl15",
+    "prams_p8_arf"
+   ],
+   "data": "Preterm birth and SUID incidence (from cdc_natl15), household income and insurance coverage (from prams_p8_arf)"
+  },
+  {
+   "question": "To what extent do prenatal care visits correlate with the incidence of sudden unexpected infant death (SUID) in relation to maternal smoking status?",
+   "why_open": "This question seeks to uncover potential protective or risk-modifying effects of prenatal care on SUID, especially among smokers. This could guide recommendations for optimizing prenatal services.",
+   "sources": [
+    "cdc_natl15",
+    "prams_p8_arf"
+   ],
+   "data": "Prenatal care visits (from cdc_natl15 and prams_p7_arf), maternal smoking status (from prams_p7_arf and cdc_natl15), SUID incidence (from cdc_natl15)"
+  }
+ ]
+}

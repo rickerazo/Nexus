@@ -1,0 +1,47 @@
+{
+ "ideas": [
+  {
+   "question": "How does maternal obesity interact with postconceptional age (PCA) to affect SUID incidence rates across different developmental windows?",
+   "why_open": "Previous studies suggest that maternal obesity is a risk factor for SUID, but its interaction with PCA and the developmental timing of SUID has not been explored. Resolving this could provide insight into how and when maternal obesity contributes to increased SUID risk.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "maternal prepregnancy body mass index (BMI), postconceptional age, sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "To what extent do environmental factors documented in the NFR-CRS dataset differ between SUID cases with and without a maternal obesity history?",
+   "why_open": "While maternal obesity is recognized as an independent risk factor for SUID, it remains unclear if infants born to obese mothers face unique environmental hazards contributing to their increased risk of SUID.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "environmental conditions, sudden unexpected infant death (SUID), maternal prepregnancy body mass index (BMI)"
+  },
+  {
+   "question": "What are the differences in sleep environment and bedding practices between infants with differing postconceptional age (PCA) who died from SUID?",
+   "why_open": "There is a clear developmental pattern in SUID incidence aligned by PCA, but it remains unknown whether specific environmental factors such as sleep practices vary across these developmental stages.",
+   "sources": [
+    "ncfrp_v51"
+   ],
+   "data": "sleeping accessories, shared sleeping surface, sudden unexpected infant death (SUID), postconceptional age"
+  },
+  {
+   "question": "Does the association between maternal smoking during pregnancy and SUID incidence vary by environmental factors such as second-hand smoke exposure or household crowding?",
+   "why_open": "Although maternal smoking is a well-established risk factor for SUID, it remains unclear whether postnatal exposures like continued tobacco use in the household modify this relationship.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "maternal smoking during pregnancy, second-hand smoke exposure, household crowding, sudden unexpected infant death (SUID)"
+  },
+  {
+   "question": "How do socioeconomic factors and family support systems differ between infants with PCA-aligned high SUID incidence and those in low-incidence windows?",
+   "why_open": "There is a rising-declining pattern of SUID aligned by PCA, but the underlying socioeconomic conditions and familial support dynamics have not been comprehensively explored to understand why these differences exist.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "family transitions such as divorce or frequent moves, living in shelters, maternal smoking during pregnancy, sudden unexpected infant death (SUID), postconceptional age"
+  }
+ ]
+}

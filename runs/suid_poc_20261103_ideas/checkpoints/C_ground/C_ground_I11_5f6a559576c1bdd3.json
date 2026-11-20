@@ -1,0 +1,35 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The rate of sudden unexpected infant death (SUID) among infants whose mothers experienced significant stressors during pregnancy is higher compared to those who did not, from 2016-2021.",
+ "rationale": "This design uses an exposure-specific rates approach by combining case series data on SUID cases with population reference data on maternal stressor prevalence and denominator data for the total number of live births.",
+ "prior_art": "The closest tested work is SUID_manuscript_v9_clean.C10, which acknowledges that postnatal exposures like breastfeeding are excluded from the analysis. This parallels the current study's need to explore maternal stressors as a risk factor but does not directly address it.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [
+  "cdc_natl15",
+  "cdc_linkco15"
+ ],
+ "period_start": 2016,
+ "period_end": 2021,
+ "required_concepts": [
+  "maternal_stressors",
+  "SUID_cases",
+  "live_birth_denominator"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4stress",
+  "prams_p8_arf:PG8_ANX",
+  "prams_p8_arf:MH_PGDX8",
+  "cdc_natl15:NO_MMORB",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "Causation, incidence vs. prevalence, and fully adjusted confounding variables."
+}

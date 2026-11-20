@@ -1,0 +1,1612 @@
+{
+  "candidates": [
+    {
+      "question": "Is the rate of maternal obesity higher among SUID cases compared to the general population of new mothers?",
+      "comparison": "SUID cases from cdc_linkco15, ncfrp_v51 against general population of new mothers from prams_p8_arf, prams_p7_arf",
+      "why_open": "Despite evidence linking maternal obesity with SUID risk, the comparative prevalence between cases and a broader sample of postpartum women is not well established. This study aims to determine if higher maternal BMI among SUID cases reflects a causal association.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal prepregnancy body mass index (BMI) [3] and Sudden unexpected infant death (SUID) [2]",
+      "id": "I1",
+      "design": "case_population",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is bed-sharing more prevalent among families of infants who experienced SUID compared to the general population?",
+      "comparison": "SUID cases from cdc_linkco15, ncfrp_v51 against general population of new mothers from prams_p8_arf, prams_p7_arf",
+      "why_open": "While bed-sharing is known as a risk factor for SIDS and SUID, it's not clear how often this practice occurred among those affected compared to the broader infant population. This research seeks to quantify this difference.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "bed sharing [2], Sudden unexpected infant death (SUID) [2]",
+      "id": "I2",
+      "design": "case_population",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is the prevalence of smoking during pregnancy higher among mothers whose infants died from SUID than in the general population?",
+      "comparison": "SUID cases from cdc_linkco15, ncfrp_v51 against general population of new mothers from prams_p8_arf, prams_p7_arf",
+      "why_open": "Although maternal smoking is a well-known risk factor for SIDS and SUID, its relative frequency among those who experienced such outcomes remains understudied. This study aims to clarify the proportionate impact.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal smoking during pregnancy [3], Sudden unexpected infant death (SUID) [2]",
+      "id": "I3",
+      "design": "case_population",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a higher proportion of preterm births among infants who died from SUID compared to the general population?",
+      "comparison": "SUID cases from cdc_linkco15, ncfrp_v51 against general population of new mothers from prams_p8_arf, prams_p7_arf",
+      "why_open": "Though preterm birth is linked with elevated risk for SIDS and SUID, the comparative prevalence remains unexplored. This research evaluates if a higher incidence of preterm births exists among those affected by SUID.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Preterm birth [3], Sudden unexpected infant death (SUID) [2]",
+      "id": "I4",
+      "design": "case_population",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Are there differences in breastfeeding practices between mothers of infants who died from SUID and the general population?",
+      "comparison": "SUID cases from cdc_linkco15, ncfrp_v51 against general population of new mothers from prams_p8_arf, prams_p7_arf",
+      "why_open": "Despite breastfeeding's potential benefits for infant health, its role in SIDS and SUID outcomes remains uncertain. This study investigates whether differences in breastfeeding practices exist between affected families and the broader postpartum population.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Breastfeeding status at discharge [3], Sudden unexpected infant death (SUID) [2]",
+      "id": "I5",
+      "design": "case_population",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What proportion of SUID cases involve infants whose mothers smoked during pregnancy, compared to the weighted prevalence of maternal smoking among live births?",
+      "comparison": "cfrp_v51 (cases) vs prams_p8_arf and prams_p7_arf (population reference)",
+      "why_open": "Previous research established that maternal smoking is a risk factor for SUID. However, it remains unclear how prevalent this exposure is among actual cases compared to the general population of live births.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal smoking during pregnancy (exposure) from ncfrp_v51, cdc_linkco15; weighted prevalence of maternal smoking among live births (population reference)",
+      "id": "I6",
+      "design": "case_population",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the incidence of SUID cases where infants were exposed to second-hand smoke compare with the weighted proportion of exposure to second-hand smoke in a general population of newborns?",
+      "comparison": "cfrp_v51 (cases) vs prams_p8_arf and prams_p7_arf (population reference)",
+      "why_open": "Second-hand smoke has been identified as an environmental risk factor for SUID. However, it is unknown how common this exposure is among cases compared to the general population of newborns.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Second-hand smoke exposure (exposure) from ncfrp_v51, cdc_linkco15; weighted prevalence of second-hand smoke exposure among live births (population reference)",
+      "id": "I7",
+      "design": "case_population",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is the proportion of SUID cases involving preterm birth higher than the weighted proportion of preterm births in a general population of newborns?",
+      "comparison": "cfrp_v51 (cases) vs cdc_natl15 and prams_p7_arf, prams_p8_arf (population reference)",
+      "why_open": "Preterm birth is known to be associated with an increased risk of SUID. However, it remains unclear if the proportion of preterm births among SUID cases is indeed higher compared to general newborn populations.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Preterm birth (exposure) from ncfrp_v51, cdc_linkco15; weighted prevalence of preterm births among live births (population reference)",
+      "id": "I8",
+      "design": "case_population",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the proportion of SUID cases with low birth weight compare to the weighted prevalence of low birth weight in a general population of newborns?",
+      "comparison": "cfrp_v51 (cases) vs prams_p8_arf and prams_p7_arf (population reference)",
+      "why_open": "Low birth weight is associated with an increased risk of SUID. It remains unknown if the proportion of low birth weight cases among SUID cases exceeds that of general newborn populations.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Low birth weight (exposure) from ncfrp_v51, cdc_linkco15; weighted prevalence of low birth weight among live births (population reference)",
+      "id": "I9",
+      "design": "case_population",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What proportion of SUID cases involve infants whose mothers experienced significant stress during pregnancy compared to the weighted prevalence of maternal stress in a general population of newborns?",
+      "comparison": "cfrp_v51 (cases) vs prams_p8_arf and prams_p7_arf (population reference)",
+      "why_open": "Pregnancy-related stress is thought to contribute to SUID risk. It remains unclear whether the proportion of cases involving stressed mothers exceeds that seen in a general population of newborns.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal stress during pregnancy (exposure) from ncfrp_v51, cdc_linkco15; weighted prevalence of maternal stress among live births (population reference)",
+      "id": "I10",
+      "design": "case_population",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the prevalence of maternal obesity differ among SUID cases compared to the general population of new mothers?",
+      "comparison": "SUID cases (ncfrp_v51) vs. PRAMS Phase 7 and Phase 8 populations",
+      "why_open": "Maternal obesity is a risk factor for SUID, but its relative prevalence in affected versus general populations has not been well-established.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal obesity is captured differently: in SUID cases, BMI values are documented directly; PRAMS surveys use a range of categories based on self-report.",
+      "id": "I11",
+      "design": "case_population",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the prevalence of maternal smoking during pregnancy differ between SUID cases and the general population?",
+      "comparison": "SUID cases (ncfrp_v51) vs. PRAMS Phase 8 populations",
+      "why_open": "Maternal smoking is a known risk factor for SIDS/SUID, yet its relative distribution in affected versus healthy infants remains understudied.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal smoking is documented as a direct yes/no item among cases; PRAMS captures various details of smoking habits and reductions during pregnancy.",
+      "id": "I12",
+      "design": "case_population",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What is the prevalence of bed-sharing in SUID cases compared to new mothers surveyed by PRAMS?",
+      "comparison": "SUID cases (ncfrp_v51) vs. PRAMS Phase 8 populations",
+      "why_open": "Bed-sharing has been linked with an increased risk of SIDS/SUID, but its prevalence among affected versus unaffected infants is not well understood.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Bed-sharing status is documented by case review reports; PRAMS uses a proxy for bed-sharing based on infant sleep arrangements.",
+      "id": "I13",
+      "design": "case_population",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a difference in breastfeeding practices between mothers of SUID cases and the general population?",
+      "comparison": "SUID cases (ncfrp_v51) vs. PRAMS Phase 7 populations",
+      "why_open": "Breastfeeding has been associated with reduced risk for certain causes of infant mortality but its prevalence among affected versus unaffected infants is unclear.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Breastfeeding status in SUID cases is captured as a proxy variable (e.g., breastfed discharge), whereas PRAMS reports direct questions on breastfeeding duration and exclusivity.",
+      "id": "I14",
+      "design": "case_population",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the prevalence of preterm birth vary between SUID cases and mothers surveyed by PRAMS?",
+      "comparison": "SUID cases (ncfrp_v51) vs. PRAMS Phase 8 populations",
+      "why_open": "Preterm birth is a known risk factor for SIDS/SUID, but its comparative prevalence in affected versus general populations has not been fully explored.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Preterm birth is documented directly among cases based on gestational age; PRAMS captures preterm birth as a binary outcome.",
+      "id": "I15",
+      "design": "case_population",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there an association between maternal prepregnancy body mass index (BMI) and Sudden Unexpected Infant Death (SUID) incidence in different developmental windows of postconceptional age (PCA)?",
+      "comparison": "SUID cases from ncfrp_v51 compared to live births with known maternal BMI from cdc_natl15, using PRAMS data for exposure prevalence. PCA is aligned to determine if the association changes across developmental stages.",
+      "why_open": "Current studies indicate a potential link between maternal obesity and SUID but have not explored this relationship within the context of postconceptional age development windows as identified in previous research.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15",
+        "cdc_linkco15"
+      ],
+      "data": "Maternal BMI (cdc_linkco15, cdc_natl15), SUID (ncfrp_v51), postconceptional age (PCA) (cdc_linkco15, cdc_natl15)",
+      "id": "I16",
+      "design": "exposure_rates",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the incidence of Sudden Unexpected Infant Death (SUID) differ between preterm and full-term infants based on maternal smoking status during pregnancy?",
+      "comparison": "SUID cases from ncfrp_v51 are compared to live births with known gestational age and maternal smoking status, using PRAMS data for smoking prevalence. The analysis will account for prematurity.",
+      "why_open": "While the literature suggests that both preterm birth and maternal smoking increase SUID risk independently, it remains unclear how these factors interact in combination over different developmental stages (PCA).",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15",
+        "cdc_linkco15"
+      ],
+      "data": "Preterm birth (cdc_linkco15, cdc_natl15), maternal smoking during pregnancy (cdc_linkco15, cdc_natl15), SUID (ncfrp_v51)",
+      "id": "I17",
+      "design": "exposure_rates",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does the presence of a crib or similar sleeping arrangement for infants influence Sudden Unexpected Infant Death (SUID) incidence when considering maternal prepregnancy BMI?",
+      "comparison": "Use ncfrp_v51 cases with SUID status to compare against PRAMS data on sleeping arrangements and maternal BMI from both denominator sources.",
+      "why_open": "Previous research has suggested that infant sleep environment plays a crucial role in reducing the risk of SUID. However, no study has explored how this interacts with maternal obesity as a risk factor during different developmental stages.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15",
+        "cdc_linkco15"
+      ],
+      "data": "SUID (ncfrp_v51), maternal BMI (cdc_linkco15, cdc_natl15), infant sleep environment (prams_p8_arf, prams_p7_arf)",
+      "id": "I18",
+      "design": "exposure_rates",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What is the impact of postpartum contraception use on Sudden Unexpected Infant Death (SUID) incidence in infants born to mothers with low socioeconomic status?",
+      "comparison": "Use ncfrp_v51 for case series and PRAMS data on contraceptive use, as well as CDC files for SES indicators and live birth denominator.",
+      "why_open": "Studies show that postpartum contraception can prevent unintended pregnancies but its impact on reducing SUID risk among mothers with low socioeconomic status is unclear.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15",
+        "cdc_linkco15"
+      ],
+      "data": "SUID (ncfrp_v51), postpartum contraceptive use (prams_p8_arf, prams_p7_arf), socioeconomic status (cdc_linkco15, cdc_natl15)",
+      "id": "I19",
+      "design": "exposure_rates",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does maternal smoking during pregnancy modify the risk of Sudden Unexpected Infant Death (SUID) associated with bed sharing in different postconceptional age (PCA) windows?",
+      "comparison": "Utilize ncfrp_v51 for cases and PRAMS data on bed sharing and maternal smoking, combined with birth denominators from CDC.",
+      "why_open": "Current research indicates that both bed sharing and maternal smoking are risk factors for SUID. However, the interaction between these two risks across developmental windows has not been fully explored.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15",
+        "cdc_linkco15"
+      ],
+      "data": "SUID (ncfrp_v51), bed sharing (prams_p8_arf, prams_p7_arf), maternal smoking during pregnancy (cdc_linkco15, cdc_natl15)",
+      "id": "I20",
+      "design": "exposure_rates",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What is the relationship between maternal obesity and Sudden Unexpected Infant Death (SUID) incidence rates?",
+      "comparison": "Maternal obesity status groups from PRAMS with overall birth population from CDC natality; case series of SUID cases linked to these groups.",
+      "why_open": "While studies suggest a link between maternal obesity and SUID, the specific rate differences by level of obesity are not yet fully understood. This study could provide more precise measures of risk and help target public health interventions.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Maternal prepregnancy body mass index (BMI), Sudden unexpected infant death (SUID)",
+      "id": "I21",
+      "design": "exposure_rates",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does prenatal tobacco exposure affect the incidence of Sudden Unexpected Infant Death (SUID) compared to non-exposure?",
+      "comparison": "Prenatal smoking status groups from PRAMS with overall birth population; case series of SUID cases linked to these groups.",
+      "why_open": "The association between maternal smoking during pregnancy and SUID is well-documented, but the specific rate differences by level of exposure are less clear. Identifying precise risk levels could guide more targeted cessation programs.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Maternal smoking during pregnancy, Sudden unexpected infant death (SUID)",
+      "id": "I22",
+      "design": "exposure_rates",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does preterm birth alter the incidence of Sudden Unexpected Infant Death (SUID) compared to full-term births?",
+      "comparison": "Gestational age at birth groups from PRAMS with overall birth population; case series of SUID cases linked to these groups.",
+      "why_open": "While there is evidence that preterm infants are at higher risk for SUID, the rate differences by degree of prematurity and corresponding implications remain unclear. Clarifying these could improve targeted care protocols.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Gestational age at birth, Sudden unexpected infant death (SUID)",
+      "id": "I23",
+      "design": "exposure_rates",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What is the incidence rate of Sudden Unexpected Infant Death (SUID) among infants born to mothers with mental health disorders compared to those without?",
+      "comparison": "Mental health problem status groups from PRAMS with overall birth population; case series of SUID cases linked to these groups.",
+      "why_open": "Though studies suggest a link between maternal mental health and SUID, detailed rate differences are not well-established. This research could pinpoint specific conditions contributing to higher risk for targeted interventions.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Maternal health problems (depression, anxiety), Sudden unexpected infant death (SUID)",
+      "id": "I24",
+      "design": "exposure_rates",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How do breastfeeding practices differ in the incidence of Sudden Unexpected Infant Death (SUID) among infants who were breastfed versus those who were not?",
+      "comparison": "Breastfeeding status groups from PRAMS with overall birth population; case series of SUID cases linked to these groups.",
+      "why_open": "While research indicates potential benefits of breastfeeding for infant health, the specific protective effect against SUID remains uncertain. Understanding this could highlight breastfeeding as a preventive measure.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Breastfeeding practices, Sudden unexpected infant death (SUID)",
+      "id": "I25",
+      "design": "exposure_rates",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To determine whether the prevalence of maternal smoking during pregnancy varies by infant sex and how this association affects sudden unexpected infant death (SUID) rates.",
+      "comparison": "Male vs. female infants, stratified by maternal smoking status, comparing SUID incidence rates between sexes for both smokers and non-smokers within a population at risk.",
+      "why_open": "While prior studies have examined the effects of maternal smoking on SUID rates, this question aims to elucidate if there is a differential effect of maternal smoking on SUID rates according to infant sex. This could reveal additional vulnerabilities or protective factors linked to biological differences in male and female infants exposed to prenatal tobacco smoke.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15"
+      ],
+      "data": "The data uses infant sex from case series sources, maternal smoking during pregnancy and exposure prevalence from population reference surveys, and the total live births at risk for SUID to compute rates.",
+      "id": "I26",
+      "design": "exposure_rates",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To evaluate whether the incidence of sudden unexpected infant death (SUID) differs based on maternal obesity status and if this relationship varies across different postconceptional age windows.",
+      "comparison": "High vs. low maternal BMI groups, stratified by developmental PCA window, comparing SUID incidence rates between BMI categories within specific age ranges.",
+      "why_open": "Maternal obesity is a known risk factor for adverse pregnancy outcomes but its impact on SUID specifically and whether this effect varies with the infant's postconceptional age have not been thoroughly examined. This analysis could help identify critical developmental periods where maternal obesity poses the highest risks to neonatal health and survival.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15"
+      ],
+      "data": "The data utilizes maternal prepregnancy body mass index (BMI) from population reference surveys, SUID outcomes and postconceptional age windows from case series sources, and the denominator from vital records to establish incidence rates.",
+      "id": "I27",
+      "design": "exposure_rates",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To investigate if bed sharing practices differ between infants of mothers who smoked during pregnancy compared to those whose mothers did not smoke.",
+      "comparison": "Infants of smoking vs. non-smoking mothers, comparing bed-sharing prevalence between these groups.",
+      "why_open": "While the association between bed sharing and SUID is well-documented, understanding whether maternal smoking influences bed-sharing practices could provide insights into environmental risk factors that exacerbate or mitigate the risks associated with bed sharing. This information can help tailor public health messaging to address specific vulnerabilities in different populations.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15"
+      ],
+      "data": "The data uses maternal smoking during pregnancy from population reference surveys, bed sharing information from case series sources, and birth counts to determine the prevalence of bed-sharing practices.",
+      "id": "I28",
+      "design": "exposure_rates",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To assess whether infants born prematurely are at a higher risk for SUID compared to full-term infants in the context of postconceptional age development.",
+      "comparison": "Preterm vs. term births, stratified by PCA window, comparing SUID incidence rates between preterm and full-term infants within different developmental stages.",
+      "why_open": "Although prematurity is recognized as a risk factor for adverse health outcomes, little research has explored how this risk evolves over time in relation to postconceptional age development. Understanding the temporal dynamics of prematurity's impact on SUID could highlight critical periods where targeted interventions are most needed.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15"
+      ],
+      "data": "The data incorporates preterm birth status from population reference surveys, SUID outcomes and postconceptional age windows from case series sources, and the denominator based on live births to compute incidence rates.",
+      "id": "I29",
+      "design": "exposure_rates",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To explore whether infants born to mothers with a history of smoking during pregnancy have higher rates of sudden unexpected infant death (SUID) compared to those born to non-smokers, across different geographic regions within participating states.",
+      "comparison": "Geographic region stratified by maternal smoking status, comparing SUID incidence between smokers and non-smokers in various regions within participating states.",
+      "why_open": "Regional variations may influence environmental factors such as healthcare access, socioeconomic conditions, or cultural practices that could modify the risk of SUID associated with maternal smoking. Identifying these disparities can inform targeted public health interventions tailored to specific geographic areas.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_linkco15"
+      ],
+      "data": "The data involves maternal smoking history from population reference surveys, SUID outcomes and geographic location from case series sources, and live birth counts to estimate SUID incidence rates by region.",
+      "id": "I30",
+      "design": "exposure_rates",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To determine whether SUID cases differ from other infant deaths regarding maternal smoking during pregnancy and preterm birth status.",
+      "comparison": "Sudden unexpected infant death (SUID) cases vs. other causes of infant death, using data from the NCFRP case series for both outcome groups; CDC natality for population at risk; PRAMS Phase 8 ARF for exposure prevalence among live births",
+      "why_open": "Maternal smoking and preterm birth are established risk factors for SUID but may not be unique. Identifying specific differences between outcomes would clarify prevention priorities.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Outcome: Sudden unexpected infant death (SUID) vs. other causes of infant death; Exposure: Maternal smoking during pregnancy, Preterm birth status; Population at risk: All live births; Prevalence: Surveyed mothers' responses on maternal smoking and gestational age.",
+      "id": "I31",
+      "design": "case_case",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To examine if SUID cases have a different postconceptional age (PCA) distribution compared to deaths due to congenital anomalies.",
+      "comparison": "Sudden unexpected infant death (SUID) cases vs. congenital anomalies, using data from the NCFRP case series for both outcome groups; CDC natality for population at risk",
+      "why_open": "Age-specific risks are critical for prevention efforts. Understanding if SUID timing differs could highlight periods of greater vulnerability.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Outcome: Sudden unexpected infant death (SUID) vs. congenital anomalies; Exposure: Postconceptional age (PCA); Population at risk: All live births.",
+      "id": "I32",
+      "design": "case_case",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To determine whether maternal obesity is uniquely associated with SUID compared to deaths due to external causes.",
+      "comparison": "Sudden unexpected infant death (SUID) cases vs. external cause deaths, using data from the NCFRP case series for both outcome groups; CDC natality for population at risk",
+      "why_open": "Maternal obesity is known to influence various health outcomes but its role in SUID specifically requires clarification.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Outcome: Sudden unexpected infant death (SUID) vs. external cause deaths; Exposure: Maternal prepregnancy BMI; Population at risk: All live births.",
+      "id": "I33",
+      "design": "case_case",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To assess whether sleep environment differences exist between SUID cases and those with accidental suffocation.",
+      "comparison": "Sudden unexpected infant death (SUID) cases vs. accidental suffocation deaths, using data from the NCFRP case series for both outcome groups",
+      "why_open": "Understanding specific risk factors can guide targeted prevention strategies. Differences in sleep environments might indicate actionable interventions.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "Outcome: Sudden unexpected infant death (SUID) vs. accidental suffocation; Exposure: Sleep environment factors, including bed sharing and sleeping location.",
+      "id": "I34",
+      "design": "case_case",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To explore if there are differences in the distribution of birth weight between SUID cases and deaths due to respiratory issues.",
+      "comparison": "Sudden unexpected infant death (SUID) cases vs. respiratory cause deaths, using data from the NCFRP case series for both outcome groups; CDC natality for population at risk",
+      "why_open": "Identifying differential patterns in birth weight could reveal critical periods or pathways affecting SUID that differ from other causes of infant mortality.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Outcome: Sudden unexpected infant death (SUID) vs. respiratory cause deaths; Exposure: Birth weight; Population at risk: All live births.",
+      "id": "I35",
+      "design": "case_case",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is SUID associated with distinct sleep environments compared to non-SUID infant deaths?",
+      "comparison": "SUID cases from ncfrp_v51 compared with other cause-of-death categories within ncfrp_v51 (2008-2019).",
+      "why_open": "While the case series records bed sharing, it is unclear if this reflects a unique risk factor for SUID or a more general sleep environment characteristic. If distinct, it may imply specific preventive measures.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "Infant Sleep Environment (cfrp_v51:INFbedsharing)",
+      "id": "I36",
+      "design": "case_case",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Do maternal infections during pregnancy have a different incidence in SUID compared to other causes of infant death?",
+      "comparison": "SUID cases from cdc_linkco15 and ncfrp_v51 are compared with deaths due to congenital anomalies, external causes, or injuries within the same sources (2008-2019).",
+      "why_open": "Maternal infections are known risk factors for SIDS but their role in SUID is less clear. If different incidences exist, it may suggest specific screening and interventions.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "Maternal infections in pregnancy (cdc_linkco15:IP_CHLAM, cdc_linkco15:IP_GON, cdc_natl15:IP_HEPC)",
+      "id": "I37",
+      "design": "case_case",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is the incidence of SUID higher among infants born to mothers who experienced socioeconomic stressors compared with non-SUID infant deaths?",
+      "comparison": "SUID cases from ncfrp_v51 are contrasted against other causes of death within the same series (2008-2019).",
+      "why_open": "The role of socioeconomic factors in SUID is understudied despite known risks for overall infant mortality. Differences could indicate targeted interventions.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "Socioeconomic status indicators (ncfrp_v51:STRESS, ncfrp_v51:HUNGER)",
+      "id": "I38",
+      "design": "case_case",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does SUID have a distinct postconceptional age pattern compared to other causes of infant mortality?",
+      "comparison": "SUID cases from cdc_linkco15 and ncfrp_v51 are contrasted against deaths due to congenital anomalies, external injuries, or sudden deaths within the same period (2008-2019).",
+      "why_open": "Establishing a unique pattern could provide insights into developmental risk factors specific to SUID.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "Postconceptional age (PCA) (cdc_linkco15:COMBGEST, cdc_natl15:AGED)",
+      "id": "I39",
+      "design": "case_case",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a differential incidence of SUID in infants with specific prenatal conditions compared to other causes of infant death?",
+      "comparison": "SUID cases from cdc_linkco15 and ncfrp_v51 are contrasted against deaths due to congenital anomalies, external injuries, or sudden deaths within the same period (2008-2019).",
+      "why_open": "Understanding if specific prenatal conditions uniquely predict SUID would clarify prevention strategies.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "Prenatal conditions (cdc_natl15:GEST_WK_PU, cdc_natl15:HYPERTENS)",
+      "id": "I40",
+      "design": "case_case",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To determine whether SUID cases differ from non-SUID infant deaths on maternal prepregnancy body mass index (BMI) and smoking during pregnancy.",
+      "comparison": "SUID cases vs. other infant death causes recorded in ncfrp_v51",
+      "why_open": "This question explores a specific risk factor for SUID compared to other types of infant deaths, which could identify unique vulnerabilities or exposures leading specifically to SUID rather than broader neonatal mortality factors.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "BMI, smoking during pregnancy (risk factors), SUID vs. non-SUID outcomes (outcomes)",
+      "id": "I41",
+      "design": "case_case",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To investigate if prematurity and low birth weight are associated with higher rates of SUID compared to other types of infant deaths in the first year.",
+      "comparison": "SUID cases vs. full-term infant deaths recorded in ncfrp_v51",
+      "why_open": "This question aims to uncover whether preterm or underweight status contributes uniquely to the risk of sudden unexpected infant death, beyond general mortality risks for such infants.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "prematurity, birth weight (risk factors), SUID vs. non-SUID outcomes (outcomes)",
+      "id": "I42",
+      "design": "case_case",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To examine whether the use of sleep aids or sedatives by mothers is a risk factor specific to SUID cases compared to other infant death causes.",
+      "comparison": "SUID cases vs. infant deaths due to suffocation, accidental injury, and undetermined causes recorded in ncfrp_v51",
+      "why_open": "Exploring whether maternal use of sleep aids or sedatives correlates specifically with SUID can help identify unique environmental factors linked to sudden infant death.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "use of sleep aids/sedatives (risk factor), SUID vs. other causes outcomes (outcomes)",
+      "id": "I43",
+      "design": "case_case",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To compare the incidence of congenital anomalies between SUID cases and other infant death types in the same case series.",
+      "comparison": "SUID cases vs. infant deaths due to congenital anomalies recorded in ncfrp_v51",
+      "why_open": "This question seeks to establish whether congenital conditions are overrepresented among sudden unexpected infant deaths compared to general mortality rates, indicating unique vulnerabilities.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "congenital anomalies (risk factor), SUID vs. other causes outcomes (outcomes)",
+      "id": "I44",
+      "design": "case_case",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "To assess whether maternal obesity specifically increases the risk of SUID compared to its association with other types of infant mortality.",
+      "comparison": "SUID cases vs. deaths due to SIDS, accidental suffocation recorded in ncfrp_v51",
+      "why_open": "This question aims to isolate maternal obesity as a unique risk factor for SUID by comparing it across different death causes, potentially revealing mechanisms specific to sudden death scenarios.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "maternal obesity (risk factor), SUID vs. other causes outcomes (outcomes)",
+      "id": "I45",
+      "design": "case_case",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does inner ear dysfunction in SUID cases differ by postconceptional age?",
+      "comparison": "SUID cases by postconceptional age (PCA)",
+      "why_open": "Previous studies have linked inner ear dysfunction to a heightened risk of sudden infant death syndrome but have not examined how this association varies with developmental stage.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "inner ear dysfunction, postconceptional age (PCA)",
+      "id": "I46",
+      "design": "case_only",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there an interaction between maternal stressors and socioeconomic status in SUID cases?",
+      "comparison": "SUID cases by maternal stressors and socioeconomic status",
+      "why_open": "Maternal stress can contribute to adverse health outcomes for infants. Exploring how these risks intersect with social determinants of health is critical for targeting interventions.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "maternal stressors, socioeconomic status (proxy)",
+      "id": "I47",
+      "design": "case_only",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the presence of multiple risk factors impact SUID incidence rates across developmental stages?",
+      "comparison": "SUID cases with different combinations of multiple risk factors by postconceptional age",
+      "why_open": "The cumulative effect of risk factors on infant mortality is not well understood, particularly in relation to how this changes over time.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "multiple risk factors, postconceptional age (PCA)",
+      "id": "I48",
+      "design": "case_only",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Do SUID cases with a history of hospitalization show different patterns in medical care before death?",
+      "comparison": "SUID cases by history of hospitalization and type of medical care received",
+      "why_open": "Assessing the quality and continuity of healthcare prior to sudden deaths could reveal critical gaps in preventive measures.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "hospitalization history, medical care received",
+      "id": "I49",
+      "design": "case_only",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the age at which an infant's room is shared with parents correlate with SUID incidence?",
+      "comparison": "SUID cases by PCA and sleeping arrangements",
+      "why_open": "While bed sharing has been extensively studied in relation to SIDS/SUID risk, little is known about how sleep environments evolve and change over time.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "sleeping arrangements (PCA), postconceptional age (PCA)",
+      "id": "I50",
+      "design": "case_only",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does inner ear dysfunction (IED) affect SUID risk as measured by PCA-aligned incidence among infants with maternal smoking?",
+      "comparison": "ncfrp_v51:INFieardysfunc (exposure), ncfrp_v51:CIG_REC (covariate); cdc_linkco15:PCA (exposure), cdc_linkco15:UCODR130 (outcome)",
+      "why_open": "While studies suggest inner ear dysfunction may influence breathing and arousal responses, its interaction with maternal smoking in SUID incidence remains unexplored. Understanding this could identify a subgroup at higher risk due to combined exposures.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [
+        "cdc_linkco15"
+      ],
+      "data": "Postconceptional age (PCA), Sudden unexpected infant death (SUID), Maternal smoking during pregnancy, Inner ear dysfunction",
+      "id": "I51",
+      "design": "case_only",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does postneonatal mortality due to external causes vary by geographic location within the case series?",
+      "comparison": "ncfrp_v51:INFaddrst (exposure); cdc_linkco15:AGEP (offset), cdc_linkco15:UCODR130 (outcome)",
+      "why_open": "Postneonatal deaths due to external causes have shown pandemic-era fluctuations. Investigating geographic variation could reveal local risk factors or protective measures that influence these trends.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [
+        "cdc_linkco15"
+      ],
+      "data": "Age at death, Geographic location, Sudden unexpected infant death (SUID)",
+      "id": "I52",
+      "design": "case_only",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does the incidence of SUID differ between infants with low birth weight and those who did not undergo a pre-pregnancy ultrasound?",
+      "comparison": "ncfrp_v51:INFbirthwtcat (exposure), ncfrp_v51:ULTRASONO (covariate); cdc_linkco15:UCODR130 (outcome)",
+      "why_open": "Low birth weight is a known risk factor for SUID. However, the role of prenatal ultrasound in identifying and mitigating this risk has not been thoroughly examined. This study aims to fill that gap.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [
+        "cdc_linkco15"
+      ],
+      "data": "Birthweight (low, non-low), Prenatal ultrasound, Sudden unexpected infant death (SUID)",
+      "id": "I53",
+      "design": "case_only",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What is the association between maternal obesity and SUID incidence as measured by postconceptional age?",
+      "comparison": "ncfrp_v51:INF4mombmi (exposure); cdc_linkco15:BMI_R (covariate), cdc_linkco15:UCODR130 (outcome)",
+      "why_open": "Maternal obesity has been linked to SUID but its impact when adjusted for other risk factors is less clear. Postconceptional age can clarify timing of this association.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [
+        "cdc_linkco15"
+      ],
+      "data": "Maternal prepregnancy body mass index (BMI), Sudden unexpected infant death (SUID)",
+      "id": "I54",
+      "design": "case_only",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Does maternal prepregnancy smoking influence the timing of peak SUID incidence in postconceptional age among preterm infants?",
+      "comparison": "ncfrp_v51:INFsmanytime (exposure); cdc_linkco15:GESTREC3 (covariate), cdc_linkco15:UCODR130 (outcome)",
+      "why_open": "Preterm birth and maternal smoking are both risk factors for SUID, but their combined effect on the developmental timing of peak incidence is not well understood.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [
+        "cdc_linkco15"
+      ],
+      "data": "Maternal smoking during pregnancy, Preterm birth, Sudden unexpected infant death (SUID)",
+      "id": "I55",
+      "design": "case_only",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What are the differences in maternal smoking patterns during pregnancy among SUID cases according to postconceptional age (PCA) categories?",
+      "comparison": "SUID cases compared with themselves, stratified by PCA categories.",
+      "why_open": "The current literature does not provide a detailed analysis of how maternal smoking behavior varies across different postconceptional age windows in SUID cases. Understanding these differences could help pinpoint critical developmental periods when prenatal smoke exposure may be particularly harmful.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "maternal smoking during pregnancy, postconceptional age (PCA)",
+      "id": "I56",
+      "design": "case_only",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Do variations in socioeconomic status correlate with different PCA-aligned SUID incidence patterns among reviewed cases?",
+      "comparison": "SUID cases compared with themselves, stratified by socio-economic indicators.",
+      "why_open": "The impact of socioeconomic status on Sudden Unexpected Infant Death Syndrome (SUID) has been understudied when considering postconceptional age (PCA). This analysis could identify whether specific PCA periods have differing risks influenced by socioeconomics and guide targeted interventions for at-risk groups.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "socioeconomic status, postconceptional age (PCA)",
+      "id": "I57",
+      "design": "case_only",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How do prematurity levels influence the risk of SUID across different PCA developmental windows among reviewed cases?",
+      "comparison": "SUID cases compared with themselves, stratified by preterm birth status.",
+      "why_open": "Premature infants face heightened risks for sudden unexpected infant death syndrome (SUID), but little is known about how these risks vary within different postconceptional age (PCA) intervals. This could clarify whether specific developmental stages are more vulnerable to prematurity-related SUID incidents.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "prematurity status, postconceptional age (PCA)",
+      "id": "I58",
+      "design": "case_only",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a relationship between infant sex and PCA-aligned incidence rates of SUID in reviewed cases?",
+      "comparison": "SUID cases compared with themselves, stratified by infant sex.",
+      "why_open": "There is limited research on how the developmental risk for sudden unexpected infant death syndrome (SUID) varies based on postconceptional age (PCA) between males and females. This could provide insights into biological or environmental factors that differentially impact each sex during various stages of development.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "infant sex, postconceptional age (PCA)",
+      "id": "I59",
+      "design": "case_only",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the incidence rate of SUID vary in relation to maternal obesity levels across different PCA developmental windows among reviewed cases?",
+      "comparison": "SUID cases compared with themselves, stratified by maternal prepregnancy BMI.",
+      "why_open": "Maternal obesity has been identified as a risk factor for Sudden Unexpected Infant Death Syndrome (SUID), but its impact on SUID incidence may differ based on the postconceptional age (PCA) of the infant. Understanding these variations can help tailor preventive measures to specific developmental stages.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "maternal prepregnancy body mass index (BMI), postconceptional age (PCA)",
+      "id": "I60",
+      "design": "case_only",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a trend in maternal obesity as a risk factor for SUID between 2015 and 2021?",
+      "comparison": "ncfrp_v51 (case series) to prams_p8_arf (population reference), comparing periods from 2015 to 2021",
+      "why_open": "Maternal obesity has been identified as a risk factor for SUID, but trends over time have not been thoroughly examined. An answer would provide insights into how maternal health and associated risks evolve.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal prepregnancy body mass index (BMI), Sudden unexpected infant death (SUID)",
+      "id": "I61",
+      "design": "trends",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Has the prevalence of maternal smoking during pregnancy as a risk factor for SUID changed over time from 2015 to 2021?",
+      "comparison": "ncfrp_v51 (case series) to prams_p8_arf (population reference), comparing periods from 2015 to 2021",
+      "why_open": "Maternal smoking is a known risk factor for SUID, but changes in prevalence and its impact over time remain underexplored. Understanding trends can inform targeted public health interventions.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal smoking during pregnancy, Sudden unexpected infant death (SUID)",
+      "id": "I62",
+      "design": "trends",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a trend in the proportion of preterm births among SUID cases from 2015 to 2021?",
+      "comparison": "ncfrp_v51 (case series) comparing periods from 2015 to 2021",
+      "why_open": "Preterm birth is known to be a risk factor for SUID, but trends over time have not been extensively studied. This could help understand the impact of improved neonatal care and public health measures.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "Preterm birth, Sudden unexpected infant death (SUID)",
+      "id": "I63",
+      "design": "trends",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How has the proportion of infants born with low birth weight changed among SUID cases from 2015 to 2021?",
+      "comparison": "ncfrp_v51 (case series) comparing periods from 2015 to 2021",
+      "why_open": "Low birth weight is recognized as a risk factor for SUID, but trends in its prevalence over time are not well documented. Such information could guide prenatal care and public health strategies.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "Low birth weight, Sudden unexpected infant death (SUID)",
+      "id": "I64",
+      "design": "trends",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a trend in the proportion of SUID cases attributed to suffocation from 2015 to 2021?",
+      "comparison": "ncfrp_v51 (case series) comparing periods from 2015 to 2021",
+      "why_open": "Suffocation is a common cause of SUID, but temporal trends in its incidence are not well understood. Such data could provide insights into preventive measures and their effectiveness.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [],
+      "denominator_sources": [],
+      "data": "Cause of death categorized as suffocation, Sudden unexpected infant death (SUID)",
+      "id": "I65",
+      "design": "trends",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Has there been any change in the proportion of SUID cases associated with maternal obesity from 2015 to 2019?",
+      "comparison": "Cases (ncfrp_v51) in 2015-2019 compared over time.",
+      "why_open": "Though maternal obesity is known to be a risk factor for SUID, the trend of its association with SUID incidence has not been studied longitudinally. Understanding if this risk factor's impact fluctuates over time could inform targeted prevention strategies.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Maternal prepregnancy BMI (exposure), SUID (outcome)",
+      "id": "I66",
+      "design": "trends",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How has the proportion of SUID cases with mothers reporting smoking during pregnancy changed from 2015 to 2019?",
+      "comparison": "Cases (ncfrp_v51) in 2015-2019 compared over time.",
+      "why_open": "While maternal smoking is recognized as a significant risk factor for SUID, it remains unclear if the proportion of cases linked to this risk has changed. Understanding trends could highlight shifts in public health messaging or behavioral patterns among pregnant women.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Maternal smoking during pregnancy (exposure), SUID (outcome)",
+      "id": "I67",
+      "design": "trends",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a trend in the proportion of SUID cases linked to preterm birth from 2015 to 2019?",
+      "comparison": "Cases (ncfrp_v51) in 2015-2019 compared over time.",
+      "why_open": "Preterm birth is a known risk factor for SUID, but longitudinal trends have not been extensively studied. Understanding if this trend fluctuates can help tailor preventive measures and resource allocation.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Preterm birth (exposure), SUID (outcome)",
+      "id": "I68",
+      "design": "trends",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Has the proportion of SUID cases with low birth weight infants shifted between 2015 and 2019?",
+      "comparison": "Cases (ncfrp_v51) in 2户型设计建议：2015-2019 compared over time.",
+      "why_open": "Low birth weight is a recognized risk factor for SUID, but there's limited data on its trend over recent years. Investigating this could reveal shifts in obstetric care or underlying health conditions contributing to low birth weight.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Low birth weight (exposure), SUID (outcome)",
+      "id": "I69",
+      "design": "trends",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there an increasing trend in the proportion of SUID cases involving maternal infections during pregnancy from 2015 to 2019?",
+      "comparison": "Cases (ncfrp_v51) in 2015-2019 compared over time.",
+      "why_open": "Maternal infections are a risk factor for SUID, and understanding if this proportion has increased could indicate the need for enhanced prenatal monitoring or preventive measures against infection.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Maternal infections (exposure), SUID (outcome)",
+      "id": "I70",
+      "design": "trends",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Has there been a change in maternal smoking rates among SUID cases from 2015 to 2019?",
+      "comparison": "SUID cases in the NCFRP dataset from 2015 to 2019, compared with PRAMS population reference data for the same years.",
+      "why_open": "While maternal smoking is a well-known risk factor for Sudden Unexpected Infant Death (SUID), trends over time may reflect changes in societal attitudes or intervention effectiveness. Understanding if smoking rates are declining can inform public health strategies to prevent SUID.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Maternal smoking during pregnancy, year of death or birth",
+      "id": "I71",
+      "design": "trends",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a trend in bed sharing practices among SUID cases between 2008 and 2019?",
+      "comparison": "SUID cases from NCFRP dataset over the years 2008 to 2019, compared with PRAMS reference data for the same period.",
+      "why_open": "Despite established links between bed sharing and SUID risk, trends in this practice can reflect changes due to public awareness campaigns or other social influences. Investigating these trends is crucial to evaluate if current interventions are effective.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Bed sharing practices, year of death or birth",
+      "id": "I72",
+      "design": "trends",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How has the incidence rate of SUID cases changed among preterm infants from 2012 to 2019?",
+      "comparison": "SUID cases in NCFRP dataset focusing on preterm infants between 2012 and 2019, compared with PRAMS reference data for full-term infants over the same years.",
+      "why_open": "Preterm birth is known to increase SUID risk. Trends in incidence among this high-risk group could indicate whether public health initiatives are successful or if new risks are emerging.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Preterm birth, year of death or birth",
+      "id": "I73",
+      "design": "trends",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "Is there a shift in SUID cases attributable to maternal obesity over the period 2016-2021?",
+      "comparison": "SUID cases from NCFRP dataset from 2016 to 2021, compared with PRAMS reference data for the same time frame.",
+      "why_open": "Maternal obesity is increasingly recognized as a risk factor for SUID. Tracking trends over multiple years can highlight whether maternal weight management programs are effective or if new factors contribute to this issue.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Maternal obesity, year of death or birth",
+      "id": "I74",
+      "design": "trends",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How has the proportion of SUID cases associated with decreased fetal movement changed between 2008 and 2019?",
+      "comparison": "SUID cases in NCFRP dataset from 2008 to 2019, compared with PRAMS reference data for these years.",
+      "why_open": "Decreased fetal movement is a warning sign that may precede SUID. Monitoring trends can indicate if awareness and intervention strategies have improved over time or if new challenges are emerging.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p7_arf",
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Decreased fetal movement, year of death or birth",
+      "id": "I75",
+      "design": "trends",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the measurement of maternal smoking during pregnancy differ between CDC-linked birth/infant death files (cdc_linkco15) and PRAMS surveys (prams_p8_arf), and what is the impact on comparing SUID incidence between these sources?",
+      "comparison": "cdc_linkco15 (case series and denominator): Maternal smoking status during pregnancy recorded directly from birth certificates; prams_p8_arf (population reference): Self-reported smoking behavior before pregnancy, 3 months before pregnancy, and current smoking status.",
+      "why_open": "Although both sources record maternal smoking during pregnancy as a risk factor for SUID, the differences in measurement timing and source introduce potential biases that have not yet been systematically evaluated. Understanding these discrepancies is critical to accurately interpreting incidence comparisons between case series data and population-based survey estimates.",
+      "case_sources": [
+        "cdc_linkco15"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal smoking during pregnancy (covariate)",
+      "id": "I76",
+      "design": "measurement",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How do the methods of reporting infant birthweight differ between CDC-linked birth/infant death files (cdc_linkco15) and PRAMS surveys (prams_p7_arf), and how might this affect comparisons of SUID incidence by low birth weight?",
+      "comparison": "cdc_linkco15 (case series and denominator): Birthweight recorded directly from birth certificate; prams_p7_arf (population reference): Self-reported infant birth weight.",
+      "why_open": "Birthweight is a critical variable in studying SUID risk, yet differences in how it's measured between case series data and population-based surveys have not been thoroughly examined. Clarifying these discrepancies would help determine the extent to which observed incidence patterns reflect true risks versus reporting biases.",
+      "case_sources": [
+        "cdc_linkco15"
+      ],
+      "reference_sources": [
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Birthweight (covariate)",
+      "id": "I77",
+      "design": "measurement",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What are the differences in how gestational age is estimated and recorded between CDC-linked birth/infant death files (cdc_linkco15) and PRAMS surveys (prams_p7_arf), and how might these variations influence SUID incidence analysis?",
+      "comparison": "cdc_linkco15 (case series and denominator): Gestational age derived from last menstrual period and clinical estimates; prams_p7_arf (population reference): Self-reported gestational age at delivery.",
+      "why_open": "Gestational age is a key indicator in SUID studies, but its measurement variability between administrative records and survey data has not been fully addressed. Investigating these differences would enhance the precision of incidence analyses by accounting for potential misclassification biases.",
+      "case_sources": [
+        "cdc_linkco15"
+      ],
+      "reference_sources": [
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Gestational age at birth (covariate)",
+      "id": "I78",
+      "design": "measurement",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does the recording of preterm birth differ between CDC-linked birth/infant death files (cdc_linkco15) and PRAMS surveys (prams_p7_arf), and what are the implications for incidence studies of SUID in preterm infants?",
+      "comparison": "cdc_linkco15 (case series and denominator): Preterm status derived from gestational age at birth; prams_p7_arf (population reference): Self-reported information on whether delivery was preterm.",
+      "why_open": "Preterm birth is an established risk factor for SUID, yet how its measurement varies between administrative records and survey data has not been fully explored. Resolving these differences would improve the accuracy of incidence analyses by mitigating potential misclassification biases related to preterm status reporting.",
+      "case_sources": [
+        "cdc_linkco15"
+      ],
+      "reference_sources": [
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Preterm birth (covariate)",
+      "id": "I79",
+      "design": "measurement",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What discrepancies exist in the measurement of maternal prepregnancy BMI between CDC-linked birth/infant death files (cdc_linkco15) and PRAMS surveys (prams_p7_arf), and how might these affect analyses of SUID risk by maternal obesity?",
+      "comparison": "cdc_linkco15 (case series and denominator): Maternal BMI before pregnancy derived from self-report; prams_p7_arf (population reference): Self-reported prepregnancy body mass index.",
+      "why_open": "Maternal prepregnancy BMI is a significant factor in SUID risk studies, but the nuances of how it's recorded across different data sources have not been systematically evaluated. Addressing these inconsistencies would enhance our ability to accurately assess and interpret incidence patterns associated with maternal obesity.",
+      "case_sources": [
+        "cdc_linkco15"
+      ],
+      "reference_sources": [
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal prepregnancy body mass index (BMI) (covariate)",
+      "id": "I80",
+      "design": "measurement",
+      "seed": 0,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does maternal smoking during pregnancy differ in reporting accuracy and completeness between case series (NCFRP) and population reference sources (PRAMS), and what is the potential impact of these differences on estimates of SUID risk?",
+      "comparison": "ncfrp_v51:CIG_REC vs prams_p8_arf:MOMSMOKE, prams_p7_arf:MOMSMOKE",
+      "why_open": "Maternal smoking is a critical risk factor for SUID. However, the accuracy and completeness of maternal self-reporting during pregnancy versus reporting from medical records or case reviews can introduce biases in exposure estimation.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal smoking during pregnancy (exposure)",
+      "id": "I81",
+      "design": "measurement",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How do discrepancies in the measurement of infant sleeping arrangements between case series (NCFRP) and population reference sources (PRAMS) impact estimates of SUID risk factors?",
+      "comparison": "ncfrp_v51:CIRsamesurf vs prams_p8_arf:SLEEPOWN_RAW",
+      "why_open": "Infant sleep environment is a crucial factor in SUID, but case series and population surveys may differ in how they capture this information due to differences in reporting methods and biases.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Infant sleep environment (exposure)",
+      "id": "I82",
+      "design": "measurement",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "What are the differences in how maternal prepregnancy body mass index (BMI) is recorded in case series data (NCFRP) versus population reference surveys (PRAMS), and what implications do these differences have for SUID risk estimation?",
+      "comparison": "ncfrp_v51:INF4mombmi vs prams_p8_arf:MOM_BMI_BC, prams_p7_arf:MOM_BMI_BC",
+      "why_open": "BMI is a significant predictor of various health outcomes including infant mortality. However, BMI measurement can vary between medical records and self-reported surveys, impacting the accuracy of SUID risk assessments.",
+      "case_sources": [
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal prepregnancy body mass index (BMI) (exposure)",
+      "id": "I83",
+      "design": "measurement",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How do the definitions and coding of birth weight differ between case series data from NCFRP and PRAMS surveys, and what are the implications for SUID risk estimation?",
+      "comparison": "cdc_linkco15:BWTR4 vs prams_p8_arf:GRAM_NAPHSIS",
+      "why_open": "Birth weight is a key variable in assessing infant health and mortality risks. Differences in how birth weight is recorded can affect the comparability of SUID risk estimates.",
+      "case_sources": [
+        "cdc_linkco15"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Birth weight (low, non-low) (exposure)",
+      "id": "I84",
+      "design": "measurement",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How do maternal smoking during pregnancy and infant breastfeeding practices vary in their measurement methods between case series data from NCFRP and PRAMS surveys, and what are the implications for SUID risk estimation?",
+      "comparison": "ncfrp_v51:INFsmanytime vs prams_p8_arf:MOMSMOKE; cdc_linkco15:BFED vs prams_p8_arf:BF5EVER_RAW",
+      "why_open": "Both maternal smoking and infant breastfeeding are critical factors in SUID. Differences in how these variables are measured can introduce biases into risk estimates.",
+      "case_sources": [
+        "ncfrp_v51",
+        "cdc_linkco15"
+      ],
+      "reference_sources": [
+        "prams_p8_arf",
+        "prams_p7_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Maternal smoking during pregnancy (exposure), Breastfeeding status at discharge (covariate)",
+      "id": "I85",
+      "design": "measurement",
+      "seed": 1,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does maternal smoking during pregnancy differ in reporting and coding across CDC linked birth/infant death public-use file (cdc_linkco15), natality public-use file (cdc_natl15), and PRAMS Phase 8 Analytic Research File (prams_p8_arf)?",
+      "comparison": "Maternal smoking during pregnancy is reported differently in cdc_linkco15, cdc_natl10, prams_p8_arf.",
+      "why_open": "This study aims to understand if differences in how maternal smoking data are collected and coded across these sources affect comparisons between them. This could influence the interpretation of trends or disparities in SUID risks associated with maternal smoking.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Maternal smoking during pregnancy (variable domains: Smoking During Pregnancy, Prenatal Care) is collected in different ways and reported with varied precision across sources. Understanding these differences helps clarify how potential misclassification might affect observed SUID incidence trends.",
+      "id": "I86",
+      "design": "measurement",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does gestational age at birth differ in reporting and coding between CDC linked birth/infant death public-use file (cdc_linkco15) and PRAMS Phase 8 Analytic Research File (prams_p8_arf)?",
+      "comparison": "Gestational age at birth is reported differently in cdc_linkco15 and prams_p8_arf.",
+      "why_open": "This study aims to identify how differences in reporting gestational age could affect comparisons of prematurity rates associated with SUID risk factors. Understanding these discrepancies can help refine the validity of SUID research findings based on different data sources.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Gestational age at birth (variable domains: Birth History, Prenatal Care) is collected and coded differently between cdc_linkco15, which records gestational age from birth certificates or death records, and prams_p8_arf, which gathers self-reported maternal data. This study will evaluate the impact of these differences on prematurity rates.",
+      "id": "I87",
+      "design": "measurement",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does breastfeeding status at discharge differ in reporting and coding between CDC linked birth/infant death public-use file (cdc_linkco15) and PRAMS Phase 8 Analytic Research File (prams_p8_arf)?",
+      "comparison": "Breastfeeding status at discharge is reported differently in cdc_linkco15 and prams_p8_arf.",
+      "why_open": "Understanding differences between these datasets can help identify potential biases when comparing SUID risks associated with early breastfeeding cessation. This insight could inform future research on infant feeding practices and their long-term health impacts.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [],
+      "data": "Breastfeeding status at discharge (variable domains: Breastfeeding Information, Birth Location and Time) is recorded in both cdc_linkco15 as a birth certificate item and prams_p8_arf as self-reported survey data. This study will examine how these differences affect reported breastfeeding rates.",
+      "id": "I88",
+      "design": "measurement",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does maternal prepregnancy body mass index (BMI) differ in reporting and coding between CDC linked birth/infant death public-use file (cdc_linkco15), natality public-use file (cdc_natl15), and PRAMS Phase 8 Analytic Research File (prams_p8_arf)?",
+      "comparison": "Maternal prepregnancy BMI is reported differently in cdc_linkco15, cdc_natl15, prams_p8_arf.",
+      "why_open": "Understanding differences in how maternal BMI data are collected and coded can help determine if these disparities impact comparisons of SUID risks associated with obesity. This information could be crucial for refining public health strategies aimed at reducing infant mortality.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Maternal prepregnancy BMI (variable domains: Maternal Health Conditions, Smoking and Weight) is reported in multiple ways across datasets. Understanding these differences helps clarify how potential misclassification might affect observed trends or disparities in SUID risks.",
+      "id": "I89",
+      "design": "measurement",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    },
+    {
+      "question": "How does infant sex differ in reporting and coding between CDC linked birth/infant death public-use file (cdc_linkco15), natality public-use file (cdc_natl15), National Fatality Review Case Reporting System (ncfrp_v51) and PRAMS Phase 8 Analytic Research File (prams_p8_arf)?",
+      "comparison": "Infant sex is reported differently in cdc_linkco15, cdc_natl15, ncfrp_v51, prams_p8_arf.",
+      "why_open": "This study aims to understand if discrepancies in how infant gender data are collected and coded affect comparisons between these sources. This insight can improve the accuracy of SUID research findings related to sex-specific risk factors.",
+      "case_sources": [
+        "cdc_linkco15",
+        "ncfrp_v51"
+      ],
+      "reference_sources": [
+        "prams_p8_arf"
+      ],
+      "denominator_sources": [
+        "cdc_natl15"
+      ],
+      "data": "Infant sex (variable domains: Birth History, Demographics) is recorded in diverse formats across datasets. This study will evaluate how these differences impact reported male and female SUID rates.",
+      "id": "I90",
+      "design": "measurement",
+      "seed": 2,
+      "model": "qwen2.5:14b"
+    }
+  ],
+  "failed_calls": []
+}

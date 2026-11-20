@@ -1,0 +1,88 @@
+### Design
+
+**Question:** How does the recording of maternal mental health conditions differ between SUID cases in NCFRP case reviews and live births reported through PRAMS?
+
+This question compares proportions or odds among cases (SUID deaths) with those from a population reference (live births). It does not estimate incidence, rates, or risks.
+
+### Sources by Role
+
+- **Case Series:** ncfrp_v51
+  - **Reason:** Captures SUID cases through fatality review teams and includes maternal mental health records.
+  
+- **Population Reference:** prams_p8_arf (Phase 8), prams_p7_arf (Phase 7)
+  - **Reasons:**
+    - PRAMS surveys mothers after live births, collecting information on pre-pregnancy conditions, pregnancy complications, and health issues.
+    - Phases 7 and 8 provide complementary data for a broader time frame.
+
+### Period
+
+- **Period Needed:** The manuscript uses data from 2016 to 2021 (PRAMS Phase 8) and 2012 to 2015 (Phase 7).
+- **Years Acquired:**
+  - PRAMS Phase 8: 2016-2021
+  - PRAMS Phase 7: 2012-2015
+
+### Variables
+
+**Maternal Mental Health Conditions**
+
+- **Case Series:** ncfrp_v51
+  - **Variables:**
+    - `ISSmhpregdepres`: Depression/anxiety/mental illness during pregnancy (yes/no)
+    - `INFmedical`: During pregnancy did mother have medical complications/infections (yes/no)
+    - `BIO1disillmhsp`: If yes, disability or chronic illness - Female - Mental health/substance abuse - Specify
+  - **Reporting:** Medical records and fatality review team assessments.
+
+- **Population Reference:**
+  - **Variables:**
+    - PRAMS Phase 8:
+      - `MH_PGDX8`: Health prob during preg -- Depression (yes/no)
+      - `PG8_ANX`: Health prob during preg -- Anxiety (yes/no)
+      - `PG8_SEIZ`: Health prob during preg -- Epilepsy (yes/no)
+      - `MM_FEVER`: BC: mom had fever (chorioamnionitis indicator, yes/no) 
+    - PRAMS Phase 7:
+      - `PREV_LBW_RAW`: Previous live birth -- low birth weight (forced skip, yes/no)
+      - `TLK_PRET_RAW`: HCW talk -- preterm labor signs (yes/no)
+
+**Confounding Variables**
+
+- **Case Series:** ncfrp_v51
+  - **Variables:**
+    - `INF3prevmedical`: Did mother have medical complications in previous pregnancies (yes/no)
+    - `INF4referinfmh`: If yes, family referred - Infant mental health program (yes/no)
+
+- **Population Reference:**
+  - PRAMS Phase 8:
+    - `PG8_SEIZ`: Health prob during preg -- Epilepsy (yes/no)
+    - `PNC_VST`: Number of prenatal care visit
+    - `PREV_LBW_RAW`: Previous live birth -- low birth weight (forced skip, yes/no)
+
+### Biases
+
+**Selection Bias:**
+- **Case Series:** Only captures SUID cases reviewed by participating fatality review teams. Participation varies over time and may not be representative.
+- **Population Reference:** PRAMS surveys are based on a weighted sample of live births in participating states; non-participating states and unresponsive mothers can introduce bias.
+
+**Information Bias:**
+- **Case Series:** Data derived from medical records reviewed by fatality review teams, which might differ from direct patient reports.
+- **Population Reference:** Direct mother self-reports collected via surveys post-birth; potential for recall bias or underreporting sensitive information like mental health conditions.
+
+**Confounding:**
+- Confounders such as socioeconomic status, education level, and access to healthcare can influence both the likelihood of being included in PRAMS and the accuracy of reported maternal health conditions. These confounders are not measured consistently across sources.
+
+### What the Design Cannot Establish
+
+The design cannot establish causation or incidence rates due to a lack of denominator data (live births at risk). It only compares proportions or odds between SUID cases and live births from PRAMS surveys.
+
+### Prior Art
+
+- The manuscript claims do not address recording discrepancies in maternal mental health conditions. Claims focus on associations with risk factors like bed sharing, smoking, and prematurity.
+  
+### Verdict
+
+**Can Answer:**
+
+Yes, the sources can answer a version of this question by comparing how maternal mental health conditions are recorded between SUID cases (ncfrp_v51) and live births reported through PRAMS surveys (prams_p8_arf, prams_p7_arf). However, the design will only allow comparisons of proportions or odds rather than rates or risk estimates due to the absence of a denominator source for incidence.
+
+**Limitations:**
+- **Selection Bias:** The case series captures only SUID cases reviewed by participating teams.
+- **Information Bias:** Reporting differences between medical records and direct mother surveys can introduce discrepancies in mental health condition documentation.

@@ -1,0 +1,30 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with high maternal weight gain during pregnancy varies by pre-pregnancy BMI category.",
+ "rationale": "This design can compare proportions or odds within the case series but cannot establish causation or estimate incidence rates due to the lack of a denominator source.",
+ "prior_art": "suid_literature_abstracts.C10 indicates maternal obesity increases SUID risk, but does not examine weight gain during pregnancy. The interaction between pre-pregnancy BMI and weight gain remains unexplored.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C10"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "Maternal weight gain during pregnancy",
+  "Pre-pregnancy BMI"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4momwtgn",
+  "ncfrp_v51:IEMprenatalBMI",
+  "prams_p8_arf:MOM_BMIG_QX_REV",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence rates or causal relationships between maternal weight gain during pregnancy and pre-pregnancy BMI in relation to SUID risk."
+}

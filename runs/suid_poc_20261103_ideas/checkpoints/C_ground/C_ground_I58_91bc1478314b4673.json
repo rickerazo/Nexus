@@ -1,0 +1,29 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with substance/toxin exposure increased from 2004 to 2019.",
+ "rationale": "This design tracks trends within SUID cases exposed to substances/toxins over time using ncfrp_v51. However, it cannot provide incidence or adjust for confounders effectively without additional denominator data.",
+ "prior_art": "The closest tested work is C10 from the SUID manuscript and C24 from the bedsharing manuscript, which address trends but not substance/toxin exposure specifically. The question remains open as no prior study has examined this trend over time.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C10",
+  "bedsharing_ms_v7.C24"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "substance/toxin exposure"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3nicudrug",
+  "ncfrp_v51:INFdrugbirth",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "incidence or rates of SUID cases exposed to substances/toxins, causal relationships between substance/toxin exposure and SUID."
+}

@@ -1,0 +1,35 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of mothers reporting medical complications during pregnancy differs between SUID cases and live births.",
+ "rationale": "This design uses ncfrp_v51 for case-level data on SUID cases and prams_p8_arf for population reference surveys among mothers of live births to compare maternal health conditions. However, it acknowledges potential biases due to differences in measurement timing, wording, and reporting practices between these sources.",
+ "prior_art": "suid_literature_abstracts.C10 and C11 discuss risks like obesity and smoking but do not address other medical conditions specifically comparing SUID cases with live births; this study aims to fill that gap.",
+ "supporting_claim_ids": [
+  "suid_literature_abstracts.C10",
+  "suid_literature_abstracts.C11"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2016,
+ "period_end": 2019,
+ "required_concepts": [
+  "maternal health conditions"
+ ],
+ "variables": [
+  "ncfrp_v51:INF3prevmedical",
+  "ncfrp_v51:INF4inftopmsign",
+  "ncfrp_v51:INFmothinj",
+  "ncfrp_v51:INFexpipv",
+  "prams_p8_arf:HTH_HRT",
+  "prams_p8_arf:HTH_ASMA",
+  "prams_p8_arf:HTH_ALRGI",
+  "prams_p8_arf:HTH_SEIZ",
+  "prams_p8_arf:WTANAL"
+ ],
+ "cannot_establish": "This design cannot establish a causal relationship between maternal health problems and SUID. It can only compare proportions of reported health conditions in both groups, which may be biased due to differences in measurement and reporting."
+}

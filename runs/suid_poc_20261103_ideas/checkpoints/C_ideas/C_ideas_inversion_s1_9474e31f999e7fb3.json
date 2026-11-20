@@ -1,0 +1,49 @@
+{
+ "ideas": [
+  {
+   "question": "What protective factors are present among male infants with high maternal smoking rates who do not experience sudden unexpected infant death (SUID)?",
+   "why_open": "This question addresses an underexplored area of research that identifies why some males, despite having higher risk factors such as maternal smoking, still do not succumb to SUID. Understanding these protective mechanisms could lead to targeted interventions.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Birth Location and Time (cdc_linkco15), Father's Details (cdc_linkco15), Prenatal Care and Reporting Flags (cdc_linkco15), Smoking During Pregnancy (cdc_linkco15), Health Conditions (ncfrp_v51)"
+  },
+  {
+   "question": "How does the presence of stable housing and social support influence SUID risk among infants with maternal smoking and preterm birth?",
+   "why_open": "This question aims to uncover protective factors like social support and housing stability that might mitigate risks associated with known adverse conditions. These insights can inform community-based programs.",
+   "sources": [
+    "ncfrp_v51",
+    "prams_p8_arf"
+   ],
+   "data": "Pregnancy History (ncfrp_v51), Housing Details (ncfrp_v51), Income and Dependent Information (prams_p8_arf)"
+  },
+  {
+   "question": "What are the protective factors for SUID among infants born to mothers with high BMI who smoke during pregnancy?",
+   "why_open": "This question explores why certain infants with multiple risk factors, such as maternal obesity and smoking, do not develop SUID. Protective mechanisms can be identified and potentially leveraged in public health strategies.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Maternal Complications (cdc_linkco15), Smoking During Pregnancy (cdc_linkco15), Maternal Obesity (prams_p8_arf)"
+  },
+  {
+   "question": "How does consistent breastfeeding protect infants with high maternal smoking and low birth weight from SUID?",
+   "why_open": "This question investigates the protective role of breastfeeding in the context of significant risk factors. Understanding these interactions can inform lactation support programs.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Prenatal Care and Reporting Flags (cdc_linkco15), Smoking During Pregnancy (cdc_linkco15), Maternal Complications (cdc_linkco15), Breastfeeding Practices (prams_p8_arf)"
+  },
+  {
+   "question": "What are the protective factors in SUID among full-term infants born to mothers who engage in bed sharing and smoke?",
+   "why_open": "This question seeks to identify potential protective mechanisms that allow for lower rates of SUID despite known high-risk behaviors. Such knowledge can be used to develop targeted interventions.",
+   "sources": [
+    "cdc_linkco15",
+    "ncfrp_v51"
+   ],
+   "data": "Smoking During Pregnancy (cdc_linkco15), Birth Location and Time (cdc_linkco15), Health Conditions (ncfrp_v51)"
+  }
+ ]
+}

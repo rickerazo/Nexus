@@ -1,0 +1,33 @@
+{
+ "groundable": true,
+ "why_not": "",
+ "statement": "The proportion of SUID cases with hospital overnight stays increased from 2008 to 2019.",
+ "rationale": "This study can analyze trends in hospital overnight stay history among SUID cases using ncfrp_v51 and reference data from prams_p7_arf and prams_p8_arf. However, it must acknowledge its limitations regarding causal inference and incidence rate estimation.",
+ "prior_art": "SUID_manuscript_v9_clean.C6 discusses trends in PCA-aligned incidence but does not focus on hospital overnight stay trends. bedsharing_ms_v7.C13 examines developmental timing of SUID incidence and associations with bed sharing, smoking, and prematurity; the proposed study is distinct as it focuses specifically on hospital stays.",
+ "supporting_claim_ids": [
+  "SUID_manuscript_v9_clean.C6",
+  "bedsharing_ms_v7.C13"
+ ],
+ "case_sources": [
+  "ncfrp_v51"
+ ],
+ "reference_sources": [
+  "prams_p8_arf",
+  "prams_p7_arf"
+ ],
+ "denominator_sources": [],
+ "period_start": 2008,
+ "period_end": 2019,
+ "required_concepts": [
+  "hospital overnight stay history among SUID cases",
+  "trends in hospital stays among live-born infants"
+ ],
+ "variables": [
+  "ncfrp_v51:INF4hosprtn",
+  "prams_p8_arf:LTH_HOSP",
+  "prams_p7_arf:LTH_HOSP",
+  "prams_p8_arf:WTANAL",
+  "prams_p7_arf:WTANAL"
+ ],
+ "cannot_establish": "The design cannot establish incidence rates or risk ratios. It can only compare proportions of SUID cases with and without hospital overnight stays across different years."
+}

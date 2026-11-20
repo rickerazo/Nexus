@@ -1,0 +1,357 @@
+{
+ "mappings": [
+  {
+   "concept": "Sudden unexpected infant death (SUID)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "The PRAMS data source does not contain information on cause of death."
+  },
+  {
+   "concept": "Infant sex",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide infant sex as a variable in the provided list."
+  },
+  {
+   "concept": "Postconceptional age (PCA)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide postconceptional age as a variable in the provided list."
+  },
+  {
+   "concept": "Maternal smoking during pregnancy",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide maternal smoking status as a specific variable in the provided list."
+  },
+  {
+   "concept": "Preterm birth",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide preterm birth information as a specific variable in the provided list."
+  },
+  {
+   "concept": "Breastfeeding status at discharge",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide breastfeeding status at discharge as a specific variable in the provided list."
+  },
+  {
+   "concept": "postconceptional age",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide postconceptional age as a specific variable in the provided list."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide infant sex information as a specific variable in the provided list."
+  },
+  {
+   "concept": "year of birth or death",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide year of birth or death as a specific variable in the provided list."
+  },
+  {
+   "concept": "SUID",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain information on cause of death or SUID."
+  },
+  {
+   "concept": "bed sharing",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide bed-sharing status as a specific variable in the provided list."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide birth weight information as a specific variable in the provided list."
+  },
+  {
+   "concept": "PCA (postconceptional age)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide postconceptional age as a specific variable in the provided list."
+  },
+  {
+   "concept": "chronological age",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide chronological age information as a specific variable in the provided list."
+  },
+  {
+   "concept": "sex (male, female)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide infant sex information as a specific variable in the provided list."
+  },
+  {
+   "concept": "birthweight (low, non-low)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide birth weight information as a specific variable in the provided list."
+  },
+  {
+   "concept": "maternal smoking status (smoking, non-smoking)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide maternal smoking status as a specific variable in the provided list."
+  },
+  {
+   "concept": "Maternal prepregnancy body mass index (BMI)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide maternal BMI information as a specific variable in the provided list."
+  },
+  {
+   "concept": "Gestational age at birth",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide gestational age information as a specific variable in the provided list."
+  },
+  {
+   "concept": "Maternal infections in pregnancy",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide maternal infection status as a specific variable in the provided list."
+  },
+  {
+   "concept": "Age of death in SUID cases",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide age at death information as a specific variable in the provided list."
+  },
+  {
+   "concept": "Geographic location",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide geographic location information as a specific variable in the provided list."
+  },
+  {
+   "concept": "inner ear dysfunction",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to inner ear dysfunction."
+  },
+  {
+   "concept": "control condition",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on control conditions for experiments."
+  },
+  {
+   "concept": "body movement arousal response to severe hypoxia-hypercarbia",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on body movement responses to hypoxia or hypercarbia."
+  },
+  {
+   "concept": "hypercapnic ventilatory response",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on ventilatory responses to hypercapnia."
+  },
+  {
+   "concept": "age of mice",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to age of experimental animals."
+  },
+  {
+   "concept": "baseline cSN activity",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on sympathetic nerve activity."
+  },
+  {
+   "concept": "breathing frequency",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to breathing patterns or frequencies."
+  },
+  {
+   "concept": "expiratory time",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on expiratory times."
+  },
+  {
+   "concept": "PiCo specific cholinergic-glutamatergic neurons",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to neuronal stimulation or types."
+  },
+  {
+   "concept": "glutamatergic PiCo neurons",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to neuronal stimulation or types."
+  },
+  {
+   "concept": "ChAT containing neurons",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to neuronal stimulation or types."
+  },
+  {
+   "concept": "Dbx1 and Vglut2 neurons",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to neuronal stimulation or types."
+  },
+  {
+   "concept": "preBötzinger complex (preBötC)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to neuronal stimulation or types."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (CIH)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to chronic intermittent hypoxia."
+  },
+  {
+   "concept": "diaphragm activity",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on diaphragm muscle activity."
+  },
+  {
+   "concept": "vagus nerve activity",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to vagal nerve activity."
+  },
+  {
+   "concept": "cervical sympathetic nerve activity",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on cervical sympathetic nerve activity."
+  },
+  {
+   "concept": "chronic intermittent hypoxia (IH)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to chronic intermittent hypoxia."
+  },
+  {
+   "concept": "adult neurogenesis",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on adult neurogenesis."
+  },
+  {
+   "concept": "synaptic plasticity",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to synaptic plasticity."
+  },
+  {
+   "concept": "reactive oxygen species (ROS)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on reactive oxygen species levels."
+  },
+  {
+   "concept": "breathing patterns",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to breathing patterns in mice."
+  },
+  {
+   "concept": "survival",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on survival rates of experimental animals."
+  },
+  {
+   "concept": "inhibition",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to inhibition in neuronal models."
+  },
+  {
+   "concept": "excitation",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to excitation in neuronal models."
+  },
+  {
+   "concept": "lipopolysaccharide (LPS)",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on LPS administration to pregnant dams."
+  },
+  {
+   "concept": "progesterone",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not contain variables related to progesterone administration."
+  },
+  {
+   "concept": "neurogenesis",
+   "source_id": "prams_p8_std2",
+   "variable": null,
+   "compatibility": "none",
+   "rationale": "PRAMS does not provide information on neurogenesis in experimental models."
+  }
+ ],
+ "source_summaries": {
+  "prams_p8_std2": "The PRAMS Phase 8 Standard Section II codebook provides variables related to maternal health and pregnancy outcomes but lacks specific data on infant death, postconceptional age, bed sharing, infections during pregnancy, neurophysiological measures, or experimental conditions involving mice. The dataset is primarily focused on maternal behaviors and risk factors for adverse birth outcomes."
+ }
+}

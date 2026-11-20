@@ -1,0 +1,64 @@
+### Study Design and Feasibility Evaluation
+
+#### 1. The Design
+**Restated Question:** How does maternal weight gain during pregnancy vary by maternal BMI among SUID cases?  
+This is a case-only analysis comparing proportions or odds of different levels of pre-pregnancy BMI and weight gain within the case series.
+
+#### 2. Sources by Role
+- **Case Series:** ncfrp_v51 (National Fatality Review Case Reporting System)  
+  *Reason:* This dataset records child deaths reviewed by fatality review teams, focusing on SUID cases.
+  
+- **Population Reference:** prams_p8_arf and prams_p7_arf (PRAMS Phase 8 and Phase 7 Analytic Research Files)
+  *Reason:* These datasets provide a population-level reference for maternal weight gain and pre-pregnancy BMI among live births.
+
+- **Denominator Source:** None required, since this is a case-only study focusing on proportions within the case series.
+
+#### 3. Period
+**Period:** The manuscript uses data from 2008 to 2019 (ncfrp_v51) and PRAMS Phase 8 covers 2016-2021, but we must use overlapping years:  
+*Final period:* 2016-2019
+
+#### 4. Variables
+**Maternal Weight Gain during Pregnancy:**  
+- **ncfrp_v51:** INF4momwtgn (Mother's pregnancy weight gain or loss in pounds)
+  - Missing answers: UNK = unknown, .B = don't know
+- **PRAMS Phase 8 & Phase 7:** MOMLBS (Maternal Weight Gain (LBS))  
+  - Missing answers: U = unknown
+
+**Pre-pregnancy BMI:**
+- **ncfrp_v51:** IEMprenatalBMI (Maternal prenatal BMI)
+  - Missing answers: UNK = unknown
+- **PRAMS Phase 8 & Phase 7:** MOM_BMIG_QX_REV (VAR: MOM BMI GROUPED FROM QX REVISED)  
+  - Missing answers: .B = don't know, blank = unknown
+
+#### 5. Biases
+**Selection Bias:**
+- *Case Series:* ncfrp_v51 covers only deaths reviewed by fatality review teams and does not capture all SUID cases nationwide.
+- *Population Reference:* PRAMS Phase 8 and Phase 7 are based on live births in participating states, missing non-participating areas.
+
+**Information Bias:**
+- Variables like weight gain and pre-pregnancy BMI may be measured differently between case series (death records) and population reference surveys.  
+- Case series may lack detail due to incomplete or delayed reporting compared to PRAMS surveys.
+
+**Confounding:**
+- Unmeasured confounders such as socioeconomic status, access to healthcare, and environmental factors could influence both weight gain/BMI and SUID risk.
+
+#### 6. What the Design Cannot Establish
+This design can only establish associations within the case series and cannot estimate incidence rates or causal relationships between maternal weight gain during pregnancy and pre-pregnancy BMI in relation to SUID risk.
+
+#### 7. Prior Art
+- **Related Claims:**
+  - *suid_literature_abstracts.C10:* Maternal obesity is a risk factor for Sudden Unexpected Infant Death (SUID), with an increased risk associated with higher maternal BMI.
+  - This claim addresses the relevance of pre-pregnancy BMI to SUID, but does not examine weight gain during pregnancy.
+
+- **Open Question:**
+  The relationship between weight gain during pregnancy and its interaction with pre-pregnancy BMI in affecting SUID risk remains unexplored. While prior work indicates that maternal obesity increases SUID risk, the specific impact of varying levels of weight gain within different pre-pregnancy BMI categories is not addressed.
+
+#### 8. Verdict
+**Can these data answer a version of the question?**
+- **Yes**, but with limitations:
+  - This design can compare proportions or odds of maternal weight gain during pregnancy and pre-pregnancy BMI among SUID cases.
+  - It cannot establish causation, nor estimate incidence rates.
+
+**Data Elements Missing:**
+- A denominator source to calculate rates or risks is missing in this case-only study.  
+- Additional variables capturing socioeconomic status, healthcare access, and environmental factors could help control for confounders but are not available here.

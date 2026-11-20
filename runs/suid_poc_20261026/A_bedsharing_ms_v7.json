@@ -1,0 +1,103 @@
+{
+  "manuscript_id": "bedsharing_ms_v7",
+  "title": "bedsharing_ms_v7",
+  "document_sha256": "1496e66e4e7b266719b29021ddc9041acf47f56cf92fdcd91113d826ffd4b79b",
+  "research_questions": [],
+  "designs": [],
+  "model_classes": [],
+  "data_sources_used": [],
+  "variables": [],
+  "claims": [
+    {
+      "id": "bedsharing_ms_v7.C1",
+      "kind": "hypothesis",
+      "statement": "Postconceptional age (PCA) may clarify how bed sharing, maternal smoking, and prematurity relate to Sudden Unexpected Infant Death (SUID) incidence.",
+      "quote": "We examined whether postconceptional age (PCA), the sum of gestational and postnatal age, clarifies how bed sharing, maternal smoking, and prematurity relate to SUID incidence.",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C2",
+      "kind": "method",
+      "statement": "The study used negative binomial regression with PCA as the developmental time variable.",
+      "quote": "We analyzed 13,013 SUID cases (2008–2019) from the National Center for Fatality Review and Prevention Case Reporting System, modeling incidence across PCA with population-adjusted negative binomial regression.",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C3",
+      "kind": "finding",
+      "statement": "Bed sharing was more strongly associated with SUID incidence in an early developmental window (PCA <43 weeks) than a later one (PCA ≥47 weeks).",
+      "quote": "Bed sharing was more strongly associated with incidence in an early developmental window (PCA <43 weeks; IRR 6.45, 95% CI 3.14–13.23) than a later one (PCA ≥47 weeks; IRR 2.10, 95% CI 1.70–2.58)",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C4",
+      "kind": "finding",
+      "statement": "Maternal smoking and prematurity showed the same pattern as bed sharing in relation to SUID incidence.",
+      "quote": "maternal smoking and prematurity showed the same pattern while remaining positively associated throughout",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C5",
+      "kind": "finding",
+      "statement": "The association between bed sharing and SUID incidence was further amplified by maternal smoking in a later developmental window (PCA ≥47 weeks).",
+      "quote": "Bed sharing’s association with incidence was further amplified by maternal smoking in the late window (interaction IRR 1.57, 95% CI 1.19–2.08)",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C6",
+      "kind": "finding",
+      "statement": "Associations between SUID and bed sharing, maternal smoking, and prematurity were similar in males and females.",
+      "quote": "associations were similar in males and females, indicating these effects are sex-independent",
+      "page": null
+    },
+    {
+      "id": "bedsharing_ms_v7.C7",
+      "kind": "future_work",
+      "statement": "The prespecified PCA window (36-90 weeks) is to be checked against a count-stability criterion of at least 5 cases per week in each of four tracked subgroups.",
+      "quote": "Prespecified PCA window (36-90 weeks) checked against a count-stability criterion of at least 5 cases per week in each of 4 tracked subgroups",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C8",
+      "kind": "future_work",
+      "statement": "A sensitivity analysis is planned comparing the primary PCA window (36-90 weeks) with an upper-bound sensitivity analysis restricting the window to PCA 36-79 weeks.",
+      "quote": "Late-window incidence rate ratios at the primary PCA window (36-90 weeks) versus an upper-bound sensitivity analysis restricting the window to PCA 36-79 weeks",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C9",
+      "kind": "future_work",
+      "statement": "Interaction terms from the windowed negative binomial models will be analyzed.",
+      "quote": "Prespecified interaction terms from the windowed negative binomial models",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C10",
+      "kind": "future_work",
+      "statement": "Sex-stratified windowed incidence rate ratios will be provided for PCA, bed sharing, maternal smoking, and preterm birth.",
+      "quote": "Adjusted incidence rate ratios and P values for PCA, bed sharing, maternal smoking, and preterm birth in the early and late windowed negative binomial models, stratified by sex",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C11",
+      "kind": "future_work",
+      "statement": "Birthweight-stratified windowed incidence rate ratios for bed sharing will be analyzed.",
+      "quote": "Adjusted incidence rate ratios for bed sharing in low-birthweight and non-low-birthweight strata, and for the bed sharing by low-birthweight interaction",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C12",
+      "kind": "future_work",
+      "statement": "Smoking-stratified windowed incidence rate ratios will be provided.",
+      "quote": "Adjusted incidence rate ratios for bed sharing in maternal-smoking and non-smoking strata in the early and late windowed negative binomial models, and the share of deaths occurring before one month of age by bed-sharing and smoking status",
+      "page": 1
+    },
+    {
+      "id": "bedsharing_ms_v7.C13",
+      "kind": "future_work",
+      "statement": "A comparison will be made between a PCA axis fit and a chronological-age axis fit using negative binomial generalized additive models.",
+      "quote": "Deviance, log-likelihood, AIC, model degrees of freedom, and pseudo R-squared for the negative binomial generalized additive model fit separately on the PCA axis and the chronological-age axis",
+      "page": 1
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+ "domains": [
+  {
+   "start": "INVofficialsp",
+   "name": "Official Cause and Manner",
+   "summary": "Person declaring the official cause and manner of death, agreement between autopsy and death certificate."
+  },
+  {
+   "start": "INVrefer",
+   "name": "Case Referral and Scene Investigation",
+   "summary": "Whether the case was referred to another entity, completion status of scene recreation with or without doll, photos, and witness interviews."
+  },
+  {
+   "start": "INVscwit",
+   "name": "Scene Documentation",
+   "summary": "Completion status of scene recreation with or without doll, photos, and witness interviews."
+  },
+  {
+   "start": "INVspcpartnerm",
+   "name": "CPS Actions",
+   "summary": "Whether CPS actions such as terminating parental rights or offering voluntary services were taken."
+  },
+  {
+   "start": "INVspecialist",
+   "name": "Autopsy and Specialist Consultation",
+   "summary": "Whether an autopsy was performed, if a specialist was consulted during the autopsy process."
+  },
+  {
+   "start": "INVsuidif",
+   "name": "SUIDI Completion",
+   "summary": "Completion status of SUIDI (Sudden Unexpected Infant Death Investigation) and whether it was shared with review team."
+  },
+  {
+   "start": "INVtox",
+   "name": "Toxicology Screen Results",
+   "summary": "Assessment of toxicology screen results for various substances including alcohol, cocaine, marijuana, methamphetamine, opioids, over-the-counter drugs, prescription drugs, and other substances."
+  },
+  {
+   "start": "CAUcancer",
+   "name": "Medical Causes of Death",
+   "summary": "Primary cause of death from medical causes such as cancer, cardiovascular issues, congenital anomalies, infections, respiratory conditions, and pneumonia."
+  }
+ ]
+}
