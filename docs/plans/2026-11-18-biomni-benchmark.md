@@ -138,3 +138,11 @@ benchmarks/biomni/run.sh runs/biomni_20261118 0 --budget-min 300   # then 1, 2
   - Seed 2 pairs 2015 natality with 2016–2021 cases. Seed 1 asks about geographic variation, which the public-use files do not contain.
 - **Reading the MMF gaps:** the variables are real and every check passes. But 4 of the 10 are PRAMS-vs-PRAMS measurement comparisons with no SUID cases, because novelty-as-distance rewards questions off the topic (see the C redesign log). The code checks cannot see topic relevance; the blinded rating can.
 - **Not yet done:** the blinded rating of 27 questions (`rater_sheet.md` and `rater_sheet.csv`; the key is in `blinding_key.csv`, which is git-ignored).
+- **Summary report:** [docs/reports/2026-11-19-mmf-first-runs-and-biomni-benchmark.md](../reports/2026-11-19-mmf-first-runs-and-biomni-benchmark.md).
+
+## Pinned follow-up: cloud-model arm, if funded
+
+Pinned by the investigator on 2026-11-19. It is not to be run until funding provides an institutional cloud-model endpoint; personal accounts or keys are never used.
+- **Why:** this benchmark ran Biomni on a 14B local model, outside its intended setting. A cloud arm tests whether MMF's advantage holds when the agent has a capable model, and how much a better model improves MMF itself (protocol condition O).
+- **Design:** the same inputs, task (`benchmarks/biomni/task.md`) and scorer (`score.py`). Biomni runs on the model class it was built for, MMF on the same cloud model, with 3 seeds each. The blinded rater sheet is regenerated over every arm.
+- **Changes needed:** `run_biomni.py` switches its model source to the institutional endpoint, and the sandbox profile allows that host. MMF needs `allow_cloud` and the institutional credentials. Nothing else changes.
