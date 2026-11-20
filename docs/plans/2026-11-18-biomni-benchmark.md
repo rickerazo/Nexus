@@ -138,6 +138,7 @@ benchmarks/biomni/run.sh runs/biomni_20261118 0 --budget-min 300   # then 1, 2
   - Seed 2 pairs 2015 natality with 2016–2021 cases. Seed 1 asks about geographic variation, which the public-use files do not contain.
 - **Reading the MMF gaps:** the variables are real and every check passes. But 4 of the 10 are PRAMS-vs-PRAMS measurement comparisons with no SUID cases, because novelty-as-distance rewards questions off the topic (see the C redesign log). The code checks cannot see topic relevance; the blinded rating can.
 - **Not yet done:** the blinded rating of 27 questions (`rater_sheet.md` and `rater_sheet.csv`; the key is in `blinding_key.csv`, which is git-ignored).
+- **Blinding caveat:** the summary report, `review_C_shortlist.md` and `scores.csv` show which system wrote each question. The second rater must not read them (or the repo's run folders) before finishing the sheet. Give them `rater_sheet.md` and `rater_sheet.csv` only.
 - **Summary report:** [docs/reports/2026-11-19-mmf-first-runs-and-biomni-benchmark.md](../reports/2026-11-19-mmf-first-runs-and-biomni-benchmark.md).
 
 ## Pinned follow-up: cloud-model arm, if funded

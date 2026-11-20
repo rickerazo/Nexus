@@ -10,7 +10,7 @@ This is the entry point for anyone picking up Nexus/MMF: where the project stand
 
 | Area | State |
 |---|---|
-| Pipeline (Components A–E, CLI, report) | Implemented and tested: 52 tests, lint, strict mypy, CI on every push. |
+| Pipeline (Components A–E, CLI, report) | Implemented and tested: 89 tests (2026-11-19), lint, strict mypy, CI on every push. Redesigned C runs with `mmf ideate`. |
 | Codebook ingestion | 7 SUID sources parsed deterministically, **6,035 variables** (parser v4, 2026-11-09; was about 5,500). An independent audit runs on every ingest (§2). |
 | Component A (manuscript decomposition) | **Fixed 2026-11-06** (commit `1407505`). Before this, every run extracted claims only; see §5. |
 | Smoke run (test fixtures, local model) | Passes end to end; recorded and replayed in CI. |
@@ -93,6 +93,26 @@ Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-cros
 
 ## 4. Where to go next (priority order)
 
+**Now (as of 2026-11-19).** The C redesign and the Biomni benchmark are done ([report](reports/2026-11-19-mmf-first-runs-and-biomni-benchmark.md)). Items A–D below predate them; where they conflict, this list wins.
+0. **Gate: blinded rating** of the 27 benchmark questions (investigator plus one colleague). Do no further tuning before it.
+1. **Rules that the shortlist review showed are missing.** Each is a design check in code, like the existing ones.
+   - **Off-topic questions:** a measurement comparison must include a case series, or novelty must be weighed by topic relevance. In the final shortlist, G64, G65, G66 and G68 compare PRAMS with PRAMS.
+   - **Partial case series:** case sources need a coverage attribute. A rate design may not divide a partial case series (NCFRP) by all US births (G13, G19).
+   - **Bare claim ids:** namespace claim ids by manuscript so they are never ambiguous (I24, I54, I59).
+   - **Wording:** reject statements that put cases in a reference source (G74).
+2. **Close the loop on the new C.** Wire `mmf ideate` into `mmf run`, then rerun D and E on the investigator's 5 picks. Make E's blockers code-checked so its verdicts stop flipping.
+3. **Provenance and cost before repeated runs.** Record the git commit in the manifest (A.2), and have B generate its "none" rows in code (B.6).
+4. **Evaluation infrastructure (C.8–13):**
+   - a validators-off switch;
+   - the B0 single-prompt baseline;
+   - single-manuscript configs;
+   - freeze the protocol, then run k=5 scored runs.
+
+   The blinded rater-sheet export (C.9) now exists in `benchmarks/biomni/score.py` and can be reused.
+5. **Parser debts:** PRAMS P8 Standard Section II (A.3), and the linked file's death-record fields (5e).
+6. **Epic Cosmos:** add it once the real data dictionary is exported.
+- **Pinned, only if funded:** condition O and the cloud-model Biomni arm (benchmark plan, "Pinned follow-up").
+
 **A. Make the first SUID result trustworthy** (this week)
 1. Complete the §3 review cycle.
 2. **Record the code version in each run.** `RunManifest` stores prompt, model and input hashes but not the git commit. Add the commit hash and a dirty-tree flag. Small change, and it closes a real provenance gap.
@@ -120,7 +140,7 @@ Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-cros
      - Redesign C so that it generates many candidates and then narrows them down.
      - Add a temperature setting per stage.
      - Amend the evaluation protocol. The amendments were approved 2026-11-12 and are listed in [evaluation_protocol.md](evaluation_protocol.md).
-   - **Status:** C0 (data inventory) and C1 (idea generation) are built and run with `mmf ideate`. Plan, decisions and remaining steps: [plans/2026-11-12-c-redesign.md](plans/2026-11-12-c-redesign.md).
+   - **Status:** C0–C5 are built and run with `mmf ideate`. The final run (2026-11-19) grounded 78 of 85 ideas and wrote a shortlist of 10. Plan, decisions and remaining steps: [plans/2026-11-12-c-redesign.md](plans/2026-11-12-c-redesign.md).
 
 **B. Make runs cheaper** (before any repeated runs)
 

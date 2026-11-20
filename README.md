@@ -281,11 +281,16 @@ Instead, it:
 - [x] Conceptual framework defined
 - [x] Proposal and Specific Aims drafted — see [docs/outline.md](docs/outline.md), [docs/specific_aims.md](docs/specific_aims.md)
 - [x] Pipeline implemented (Components A–E, validators, provenance, review checkpoints) — see [docs/architecture.md](docs/architecture.md)
-- [x] Codebook ingestion for the SUID sources (CDC linked birth/infant death, CDC natality, NFR-CRS v5.1, PRAMS Phases 7–8): about 5,500 documented variables, parsed deterministically
+- [x] Codebook ingestion for the SUID sources (CDC linked birth/infant death, CDC natality, NFR-CRS v5.1, PRAMS Phases 7–8): 6,035 documented variables, parsed deterministically and audited on every ingest
 - [x] End-to-end smoke run on test fixtures with the local model; replayed in CI without a model
 - [x] Component A fixed to extract variables and study design, and to stop on empty extraction (2026-11-06)
-- [ ] First full SUID proof-of-concept run (running; see [docs/HANDOFF.md](docs/HANDOFF.md))
-- [ ] Internal validation (protocol in [docs/evaluation_protocol.md](docs/evaluation_protocol.md) is a draft and must be frozen before any scored run; a second blinded rater is needed)
+- [x] First full SUID proof-of-concept run, A–E (report v2, 2026-11-11)
+- [x] Component C redesigned (`mmf ideate`: inventory, ideas by study design, dedupe, grounding with design checks in code, scoring, shortlist; 2026-11-12 to 11-19)
+- [x] Benchmark against Biomni on the same local model (2026-11-19): see [the report](docs/reports/2026-11-19-mmf-first-runs-and-biomni-benchmark.md)
+- [ ] Blinded expert rating of the 27 benchmark questions (`runs/biomni_20261118/rater_sheet.md`)
+- [ ] Rerun D and E on the investigator's 5 picks from the new shortlist
+- [ ] Internal validation (protocol in [docs/evaluation_protocol.md](docs/evaluation_protocol.md) is a draft and must be frozen before any scored run)
+- Pinned, only if funded: the Biomni benchmark with a large cloud model through an institutional endpoint
 
 Known issue: the PRAMS Phase 8 Standard Section II codebook parses to only 4 variables; its layout needs a dedicated parser.
 

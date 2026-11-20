@@ -21,6 +21,10 @@ runs/**
 # run reports are deliverables and are committed (smoke runs excepted)
 !runs/*/
 !runs/*/report*.md
+!runs/*/review*.md
+# the blinded rater sheet (never scores.csv or blinding_key*.csv: they reveal each question's arm)
+!runs/*/rater_sheet.md
+!runs/*/rater_sheet.csv
 runs/smoke_*/
 # legacy prototype artefacts: PDFs, decks, LLM outputs
 legacy/**/*.pdf
