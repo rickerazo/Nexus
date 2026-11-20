@@ -1,4 +1,4 @@
-## Ricardo Erazo, PhD  
+## Ricardo Erazo, PhD
 ## Draft proposal
 # Manuscript-to-Model Framework (MMF): A Structured, AI-Assisted Approach to Reproducible Study Design
 
@@ -18,14 +18,14 @@ MMF formalizes a previously implicit component of scientific reasoning, providin
 
 To formalize a reproducible workflow that translates:
 
-- prior research findings (manuscripts)  
-- and dataset documentation  
+- prior research findings (manuscripts)
+- and dataset documentation
 
 into:
 
-- explicitly defined knowledge gaps  
-- data-aligned research strategies  
-- feasible analytical models  
+- explicitly defined knowledge gaps
+- data-aligned research strategies
+- feasible analytical models
 
 This framework will standardize a currently informal and investigator-dependent step in scientific reasoning.
 
@@ -34,32 +34,32 @@ This framework will standardize a currently informal and investigator-dependent 
 To develop a modular software tool that:
 
 - accepts:
-  - manuscript text  
-  - dataset documentation  
+  - manuscript text
+  - dataset documentation
 - produces:
-  - knowledge gaps  
-  - structured research strategies  
-  - variable mappings  
-  - recommended model classes  
+  - knowledge gaps
+  - structured research strategies
+  - variable mappings
+  - recommended model classes
 
 The application will support local execution using open-source language models to ensure:
 
-- data privacy  
-- reproducibility  
-- independence from external APIs  
+- data privacy
+- reproducibility
+- independence from external APIs
 
 ## Aim 3 — Validate MMF Through a SUID Proof-of-Concept Study
 
 To apply MMF to an ongoing SUID research program by:
 
-- integrating prior manuscripts on developmental timing and exposure risk  
-- mapping these to CDC and NCFRP datasets  
+- integrating prior manuscripts on developmental timing and exposure risk
+- mapping these to CDC and NCFRP datasets
 
 MMF will generate 2–3 candidate research strategies. One strategy will be selected and implemented using standard epidemiologic methods to evaluate:
 
-- feasibility  
-- interpretability  
-- alignment with prior findings  
+- feasibility
+- interpretability
+- alignment with prior findings
 
 This step demonstrates that MMF produces actionable, data-valid study designs.
 
@@ -68,28 +68,28 @@ This step demonstrates that MMF produces actionable, data-valid study designs.
 Scientific progress depends on the ability to translate existing knowledge into new, testable questions. However, this translation step—linking prior findings to available data and appropriate analytical methods—is rarely formalized.
 
 Instead, it relies on:
-- individual expertise  
-- iterative reasoning  
-- ad hoc decision-making  
+- individual expertise
+- iterative reasoning
+- ad hoc decision-making
 
 This creates variability in:
-- hypothesis quality  
-- study feasibility  
-- reproducibility  
+- hypothesis quality
+- study feasibility
+- reproducibility
 
 At the same time, generative AI tools have emerged as powerful systems for text synthesis and pattern recognition. However, their application in scientific research has been limited by:
 
-- lack of domain constraints  
-- risk of generating non-feasible or trivial hypotheses  
-- absence of integration with real data structures  
+- lack of domain constraints
+- risk of generating non-feasible or trivial hypotheses
+- absence of integration with real data structures
 
 The Manuscript-to-Model Framework (MMF) addresses these limitations by:
 
 - constraining AI outputs to:
-  - existing datasets  
-  - valid variable structures  
-  - feasible model classes  
-- embedding AI within a human-supervised workflow  
+  - existing datasets
+  - valid variable structures
+  - feasible model classes
+- embedding AI within a human-supervised workflow
 - producing outputs that are directly actionable by researchers
 
 # Methods
@@ -101,17 +101,17 @@ MMF is a modular pipeline consisting of five components:
 ## Component A — Manuscript Decomposition
 
 Input:
-- Prior research manuscripts  
+- Prior research manuscripts
 
 Process:
 - Extract:
-  - core variables  
-  - conceptual frameworks  
-  - modeling approaches  
-  - known limitations  
+  - core variables
+  - conceptual frameworks
+  - modeling approaches
+  - known limitations
 
 Output:
-- Structured representation of the research program  
+- Structured representation of the research program
 
 ## Component B — Data Schema Mapping
 
@@ -120,88 +120,88 @@ Input:
 
 Process:
 - Identify:
-  - variable availability  
-  - measurement definitions  
-  - overlaps and discrepancies  
+  - variable availability
+  - measurement definitions
+  - overlaps and discrepancies
 
 Output:
-- Harmonized variable map  
-- dataset capability summary  
+- Harmonized variable map
+- dataset capability summary
 
 ## Component C — Knowledge Gap Identification
 
 Process:
-- Identify 2–3 gaps that are:
-  - consistent with prior findings  
-  - not previously tested  
-  - supported by available data  
+- Identify 2–3 gaps that are:[^impl]
+  - consistent with prior findings
+  - not previously tested
+  - supported by available data
 
 Output:
-- Explicit, testable knowledge gaps  
+- Explicit, testable knowledge gaps
 
 ## Component D — Research Strategy Generation
 
 For each gap, generate:
 
-- research question  
-- outcome definition  
-- exposure variables  
-- interaction structure  
-- study design (e.g., case-control)  
+- research question
+- outcome definition
+- exposure variables
+- interaction structure
+- study design (e.g., case-control)
 - recommended model class:
-  - logistic regression  
-  - negative binomial  
-  - time-stratified models  
+  - logistic regression
+  - negative binomial
+  - time-stratified models
 
 ## Component E — Feasibility Mapping
 
 Assess:
 
-- variable availability  
-- missingness  
-- dataset compatibility  
-- modeling constraints  
+- variable availability
+- missingness
+- dataset compatibility
+- modeling constraints
 
 ## Human Oversight
 
 All outputs are:
 
-- reviewed  
-- validated  
-- selected  
+- reviewed
+- validated
+- selected
 
 by the investigator prior to implementation.
 
 MMF does not perform:
-- statistical modeling  
-- inference  
-- interpretation  
+- statistical modeling
+- inference
+- interpretation
 
 # Proof of Concept: SUID Application
 
 MMF will be applied to:
 
-- prior SUID manuscripts demonstrating developmental timing using postconceptional age (PCA)   
-- complementary analyses of sleep environment and exposure risk   
+- prior SUID manuscripts demonstrating developmental timing using postconceptional age (PCA)
+- complementary analyses of sleep environment and exposure risk
 
 The framework will generate candidate strategies exploring:
 
-- developmental interactions (e.g., PCA × exposure)  
-- sex-specific timing effects  
-- exposure-dependent shifts in risk  
+- developmental interactions (e.g., PCA × exposure)
+- sex-specific timing effects
+- exposure-dependent shifts in risk
 
 One strategy will be implemented using:
 
-- CDC linked birth–infant death data  
-- NCFRP case data  
+- CDC linked birth–infant death data
+- NCFRP case data
 
 to demonstrate feasibility and scientific value.
 
 # Expected Outcomes
 
-- A reproducible framework for AI-assisted study design  
-- A software implementation enabling local execution  
-- A validated example demonstrating translation from concept to analysis  
+- A reproducible framework for AI-assisted study design
+- A software implementation enabling local execution
+- A validated example demonstrating translation from concept to analysis
 
 # Impact
 
@@ -211,9 +211,9 @@ MMF formalizes a critical but underdeveloped component of scientific research:
 
 By making this process:
 
-- structured  
-- reproducible  
-- scalable  
+- structured
+- reproducible
+- scalable
 
 MMF enables more efficient and rigorous scientific discovery while maintaining full human responsibility for all analytical and interpretive steps.
 
@@ -222,3 +222,5 @@ MMF enables more efficient and rigorous scientific discovery while maintaining f
 The Manuscript-to-Model Framework does not automate science.
 
 It provides a structured bridge between what we know and what we can test—turning an implicit cognitive process into a reproducible component of the scientific workflow.
+
+[^impl]: Implementation note (2026-11-19): the implemented Component C shortlists 10 candidate gaps and the investigator picks 5. PRAMS Phases 7–8 serve as the population reference source alongside the CDC and NCFRP data.

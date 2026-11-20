@@ -299,7 +299,7 @@ MMF itself will not be tuned further unless the expert rating points to a specif
 
 ## Appendix: settings, files and commits
 
-All times are Pacific Standard Time. All files are in the project repository.
+All times are Pacific Standard Time. The project is open source (MIT, github.com/rickerazo/Nexus). Every input (documentation only, no row-level data) and every run artifact below is in the repository. Raters should not read this report, the run folders or the blinding key before finishing the blinded sheet.
 
 **Model settings**
 
@@ -319,7 +319,8 @@ All times are Pacific Standard Time. All files are in the project repository.
 | First full run and reports v1, v2 | runs/suid_poc_20261103/ (report.md, report.v1-2026-11-11.md) |
 | Redesigned stage C outputs and shortlist | runs/suid_poc_20261103_ideas/ (review_C_shortlist.md) |
 | Benchmark scores and blinded rater sheet | runs/biomni_20261118/ (report.md, scores.csv, rater_sheet.md, rater_sheet.csv) |
-| Blinding key (not in version control) | runs/biomni_20261118/blinding_key.csv |
+| Blinding key (raters: do not open before rating) | runs/biomni_20261118/blinding_key.csv |
+| Every model call, prompt and response | runs/*/llm_log/ |
 | Benchmark harness | benchmarks/biomni/ |
 | Design and run logs | docs/plans/2026-11-12-c-redesign.md, docs/plans/2026-11-18-biomni-benchmark.md |
 | Evaluation protocol (draft v0.1, amendments A–I approved Nov 12) | docs/evaluation_protocol.md |

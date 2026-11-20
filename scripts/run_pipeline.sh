@@ -11,7 +11,9 @@ for stage in B C final; do
   set +e; caffeinate -is uv run mmf run "$CFG" --run-dir "$RD" > "$RD.log" 2>&1; rc=$?; set -e
   grep -v "^INFO httpx" "$RD.log" | tail -40
   if [ "$stage" != final ]; then
-    if [ "$rc" -eq 2 ] && [ "$AUTO" = "--auto-approve" ]; then
+    if [ "$rc" -eq 0 ]; then
+      break  # B and C were already approved: the run completed
+    elif [ "$rc" -eq 2 ] && [ "$AUTO" = "--auto-approve" ]; then
       uv run mmf approve "$RD" "$stage"; echo "[auto-approved $stage at $(date -u +%H:%M:%S)]"
     elif [ "$rc" -eq 2 ]; then
       echo "Stopped at review $stage: $RD"; exit 2

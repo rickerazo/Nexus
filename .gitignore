@@ -1,8 +1,12 @@
+# This project is open source: inputs (documentation only, no row-level data) and every run artifact are
+# tracked. Ignored are secrets, caches, and files we may not or cannot redistribute.
+
 # secrets
 .env
 .env.*
 !.env.example
-# python
+
+# python and tool caches
 __pycache__/
 *.pyc
 .venv/
@@ -12,28 +16,20 @@ build/
 .mypy_cache/
 .ruff_cache/
 .pytest_cache/
-# project data and run outputs (inputs tracked only via data/manifest.json)
-data/**
-!data/manifest.json
-!data/README.md
-runs/**
-!runs/.gitkeep
-# run reports are deliverables and are committed (smoke runs excepted)
-!runs/*/
-!runs/*/report*.md
-!runs/*/review*.md
-# the blinded rater sheet (never scores.csv or blinding_key*.csv: they reveal each question's arm)
-!runs/*/rater_sheet.md
-!runs/*/rater_sheet.csv
-runs/smoke_*/
-# legacy prototype artefacts: PDFs, decks, LLM outputs
-legacy/**/*.pdf
-legacy/**/*.pptx
-legacy/**/*.svg
-legacy/**/output/
-legacy/**/paid_leave/
-# os
-.DS_Store
+# hash-keyed extracted text and embeddings (about 100 MB, rebuilt on demand)
 .cache/
-evaluation/blinding_key.csv
+
+# os and editor
+.DS_Store
 .vscode/
+
+# Biomni benchmark sandbox HOME (matplotlib cache only)
+runs/*/home/
+
+# legacy prototype: a 102 MB deck (over GitHub's 100 MB file limit) and third-party journal articles
+# (copyright of their publishers; cited in the legacy notes, not redistributed)
+legacy/ai_for_science/Soria Moria 2024 closer to final.pptx
+legacy/ai_for_science/bibliography_respirationSD/*.pdf
+legacy/ai_for_science/bibliography_respirationSD2/*.pdf
+legacy/ai_for_science/molecular_refs_01/*.pdf
+legacy/ai_for_science/epidemiology_NB/*.pdf

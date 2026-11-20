@@ -50,6 +50,7 @@ def _strategy_signatures(rd: Path) -> list[tuple[str, frozenset[str]]]:
 
 
 def _gap_tokens(rd: Path) -> list[frozenset[str]]:
+    # Old C output. The redesigned C (`mmf ideate`, C0-C5) writes C_shortlist.json instead.
     p = rd / "C_gaps.json"
     if not p.exists():
         return []
@@ -84,7 +85,7 @@ def reproducibility(run_dirs: list[Path]) -> dict[str, float]:
 def rubric(sheets: list[Path]) -> dict[str, dict[str, float]]:
     scores: dict[str, dict[str, list[int]]] = defaultdict(lambda: defaultdict(list))
     by_rater: dict[str, dict[str, dict[str, int]]] = defaultdict(dict)
-    dims = ["feasibility", "alignment", "novelty", "interpretability"]
+    dims = ["feasibility", "coherence", "novelty", "importance", "interpretability"]
     for sheet in sheets:
         with sheet.open() as f:
             for row in csv.DictReader(f):

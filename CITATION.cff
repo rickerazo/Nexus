@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "MMF: Manuscript-to-Model Framework (Nexus)"
+abstract: >-
+  Human-in-the-loop translation of manuscripts and dataset documentation into
+  data-grounded research questions and analysis strategies, run on a local
+  language model with every model answer checked in code.
+authors:
+  - family-names: Erazo
+    given-names: Ricardo
+version: 0.1.0.dev0
+date-released: 2026-11-19
+license: MIT
+repository-code: "https://github.com/rickerazo/Nexus"
+keywords:
+  - sudden unexpected infant death
+  - epidemiology
+  - large language models
+  - research design

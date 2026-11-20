@@ -94,8 +94,10 @@ All outputs must be:
 - analytically feasible
 
 ### 3. Reproducibility
-- same inputs → same outputs
-- pipeline is deterministic given inputs and model
+- every input is hashed, and every model call is logged with its prompt, seed and temperature
+- seeds and temperatures are fixed per stage; most stages run at temperature 0
+- idea generation (C1) samples at temperature 0.9 on purpose, so outputs are not assumed identical
+- run-to-run agreement is measured, not assumed
 
 ### 4. Separation of roles
 | Component | Responsibility |
@@ -127,10 +129,15 @@ Parse dataset documentation to identify:
 ---
 
 ### Component C — Knowledge Gap Identification
-Identify 2–3 gaps that are:
-- scientifically meaningful
-- not already addressed
-- supported by available data
+Generate many candidate questions, then narrow them to a shortlist for the investigator (`mmf ideate`):
+- **C0 inventory:** group every documented variable into topic domains (338 domains in the SUID run)
+- **C1 ideas:** 6 study designs built on source roles (case–population, exposure rates, case–case, case-only, trends, measurement) × 3 seeds × 5 ideas, sampled at temperature 0.9
+- **C2 dedupe:** merge near-duplicate ideas (embedding cosine ≥ 0.93)
+- **C3 grounding:** a free-text reasoning turn, then a JSON turn checked in code against the variables and the design's role rules
+- **C4 scoring:** novelty (distance from the manuscripts' claims), feasibility, and an importance filter
+- **C5 shortlist:** 10 gaps in `review_C_shortlist.md`; the investigator picks 5
+
+SUID run (2026-11-19): 85 ideas → 78 grounded, 2 not groundable, 5 failed → 10 shortlisted.
 
 ---
 
@@ -200,7 +207,7 @@ Apply MMF to:
 - sleep environment manuscript (bed sharing + exposures)
 
 Goal:
-- generate 2–3 candidate strategies
+- shortlist 10 candidate gaps, of which the investigator picks 5 for strategies
 - select one
 - implement using standard epidemiologic methods
 
@@ -229,7 +236,7 @@ MMF is evaluated on:
   Are outputs meaningful to domain experts?
 
 - **Reproducibility**
-  Do identical inputs produce identical outputs?
+  How much do outputs agree across repeated runs on identical inputs?
 
 ---
 
@@ -300,13 +307,16 @@ The exploratory scripts that preceded this package are kept read-only in [legacy
 
 ## Quickstart
 
+Requires Python 3.12 (pinned in `.python-version`), [uv](https://docs.astral.sh/uv/) and [Ollama](https://ollama.com).
+
 ```bash
 # 1. environment (uv manages Python 3.12 and the lockfile)
 uv sync
 
-# 2. local model (default backend; no API key needed)
+# 2. local models (default backend; no API key needed)
 ollama serve &
-ollama pull qwen2.5:14b
+ollama pull qwen2.5:14b          # generation
+ollama pull mxbai-embed-large    # embeddings (B cross-check, C dedupe, grounding and novelty)
 
 # 3. tests (no LLM calls)
 uv run pytest
@@ -319,10 +329,15 @@ uv run mmf run configs/suid.yaml
 uv run mmf approve runs/<run_dir> B      # after checking/editing B_schema.json
 uv run mmf run configs/suid.yaml --run-dir runs/<run_dir>
 
+# 6. the redesigned C (C0-C5) on a run whose B is approved; writes review_C_shortlist.md
+uv run mmf ideate configs/suid.yaml --run-dir runs/<run_dir>
+
 # long runs: keeps the Mac awake, logs to runs/<run_dir>.log; --auto-approve skips the
 # review stops (the report is then UNREVIEWED: review B and C afterwards and re-run)
 scripts/run_pipeline.sh configs/suid.yaml runs/<run_dir> [--auto-approve]
 ```
+
+`mmf run` still uses the legacy one-call Component C (`C_gaps.json`, 3 gaps), and D reads its output. The redesigned C runs only through `mmf ideate` until it is wired into `mmf run`.
 
 **LLM backends.** The default is local Ollama: nothing leaves the machine and no credential is needed. An OpenAI-compatible cloud backend (`backend: openai_compatible`) exists for institutional endpoints and for the evaluation's local-vs-cloud comparison. It refuses to run unless the run config sets `allow_cloud: true` and `MMF_API_KEY` (plus optional `MMF_API_BASE_URL`) is exported in the shell; no key file is ever loaded. This project is institute-funded: use only institutional credentials, never a personal account, and never send restricted documents to a cloud backend. See `.env.example`.
 
@@ -337,6 +352,16 @@ It **formalizes and accelerates the translation of knowledge into testable study
 - explicit
 - reproducible
 - scalable
+
+---
+
+## License
+
+MIT. See [LICENSE](LICENSE).
+
+## Citing
+
+If you use MMF, please cite it as described in [CITATION.cff](CITATION.cff).
 
 ---
 

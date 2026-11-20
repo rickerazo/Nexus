@@ -20,6 +20,10 @@ dependencies = [
     "numpy>=1.26",
 ]
 
+[project.urls]
+Repository = "https://github.com/rickerazo/Nexus"
+Issues = "https://github.com/rickerazo/Nexus/issues"
+
 [project.scripts]
 mmf = "mmf.cli:app"
 

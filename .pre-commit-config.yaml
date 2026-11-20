@@ -8,9 +8,13 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
     hooks:
+      # Inputs and run artifacts stay byte-identical: manifests and caches hash them.
       - id: end-of-file-fixer
+        exclude: ^(data|runs|legacy)/
       - id: trailing-whitespace
+        exclude: ^(data|runs|legacy)/
       - id: check-yaml
+      # Run logs and codebooks are tracked; GitHub rejects files over 100 MB.
       - id: check-added-large-files
-        args: [--maxkb=2000]
+        args: [--maxkb=50000]
       - id: detect-private-key

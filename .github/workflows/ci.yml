@@ -13,7 +13,7 @@ jobs:
           enable-cache: true
       - run: uv python install 3.12
       - run: uv sync --frozen
-      - run: uv run ruff check src tests
-      - run: uv run ruff format --check src tests
-      - run: uv run mypy src
+      - run: uv run ruff check src tests benchmarks evaluation scripts
+      - run: uv run ruff format --check src tests benchmarks evaluation scripts
+      - run: uv run mypy src benchmarks evaluation scripts
       - run: uv run pytest -q --cov=mmf --cov-report=term-missing

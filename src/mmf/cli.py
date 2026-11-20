@@ -72,7 +72,9 @@ def ideate(
     config: Path,
     run_dir: Annotated[Path, typer.Option(help="Existing run directory with B approved.")],
 ) -> None:
-    """Run the C redesign's data inventory (C0) and idea generation (C1) on an existing run."""
+    """Run the redesigned C (C0-C5) on an existing run: inventory, ideas, dedupe, grounding, scoring, shortlist.
+
+    Writes C_shortlist.json and review_C_shortlist.md. Not part of `mmf run`; D still reads C_gaps.json."""
     from mmf.pipeline import ReviewPending, Run
 
     r = Run(RunConfig.from_yaml(config), run_dir=run_dir)
@@ -81,7 +83,7 @@ def ideate(
     except ReviewPending as e:
         typer.echo(str(e))
         raise typer.Exit(code=2) from None
-    typer.echo(f"Ideas: {out}")
+    typer.echo(f"Shortlist for review: {out}")
 
 
 @app.command()

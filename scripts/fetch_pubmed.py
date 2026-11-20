@@ -22,6 +22,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Any
 
 BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
 QUERIES = {
@@ -51,10 +52,11 @@ KW_RESP_INFANT = ("infant", "neonat", "postnatal", "develop", "sex", "hypoxia", 
 def esearch(term: str) -> list[str]:
     q = urllib.parse.urlencode({"db": "pubmed", "term": term, "retmax": 1000, "retmode": "json"})
     with urllib.request.urlopen(BASE + "esearch.fcgi?" + q, timeout=60) as r:
-        return json.load(r)["esearchresult"]["idlist"]
+        ids: list[str] = json.load(r)["esearchresult"]["idlist"]
+    return ids
 
 
-def efetch(ids: list[str]) -> list[dict]:
+def efetch(ids: list[str]) -> list[dict[str, Any]]:
     recs = []
     for i in range(0, len(ids), 100):
         q = urllib.parse.urlencode({"db": "pubmed", "id": ",".join(ids[i : i + 100]), "retmode": "xml"})
@@ -86,17 +88,17 @@ def efetch(ids: list[str]) -> list[dict]:
     return recs
 
 
-def year(r: dict) -> int:
+def year(r: dict[str, Any]) -> int:
     m = re.search(r"\d{4}", r["year"] or "")
     return int(m.group()) if m else 0
 
 
-def tags(r: dict) -> tuple[bool, bool]:
+def tags(r: dict[str, Any]) -> tuple[bool, bool]:
     t = (r["title"] + " " + r["abstract"]).lower()
     return any(k in t for k in KW_SUID), any(k in t for k in KW_RESP)
 
 
-def fmt(r: dict) -> str:
+def fmt(r: dict[str, Any]) -> str:
     au = ", ".join(r["authors"][:6]) + (" et al." if len(r["authors"]) > 6 else "")
     ids = f"PMID {r['pmid']}" + (f"; PMC {r['pmc']}" if r["pmc"] else "") + (f"; doi:{r['doi']}" if r["doi"] else "")
     s = f"### {r['title']}\n{au}. *{r['journal']}* ({year(r)}). {ids}\n"
@@ -123,7 +125,7 @@ def main() -> None:
         f"# Publication record: Jan-Marino Ramirez lab and Juan M. Lavista Ferres (PubMed, retrieved {today})\n",
         f"{len(recs)} records. Tags: SUID = sudden unexpected infant death related; RESP = respiratory control / brainstem development.\n",
     ]
-    by_year: dict[int, list[dict]] = {}
+    by_year: dict[int, list[dict[str, Any]]] = {}
     for r in recs:
         by_year.setdefault(year(r), []).append(r)
     for y in sorted(by_year, reverse=True):

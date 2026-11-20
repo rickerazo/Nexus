@@ -2,7 +2,7 @@
 ## Draft proposal
 # SPECIFIC AIMS
 
-## Manuscript-to-Model Framework (MMF):  
+## Manuscript-to-Model Framework (MMF):
 ### A Structured, AI-Assisted Approach to Reproducible Study Design
 
 ## Significance
@@ -17,17 +17,17 @@ We propose the Manuscript-to-Model Framework (MMF), a structured, human-in-the-l
 
 MMF introduces three key innovations:
 
-1. Formalization of a missing step in scientific workflows  
+1. Formalization of a missing step in scientific workflows
    MMF defines a reproducible process for translating prior findings into feasible study designs, a step that is currently unstructured and rarely documented.
 
-2. Constrained, data-grounded AI integration  
+2. Constrained, data-grounded AI integration
    AI outputs are explicitly restricted to:
-   - variables present in real datasets  
-   - valid study designs  
-   - appropriate statistical model classes  
+   - variables present in real datasets
+   - valid study designs
+   - appropriate statistical model classes
    This avoids unconstrained hypothesis generation and ensures practical feasibility.
 
-3. Human-in-the-loop architecture  
+3. Human-in-the-loop architecture
    AI is used to propose structured strategies, while all scientific decisions, validation, and implementation remain under investigator control. This preserves methodological rigor and aligns with emerging standards for responsible AI use in research.
 
 ## Overall Objective
@@ -38,14 +38,14 @@ The objective of this project is to develop, implement, and validate a reproduci
 
 We will design a modular workflow that:
 
-- extracts conceptual structure from prior manuscripts  
-- maps these concepts to available dataset schemas  
-- identifies 2–3 explicit, testable knowledge gaps  
+- extracts conceptual structure from prior manuscripts
+- maps these concepts to available dataset schemas
+- identifies 2–3 explicit, testable knowledge gaps[^impl]
 - generates structured research strategies, including:
-  - research questions  
-  - variable definitions  
-  - interaction structures  
-  - recommended model classes  
+  - research questions
+  - variable definitions
+  - interaction structures
+  - recommended model classes
 
 Outcome: A clearly defined, reproducible framework for hypothesis-to-design translation.
 
@@ -54,18 +54,18 @@ Outcome: A clearly defined, reproducible framework for hypothesis-to-design tran
 We will develop a Python-based application that:
 
 - accepts:
-  - manuscript text  
-  - dataset documentation  
+  - manuscript text
+  - dataset documentation
 - produces:
-  - knowledge gaps  
-  - structured research strategies  
-  - feasibility mappings  
+  - knowledge gaps
+  - structured research strategies
+  - feasibility mappings
 
 The system will support local execution using open-source language models to ensure:
 
-- data privacy  
-- reproducibility  
-- transparency  
+- data privacy
+- reproducibility
+- transparency
 
 Outcome: A deployable tool enabling researchers to apply MMF across domains.
 
@@ -73,15 +73,15 @@ Outcome: A deployable tool enabling researchers to apply MMF across domains.
 
 We will apply MMF to an existing research program on sudden unexpected infant death (SUID), integrating:
 
-- prior manuscripts on developmental timing and exposure risk  
-- CDC linked birth–infant death data  
-- NCFRP case data  
+- prior manuscripts on developmental timing and exposure risk
+- CDC linked birth–infant death data
+- NCFRP case data
 
 MMF will generate candidate strategies, one of which will be implemented using standard epidemiologic methods (e.g., case-control design, time-stratified modeling). We will evaluate whether MMF produces strategies that are:
 
-- feasible  
-- interpretable  
-- aligned with prior findings  
+- feasible
+- interpretable
+- aligned with prior findings
 
 Outcome: Demonstration that MMF generates actionable, scientifically valid study designs.
 
@@ -89,10 +89,12 @@ Outcome: Demonstration that MMF generates actionable, scientifically valid study
 
 This project establishes a reproducible, scalable approach for integrating AI into scientific workflows without compromising rigor. By formalizing the translation from knowledge to study design, MMF has the potential to:
 
-- accelerate hypothesis generation  
-- improve alignment between theory and data  
-- enhance reproducibility in research planning  
+- accelerate hypothesis generation
+- improve alignment between theory and data
+- enhance reproducibility in research planning
 
 # Key Takeaway
 
 MMF transforms an implicit cognitive process into a structured, reproducible component of scientific investigation, enabling more efficient and rigorous development of data-driven research strategies.
+
+[^impl]: Implementation note (2026-11-19): the implemented Component C shortlists 10 candidate gaps and the investigator picks 5. PRAMS Phases 7–8 serve as the population reference source alongside the CDC and NCFRP data.

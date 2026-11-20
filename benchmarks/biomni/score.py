@@ -21,13 +21,14 @@ import sys
 from dataclasses import asdict, dataclass, field
 from datetime import date
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 
 from mmf.components import roles as roles_mod
 from mmf.components.b_crosscheck import VectorCache
 from mmf.components.c_narrow import _NO_RATE
-from mmf.config import RunConfig
+from mmf.config import RunConfig, SourceSpec
 from mmf.llm.ollama import OllamaEmbedder
 from mmf.schemas.dataset import DataSource, VariableType
 from mmf.schemas.manuscript import ManuscriptDecomposition
@@ -131,7 +132,7 @@ def load_biomni(seed_dir: Path) -> tuple[list[Gap], str]:
     return out[:TOP], f"{len(items)} gaps returned"
 
 
-def checks(g: Gap, sources: dict[str, DataSource], specs: dict, last_year: int) -> dict[str, object]:
+def checks(g: Gap, sources: dict[str, DataSource], specs: dict[str, SourceSpec], last_year: int) -> dict[str, Any]:
     role_errors = []
     for f in ROLE_FIELDS:
         for sid in getattr(g, f):
@@ -159,7 +160,7 @@ def checks(g: Gap, sources: dict[str, DataSource], specs: dict, last_year: int) 
     ps, pe = g.period_start, g.period_end
     period_ok = ps is not None and pe is not None and ps <= pe <= last_year
     years = []
-    if period_ok:
+    if period_ok and ps is not None and pe is not None:  # repeated for mypy narrowing
         for sid in dict.fromkeys(s for f in ROLE_FIELDS for s in getattr(g, f)):
             held = specs[sid].period if sid in specs else None
             if held and (ps < held[0] or pe > held[1]):
@@ -202,7 +203,7 @@ def main(config: str, bench: str, mmf_run: str) -> None:
         summ = json.loads((d / "summary.json").read_text()) if (d / "summary.json").exists() else {}
         runs.append(("biomni", d.name, gaps, f"{note}; {summ.get('status', '')}; {summ.get('minutes', '?')} min"))
 
-    rows: list[dict[str, object]] = []
+    rows: list[dict[str, Any]] = []
     report = [
         "# MMF vs Biomni: code checks",
         "",

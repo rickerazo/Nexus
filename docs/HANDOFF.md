@@ -1,6 +1,6 @@
 # Handoff: project state and next steps
 
-*Last updated 2026-11-11 (Wednesday). Update this file whenever the state below changes.*
+*Last updated 2026-11-19 (Thursday). Update this file whenever the state below changes.*
 
 This is the entry point for anyone picking up Nexus/MMF: where the project stands, what is running, what to do next, and the decisions that are easy to get wrong. For *why* the code is built the way it is, read [architecture.md](architecture.md); for the scientific framing, [specific_aims.md](specific_aims.md).
 
@@ -18,11 +18,13 @@ This is the entry point for anyone picking up Nexus/MMF: where the project stand
 | Epic Cosmos | Public-intelligence stub only: [data_sources/epic_cosmos.md](data_sources/epic_cosmos.md). Not a pipeline input until the real Data Dictionary is exported from the Cosmos portal. Adding it re-runs B in full. |
 | Evaluation protocol | Draft, **not frozen**. No scored runs exist yet. |
 | C redesign and Biomni benchmark | Done 2026-11-19; summary report in [reports/2026-11-19-mmf-first-runs-and-biomni-benchmark.md](reports/2026-11-19-mmf-first-runs-and-biomni-benchmark.md). Blinded rating of 27 questions pending. **Pinned:** rerun the benchmark with a large cloud model only if funding provides an institutional endpoint ([plan](plans/2026-11-18-biomni-benchmark.md#pinned-follow-up-cloud-model-arm-if-funded)). |
-| Repository | `github.com/rickerazo/Nexus` (private), history pushed 2026-11-06. |
+| Repository | `github.com/rickerazo/Nexus`, public and open source under the MIT license (see `LICENSE`, `CITATION.cff`). First pushed 2026-11-06. |
 
 Any output from a run before 2026-11-06 (`runs/suid_poc_20261026`, `runs/smoke_20261026T220417`, and the first Stage A in `runs/suid_poc_20261103`) was built from claims-only decompositions. Do not use those outputs for anything.
 
 ## 2. The weekend run
+
+*Historical (2026-11-06 to 11-11). Kept as a record of the first full run; the current state is in §1 and §4.*
 
 **What it is.** No model is being trained. MMF uses a pre-trained local language model (`qwen2.5:14b` via Ollama) as-is. The weekend job is one full pass of the pipeline over the SUID inputs: it reads the documents and produces a research-strategy report.
 
@@ -79,6 +81,8 @@ cat runs/suid_poc_20261103.driver.log           # ends with "DONE …" or the fa
 
 ## 3. Monday checklist
 
+*Historical (2026-11-09 to 11-11). This review cycle is complete; it remains the procedure for reviewing B and the legacy C.*
+
 Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-crosscheck.md) are done. When the driver log says `Stopped at review B`:
 - Rerun once without approving: `uv run mmf run configs/suid.yaml --run-dir runs/suid_poc_20261103`. It adds `B_check.json` and the cross-check section to `review_B.md`.
 - Then follow the checklist below, starting at step 2 and reviewing the cross-check flags first in step 3.
@@ -114,7 +118,7 @@ Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-cros
 - **Pinned, only if funded:** condition O and the cloud-model Biomni arm (benchmark plan, "Pinned follow-up").
 
 **A. Make the first SUID result trustworthy** (this week)
-1. Complete the §3 review cycle.
+1. ~~Complete the §3 review cycle.~~ Done 2026-11-11 (report v2).
 2. **Record the code version in each run.** `RunManifest` stores prompt, model and input hashes but not the git commit. Add the commit hash and a dirty-tree flag. Small change, and it closes a real provenance gap.
 3. **Fix the PRAMS Phase 8 Standard Section II parser.** It yields only 4 variables; its layout needs a dedicated deterministic pass in `src/mmf/ingest/codebook.py`. The identifier census does not detect this layout, so check it by hand.
 4. ~~Make D's LLM-facing schema all-required.~~ Done 2026-11-11 (`4ce958e`): `Strategy` has no defaults, D rejects an empty `expected_direction`, and the recorded smoke run showed the defect was live. Also 2026-11-11: rate models may use `denominator_source` (a source marked `denominator: true`, whose record count per stratum is the births denominator) instead of an offset variable (`1ca347e`), and `outcome.subtypes` lets a strategy analyse cause-of-death subtypes without using the outcome as a predictor.
@@ -132,7 +136,7 @@ Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-cros
 5f. **2026-11-12: the investigator judged S1 and S2 of report v2 unusable. The gaps restate the literature (known risk factor × PCA windows).**
    - **Causes, mostly in C:**
      - The C prompt says to prefer extending the manuscripts' frameworks.
-     - C and D see only the 66 variables B mapped to manuscript concepts, out of about 5,800 documented.
+     - C and D see only the 66 variables B mapped to manuscript concepts, out of 6,035 documented.
      - Every gap must be anchored to a cited claim.
      - C is one call at temperature 0.
    - **D's own defects:** it chooses variables before its rationale (schema field order), sees labels without units or levels, and doesn't see the source paper's methods.
@@ -150,7 +154,7 @@ Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-cros
 **C. Build what the evaluation protocol assumes but doesn't yet exist** ([evaluation_protocol.md](evaluation_protocol.md))
 
 8. A **validators-off switch** for the ablation condition (L−). There is currently no way to run it. It must also set `b_crosscheck: false` and decide whether the ingestion audit's hard check stays on.
-9. A **blinded rater-sheet export**: strategies to `blind_code` rows matching `evaluation/rater_sheet_template.csv`, with the key in the gitignored `evaluation/blinding_key.csv`.
+9. ~~A **blinded rater-sheet export**.~~ Done 2026-11-18: `benchmarks/biomni/score.py` writes `rater_sheet.md`/`.csv` and `blinding_key.csv`; reuse it for strategies.
 10. **Single-manuscript configs** for metric 3 (retrospective recovery: run with the PCA manuscript only, then with bed-sharing only).
 11. Decide on **condition O** (cloud). It needs institutional credentials; if there are none, drop it and say so in the protocol.
 12. Recruit the **second blinded rater**.
@@ -164,7 +168,9 @@ Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-cros
   - **Cause:** the LLM-facing schema's list fields had defaults, so Ollama's grammar-constrained decoder let the model skip them. Every decomposition held claims only. Component B then received an empty concept list and mapped codebook labels onto themselves, and its validators passed.
   - **Fix:** two calls per chunk (study profile, then claims) with every field required. A manuscript with no variables or claims now stops the run (`StageInputError`), and B refuses an empty concept list.
   - **Rule:** never add defaults to LLM-facing models. A test enforces it.
-- **Stage B batching.** Concepts are sent in batches capped by `b_max_mappings_per_call` (default 50), so a long concept list can't hit the output-token cap.
+- **Stage B batching.** Two settings in the run config (`src/mmf/config.py`, `configs/suid.yaml`) size B's calls:
+  - `b_max_vars_per_call` (default 600, set to 600 in `configs/suid.yaml`): each source's variable list is split into groups of at most this many variables (`components/common.source_groups`), one source per group, so each call fits `num_ctx`. A larger value means fewer, longer calls. It is part of B's cache key, so changing it reruns B.
+  - `b_max_mappings_per_call` (default 50): concepts are sent in batches of at most this many concept × source mappings, so a long concept list can't hit the output-token cap.
 - **Stage A cache key** now includes the prompt hashes, so editing a prompt reruns A. Since 2026-11-09, B–E keys do too, and the ingest key includes `PARSER_VERSION`.
 - **Independent pathways (2026-11-09).** An ingestion audit and a B embedding cross-check; see [architecture.md](architecture.md). Embeddings use local `mxbai-embed-large` (`ollama pull mxbai-embed-large`).
 
@@ -172,7 +178,8 @@ Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-cros
 
 - **Local model only by default.** Ollama is not auto-started on the development Mac: run `ollama serve` first. Throughput is about 9 tokens/s, so long runs need the Mac open and on power. Use `scripts/run_pipeline.sh`, which wraps the run in `caffeinate`.
 - **No personal LLM credentials.** This is an institute-funded project. The cloud backend runs only with `allow_cloud: true` in the run config and an institutional key in `MMF_API_KEY`. Never send restricted documents to a cloud backend.
-- **Documentation in, never data.** MMF reads codebooks, guides and manuscripts, never row-level CDC, PRAMS or NCFRP data. `data/` and `runs/` are gitignored; inputs are traced by sha256 in `data/manifest.json`.
+- **Documentation in, never data.** MMF reads codebooks, guides and manuscripts, never row-level CDC, PRAMS or NCFRP data. Inputs are traced by sha256 in `data/manifest.json` (regenerate with `mmf manifest`).
+- **Everything is tracked in git** since the repo went public: `data/` (manuscripts, codebooks, documentation, literature) and every `runs/*` artifact (JSON outputs, `llm_log/`, checkpoints, sources, logs, scores, blinding keys). Not tracked: caches (`.cache/`, tool caches), secrets (`.env`), `runs/*/home/` (Biomni's sandbox home), one 102 MB legacy deck and third-party journal PDFs in `legacy/`. A blinding key in git is readable by anyone, so a second rater must not browse the repo before finishing the sheet.
 - **Codebooks are parsed by code, not the model** (`llm_extract: false`). At local speed, model enrichment would take hours per codebook.
 - **Validators, not prompts, provide the guarantees.** If output is wrong, tighten a validator; don't relax one to make a run pass.
 - **GitHub access from the work Mac** is through a repo-only, passphrase-protected deploy key configured in this repo's local git config. No account-wide credentials live on this machine. Commits use the GitHub no-reply address.
@@ -185,9 +192,19 @@ Phases 1 and 2 of [the 2026-11-09 plan](plans/2026-11-09-ingest-audit-and-b-cros
 | [docs/architecture.md](architecture.md) | Component contract, schemas, data flow, failure modes |
 | [docs/evaluation_protocol.md](evaluation_protocol.md) | Validation protocol (draft) |
 | [docs/specific_aims.md](specific_aims.md), [docs/outline.md](outline.md) | Proposal |
+| `docs/plans/` | Dated design plans and run logs (ingest audit, B split, C redesign, Biomni benchmark) |
+| `docs/reports/` | Summary reports (2026-11-19: first MMF runs and the Biomni benchmark) |
+| `docs/data_sources/` | Notes on candidate sources not yet in the pipeline (Epic Cosmos) |
 | `src/mmf/` | Package: `components/` (A–E), `ingest/`, `llm/`, `prompts/`, `schemas/`, `validate/`, `pipeline.py`, `cli.py` |
 | `configs/` | `suid.yaml` (proof of concept), `smoke.yaml` (fixtures) |
+| `data/` | Inputs: manuscripts, PubMed literature, codebooks and documentation; see `data/README.md` |
+| `benchmarks/biomni/` | MMF vs Biomni benchmark: input export, sandboxed runner, shared scorer; see its README |
 | `scripts/` | `run_pipeline.sh` (long runs), `smoke.sh`, `fetch_pubmed.py` (literature input) |
 | `evaluation/` | Rubric, rater sheet template, `analyze_eval.py` |
 | `tests/` | Unit tests and a replay integration test (recorded model responses, no model needed) |
-| `legacy/` | Read-only exploratory scripts that preceded the package |
+| `.github/` | CI workflow (`workflows/ci.yml`) |
+| `runs/suid_poc_20261103/` | SUID proof-of-concept run: A, B (reviewed), legacy C, D, E, report v1 and v2 |
+| `runs/suid_poc_20261103_ideas/` | Redesigned C on the same A and B: `C_*.json`, `review_C_shortlist.md`, earlier variants as `*.<tag>.json` |
+| `runs/biomni_20261118/` | Biomni benchmark: inputs, three seeds, scores, `report.md`, blinded rater sheet |
+| `runs/smoke_*`, `runs/*.log` | Smoke runs and driver logs. Runs before 2026-11-06 are unusable (§1) |
+| `legacy/` | Read-only exploratory prototype that preceded the package; see `legacy/README.md` |

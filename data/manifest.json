@@ -11,5 +11,7 @@
   "data/manuscripts/SUID_manuscript_v9_clean.docx": "92fd11fa182c9a7b5806abcd83a284408d96271920022a19179cbafdb62cd2bd",
   "data/manuscripts/bedsharing_ms_v7.docx": "1496e66e4e7b266719b29021ddc9041acf47f56cf92fdcd91113d826ffd4b79b",
   "data/manuscripts/literature/ramirez_lavista_bibliography.md": "a13f969a56ce6c7130fc553a8c7548c45e30c574ea658acbd8e4601693f509a4",
-  "data/manuscripts/literature/suid_literature_abstracts.md": "687e8a02fa0c7d697b51a7d44224066beb34f0ea0281e14d163ef9f9f337ad41"
+  "data/manuscripts/literature/records.json": "aa5770921c8826c4c16061f20028f67dd5164a1865bf7816336f33f4c51ce6c2",
+  "data/manuscripts/literature/suid_literature_abstracts.md": "687e8a02fa0c7d697b51a7d44224066beb34f0ea0281e14d163ef9f9f337ad41",
+  "data/manuscripts/literature/suid_literature_pmids.json": "48fc906c31aaef7de949071a39a373fe084d36c11bc52a218be093565ddd9d51"
 }

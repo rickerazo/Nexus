@@ -58,8 +58,8 @@ class SourceSpec(BaseModel):
     years: str | None = Field(default=None, description="Period covered, as documented by the investigator.")
     period: tuple[int, int] | None = Field(
         default=None,
-        description="First and last calendar year of the data, for the code check that a grounded gap's period lies "
-        "within every source it uses. None = not checked.",
+        description="First and last calendar year of the data held. Years outside it never exclude an idea: C3 "
+        "records them as years to acquire (`years_to_acquire`). None = unknown; nothing is recorded.",
     )
     geography: str | None = Field(default=None, description="Geographic detail available, including none.")
     linkage: str | None = Field(default=None, description="What the records can be linked to, if anything.")
